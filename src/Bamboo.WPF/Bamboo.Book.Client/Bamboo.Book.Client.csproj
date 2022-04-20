@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bamboo.Client.Core\Bamboo.Client.Core.csproj" />
+    <ProjectReference Include="..\Bamboo.Common\Bamboo.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Resource\Bamboo.Resource.csproj" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(ProjectDir)bin\Debug\net5.0-windows\Bamboo.Book.*.dll&quot; &quot;$(SolutionDir)\Bamboo.Client\bin\Debug\net5.0-windows\Modules\&quot; /Y /S" />
+  </Target>
+
+</Project>

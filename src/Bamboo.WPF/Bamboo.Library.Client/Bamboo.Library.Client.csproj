@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bamboo.Client.Core\Bamboo.Client.Core.csproj" />
+    <ProjectReference Include="..\Bamboo.Common\Bamboo.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Library.Common\Bamboo.Library.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Resource\Bamboo.Resource.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\BookView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\BookView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(ProjectDir)bin\Debug\net5.0-windows\Bamboo.Library.*.dll&quot; &quot;$(SolutionDir)\Bamboo.Client\bin\Debug\net5.0-windows\Modules\&quot; /Y /S" />
+  </Target>
+
+</Project>

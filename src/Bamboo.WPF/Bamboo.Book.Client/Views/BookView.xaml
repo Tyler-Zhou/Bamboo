@@ -1,0 +1,218 @@
+﻿<UserControl
+    x:Class="Bamboo.Book.Client.Views.BookView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Converter="clr-namespace:Bamboo.Client.Core.Converters;assembly=Bamboo.Client.Core"
+    xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Bamboo.Book.Client.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:prism="http://prismlibrary.com/"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Converter:IntToVisibilityConveter x:Key="IntToVisibility" />
+    </UserControl.Resources>
+    <md:DialogHost>
+        <md:DrawerHost IsRightDrawerOpen="{Binding IsRightDrawerOpen}">
+            <md:DrawerHost.RightDrawerContent>
+                <DockPanel Width="240" LastChildFill="False">
+                    <TextBlock
+                        Padding="20,10"
+                        DockPanel.Dock="Top"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="编辑书籍" />
+                    <TextBox
+                        Margin="20,5"
+                        md:HintAssist.Hint="请输入书标识"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Key}" />
+                    <TextBox
+                        Margin="20,0"
+                        md:HintAssist.Hint="请输入书名"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Name}" />
+                    <TextBox
+                        Margin="20,5"
+                        md:HintAssist.Hint="请输入作者"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Author}" />
+                    <TextBox
+                        Margin="20,5"
+                        md:HintAssist.Hint="请输入标签"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Tag}" />
+                    <TextBox
+                        Margin="20,5"
+                        md:HintAssist.Hint="请输入链接"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Link}" />
+                    <StackPanel
+                        Margin="20,5"
+                        DockPanel.Dock="Top"
+                        Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="状态：" />
+                        <ComboBox SelectedIndex="{Binding CurrentDto.Status}">
+                            <ComboBoxItem>连载</ComboBoxItem>
+                            <ComboBoxItem>完本</ComboBoxItem>
+                        </ComboBox>
+                    </StackPanel>
+                    <TextBox
+                        Height="100"
+                        Margin="20,5"
+                        md:HintAssist.Hint="请输入简介"
+                        AcceptsReturn="True"
+                        DockPanel.Dock="Top"
+                        Text="{Binding CurrentDto.Introduction}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Visible" />
+                    <Button
+                        Margin="20,0"
+                        Command="{Binding ExecuteCommand}"
+                        CommandParameter="保存"
+                        Content="保存"
+                        DockPanel.Dock="Top" />
+                </DockPanel>
+            </md:DrawerHost.RightDrawerContent>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Margin="15,0,0,0" Orientation="Horizontal">
+                    <TextBox
+                        Width="250"
+                        VerticalAlignment="Center"
+                        md:HintAssist.Hint="查找书籍..."
+                        md:TextFieldAssist.HasClearButton="True"
+                        Text="{Binding Search, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <TextBox.InputBindings>
+                            <KeyBinding
+                                Key="Enter"
+                                Command="{Binding ExecuteCommand}"
+                                CommandParameter="查询" />
+                        </TextBox.InputBindings>
+                    </TextBox>
+                    <TextBlock
+                        Margin="10,0"
+                        VerticalAlignment="Center"
+                        Text="筛选：" />
+                    <ComboBox SelectedIndex="{Binding SelectedIndex}">
+                        <ComboBoxItem>全部</ComboBoxItem>
+                        <ComboBoxItem>连载</ComboBoxItem>
+                        <ComboBoxItem>完本</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+
+                <Button
+                    Margin="10,5"
+                    HorizontalAlignment="Right"
+                    Command="{Binding ExecuteCommand}"
+                    CommandParameter="新增"
+                    Content="+ 添加" />
+                <StackPanel
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Visibility="{Binding BookDtos.Count, Converter={StaticResource IntToVisibility}}">
+                    <Image
+                        Width="120"
+                        Height="120"
+                        Source="pack://application:,,,/Bamboo.Resource;Component/Images/wind.png" />
+                    <TextBlock
+                        Margin="0,10"
+                        HorizontalAlignment="Center"
+                        FontSize="18"
+                        Text="尝试添加一些书籍，以便在此处查看它们。" />
+                </StackPanel>
+                <ScrollViewer Grid.Row="1">
+                    <ItemsControl HorizontalAlignment="Center" ItemsSource="{Binding BookDtos}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <md:TransitioningContent OpeningEffect="{md:TransitionEffect Kind=ExpandIn}">
+                                    <Grid
+                                        Width="220"
+                                        MinHeight="180"
+                                        MaxHeight="250"
+                                        Margin="8">
+                                        <behavior:Interaction.Triggers>
+                                            <behavior:EventTrigger EventName="MouseLeftButtonUp">
+                                                <behavior:InvokeCommandAction Command="{Binding DataContext.SelectedCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}}" CommandParameter="{Binding}" />
+                                            </behavior:EventTrigger>
+                                        </behavior:Interaction.Triggers>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+
+                                        <md:PopupBox HorizontalAlignment="Right" Panel.ZIndex="1">
+                                            <Button
+                                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ItemsControl}}"
+                                                CommandParameter="{Binding}"
+                                                Content="删除" />
+                                        </md:PopupBox>
+
+                                        <Border Grid.RowSpan="2" CornerRadius="3">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Status}" Value="0">
+                                                            <Setter Property="Background" Value="#88C6E5" />
+                                                        </DataTrigger>
+
+                                                        <DataTrigger Binding="{Binding Status}" Value="1">
+                                                            <Setter Property="Background" Value="#48597D" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                        </Border>
+
+                                        <TextBlock
+                                            Padding="10,5"
+                                            FontWeight="Bold"
+                                            Text="{Binding Name}" />
+                                        <TextBlock
+                                            Grid.Row="1"
+                                            Padding="10,5"
+                                            Text="{Binding Author}" />
+                                        <Canvas Grid.RowSpan="2" ClipToBounds="True">
+                                            <Border
+                                                Canvas.Top="10"
+                                                Canvas.Right="-50"
+                                                Width="120"
+                                                Height="120"
+                                                Background="#FFFFFF"
+                                                CornerRadius="100"
+                                                Opacity="0.1" />
+                                            <Border
+                                                Canvas.Top="80"
+                                                Canvas.Right="-30"
+                                                Width="120"
+                                                Height="120"
+                                                Background="#FFFFFF"
+                                                CornerRadius="100"
+                                                Opacity="0.1" />
+                                        </Canvas>
+                                    </Grid>
+                                </md:TransitioningContent>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </md:DrawerHost>
+    </md:DialogHost>
+</UserControl>
