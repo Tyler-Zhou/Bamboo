@@ -2,7 +2,7 @@
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Collections.Generic;
 
-namespace Bamboo.Server.SwaggerHelp
+namespace Bamboo.Server.Swagger
 {
     /// <summary>
     /// Swagger注释帮助类

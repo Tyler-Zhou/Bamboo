@@ -12,7 +12,7 @@ namespace Bamboo.Server.Service
     /// <summary>
     /// 
     /// </summary>
-    public class LoginService : ILoginService
+    public class AuthenticationService : IAuthenticationService
     {
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace Bamboo.Server.Service
         /// </summary>
         /// <param name="unitOfWork"></param>
         /// <param name="mapper"></param>
-        public LoginService(IUnitOfWork unitOfWork, IMapper mapper)
+        public AuthenticationService(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _UnitOfWork = unitOfWork;
             _Mapper = mapper;

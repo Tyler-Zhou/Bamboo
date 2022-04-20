@@ -6,7 +6,7 @@ using Bamboo.Server.Interface;
 using Bamboo.Server.Models;
 using Bamboo.Server.Repository;
 using Bamboo.Server.Service;
-using Bamboo.Server.SwaggerHelp;
+using Bamboo.Server.Swagger;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -67,7 +67,7 @@ namespace Bamboo.Server
              * AddScoped：每次请求，都获取一个新的实例。同一个请求获取多次会得到相同的实例
              * AddSingleton单例模式：每次都获取同一个实例
              */
-            services.AddTransient<ILoginService, LoginService>();
+            services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IChapterService, ChapterService>();
 

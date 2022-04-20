@@ -7,7 +7,7 @@ namespace Bamboo.Server.Interface
     /// <summary>
     /// 
     /// </summary>
-    public interface ILoginService
+    public interface IAuthenticationService
     {
         /// <summary>
         /// 

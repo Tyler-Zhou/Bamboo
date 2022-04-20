@@ -16,14 +16,14 @@ namespace Bamboo.Server.Controllers
         /// <summary>
         /// 登录服务
         /// </summary>
-        private readonly ILoginService _LoginService;
+        private readonly IAuthenticationService _AuthenticationService;
         /// <summary>
         /// 验证控制器
         /// </summary>
-        /// <param name="loginService">登录服务</param>
-        public AuthenticationController(ILoginService loginService)
+        /// <param name="authenticationService">登录服务</param>
+        public AuthenticationController(IAuthenticationService authenticationService)
         {
-            _LoginService = loginService;
+            _AuthenticationService = authenticationService;
         }
         /// <summary>
         /// 登录
@@ -32,7 +32,7 @@ namespace Bamboo.Server.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<ServerResponse> Login([FromBody] UserDto param) =>
-           await _LoginService.LoginAsync(param.Account, param.Password);
+           await _AuthenticationService.LoginAsync(param.Account, param.Password);
         /// <summary>
         /// 注册
         /// </summary>
@@ -40,6 +40,6 @@ namespace Bamboo.Server.Controllers
         /// <returns></returns>
         [HttpPost]
         public async Task<ServerResponse> Resgiter([FromBody] UserDto param) =>
-            await _LoginService.Resgiter(param);
+            await _AuthenticationService.Resgiter(param);
     }
 }
