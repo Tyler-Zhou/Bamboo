@@ -7,16 +7,32 @@ using Bamboo.Library.Common.Parameter;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Bamboo.Library.Client.ViewModels
 {
     /// <summary>
-    /// 书籍视图模型
+    /// 章节视图模型
     /// </summary>
-    public class BookViewModel : NavigationViewModel
+    public class ChapterViewModel : NavigationViewModel
     {
+        #region 上级Dto
+        /// <summary>
+        /// ParentDto
+        /// </summary>
+        private BookDto _ParentDto = new BookDto();
+        /// <summary>
+        /// 上级Dto
+        /// </summary>
+        public BookDto ParentDto
+        {
+            get { return _ParentDto; }
+            set { _ParentDto = value; RaisePropertyChanged(); }
+        }
+        #endregion
+
         #region 下拉列表选中状态值
         /// <summary>
         /// SelectedIndex
@@ -67,37 +83,37 @@ namespace Bamboo.Library.Client.ViewModels
         /// <summary>
         /// CurrentDto
         /// </summary>
-        private BookDto _CurrentDto = new BookDto();
+        private ChapterDto _CurrentDto = new ChapterDto();
         /// <summary>
         /// 编辑选中/新增时对象
         /// </summary>
-        public BookDto CurrentDto
+        public ChapterDto CurrentDto
         {
             get { return _CurrentDto; }
             set { _CurrentDto = value; RaisePropertyChanged(); }
         }
         #endregion
 
-        #region 书籍集合
+        #region 章节集合
         /// <summary>
-        /// BookDtos
+        /// ChapterDtos
         /// </summary>
-        private ObservableCollection<BookDto> _BookDtos = new ObservableCollection<BookDto>();
+        private ObservableCollection<ChapterDto> _ChapterDtos = new ObservableCollection<ChapterDto>();
         /// <summary>
-        /// 书籍集合
+        /// 章节集合
         /// </summary>
-        public ObservableCollection<BookDto> BookDtos
+        public ObservableCollection<ChapterDto> ChapterDtos
         {
-            get { return _BookDtos; }
-            set { _BookDtos = value; RaisePropertyChanged(); }
+            get { return _ChapterDtos; }
+            set { _ChapterDtos = value; RaisePropertyChanged(); }
         }
         #endregion
 
         #region 服务(Service)
         /// <summary>
-        /// 书籍服务
+        /// 章节服务
         /// </summary>
-        private readonly IBookService _BookService;
+        private readonly IChapterService _ChapterService;
         /// <summary>
         /// 对话框主机服务
         /// </summary>
@@ -112,33 +128,28 @@ namespace Bamboo.Library.Client.ViewModels
         /// <summary>
         /// 选择
         /// </summary>
-        public DelegateCommand<BookDto> SelectedCommand { get; private set; }
+        public DelegateCommand<ChapterDto> SelectedCommand { get; private set; }
         /// <summary>
         /// 删除
         /// </summary>
-        public DelegateCommand<BookDto> DeleteCommand { get; private set; }
-        /// <summary>
-        /// 编辑明细
-        /// </summary>
-        public DelegateCommand<BookDto> EditDetailCommand { get; private set; }
+        public DelegateCommand<ChapterDto> DeleteCommand { get; private set; }
         #endregion
 
         #region 构造函数(Constructor)
         /// <summary>
-        /// 书籍视图模型
+        /// 章节视图模型
         /// </summary>
         /// <param name="bookService"></param>
         /// <param name="provider"></param>
         /// <param name="logger"></param>
-        public BookViewModel(IBookService bookService, IContainerProvider provider)
+        public ChapterViewModel(IChapterService bookService, IContainerProvider provider)
             : base(provider)
         {
-            _BookService = bookService;
+            _ChapterService = bookService;
             _DialogHostService = provider.Resolve<IDialogHostService>();
             ExecuteCommand = new DelegateCommand<string>(Execute);
-            SelectedCommand = new DelegateCommand<BookDto>(Selected);
-            DeleteCommand = new DelegateCommand<BookDto>(Delete);
-            EditDetailCommand = new DelegateCommand<BookDto>(EditDetail);
+            SelectedCommand = new DelegateCommand<ChapterDto>(Selected);
+            DeleteCommand = new DelegateCommand<ChapterDto>(Delete);
         }
         #endregion
 
@@ -150,12 +161,13 @@ namespace Bamboo.Library.Client.ViewModels
         public override void OnNavigatedTo(NavigationContext navigationContext)
         {
             base.OnNavigatedTo(navigationContext);
-            if (navigationContext.Parameters.ContainsKey("Value"))
-                SelectedIndex = navigationContext.Parameters.GetValue<int>("Value");
-            else
-                SelectedIndex = 0;
+            if (!navigationContext.Parameters.ContainsKey("BookDto"))
+            {
+                throw new Exception("获取书籍Dto错误");
+            }
+            ParentDto = navigationContext.Parameters.GetValue<BookDto>("BookDto");
             GetDataAsync();
-        } 
+        }
         #endregion
 
         #region 方法(Method)
@@ -164,20 +176,20 @@ namespace Bamboo.Library.Client.ViewModels
         /// 删除
         /// </summary>
         /// <param name="obj"></param>
-        private async void Delete(BookDto obj)
+        private async void Delete(ChapterDto obj)
         {
             try
             {
-                var dialogResult = await _DialogHostService.Question("温馨提示", $"确认删除书籍:{obj.Name} ?");
+                var dialogResult = await _DialogHostService.Question("温馨提示", $"确认删除章节:{obj.Name} ?");
                 if (dialogResult.Result != Prism.Services.Dialogs.ButtonResult.OK) return;
 
                 UpdateLoading(true);
-                var deleteResult = await _BookService.DeleteAsync(obj.Id);
+                var deleteResult = await _ChapterService.DeleteAsync(obj.Id);
                 if (deleteResult.Status)
                 {
-                    var model = BookDtos.FirstOrDefault(t => t.Id.Equals(obj.Id));
+                    var model = ChapterDtos.FirstOrDefault(t => t.Id.Equals(obj.Id));
                     if (model != null)
-                        BookDtos.Remove(model);
+                        ChapterDtos.Remove(model);
                 }
             }
             finally
@@ -186,26 +198,15 @@ namespace Bamboo.Library.Client.ViewModels
             }
         }
         /// <summary>
-        /// 编辑明细
-        /// </summary>
-        /// <param name="obj"></param>
-        private void EditDetail(BookDto obj)
-        {
-            NavigationParameters param = new NavigationParameters();
-            if (obj != null)
-                param.Add("BookDto", obj);
-            NavigationToView("ChapterView", param);
-        }
-        /// <summary>
         /// 选择数据(编辑/查看)
         /// </summary>
         /// <param name="obj"></param>
-        private async void Selected(BookDto obj)
+        private async void Selected(ChapterDto obj)
         {
             try
             {
                 UpdateLoading(true);
-                var todoResult = await _BookService.GetFirstOfDefaultAsync(obj.Id);
+                var todoResult = await _ChapterService.GetFirstOfDefaultAsync(obj.Id);
                 if (todoResult.Status)
                 {
                     CurrentDto = todoResult.Result;
@@ -235,7 +236,7 @@ namespace Bamboo.Library.Client.ViewModels
         /// </summary>
         private void Add()
         {
-            CurrentDto = new BookDto();
+            CurrentDto = new ChapterDto();
             IsRightDrawerOpen = true;
         }
         /// <summary>
@@ -247,26 +248,23 @@ namespace Bamboo.Library.Client.ViewModels
             {
                 if (string.IsNullOrWhiteSpace(CurrentDto.Key)
                 || string.IsNullOrWhiteSpace(CurrentDto.Name)
-                || string.IsNullOrWhiteSpace(CurrentDto.Author)
+                || string.IsNullOrWhiteSpace(CurrentDto.Content)
                 )
                     return;
 
                 UpdateLoading(true);
                 if (CurrentDto.Id > 0)
                 {
-                    var updateResult = await _BookService.UpdateAsync(CurrentDto);
+                    var updateResult = await _ChapterService.UpdateAsync(CurrentDto);
                     if (updateResult.Status)
                     {
-                        var updateData = BookDtos.FirstOrDefault(t => t.Id == CurrentDto.Id);
+                        var updateData = ChapterDtos.FirstOrDefault(t => t.Id == CurrentDto.Id);
                         if (updateData != null)
                         {
                             updateData.Key = CurrentDto.Key;
                             updateData.Name = CurrentDto.Name;
-                            updateData.Author = CurrentDto.Author;
+                            updateData.Content = CurrentDto.Content;
                             updateData.Link = CurrentDto.Link;
-                            updateData.Tag = CurrentDto.Tag;
-                            updateData.Introduction = CurrentDto.Introduction;
-                            updateData.Status = CurrentDto.Status;
                         }
                         else
                         {
@@ -277,10 +275,12 @@ namespace Bamboo.Library.Client.ViewModels
                 }
                 else
                 {
-                    var addResult = await _BookService.AddAsync(CurrentDto);
+                    CurrentDto.BookKey = ParentDto.Key;
+
+                    var addResult = await _ChapterService.AddAsync(CurrentDto);
                     if (addResult.Status)
                     {
-                        BookDtos.Add(addResult.Result);
+                        ChapterDtos.Add(addResult.Result);
                         IsRightDrawerOpen = false;
                     }
                     else
@@ -305,20 +305,20 @@ namespace Bamboo.Library.Client.ViewModels
 
                 int? Status = SelectedIndex == 0 ? null : SelectedIndex == 2 ? 1 : 0;
 
-                var todoResult = await _BookService.GetAllFilterAsync(new BookParameter()
+                var todoResult = await _ChapterService.GetAllFilterAsync(new ChapterParameter()
                 {
                     PageIndex = 0,
                     PageSize = 100,
                     Search = Search,
-                    Status = Status
+                    BookKey = ParentDto.Key,
                 });
 
                 if (todoResult.Status)
                 {
-                    BookDtos.Clear();
+                    ChapterDtos.Clear();
                     foreach (var item in todoResult.Result.Items)
                     {
-                        BookDtos.Add(item);
+                        ChapterDtos.Add(item);
                     }
                 }
             }
@@ -326,7 +326,7 @@ namespace Bamboo.Library.Client.ViewModels
             {
                 UpdateLoading(false);
             }
-        } 
+        }
         #endregion
     }
 }

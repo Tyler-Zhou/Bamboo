@@ -1,4 +1,5 @@
 ﻿using Bamboo.Client.Core.Extensions;
+using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.Models;
 using Prism.Events;
 using Prism.Ioc;
@@ -21,6 +22,10 @@ namespace Bamboo.Client.Core.ViewModels
         /// 事件聚合器
         /// </summary>
         public readonly IEventAggregator _EventAggregator;
+        /// <summary>
+        /// 导航服务
+        /// </summary>
+        public readonly INavigationService _NavigationService;
         #endregion
 
         #region Constructor
@@ -32,6 +37,7 @@ namespace Bamboo.Client.Core.ViewModels
         {
             _ContainerProvider = containerProvider;
             _EventAggregator = containerProvider.Resolve<IEventAggregator>();
+            _NavigationService = containerProvider.Resolve<INavigationService>();
         }
         #endregion
 
@@ -63,6 +69,15 @@ namespace Bamboo.Client.Core.ViewModels
         public virtual void OnNavigatedTo(NavigationContext navigationContext)
         {
 
+        }
+        /// <summary>
+        /// 导航到视图
+        /// </summary>
+        /// <param name="viewName">视图名称</param>
+        /// <param name="navigationParams">导航参数</param>
+        public virtual void NavigationToView(string viewName, NavigationParameters navigationParams)
+        {
+            _NavigationService.NavigationToView(viewName, navigationParams);
         }
         /// <summary>
         /// 正在加载

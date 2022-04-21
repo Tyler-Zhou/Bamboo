@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using Prism.Regions;
 
 namespace Bamboo.Client.Models
 {
@@ -49,8 +50,23 @@ namespace Bamboo.Client.Models
         {
             get { return _NameSpace; }
             set { _NameSpace = value; }
-        } 
+        }
         #endregion
 
+        #region 导航参数
+        /// <summary>
+        /// NavigationParams
+        /// </summary>
+        private NavigationParameters _NavigationParams = new NavigationParameters();
+        /// <summary>
+        /// 导航参数
+        /// </summary>
+        public NavigationParameters NavigationParams
+        {
+            get { return _NavigationParams; }
+            set { _NavigationParams = value; }
+        }
+
+        #endregion
     }
 }

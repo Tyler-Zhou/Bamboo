@@ -10,6 +10,6 @@ namespace Bamboo.Library.Common.Parameter
         /// <summary>
         /// 书籍唯一键
         /// </summary>
-        public int BookKey { get; set; }
+        public string BookKey { get; set; }
     }
 }

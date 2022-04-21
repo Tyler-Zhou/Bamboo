@@ -27,8 +27,10 @@ namespace Bamboo.Library.Client
         {
             //Service
             containerRegistry.Register<IBookService, BookService>();
+            containerRegistry.Register<IChapterService, ChapterService>();
             //View & ViewModel
             containerRegistry.RegisterForNavigation<BookView>();
+            containerRegistry.RegisterForNavigation<ChapterView>();
         }
     }
 }

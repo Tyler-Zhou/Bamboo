@@ -1,4 +1,5 @@
 ﻿using Bamboo.Client.Core.Common;
+using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Extensions;
 using Bamboo.Client.Interface;
 using Bamboo.Client.Models;
@@ -6,6 +7,7 @@ using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using System.Collections.ObjectModel;
 
 namespace Bamboo.Client.ViewModels
@@ -13,7 +15,7 @@ namespace Bamboo.Client.ViewModels
     /// <summary>
     /// 主窗体视图模型
     /// </summary>
-    public class MainViewModel : BindableBase, IConfigureService
+    public class MainViewModel : BindableBase, IConfigureService,INavigationService
     {
         #region 用户名
         /// <summary>
@@ -116,15 +118,14 @@ namespace Bamboo.Client.ViewModels
             _RegionManager?.Regions[PrismManager.MainViewRegionName].RequestNavigate("IndexView");
 
         }
-
         /// <summary>
-        /// 设置菜单项
+        /// 导航到视图
         /// </summary>
-        void CreateMenuBar()
+        /// <param name="viewName">视图名称</param>
+        /// <param name="navigationParams">导航参数</param>
+        public void NavigationToView(string viewName, NavigationParameters navigationParams)
         {
-            MenuBars.Add(new MenuBar() { Icon = "Home", Title = "首页", NameSpace = "IndexView" });
-            MenuBars.Add(new MenuBar() { Icon = "Library", Title = "图书馆", NameSpace = "BookView" });
-            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "设置", NameSpace = "SettingsView" });
+            Navigate(new MenuBar {NameSpace=viewName,NavigationParams = navigationParams });
         }
         /// <summary>
         /// 导航
@@ -137,8 +138,17 @@ namespace Bamboo.Client.ViewModels
             _RegionManager?.Regions[PrismManager.MainViewRegionName].RequestNavigate(obj.NameSpace, back =>
             {
                 _NavigationJournal = back.Context.NavigationService.Journal;
-            });
-        } 
+            }, obj.NavigationParams);
+        }
+        /// <summary>
+        /// 设置菜单项
+        /// </summary>
+        void CreateMenuBar()
+        {
+            MenuBars.Add(new MenuBar() { Icon = "Home", Title = "首页", NameSpace = "IndexView" });
+            MenuBars.Add(new MenuBar() { Icon = "Library", Title = "图书馆", NameSpace = "BookView" });
+            MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "设置", NameSpace = "SettingsView" });
+        }
         #endregion
     }
 }

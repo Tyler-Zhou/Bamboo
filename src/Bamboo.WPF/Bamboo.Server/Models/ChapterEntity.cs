@@ -45,8 +45,7 @@ namespace Bamboo.Server.Models
         /// <summary>
         /// 内容
         /// </summary>
-        [Column("sContent")]
-        [MaxLength(50)]
+        [Column("sContent",TypeName ="TEXT")]
         [Required]
         [DefaultValue("")]
         public string Content { get; set; } = "";

@@ -126,6 +126,7 @@ namespace Bamboo.Client
             //Service
             containerRegistry.Register<IAuthenticationService, AuthenticationService>();
             containerRegistry.Register<IDialogHostService, DialogHostService>();
+            containerRegistry.Register<INavigationService, MainViewModel>();
 
             //View & ViewModel
             containerRegistry.RegisterForNavigation<MsgView, MsgViewModel>();
