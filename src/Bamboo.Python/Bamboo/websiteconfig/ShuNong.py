@@ -2,11 +2,11 @@
 from Bamboo.websiteconfig.BaseConfig import BaseConfig
 
 
-# 书趣阁
-class ShuQuGe(BaseConfig):
+# 书农
+class ShuNong(BaseConfig):
     """
-    书趣阁
-    https://www.shuquge.com/
+    书农
+    https://www.shunong.com/
     """
 
     def config_name(self):
@@ -14,7 +14,7 @@ class ShuQuGe(BaseConfig):
             配置名称
             :return: 配置名称
             """
-        return 'ShuQuGe'
+        return 'ShuNong'
         pass
 
     def main_xpath(self):
@@ -22,7 +22,7 @@ class ShuQuGe(BaseConfig):
             主要容器
             :return: XPath路径
             """
-        return '//div[@class="book"]'
+        return '//div[@class="booktitle clearfix"]'
         pass
 
     def info_xpath(self):
@@ -30,7 +30,7 @@ class ShuQuGe(BaseConfig):
             书籍信息容器
             :return: XPath路径
             """
-        return './/div[@class="info"]'
+        return ''
         pass
 
     def parse_url_regex(self):
@@ -38,7 +38,7 @@ class ShuQuGe(BaseConfig):
             提取BookKey
             :return: 正则表达式
             """
-        return '.*?://.*?/txt/(.*?)/'
+        return '.*?://.*?/.*?/.*?/(.*?)/$'
         pass
 
     def name_xpath(self):
@@ -46,7 +46,7 @@ class ShuQuGe(BaseConfig):
           书籍名称
           :return: XPath路径
           """
-        return './/h2/text()'
+        return './/a/h1/text()'
         pass
 
     def author_xpath(self):
@@ -54,7 +54,7 @@ class ShuQuGe(BaseConfig):
            作者
         :return: XPath路径
         """
-        return './/div[@class="small"]/span[1]/text()'
+        return './/span[@class="author"]/b/text()'
         pass
 
     def tag_xpath(self):
@@ -62,7 +62,7 @@ class ShuQuGe(BaseConfig):
            标签(分类)
         :return: XPath路径
         """
-        return './/div[@class="small"]/span[2]/text()'
+        return ''
         pass
 
     def introduction_xpath(self):
@@ -78,7 +78,7 @@ class ShuQuGe(BaseConfig):
         状态(是否完本)
         :return: XPath路径
         """
-        return './/div[@class="small"]/span[3]/text()'
+        return ''
         pass
 
     def chapterurls_xpath(self):
@@ -86,7 +86,7 @@ class ShuQuGe(BaseConfig):
            章节列表
         :return: XPath路径
         """
-        return './/*[@class="listmain"]/dl/dd/a/@href'
+        return './/*[@class="booklist clearfix"][2]/span/a/@href'
         pass
 
     def content_regex(self):
@@ -94,7 +94,7 @@ class ShuQuGe(BaseConfig):
            章节内容
         :return: 正则表达式
         """
-        return '<div id="content" class="showtxt">(.*?)</div>'
+        return '<div class="bookcontent clearfix">(.*?)<br>[\\s]*<div class="gg"'
         pass
 
     def chapter_name_xpath(self):
@@ -102,5 +102,5 @@ class ShuQuGe(BaseConfig):
            章节名称
         :return: XPath路径
         """
-        return './/div[@class="book reader"]/div[@class="content"]/h1/text()'
+        return './/div[@class="booktitle clearfix"]/span[@class="author"]/text()'
         pass

@@ -14,7 +14,7 @@ class BookSpider(Spider):
     小说爬虫
     """
     name = 'Book'
-    allowed_domains = ['www.shuquge.com']
+    allowed_domains = ['www.shuquge.com', 'www.quge66.com', 'www.81zw.com', 'www.shunong.com']
 
     def __init__(self, website_name='', starturl='', *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -40,7 +40,10 @@ class BookSpider(Spider):
             self.logger.info('实例化Selector')
             main_div = response_selector.xpath(self.website_config.main_xpath())
             self.logger.info('主要容器')
-            book_info = main_div.xpath(self.website_config.info_xpath())
+            if self.website_config.info_xpath() == "":
+                book_info = main_div
+            else:
+                book_info = main_div.xpath(self.website_config.info_xpath())
             self.logger.info('获取书籍信息容器')
             item = BookItem()
             self.bookKey = re.findall(self.website_config.parse_url_regex(), response.url, re.S)[0]
@@ -52,7 +55,6 @@ class BookSpider(Spider):
             self.logger.info('书籍链接：%s', item['sLink'])
             item['sAuthor'] = book_info.xpath(self.website_config.author_xpath()).extract_first()
             self.logger.info('书籍作者：%s', item['sAuthor'])
-            # TODO：添加 sTag/sIntroduction/tStatus 获取
             if self.website_config.tag_xpath() == "":
                 item['sTag'] = "玄幻"
             else:
@@ -66,24 +68,21 @@ class BookSpider(Spider):
             if self.website_config.status_xpath() == "":
                 item['tStatus'] = "1"
             else:
-                sstatus=book_info.xpath(self.website_config.status_xpath()).extract_first()
+                sstatus = book_info.xpath(self.website_config.status_xpath()).extract_first()
                 if "完本" in sstatus:
                     item['tStatus'] = "1"
                 else:
                     item['tStatus'] = "0"
-            self.logger.info('书籍状态：%d', item['tStatus'])
+            self.logger.info('书籍状态：%s', item['tStatus'])
             item['tCreateDate'] = datetime.now()
             yield item
         except Exception as ex:
             self.logger.exception("获取书籍信息失败：%s", ex)
             raise ex
-
+        self.logger.info("开始获取章节信息")
         try:
             chapter_urls = response_selector.xpath(self.website_config.chapterurls_xpath()).extract()
             for chapter_url in chapter_urls:
-                # TODO: 从JSON中获取当前ChapterKey是否已经抓取
-                chapterkey = chapter_url.split('/')[-1].replace('.html', '')
-                self.logger.info("章节Key：%s", chapterkey)
                 yield Request(response.urljoin(chapter_url), callback=self.parse_chapter)
         except Exception as ex:
             self.logger.exception("遍历章节信息失败：%s", ex)

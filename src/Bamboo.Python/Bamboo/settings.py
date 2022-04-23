@@ -101,6 +101,7 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+DUPEFILTER_CLASS = 'Bamboo.custom_filters.ChapterExistFilter'
 
 # MSSQL数据库
 MSSQL_SERVER = "."  # 服务器

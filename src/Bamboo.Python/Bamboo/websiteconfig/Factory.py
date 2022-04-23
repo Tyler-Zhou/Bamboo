@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from Bamboo.websiteconfig.EightOne import  EightOne
-from Bamboo.websiteconfig.QuGeSix import  QuGeSix
-from Bamboo.websiteconfig.ShuQuGe import  ShuQuGe
+from Bamboo.websiteconfig.EightOne import EightOne
+from Bamboo.websiteconfig.QuGeSix import QuGeSix
+from Bamboo.websiteconfig.ShuQuGe import ShuQuGe
+from Bamboo.websiteconfig.ShuNong import ShuNong
 
 
 class Factory:
@@ -19,6 +20,8 @@ class Factory:
             return EightOne()
         elif website_name == 'QuGeSix':
             return QuGeSix()
+        elif website_name == 'ShuNong':
+            return ShuNong()
         else:
             return ShuQuGe()
         pass
