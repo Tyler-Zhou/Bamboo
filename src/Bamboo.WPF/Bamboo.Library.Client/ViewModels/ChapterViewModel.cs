@@ -305,21 +305,25 @@ namespace Bamboo.Library.Client.ViewModels
 
                 int? Status = SelectedIndex == 0 ? null : SelectedIndex == 2 ? 1 : 0;
 
-                var todoResult = await _ChapterService.GetAllFilterAsync(new ChapterParameter()
+                var returnResult = await _ChapterService.GetAllFilterAsync(new ChapterParameter()
                 {
                     PageIndex = 0,
-                    PageSize = 100,
+                    PageSize = 20,
                     Search = Search,
                     BookKey = ParentDto.Key,
                 });
 
-                if (todoResult.Status)
+                if (returnResult.Status)
                 {
                     ChapterDtos.Clear();
-                    foreach (var item in todoResult.Result.Items)
+                    foreach (var item in returnResult.Result.Items)
                     {
                         ChapterDtos.Add(item);
                     }
+                }
+                else
+                {
+                    SendMessage(returnResult.Message);
                 }
             }
             finally

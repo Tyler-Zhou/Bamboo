@@ -2,9 +2,9 @@
 using Bamboo.Common.Parameter;
 using Bamboo.Library.Common.Dto;
 using Bamboo.Library.Common.Parameter;
-using Bamboo.Server.Models;
 using Bamboo.Server.Core;
 using Bamboo.Server.Interface;
+using Bamboo.Server.Models;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -88,11 +88,22 @@ namespace Bamboo.Server.Service
             try
             {
                 var repository = _UnitOfWork.GetRepository<ChapterEntity>();
-                var todos = await repository.GetPagedListAsync(predicate:
+                var todos = await repository.GetPagedListAsync(
+                    selector:source=>new ChapterEntity() {
+                        Id=source.Id,
+                        BookKey=source.BookKey,
+                        Name=source.Name,
+                        Link = source.Link,
+                        Content = "",
+                        CreateDate = source.CreateDate,
+                        UpdateDate = source.UpdateDate,
+                    },
+                    predicate:
                    x => string.IsNullOrWhiteSpace(parameter.Search) ? true : x.Name.Contains(parameter.Search),
                    pageIndex: parameter.PageIndex,
                    pageSize: parameter.PageSize,
-                   orderBy: source => source.OrderByDescending(t => t.CreateDate));
+                   orderBy: source => source.OrderByDescending(t => t.CreateDate)
+                   );
                 return new ServerResponse(true, todos);
             }
             catch (Exception ex)
@@ -110,7 +121,18 @@ namespace Bamboo.Server.Service
             try
             {
                 var repository = _UnitOfWork.GetRepository<ChapterEntity>();
-                var todos = await repository.GetPagedListAsync(predicate:
+                var todos = await repository.GetPagedListAsync(
+                    selector: source => new ChapterEntity()
+                    {
+                        Id = source.Id,
+                        BookKey = source.BookKey,
+                        Name = source.Name,
+                        Link = source.Link,
+                        Content = "",
+                        CreateDate = source.CreateDate,
+                        UpdateDate = source.UpdateDate,
+                    },
+                    predicate:
                    x => (string.IsNullOrWhiteSpace(parameter.Search) ? true : x.Name.Contains(parameter.Search))
                    && (x.BookKey.Equals(parameter.BookKey)),
                    pageIndex: parameter.PageIndex,

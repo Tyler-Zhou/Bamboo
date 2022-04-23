@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using Bamboo.Common.Parameter;
 using Bamboo.Library.Common.Dto;
 using Bamboo.Library.Common.Parameter;
-using Bamboo.Common.Parameter;
 using Bamboo.Server.Core;
 using Bamboo.Server.Interface;
 using Bamboo.Server.Models;

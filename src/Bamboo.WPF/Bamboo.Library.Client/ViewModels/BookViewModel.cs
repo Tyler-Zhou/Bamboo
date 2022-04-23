@@ -305,7 +305,7 @@ namespace Bamboo.Library.Client.ViewModels
 
                 int? Status = SelectedIndex == 0 ? null : SelectedIndex == 2 ? 1 : 0;
 
-                var todoResult = await _BookService.GetAllFilterAsync(new BookParameter()
+                var returnResult = await _BookService.GetAllFilterAsync(new BookParameter()
                 {
                     PageIndex = 0,
                     PageSize = 100,
@@ -313,13 +313,16 @@ namespace Bamboo.Library.Client.ViewModels
                     Status = Status
                 });
 
-                if (todoResult.Status)
+                if (returnResult.Status)
                 {
                     BookDtos.Clear();
-                    foreach (var item in todoResult.Result.Items)
+                    foreach (var item in returnResult.Result.Items)
                     {
                         BookDtos.Add(item);
                     }
+                }else
+                {
+                    SendMessage(returnResult.Message);
                 }
             }
             finally
