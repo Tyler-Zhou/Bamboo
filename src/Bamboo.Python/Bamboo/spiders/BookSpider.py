@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 from datetime import datetime
+import string
 
 from scrapy import Spider
 from Bamboo.items import BookItem, ChapterItem
@@ -112,6 +113,14 @@ class BookSpider(Spider):
             item['sContent'] = chapter_content
             item['sLink'] = chapter_url
             self.logger.info('章节链接：%s', item['sLink'])
+
+            try:
+                iorderindex=int(item['sKey'])
+                item["iOrderIndex"] = iorderindex
+            except Exception as ex:
+                item["iOrderIndex"] = 0
+                self.logger.exception("Key转换Int失败%s", ex)
+
             item['tCreateDate'] = datetime.now()
             yield item
         except Exception as ex:

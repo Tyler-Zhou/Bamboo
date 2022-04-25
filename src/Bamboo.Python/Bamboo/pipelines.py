@@ -96,25 +96,20 @@ class MSSQLPipeline(object):
 
     def _process_chapter_item(self, item):
         try:
-            sql = "SELECT [iId] FROM [dbo].[tb_Book_Chapter] WHERE [sKey] ='%s'" % item["sKey"]
-            self.cur.execute(sql)
-            iid = self.cur.fetchone()
-            if iid is None or iid[0] <= 0:
-                sql = "BEGIN TRAN INSERT INTO [tb_Book_Chapter]" \
-                      "(sBookKey,sKey,sName,sContent,sLink,tCreateDate) VALUES " \
-                      "(%s,%s,%s,%s,%s,%s);COMMIT TRAN"
-                param = (
-                    item["sBookKey"],
-                    item["sKey"],
-                    item["sName"],
-                    item["sContent"],
-                    item["sLink"],
-                    item["tCreateDate"]
-                )
-                self.cur.execute(sql, param)  # 执行insert
-                self.logger.info("新增章节成功")
-            else:
-                self.logger.info("章节已存在 iId：%d", iid[0])
+            sql = "BEGIN TRAN INSERT INTO [tb_Book_Chapter]" \
+                  "(sBookKey,sKey,sName,sContent,sLink,tCreateDate,iOrderIndex) VALUES " \
+                  "(%s,%s,%s,%s,%s,%s,%d);COMMIT TRAN"
+            param = (
+                item["sBookKey"],
+                item["sKey"],
+                item["sName"],
+                item["sContent"],
+                item["sLink"],
+                item["tCreateDate"],
+                item["iOrderIndex"]
+            )
+            self.cur.execute(sql, param)  # 执行insert
+            self.logger.info("新增章节成功")
         except Exception as ex:
             self.conn.rollback()
             self.logger.exception("新增章节失败：%s", ex)

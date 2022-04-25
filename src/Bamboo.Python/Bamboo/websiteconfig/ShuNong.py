@@ -94,7 +94,7 @@ class ShuNong(BaseConfig):
            章节内容
         :return: 正则表达式
         """
-        return '<div class="bookcontent clearfix">(.*?)<br>[\\s]*<div class="gg"'
+        return '</strong>(.*?)<div'
         pass
 
     def chapter_name_xpath(self):
