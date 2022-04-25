@@ -43,7 +43,7 @@ namespace Bamboo.Library.Client.Service
             request.Route = $"{ApplicationConstant.BASE_SERVICE_NAME}/{_ServiceName}/GetAll?pageIndex={parameter.PageIndex}" +
                 $"&pageSize={parameter.PageSize}" +
                 $"&search={parameter.Search}" +
-                $"&bookkey={parameter.BookKey}";
+                $"&bookKey={parameter.BookKey}";
             return await _ClientService.ExecuteAsync<PagedList<ChapterDto>>(request);
         }
 

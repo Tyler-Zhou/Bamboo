@@ -109,6 +109,75 @@ namespace Bamboo.Library.Client.ViewModels
         }
         #endregion
 
+
+        public DelegateCommand FirstPageCommand { get; set; }
+
+
+        public DelegateCommand PreviousPageCommand { get; set; }
+
+
+        public DelegateCommand NextPageCommand { get; set; }
+
+
+        public DelegateCommand LastPageCommand { get; set; }
+
+        private int _pageSize;
+
+        public int PageSize
+        {
+            get
+            {
+                return _pageSize;
+            }
+            set
+            {
+                if (_pageSize != value)
+                {
+                    _pageSize = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private int _currentPage;
+
+        public int CurrentPage
+        {
+            get
+            {
+                return _currentPage;
+            }
+
+            set
+            {
+                if (_currentPage != value)
+                {
+                    _currentPage = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private int _totalPage;
+
+        public int TotalPage
+        {
+            get
+            {
+                return _totalPage;
+            }
+
+            set
+            {
+                if (_totalPage != value)
+                {
+                    _totalPage = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+
         #region 服务(Service)
         /// <summary>
         /// 章节服务
@@ -150,6 +219,13 @@ namespace Bamboo.Library.Client.ViewModels
             ExecuteCommand = new DelegateCommand<string>(Execute);
             SelectedCommand = new DelegateCommand<ChapterDto>(Selected);
             DeleteCommand = new DelegateCommand<ChapterDto>(Delete);
+
+            CurrentPage = 1;
+            PageSize = 20;
+            FirstPageCommand = new DelegateCommand(FirstPageAction);
+            PreviousPageCommand = new DelegateCommand(PreviousPageAction);
+            NextPageCommand = new DelegateCommand(NextPageAction);
+            LastPageCommand = new DelegateCommand(LastPageAction);
         }
         #endregion
 
@@ -265,6 +341,7 @@ namespace Bamboo.Library.Client.ViewModels
                             updateData.Name = CurrentDto.Name;
                             updateData.Content = CurrentDto.Content;
                             updateData.Link = CurrentDto.Link;
+                            updateData.OrderIndex = CurrentDto.OrderIndex;
                         }
                         else
                         {
@@ -307,8 +384,8 @@ namespace Bamboo.Library.Client.ViewModels
 
                 var returnResult = await _ChapterService.GetAllFilterAsync(new ChapterParameter()
                 {
-                    PageIndex = 0,
-                    PageSize = 20,
+                    PageIndex = CurrentPage -1,
+                    PageSize = PageSize,
                     Search = Search,
                     BookKey = ParentDto.Key,
                 });
@@ -316,6 +393,7 @@ namespace Bamboo.Library.Client.ViewModels
                 if (returnResult.Status)
                 {
                     ChapterDtos.Clear();
+                    TotalPage = returnResult.Result.TotalPages;
                     foreach (var item in returnResult.Result.Items)
                     {
                         ChapterDtos.Add(item);
@@ -330,6 +408,38 @@ namespace Bamboo.Library.Client.ViewModels
             {
                 UpdateLoading(false);
             }
+        }
+
+        private void FirstPageAction()
+        {
+            CurrentPage = 1;
+            GetDataAsync();
+        }
+
+        private void PreviousPageAction()
+        {
+            if (CurrentPage == 1)
+            {
+                return;
+            }
+            CurrentPage--;
+            GetDataAsync();
+        }
+
+        private void NextPageAction()
+        {
+            if (CurrentPage == TotalPage)
+            {
+                return;
+            }
+            CurrentPage++;
+            GetDataAsync();
+        }
+
+        private void LastPageAction()
+        {
+            CurrentPage = TotalPage;
+            GetDataAsync();
         }
         #endregion
     }

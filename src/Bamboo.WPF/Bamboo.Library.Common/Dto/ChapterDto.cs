@@ -79,7 +79,22 @@ namespace Bamboo.Library.Common.Dto
         {
             get { return _Link; }
             set { _Link = value; OnPropertyChanged(); }
-        } 
+        }
+        #endregion
+
+        #region 排序索引
+        /// <summary>
+        /// OrderIndex
+        /// </summary>
+        private int _OrderIndex = 0;
+        /// <summary>
+        /// 排序索引
+        /// </summary>
+        public int OrderIndex
+        {
+            get { return _OrderIndex; }
+            set { _OrderIndex = value; OnPropertyChanged(); }
+        }
         #endregion
     }
 }

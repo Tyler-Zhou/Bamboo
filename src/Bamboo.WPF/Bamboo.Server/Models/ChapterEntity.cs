@@ -57,5 +57,13 @@ namespace Bamboo.Server.Models
         [Required]
         [DefaultValue("")]
         public string Link { get; set; } = "";
+        /// <summary>
+        /// 排序索引
+        /// </summary>
+        [Column("iOrderIndex")]
+        [MaxLength(200)]
+        [Required]
+        [DefaultValue(0)]
+        public int OrderIndex { get; set; } = 0;
     }
 }

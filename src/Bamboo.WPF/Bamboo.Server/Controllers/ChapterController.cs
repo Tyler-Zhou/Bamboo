@@ -39,7 +39,7 @@ namespace Bamboo.Server.Controllers
         /// <param name="param">查询参数</param>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ServerResponse> GetAll([FromQuery] BookParameter param) => await _ChapterService.GetAllAsync(param);
+        public async Task<ServerResponse> GetAll([FromQuery] ChapterParameter param) => await _ChapterService.GetAllAsync(param);
         /// <summary>
         /// 添加章节
         /// </summary>

@@ -215,7 +215,11 @@ namespace Bamboo.Server.Core
 
             disposed = true;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootEntity"></param>
+        /// <param name="callback"></param>
         public void TrackGraph(object rootEntity, Action<EntityEntryGraphNode> callback)
         {
             _context.ChangeTracker.TrackGraph(rootEntity, callback);

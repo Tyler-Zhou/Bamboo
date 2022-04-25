@@ -19,7 +19,13 @@ namespace Bamboo.Server.Core
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
+        /// <summary>
+        /// 
+        /// </summary>
         protected readonly DbContext _dbContext;
+        /// <summary>
+        /// 
+        /// </summary>
         protected readonly DbSet<TEntity> _dbSet;
 
         /// <summary>
@@ -316,7 +322,7 @@ namespace Bamboo.Server.Core
 
             if (orderBy != null)
             {
-                return orderBy(query).Select(selector).ToPagedListAsync(pageIndex, pageSize, 0, cancellationToken);
+                return orderBy(query).AsQueryable().Select(selector).ToPagedListAsync(pageIndex, pageSize, 0, cancellationToken);
             }
             else
             {

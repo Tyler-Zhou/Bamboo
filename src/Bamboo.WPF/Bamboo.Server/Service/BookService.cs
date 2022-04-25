@@ -24,17 +24,14 @@ namespace Bamboo.Server.Service
         /// 
         /// </summary>
         private readonly IMapper _Mapper;
-        private readonly ILogService _LogService;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="unitOfWork"></param>
         /// <param name="mapper"></param>
-        /// <param name="logService"></param>
-        public BookService(IUnitOfWork unitOfWork, IMapper mapper, ILogService logService )
+        public BookService(IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _LogService = logService;
             _UnitOfWork = unitOfWork;
             _Mapper = mapper;
         }
@@ -56,7 +53,6 @@ namespace Bamboo.Server.Service
             }
             catch (Exception ex)
             {
-                _LogService.LogError(ex);
                 return new ServerResponse(ex.Message);
             }
         }

@@ -102,7 +102,7 @@ namespace Bamboo.Server.Service
                    x => string.IsNullOrWhiteSpace(parameter.Search) ? true : x.Name.Contains(parameter.Search),
                    pageIndex: parameter.PageIndex,
                    pageSize: parameter.PageSize,
-                   orderBy: source => source.OrderByDescending(t => t.CreateDate)
+                   orderBy: source => source.OrderBy(t => t.OrderIndex)
                    );
                 return new ServerResponse(true, todos);
             }
@@ -137,7 +137,8 @@ namespace Bamboo.Server.Service
                    && (x.BookKey.Equals(parameter.BookKey)),
                    pageIndex: parameter.PageIndex,
                    pageSize: parameter.PageSize,
-                   orderBy: source => source.OrderByDescending(t => t.CreateDate));
+                   orderBy: source => source.OrderBy(t => t.OrderIndex)
+                   );
                 return new ServerResponse(true, todos);
             }
             catch (Exception ex)

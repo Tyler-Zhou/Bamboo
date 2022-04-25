@@ -1,6 +1,5 @@
 ﻿using Bamboo.Server.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace Bamboo.Server.Context
 {
@@ -15,7 +14,9 @@ namespace Bamboo.Server.Context
         /// <param name="options"></param>
         public DefaultContext(DbContextOptions<DefaultContext> options) : base(options)
         {
+
         }
+
         /// <summary>
         /// 
         /// </summary>
