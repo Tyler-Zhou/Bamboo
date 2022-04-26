@@ -1,8 +1,10 @@
-﻿namespace Bamboo.TabControlRegion.ViewModels
+﻿using Prism.Regions;
+
+namespace Bamboo.TabControlRegion.ViewModels
 {
     public class ChapterViewModel : BaseViewModel
     {
-        public ChapterViewModel()
+        public ChapterViewModel(IRegionManager regionManager) : base(regionManager)
         {
             Title = "章节";
         }

@@ -49,7 +49,29 @@
                     编辑章节
                 </Button>
             </StackPanel>
-            <TabControl Grid.Column="1" prism:RegionManager.RegionName="TabControlRegion" />
+            <TabControl Grid.Column="1" prism:RegionManager.RegionName="TabControlRegion">
+                <TabControl.ItemTemplate>
+                    <DataTemplate>
+                        <DockPanel Width="Auto">
+                            <Button
+                                Width="15"
+                                Height="15"
+                                Margin="4,0,0,0"
+                                VerticalContentAlignment="Center"
+                                Command="{Binding DataContext.DataContext.CloseTabCommand, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                Content="X"
+                                Cursor="Hand"
+                                DockPanel.Dock="Right"
+                                Focusable="False"
+                                FontFamily="Courier"
+                                FontSize="10"
+                                FontWeight="Bold" />
+                            <ContentPresenter Content="{Binding DataContext.DataContext.Title, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" />
+                        </DockPanel>
+                    </DataTemplate>
+                </TabControl.ItemTemplate>
+            </TabControl>
         </Grid>
     </Grid>
 </Window>
