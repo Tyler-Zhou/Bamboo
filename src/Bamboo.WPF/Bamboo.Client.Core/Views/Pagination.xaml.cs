@@ -108,7 +108,7 @@ namespace Bamboo.Client.Core.Views
         /// <param name="e"></param>
         public static void OnTotalPageChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Pagination? p = d as Pagination;
+            Pagination p = d as Pagination;
 
             if (p != null)
             {
@@ -124,7 +124,7 @@ namespace Bamboo.Client.Core.Views
         /// <param name="e"></param>
         private static void OnCurrentPageChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            Pagination? p = d as Pagination;
+            Pagination p = d as Pagination;
 
             if (p != null)
             {

@@ -116,7 +116,7 @@ namespace Bamboo.Client.Core.Controls
         /// <param name="e"></param>
         private static void CheckProperty(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            NumTextBox? ntb = d as NumTextBox;
+            NumTextBox ntb = d as NumTextBox;
             if (ntb!=null && ntb.MaxValue < ntb.MinValue)
                 ntb.MaxValue = ntb.MinValue;
         }

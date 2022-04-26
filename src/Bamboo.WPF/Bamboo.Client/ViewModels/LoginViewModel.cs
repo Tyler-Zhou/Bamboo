@@ -17,11 +17,12 @@ namespace Bamboo.Client.ViewModels
     public class LoginViewModel : BindableBase, IDialogAware
     {
 
+        #region 成员(Member)
         #region 标题
         /// <summary>
         /// 标题
         /// </summary>
-        public string Title { get; set; } = "Bamboo"; 
+        public string Title { get; set; } = "Bamboo";
         #endregion
 
         #region 账号
@@ -34,9 +35,17 @@ namespace Bamboo.Client.ViewModels
         /// </summary>
         public string Account
         {
-            get { return _Account; }
+            get 
+            { 
+                if(string.IsNullOrWhiteSpace(_Account))
+                {
+                    _Account = ApplicationContext.Account;
+
+                }
+                return _Account; 
+            }
             set { _Account = value; RaisePropertyChanged(); }
-        } 
+        }
         #endregion
 
         #region 密码
@@ -51,7 +60,7 @@ namespace Bamboo.Client.ViewModels
         {
             get { return _Password; }
             set { _Password = value; RaisePropertyChanged(); }
-        } 
+        }
         #endregion
 
         #region 选择项索引
@@ -82,17 +91,17 @@ namespace Bamboo.Client.ViewModels
             get { return _ResgiterUser; }
             set { _ResgiterUser = value; RaisePropertyChanged(); }
         }
-
+        #endregion 
         #endregion
 
-        #region 命令
+        #region 命令(Command)
         /// <summary>
         /// 执行命令
         /// </summary>
         public DelegateCommand<string> ExecuteCommand { get; private set; }
         #endregion
 
-        #region Service
+        #region 服务(Service)
         /// <summary>
         /// 验证服务
         /// </summary>
@@ -105,10 +114,10 @@ namespace Bamboo.Client.ViewModels
         /// <summary>
         /// 请求关闭动作
         /// </summary>
-        public event Action<IDialogResult>? RequestClose; 
+        public event Action<IDialogResult>? RequestClose;
         #endregion
 
-        #region Constructor
+        #region 构造函数(Constructor)
         /// <summary>
         /// 登录视图模型
         /// </summary>
@@ -120,10 +129,10 @@ namespace Bamboo.Client.ViewModels
             ExecuteCommand = new DelegateCommand<string>(Execute);
             _AuthenticationService = authenticationService;
             _EventAggregator = eventAggregator;
-        } 
+        }
         #endregion
 
-        #region Method
+        #region 方法(Method)
 
         /// <summary>
         /// 
@@ -188,6 +197,7 @@ namespace Bamboo.Client.ViewModels
                     ApplicationContext.UserId = userDto.Id;
                     ApplicationContext.Account = userDto.Account;
                     ApplicationContext.UserName = userDto.UserName;
+                    Configure.Current.Add("Account", ApplicationContext.Account);
                     RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
                 }
                 else

@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Prism.Modularity;
+using Bamboo.Client.Core.Common;
 
 namespace Bamboo.Client
 {
@@ -83,6 +84,13 @@ namespace Bamboo.Client
         /// </summary>
         protected override void OnInitialized()
         {
+            #region 获取配置信息
+            ApplicationContext.Account = Configure.Current.GetValue("Account");
+            ApplicationContext.IsDarkTheme = Configure.Current.GetValue<bool>("IsDarkTheme", "True");
+            ApplicationContext.HueColor = Configure.Current.GetValue("HueColor", "#FF424242");
+            ApplicationContext.DefaultPageSize = Configure.Current.GetValue<int>("DefaultPageSize", "20");
+            #endregion
+
             var dialog = Container.Resolve<IDialogService>();
 
             dialog.ShowDialog("LoginView", callback =>
@@ -93,9 +101,15 @@ namespace Bamboo.Client
                     return;
                 }
 
+                
+
                 var service = Current.MainWindow.DataContext as IConfigureService;
                 if (service != null)
-                    service.Configure();
+                {
+                    service.ConfigureContent(); 
+                    service.ConfigureTheme();
+                    service.ConfigureHueColor();
+                }
                 base.OnInitialized();
             });
         }
@@ -124,9 +138,10 @@ namespace Bamboo.Client
                 .Register<ClientService>(made: Parameters.Of.Type<string>(serviceKey: "webUrl"));
             containerRegistry.GetContainer().RegisterInstance(@"http://localhost:5031/", serviceKey: "webUrl");
             //Service
+            containerRegistry.Register<IConfigureService, MainViewModel>();
+            containerRegistry.Register<INavigationService, MainViewModel>();
             containerRegistry.Register<IAuthenticationService, AuthenticationService>();
             containerRegistry.Register<IDialogHostService, DialogHostService>();
-            containerRegistry.Register<INavigationService, MainViewModel>();
 
             //View & ViewModel
             containerRegistry.RegisterForNavigation<MsgView, MsgViewModel>();
@@ -140,7 +155,6 @@ namespace Bamboo.Client
         #endregion
 
         #region 方法(Method)
-
 
         /// <summary>
         /// 注销

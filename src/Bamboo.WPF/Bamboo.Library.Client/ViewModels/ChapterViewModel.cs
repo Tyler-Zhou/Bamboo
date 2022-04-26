@@ -1,4 +1,5 @@
-﻿using Bamboo.Client.Core.Extensions;
+﻿using Bamboo.Client.Core.Common;
+using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.ViewModels;
 using Bamboo.Library.Client.Interface;
@@ -127,6 +128,8 @@ namespace Bamboo.Library.Client.ViewModels
         {
             get
             {
+                if (_pageSize <= 0)
+                    _pageSize = ApplicationContext.DefaultPageSize;
                 return _pageSize;
             }
             set
@@ -221,7 +224,6 @@ namespace Bamboo.Library.Client.ViewModels
             DeleteCommand = new DelegateCommand<ChapterDto>(Delete);
 
             CurrentPage = 1;
-            PageSize = 20;
             FirstPageCommand = new DelegateCommand(FirstPageAction);
             PreviousPageCommand = new DelegateCommand(PreviousPageAction);
             NextPageCommand = new DelegateCommand(NextPageAction);

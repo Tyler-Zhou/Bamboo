@@ -44,11 +44,10 @@
                         md:HintAssist.Hint="请输入链接"
                         DockPanel.Dock="Top"
                         Text="{Binding CurrentDto.Link}" />
-                    <numtex:NumTextBox
+                    <TextBox
                         Margin="20,5"
                         md:HintAssist.Hint="请输入排序索引"
                         DockPanel.Dock="Top"
-                        NumType="Int"
                         Text="{Binding CurrentDto.OrderIndex}" />
                     <TextBox
                         Height="200"

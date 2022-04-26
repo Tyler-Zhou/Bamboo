@@ -1,4 +1,5 @@
-﻿using Bamboo.Client.Core.Extensions;
+﻿using Bamboo.Client.Core.Common;
+using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.ViewModels;
 using Bamboo.Library.Client.Interface;
@@ -308,7 +309,7 @@ namespace Bamboo.Library.Client.ViewModels
                 var returnResult = await _BookService.GetAllFilterAsync(new BookParameter()
                 {
                     PageIndex = 0,
-                    PageSize = 100,
+                    PageSize =ApplicationContext.DefaultPageSize,
                     Search = Search,
                     Status = Status
                 });

@@ -3,12 +3,16 @@ using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Extensions;
 using Bamboo.Client.Interface;
 using Bamboo.Client.Models;
+using MaterialDesignColors;
+using MaterialDesignColors.ColorManipulation;
+using MaterialDesignThemes.Wpf;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
-using Prism.Services.Dialogs;
+using System;
 using System.Collections.ObjectModel;
+using System.Windows.Media;
 
 namespace Bamboo.Client.ViewModels
 {
@@ -51,6 +55,8 @@ namespace Bamboo.Client.ViewModels
         }
         #endregion
 
+        
+
         #region 服务(Service)
         /// <summary>
         /// 容器提供服务
@@ -64,6 +70,10 @@ namespace Bamboo.Client.ViewModels
         /// 区域导航日志服务
         /// </summary>
         private IRegionNavigationJournal? _NavigationJournal;
+        /// <summary>
+        /// 调色板帮助类
+        /// </summary>
+        private readonly PaletteHelper paletteHelper = new PaletteHelper();
         #endregion
 
         #region 命令(Command)
@@ -111,13 +121,47 @@ namespace Bamboo.Client.ViewModels
         /// <summary>
         /// 配置主窗体内容项
         /// </summary>
-        public void Configure()
+        public void ConfigureContent()
         {
             UserName = ApplicationContext.UserName;
             CreateMenuBar();
             _RegionManager?.Regions[PrismManager.MainViewRegionName].RequestNavigate("IndexView");
 
         }
+
+        /// <summary>
+        /// 配置主题
+        /// </summary>
+        public void ConfigureTheme()
+        {
+            ModifyTheme(theme => theme.SetBaseTheme(ApplicationContext.IsDarkTheme ? Theme.Dark : Theme.Light));
+        }
+
+        /// <summary>
+        /// 修改主题
+        /// </summary>
+        /// <param name="modificationAction"></param>
+        private void ModifyTheme(Action<ITheme> modificationAction)
+        {
+            var paletteHelper = new PaletteHelper();
+            ITheme theme = paletteHelper.GetTheme();
+            modificationAction?.Invoke(theme);
+            paletteHelper.SetTheme(theme);
+        }
+
+        /// <summary>
+        /// 配置画板颜色
+        /// </summary>
+        public void ConfigureHueColor()
+        {
+            Color hue = (Color)ColorConverter.ConvertFromString(ApplicationContext.HueColor);
+            ITheme theme = paletteHelper.GetTheme();
+            theme.PrimaryLight = new ColorPair(hue.Lighten());
+            theme.PrimaryMid = new ColorPair(hue);
+            theme.PrimaryDark = new ColorPair(hue.Darken());
+            paletteHelper.SetTheme(theme);
+        }
+
         /// <summary>
         /// 导航到视图
         /// </summary>
