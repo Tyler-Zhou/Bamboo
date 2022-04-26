@@ -16,6 +16,7 @@ using System.Windows;
 using System.Windows.Threading;
 using Prism.Modularity;
 using Bamboo.Client.Core.Common;
+using System.Threading;
 
 namespace Bamboo.Client
 {
@@ -24,6 +25,13 @@ namespace Bamboo.Client
     /// </summary>
     public partial class App : PrismApplication
     {
+        #region 成员(Member)
+        /// <summary>
+        /// 
+        /// </summary>
+        Mutex mutex; 
+        #endregion
+
         #region 服务(Service)
         /// <summary>
         /// 日志服务
@@ -69,6 +77,10 @@ namespace Bamboo.Client
         /// <returns></returns>
         protected override Window CreateShell()
         {
+            bool createNew;
+            mutex = new Mutex(true, "Bamboo", out createNew);
+            if (!createNew)
+                Environment.Exit(0);
             //UI线程未捕获异常处理事件
             DispatcherUnhandledException += OnDispatcherUnhandledException;
             //Task线程内未捕获异常处理事件
