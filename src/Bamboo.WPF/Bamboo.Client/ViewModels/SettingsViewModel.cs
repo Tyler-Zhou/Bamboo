@@ -35,7 +35,7 @@ namespace Bamboo.Client.ViewModels
         /// <summary>
         /// 区域管理器
         /// </summary>
-        private readonly IRegionManager _RegionManager; 
+        private readonly IRegionManager _RegionManager;
         #endregion
 
         #region 命令
@@ -79,7 +79,7 @@ namespace Bamboo.Client.ViewModels
             MenuBars.Add(new MenuBar() { Icon = "Palette", Title = "个性化", NameSpace = "SkinView" });
             MenuBars.Add(new MenuBar() { Icon = "Cog", Title = "系统设置", NameSpace = "" });
             MenuBars.Add(new MenuBar() { Icon = "Information", Title = "关于更多", NameSpace = "AboutView" });
-        } 
+        }
         #endregion
     }
 }

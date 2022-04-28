@@ -14,7 +14,7 @@ namespace Bamboo.Library.Client.Views
         public ChapterView()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
     }
 }

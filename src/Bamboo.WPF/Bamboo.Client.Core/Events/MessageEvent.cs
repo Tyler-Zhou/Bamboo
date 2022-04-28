@@ -1,4 +1,4 @@
-﻿using Bamboo.Client.Core.Model;
+﻿using Bamboo.Client.Core.Models;
 using Prism.Events;
 
 namespace Bamboo.Client.Core.Events

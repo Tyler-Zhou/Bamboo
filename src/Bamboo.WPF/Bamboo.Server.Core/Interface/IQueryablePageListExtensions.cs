@@ -1,4 +1,4 @@
-﻿using Bamboo.Common;
+﻿using Bamboo.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;

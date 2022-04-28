@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.16">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bamboo.Server.Common\Bamboo.Server.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Core\Bamboo.Server.Core.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Interface\Bamboo.Server.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

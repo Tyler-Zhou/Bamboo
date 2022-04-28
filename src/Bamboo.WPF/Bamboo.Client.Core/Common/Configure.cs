@@ -14,7 +14,7 @@ namespace Bamboo.Client.Core.Common
     public class Configure
     {
         #region 成员(Member)
-        
+
         #region 文件名
         /// <summary>
         /// FileName
@@ -73,7 +73,7 @@ namespace Bamboo.Client.Core.Common
             {
                 return Path.Combine(FileDirectory, FileName);
             }
-        } 
+        }
         #endregion
 
         #region 配置文件词典
@@ -157,7 +157,7 @@ namespace Bamboo.Client.Core.Common
         /// <param name="key">名称</param>
         /// <param name="defaultValue">默认值</param>
         /// <returns>对应的值,不存在则返回null</returns>
-        public string GetValue(string key,string defaultValue="")
+        public string GetValue(string key, string defaultValue = "")
         {
             string value = GetValue<string>(key);
             if (string.IsNullOrWhiteSpace(value) && !string.IsNullOrEmpty(defaultValue))
@@ -173,7 +173,7 @@ namespace Bamboo.Client.Core.Common
         /// <returns>对应的值,不存在则返回null</returns>
         public T GetValue<T>(string key, string defaultValue = "")
         {
-            return (T)GetValue(key, typeof(T),defaultValue);
+            return (T)GetValue(key, typeof(T), defaultValue);
         }
 
         /// <summary>
@@ -284,18 +284,19 @@ namespace Bamboo.Client.Core.Common
         /// <returns></returns>
         private object GetValue(string key, Type type, string defaultValue = "")
         {
-            if(configDic.ContainsKey(key))
+            if (configDic.ContainsKey(key))
             {
                 if (TryGetValueInternal(configDic[key], type, out var value))
                     return value;
                 throw new InvalidCastException($"Unable to convert the value of Type '{configDic[key].GetType().FullName}' to '{type.FullName}' for the key '{key}' ");
             }
-            else if(!string.IsNullOrWhiteSpace(defaultValue))
+            else if (!string.IsNullOrWhiteSpace(defaultValue))
             {
                 if (TryGetValueInternal(defaultValue, type, out var value))
                     return value;
                 throw new InvalidCastException($"Unable to convert the value of Type '{defaultValue.GetType().FullName}' to '{type.FullName}' for the key '{key}' ");
-            }else
+            }
+            else
                 return GetDefault(type);
         }
         /// <summary>

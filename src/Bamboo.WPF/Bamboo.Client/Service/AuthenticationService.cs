@@ -1,7 +1,7 @@
 ﻿using Bamboo.Client.Core.Common;
 using Bamboo.Client.Core.Models;
 using Bamboo.Client.Interface;
-using Bamboo.Common;
+using Bamboo.Entities;
 using System.Threading.Tasks;
 
 namespace Bamboo.Client.Service

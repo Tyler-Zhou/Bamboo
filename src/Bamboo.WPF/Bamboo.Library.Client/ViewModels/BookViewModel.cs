@@ -3,8 +3,7 @@ using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.ViewModels;
 using Bamboo.Library.Client.Interface;
-using Bamboo.Library.Common.Dto;
-using Bamboo.Library.Common.Parameter;
+using Bamboo.Library.Entities;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
@@ -156,7 +155,7 @@ namespace Bamboo.Library.Client.ViewModels
             else
                 SelectedIndex = 0;
             GetDataAsync();
-        } 
+        }
         #endregion
 
         #region 方法(Method)
@@ -309,7 +308,7 @@ namespace Bamboo.Library.Client.ViewModels
                 var returnResult = await _BookService.GetAllFilterAsync(new BookParameter()
                 {
                     PageIndex = 0,
-                    PageSize =ApplicationContext.DefaultPageSize,
+                    PageSize = ApplicationContext.DefaultPageSize,
                     Search = Search,
                     Status = Status
                 });
@@ -321,7 +320,8 @@ namespace Bamboo.Library.Client.ViewModels
                     {
                         BookDtos.Add(item);
                     }
-                }else
+                }
+                else
                 {
                     SendMessage(returnResult.Message);
                 }
@@ -330,7 +330,7 @@ namespace Bamboo.Library.Client.ViewModels
             {
                 UpdateLoading(false);
             }
-        } 
+        }
         #endregion
     }
 }

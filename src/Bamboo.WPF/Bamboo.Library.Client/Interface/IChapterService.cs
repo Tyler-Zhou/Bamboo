@@ -1,7 +1,7 @@
 ﻿using Bamboo.Client.Core.Interface;
-using Bamboo.Common;
-using Bamboo.Library.Common.Dto;
-using Bamboo.Library.Common.Parameter;
+using Bamboo.Client.Core.Models;
+using Bamboo.Entities;
+using Bamboo.Library.Entities;
 using System.Threading.Tasks;
 
 namespace Bamboo.Library.Client.Interface

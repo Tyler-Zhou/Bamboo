@@ -2,7 +2,7 @@
 using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Helper;
 using Bamboo.Client.Interface;
-using Bamboo.Common;
+using Bamboo.Entities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -35,14 +35,14 @@ namespace Bamboo.Client.ViewModels
         /// </summary>
         public string Account
         {
-            get 
-            { 
-                if(string.IsNullOrWhiteSpace(_Account))
+            get
+            {
+                if (string.IsNullOrWhiteSpace(_Account))
                 {
                     _Account = ApplicationContext.Account;
 
                 }
-                return _Account; 
+                return _Account;
             }
             set { _Account = value; RaisePropertyChanged(); }
         }
@@ -114,7 +114,7 @@ namespace Bamboo.Client.ViewModels
         /// <summary>
         /// 请求关闭动作
         /// </summary>
-        public event Action<IDialogResult>? RequestClose;
+        public event Action<IDialogResult> RequestClose;
         #endregion
 
         #region 构造函数(Constructor)

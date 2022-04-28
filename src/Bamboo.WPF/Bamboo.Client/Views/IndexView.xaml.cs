@@ -14,7 +14,7 @@ namespace Bamboo.Client.Views
         public IndexView()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
     }
 }

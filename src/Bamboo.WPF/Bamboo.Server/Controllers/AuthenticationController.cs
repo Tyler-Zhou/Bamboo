@@ -1,6 +1,6 @@
-﻿using Bamboo.Common;
+﻿using Bamboo.Entities;
+using Bamboo.Server.Entities;
 using Bamboo.Server.Interface;
-using Bamboo.Server.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

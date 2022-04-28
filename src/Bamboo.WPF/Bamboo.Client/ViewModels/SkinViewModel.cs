@@ -23,7 +23,7 @@ namespace Bamboo.Client.ViewModels
         /// </summary>
         public bool IsDarkTheme
         {
-            get 
+            get
             {
                 _isDarkTheme = ApplicationContext.IsDarkTheme;
                 return _isDarkTheme;
@@ -33,7 +33,7 @@ namespace Bamboo.Client.ViewModels
                 if (SetProperty(ref _isDarkTheme, value))
                 {
                     ApplicationContext.IsDarkTheme = value;
-                    Configure.Current.Add("IsDarkTheme",ApplicationContext.IsDarkTheme);
+                    Configure.Current.Add("IsDarkTheme", ApplicationContext.IsDarkTheme);
                     _ConfigureService.ConfigureTheme();
                 }
             }
@@ -58,7 +58,7 @@ namespace Bamboo.Client.ViewModels
         /// <summary>
         /// 更改色调
         /// </summary>
-        public DelegateCommand<object> ChangeHueCommand { get; private set; } 
+        public DelegateCommand<object> ChangeHueCommand { get; private set; }
         #endregion
 
         #region 构造函数(Constructor)
@@ -84,7 +84,7 @@ namespace Bamboo.Client.ViewModels
             ApplicationContext.HueColor = hue.ToString();
             Configure.Current.Add("HueColor", ApplicationContext.HueColor);
             _ConfigureService.ConfigureHueColor();
-        } 
+        }
         #endregion
 
     }

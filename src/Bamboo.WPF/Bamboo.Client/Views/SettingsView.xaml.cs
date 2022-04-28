@@ -14,7 +14,7 @@ namespace Bamboo.Client.Views
         public SettingsView()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
     }
 }

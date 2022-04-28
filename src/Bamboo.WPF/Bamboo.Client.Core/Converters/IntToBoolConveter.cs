@@ -36,7 +36,7 @@ namespace Bamboo.Client.Core.Converters
         /// <returns></returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value!=null&&bool.TryParse(value.ToString(), out bool result))
+            if (value != null && bool.TryParse(value.ToString(), out bool result))
             {
                 if (result)
                     return 1;

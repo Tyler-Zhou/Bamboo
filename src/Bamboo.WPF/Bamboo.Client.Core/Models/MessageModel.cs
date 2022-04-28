@@ -1,4 +1,4 @@
-﻿namespace Bamboo.Client.Core.Model
+﻿namespace Bamboo.Client.Core.Models
 {
     /// <summary>
     /// 消息模型

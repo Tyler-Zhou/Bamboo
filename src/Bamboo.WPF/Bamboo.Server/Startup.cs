@@ -1,8 +1,8 @@
 using AutoMapper;
 using Bamboo.Server.Context;
 using Bamboo.Server.Core;
+using Bamboo.Server.Entities;
 using Bamboo.Server.Interface;
-using Bamboo.Server.Models;
 using Bamboo.Server.Repository;
 using Bamboo.Server.Service;
 using Bamboo.Server.Swagger;
@@ -54,7 +54,7 @@ namespace Bamboo.Server
             .AddCustomRepository<ChapterEntity, ChapterRepository>()
             ;
 
-          
+
             /*
              * AddTransient瞬时模式：每次请求，都获取一个新的实例。即使同一个请求获取多次也会是不同的实例
              * AddScoped：每次请求，都获取一个新的实例。同一个请求获取多次会得到相同的实例
@@ -83,7 +83,7 @@ namespace Bamboo.Server
                 });
 
                 //启用注释功能
-                var dirs = Directory.GetFiles(AppContext.BaseDirectory, "Bamboo.*.xml").Where(item=> (new FileInfo(item).Attributes & FileAttributes.Hidden) == 0).ToArray();
+                var dirs = Directory.GetFiles(AppContext.BaseDirectory, "Bamboo.*.xml").Where(item => (new FileInfo(item).Attributes & FileAttributes.Hidden) == 0).ToArray();
                 foreach (var item in dirs)
                 {
                     c.IncludeXmlComments(item);

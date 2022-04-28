@@ -1,5 +1,5 @@
-﻿using Bamboo.Common;
-using Bamboo.Common.Parameter;
+﻿using Bamboo.Client.Core.Models;
+using Bamboo.Entities;
 using System.Threading.Tasks;
 
 namespace Bamboo.Client.Core.Interface

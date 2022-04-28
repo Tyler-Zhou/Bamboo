@@ -32,14 +32,14 @@ namespace Bamboo.Client.ViewModels
             _Homepages = new ObservableCollection<Homepage>();
             CreateHomepages();
         }
-        
+
         /// <summary>
         /// 添加相关主页列表
         /// </summary>
         void CreateHomepages()
         {
-            Homepages.Add(new Homepage() { Text = "Github:", Link= "https://github.com/HenJigg/MyToDoApp" });
-            Homepages.Add(new Homepage() { Text = "bilibili:", Link= "https://www.bilibili.com/video/BV1nY411a7T8" });
+            Homepages.Add(new Homepage() { Text = "Github:", Link = "https://github.com/HenJigg/MyToDoApp" });
+            Homepages.Add(new Homepage() { Text = "bilibili:", Link = "https://www.bilibili.com/video/BV1nY411a7T8" });
         }
 
     }

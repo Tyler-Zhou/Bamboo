@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Bamboo.Server.Core
 {
-    
+
 
     /// <summary>
     /// Defines the interface(s) for generic unit of work.

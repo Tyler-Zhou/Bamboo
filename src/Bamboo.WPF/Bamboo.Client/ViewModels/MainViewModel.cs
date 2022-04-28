@@ -19,7 +19,7 @@ namespace Bamboo.Client.ViewModels
     /// <summary>
     /// 主窗体视图模型
     /// </summary>
-    public class MainViewModel : BindableBase, IConfigureService,INavigationService
+    public class MainViewModel : BindableBase, IConfigureService, INavigationService
     {
         #region 用户名
         /// <summary>
@@ -55,21 +55,21 @@ namespace Bamboo.Client.ViewModels
         }
         #endregion
 
-        
+
 
         #region 服务(Service)
         /// <summary>
         /// 容器提供服务
         /// </summary>
-        private readonly IContainerProvider? _ContainerProvider;
+        private readonly IContainerProvider _ContainerProvider;
         /// <summary>
         /// 区域管理器
         /// </summary>
-        private readonly IRegionManager? _RegionManager;
+        private readonly IRegionManager _RegionManager;
         /// <summary>
         /// 区域导航日志服务
         /// </summary>
-        private IRegionNavigationJournal? _NavigationJournal;
+        private IRegionNavigationJournal _NavigationJournal;
         /// <summary>
         /// 调色板帮助类
         /// </summary>
@@ -169,7 +169,7 @@ namespace Bamboo.Client.ViewModels
         /// <param name="navigationParams">导航参数</param>
         public void NavigationToView(string viewName, NavigationParameters navigationParams)
         {
-            Navigate(new MenuBar {NameSpace=viewName,NavigationParams = navigationParams });
+            Navigate(new MenuBar { NameSpace = viewName, NavigationParams = navigationParams });
         }
         /// <summary>
         /// 导航

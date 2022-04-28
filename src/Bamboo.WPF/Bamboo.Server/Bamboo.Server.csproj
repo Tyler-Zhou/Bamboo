@@ -25,9 +25,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bamboo.Common\Bamboo.Common.csproj" />
-    <ProjectReference Include="..\Bamboo.Library.Common\Bamboo.Library.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Entities\Bamboo.Entities.csproj" />
     <ProjectReference Include="..\Bamboo.Server.Core\Bamboo.Server.Core.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Data\Bamboo.Server.Data.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Entities\Bamboo.Server.Entities.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Interface\Bamboo.Server.Interface.csproj" />
+    <ProjectReference Include="..\Bamboo.Server.Service\Bamboo.Server.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="NLog.config">

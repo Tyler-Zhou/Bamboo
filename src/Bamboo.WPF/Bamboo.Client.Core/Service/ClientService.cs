@@ -1,6 +1,5 @@
 ﻿using Bamboo.Client.Core.Helper;
 using Bamboo.Client.Core.Models;
-using Bamboo.Common;
 using RestSharp;
 using System;
 using System.Threading.Tasks;

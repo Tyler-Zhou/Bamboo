@@ -1,10 +1,9 @@
 ﻿using Bamboo.Client.Core.Common;
 using Bamboo.Client.Core.Models;
 using Bamboo.Client.Service;
-using Bamboo.Common;
+using Bamboo.Entities;
 using Bamboo.Library.Client.Interface;
-using Bamboo.Library.Common.Dto;
-using Bamboo.Library.Common.Parameter;
+using Bamboo.Library.Entities;
 using System.Threading.Tasks;
 
 namespace Bamboo.Library.Client.Service

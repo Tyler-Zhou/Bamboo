@@ -14,7 +14,7 @@ namespace Bamboo.Client.Views
         /// <summary>
         /// 日志服务
         /// </summary>
-        ILogger? _Logger;
+        ILogger _Logger;
         #endregion
 
         #region 构造函数(Constructor)
@@ -33,7 +33,7 @@ namespace Bamboo.Client.Views
                 _Logger.LogInformation(arg.Message);
                 LoginSnakeBar?.MessageQueue?.Enqueue(arg.Message);
             }, "Login");
-        } 
+        }
         #endregion
     }
 }

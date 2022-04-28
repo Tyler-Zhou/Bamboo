@@ -47,20 +47,20 @@ namespace Bamboo.Client.Core.Controls
         /// <summary>
         /// 
         /// </summary>
-        public enum Type 
-        { 
+        public enum Type
+        {
             /// <summary>
             /// 
             /// </summary>
-            Decimal, 
+            Decimal,
             /// <summary>
             /// 
             /// </summary>
-            UDecimal, 
+            UDecimal,
             /// <summary>
             /// 
             /// </summary>
-            Int, 
+            Int,
             /// <summary>
             /// 
             /// </summary>
@@ -117,7 +117,7 @@ namespace Bamboo.Client.Core.Controls
         private static void CheckProperty(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             NumTextBox ntb = d as NumTextBox;
-            if (ntb!=null && ntb.MaxValue < ntb.MinValue)
+            if (ntb != null && ntb.MaxValue < ntb.MinValue)
                 ntb.MaxValue = ntb.MinValue;
         }
         /// <summary>

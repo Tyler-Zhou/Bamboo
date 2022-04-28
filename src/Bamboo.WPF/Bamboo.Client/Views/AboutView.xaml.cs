@@ -33,7 +33,7 @@ namespace Bamboo.Client.Views
             catch
             {
             }
-        } 
+        }
         #endregion
     }
 }

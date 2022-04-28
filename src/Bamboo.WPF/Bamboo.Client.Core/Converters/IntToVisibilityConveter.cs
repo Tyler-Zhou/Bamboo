@@ -20,7 +20,7 @@ namespace Bamboo.Client.Core.Converters
         /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value != null&&int.TryParse(value.ToString(), out int result))
+            if (value != null && int.TryParse(value.ToString(), out int result))
             {
                 if (result == 0)
                     return Visibility.Visible;

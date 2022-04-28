@@ -1,6 +1,5 @@
 ﻿using Bamboo.Client.Core.Events;
 using Bamboo.Client.Core.Interface;
-using Bamboo.Client.Core.Model;
 using Bamboo.Client.Core.Models;
 using Prism.Events;
 using Prism.Services.Dialogs;

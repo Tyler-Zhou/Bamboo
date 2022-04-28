@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWPF>true</UseWPF>
     <AssemblyName>Bamboo</AssemblyName>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
@@ -27,7 +27,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bamboo.Client.Core\Bamboo.Client.Core.csproj" />
-    <ProjectReference Include="..\Bamboo.Common\Bamboo.Common.csproj" />
+    <ProjectReference Include="..\Bamboo.Entities\Bamboo.Entities.csproj" />
     <ProjectReference Include="..\Bamboo.Resource\Bamboo.Resource.csproj" />
   </ItemGroup>
 

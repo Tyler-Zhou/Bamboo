@@ -89,7 +89,7 @@ namespace Bamboo.Client.Core.ViewModels
             {
                 IsOpen = IsOpen
             });
-        } 
+        }
         /// <summary>
         /// 发送消息
         /// </summary>

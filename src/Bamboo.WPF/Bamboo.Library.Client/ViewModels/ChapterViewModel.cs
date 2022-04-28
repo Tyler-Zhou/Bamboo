@@ -3,8 +3,7 @@ using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.ViewModels;
 using Bamboo.Library.Client.Interface;
-using Bamboo.Library.Common.Dto;
-using Bamboo.Library.Common.Parameter;
+using Bamboo.Library.Entities;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
@@ -386,7 +385,7 @@ namespace Bamboo.Library.Client.ViewModels
 
                 var returnResult = await _ChapterService.GetAllFilterAsync(new ChapterParameter()
                 {
-                    PageIndex = CurrentPage -1,
+                    PageIndex = CurrentPage - 1,
                     PageSize = PageSize,
                     Search = Search,
                     BookKey = ParentDto.Key,

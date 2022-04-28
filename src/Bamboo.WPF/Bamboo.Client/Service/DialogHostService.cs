@@ -14,7 +14,10 @@ namespace Bamboo.Client.Service
     /// </summary>
     public class DialogHostService : DialogService, IDialogHostService
     {
-        private readonly IContainerExtension? _ContainerExtension;
+        /// <summary>
+        /// 
+        /// </summary>
+        private readonly IContainerExtension _ContainerExtension;
         /// <summary>
         /// 
         /// </summary>
@@ -61,9 +64,9 @@ namespace Bamboo.Client.Service
                 }
                 eventArgs.Session.UpdateContent(content);
             };
-            IDialogResult? result= (IDialogResult?)await DialogHost.Show(dialogContent, viewModel.DialogHostName, eventHandler);
-            if(result==null)
-                result=new DialogResult(ButtonResult.Cancel);
+            IDialogResult result = (IDialogResult)await DialogHost.Show(dialogContent, viewModel.DialogHostName, eventHandler);
+            if (result == null)
+                result = new DialogResult(ButtonResult.Cancel);
             return result;
         }
     }

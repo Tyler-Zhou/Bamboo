@@ -16,7 +16,7 @@ namespace Bamboo.Client.Views
         /// <summary>
         /// 日志服务
         /// </summary>
-        ILogger? _Logger; 
+        ILogger _Logger;
         /// <summary>
         /// 对话框主机服务
         /// </summary>
@@ -92,7 +92,7 @@ namespace Bamboo.Client.Views
                   MenuBarDrawerHost.IsLeftDrawerOpen = false;
               };
 
-        } 
+        }
         #endregion
     }
 }

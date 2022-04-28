@@ -1,22 +1,22 @@
-﻿using Bamboo.Client.Interface;
+﻿using Bamboo.Client.Core.Common;
+using Bamboo.Client.Core.Helper;
+using Bamboo.Client.Core.Interface;
+using Bamboo.Client.Interface;
 using Bamboo.Client.Service;
 using Bamboo.Client.ViewModels;
 using Bamboo.Client.Views;
-using Bamboo.Client.Core.Helper;
-using Bamboo.Client.Core.Interface;
 using DryIoc;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Services.Dialogs;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
-using Prism.Modularity;
-using Bamboo.Client.Core.Common;
-using System.Threading;
 
 namespace Bamboo.Client
 {
@@ -29,14 +29,14 @@ namespace Bamboo.Client
         /// <summary>
         /// 
         /// </summary>
-        Mutex mutex; 
+        Mutex mutex;
         #endregion
 
         #region 服务(Service)
         /// <summary>
         /// 日志服务
         /// </summary>
-        ILogger? _Logger; 
+        ILogger _Logger;
         #endregion
 
         #region 事件(Event)
@@ -52,7 +52,7 @@ namespace Bamboo.Client
         /// <summary>
         /// 未观察到的任务异常
         /// </summary>
-        private void OnUnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
+        private void OnUnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
             _Logger.LogCritical($"{ e.Exception.StackTrace },{ e.Exception.Message }");
         }
@@ -61,7 +61,7 @@ namespace Bamboo.Client
         /// </summary>
         private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Exception? ex = e.ExceptionObject as Exception;
+            Exception ex = e.ExceptionObject as Exception;
             if (ex != null)
                 _Logger.LogCritical($"{ ex.StackTrace },{ ex.Message }");
 
@@ -113,12 +113,12 @@ namespace Bamboo.Client
                     return;
                 }
 
-                
+
 
                 var service = Current.MainWindow.DataContext as IConfigureService;
                 if (service != null)
                 {
-                    service.ConfigureContent(); 
+                    service.ConfigureContent();
                     service.ConfigureTheme();
                     service.ConfigureHueColor();
                 }
@@ -189,7 +189,7 @@ namespace Bamboo.Client
                 Current.MainWindow.Show();
             });
         }
-        
+
         #endregion
     }
 }

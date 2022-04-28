@@ -1,7 +1,6 @@
-﻿using Bamboo.Library.Common.Dto;
-using Bamboo.Library.Common.Parameter;
+﻿using Bamboo.Library.Entities;
+using Bamboo.Server.Entities;
 using Bamboo.Server.Interface;
-using Bamboo.Server.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

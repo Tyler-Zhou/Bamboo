@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Bamboo.Common;
-using Bamboo.Library.Common.Dto;
-using Bamboo.Server.Models;
+using Bamboo.Entities;
+using Bamboo.Library.Entities;
+using Bamboo.Server.Entities;
 
 namespace Bamboo.Server
 {

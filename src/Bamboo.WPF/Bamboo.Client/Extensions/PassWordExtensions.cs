@@ -66,15 +66,15 @@ namespace Bamboo.Client.Extensions
         /// <param name="e"></param>
         private void AssociatedObject_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            PasswordBox? passwordBox = sender as PasswordBox;
-            if(passwordBox!=null)
+            PasswordBox passwordBox = sender as PasswordBox;
+            if (passwordBox != null)
             {
                 string password = PassWordExtensions.GetPassWord(passwordBox);
                 if (passwordBox.Password != password)
                     PassWordExtensions.SetPassWord(passwordBox, passwordBox.Password);
             }
 
-            
+
         }
         /// <summary>
         /// 

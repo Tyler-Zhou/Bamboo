@@ -102,7 +102,7 @@ namespace Bamboo.Client.ViewModels
 
             if (parameters.ContainsKey("Content"))
                 Content = parameters.GetValue<string>("Content");
-        } 
+        }
         #endregion
     }
 }

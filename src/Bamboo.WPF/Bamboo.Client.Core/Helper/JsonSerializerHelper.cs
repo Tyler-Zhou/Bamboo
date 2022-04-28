@@ -15,7 +15,7 @@ namespace Bamboo.Client.Core.Helper
         /// <returns></returns>
         public static string SerializeObject(object value)
         {
-            return JsonConvert.SerializeObject(value,Formatting.Indented);
+            return JsonConvert.SerializeObject(value, Formatting.Indented);
         }
         /// <summary>
         /// 反序列化
@@ -28,7 +28,7 @@ namespace Bamboo.Client.Core.Helper
             T result;
             try
             {
-                result = JsonConvert.DeserializeObject<T>(value,new JsonSerializerSettings { Formatting = Formatting.Indented});
+                result = JsonConvert.DeserializeObject<T>(value, new JsonSerializerSettings { Formatting = Formatting.Indented });
                 if (result == null)
                     throw new Exception("结果为Null");
             }
