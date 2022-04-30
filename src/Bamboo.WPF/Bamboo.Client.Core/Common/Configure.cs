@@ -19,7 +19,7 @@ namespace Bamboo.Client.Core.Common
         /// <summary>
         /// FileName
         /// </summary>
-        string _FileName = "Config.json";
+        string _FileName = "Bamboo.config.json";
         /// <summary>
         /// 文件名
         /// </summary>

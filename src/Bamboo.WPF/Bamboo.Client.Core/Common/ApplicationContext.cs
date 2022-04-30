@@ -29,6 +29,10 @@
         /// 默认每页记录大小
         /// </summary>
         public static int DefaultPageSize { get; set; }
+        /// <summary>
+        /// 基本服务链接
+        /// </summary>
+        public static string BaseServiceUrl { get; set; }
 
     }
 }

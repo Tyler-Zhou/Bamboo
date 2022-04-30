@@ -40,7 +40,10 @@ class ChapterExistFilter(BaseDupeFilter):
                                     , user=self.db_user, password=self.db_password,
                                     database=self.db_name, charset='utf8', autocommit=True)
         self.cur = self.conn.cursor()
-        sql = "SELECT [iId] FROM [dbo].[tb_Book_Chapter] WHERE [sLink] ='%s'" % request.url
+        keys = request.url.split('/')
+        bookkey = keys[-2]
+        chapterkey = keys[-1].replace('.html', '')
+        sql = "SELECT [iId] FROM [dbo].[tb_Book_Chapter] WHERE [sBookKey] ='%s' AND [sKey] = '%s'" %(bookkey, chapterkey)
         self.cur.execute(sql)
         iid = self.cur.fetchone()
         self.cur.close()

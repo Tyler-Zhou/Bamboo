@@ -113,7 +113,7 @@
                 </StackPanel>
                 <!--  Row 1 有数据时显示  -->
                 <ScrollViewer Grid.Row="1">
-                    <ItemsControl HorizontalAlignment="Left" ItemsSource="{Binding ChapterDtos}">
+                    <ItemsControl HorizontalAlignment="Center" ItemsSource="{Binding ChapterDtos}">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel />
@@ -123,7 +123,7 @@
                             <DataTemplate>
                                 <md:TransitioningContent OpeningEffect="{md:TransitionEffect Kind=ExpandIn}">
                                     <Grid
-                                        Width="400"
+                                        Width="600"
                                         Height="30"
                                         Margin="8">
                                         <behavior:Interaction.Triggers>

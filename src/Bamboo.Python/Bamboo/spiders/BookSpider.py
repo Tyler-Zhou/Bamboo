@@ -115,7 +115,7 @@ class BookSpider(Spider):
             self.logger.info('章节链接：%s', item['sLink'])
 
             try:
-                iorderindex=int(item['sKey'])
+                iorderindex = int(item['sKey'])
                 item["iOrderIndex"] = iorderindex
             except Exception as ex:
                 item["iOrderIndex"] = 0

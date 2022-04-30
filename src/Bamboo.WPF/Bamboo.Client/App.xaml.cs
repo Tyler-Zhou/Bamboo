@@ -96,12 +96,7 @@ namespace Bamboo.Client
         /// </summary>
         protected override void OnInitialized()
         {
-            #region 获取配置信息
-            ApplicationContext.Account = Configure.Current.GetValue("Account");
-            ApplicationContext.IsDarkTheme = Configure.Current.GetValue<bool>("IsDarkTheme", "True");
-            ApplicationContext.HueColor = Configure.Current.GetValue("HueColor", "#FF424242");
-            ApplicationContext.DefaultPageSize = Configure.Current.GetValue<int>("DefaultPageSize", "20");
-            #endregion
+            
 
             var dialog = Container.Resolve<IDialogService>();
 
@@ -142,13 +137,26 @@ namespace Bamboo.Client
         {
             var factory = new NLogLoggerFactory();
             _Logger = factory.CreateLogger("Bamboo");
+
+            #region 获取配置信息
+            ApplicationContext.Account = Configure.Current.GetValue("Account");
+            ApplicationContext.IsDarkTheme = Configure.Current.GetValue<bool>("IsDarkTheme", "True");
+            ApplicationContext.HueColor = Configure.Current.GetValue("HueColor", "#FF424242");
+            ApplicationContext.DefaultPageSize = Configure.Current.GetValue<int>("DefaultPageSize", "20");
+            if(!Configure.Current.Contains("BaseServiceUrl"))
+            {
+                Configure.Current.Add("BaseServiceUrl", "http://localhost:5031/");
+            }
+            ApplicationContext.BaseServiceUrl = Configure.Current.GetValue("BaseServiceUrl");
+            #endregion
+
             //注入到Prism DI容器中
             containerRegistry.RegisterInstance(_Logger);
 
             //serviceKey
             containerRegistry.GetContainer()
-                .Register<ClientService>(made: Parameters.Of.Type<string>(serviceKey: "webUrl"));
-            containerRegistry.GetContainer().RegisterInstance(@"http://localhost:5031/", serviceKey: "webUrl");
+                .Register<ClientService>(made: Parameters.Of.Type<string>(serviceKey: "BaseServiceUrl"));
+            containerRegistry.GetContainer().RegisterInstance(ApplicationContext.BaseServiceUrl, serviceKey: "BaseServiceUrl");
             //Service
             containerRegistry.Register<IConfigureService, MainViewModel>();
             containerRegistry.Register<INavigationService, MainViewModel>();
