@@ -2,14 +2,15 @@
 
 import logging
 import pymssql
+import pymongo
 
 from scrapy.dupefilters import BaseDupeFilter
 from scrapy.utils.request import referer_str
 
 
-class ChapterExistFilter(BaseDupeFilter):
+class MSSQLChapterExistFilter(BaseDupeFilter):
     """
-    章节在数据库是否已经存在
+    章节在 MS SQL 是否已经存在
     """
 
     def __init__(self, db_server, db_port, db_name, db_user, db_password, debug=False):
@@ -52,6 +53,55 @@ class ChapterExistFilter(BaseDupeFilter):
             self.logger.info("开始抓取网站地址：%s", request.url)
             return False
         self.logger.info("章节已存在 iId：%d", iid[0])
+        return True
+
+    def log(self, request, spider):
+        if self.debug:
+            msg = "Filtered duplicate request: %(request)s (referer: %(referer)s)"
+            args = {'request': request, 'referer': referer_str(request)}
+            self.logger.debug(msg, args, extra={'spider': spider})
+        elif self.logdupes:
+            msg = ("Filtered duplicate request: %(request)s"
+                   " - no more duplicates will be shown"
+                   " (see DUPEFILTER_DEBUG to show all duplicates)")
+            self.logger.debug(msg, {'request': request}, extra={'spider': spider})
+            self.logdupes = False
+        spider.crawler.stats.inc_value('dupefilter/filtered', spider=spider)
+
+
+class MongoDBChapterExistFilter(BaseDupeFilter):
+    """
+    章节在MongoDB是否已经存在
+    """
+    client = None
+    db = None
+
+    def __init__(self, mongo_host, mongo_db, debug=False):
+        self.logdupes = True
+        self.debug = debug
+        self.logger = logging.getLogger(__name__)
+
+        self.mongo_host = mongo_host
+        self.mongo_db = mongo_db
+
+    @classmethod
+    def from_settings(cls, settings):
+        return cls(
+            mongo_host=settings.get('MONGO_HOST'),
+            mongo_db=settings.get('MONGO_DB'),
+            debug=settings.getbool('DUPEFILTER_DEBUG'))
+
+    def request_seen(self, request):
+        keys = request.url.split('/')
+        bookkey = keys[-2]
+        chapterkey = keys[-1].replace('.html', '')
+
+        self.client = pymongo.MongoClient(self.mongo_host)
+        self.db = self.client[self.mongo_db]
+        res = self.db[bookkey].find_one({'sKey': chapterkey})
+        if res is None:
+            return False
+        self.logger.info("章节 %s 已存在", chapterkey)
         return True
 
     def log(self, request, spider):

@@ -77,7 +77,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'Bamboo.pipelines.MSSQLPipeline': 300,
+    'Bamboo.pipelines.MongoDBPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -101,7 +101,7 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-DUPEFILTER_CLASS = 'Bamboo.custom_filters.ChapterExistFilter'
+DUPEFILTER_CLASS = 'Bamboo.custom_filters.MongoDBChapterExistFilter'
 
 # MSSQL数据库
 MSSQL_SERVER = "."  # 服务器
@@ -109,3 +109,10 @@ MSSQL_PORT = "1433"  # 服务器端口
 MSSQL_NAME = "Bamboo"  # 数据库名称
 MSSQL_USER = "sa"  # 用户
 MSSQL_PASSWORD = "DATABASE"  # 密码
+
+
+# Mongo数据库
+MONGO_HOST = "127.0.0.1"  # 主机IP
+MONGO_PORT = 27017  # 端口号
+MONGO_DB = "Bamboo"  # 库名
+MONGO_COLL_FINCTIONS = "books"  # collection名

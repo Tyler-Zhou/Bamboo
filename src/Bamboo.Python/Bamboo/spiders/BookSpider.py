@@ -113,7 +113,7 @@ class BookSpider(Spider):
             item['sContent'] = chapter_content
             item['sLink'] = chapter_url
             self.logger.info('章节链接：%s', item['sLink'])
-
+            item["bIsError"] = False
             try:
                 iorderindex = int(item['sKey'])
                 item["iOrderIndex"] = iorderindex

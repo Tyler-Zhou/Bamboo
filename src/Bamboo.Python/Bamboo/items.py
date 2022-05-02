@@ -27,6 +27,7 @@ class ChapterItem(scrapy.Item):
     sName = scrapy.Field()
     sContent = scrapy.Field()
     sLink = scrapy.Field()
+    bIsError = scrapy.Field()
     tCreateDate = scrapy.Field()
     iOrderIndex = scrapy.Field()
     pass

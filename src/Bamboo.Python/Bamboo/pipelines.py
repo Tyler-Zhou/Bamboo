@@ -7,6 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 import pymssql
+import pymongo
 from Bamboo.items import BookItem, ChapterItem
 import logging
 
@@ -97,16 +98,17 @@ class MSSQLPipeline(object):
     def _process_chapter_item(self, item):
         try:
             sql = "BEGIN TRAN INSERT INTO [tb_Book_Chapter]" \
-                  "(sBookKey,sKey,sName,sContent,sLink,tCreateDate,iOrderIndex) VALUES " \
-                  "(%s,%s,%s,%s,%s,%s,%d);COMMIT TRAN"
+                  "(sBookKey,sKey,sName,sContent,sLink,bIsError,iOrderIndex,tCreateDate) VALUES " \
+                  "(%s,%s,%s,%s,%s,%s,%d,%s);COMMIT TRAN"
             param = (
                 item["sBookKey"],
                 item["sKey"],
                 item["sName"],
                 item["sContent"],
                 item["sLink"],
-                item["tCreateDate"],
-                item["iOrderIndex"]
+                item["bIsError"],
+                item["iOrderIndex"],
+                item["tCreateDate"]
             )
             self.cur.execute(sql, param)  # 执行insert
             self.logger.info("新增章节成功")
@@ -124,3 +126,71 @@ class MSSQLPipeline(object):
         """
         self.cur.close()
         self.conn.close()
+
+
+class MongoDBPipeline(object):
+    """
+    Mongo DB
+    """
+    logger = logging.getLogger(__name__)
+    client = None
+    db = None
+
+    def __init__(self, mongo_host, mongo_db, coll_books):
+        self.mongo_host = mongo_host
+        self.mongo_db = mongo_db
+        self.coll_books = coll_books
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(
+            mongo_host=crawler.settings.get('MONGO_HOST'),
+            mongo_db=crawler.settings.get('MONGO_DB'),
+            coll_books=crawler.settings.get('MONGO_COLL_FINCTIONS')
+        )
+
+    def open_spider(self, spider):
+        """
+        爬虫启动时候的运行
+        打开MongoDB数据库连接
+        :param spider:
+        :return:
+        """
+        self.client = pymongo.MongoClient(self.mongo_host)
+        self.db = self.client[self.mongo_db]
+
+    def process_item(self, item, spider):
+        if isinstance(item, BookItem):
+            self._process_book_item(item)
+        else:
+            self._process_chapter_item(item)
+        return item
+
+    def _process_book_item(self, item):
+        try:
+            res = self.db[self.coll_books].find_one({'sKey': item['sKey']})
+            if res is None:
+                self.db[self.coll_books].insert_one(dict(item))
+                self.logger.info("新增书籍 %s 成功", item['sKey'])
+            else:
+                self.logger.info("书籍 %s 已存在", item['sKey'])
+        except Exception as ex:
+            self.logger.exception("新增书籍失败：%s", ex)
+            raise ex
+
+    def _process_chapter_item(self, item):
+        try:
+            self.db[item['sBookKey']].insert_one(dict(item))
+            self.logger.info("新增章节 %s 成功", item['sKey'])
+        except Exception as ex:
+            self.logger.exception("新增章节失败：%s", ex)
+            raise ex
+
+    def close_spider(self, spider):
+        """
+        爬虫结束的时候运行
+        关闭 MongoDB连接
+        :param spider:
+        :return:
+        """
+        self.client.close()
