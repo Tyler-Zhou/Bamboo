@@ -24,6 +24,12 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
+    <Window.Resources>
+        <!--  BasedOn="{StaticResource MaterialDesignTabItem}"  -->
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.HeaderText}" />
+        </Style>
+    </Window.Resources>
     <materialDesign:DialogHost
         x:Name="MainDialogHost"
         DialogTheme="Inherit"
@@ -153,8 +159,56 @@
                         </StackPanel>
                     </DockPanel>
                 </materialDesign:ColorZone>
-
-                <ContentControl Grid.Row="1" prism:RegionManager.RegionName="{x:Static ext:PrismManager.MainViewRegionName}" />
+                <TabControl
+                    Grid.Row="1"
+                    HorizontalContentAlignment="Left"
+                    prism:RegionManager.RegionName="{x:Static ext:PrismManager.MainViewRegionName}"
+                    Style="{x:Null}">
+                    <TabControl.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel DataContext="{Binding Path=DataContext, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TabItem}}}">
+                                <Grid Margin="6,0,2,0" DockPanel.Dock="Right">
+                                    <Button
+                                        Width="15"
+                                        Height="15"
+                                        Margin="4,0,0,0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Command="{Binding DataContext.CloseTabCommand, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                        CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                        Cursor="Hand"
+                                        FontSize="10"
+                                        FontWeight="Bold"
+                                        Style="{x:Null}">
+                                        <Button.Content>
+                                            <TextBlock
+                                                VerticalAlignment="Center"
+                                                Foreground="{DynamicResource AccentColorBrush}"
+                                                Text="X" />
+                                        </Button.Content>
+                                    </Button>
+                                </Grid>
+                                <ContentPresenter VerticalAlignment="Center" Content="{Binding DataContext.HeaderText}" />
+                            </DockPanel>
+                            <!--<DockPanel Width="Auto">
+                                <Button
+                                    Width="15"
+                                    Height="15"
+                                    Margin="4,0,0,0"
+                                    VerticalContentAlignment="Center"
+                                    Command="{Binding DataContext.DataContext.CloseTabCommand, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                    CommandParameter="{Binding Path=DataContext, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}"
+                                    Content="X"
+                                    Cursor="Hand"
+                                    DockPanel.Dock="Right"
+                                    Focusable="False"
+                                    FontSize="10"
+                                    FontWeight="Bold" />
+                                <ContentPresenter Content="{Binding DataContext.DataContext.HeaderText, RelativeSource={RelativeSource AncestorType={x:Type TabItem}}}" />
+                            </DockPanel>-->
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                </TabControl>
             </Grid>
         </materialDesign:DrawerHost>
     </materialDesign:DialogHost>

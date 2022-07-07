@@ -65,5 +65,16 @@ namespace Bamboo.Server.Entities
         [Required]
         [DefaultValue(0)]
         public int OrderIndex { get; set; } = 0;
+
+        #region 是否错误(章节)
+        /// <summary>
+        /// 是否错误(章节)
+        /// </summary>
+        [Column("bIsError")]
+        [MaxLength(200)]
+        [Required]
+        [DefaultValue(false)]
+        public bool IsError { get; set; } = false;
+        #endregion
     }
 }

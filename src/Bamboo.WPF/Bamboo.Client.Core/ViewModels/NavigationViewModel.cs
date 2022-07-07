@@ -1,6 +1,7 @@
 ﻿using Bamboo.Client.Core.Extensions;
 using Bamboo.Client.Core.Interface;
 using Bamboo.Client.Core.Models;
+using Prism.Commands;
 using Prism.Events;
 using Prism.Ioc;
 using Prism.Mvvm;
@@ -13,6 +14,30 @@ namespace Bamboo.Client.Core.ViewModels
     /// </summary>
     public class NavigationViewModel : BindableBase, INavigationAware
     {
+        #region 成员(Member)
+        #region (TabItem)头文本
+        /// <summary>
+        /// HeaderText
+        /// </summary>
+        private string _HeaderText;
+        /// <summary>
+        /// (TabItem)头文本
+        /// </summary>
+        public string HeaderText
+        {
+            get
+            {
+                return _HeaderText;
+            }
+            set
+            {
+                _HeaderText = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion 
+        #endregion
+
         #region 服务(Service)
         /// <summary>
         /// 容器提供者(DryICO)
@@ -26,22 +51,36 @@ namespace Bamboo.Client.Core.ViewModels
         /// 导航服务
         /// </summary>
         public readonly INavigationService _NavigationService;
+        /// <summary>
+        /// 
+        /// </summary>
+        IRegionManager _RegionManager;
         #endregion
 
-        #region Constructor
+        #region 命令(Command)
+        /// <summary>
+        /// 关闭Tab Item
+        /// </summary>
+        public DelegateCommand<object> CloseTabCommand { get; }
+        #endregion
+
+        #region 构造函数(Constructor)
         /// <summary>
         /// 导航视图模型
         /// </summary>
+        /// <param name="regionManager"></param>
         /// <param name="containerProvider"></param>
-        public NavigationViewModel(IContainerProvider containerProvider)
+        public NavigationViewModel(IRegionManager regionManager,IContainerProvider containerProvider)
         {
+            _RegionManager = regionManager;
             _ContainerProvider = containerProvider;
             _EventAggregator = containerProvider.Resolve<IEventAggregator>();
             _NavigationService = containerProvider.Resolve<INavigationService>();
+            CloseTabCommand = new DelegateCommand<object>(OnExecuteCloseCommand);
         }
         #endregion
 
-        #region Method
+        #region 方法(Method)
         /// <summary>
         /// 是否可以处理请求的导航行为,当前视图/模型是否可以重用
         /// </summary>
@@ -97,6 +136,11 @@ namespace Bamboo.Client.Core.ViewModels
         public void SendMessage(string message)
         {
             _EventAggregator.SendMessage(message);
+        }
+
+        private void OnExecuteCloseCommand(object tabItem)
+        {
+            _RegionManager.Regions["MainViewRegion"].Remove(tabItem);
         }
         #endregion
     }

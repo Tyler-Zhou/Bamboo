@@ -55,8 +55,6 @@ namespace Bamboo.Client.ViewModels
         }
         #endregion
 
-
-
         #region 服务(Service)
         /// <summary>
         /// 容器提供服务
@@ -125,8 +123,7 @@ namespace Bamboo.Client.ViewModels
         {
             UserName = ApplicationContext.UserName;
             CreateMenuBar();
-            _RegionManager?.Regions[PrismManager.MainViewRegionName].RequestNavigate("IndexView");
-
+            Navigate(new MenuBar() { Icon = "Home", Title = "首页", NameSpace = "IndexView" });
         }
 
         /// <summary>

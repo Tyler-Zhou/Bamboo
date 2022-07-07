@@ -96,5 +96,20 @@ namespace Bamboo.Library.Entities
             set { _OrderIndex = value; OnPropertyChanged(); }
         }
         #endregion
+
+        #region 是否错误(章节)
+        /// <summary>
+        /// IsError
+        /// </summary>
+        private bool _IsError = false;
+        /// <summary>
+        /// 是否错误(章节)
+        /// </summary>
+        public bool IsError
+        {
+            get { return _IsError; }
+            set { _IsError = value; OnPropertyChanged(); }
+        }
+        #endregion
     }
 }

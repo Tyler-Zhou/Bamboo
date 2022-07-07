@@ -1,11 +1,12 @@
 using AutoMapper;
+using Bamboo.Server.Api.Swagger;
 using Bamboo.Server.Context;
 using Bamboo.Server.Core;
 using Bamboo.Server.Entities;
 using Bamboo.Server.Interface;
 using Bamboo.Server.Repository;
 using Bamboo.Server.Service;
-using Bamboo.Server.Api.Swagger;
+using GeneralUpdate.AspNetCore.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -47,12 +48,10 @@ namespace Bamboo.Server.Api
             //添加异常处理过滤器
             services.AddDbContext<DefaultContext>(option =>
             {
-                var connectionString = Configuration.GetConnectionString("BambooConnection");
+                var connectionString = Configuration.GetConnectionString("BambooMSSQL");
                 option.UseSqlServer(connectionString);
             }).AddUnitOfWork<DefaultContext>()
             .AddCustomRepository<UserEntity, UserRepository>()
-            .AddCustomRepository<BookEntity, BookRepository>()
-            .AddCustomRepository<ChapterEntity, ChapterRepository>()
             ;
 
 
@@ -64,6 +63,7 @@ namespace Bamboo.Server.Api
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IBookService, BookService>();
             services.AddTransient<IChapterService, ChapterService>();
+            services.AddSingleton<IUpdateService, GeneralUpdateService>();
 
             //添加AutoMapper
             var automapperConfog = new MapperConfiguration(config =>
@@ -96,7 +96,11 @@ namespace Bamboo.Server.Api
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

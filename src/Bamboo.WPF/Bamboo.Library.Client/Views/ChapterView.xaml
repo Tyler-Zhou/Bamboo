@@ -19,54 +19,12 @@
     <UserControl.Resources>
         <Converter:IntToVisibilityConveter x:Key="IntToVisibility" />
     </UserControl.Resources>
-    <md:DialogHost>
-        <md:DrawerHost IsRightDrawerOpen="{Binding IsRightDrawerOpen}">
-            <md:DrawerHost.RightDrawerContent>
-                <DockPanel Width="420" LastChildFill="False">
-                    <TextBlock
-                        Padding="20,10"
-                        DockPanel.Dock="Top"
-                        FontSize="20"
-                        FontWeight="Bold"
-                        Text="编辑章节" />
-                    <TextBox
-                        Margin="20,5"
-                        md:HintAssist.Hint="请输入章节标识"
-                        DockPanel.Dock="Top"
-                        Text="{Binding CurrentDto.Key}" />
-                    <TextBox
-                        Margin="20,0"
-                        md:HintAssist.Hint="请输入章节名"
-                        DockPanel.Dock="Top"
-                        Text="{Binding CurrentDto.Name}" />
-                    <TextBox
-                        Margin="20,5"
-                        md:HintAssist.Hint="请输入链接"
-                        DockPanel.Dock="Top"
-                        Text="{Binding CurrentDto.Link}" />
-                    <TextBox
-                        Margin="20,5"
-                        md:HintAssist.Hint="请输入排序索引"
-                        DockPanel.Dock="Top"
-                        Text="{Binding CurrentDto.OrderIndex}" />
-                    <TextBox
-                        Height="200"
-                        Margin="20,5"
-                        md:HintAssist.Hint="请输入内容"
-                        AcceptsReturn="True"
-                        DockPanel.Dock="Top"
-                        Text="{Binding CurrentDto.Content}"
-                        TextWrapping="Wrap"
-                        VerticalScrollBarVisibility="Auto" />
-                    <Button
-                        Margin="20,0"
-                        Command="{Binding ExecuteCommand}"
-                        CommandParameter="保存"
-                        Content="保存"
-                        DockPanel.Dock="Top" />
-                </DockPanel>
-            </md:DrawerHost.RightDrawerContent>
-
+    <md:Flipper
+        x:Name="MainFilpper"
+        md:ShadowAssist.ShadowDepth="Depth0"
+        IsFlipped="{Binding IsRightDrawerOpen}">
+        <md:Flipper.FrontContent>
+            <!--  List View  -->
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
@@ -175,6 +133,72 @@
                     </behavior:Interaction.Triggers>
                 </ClientCore:Pagination>
             </Grid>
-        </md:DrawerHost>
-    </md:DialogHost>
+        </md:Flipper.FrontContent>
+        <md:Flipper.BackContent>
+            <Grid
+                Width="1000"
+                Height="800"
+                Margin="0,6,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="编辑章节" />
+                <TextBox
+                    Grid.Row="2"
+                    md:HintAssist.Hint="请输入章节标识"
+                    Text="{Binding CurrentDto.Key}" />
+                <TextBox
+                    Grid.Row="3"
+                    md:HintAssist.Hint="请输入章节名"
+                    Text="{Binding CurrentDto.Name}" />
+                <TextBox
+                    Grid.Row="4"
+                    md:HintAssist.Hint="请输入链接"
+                    Text="{Binding CurrentDto.Link}" />
+                <TextBox
+                    Grid.Row="5"
+                    md:HintAssist.Hint="请输入排序索引"
+                    Text="{Binding CurrentDto.OrderIndex}" />
+                <TextBox
+                    Grid.Row="6"
+                    Height="420"
+                    Margin="0,0,0,0"
+                    md:HintAssist.Hint="请输入内容"
+                    AcceptsReturn="True"
+                    Text="{Binding CurrentDto.Content}"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Auto" />
+                <ToggleButton
+                    Grid.Row="7"
+                    Margin="8,0,0,0"
+                    Content="是否错误章节" />
+                <Button
+                    Grid.Row="8"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Command="{Binding ExecuteCommand}"
+                    CommandParameter="保存"
+                    Content="保存" />
+                <Button
+                    Grid.Row="8"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Command="{Binding ExecuteCommand}"
+                    CommandParameter="取消"
+                    Content="取消" />
+            </Grid>
+        </md:Flipper.BackContent>
+    </md:Flipper>
 </UserControl>

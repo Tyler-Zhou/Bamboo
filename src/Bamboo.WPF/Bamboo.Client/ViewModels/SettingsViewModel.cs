@@ -1,7 +1,8 @@
-﻿using Bamboo.Client.Extensions;
+﻿using Bamboo.Client.Core.ViewModels;
+using Bamboo.Client.Extensions;
 using Bamboo.Client.Models;
 using Prism.Commands;
-using Prism.Mvvm;
+using Prism.Ioc;
 using Prism.Regions;
 using System.Collections.ObjectModel;
 
@@ -10,7 +11,7 @@ namespace Bamboo.Client.ViewModels
     /// <summary>
     /// 设置视图模型
     /// </summary>
-    public class SettingsViewModel : BindableBase
+    public class SettingsViewModel : NavigationViewModel
     {
         #region 菜单
         /// <summary>
@@ -50,8 +51,10 @@ namespace Bamboo.Client.ViewModels
         /// 
         /// </summary>
         /// <param name="regionManager"></param>
-        public SettingsViewModel(IRegionManager regionManager)
+        /// <param name="provider"></param>
+        public SettingsViewModel(IRegionManager regionManager, IContainerProvider provider) : base(regionManager,provider)
         {
+            HeaderText = "设置";
             MenuBars = new ObservableCollection<MenuBar>();
             _RegionManager = regionManager;
             NavigateCommand = new DelegateCommand<MenuBar>(Navigate);

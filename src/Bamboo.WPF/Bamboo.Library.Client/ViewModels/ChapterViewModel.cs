@@ -211,11 +211,13 @@ namespace Bamboo.Library.Client.ViewModels
         /// 章节视图模型
         /// </summary>
         /// <param name="bookService"></param>
+        /// <param name="regionManager"></param>
         /// <param name="provider"></param>
         /// <param name="logger"></param>
-        public ChapterViewModel(IChapterService bookService, IContainerProvider provider)
-            : base(provider)
+        public ChapterViewModel(IChapterService bookService, IRegionManager regionManager, IContainerProvider provider)
+            : base(regionManager,provider)
         {
+            HeaderText = "章节";
             _ChapterService = bookService;
             _DialogHostService = provider.Resolve<IDialogHostService>();
             ExecuteCommand = new DelegateCommand<string>(Execute);
@@ -306,6 +308,7 @@ namespace Bamboo.Library.Client.ViewModels
                 case "新增": Add(); break;
                 case "查询": GetDataAsync(); break;
                 case "保存": Save(); break;
+                case "取消": IsRightDrawerOpen = false; break;
             }
         }
         /// <summary>

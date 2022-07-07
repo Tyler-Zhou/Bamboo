@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bamboo.Library.Entities", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bamboo.Server.Service", "Bamboo.Server.Service\Bamboo.Server.Service.csproj", "{6F97B9D0-4675-4DD5-8EE0-82DAF08C68EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboo.Server.Api", "Bamboo.Server.Api\Bamboo.Server.Api.csproj", "{203C1FC3-D5B0-4859-BE68-4A3FB808D779}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bamboo.Server.Api", "Bamboo.Server.Api\Bamboo.Server.Api.csproj", "{203C1FC3-D5B0-4859-BE68-4A3FB808D779}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{71BB3583-00E8-40FB-AAE9-47A4A5C40C96}"
 EndProject
@@ -46,6 +46,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{038A8A5D-C955-41C6-9C04-01FC6B9B667F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{DF635BA3-8B51-4690-ACB5-6A849740072A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Update", "Update", "{02381693-2A18-43A4-B5CD-912BF81F0831}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bamboo.Updater", "Bamboo.Updater\Bamboo.Updater.csproj", "{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +109,10 @@ Global
 		{203C1FC3-D5B0-4859-BE68-4A3FB808D779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{203C1FC3-D5B0-4859-BE68-4A3FB808D779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{203C1FC3-D5B0-4859-BE68-4A3FB808D779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +137,7 @@ Global
 		{D4A33C0F-F3DD-4D78-B1FE-9672E8702C4A} = {4ABDE888-9921-4D6E-87BF-83048DBBDE08}
 		{038A8A5D-C955-41C6-9C04-01FC6B9B667F} = {4ABDE888-9921-4D6E-87BF-83048DBBDE08}
 		{DF635BA3-8B51-4690-ACB5-6A849740072A} = {4ABDE888-9921-4D6E-87BF-83048DBBDE08}
+		{8C9B17AB-D91F-49BE-AB20-F4A6FAA22901} = {02381693-2A18-43A4-B5CD-912BF81F0831}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B228EEA4-E366-45F2-90F9-DFFDA982ADCD}

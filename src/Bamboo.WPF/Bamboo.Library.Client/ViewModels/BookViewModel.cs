@@ -17,6 +17,7 @@ namespace Bamboo.Library.Client.ViewModels
     /// </summary>
     public class BookViewModel : NavigationViewModel
     {
+        #region 成员(Member)
         #region 下拉列表选中状态值
         /// <summary>
         /// SelectedIndex
@@ -91,6 +92,7 @@ namespace Bamboo.Library.Client.ViewModels
             get { return _BookDtos; }
             set { _BookDtos = value; RaisePropertyChanged(); }
         }
+        #endregion 
         #endregion
 
         #region 服务(Service)
@@ -128,11 +130,13 @@ namespace Bamboo.Library.Client.ViewModels
         /// 书籍视图模型
         /// </summary>
         /// <param name="bookService"></param>
+        /// <param name="regionManager"></param>
         /// <param name="provider"></param>
         /// <param name="logger"></param>
-        public BookViewModel(IBookService bookService, IContainerProvider provider)
-            : base(provider)
+        public BookViewModel(IBookService bookService, IRegionManager regionManager, IContainerProvider provider)
+            : base(regionManager,provider)
         {
+            HeaderText = "书籍";
             _BookService = bookService;
             _DialogHostService = provider.Resolve<IDialogHostService>();
             ExecuteCommand = new DelegateCommand<string>(Execute);
