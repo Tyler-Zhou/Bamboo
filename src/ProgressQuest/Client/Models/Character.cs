@@ -1,5 +1,5 @@
 ﻿using Client.Enums;
-using Client.Interfaces;
+using System.Collections.ObjectModel;
 
 namespace Client.Models
 {
@@ -15,14 +15,8 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        private ICharacterService _CharacterService;
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="characterService"></param>
-        public Character(ICharacterService characterService)
+        public Character()
         {
-            _CharacterService = characterService;
         }
         /// <summary>
         /// 
@@ -38,7 +32,7 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        public EnumRaces Race
+        public RaceModel Race
         {
             get => _summary.Race;
             set
@@ -49,7 +43,7 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        public EnumClasses Class
+        public ClassModel Class
         {
             get => _summary.Class;
             set
@@ -57,6 +51,11 @@ namespace Client.Models
                 _summary.Class = value;
             }
         }
+        /// <summary>
+        /// 属性集合
+        /// </summary>
+        public ObservableCollection<StatModel> Stats { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -71,7 +70,7 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        public CharacterProperty Stats { get; set; }
+        public CharacterStats CharacterStats { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -79,23 +78,9 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        public Character()
-        {
-            Stats = new CharacterProperty();
-        }
-        /// <summary>
-        /// 
-        /// </summary>
         private bool Validate()
         {
-            return _summary.IsValid && Stats.IsValid;
-        }
-        /// <summary>
-        /// 
-        /// </summary>
-        internal void Save()
-        {
-            _CharacterService.Save(this);
+            return _summary.IsValid && CharacterStats.IsValid;
         }
     }
 }

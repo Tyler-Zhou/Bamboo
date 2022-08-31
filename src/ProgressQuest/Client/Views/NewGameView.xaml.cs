@@ -3,15 +3,15 @@
 namespace Client.Views
 {
     /// <summary>
-    /// GameVIew.xaml 的交互逻辑
+    /// NewCharacterView.xaml 的交互逻辑
     /// </summary>
-    public partial class GameView : UserControl
+    public partial class NewGameView : UserControl
     {
         #region 构造函数(Constructor)
         /// <summary>
-        /// GameVIew.xaml 的交互逻辑
+        /// NewCharacterView.xaml 的交互逻辑
         /// </summary>
-        public GameView()
+        public NewGameView()
         {
             InitializeComponent();
         } 

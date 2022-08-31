@@ -15,11 +15,11 @@ namespace Client.Models
         /// <summary>
         /// 
         /// </summary>
-        public EnumRaces Race { get; set; }
+        public RaceModel Race { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public EnumClasses Class { get; set; }
+        public ClassModel Class { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -40,9 +40,7 @@ namespace Client.Models
         /// <returns></returns>
         private bool Validate()
         {
-            EnumRaces tempRace;
-            EnumClasses tempClass;
-            return !string.IsNullOrWhiteSpace(Name) && Enum.TryParse(Race.ToString(), out tempRace) && Enum.TryParse(Class.ToString(), out tempClass);
+            return !string.IsNullOrWhiteSpace(Name) && (Race!=null) && (Class!=null);
         }
         /// <summary>
         /// 

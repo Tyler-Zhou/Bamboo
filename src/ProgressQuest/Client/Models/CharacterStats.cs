@@ -3,7 +3,7 @@
     /// <summary>
     /// 人物属性
     /// </summary>
-    public class CharacterProperty
+    public class CharacterStats
     {
         /// <summary>
         /// 力量
@@ -18,11 +18,11 @@
         /// </summary>
         public int Dexterity { get; set; }
         /// <summary>
-        /// 魔法攻击力
+        /// 智力
         /// </summary>
         public int Intelligence { get; set; }
         /// <summary>
-        /// 智力(智慧能力数值)
+        /// 智慧
         /// </summary>
         public int Wisdom { get; set; }
         /// <summary>

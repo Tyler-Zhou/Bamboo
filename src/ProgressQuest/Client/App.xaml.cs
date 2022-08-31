@@ -1,9 +1,18 @@
-﻿using Client.Views;
+﻿using Client.Common;
+using Client.DataAccess;
+using Client.Interfaces;
+using Client.Models;
+using Client.Services;
+using Client.ViewModels;
+using Client.Views;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using Prism.DryIoc;
 using Prism.Ioc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -85,12 +94,46 @@ namespace Client
         protected override void OnInitialized()
         {
             base.OnInitialized();
-            //var settingService = Container.Resolve<ISettingService>();
-            //if (await settingService.GetAsync<ApplicationSetting>("Setting") == null)
-            //{
-            //    await settingService.SaveAsync("Setting", new ApplicationSetting());
-            //}
+            var service = Current.MainWindow.DataContext as IConfigureService;
+            if (service != null)
+            {
+                service.ConfigureContent();
+            }
+            InitSetting();
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        async void InitSetting()
+        {
+            var settingService = Container.Resolve<ISettingService>();
+            if (await settingService.GetAsync<ApplicationSetting>("Setting") == null)
+            {
+                await settingService.SaveAsync("Setting", new ApplicationSetting() { CultureName = Thread.CurrentThread.CurrentUICulture.Name });
+            }
+            ApplicationContext.Setting = await settingService.GetAsync<ApplicationSetting>("Setting");
+
+            //设置资源,摘自：https://www.cnblogs.com/horan/archive/2012/04/20/wpf-multilanguage.html
+            List<ResourceDictionary> dictionaryList = new List<ResourceDictionary>();
+            foreach (ResourceDictionary dictionary in Current.Resources.MergedDictionaries)
+            {
+                dictionaryList.Add(dictionary);
+            }
+            string requestedCulture = string.Format(@"Resources\StringResource.{0}.xaml", ApplicationContext.Setting.CultureName);
+            ResourceDictionary resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.Equals(requestedCulture));
+            if (resourceDictionary == null)
+            {
+                requestedCulture = @"Resources\StringResource.xaml";
+                resourceDictionary = dictionaryList.FirstOrDefault(d => d.Source.OriginalString.Equals(requestedCulture));
+            }
+            if (resourceDictionary != null)
+            {
+                Current.Resources.MergedDictionaries.Remove(resourceDictionary);
+                Current.Resources.MergedDictionaries.Add(resourceDictionary);
+            }
+        }
+
         /// <summary>
         /// 注册 (视图、视图模型、服务)
         /// </summary>
@@ -102,13 +145,18 @@ namespace Client
             //注入到Prism DI容器中
             containerRegistry.RegisterInstance(_Logger);
             //Service
+            containerRegistry.Register<IConfigureService, MainViewModel>();
+            containerRegistry.Register<INavigationService, MainViewModel>();
+            containerRegistry.Register<IRepository, Repository>();
+            containerRegistry.Register<ISettingService, SettingService>();
 
             //View & ViewModel
+            containerRegistry.RegisterForNavigation<NewGameView, NewGameViewModel>();
+            containerRegistry.RegisterForNavigation<GameView, GameViewModel>();
         }
         #endregion
 
         #region 方法(Method)
-      
         #endregion
     }
 }

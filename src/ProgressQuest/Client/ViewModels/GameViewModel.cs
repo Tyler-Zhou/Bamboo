@@ -1,19 +1,14 @@
-﻿using Client.Enums;
-using Client.Models;
+﻿using Client.Models;
 using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Prism.Ioc;
+using Prism.Regions;
 
 namespace Client.ViewModels
 {
     /// <summary>
     /// 
     /// </summary>
-    public class GameViewModel : BindableBase
+    public class GameViewModel : BaseViewModel
     {
         #region 成员(Member)
         private Character _character;
@@ -23,12 +18,12 @@ namespace Client.ViewModels
             get => _character.Name;
         }
 
-        public EnumRaces CharacterRace
+        public RaceModel CharacterRace
         {
             get => _character.Race;
         }
 
-        public EnumClasses CharacterClass
+        public ClassModel CharacterClass
         {
             get => _character.Class;
         }
@@ -40,42 +35,42 @@ namespace Client.ViewModels
 
         public int CharacterStrength
         {
-            get => _character.Stats.Strength;
+            get => _character.CharacterStats.Strength;
         }
 
         public int CharacterConstitution
         {
-            get => _character.Stats.Constitution;
+            get => _character.CharacterStats.Constitution;
         }
 
         public int CharacterDexterity
         {
-            get => _character.Stats.Dexterity;
+            get => _character.CharacterStats.Dexterity;
         }
 
         public int CharacterIntelligence
         {
-            get => _character.Stats.Intelligence;
+            get => _character.CharacterStats.Intelligence;
         }
 
         public int CharacterWisdom
         {
-            get => _character.Stats.Wisdom;
+            get => _character.CharacterStats.Wisdom;
         }
 
         public int CharacterCharisma
         {
-            get => _character.Stats.Charisma;
+            get => _character.CharacterStats.Charisma;
         }
 
         public int CharacterMaxHp
         {
-            get => _character.Stats.HpMax;
+            get => _character.CharacterStats.HpMax;
         }
 
         public int CharacterMaxMp
         {
-            get => _character.Stats.MpMax;
+            get => _character.CharacterStats.MpMax;
         }
         #endregion
 
@@ -94,14 +89,46 @@ namespace Client.ViewModels
         /// <summary>
         /// 
         /// </summary>
-        public GameViewModel()
+        public GameViewModel(IContainerProvider provider) : base(provider)
         {
-            _character = new Character();
+            if (_character == null)
+                _character = new Character();
         }
         #endregion
 
         #region 重写方法(Override)
+        /// <summary>
+        /// 是否可以处理请求的导航行为,当前视图/模型是否可以重用
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>true:</remarks>
+        /// <returns></returns>
+        public override bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+        /// <summary>
+        /// 从本页面转到其它页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含目标页面的URI</remarks>
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
 
+        }
+        /// <summary>
+        /// 从其它页面导航至本页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含传递过来的参数</remarks>
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            if (navigationContext != null)
+            {
+                if (navigationContext.Parameters.ContainsKey("NewCharacter"))
+                    _character = (Character)navigationContext.Parameters["NewCharacter"];
+            }
+        }
         #endregion
 
         #region 方法(Method)
