@@ -1,13 +1,13 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 特征
+    /// 法术书
     /// </summary>
-    public class TraitModel:BaseModel
+    public class SpellBookModel : BaseModel
     {
         /// <summary>
-        /// 值
+        /// 等级
         /// </summary>
-        public string Value { get; set; }
+        public string  Level { get; set; }
     }
 }

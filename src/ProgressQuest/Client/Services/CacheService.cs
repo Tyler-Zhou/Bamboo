@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 namespace Client.Services
 {
     /// <summary>
-    /// 配置服务
+    /// 缓存服务
     /// </summary>
-    /// <remarks>个性化信息保存类（以文本文件的形式存在磁盘）</remarks>
-    public class SettingService : ISettingService
+    public class CacheService : ICacheService
     {
         #region 成员(Member)
         /// <summary>
         /// 目录名称
         /// </summary>
-        string _DirectoryName { get; set; } = "Setting";
+        string _DirectoryName { get; set; } = "Cache";
         /// <summary>
         /// 扩展名
         /// </summary>
@@ -51,7 +50,7 @@ namespace Client.Services
         /// 
         /// </summary>
         /// <param name="logger">日志服务</param>
-        public SettingService(ILogger logger)
+        public CacheService(ILogger logger)
         {
             _Logger = logger;
         }
@@ -67,6 +66,7 @@ namespace Client.Services
         {
             return await Task.Run(() => SaveFileBasePath());
         }
+
         /// <summary>
         /// 保存配置文件
         /// </summary>
@@ -87,6 +87,7 @@ namespace Client.Services
         {
             return await Task.Run(() => GetConfig<TSetting>(configName));
         }
+
         #endregion
 
         #region 私有方法(Private Method)

@@ -3,6 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace Client.Models
 {
+    /// <summary>
+    /// 职业模型
+    /// </summary>
     public class ClassModel:BaseModel
     {
         /// <summary>

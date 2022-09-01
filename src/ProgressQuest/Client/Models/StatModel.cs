@@ -5,16 +5,16 @@ namespace Client.Models
     /// <summary>
     /// 属性模型
     /// </summary>
-    public class StatModel
+    public class StatModel:BaseModel
     {
         /// <summary>
         /// 属性
         /// </summary>
-        public EnumStat StatName { get; set; }
+        public EnumStat StatType { get; set; }
 
         /// <summary>
         /// 属性值
         /// </summary>
-        public int StatValue { get; set; }
+        public int Value { get; set; }
     }
 }

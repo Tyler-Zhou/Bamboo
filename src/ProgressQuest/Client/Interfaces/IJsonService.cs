@@ -8,6 +8,11 @@ namespace Client.Interfaces
     public interface IJsonService
     {
         /// <summary>
+        /// 获取保存路径
+        /// </summary>
+        /// <returns></returns>
+        Task<string> GetSavePathAsync();
+        /// <summary>
         /// 保存Json文件
         /// </summary>
         /// <param name="configName">配置名称</param>

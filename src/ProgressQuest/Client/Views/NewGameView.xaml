@@ -27,7 +27,7 @@
             <Label Content="{DynamicResource LabelRandomName}" />
             <Button
                 Width="25"
-                Command="{Binding GetNewCharacterName, Mode=OneWay}"
+                Command="{Binding NewNameCommand, Mode=OneWay}"
                 Content="?"
                 DockPanel.Dock="Right"
                 ToolTip="{DynamicResource ButtonToolTipRandomName}" />
@@ -41,14 +41,14 @@
             Grid.Row="1"
             Grid.Column="0"
             Margin="0,0,0,10"
-            Header="{DynamicResource GroupBoxRaceHeader}">
+            Header="{DynamicResource GroupBoxHeaderRace}">
             <ListBox
                 Background="Transparent"
                 BorderBrush="Transparent"
                 ItemsSource="{Binding Races}"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                SelectedItem="{Binding Race}">
+                SelectedItem="{Binding CharacterRace}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">
@@ -78,14 +78,14 @@
             Grid.Row="1"
             Grid.Column="1"
             Margin="0,0,0,10"
-            Header="{DynamicResource GroupBoxClassHeader}">
+            Header="{DynamicResource GroupBoxHeaderClass}">
             <ListBox
                 Background="Transparent"
                 BorderBrush="Transparent"
                 ItemsSource="{Binding Classes}"
                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                SelectedItem="{Binding Class}">
+                SelectedItem="{Binding CharacterClass}">
                 <ListBox.ItemContainerStyle>
                     <Style TargetType="{x:Type ListBoxItem}">
                         <Setter Property="Template">
@@ -115,7 +115,7 @@
             Grid.Row="1"
             Grid.Column="2"
             Margin="0,0,0,10"
-            Header="{DynamicResource GroupBoxStatsHeader}">
+            Header="{DynamicResource GroupBoxHeaderStat}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -128,35 +128,35 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <DockPanel Grid.Row="0" LastChildFill="False">
-                    <Label Content="{DynamicResource LabelStrength}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatStrength}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterStrength}"
                         DockPanel.Dock="Right" />
                 </DockPanel>
                 <DockPanel Grid.Row="1" LastChildFill="False">
-                    <Label Content="{DynamicResource LabelConstitution}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatConstitution}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterConstitution}"
                         DockPanel.Dock="Right" />
                 </DockPanel>
                 <DockPanel Grid.Row="2" LastChildFill="False">
-                    <Label Content="{DynamicResource LabelDexterity}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatDexterity}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterDexterity}"
                         DockPanel.Dock="Right" />
                 </DockPanel>
                 <DockPanel Grid.Row="3" LastChildFill="False">
-                    <Label Content="{DynamicResource LabelIntelligence}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatIntelligence}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterIntelligence}"
                         DockPanel.Dock="Right" />
                 </DockPanel>
                 <DockPanel Grid.Row="4" LastChildFill="False">
-                    <Label Content="{DynamicResource LabelWisdom}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatWisdom}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterWisdom}"
@@ -166,7 +166,7 @@
                     Grid.Row="5"
                     Margin="0,0,0,10"
                     LastChildFill="False">
-                    <Label Content="{DynamicResource LabelCharisma}" FontWeight="Bold" />
+                    <Label Content="{DynamicResource EnumStatCharisma}" FontWeight="Bold" />
                     <Label
                         HorizontalContentAlignment="Right"
                         Content="{Binding CharacterCharisma}"
@@ -189,13 +189,13 @@
                     <Button
                         Padding="5,0"
                         HorizontalAlignment="Center"
-                        Command="{Binding RollStats, Mode=OneWay}"
+                        Command="{Binding RollStatCommand, Mode=OneWay}"
                         Content="{DynamicResource ButtonRollContent}"
                         ToolTip="{DynamicResource ButtonRollToolTip}" />
                     <Button
                         Padding="5,0"
                         HorizontalAlignment="Center"
-                        Command="{Binding UnrollStats, Mode=OneWay}"
+                        Command="{Binding UnrollStatCommand, Mode=OneWay}"
                         Content="{DynamicResource ButtonUnRollContent}"
                         DockPanel.Dock="Right"
                         ToolTip="{DynamicResource ButtonUnRollToolTip}" />
@@ -207,7 +207,7 @@
             Grid.ColumnSpan="3"
             Padding="5,0"
             HorizontalAlignment="Center"
-            Command="{Binding BeginQuestCmd, Mode=OneWay}"
+            Command="{Binding BeginQuestCommand, Mode=OneWay}"
             Content="{DynamicResource ButtonBeginQuest}" />
     </Grid>
 </UserControl>

@@ -4,6 +4,7 @@ using Client.Enums;
 using Client.Helpers;
 using Client.Interfaces;
 using Client.Models;
+using Client.Services;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
@@ -11,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Client.ViewModels
@@ -21,29 +24,266 @@ namespace Client.ViewModels
     public class NewGameViewModel: BaseViewModel
     {
         #region 成员(Member)
+        #region 人物
         /// <summary>
         /// 人物实体
         /// </summary>
-        private Character _newCharacter = new Character();
-        /// <summary>
-        /// 人物属性
-        /// </summary>
-        private Stack<CharacterStats> _previousCharacterStats = new Stack<CharacterStats>();
+        private Character _Character = new Character();
+        #endregion
 
-        #region 种族(Race)
-        private RaceModel _Race;
+        #region 种族
         /// <summary>
         /// 种族
         /// </summary>
-        public RaceModel Race
+        public RaceModel CharacterRace
+        {
+            get => _Character.Race;
+            set
+            {
+                if (value != _Character.Race)
+                {
+                    _Character.Race = value;
+                    RaisePropertyChanged(nameof(CharacterRace));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 职业
+        /// <summary>
+        /// 职业
+        /// </summary>
+        public ClassModel CharacterClass
+        {
+            get => _Character.Class;
+            set
+            {
+                if (value != _Character.Class)
+                {
+                    _Character.Class = value;
+                    RaisePropertyChanged(nameof(CharacterClass));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        } 
+        #endregion
+
+        #region 名字
+        /// <summary>
+        /// 名字
+        /// </summary>
+        public string CharacterName
+        {
+            get => _Character.Name;
+            set
+            {
+                if (value != _Character.Name)
+                {
+                    _Character.Name = value;
+                    RaisePropertyChanged(nameof(CharacterName));
+                }
+            }
+        }
+        #endregion
+
+        #region 力量
+        /// <summary>
+        /// 力量
+        /// </summary>
+        public int CharacterStrength
+        {
+            get => _Character.Strength;
+            set
+            {
+                if (value != _Character.Strength)
+                {
+                    _Character.Strength = value;
+                    RaisePropertyChanged(nameof(CharacterStrength));
+                    RaisePropertyChanged(nameof(TotalStats));
+                }
+            }
+        }
+        #endregion
+
+        #region 体质
+        /// <summary>
+        /// 体质
+        /// </summary>
+        public int CharacterConstitution
+        {
+            get => _Character.Constitution;
+            set
+            {
+                if (value != _Character.Constitution)
+                {
+                    _Character.Constitution = value;
+                    RaisePropertyChanged(nameof(CharacterConstitution));
+                    RaisePropertyChanged(nameof(TotalStats));
+                }
+            }
+        }
+        #endregion
+
+        #region 敏捷
+        /// <summary>
+        /// 敏捷
+        /// </summary>
+        public int CharacterDexterity
+        {
+            get => _Character.Dexterity;
+            set
+            {
+                if (value != _Character.Dexterity)
+                {
+                    _Character.Dexterity = value;
+                    RaisePropertyChanged(nameof(CharacterDexterity));
+                    RaisePropertyChanged(nameof(TotalStats));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 智力
+        /// <summary>
+        /// 智力
+        /// </summary>
+        public int CharacterIntelligence
+        {
+            get => _Character.Intelligence;
+            set
+            {
+                if (value != _Character.Intelligence)
+                {
+                    _Character.Intelligence = value;
+                    RaisePropertyChanged(nameof(CharacterIntelligence));
+                    RaisePropertyChanged(nameof(TotalStats));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 智慧
+        /// <summary>
+        /// 智慧
+        /// </summary>
+        public int CharacterWisdom
+        {
+            get => _Character.Wisdom;
+            set
+            {
+                if (value != _Character.Wisdom)
+                {
+                    _Character.Wisdom = value;
+                    RaisePropertyChanged(nameof(CharacterWisdom));
+                    RaisePropertyChanged(nameof(TotalStats));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 魅力
+        /// <summary>
+        /// 魅力
+        /// </summary>
+        public int CharacterCharisma
+        {
+            get => _Character.Charisma;
+            set
+            {
+                if (value != _Character.Charisma)
+                {
+                    _Character.Charisma = value;
+                    RaisePropertyChanged(nameof(CharacterCharisma));
+                    RaisePropertyChanged(nameof(TotalStats));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 最大生命值
+        /// <summary>
+        /// 最大生命值
+        /// </summary>
+        public int CharacterHPMax
+        {
+            get => _Character.HPMax;
+            set
+            {
+                if (value != _Character.HPMax)
+                {
+                    _Character.HPMax = value;
+                    RaisePropertyChanged(nameof(CharacterHPMax));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 最大魔法值
+        /// <summary>
+        /// 最大魔法值
+        /// </summary>
+        public int CharacterMPMax
+        {
+            get => _Character.MPMax;
+            set
+            {
+                if (value != _Character.MPMax)
+                {
+                    _Character.MPMax = value;
+                    RaisePropertyChanged(nameof(CharacterMPMax));
+                    BeginQuestCommand.RaiseCanExecuteChanged();
+                }
+            }
+        }
+        #endregion
+
+        #region 属性合计
+        /// <summary>
+        /// 属性合计
+        /// </summary>
+        public int TotalStats
         {
             get
             {
-                return _Race;
+                var total = CharacterStrength + CharacterConstitution + CharacterDexterity + CharacterIntelligence + CharacterWisdom + CharacterCharisma;
+                if (total >= (63 + 18))
+                    TotalStatsBackground = new SolidColorBrush(Colors.Red);
+                else if (total > (4 * 18))
+                    TotalStatsBackground = new SolidColorBrush(Colors.Yellow);
+                else if (total <= (63 - 18))
+                    TotalStatsBackground = new SolidColorBrush(Colors.Green);
+                else if (total < (3 * 18))
+                    TotalStatsBackground = new SolidColorBrush(Colors.Silver);
+                else
+                    TotalStatsBackground = new SolidColorBrush(Colors.White);
+                return total;
+            }
+        }
+        #endregion
+
+        #region 属性合集背景颜色
+        /// <summary>
+        /// 属性合集背景颜色
+        /// </summary>
+        private Brush _TotalStatsBackground;
+        /// <summary>
+        /// 属性合集背景颜色
+        /// </summary>
+        public Brush TotalStatsBackground
+        {
+            get
+            {
+                return _TotalStatsBackground;
             }
             set
             {
-                _Race = value;
+                _TotalStatsBackground = value;
                 RaisePropertyChanged();
             }
         }
@@ -68,25 +308,6 @@ namespace Client.ViewModels
         }
         #endregion
 
-        #region 职业(Class)
-        private ClassModel _Class;
-        /// <summary>
-        /// 职业
-        /// </summary>
-        public ClassModel Class
-        {
-            get
-            {
-                return _Class;
-            }
-            set
-            {
-                _Class = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
         #region 职业集合(Races)
         private ObservableCollection<ClassModel> _Classes;
         /// <summary>
@@ -106,175 +327,13 @@ namespace Client.ViewModels
         }
         #endregion
 
-        public string CharacterName
-        {
-            get => _newCharacter.Name;
-            set
-            {
-                if (value != _newCharacter.Name)
-                {
-                    _newCharacter.Name = value;
-                    RaisePropertyChanged(nameof(CharacterName));
-                }
-            }
-        }
-
-        public int CharacterStrength
-        {
-            get => _newCharacter.CharacterStats.Strength;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Strength)
-                {
-                    _newCharacter.CharacterStats.Strength = value;
-                    RaisePropertyChanged(nameof(CharacterStrength));
-                    RaisePropertyChanged(nameof(TotalStats));
-                }
-            }
-        }
-
-        public int CharacterConstitution
-        {
-            get => _newCharacter.CharacterStats.Constitution;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Constitution)
-                {
-                    _newCharacter.CharacterStats.Constitution = value;
-                    RaisePropertyChanged(nameof(CharacterConstitution));
-                    RaisePropertyChanged(nameof(TotalStats));
-                }
-            }
-        }
-
-        public int CharacterDexterity
-        {
-            get => _newCharacter.CharacterStats.Dexterity;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Dexterity)
-                {
-                    _newCharacter.CharacterStats.Dexterity = value;
-                    RaisePropertyChanged(nameof(CharacterDexterity));
-                    RaisePropertyChanged(nameof(TotalStats));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-
-        public int CharacterIntelligence
-        {
-            get => _newCharacter.CharacterStats.Intelligence;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Intelligence)
-                {
-                    _newCharacter.CharacterStats.Intelligence = value;
-                    RaisePropertyChanged(nameof(CharacterIntelligence));
-                    RaisePropertyChanged(nameof(TotalStats));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-
-        public int CharacterWisdom
-        {
-            get => _newCharacter.CharacterStats.Wisdom;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Wisdom)
-                {
-                    _newCharacter.CharacterStats.Wisdom = value;
-                    RaisePropertyChanged(nameof(CharacterWisdom));
-                    RaisePropertyChanged(nameof(TotalStats));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-
-        public int CharacterCharisma
-        {
-            get => _newCharacter.CharacterStats.Charisma;
-            set
-            {
-                if (value != _newCharacter.CharacterStats.Charisma)
-                {
-                    _newCharacter.CharacterStats.Charisma = value;
-                    RaisePropertyChanged(nameof(CharacterCharisma));
-                    RaisePropertyChanged(nameof(TotalStats));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-
-        public RaceModel CharacterRace
-        {
-            get => _newCharacter.Race;
-            set
-            {
-                if (value != _newCharacter.Race)
-                {
-                    _newCharacter.Race = value;
-                    RaisePropertyChanged(nameof(CharacterRace));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-        public ClassModel CharacterClass
-        {
-            get => _newCharacter.Class;
-            set
-            {
-                if (value != _newCharacter.Class)
-                {
-                    _newCharacter.Class = value;
-                    RaisePropertyChanged(nameof(CharacterClass));
-                    BeginQuestCmd.RaiseCanExecuteChanged();
-                }
-            }
-        }
-        #region 用户名
+        #region 已生成属性集合
         /// <summary>
-        /// UserName
+        /// 已生成属性集合
         /// </summary>
-        private Brush _TotalStatsBackground;
-        /// <summary>
-        /// 用户名
-        /// </summary>
-        public Brush TotalStatsBackground
-        {
-            get 
-            { 
-                return _TotalStatsBackground; 
-            }
-            set 
-            { 
-                _TotalStatsBackground = value; 
-                RaisePropertyChanged(); 
-            }
-        }
+        private Stack<RollStatModel> _RollStat = new Stack<RollStatModel>(); 
         #endregion
 
-        public int TotalStats
-        {
-            get 
-            {
-                var total = CharacterStrength + CharacterConstitution + CharacterDexterity + CharacterIntelligence + CharacterWisdom + CharacterCharisma;
-                if (total >= (63 + 18))
-                    TotalStatsBackground = new SolidColorBrush(Colors.Red);
-                else if(total > (4 * 18))
-                    TotalStatsBackground = new SolidColorBrush(Colors.Yellow);
-                else if(total <= (63 - 18))
-                    TotalStatsBackground = new SolidColorBrush(Colors.Green);
-                else if(total < (3 * 18))
-                    TotalStatsBackground = new SolidColorBrush(Colors.Silver);
-                else
-                    TotalStatsBackground = new SolidColorBrush(Colors.White);
-                return total;
-            }
-        }
-
-        
         #endregion
 
         #region 服务(Services)
@@ -285,10 +344,22 @@ namespace Client.ViewModels
         #endregion
 
         #region 命令(Commands)
-        public DelegateCommand BeginQuestCmd { get; set; }
-        public DelegateCommand RollStats { get; set; }
-        public DelegateCommand UnrollStats { get; set; }
-        public DelegateCommand GetNewCharacterName { get; set; }
+        /// <summary>
+        /// 新名字
+        /// </summary>
+        public DelegateCommand NewNameCommand { get; private set; }
+        /// <summary>
+        /// 随机生成属性
+        /// </summary>
+        public DelegateCommand RollStatCommand { get; private set; }
+        /// <summary>
+        /// 上一个生成的属性
+        /// </summary>
+        public DelegateCommand UnrollStatCommand { get; private set; }
+        /// <summary>
+        /// 开启旅程
+        /// </summary>
+        public DelegateCommand BeginQuestCommand { get; private set; }
         #endregion
 
         #region 构造函数(Constructor)
@@ -296,34 +367,69 @@ namespace Client.ViewModels
         /// 新游戏视图模型
         /// </summary>
         /// <param name="provider">容器提供者</param>
+        /// <param name="repository"></param>
         public NewGameViewModel(IContainerProvider provider, IRepository repository) : base(provider)
         {
             _Repository = repository;
-            BeginQuestCmd = new DelegateCommand(BeginQuest, CanBeginQuest);
-            RollStats = new DelegateCommand(RollNewStatsForCharacter);
-            UnrollStats = new DelegateCommand(UnrollPreviousStatsForCharacter, CanUnrollStats);
-            GetNewCharacterName = new DelegateCommand(RandomlySetCharacterName);
+            NewNameCommand = new DelegateCommand(RandomlySetCharacterName);
+            RollStatCommand = new DelegateCommand(RollNewStatsForCharacter);
+            UnrollStatCommand = new DelegateCommand(UnrollPreviousStatsForCharacter, CanUnrollStats);
+            BeginQuestCommand = new DelegateCommand(BeginQuest, CanBeginQuest);
 
             Races = _Repository.GetAllRace();
             Classes = _Repository.GetAllClass();
+            InitData();
+        }
+        #endregion
 
-            RandomlySetCharacterName();
-            SetCharacterStats(GenerateRandomCharacterStatSet());
-            RandomlySetCharacterRace();
-            RandomlySetCharacterClass();
-
-
+        #region 重写方法(Override)
+        /// <summary>
+        /// 是否可以处理请求的导航行为,当前视图/模型是否可以重用
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>true:</remarks>
+        /// <returns></returns>
+        public override bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+        /// <summary>
+        /// 从本页面转到其它页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含目标页面的URI</remarks>
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+        }
+        /// <summary>
+        /// 从其它页面导航至本页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含传递过来的参数</remarks>
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            InitData();
         }
         #endregion
 
         #region 方法(Methods)
+        /// <summary>
+        /// 初始化界面数据
+        /// </summary>
+        private void InitData()
+        {
+            RandomlySetCharacterName();
+            SetCharacterStats(GenerateRandomCharacterStatSet());
+            RandomlySetCharacterRace();
+            RandomlySetCharacterClass();
+        }
         /// <summary>
         /// 上一个设置人物属性按钮是否可用
         /// </summary>
         /// <returns></returns>
         private bool CanUnrollStats()
         {
-            return _previousCharacterStats.Count > 0;
+            return _RollStat.Count > 0;
         }
         /// <summary>
         /// 是否可以开始任务
@@ -331,7 +437,7 @@ namespace Client.ViewModels
         /// <returns></returns>
         private bool CanBeginQuest()
         {
-            return _newCharacter?.IsValid ?? false;
+            return _Character?.IsValid ?? false;
         }
         /// <summary>
         /// 随机设置人物名
@@ -346,7 +452,7 @@ namespace Client.ViewModels
         private void RandomlySetCharacterRace()
         {
             var raceCount=Races.Count();
-            CharacterRace = Race = Races[(new Random()).Next(1, raceCount)];
+            CharacterRace = Races[(new Random()).Next(1, raceCount)];
         }
         /// <summary>
         /// 随机设置人物职业
@@ -354,60 +460,78 @@ namespace Client.ViewModels
         private void RandomlySetCharacterClass()
         {
             var raceCount = Classes.Count();
-            CharacterClass = Class = Classes[(new Random()).Next(1, raceCount)];
+            CharacterClass = Classes[(new Random()).Next(1, raceCount)];
         }
         /// <summary>
         /// 新的人物属性
         /// </summary>
         private void RollNewStatsForCharacter()
         {
-            _previousCharacterStats.Push(_newCharacter.CharacterStats);
+            RollStatModel model = new RollStatModel()
+            {
+                Strength = CharacterStrength,
+                Constitution = CharacterConstitution,
+                Dexterity = CharacterDexterity,
+                Intelligence = CharacterIntelligence,
+                Wisdom = CharacterWisdom,
+                Charisma = CharacterCharisma,
+                HPMax = CharacterHPMax,
+                MPMax = CharacterMPMax,
+            };
+            _RollStat.Push(model);
             SetCharacterStats(GenerateRandomCharacterStatSet());
-            UnrollStats.RaiseCanExecuteChanged();
+            UnrollStatCommand.RaiseCanExecuteChanged();
         }
         /// <summary>
         /// 上一个人物属性
         /// </summary>
         private void UnrollPreviousStatsForCharacter()
         {
-            SetCharacterStats(_previousCharacterStats.Pop());
-            UnrollStats.RaiseCanExecuteChanged();
+            SetCharacterStats(_RollStat.Pop());
+            UnrollStatCommand.RaiseCanExecuteChanged();
         }
         /// <summary>
         /// 随机生成人物属性
         /// </summary>
         /// <returns></returns>
-        private CharacterStats GenerateRandomCharacterStatSet()
+        private RollStatModel GenerateRandomCharacterStatSet()
         {
             Random statGenerator = new Random();
-            var stats = new CharacterStats { Strength = statGenerator.Next(1, 16), Constitution = statGenerator.Next(1, 16), Dexterity = statGenerator.Next(1, 16), Intelligence = statGenerator.Next(1, 16), Wisdom = statGenerator.Next(1, 16), Charisma = statGenerator.Next(1, 16), HpMax = statGenerator.Next(1, 16), MpMax = statGenerator.Next(1, 16) };
+            var stats = new RollStatModel
+            { 
+                Strength = statGenerator.Next(1, 16), 
+                Constitution = statGenerator.Next(1, 16), 
+                Dexterity = statGenerator.Next(1, 16), 
+                Intelligence = statGenerator.Next(1, 16), 
+                Wisdom = statGenerator.Next(1, 16), 
+                Charisma = statGenerator.Next(1, 16), 
+            };
+            stats.HPMax = statGenerator.Next(1, 8) + stats.Strength;
+            stats.MPMax = statGenerator.Next(1, 8) + stats.Intelligence;
             return stats;
         }
         /// <summary>
         /// 设置人物属性
         /// </summary>
         /// <param name="stats">人物属性</param>
-        private void SetCharacterStats(CharacterStats stats)
+        private void SetCharacterStats(RollStatModel stats)
         {
-            _newCharacter.CharacterStats = stats;
-
-            RaisePropertyChanged(nameof(CharacterStrength));
-            RaisePropertyChanged(nameof(CharacterConstitution));
-            RaisePropertyChanged(nameof(CharacterDexterity));
-            RaisePropertyChanged(nameof(CharacterIntelligence));
-            RaisePropertyChanged(nameof(CharacterWisdom));
-            RaisePropertyChanged(nameof(CharacterCharisma));
-            RaisePropertyChanged(nameof(TotalStats));
-            BeginQuestCmd.RaiseCanExecuteChanged();
+            CharacterStrength = stats.Strength;
+            CharacterConstitution = stats.Constitution;
+            CharacterDexterity = stats.Dexterity;
+            CharacterIntelligence = stats.Intelligence;
+            CharacterWisdom = stats.Wisdom;
+            CharacterCharisma = stats.Charisma;
+            CharacterHPMax = stats.HPMax;
+            CharacterMPMax = stats.MPMax;
         }
         /// <summary>
         /// 开始任务
         /// </summary>
         private void BeginQuest()
         {
-            //_newCharacter.Save();
             NavigationParameters param = new NavigationParameters();
-            param.Add("NewCharacter", _newCharacter);
+            param.Add("Character", _Character);
             NavigationToView("GameView", param);
         }
         #endregion

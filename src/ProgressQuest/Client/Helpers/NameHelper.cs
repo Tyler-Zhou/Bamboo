@@ -140,7 +140,10 @@ namespace Client.Helpers
             var rand = new Random();
             return pickableSet[rand.Next(pickableSet.Length)];
         }
-
+        /// <summary>
+        /// 生成中文名称
+        /// </summary>
+        /// <returns></returns>
         public static string GenerateChineseName()
         {
             //姓

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Client.Models
 {
@@ -14,7 +15,8 @@ namespace Client.Models
         /// <summary>
         /// 名称
         /// </summary>
-        public string Name
+        [JsonIgnore]
+        public virtual string Name
         {
             get
             {
@@ -33,7 +35,11 @@ namespace Client.Models
         }
 
         private string errorMessage = string.Empty;
-        public string ErrorMessage 
+        /// <summary>
+        /// 错误信息
+        /// </summary>
+        [JsonIgnore]
+        public string ErrorMessage
         { 
             get
             {

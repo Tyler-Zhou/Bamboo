@@ -1,7 +1,13 @@
-﻿using Client.Models;
+﻿using Client.Extensions;
+using Client.Interfaces;
+using Client.Models;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Client.ViewModels
 {
@@ -11,89 +17,109 @@ namespace Client.ViewModels
     public class GameViewModel : BaseViewModel
     {
         #region 成员(Member)
-        private Character _character;
-
-        public string CharacterName
+        #region 内容是否可见
+        /// <summary>
+        /// 内容是否可见
+        /// </summary>
+        public bool ContentVisible
         {
-            get => _character.Name;
-        }
+            get
+            {
+                if (CurrentCharacter == null || string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+                    return false;
+                return true;
+            }
+        } 
+        #endregion
 
-        public RaceModel CharacterRace
+        #region 人物
+        /// <summary>
+        /// 人物
+        /// </summary>
+        private Character _Character;
+        /// <summary>
+        /// 人物
+        /// </summary>
+        public Character CurrentCharacter
         {
-            get => _character.Race;
+            get => _Character;
+            set
+            {
+                if (value != null)
+                {
+                    _Character = value;
+                    RaisePropertyChanged(nameof(CurrentCharacter));
+                    RaisePropertyChanged(nameof(ContentVisible));
+                    Traits = _Character.Traits();
+                    RaisePropertyChanged(nameof(Traits));
+                    Stats = _Character.Stats();
+                    RaisePropertyChanged(nameof(Stats));
+                }
+            }
         }
+        #endregion
 
-        public ClassModel CharacterClass
+        #region 特征集合
+        ObservableCollection<TraitModel> _Traits;
+        /// <summary>
+        /// 特征集合
+        /// </summary>
+        public ObservableCollection<TraitModel> Traits
         {
-            get => _character.Class;
+            get => _Traits;
+            set
+            {
+                _Traits = value;
+                RaisePropertyChanged();
+            }
         }
+        #endregion
 
-        public int CharacterLevel
+        #region 属性集合
+        ObservableCollection<StatModel> _Stats;
+        /// <summary>
+        /// 属性集合
+        /// </summary>
+        public ObservableCollection<StatModel> Stats
         {
-            get => _character.Level;
+            get => _Stats;
+            set
+            {
+                _Stats = value;
+                RaisePropertyChanged();
+            }
         }
-
-        public int CharacterStrength
-        {
-            get => _character.CharacterStats.Strength;
-        }
-
-        public int CharacterConstitution
-        {
-            get => _character.CharacterStats.Constitution;
-        }
-
-        public int CharacterDexterity
-        {
-            get => _character.CharacterStats.Dexterity;
-        }
-
-        public int CharacterIntelligence
-        {
-            get => _character.CharacterStats.Intelligence;
-        }
-
-        public int CharacterWisdom
-        {
-            get => _character.CharacterStats.Wisdom;
-        }
-
-        public int CharacterCharisma
-        {
-            get => _character.CharacterStats.Charisma;
-        }
-
-        public int CharacterMaxHp
-        {
-            get => _character.CharacterStats.HpMax;
-        }
-
-        public int CharacterMaxMp
-        {
-            get => _character.CharacterStats.MpMax;
-        }
+        #endregion
         #endregion
 
         #region 服务(Service)
+        /// <summary>
+        /// 缓存服务
+        /// </summary>
+        ICacheService _CacheService;
 
         #endregion
 
-        #region 命令
-        /// <summary>
-        /// 执行所有命令，根据类型参数选择不同操作
-        /// </summary>
-        public DelegateCommand<string> ExecuteCommand { get; private set; }
+        #region 命令(Command)
+
         #endregion
 
         #region 构造函数(Constructor)
         /// <summary>
         /// 
         /// </summary>
-        public GameViewModel(IContainerProvider provider) : base(provider)
+        /// <param name="provider"></param>
+        /// <param name="cacheService"></param>
+        /// <param name="windowService"></param>
+        public GameViewModel(IContainerProvider provider, ICacheService cacheService, IWindowService windowService) : base(provider)
         {
-            if (_character == null)
-                _character = new Character();
+            _CacheService = cacheService;
+            windowService.AddFunction(SaveCharacter);
+            if (CurrentCharacter == null)
+                CurrentCharacter = new Character();
         }
+
+       
         #endregion
 
         #region 重写方法(Override)
@@ -125,13 +151,62 @@ namespace Client.ViewModels
         {
             if (navigationContext != null)
             {
-                if (navigationContext.Parameters.ContainsKey("NewCharacter"))
-                    _character = (Character)navigationContext.Parameters["NewCharacter"];
+                if (navigationContext.Parameters.ContainsKey("Character"))
+                {
+                    Character character = navigationContext.Parameters["Character"] as Character;
+                    var result = Task.Run(() => LoadCharacter(character).Result).Result;
+                }
             }
         }
         #endregion
 
         #region 方法(Method)
+        /// <summary>
+        /// 加载人物
+        /// </summary>
+        /// <param name="character"></param>
+        /// <returns></returns>
+        async Task<bool> LoadCharacter(Character character)
+        {
+            if (character == null)
+                return false;
+            if (CurrentCharacter != null)
+            {
+                //过滤同名人物操作
+                if (character.Equals(CurrentCharacter.Name))
+                    return false;
+                //当前人物不为空
+                if(!string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+                {
+                    await SaveCharacter();
+                    //重置人物信息
+                    CurrentCharacter = null;
+                }
+            }
+            //获取存档
+            Character archiveCharacter = await _CacheService.GetAsync<Character>(character.Name);
+            if (archiveCharacter != null)
+            {
+                CurrentCharacter = archiveCharacter;
+            }
+            else
+            {
+                CurrentCharacter = character;
+                await SaveCharacter();
+            }
+            return true;
+        }
+        /// <summary>
+        /// 保存当前人物
+        /// </summary>
+        async Task<bool> SaveCharacter()
+        {
+            if (CurrentCharacter == null || string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+                return false;
+            //保存当前人物
+            await _CacheService.SaveAsync(CurrentCharacter.Name, CurrentCharacter);
+            return true;
+        }
         #endregion
     }
 }

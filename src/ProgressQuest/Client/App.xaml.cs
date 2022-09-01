@@ -99,13 +99,13 @@ namespace Client
             {
                 service.ConfigureContent();
             }
-            InitSetting();
+            var result=Task.Run(()=>InitSetting().Result).Result;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        async void InitSetting()
+        async Task<bool> InitSetting()
         {
             var settingService = Container.Resolve<ISettingService>();
             if (await settingService.GetAsync<ApplicationSetting>("Setting") == null)
@@ -132,6 +132,7 @@ namespace Client
                 Current.Resources.MergedDictionaries.Remove(resourceDictionary);
                 Current.Resources.MergedDictionaries.Add(resourceDictionary);
             }
+            return true;
         }
 
         /// <summary>
@@ -146,13 +147,16 @@ namespace Client
             containerRegistry.RegisterInstance(_Logger);
             //Service
             containerRegistry.Register<IConfigureService, MainViewModel>();
+            containerRegistry.RegisterSingleton<IWindowService, MainViewModel>();
             containerRegistry.Register<INavigationService, MainViewModel>();
             containerRegistry.Register<IRepository, Repository>();
             containerRegistry.Register<ISettingService, SettingService>();
+            containerRegistry.Register<ICacheService, CacheService>();
 
             //View & ViewModel
             containerRegistry.RegisterForNavigation<NewGameView, NewGameViewModel>();
             containerRegistry.RegisterForNavigation<GameView, GameViewModel>();
+            containerRegistry.RegisterForNavigation<ArchiveView, ArchiveViewModel>();
         }
         #endregion
 

@@ -1,21 +1,28 @@
 ﻿using Client.Common;
 using Client.Interfaces;
 using Client.Models;
-using Client.Services;
 using Microsoft.Extensions.Logging;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Client.ViewModels
 {
-    public class MainViewModel: BindableBase, IConfigureService, INavigationService
+    /// <summary>
+    /// 主界面视图模型
+    /// </summary>
+    public class MainViewModel: BindableBase, IConfigureService, INavigationService, IWindowService
     {
         #region 成员(Member)
-
+        /// <summary>
+        /// 方法集合
+        /// </summary>
+        private static List<Func<Task>> _Functions = new List<Func<Task>>();
         #endregion
 
         #region 服务(Service)
@@ -31,6 +38,7 @@ namespace Client.ViewModels
         /// 设置服务
         /// </summary>
         private readonly ISettingService _SettingService;
+        
         #endregion
 
         #region 命令(Commands)
@@ -38,6 +46,10 @@ namespace Client.ViewModels
         /// 新游戏
         /// </summary>
         public DelegateCommand NewGameCommand { get; private set; }
+        /// <summary>
+        /// 选择存档
+        /// </summary>
+        public DelegateCommand SelectArchiveCommand { get; private set; }
         /// <summary>
         /// 选择语言
         /// </summary>
@@ -52,12 +64,16 @@ namespace Client.ViewModels
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="regionManager"></param>
+        /// <param name="settingService"></param>
         public MainViewModel(ILogger logger,IRegionManager regionManager, ISettingService settingService)
         {
             _Logger= logger;
             _RegionManager = regionManager;
             _SettingService= settingService;
             NewGameCommand = new DelegateCommand(NewGame);
+            SelectArchiveCommand = new DelegateCommand(SelectArchive);
             SwitchLanguageCommand = new DelegateCommand<string>(SwitchLanguage);
             ExitGameCommand = new DelegateCommand(ExitGame);
         }
@@ -71,7 +87,7 @@ namespace Client.ViewModels
         /// <summary>
         /// 导航
         /// </summary>
-        /// <param name="viewName">视图名称</param>
+        /// <param name="menuBar">菜单对象</param>
         void Navigate(MenuBar menuBar)
         {
             if (menuBar==null || string.IsNullOrWhiteSpace(menuBar.ViewName))
@@ -90,10 +106,18 @@ namespace Client.ViewModels
             Navigate(new MenuBar {ViewName= "NewGameView" });
         }
         /// <summary>
+        /// 选择存档
+        /// </summary>
+        private void SelectArchive()
+        {
+            Navigate(new MenuBar { ViewName = "ArchiveView" });
+        }
+        /// <summary>
         /// 退出游戏
         /// </summary>
         private void ExitGame()
         {
+            var result = Task.Run(() => ExecuteAllFunction().Result).Result;
             Application.Current.Shutdown();
         }
         private void SwitchLanguage(string culture)
@@ -101,11 +125,29 @@ namespace Client.ViewModels
             ConfigLanguage(culture);
         }
         /// <summary>
+        /// 执行所有方法
+        /// </summary>
+        /// <returns></returns>
+        async Task<bool> ExecuteAllFunction()
+        {
+            if(_Functions!=null && _Functions.Count > 0)
+            {
+                var functions = _Functions.Select(command => command());
+                await Task.WhenAll(functions);
+
+                return _Functions.Count > 0;
+            }
+            return true;
+        }
+        #endregion
+
+        #region IConfigureService
+        /// <summary>
         /// 配置主窗体内容项
         /// </summary>
         public void ConfigureContent()
         {
-            Navigate(new MenuBar() {ViewName = "GameView" });
+            Navigate(new MenuBar() { ViewName = "GameView" });
         }
         /// <summary>
         /// 
@@ -118,14 +160,32 @@ namespace Client.ViewModels
                 return;
             ApplicationContext.Setting.CultureName = culture;
 
-            _SettingService.SaveAsync("Setting",ApplicationContext.Setting);
+            _SettingService.SaveAsync("Setting", ApplicationContext.Setting);
             ExitGame();
         }
+        #endregion
 
+        #region INavigationService
+        /// <summary>
+        /// 导航到视图
+        /// </summary>
+        /// <param name="viewName"></param>
+        /// <param name="navigationParams"></param>
         public void NavigationToView(string viewName, NavigationParameters navigationParams)
         {
             Navigate(new MenuBar { ViewName = viewName, NavigationParams = navigationParams });
         }
+        #endregion
+
+        #region IWindowService
+        /// <summary>
+        /// 添加方法
+        /// </summary>
+        /// <param name="func"></param>
+        public void AddFunction(Func<Task> func)
+        {
+            _Functions.Add(func);
+        } 
         #endregion
     }
 }

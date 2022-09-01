@@ -4,80 +4,82 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Client.Views"
+    xmlns:localConverter="clr-namespace:Client.Converters"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     d:DesignHeight="450"
     d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <Grid Margin="10">
+    <UserControl.Resources>
+        <localConverter:BooleanToVisibilityConveter x:Key="BooleanToVisibility" />
+        <Style TargetType="DataGrid">
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="RowHeaderWidth" Value="0" />
+            <Setter Property="CanUserResizeColumns" Value="False" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="AutoGenerateColumns" Value="False" />
+            <Setter Property="CanUserAddRows" Value="False" />
+            <Setter Property="GridLinesVisibility" Value="None" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
+            <Setter Property="SelectionUnit" Value="FullRow" />
+        </Style>
+        <Style x:Key="ColumnHeaderTraitStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderTrait}" />
+        </Style>
+        <Style x:Key="ColumnHeaderValueStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderValue}" />
+        </Style>
+        <Style x:Key="ColumnHeaderStatStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderStat}" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="10" Visibility="{Binding ContentVisible, Converter={StaticResource BooleanToVisibility}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="32" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.2*" />
+            <ColumnDefinition Width="240" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition Height="40" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <GroupBox Grid.Row="0" Header="人物信息">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Content="姓名" />
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Content="{Binding CharacterName, Mode=OneWay}" />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Content="种族" />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Content="{Binding CharacterRace, Mode=OneWay}" />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Content="职业" />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Content="{Binding CharacterClass, Mode=OneWay}" />
-                    <Label
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        Content="等级" />
-                    <Label
-                        Grid.Row="3"
-                        Grid.Column="1"
-                        Content="{Binding CharacterLevel, Mode=OneWay}" />
-                </Grid>
+        <DockPanel Grid.Row="0" Grid.Column="0">
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderCharacterSheet}">
+                <DataGrid ItemsSource="{Binding Traits}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Name}"
+                            HeaderStyle="{StaticResource ColumnHeaderTraitStyle}"
+                            IsReadOnly="True" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Value}"
+                            HeaderStyle="{StaticResource ColumnHeaderValueStyle}"
+                            IsReadOnly="True" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </GroupBox>
-            <GroupBox Grid.Row="1" Header="属性" />
-            <GroupBox Grid.Row="2" Header="经验">
+            <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Stats}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Name}"
+                        HeaderStyle="{StaticResource ColumnHeaderStatStyle}"
+                        IsReadOnly="True" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Value}"
+                        HeaderStyle="{StaticResource ColumnHeaderValueStyle}"
+                        IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderExperience}">
                 <ProgressBar Height="16" Value="50" />
             </GroupBox>
-            <GroupBox Grid.Row="3" Header="法术书" />
-        </Grid>
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}" />
+        </DockPanel>
         <Grid Grid.Row="0" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.4*" />
@@ -85,24 +87,24 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="280" />
             </Grid.ColumnDefinitions>
             <GroupBox
                 Grid.Row="0"
                 Grid.Column="0"
-                Header="装备" />
+                Header="{DynamicResource GroupBoxHeaderEquipment}" />
             <GroupBox
                 Grid.Row="0"
                 Grid.Column="1"
-                Header="剧情发展" />
+                Header="{DynamicResource GroupBoxHeaderPlotDevelopment}" />
             <GroupBox
                 Grid.Row="1"
                 Grid.Column="0"
-                Header="详细目录" />
+                Header="{DynamicResource GroupBoxHeaderInventory}" />
             <GroupBox
                 Grid.Row="1"
                 Grid.Column="1"
-                Header="任务" />
+                Header="{DynamicResource GroupBoxHeaderQuests}" />
         </Grid>
         <DockPanel
             Grid.Row="1"
