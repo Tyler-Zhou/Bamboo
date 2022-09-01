@@ -32,17 +32,19 @@ namespace Client.ViewModels
         #endregion
 
         #region 种族
+        private RaceModel _CharacterRace;
         /// <summary>
         /// 种族
         /// </summary>
         public RaceModel CharacterRace
         {
-            get => _Character.Race;
+            get => _CharacterRace;
             set
             {
-                if (value != _Character.Race)
+                if (value != _CharacterRace)
                 {
-                    _Character.Race = value;
+                    _CharacterRace = value;
+                    _Character.RaceKey = _CharacterRace.Key;
                     RaisePropertyChanged(nameof(CharacterRace));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -51,17 +53,19 @@ namespace Client.ViewModels
         #endregion
 
         #region 职业
+        private ClassModel _CharacterClass;
         /// <summary>
         /// 职业
         /// </summary>
         public ClassModel CharacterClass
         {
-            get => _Character.Class;
+            get => _CharacterClass;
             set
             {
-                if (value != _Character.Class)
+                if (value != _CharacterClass)
                 {
-                    _Character.Class = value;
+                    _CharacterClass = value;
+                    _Character.ClassKey = _CharacterClass.Key;
                     RaisePropertyChanged(nameof(CharacterClass));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -308,7 +312,7 @@ namespace Client.ViewModels
         }
         #endregion
 
-        #region 职业集合(Races)
+        #region 职业集合(Classes)
         private ObservableCollection<ClassModel> _Classes;
         /// <summary>
         /// 职业集合
@@ -337,10 +341,6 @@ namespace Client.ViewModels
         #endregion
 
         #region 服务(Services)
-        /// <summary>
-        /// 
-        /// </summary>
-        IRepository _Repository;
         #endregion
 
         #region 命令(Commands)
@@ -367,17 +367,14 @@ namespace Client.ViewModels
         /// 新游戏视图模型
         /// </summary>
         /// <param name="provider">容器提供者</param>
-        /// <param name="repository"></param>
-        public NewGameViewModel(IContainerProvider provider, IRepository repository) : base(provider)
+        public NewGameViewModel(IContainerProvider provider) : base(provider)
         {
-            _Repository = repository;
             NewNameCommand = new DelegateCommand(RandomlySetCharacterName);
             RollStatCommand = new DelegateCommand(RollNewStatsForCharacter);
             UnrollStatCommand = new DelegateCommand(UnrollPreviousStatsForCharacter, CanUnrollStats);
             BeginQuestCommand = new DelegateCommand(BeginQuest, CanBeginQuest);
 
-            Races = _Repository.GetAllRace();
-            Classes = _Repository.GetAllClass();
+            
             InitData();
         }
         #endregion
@@ -418,6 +415,9 @@ namespace Client.ViewModels
         /// </summary>
         private void InitData()
         {
+            Races = Repository.Races;
+            Classes = Repository.Classes; 
+
             RandomlySetCharacterName();
             SetCharacterStats(GenerateRandomCharacterStatSet());
             RandomlySetCharacterRace();

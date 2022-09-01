@@ -24,15 +24,28 @@
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
             <Setter Property="SelectionUnit" Value="FullRow" />
+            <Setter Property="Background" Value="Transparent" />
         </Style>
-        <Style x:Key="ColumnHeaderTraitStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Style x:Key="ColumnHeaderStyleTrait" TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderTrait}" />
         </Style>
-        <Style x:Key="ColumnHeaderValueStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Style x:Key="ColumnHeaderStyleValue" TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderValue}" />
         </Style>
-        <Style x:Key="ColumnHeaderStatStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Style x:Key="ColumnHeaderStyleStat" TargetType="{x:Type DataGridColumnHeader}">
             <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderStat}" />
+        </Style>
+        <Style x:Key="ColumnHeaderStyleSpell" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderSpell}" />
+        </Style>
+        <Style x:Key="ColumnHeaderStyleLevel" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderLevel}" />
+        </Style>
+        <Style x:Key="ColumnHeaderStyleQuality" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderQuality}" />
+        </Style>
+        <Style x:Key="ColumnHeaderStyleItem" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Content" Value="{DynamicResource DataGridColumnHeaderItem}" />
         </Style>
     </UserControl.Resources>
     <Grid Margin="10" Visibility="{Binding ContentVisible, Converter={StaticResource BooleanToVisibility}}">
@@ -51,12 +64,12 @@
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding Name}"
-                            HeaderStyle="{StaticResource ColumnHeaderTraitStyle}"
+                            HeaderStyle="{StaticResource ColumnHeaderStyleTrait}"
                             IsReadOnly="True" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding Value}"
-                            HeaderStyle="{StaticResource ColumnHeaderValueStyle}"
+                            HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
                             IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
@@ -66,45 +79,97 @@
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Name}"
-                        HeaderStyle="{StaticResource ColumnHeaderStatStyle}"
+                        HeaderStyle="{StaticResource ColumnHeaderStyleStat}"
                         IsReadOnly="True" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Value}"
-                        HeaderStyle="{StaticResource ColumnHeaderValueStyle}"
+                        HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
                         IsReadOnly="True" />
                 </DataGrid.Columns>
             </DataGrid>
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderExperience}">
-                <ProgressBar Height="16" Value="50" />
+                <ProgressBar
+                    Height="16"
+                    Maximum="{Binding ExpTaskMax}"
+                    ToolTip="{Binding ExpTaskToolTip}"
+                    Value="{Binding ExpTaskPosition}" />
             </GroupBox>
-            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}" />
+            <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}">
+                <DataGrid ItemsSource="{Binding SpellBooks}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Name}"
+                            HeaderStyle="{StaticResource ColumnHeaderStyleSpell}"
+                            IsReadOnly="True" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Value}"
+                            HeaderStyle="{StaticResource ColumnHeaderStyleLevel}"
+                            IsReadOnly="True" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
         </DockPanel>
         <Grid Grid.Row="0" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.4*" />
-                <RowDefinition Height="0.6*" />
-            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="280" />
             </Grid.ColumnDefinitions>
-            <GroupBox
-                Grid.Row="0"
-                Grid.Column="0"
-                Header="{DynamicResource GroupBoxHeaderEquipment}" />
-            <GroupBox
-                Grid.Row="0"
-                Grid.Column="1"
-                Header="{DynamicResource GroupBoxHeaderPlotDevelopment}" />
-            <GroupBox
-                Grid.Row="1"
-                Grid.Column="0"
-                Header="{DynamicResource GroupBoxHeaderInventory}" />
-            <GroupBox
-                Grid.Row="1"
-                Grid.Column="1"
-                Header="{DynamicResource GroupBoxHeaderQuests}" />
+            <DockPanel Grid.Column="0">
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderEquipment}">
+                    <DataGrid HeadersVisibility="None" ItemsSource="{Binding Equipments}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Name}"
+                                IsReadOnly="True" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Description}"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderInventory}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="16" />
+                            <RowDefinition Height="16" />
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Row="0" ItemsSource="{Binding Inventorys}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn
+                                    Width="*"
+                                    Binding="{Binding Name}"
+                                    HeaderStyle="{StaticResource ColumnHeaderStyleItem}"
+                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Width="100"
+                                    Binding="{Binding Quality}"
+                                    HeaderStyle="{StaticResource ColumnHeaderStyleQuality}"
+                                    IsReadOnly="True" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBlock Grid.Row="1" Text="{DynamicResource TextBlockEncumbrance}" />
+                        <ProgressBar
+                            Grid.Row="2"
+                            Height="16"
+                            Maximum="{Binding InventoryTaskMax}"
+                            ToolTip="{Binding InventoryTaskToolTip}"
+                            Value="{Binding InventoryTaskPosition}" />
+                    </Grid>
+                </GroupBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <GroupBox
+                    Height="210"
+                    DockPanel.Dock="Top"
+                    Header="{DynamicResource GroupBoxHeaderPlotDevelopment}" />
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderQuests}" />
+            </DockPanel>
         </Grid>
         <DockPanel
             Grid.Row="1"

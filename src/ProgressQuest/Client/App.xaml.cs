@@ -149,7 +149,6 @@ namespace Client
             containerRegistry.Register<IConfigureService, MainViewModel>();
             containerRegistry.RegisterSingleton<IWindowService, MainViewModel>();
             containerRegistry.Register<INavigationService, MainViewModel>();
-            containerRegistry.Register<IRepository, Repository>();
             containerRegistry.Register<ISettingService, SettingService>();
             containerRegistry.Register<ICacheService, CacheService>();
 

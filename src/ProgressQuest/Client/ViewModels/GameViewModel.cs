@@ -1,12 +1,11 @@
-﻿using Client.Extensions;
+﻿using Client.DataAccess;
+using Client.Extensions;
+using Client.Helpers;
 using Client.Interfaces;
 using Client.Models;
-using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
-using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Client.ViewModels
@@ -54,6 +53,12 @@ namespace Client.ViewModels
                     RaisePropertyChanged(nameof(Traits));
                     Stats = _Character.Stats();
                     RaisePropertyChanged(nameof(Stats));
+                    Equipments = _Character.Equipments();
+                    RaisePropertyChanged(nameof(Equipments));
+                    SetProgressBarExperience(_Character.ExpTask.Position);
+                    RaisePropertyChanged(nameof(ExpTaskToolTip));
+                    SetProgressBarInventory(_Character.InventoryTask.Position);
+                    RaisePropertyChanged(nameof(InventoryTaskToolTip));
                 }
             }
         }
@@ -90,6 +95,138 @@ namespace Client.ViewModels
             }
         }
         #endregion
+
+        #region 法术书
+        /// <summary>
+        /// 法术书
+        /// </summary>
+        public ObservableCollection<SpellBookModel> SpellBooks
+        {
+            get => _Character.SpellBooks;
+            set
+            {
+                _Character.SpellBooks = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region 装备
+        ObservableCollection<EquipmentModel> _Equipments;
+        /// <summary>
+        /// 装备
+        /// </summary>
+        public ObservableCollection<EquipmentModel> Equipments
+        {
+            get => _Equipments;
+            set
+            {
+                _Equipments = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region 详细目录
+        /// <summary>
+        /// 详细目录
+        /// </summary>
+        public ObservableCollection<InventoryModel> Inventorys
+        {
+            get => _Character.Inventorys;
+            set
+            {
+                if (value != _Character.Inventorys)
+                {
+                    _Character.Inventorys = value;
+                    RaisePropertyChanged(nameof(Inventorys));
+                }
+            }
+        }
+        #endregion
+
+        #region 进度条(ProgressBar)
+
+        #region 经验
+        /// <summary>
+        /// 经验当前位置
+        /// </summary>
+        public int ExpTaskPosition
+        {
+            get => CurrentCharacter.ExpTask.Position;
+            set
+            {
+                CurrentCharacter.ExpTask.Position = value;
+                RaisePropertyChanged(nameof(ExpTaskPosition));
+                RaisePropertyChanged(nameof(ExpTaskToolTip));
+            }
+        }
+
+        /// <summary>
+        /// 经验最大值
+        /// </summary>
+        public int ExpTaskMax
+        {
+            get => CurrentCharacter.ExpTask.MaxValue;
+            set
+            {
+                CurrentCharacter.ExpTask.MaxValue = value;
+                RaisePropertyChanged(nameof(ExpTaskMax));
+                RaisePropertyChanged(nameof(ExpTaskToolTip));
+            }
+        }
+
+        /// <summary>
+        /// 悬浮提示
+        /// </summary>
+        public string ExpTaskToolTip
+        {
+            get => CurrentCharacter.ExpTask.Name;
+        }
+        #endregion
+
+        #region 当前
+
+        #endregion
+
+        #region 目录(负重)
+        /// <summary>
+        /// 目录当前位置
+        /// </summary>
+        public int InventoryTaskPosition
+        {
+            get => CurrentCharacter.InventoryTask.Position;
+            set
+            {
+                CurrentCharacter.InventoryTask.Position = value;
+                RaisePropertyChanged(nameof(InventoryTaskPosition));
+                RaisePropertyChanged(nameof(InventoryTaskToolTip));
+            }
+        }
+
+        /// <summary>
+        /// 目录最大值
+        /// </summary>
+        public int InventoryTaskMax
+        {
+            get => CurrentCharacter.InventoryTask.MaxValue;
+            set
+            {
+                CurrentCharacter.InventoryTask.MaxValue = value;
+                RaisePropertyChanged(nameof(InventoryTaskMax));
+                RaisePropertyChanged(nameof(InventoryTaskToolTip));
+            }
+        }
+
+        /// <summary>
+        /// 悬浮提示
+        /// </summary>
+        public string InventoryTaskToolTip
+        {
+            get => CurrentCharacter.InventoryTask.Name;
+        }
+        #endregion
+        #endregion
         #endregion
 
         #region 服务(Service)
@@ -97,7 +234,6 @@ namespace Client.ViewModels
         /// 缓存服务
         /// </summary>
         ICacheService _CacheService;
-
         #endregion
 
         #region 命令(Command)
@@ -115,11 +251,8 @@ namespace Client.ViewModels
         {
             _CacheService = cacheService;
             windowService.AddFunction(SaveCharacter);
-            if (CurrentCharacter == null)
-                CurrentCharacter = new Character();
+            InitData();
         }
-
-       
         #endregion
 
         #region 重写方法(Override)
@@ -161,6 +294,18 @@ namespace Client.ViewModels
         #endregion
 
         #region 方法(Method)
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        private void InitData()
+        {
+            if (CurrentCharacter == null)
+            {
+                CurrentCharacter = new Character();
+                //SetProgressBarExperience(0);
+                //SetProgressBarInventory(0);
+            }
+        }
         /// <summary>
         /// 加载人物
         /// </summary>
@@ -206,6 +351,23 @@ namespace Client.ViewModels
             //保存当前人物
             await _CacheService.SaveAsync(CurrentCharacter.Name, CurrentCharacter);
             return true;
+        }
+
+        /// <summary>
+        /// 设置经验进度条
+        /// </summary>
+        void SetProgressBarExperience(int position)
+        {
+            CurrentCharacter.ExpTask.Position = position;
+            CurrentCharacter.ExpTask.MaxValue = CharacterHelper.GetMaxExperienceByLevel(CurrentCharacter.Level);
+        }
+        /// <summary>
+        /// 设置详细目录进度条
+        /// </summary>
+        void SetProgressBarInventory(int position)
+        {
+            CurrentCharacter.InventoryTask.Position = position;
+            CurrentCharacter.InventoryTask.MaxValue = CurrentCharacter.Strength + 10;
         }
         #endregion
     }

@@ -10,13 +10,13 @@ namespace Client.DataAccess
     /// <summary>
     /// 仓储
     /// </summary>
-    public class Repository: IRepository
+    public class Repository
     {
         #region 种族(Race)
         /// <summary>
         /// 种族(Race)
         /// </summary>
-        ObservableCollection<RaceModel> _Races = new ObservableCollection<RaceModel>()
+        public static ObservableCollection<RaceModel> Races = new ObservableCollection<RaceModel>()
         {
             new RaceModel(){Key="RaceHalfOrc",Stats=new ObservableCollection<EnumStat>{EnumStat.HPMax } },
             new RaceModel(){Key="RaceHalfMan",Stats=new ObservableCollection<EnumStat>{EnumStat.Charisma } },
@@ -46,7 +46,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 职业(Class)
         /// </summary>
-        ObservableCollection<ClassModel> _Classes = new ObservableCollection<ClassModel>()
+        public static  ObservableCollection<ClassModel> Classes = new ObservableCollection<ClassModel>()
         {
             new ClassModel(){Key="ClassUrPaladin",Stats=new ObservableCollection<EnumStat>{EnumStat.Wisdom,EnumStat.Constitution } },
             new ClassModel(){Key="ClassVoodooPrincess",Stats=new ObservableCollection<EnumStat>{EnumStat.Intelligence,EnumStat.Charisma } },
@@ -829,23 +829,5 @@ namespace Client.DataAccess
             new ImpressiveTitleModel(){Key="Archbishop"},
         };
         #endregion
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public ObservableCollection<RaceModel> GetAllRace()
-        {
-            return _Races;
-        }
-
-        /// <summary>
-        /// 获取所有职业
-        /// </summary>
-        /// <returns></returns>
-        public ObservableCollection<ClassModel> GetAllClass()
-        {
-            return _Classes;
-        }
     }
 }

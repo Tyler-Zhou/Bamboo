@@ -1,9 +1,9 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 修饰符
+    /// 目录实体
     /// </summary>
-    public class ModifierModel:BaseModel
+    public class InventoryModel:BaseModel
     {
         /// <summary>
         /// 数量
