@@ -3,9 +3,9 @@
 namespace Client.Models
 {
     /// <summary>
-    /// 经验进度条
+    /// 经验进度
     /// </summary>
-    public class ProgressBarExperience:ProgressBarBase
+    public class ProgressRateExperience:ProgressRateBase
     {
         /// <summary>
         /// 名称

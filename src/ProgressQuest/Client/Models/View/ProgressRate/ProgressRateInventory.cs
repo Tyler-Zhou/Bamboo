@@ -3,9 +3,9 @@
 namespace Client.Models
 {
     /// <summary>
-    /// 任务
+    /// 详细目录进度
     /// </summary>
-    public class ProgressBarQuest : ProgressBarBase
+    public class ProgressRateInventory: ProgressRateBase
     {
         /// <summary>
         /// 名称
@@ -19,7 +19,8 @@ namespace Client.Models
                 try
                 {
                     name = System.Windows.Application.Current.FindResource(Key).ToString();
-                    name = name.Replace($"^Percent$", "");
+                    name = name.Replace($"^Position$",""+Position);
+                    name = name.Replace($"^MaxValue$",""+ MaxValue);
                 }
                 catch
                 {
@@ -31,5 +32,6 @@ namespace Client.Models
             {
             }
         }
+        
     }
 }

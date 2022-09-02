@@ -1,10 +1,13 @@
 ﻿using Client.DataAccess;
+using Client.Enums;
 using Client.Extensions;
 using Client.Helpers;
 using Client.Interfaces;
 using Client.Models;
+using Microsoft.Extensions.Logging;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -16,6 +19,41 @@ namespace Client.ViewModels
     public class GameViewModel : BaseViewModel
     {
         #region 成员(Member)
+        #region 人物
+        /// <summary>
+        /// 人物
+        /// </summary>
+        private Character _Character = new Character();
+        /// <summary>
+        /// 人物
+        /// </summary>
+        public Character Current
+        {
+            get => _Character;
+            set
+            {
+                if (value != null)
+                {
+                    _Character = value;
+
+                    RaisePropertyChanged(nameof(ContentVisible));
+                    RaisePropertyChanged(nameof(Traits));
+                    RaisePropertyChanged(nameof(Stats));
+                    RaisePropertyChanged(nameof(Equipments));
+                    RaisePropertyChanged(nameof(SpellBooks));
+                    RaisePropertyChanged(nameof(Inventorys));
+                    RaisePropertyChanged(nameof(Acts));
+
+                    SetProgressBarExperience(_Character.ExpTask.Position);
+                    RaisePropertyChanged(nameof(ExpTask));
+                    SetProgressBarInventory(_Character.InventoryTask.Position);
+                    RaisePropertyChanged(nameof(InventoryTask));
+                    RaisePropertyChanged(nameof(PlotTask));
+                }
+            }
+        }
+        #endregion
+
         #region 内容是否可见
         /// <summary>
         /// 内容是否可见
@@ -24,106 +62,50 @@ namespace Client.ViewModels
         {
             get
             {
-                if (CurrentCharacter == null || string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+                if (Current == null || string.IsNullOrWhiteSpace(Current.Name))
                     return false;
                 return true;
             }
         } 
         #endregion
 
-        #region 人物
-        /// <summary>
-        /// 人物
-        /// </summary>
-        private Character _Character;
-        /// <summary>
-        /// 人物
-        /// </summary>
-        public Character CurrentCharacter
-        {
-            get => _Character;
-            set
-            {
-                if (value != null)
-                {
-                    _Character = value;
-                    RaisePropertyChanged(nameof(CurrentCharacter));
-                    RaisePropertyChanged(nameof(ContentVisible));
-                    Traits = _Character.Traits();
-                    RaisePropertyChanged(nameof(Traits));
-                    Stats = _Character.Stats();
-                    RaisePropertyChanged(nameof(Stats));
-                    Equipments = _Character.Equipments();
-                    RaisePropertyChanged(nameof(Equipments));
-                    SetProgressBarExperience(_Character.ExpTask.Position);
-                    RaisePropertyChanged(nameof(ExpTaskToolTip));
-                    SetProgressBarInventory(_Character.InventoryTask.Position);
-                    RaisePropertyChanged(nameof(InventoryTaskToolTip));
-                }
-            }
-        }
-        #endregion
-
         #region 特征集合
-        ObservableCollection<TraitModel> _Traits;
         /// <summary>
         /// 特征集合
         /// </summary>
         public ObservableCollection<TraitModel> Traits
         {
-            get => _Traits;
-            set
-            {
-                _Traits = value;
-                RaisePropertyChanged();
-            }
+            get => Current.Traits();
         }
         #endregion
 
         #region 属性集合
-        ObservableCollection<StatModel> _Stats;
         /// <summary>
         /// 属性集合
         /// </summary>
-        public ObservableCollection<StatModel> Stats
+        public ObservableCollection<CharacterStat> Stats
         {
-            get => _Stats;
-            set
-            {
-                _Stats = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 法术书
-        /// <summary>
-        /// 法术书
-        /// </summary>
-        public ObservableCollection<SpellBookModel> SpellBooks
-        {
-            get => _Character.SpellBooks;
-            set
-            {
-                _Character.SpellBooks = value;
-                RaisePropertyChanged();
-            }
+            get => Current.Stats;
         }
         #endregion
 
         #region 装备
-        ObservableCollection<EquipmentModel> _Equipments;
         /// <summary>
         /// 装备
         /// </summary>
-        public ObservableCollection<EquipmentModel> Equipments
+        public ObservableCollection<CharacterEquipment> Equipments
         {
-            get => _Equipments;
-            set
-            {
-                _Equipments = value;
-                RaisePropertyChanged();
-            }
+            get => Current.Equipments;
+        }
+        #endregion
+
+        #region 法术书集合
+        /// <summary>
+        /// 法术书集合
+        /// </summary>
+        public ObservableCollection<CharacterSpellBook> SpellBooks
+        {
+            get => Current.SpellBooks;
         }
         #endregion
 
@@ -131,17 +113,29 @@ namespace Client.ViewModels
         /// <summary>
         /// 详细目录
         /// </summary>
-        public ObservableCollection<InventoryModel> Inventorys
+        public ObservableCollection<CharacterInventory> Inventorys
         {
-            get => _Character.Inventorys;
-            set
-            {
-                if (value != _Character.Inventorys)
-                {
-                    _Character.Inventorys = value;
-                    RaisePropertyChanged(nameof(Inventorys));
-                }
-            }
+            get => Current.Inventorys;
+        }
+        #endregion
+
+        #region 剧幕集合
+        /// <summary>
+        /// 剧幕集合
+        /// </summary>
+        public ObservableCollection<CharacterAct> Acts
+        {
+            get => Current.Acts;
+        }
+        #endregion
+
+        #region 任务集合
+        /// <summary>
+        /// 任务集合
+        /// </summary>
+        public ObservableCollection<CharacterQuest> Quests
+        {
+            get => Current.Quests;
         }
         #endregion
 
@@ -149,39 +143,41 @@ namespace Client.ViewModels
 
         #region 经验
         /// <summary>
-        /// 经验当前位置
+        /// 
         /// </summary>
-        public int ExpTaskPosition
+        public ProgressRateExperience ExpTask
         {
-            get => CurrentCharacter.ExpTask.Position;
-            set
-            {
-                CurrentCharacter.ExpTask.Position = value;
-                RaisePropertyChanged(nameof(ExpTaskPosition));
-                RaisePropertyChanged(nameof(ExpTaskToolTip));
-            }
+            get => Current.ExpTask;
         }
+        #endregion
 
+        #region 详细目录任务进程
         /// <summary>
-        /// 经验最大值
+        /// 详细目录任务进程
         /// </summary>
-        public int ExpTaskMax
+        public ProgressRateInventory InventoryTask
         {
-            get => CurrentCharacter.ExpTask.MaxValue;
-            set
-            {
-                CurrentCharacter.ExpTask.MaxValue = value;
-                RaisePropertyChanged(nameof(ExpTaskMax));
-                RaisePropertyChanged(nameof(ExpTaskToolTip));
-            }
+            get => Current.InventoryTask;
         }
+        #endregion
 
+        #region 剧情
         /// <summary>
-        /// 悬浮提示
+        /// 剧情任务进程
         /// </summary>
-        public string ExpTaskToolTip
+        public ProgressRatePlot PlotTask
         {
-            get => CurrentCharacter.ExpTask.Name;
+            get => Current.PlotTask;
+        }
+        #endregion
+
+        #region 任务
+        /// <summary>
+        /// 任务
+        /// </summary>
+        public ProgressRateQuest QuestTask
+        {
+            get => Current.QuestTask;
         }
         #endregion
 
@@ -189,43 +185,6 @@ namespace Client.ViewModels
 
         #endregion
 
-        #region 目录(负重)
-        /// <summary>
-        /// 目录当前位置
-        /// </summary>
-        public int InventoryTaskPosition
-        {
-            get => CurrentCharacter.InventoryTask.Position;
-            set
-            {
-                CurrentCharacter.InventoryTask.Position = value;
-                RaisePropertyChanged(nameof(InventoryTaskPosition));
-                RaisePropertyChanged(nameof(InventoryTaskToolTip));
-            }
-        }
-
-        /// <summary>
-        /// 目录最大值
-        /// </summary>
-        public int InventoryTaskMax
-        {
-            get => CurrentCharacter.InventoryTask.MaxValue;
-            set
-            {
-                CurrentCharacter.InventoryTask.MaxValue = value;
-                RaisePropertyChanged(nameof(InventoryTaskMax));
-                RaisePropertyChanged(nameof(InventoryTaskToolTip));
-            }
-        }
-
-        /// <summary>
-        /// 悬浮提示
-        /// </summary>
-        public string InventoryTaskToolTip
-        {
-            get => CurrentCharacter.InventoryTask.Name;
-        }
-        #endregion
         #endregion
         #endregion
 
@@ -234,6 +193,10 @@ namespace Client.ViewModels
         /// 缓存服务
         /// </summary>
         ICacheService _CacheService;
+        /// <summary>
+        /// 日志服务
+        /// </summary>
+        ILogger _Logger;
         #endregion
 
         #region 命令(Command)
@@ -247,9 +210,11 @@ namespace Client.ViewModels
         /// <param name="provider"></param>
         /// <param name="cacheService"></param>
         /// <param name="windowService"></param>
-        public GameViewModel(IContainerProvider provider, ICacheService cacheService, IWindowService windowService) : base(provider)
+        /// <param name="logger"></param>
+        public GameViewModel(IContainerProvider provider, ICacheService cacheService, IWindowService windowService, ILogger logger) : base(provider)
         {
             _CacheService = cacheService;
+            _Logger = logger;
             windowService.AddFunction(SaveCharacter);
             InitData();
         }
@@ -299,12 +264,7 @@ namespace Client.ViewModels
         /// </summary>
         private void InitData()
         {
-            if (CurrentCharacter == null)
-            {
-                CurrentCharacter = new Character();
-                //SetProgressBarExperience(0);
-                //SetProgressBarInventory(0);
-            }
+            
         }
         /// <summary>
         /// 加载人物
@@ -315,30 +275,21 @@ namespace Client.ViewModels
         {
             if (character == null)
                 return false;
-            if (CurrentCharacter != null)
+            if (Current != null)
             {
                 //过滤同名人物操作
-                if (character.Equals(CurrentCharacter.Name))
+                if (character.Name.Equals(Current.Name))
                     return false;
                 //当前人物不为空
-                if(!string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+                if(!string.IsNullOrWhiteSpace(Current.Name))
                 {
                     await SaveCharacter();
                     //重置人物信息
-                    CurrentCharacter = null;
+                    Current = null;
                 }
             }
-            //获取存档
-            Character archiveCharacter = await _CacheService.GetAsync<Character>(character.Name);
-            if (archiveCharacter != null)
-            {
-                CurrentCharacter = archiveCharacter;
-            }
-            else
-            {
-                CurrentCharacter = character;
-                await SaveCharacter();
-            }
+            Current = character;
+            await SaveCharacter();
             return true;
         }
         /// <summary>
@@ -346,10 +297,14 @@ namespace Client.ViewModels
         /// </summary>
         async Task<bool> SaveCharacter()
         {
-            if (CurrentCharacter == null || string.IsNullOrWhiteSpace(CurrentCharacter.Name))
+            if (Current == null || string.IsNullOrWhiteSpace(Current.Name))
                 return false;
+            for (int i = 0; i < 100; i++)
+            {
+                LevelUpgrade();
+            }
             //保存当前人物
-            await _CacheService.SaveAsync(CurrentCharacter.Name, CurrentCharacter);
+            await _CacheService.SaveAsync(Current.Name, Current);
             return true;
         }
 
@@ -358,16 +313,160 @@ namespace Client.ViewModels
         /// </summary>
         void SetProgressBarExperience(int position)
         {
-            CurrentCharacter.ExpTask.Position = position;
-            CurrentCharacter.ExpTask.MaxValue = CharacterHelper.GetMaxExperienceByLevel(CurrentCharacter.Level);
+            ExpTask.Position = position;
+            ExpTask.MaxValue = CharacterHelper.GetMaxExperienceByLevel(Current.Level);
         }
         /// <summary>
         /// 设置详细目录进度条
         /// </summary>
         void SetProgressBarInventory(int position)
         {
-            CurrentCharacter.InventoryTask.Position = position;
-            CurrentCharacter.InventoryTask.MaxValue = CurrentCharacter.Strength + 10;
+            InventoryTask.Position = position;
+            SetCapacity(Current.GetCapacity());
+        }
+        /// <summary>
+        /// 等级提升
+        /// </summary>
+        void LevelUpgrade()
+        {
+            _Character.Level += 1;
+            _Logger.LogInformation($"升级到{Current.Level}");
+            Current.SetStatValue(EnumStat.HPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Constitution)));
+            Current.SetStatValue(EnumStat.MPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Intelligence)));
+
+            WinStat();
+            WinStat();
+            WinSpell();
+            WinEquipment();
+            //self.exp_bar.reset(level_up_time(self.level))
+            //self.emit("level_up")
+        }
+
+        /// <summary>
+        /// 赢得属性
+        /// </summary>
+        void WinStat()
+        {
+            EnumStat chosenType = EnumStat.UnKnown;
+            if(RandomHelper.Odds(1,2))
+            {
+                chosenType = (EnumStat)RandomHelper.Value(6);
+            }else
+            {
+                //favor the best stat so it will tend to clump
+                int sumValue = 0;
+                for (int i = 0; i < 7; i++)
+                {
+                    sumValue+= Current.Stats[i].Value * Current.Stats[i].Value;
+                }
+                sumValue = RandomHelper.Value(sumValue);
+                for (int i = 0; i < 6; i++)
+                {
+                    chosenType = Current.Stats[i].StatType;
+                    sumValue -= Current.Stats[i].Value * Current.Stats[i].Value;
+                    if (sumValue < 0)
+                        break;
+                }
+            }
+            Current.SetStatValue(chosenType, 1);
+            if (chosenType == EnumStat.Strength)
+                SetCapacity(Current.GetCapacity());
+            RaisePropertyChanged(nameof(Stats));
+        }
+
+        /// <summary>
+        /// 设置容量
+        /// </summary>
+        /// <param name="capacity"></param>
+        void SetCapacity(int capacity)
+        {
+            InventoryTask.Reset(capacity);
+            RaisePropertyChanged(nameof(InventoryTask));
+        }
+        /// <summary>
+        /// 赢得法术书
+        /// </summary>
+        void WinSpell()
+        {
+            int maxValue = Math.Min(Current.GetStatValue(EnumStat.Wisdom) + Current.Level, Repository.Spells.Count);
+            int randomNum = RandomHelper.MinValue(maxValue);
+            SpellModel spell= Repository.Spells[randomNum];
+            if(spell!=null)
+            {
+                Current.AddSpellBook(new CharacterSpellBook { Key = spell.Key, Level = 1 });
+                RaisePropertyChanged(nameof(SpellBooks));
+                _Logger.LogInformation($"获得法术书{spell.Key}");
+            }
+        }
+        /// <summary>
+        /// 赢得装备
+        /// </summary>
+        void WinEquipment()
+        {
+            EnumEquipment equipmentType = (EnumEquipment)RandomHelper.Value(12);
+            ObservableCollection<EquipmentPresetModel> stuff;
+            ObservableCollection<ModifierModel> better;
+            ObservableCollection<ModifierModel> worse;
+            ObservableCollection<ModifierModel> modifier_pool;
+            if (equipmentType==EnumEquipment.Weapon)
+            {
+                stuff = Repository.Weapons;
+                better = Repository.OffenseAttributes;
+                worse = Repository.OffenseBads;
+            }else
+            {
+                if (equipmentType == EnumEquipment.Shield)
+                    stuff = Repository.Shields;
+                else
+                    stuff = Repository.Armors;
+                better = Repository.DefenseAttributes;
+                worse = Repository.DefenseBads;
+            }
+            EquipmentPresetModel equipment = PickEquipment(stuff);
+            int plus = Current.Level - equipment.Quality;
+            if (plus < 0)
+                modifier_pool = worse;
+            else
+                modifier_pool = better;
+            int count = 0;
+            string modifierKey1 = "";
+            string modifierKey2 = "";
+            while (count < 2 && count < plus)
+            {
+                ModifierModel modifier= modifier_pool[RandomHelper.Value(modifier_pool.Count)];
+                
+                if (modifier.Key.Equals(modifierKey1)) //已选择修饰符
+                    break;
+                if(Math.Abs(plus) < Math.Abs(modifier.Quality)) //加成太多
+                    break;
+
+                if (count == 0)
+                    modifierKey1 = modifier.Key;
+                else
+                    modifierKey2 = modifier.Key;
+                plus -= modifier.Quality;
+                count += 1;
+            }
+            Current.UpdateEquipment(equipmentType, equipment.Key, modifierKey1, modifierKey2, plus);
+            _Logger.LogInformation($"获得装备 {equipment.Name} {modifierKey1} {modifierKey2}");
+        }
+        /// <summary>
+        /// 挑选装备
+        /// </summary>
+        /// <param name="stuff"></param>
+        /// <returns></returns>
+        EquipmentPresetModel PickEquipment(ObservableCollection<EquipmentPresetModel> stuff)
+        {
+            EquipmentPresetModel result= stuff[RandomHelper.Value(stuff.Count)];
+            for (int i = 0; i < 5; i++)
+            {
+                EquipmentPresetModel alternative = stuff[RandomHelper.Value(stuff.Count)];
+                if(Math.Abs(Current.Level - alternative.Quality) < Math.Abs(Current.Level - result.Quality))
+                {
+                    result = alternative;
+                }
+            }
+            return result;
         }
         #endregion
     }

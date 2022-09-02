@@ -73,9 +73,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 法术(Spells)
         /// </summary>
-        public ObservableCollection<SpellModel> Spells { get => _Spells; }
-
-        ObservableCollection<SpellModel> _Spells = new ObservableCollection<SpellModel>()
+        public static ObservableCollection<SpellModel> Spells = new ObservableCollection<SpellModel>()
         {
             new SpellModel(){Key="Slime Finger"},
             new SpellModel(){Key="Rabbit Punch"},
@@ -128,13 +126,11 @@ namespace Client.DataAccess
         #endregion
 
         #region 进攻特征(OffenseAttributes)
+        
         /// <summary>
         /// 进攻特征(OffenseAttributes)
         /// </summary>
-        public ObservableCollection<ModifierModel> OffenseAttributes { get => _OffenseAttributes; }
-
-
-        ObservableCollection<ModifierModel> _OffenseAttributes = new ObservableCollection<ModifierModel>()
+        public static ObservableCollection<ModifierModel> OffenseAttributes = new ObservableCollection<ModifierModel>()
         {
             new ModifierModel(){Key="Polished",Quality = 1},
             new ModifierModel(){Key="Serrated",Quality = 1},
@@ -151,13 +147,11 @@ namespace Client.DataAccess
         #endregion
 
         #region 防御特征(DefenseAttributes)
+        
         /// <summary>
         /// 防御特征(DefenseAttributes)
         /// </summary>
-        public ObservableCollection<ModifierModel> DefenseAttributes { get => _DefenseAttributes; }
-
-
-        ObservableCollection<ModifierModel> _DefenseAttributes = new ObservableCollection<ModifierModel>()
+        public static ObservableCollection<ModifierModel> DefenseAttributes = new ObservableCollection<ModifierModel>()
         {
             new ModifierModel(){Key="Studded",Quality = 1},
             new ModifierModel(){Key="Banded",Quality = 2},
@@ -175,10 +169,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 进攻损坏(OffenseBad)
         /// </summary>
-        public ObservableCollection<ModifierModel> OffenseBads { get => _OffenseBads; }
-
-
-        ObservableCollection<ModifierModel> _OffenseBads = new ObservableCollection<ModifierModel>()
+        public static ObservableCollection<ModifierModel> OffenseBads = new ObservableCollection<ModifierModel>()
         {
             new ModifierModel(){Key="Dull",Quality = -2},
             new ModifierModel(){Key="Tarnished",Quality = -1},
@@ -196,10 +187,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 防御损坏(DefenseBads)
         /// </summary>
-        public ObservableCollection<ModifierModel> DefenseBads { get => _DefenseBads; }
-
-
-        ObservableCollection<ModifierModel> _DefenseBads = new ObservableCollection<ModifierModel>()
+        public static ObservableCollection<ModifierModel> DefenseBads = new ObservableCollection<ModifierModel>()
         {
             new ModifierModel(){Key="Holey",Quality = -1},
             new ModifierModel(){Key="Patched",Quality = -1},
@@ -222,10 +210,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 盾牌(Shields)
         /// </summary>
-        public ObservableCollection<EquipmentPresetModel> Shields { get => _Shields; }
-
-
-        ObservableCollection<EquipmentPresetModel> _Shields = new ObservableCollection<EquipmentPresetModel>()
+        public static ObservableCollection<EquipmentPresetModel> Shields = new ObservableCollection<EquipmentPresetModel>()
         {
             new EquipmentPresetModel(){Key="Parasol",Quality = 0},
             new EquipmentPresetModel(){Key="Pie Plate",Quality = 1},
@@ -250,10 +235,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 盔甲(Armors)
         /// </summary>
-        public ObservableCollection<EquipmentPresetModel> Armors { get => _Armors; }
-
-
-        ObservableCollection<EquipmentPresetModel> _Armors = new ObservableCollection<EquipmentPresetModel>()
+        public static ObservableCollection<EquipmentPresetModel> Armors = new ObservableCollection<EquipmentPresetModel>()
         {
             new EquipmentPresetModel(){Key="Lace",Quality = 1},
             new EquipmentPresetModel(){Key="Macrame",Quality = 2},
@@ -282,10 +264,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 武器(Weapons)
         /// </summary>
-        public ObservableCollection<EquipmentPresetModel> Weapons { get => _Weapons; }
-
-
-        ObservableCollection<EquipmentPresetModel> _Weapons = new ObservableCollection<EquipmentPresetModel>()
+        public static ObservableCollection<EquipmentPresetModel> Weapons = new ObservableCollection<EquipmentPresetModel>()
         {
             new EquipmentPresetModel(){Key="Stick",Quality = 0},
             new EquipmentPresetModel(){Key="Broken Bottle",Quality = 1},

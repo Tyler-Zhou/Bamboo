@@ -147,7 +147,7 @@ namespace Client.ViewModels
         /// </summary>
         public void ConfigureContent()
         {
-            Navigate(new MenuBar() { ViewName = "GameView" });
+            //Navigate(new MenuBar() { ViewName = "GameView" });
         }
         /// <summary>
         /// 

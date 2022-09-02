@@ -48,11 +48,11 @@
                             Text="{Binding Name}" />
                         <StackPanel Grid.Row="1" Orientation="Horizontal">
                             <TextBlock Padding="10,5" Text="{DynamicResource CharacterRace}" />
-                            <TextBlock Padding="10,5" Text="{Binding Race.Name}" />
+                            <TextBlock Padding="10,5" Text="{Binding RaceName}" />
                         </StackPanel>
                         <StackPanel Grid.Row="2" Orientation="Horizontal">
                             <TextBlock Padding="10,5" Text="{DynamicResource CharacterClass}" />
-                            <TextBlock Padding="10,5" Text="{Binding Class.Name}" />
+                            <TextBlock Padding="10,5" Text="{Binding ClassName}" />
                         </StackPanel>
                         <StackPanel Grid.Row="3" Orientation="Horizontal">
                             <TextBlock Padding="10,5" Text="{DynamicResource CharacterLevel}" />

@@ -134,10 +134,12 @@
     <Compile Include="Enums\EnumEquipment.cs" />
     <Compile Include="Enums\EnumStat.cs" />
     <Compile Include="Extensions\CharacterExtensions.cs" />
+    <Compile Include="Extensions\IntExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\JsonSerializerHelper.cs" />
     <Compile Include="Helpers\CharacterHelper.cs" />
     <Compile Include="Helpers\MonsterHelper.cs" />
-    <Compile Include="Helpers\NameHelper.cs" />
+    <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IConfigureService.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />
@@ -147,27 +149,29 @@
     <Compile Include="Models\ApplicationSetting.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\BoringItemModel.cs" />
-    <Compile Include="Models\Character\ProgressBarBase.cs" />
-    <Compile Include="Models\Character\ProgressBarExperience.cs" />
-    <Compile Include="Models\Character\ProgressBarPlot.cs" />
-    <Compile Include="Models\Character\ProgressBarQuest.cs" />
+    <Compile Include="Models\View\CharacterAct.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateBase.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateExperience.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRatePlot.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateQuest.cs" />
     <Compile Include="Models\ClassModel.cs" />
-    <Compile Include="Models\EquipmentModel.cs" />
+    <Compile Include="Models\View\CharacterEquipment.cs" />
     <Compile Include="Models\EquipmentPresetModel.cs" />
     <Compile Include="Models\ImpressiveTitleModel.cs" />
-    <Compile Include="Models\Character\InventoryModel.cs" />
+    <Compile Include="Models\View\CharacterInventory.cs" />
     <Compile Include="Models\ItemAttributeModel.cs" />
     <Compile Include="Models\ItemOfModel.cs" />
-    <Compile Include="Models\MenuBar.cs" />
+    <Compile Include="Models\View\MenuBar.cs" />
     <Compile Include="Models\ModifierModel.cs" />
     <Compile Include="Models\MonsterModel.cs" />
-    <Compile Include="Models\Character\ProgressBarInventory.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateInventory.cs" />
     <Compile Include="Models\RaceModel.cs" />
     <Compile Include="Models\RollStatModel.cs" />
     <Compile Include="Models\SpecialModel.cs" />
-    <Compile Include="Models\Character\SpellBookModel.cs" />
+    <Compile Include="Models\View\CharacterQuest.cs" />
+    <Compile Include="Models\View\CharacterSpellBook.cs" />
     <Compile Include="Models\SpellModel.cs" />
-    <Compile Include="Models\StatModel.cs" />
+    <Compile Include="Models\View\CharacterStat.cs" />
     <Compile Include="Models\TaskProgressModel.cs" />
     <Compile Include="Models\TitleModel.cs" />
     <Compile Include="Models\TraitModel.cs" />
@@ -214,6 +218,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Plot\en-US.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Plot\zh-CN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Races\en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -246,7 +258,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Character\Character.cs" />
+    <Compile Include="Models\View\Character.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\GameView.xaml.cs">

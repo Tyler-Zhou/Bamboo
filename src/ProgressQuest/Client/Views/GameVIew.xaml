@@ -24,6 +24,7 @@
             <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden" />
             <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden" />
             <Setter Property="SelectionUnit" Value="FullRow" />
+            <Setter Property="CanUserSortColumns" Value="False" />
             <Setter Property="Background" Value="Transparent" />
         </Style>
         <Style x:Key="ColumnHeaderStyleTrait" TargetType="{x:Type DataGridColumnHeader}">
@@ -91,9 +92,9 @@
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderExperience}">
                 <ProgressBar
                     Height="16"
-                    Maximum="{Binding ExpTaskMax}"
-                    ToolTip="{Binding ExpTaskToolTip}"
-                    Value="{Binding ExpTaskPosition}" />
+                    Maximum="{Binding ExpTask.MaxValue}"
+                    ToolTip="{Binding ExpTask.Name}"
+                    Value="{Binding ExpTask.Position}" />
             </GroupBox>
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}">
                 <DataGrid ItemsSource="{Binding SpellBooks}">
@@ -105,7 +106,7 @@
                             IsReadOnly="True" />
                         <DataGridTextColumn
                             Width="*"
-                            Binding="{Binding Value}"
+                            Binding="{Binding Description}"
                             HeaderStyle="{StaticResource ColumnHeaderStyleLevel}"
                             IsReadOnly="True" />
                     </DataGrid.Columns>
@@ -119,10 +120,13 @@
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Column="0">
                 <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderEquipment}">
-                    <DataGrid HeadersVisibility="None" ItemsSource="{Binding Equipments}">
+                    <DataGrid
+                        HorizontalContentAlignment="Left"
+                        HeadersVisibility="None"
+                        ItemsSource="{Binding Equipments}">
                         <DataGrid.Columns>
                             <DataGridTextColumn
-                                Width="*"
+                                Width="80"
                                 Binding="{Binding Name}"
                                 IsReadOnly="True" />
                             <DataGridTextColumn
@@ -157,9 +161,9 @@
                         <ProgressBar
                             Grid.Row="2"
                             Height="16"
-                            Maximum="{Binding InventoryTaskMax}"
-                            ToolTip="{Binding InventoryTaskToolTip}"
-                            Value="{Binding InventoryTaskPosition}" />
+                            Maximum="{Binding InventoryTask.MaxValue}"
+                            ToolTip="{Binding InventoryTask.Name}"
+                            Value="{Binding InventoryTask.Position}" />
                     </Grid>
                 </GroupBox>
             </DockPanel>
@@ -167,8 +171,60 @@
                 <GroupBox
                     Height="210"
                     DockPanel.Dock="Top"
-                    Header="{DynamicResource GroupBoxHeaderPlotDevelopment}" />
-                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderQuests}" />
+                    Header="{DynamicResource GroupBoxHeaderPlotDevelopment}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="16" />
+                        </Grid.RowDefinitions>
+                        <ListBox
+                            Grid.Row="0"
+                            HorizontalContentAlignment="Stretch"
+                            ItemsSource="{Binding Acts}"
+                            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding IsCommplete}" />
+                                        <TextBlock Margin="10,0" Text="{Binding Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <ProgressBar
+                            Grid.Row="1"
+                            Maximum="{Binding PlotTask.MaxValue}"
+                            ToolTip="{Binding PlotTask.Name}"
+                            Value="{Binding PlotTask.Position}" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderQuests}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="16" />
+                        </Grid.RowDefinitions>
+                        <ListBox
+                            Grid.Row="0"
+                            HorizontalContentAlignment="Stretch"
+                            ItemsSource="{Binding Quests}"
+                            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox IsChecked="{Binding IsCommplete}" />
+                                        <TextBlock Margin="10,0" Text="{Binding Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                        <ProgressBar
+                            Grid.Row="1"
+                            Maximum="{Binding QuestTask.MaxValue}"
+                            ToolTip="{Binding QuestTask.Name}"
+                            Value="{Binding QuestTask.Position}" />
+                    </Grid>
+                </GroupBox>
             </DockPanel>
         </Grid>
         <DockPanel

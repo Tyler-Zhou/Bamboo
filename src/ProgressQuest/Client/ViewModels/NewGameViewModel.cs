@@ -2,18 +2,13 @@
 using Client.DataAccess;
 using Client.Enums;
 using Client.Helpers;
-using Client.Interfaces;
 using Client.Models;
-using Client.Services;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Client.ViewModels
@@ -97,12 +92,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterStrength
         {
-            get => _Character.Strength;
+            get => _Character.GetStatValue(EnumStat.Strength);
             set
             {
-                if (value != _Character.Strength)
+                if (value != _Character.GetStatValue(EnumStat.Strength))
                 {
-                    _Character.Strength = value;
+                    _Character.SetStatValue(EnumStat.Strength,value,true);
                     RaisePropertyChanged(nameof(CharacterStrength));
                     RaisePropertyChanged(nameof(TotalStats));
                 }
@@ -116,12 +111,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterConstitution
         {
-            get => _Character.Constitution;
+            get => _Character.GetStatValue(EnumStat.Constitution);
             set
             {
-                if (value != _Character.Constitution)
+                if (value != _Character.GetStatValue(EnumStat.Constitution))
                 {
-                    _Character.Constitution = value;
+                    _Character.SetStatValue(EnumStat.Constitution, value, true);
                     RaisePropertyChanged(nameof(CharacterConstitution));
                     RaisePropertyChanged(nameof(TotalStats));
                 }
@@ -135,12 +130,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterDexterity
         {
-            get => _Character.Dexterity;
+            get => _Character.GetStatValue(EnumStat.Dexterity);
             set
             {
-                if (value != _Character.Dexterity)
+                if (value != _Character.GetStatValue(EnumStat.Dexterity))
                 {
-                    _Character.Dexterity = value;
+                    _Character.SetStatValue(EnumStat.Dexterity, value,true);
                     RaisePropertyChanged(nameof(CharacterDexterity));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -155,12 +150,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterIntelligence
         {
-            get => _Character.Intelligence;
+            get => _Character.GetStatValue(EnumStat.Intelligence);
             set
             {
-                if (value != _Character.Intelligence)
+                if (value != _Character.GetStatValue(EnumStat.Intelligence))
                 {
-                    _Character.Intelligence = value;
+                    _Character.SetStatValue(EnumStat.Intelligence, value, true);
                     RaisePropertyChanged(nameof(CharacterIntelligence));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -175,12 +170,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterWisdom
         {
-            get => _Character.Wisdom;
+            get => _Character.GetStatValue(EnumStat.Wisdom);
             set
             {
-                if (value != _Character.Wisdom)
+                if (value != _Character.GetStatValue(EnumStat.Wisdom))
                 {
-                    _Character.Wisdom = value;
+                    _Character.SetStatValue(EnumStat.Wisdom, value, true);
                     RaisePropertyChanged(nameof(CharacterWisdom));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -195,12 +190,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterCharisma
         {
-            get => _Character.Charisma;
+            get => _Character.GetStatValue(EnumStat.Charisma);
             set
             {
-                if (value != _Character.Charisma)
+                if (value != _Character.GetStatValue(EnumStat.Charisma))
                 {
-                    _Character.Charisma = value;
+                    _Character.SetStatValue(EnumStat.Charisma, value, true);
                     RaisePropertyChanged(nameof(CharacterCharisma));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -215,12 +210,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterHPMax
         {
-            get => _Character.HPMax;
+            get => _Character.GetStatValue(EnumStat.HPMax);
             set
             {
-                if (value != _Character.HPMax)
+                if (value != _Character.GetStatValue(EnumStat.HPMax))
                 {
-                    _Character.HPMax = value;
+                    _Character.SetStatValue(EnumStat.HPMax, value, true);
                     RaisePropertyChanged(nameof(CharacterHPMax));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -234,12 +229,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterMPMax
         {
-            get => _Character.MPMax;
+            get => _Character.GetStatValue(EnumStat.MPMax);
             set
             {
-                if (value != _Character.MPMax)
+                if (value != _Character.GetStatValue(EnumStat.MPMax))
                 {
-                    _Character.MPMax = value;
+                    _Character.SetStatValue(EnumStat.MPMax, value, true);
                     RaisePropertyChanged(nameof(CharacterMPMax));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -373,8 +368,7 @@ namespace Client.ViewModels
             RollStatCommand = new DelegateCommand(RollNewStatsForCharacter);
             UnrollStatCommand = new DelegateCommand(UnrollPreviousStatsForCharacter, CanUnrollStats);
             BeginQuestCommand = new DelegateCommand(BeginQuest, CanBeginQuest);
-
-            
+            _Character.InitData();
             InitData();
         }
         #endregion
@@ -437,14 +431,32 @@ namespace Client.ViewModels
         /// <returns></returns>
         private bool CanBeginQuest()
         {
-            return _Character?.IsValid ?? false;
+            return ValueFallsInRange(CharacterStrength)
+                && ValueFallsInRange(CharacterConstitution)
+                && ValueFallsInRange(CharacterDexterity)
+                && ValueFallsInRange(CharacterIntelligence)
+                && ValueFallsInRange(CharacterWisdom)
+                && ValueFallsInRange(CharacterCharisma)
+                && CharacterHPMax > 0
+                && CharacterMPMax > 0;
         }
+
+        /// <summary>
+        /// 值在范围内
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        private bool ValueFallsInRange(int value)
+        {
+            return value > 0 && value < 16;
+        }
+
         /// <summary>
         /// 随机设置人物名
         /// </summary>
         private void RandomlySetCharacterName()
         {
-            CharacterName = NameHelper.GenerateName(ApplicationContext.Setting.CultureName);
+            CharacterName = CharacterHelper.GenerateName(ApplicationContext.Setting.CultureName);
         }
         /// <summary>
         /// 随机设置人物种族
@@ -452,15 +464,15 @@ namespace Client.ViewModels
         private void RandomlySetCharacterRace()
         {
             var raceCount=Races.Count();
-            CharacterRace = Races[(new Random()).Next(1, raceCount)];
+            CharacterRace = Races[RandomHelper.Value(raceCount)];
         }
         /// <summary>
         /// 随机设置人物职业
         /// </summary>
         private void RandomlySetCharacterClass()
         {
-            var raceCount = Classes.Count();
-            CharacterClass = Classes[(new Random()).Next(1, raceCount)];
+            var classCount = Classes.Count();
+            CharacterClass = Classes[RandomHelper.Value(classCount)];
         }
         /// <summary>
         /// 新的人物属性
@@ -496,18 +508,18 @@ namespace Client.ViewModels
         /// <returns></returns>
         private RollStatModel GenerateRandomCharacterStatSet()
         {
-            Random statGenerator = new Random();
             var stats = new RollStatModel
             { 
-                Strength = statGenerator.Next(1, 16), 
-                Constitution = statGenerator.Next(1, 16), 
-                Dexterity = statGenerator.Next(1, 16), 
-                Intelligence = statGenerator.Next(1, 16), 
-                Wisdom = statGenerator.Next(1, 16), 
-                Charisma = statGenerator.Next(1, 16), 
+                Strength = CharacterHelper.InitGeneralStat(), 
+                Constitution = CharacterHelper.InitGeneralStat(), 
+                Dexterity = CharacterHelper.InitGeneralStat(), 
+                Intelligence = CharacterHelper.InitGeneralStat(), 
+                Wisdom = CharacterHelper.InitGeneralStat(), 
+                Charisma = CharacterHelper.InitGeneralStat(), 
             };
-            stats.HPMax = statGenerator.Next(1, 8) + stats.Strength;
-            stats.MPMax = statGenerator.Next(1, 8) + stats.Intelligence;
+
+            stats.HPMax = CharacterHelper.InitMaxHPOrMP(stats.Constitution);
+            stats.MPMax = CharacterHelper.InitMaxHPOrMP(stats.Intelligence);
             return stats;
         }
         /// <summary>

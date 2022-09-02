@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace Client.Models
 {
     /// <summary>
-    /// 剧情
+    /// 剧情进度
     /// </summary>
-    public class ProgressBarPlot : ProgressBarBase
+    public class ProgressRatePlot : ProgressRateBase
     {
         /// <summary>
         /// 名称
@@ -19,7 +20,7 @@ namespace Client.Models
                 try
                 {
                     name = System.Windows.Application.Current.FindResource(Key).ToString();
-                    name = name.Replace($"^Time$", "" + Position);
+                    name = name.Replace($"^Time$", new TimeSpan(0, 0,CommpleteNeedTime).ToString(@"hh\:mm\:ss"));
                 }
                 catch
                 {
@@ -31,5 +32,10 @@ namespace Client.Models
             {
             }
         }
+
+        /// <summary>
+        /// 时间
+        /// </summary>
+        public int CommpleteNeedTime { get; set; } = 1;
     }
 }

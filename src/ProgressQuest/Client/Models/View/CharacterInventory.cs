@@ -3,7 +3,7 @@
     /// <summary>
     /// 目录实体
     /// </summary>
-    public class InventoryModel:BaseModel
+    public class CharacterInventory:BaseModel
     {
         /// <summary>
         /// 数量

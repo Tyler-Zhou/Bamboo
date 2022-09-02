@@ -1,11 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using Client.Helpers;
+using Newtonsoft.Json;
 
 namespace Client.Models
 {
     /// <summary>
-    /// 详细目录
+    /// 任务进度
     /// </summary>
-    public class ProgressBarInventory: ProgressBarBase
+    public class ProgressRateQuest : ProgressRateBase
     {
         /// <summary>
         /// 名称
@@ -19,8 +20,7 @@ namespace Client.Models
                 try
                 {
                     name = System.Windows.Application.Current.FindResource(Key).ToString();
-                    name = name.Replace($"^Position$",""+Position);
-                    name = name.Replace($"^MaxValue$",""+ MaxValue);
+                    name = name.Replace($"^Percent$", CharacterHelper.Percent(Position,MaxValue));
                 }
                 catch
                 {
@@ -32,6 +32,5 @@ namespace Client.Models
             {
             }
         }
-        
     }
 }
