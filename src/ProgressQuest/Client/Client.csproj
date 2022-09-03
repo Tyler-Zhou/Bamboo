@@ -133,8 +133,10 @@
     <Compile Include="DataAccess\Repository.cs" />
     <Compile Include="Enums\EnumEquipment.cs" />
     <Compile Include="Enums\EnumStat.cs" />
+    <Compile Include="Enums\EnumTask.cs" />
     <Compile Include="Extensions\CharacterExtensions.cs" />
     <Compile Include="Extensions\IntExtensions.cs" />
+    <Compile Include="Extensions\ObservableCollectionExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\JsonSerializerHelper.cs" />
     <Compile Include="Helpers\CharacterHelper.cs" />
@@ -151,6 +153,7 @@
     <Compile Include="Models\BoringItemModel.cs" />
     <Compile Include="Models\View\CharacterAct.cs" />
     <Compile Include="Models\View\ProgressRate\ProgressRateBase.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateCurrent.cs" />
     <Compile Include="Models\View\ProgressRate\ProgressRateExperience.cs" />
     <Compile Include="Models\View\ProgressRate\ProgressRatePlot.cs" />
     <Compile Include="Models\View\ProgressRate\ProgressRateQuest.cs" />
@@ -158,13 +161,13 @@
     <Compile Include="Models\View\CharacterEquipment.cs" />
     <Compile Include="Models\EquipmentPresetModel.cs" />
     <Compile Include="Models\ImpressiveTitleModel.cs" />
-    <Compile Include="Models\View\CharacterInventory.cs" />
+    <Compile Include="Models\View\CharacterItem.cs" />
     <Compile Include="Models\ItemAttributeModel.cs" />
     <Compile Include="Models\ItemOfModel.cs" />
     <Compile Include="Models\View\MenuBar.cs" />
     <Compile Include="Models\ModifierModel.cs" />
     <Compile Include="Models\MonsterModel.cs" />
-    <Compile Include="Models\View\ProgressRate\ProgressRateInventory.cs" />
+    <Compile Include="Models\View\ProgressRate\ProgressRateItem.cs" />
     <Compile Include="Models\RaceModel.cs" />
     <Compile Include="Models\RollStatModel.cs" />
     <Compile Include="Models\SpecialModel.cs" />

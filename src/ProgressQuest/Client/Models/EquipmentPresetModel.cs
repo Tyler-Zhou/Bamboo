@@ -3,7 +3,7 @@
     /// <summary>
     /// 装备预设
     /// </summary>
-    public class EquipmentPresetModel:BaseModel
+    public class EquipmentPresetModel : BaseModel
     {
         /// <summary>
         /// 质量

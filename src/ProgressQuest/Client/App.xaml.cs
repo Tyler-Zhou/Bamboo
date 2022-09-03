@@ -1,5 +1,4 @@
 ﻿using Client.Common;
-using Client.DataAccess;
 using Client.Interfaces;
 using Client.Models;
 using Client.Services;
@@ -12,7 +11,6 @@ using Prism.Ioc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -99,7 +97,7 @@ namespace Client
             {
                 service.ConfigureContent();
             }
-            var result=Task.Run(()=>InitSetting().Result).Result;
+            var result = Task.Run(() => InitSetting().Result).Result;
         }
 
         /// <summary>

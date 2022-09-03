@@ -7,7 +7,7 @@ namespace Client.Models
     /// </summary>
     public class MenuBar
     {
-      
+
         #region 视图名称
         /// <summary>
         /// 视图名称

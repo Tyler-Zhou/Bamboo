@@ -1,4 +1,5 @@
-﻿using Client.Helpers;
+﻿using Client.Extensions;
+using Client.Helpers;
 using Newtonsoft.Json;
 
 namespace Client.Models
@@ -16,16 +17,8 @@ namespace Client.Models
         {
             get
             {
-                string name = Key;
-                try
-                {
-                    name = System.Windows.Application.Current.FindResource(Key).ToString();
-                    name = name.Replace($"^Percent$", CharacterHelper.Percent(Position,MaxValue));
-                }
-                catch
-                {
-                    name = Key;
-                }
+                string name = Key.FindResourceDictionary();
+                name = name.Replace($"^Percent$", CharacterHelper.Percent(Position, MaxValue));
                 return name;
             }
             set

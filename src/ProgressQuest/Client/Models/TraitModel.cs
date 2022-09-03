@@ -3,7 +3,7 @@
     /// <summary>
     /// 特征
     /// </summary>
-    public class TraitModel:BaseModel
+    public class TraitModel : BaseModel
     {
         /// <summary>
         /// 值

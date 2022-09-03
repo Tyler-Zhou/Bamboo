@@ -3,7 +3,7 @@
     /// <summary>
     /// 怪物
     /// </summary>
-    public class MonsterModel:BaseModel
+    public class MonsterModel : BaseModel
     {
         /// <summary>
         /// 等级

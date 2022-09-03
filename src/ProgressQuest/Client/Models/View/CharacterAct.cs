@@ -17,20 +17,12 @@ namespace Client.Models
             get
             {
                 string key = "PlotPrologue";
-                if(Index > 0)
+                if (Index > 0)
                 {
                     key = "PlotAct";
                 }
-                string name;
-                try
-                {
-                    name = System.Windows.Application.Current.FindResource(key).ToString();
-                    name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
-                }
-                catch
-                {
-                    name = key;
-                }
+                string name = key.FindResourceDictionary();
+                name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
                 return name;
             }
         }

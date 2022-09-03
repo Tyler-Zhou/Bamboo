@@ -1,9 +1,6 @@
 ﻿using Client.Enums;
-using Client.Interfaces;
 using Client.Models;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Security.Policy;
 
 namespace Client.DataAccess
 {
@@ -46,7 +43,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 职业(Class)
         /// </summary>
-        public static  ObservableCollection<ClassModel> Classes = new ObservableCollection<ClassModel>()
+        public static ObservableCollection<ClassModel> Classes = new ObservableCollection<ClassModel>()
         {
             new ClassModel(){Key="ClassUrPaladin",Stats=new ObservableCollection<EnumStat>{EnumStat.Wisdom,EnumStat.Constitution } },
             new ClassModel(){Key="ClassVoodooPrincess",Stats=new ObservableCollection<EnumStat>{EnumStat.Intelligence,EnumStat.Charisma } },
@@ -126,7 +123,7 @@ namespace Client.DataAccess
         #endregion
 
         #region 进攻特征(OffenseAttributes)
-        
+
         /// <summary>
         /// 进攻特征(OffenseAttributes)
         /// </summary>
@@ -147,7 +144,7 @@ namespace Client.DataAccess
         #endregion
 
         #region 防御特征(DefenseAttributes)
-        
+
         /// <summary>
         /// 防御特征(DefenseAttributes)
         /// </summary>
@@ -312,10 +309,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 特价(Specials)
         /// </summary>
-        public ObservableCollection<SpecialModel> Specials { get => _Specials; }
-
-
-        ObservableCollection<SpecialModel> _Specials = new ObservableCollection<SpecialModel>()
+        public static ObservableCollection<SpecialModel> Specials = new ObservableCollection<SpecialModel>()
         {
             new SpecialModel(){Key="Diadem"},
             new SpecialModel(){Key="Festoon"},
@@ -361,10 +355,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 物品特征(ItemAttributes)
         /// </summary>
-        public ObservableCollection<ItemAttributeModel> ItemAttributes { get => _ItemAttributes; }
-
-
-        ObservableCollection<ItemAttributeModel> _ItemAttributes = new ObservableCollection<ItemAttributeModel>()
+        public static ObservableCollection<ItemAttributeModel> ItemAttributes = new ObservableCollection<ItemAttributeModel>()
         {
             new ItemAttributeModel(){Key="Golden"},
             new ItemAttributeModel(){Key="Gilded"},
@@ -406,10 +397,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 物品(ItemOfs)
         /// </summary>
-        public ObservableCollection<ItemOfModel> ItemOfs { get => _ItemOfs; }
-
-
-        ObservableCollection<ItemOfModel> _ItemOfs = new ObservableCollection<ItemOfModel>()
+        public static ObservableCollection<ItemOfModel> ItemOfs = new ObservableCollection<ItemOfModel>()
         {
             new ItemOfModel(){Key="Foreboding"},
             new ItemOfModel(){Key="Foreshadowing"},

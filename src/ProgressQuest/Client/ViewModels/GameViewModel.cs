@@ -1,7 +1,4 @@
-﻿using Client.DataAccess;
-using Client.Enums;
-using Client.Extensions;
-using Client.Helpers;
+﻿using Client.Extensions;
 using Client.Interfaces;
 using Client.Models;
 using Microsoft.Extensions.Logging;
@@ -10,6 +7,7 @@ using Prism.Regions;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Threading;
 
 namespace Client.ViewModels
 {
@@ -41,14 +39,14 @@ namespace Client.ViewModels
                     RaisePropertyChanged(nameof(Stats));
                     RaisePropertyChanged(nameof(Equipments));
                     RaisePropertyChanged(nameof(SpellBooks));
-                    RaisePropertyChanged(nameof(Inventorys));
+                    RaisePropertyChanged(nameof(Items));
                     RaisePropertyChanged(nameof(Acts));
 
-                    SetProgressBarExperience(_Character.ExpTask.Position);
                     RaisePropertyChanged(nameof(ExpTask));
-                    SetProgressBarInventory(_Character.InventoryTask.Position);
                     RaisePropertyChanged(nameof(InventoryTask));
                     RaisePropertyChanged(nameof(PlotTask));
+                    RaisePropertyChanged(nameof(QuestTask));
+                    RaisePropertyChanged(nameof(CurrentTask));
                 }
             }
         }
@@ -66,7 +64,7 @@ namespace Client.ViewModels
                     return false;
                 return true;
             }
-        } 
+        }
         #endregion
 
         #region 特征集合
@@ -89,9 +87,9 @@ namespace Client.ViewModels
         }
         #endregion
 
-        #region 装备
+        #region 装备集合
         /// <summary>
-        /// 装备
+        /// 装备集合
         /// </summary>
         public ObservableCollection<CharacterEquipment> Equipments
         {
@@ -109,13 +107,13 @@ namespace Client.ViewModels
         }
         #endregion
 
-        #region 详细目录
+        #region 货物集合
         /// <summary>
-        /// 详细目录
+        /// 货物集合
         /// </summary>
-        public ObservableCollection<CharacterInventory> Inventorys
+        public ObservableCollection<CharacterItem> Items
         {
-            get => Current.Inventorys;
+            get => Current.Items;
         }
         #endregion
 
@@ -155,9 +153,9 @@ namespace Client.ViewModels
         /// <summary>
         /// 详细目录任务进程
         /// </summary>
-        public ProgressRateInventory InventoryTask
+        public ProgressRateItem InventoryTask
         {
-            get => Current.InventoryTask;
+            get => Current.ItemTask;
         }
         #endregion
 
@@ -182,9 +180,26 @@ namespace Client.ViewModels
         #endregion
 
         #region 当前
+        /// <summary>
+        /// 当前
+        /// </summary>
+        public ProgressRateCurrent CurrentTask
+        {
+            get => Current.CurrentTask;
+        }
+        #endregion
 
         #endregion
 
+        #region 计时器(DispatcherTimer)
+        /// <summary>
+        /// 剧情计时器
+        /// </summary>
+        DispatcherTimer plotTimer = new DispatcherTimer();
+        /// <summary>
+        /// 任务计时器
+        /// </summary>
+        DispatcherTimer taskTimer = new DispatcherTimer();
         #endregion
         #endregion
 
@@ -209,7 +224,7 @@ namespace Client.ViewModels
         /// </summary>
         /// <param name="provider"></param>
         /// <param name="cacheService"></param>
-        /// <param name="windowService"></param>
+        /// <param name="windowService">主窗体服务</param>
         /// <param name="logger"></param>
         public GameViewModel(IContainerProvider provider, ICacheService cacheService, IWindowService windowService, ILogger logger) : base(provider)
         {
@@ -253,6 +268,8 @@ namespace Client.ViewModels
                 {
                     Character character = navigationContext.Parameters["Character"] as Character;
                     var result = Task.Run(() => LoadCharacter(character).Result).Result;
+                    RaisePropertyChanged(nameof(Current));
+                    Current.LevelUp();
                 }
             }
         }
@@ -264,8 +281,21 @@ namespace Client.ViewModels
         /// </summary>
         private void InitData()
         {
-            
+            taskTimer.Interval = TimeSpan.FromSeconds(0.1);
+            taskTimer.Tick += TaskTimer_Tick;
+            taskTimer.Start();
         }
+
+        private void TaskTimer_Tick(object sender, EventArgs e)
+        {
+            CurrentTask.Increment(1);
+            if(CurrentTask.IsCommplete)
+            {
+                CurrentTask.Reset(30);
+            }
+            RaisePropertyChanged(nameof(CurrentTask));
+        }
+
         /// <summary>
         /// 加载人物
         /// </summary>
@@ -281,7 +311,7 @@ namespace Client.ViewModels
                 if (character.Name.Equals(Current.Name))
                     return false;
                 //当前人物不为空
-                if(!string.IsNullOrWhiteSpace(Current.Name))
+                if (!string.IsNullOrWhiteSpace(Current.Name))
                 {
                     await SaveCharacter();
                     //重置人物信息
@@ -289,6 +319,7 @@ namespace Client.ViewModels
                 }
             }
             Current = character;
+            RaisePropertyChanged(nameof(Current));
             await SaveCharacter();
             return true;
         }
@@ -299,174 +330,9 @@ namespace Client.ViewModels
         {
             if (Current == null || string.IsNullOrWhiteSpace(Current.Name))
                 return false;
-            for (int i = 0; i < 100; i++)
-            {
-                LevelUpgrade();
-            }
             //保存当前人物
             await _CacheService.SaveAsync(Current.Name, Current);
             return true;
-        }
-
-        /// <summary>
-        /// 设置经验进度条
-        /// </summary>
-        void SetProgressBarExperience(int position)
-        {
-            ExpTask.Position = position;
-            ExpTask.MaxValue = CharacterHelper.GetMaxExperienceByLevel(Current.Level);
-        }
-        /// <summary>
-        /// 设置详细目录进度条
-        /// </summary>
-        void SetProgressBarInventory(int position)
-        {
-            InventoryTask.Position = position;
-            SetCapacity(Current.GetCapacity());
-        }
-        /// <summary>
-        /// 等级提升
-        /// </summary>
-        void LevelUpgrade()
-        {
-            _Character.Level += 1;
-            _Logger.LogInformation($"升级到{Current.Level}");
-            Current.SetStatValue(EnumStat.HPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Constitution)));
-            Current.SetStatValue(EnumStat.MPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Intelligence)));
-
-            WinStat();
-            WinStat();
-            WinSpell();
-            WinEquipment();
-            //self.exp_bar.reset(level_up_time(self.level))
-            //self.emit("level_up")
-        }
-
-        /// <summary>
-        /// 赢得属性
-        /// </summary>
-        void WinStat()
-        {
-            EnumStat chosenType = EnumStat.UnKnown;
-            if(RandomHelper.Odds(1,2))
-            {
-                chosenType = (EnumStat)RandomHelper.Value(6);
-            }else
-            {
-                //favor the best stat so it will tend to clump
-                int sumValue = 0;
-                for (int i = 0; i < 7; i++)
-                {
-                    sumValue+= Current.Stats[i].Value * Current.Stats[i].Value;
-                }
-                sumValue = RandomHelper.Value(sumValue);
-                for (int i = 0; i < 6; i++)
-                {
-                    chosenType = Current.Stats[i].StatType;
-                    sumValue -= Current.Stats[i].Value * Current.Stats[i].Value;
-                    if (sumValue < 0)
-                        break;
-                }
-            }
-            Current.SetStatValue(chosenType, 1);
-            if (chosenType == EnumStat.Strength)
-                SetCapacity(Current.GetCapacity());
-            RaisePropertyChanged(nameof(Stats));
-        }
-
-        /// <summary>
-        /// 设置容量
-        /// </summary>
-        /// <param name="capacity"></param>
-        void SetCapacity(int capacity)
-        {
-            InventoryTask.Reset(capacity);
-            RaisePropertyChanged(nameof(InventoryTask));
-        }
-        /// <summary>
-        /// 赢得法术书
-        /// </summary>
-        void WinSpell()
-        {
-            int maxValue = Math.Min(Current.GetStatValue(EnumStat.Wisdom) + Current.Level, Repository.Spells.Count);
-            int randomNum = RandomHelper.MinValue(maxValue);
-            SpellModel spell= Repository.Spells[randomNum];
-            if(spell!=null)
-            {
-                Current.AddSpellBook(new CharacterSpellBook { Key = spell.Key, Level = 1 });
-                RaisePropertyChanged(nameof(SpellBooks));
-                _Logger.LogInformation($"获得法术书{spell.Key}");
-            }
-        }
-        /// <summary>
-        /// 赢得装备
-        /// </summary>
-        void WinEquipment()
-        {
-            EnumEquipment equipmentType = (EnumEquipment)RandomHelper.Value(12);
-            ObservableCollection<EquipmentPresetModel> stuff;
-            ObservableCollection<ModifierModel> better;
-            ObservableCollection<ModifierModel> worse;
-            ObservableCollection<ModifierModel> modifier_pool;
-            if (equipmentType==EnumEquipment.Weapon)
-            {
-                stuff = Repository.Weapons;
-                better = Repository.OffenseAttributes;
-                worse = Repository.OffenseBads;
-            }else
-            {
-                if (equipmentType == EnumEquipment.Shield)
-                    stuff = Repository.Shields;
-                else
-                    stuff = Repository.Armors;
-                better = Repository.DefenseAttributes;
-                worse = Repository.DefenseBads;
-            }
-            EquipmentPresetModel equipment = PickEquipment(stuff);
-            int plus = Current.Level - equipment.Quality;
-            if (plus < 0)
-                modifier_pool = worse;
-            else
-                modifier_pool = better;
-            int count = 0;
-            string modifierKey1 = "";
-            string modifierKey2 = "";
-            while (count < 2 && count < plus)
-            {
-                ModifierModel modifier= modifier_pool[RandomHelper.Value(modifier_pool.Count)];
-                
-                if (modifier.Key.Equals(modifierKey1)) //已选择修饰符
-                    break;
-                if(Math.Abs(plus) < Math.Abs(modifier.Quality)) //加成太多
-                    break;
-
-                if (count == 0)
-                    modifierKey1 = modifier.Key;
-                else
-                    modifierKey2 = modifier.Key;
-                plus -= modifier.Quality;
-                count += 1;
-            }
-            Current.UpdateEquipment(equipmentType, equipment.Key, modifierKey1, modifierKey2, plus);
-            _Logger.LogInformation($"获得装备 {equipment.Name} {modifierKey1} {modifierKey2}");
-        }
-        /// <summary>
-        /// 挑选装备
-        /// </summary>
-        /// <param name="stuff"></param>
-        /// <returns></returns>
-        EquipmentPresetModel PickEquipment(ObservableCollection<EquipmentPresetModel> stuff)
-        {
-            EquipmentPresetModel result= stuff[RandomHelper.Value(stuff.Count)];
-            for (int i = 0; i < 5; i++)
-            {
-                EquipmentPresetModel alternative = stuff[RandomHelper.Value(stuff.Count)];
-                if(Math.Abs(Current.Level - alternative.Quality) < Math.Abs(Current.Level - result.Quality))
-                {
-                    result = alternative;
-                }
-            }
-            return result;
         }
         #endregion
     }

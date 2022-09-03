@@ -21,16 +21,8 @@ namespace Client.Models
                 {
                     key = "PlotAct";
                 }
-                string name;
-                try
-                {
-                    name = System.Windows.Application.Current.FindResource(key).ToString();
-                    name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
-                }
-                catch
-                {
-                    name = key;
-                }
+                string name = key.FindResourceDictionary();
+                name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
                 return name;
             }
         }

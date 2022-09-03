@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace Client.Extensions
+﻿namespace Client.Extensions
 {
     /// <summary>
     /// 字符串扩展方法
@@ -21,9 +14,11 @@ namespace Client.Extensions
         {
             try
             {
+                if(string.IsNullOrWhiteSpace(input))
+                    return input;
                 return System.Windows.Application.Current.FindResource(input).ToString();
             }
-            catch (Exception ex)
+            catch
             {
                 return input;
             }

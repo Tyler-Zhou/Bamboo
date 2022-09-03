@@ -8,7 +8,7 @@
         /// <summary>
         /// 键值
         /// </summary>
-        public string Key { get; set; }
+        public string Key { get; set; } = "";
         /// <summary>
         /// 
         /// </summary>
@@ -30,7 +30,6 @@
             }
         }
 
-
         /// <summary>
         /// 增量
         /// </summary>
@@ -45,7 +44,7 @@
         /// </summary>
         /// <param name="maxValue"></param>
         /// <param name="position"></param>
-        public void Reset(int maxValue,int position = 0)
+        public void Reset(int maxValue, int position = 0)
         {
             Position = position;
             MaxValue = maxValue;

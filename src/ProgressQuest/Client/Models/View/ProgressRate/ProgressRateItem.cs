@@ -4,9 +4,9 @@ using Newtonsoft.Json;
 namespace Client.Models
 {
     /// <summary>
-    /// 经验进度
+    /// 货物进度
     /// </summary>
-    public class ProgressRateExperience : ProgressRateBase
+    public class ProgressRateItem : ProgressRateBase
     {
         /// <summary>
         /// 名称
@@ -17,12 +17,15 @@ namespace Client.Models
             get
             {
                 string name = Key.FindResourceDictionary();
-                name = name.Replace($"^Remaining$", "" + (MaxValue - Position));
+                name = name.Replace($"^Position$", "" + Position);
+                name = name.Replace($"^MaxValue$", "" + MaxValue);
                 return name;
             }
             set
             {
+
             }
         }
+
     }
 }

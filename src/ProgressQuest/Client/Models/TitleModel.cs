@@ -3,7 +3,7 @@
     /// <summary>
     /// 标题
     /// </summary>
-    public class TitleModel:BaseModel
+    public class TitleModel : BaseModel
     {
     }
 }

@@ -1,14 +1,16 @@
 ﻿using Client.Common;
 using Client.DataAccess;
 using Client.Enums;
+using Client.Extensions;
 using Client.Helpers;
+using Client.Interfaces;
 using Client.Models;
+using Client.Services;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows.Media;
 
 namespace Client.ViewModels
@@ -16,7 +18,7 @@ namespace Client.ViewModels
     /// <summary>
     /// 新游戏视图模型
     /// </summary>
-    public class NewGameViewModel: BaseViewModel
+    public class NewGameViewModel : BaseViewModel
     {
         #region 成员(Member)
         #region 人物
@@ -65,7 +67,7 @@ namespace Client.ViewModels
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
             }
-        } 
+        }
         #endregion
 
         #region 名字
@@ -97,7 +99,7 @@ namespace Client.ViewModels
             {
                 if (value != _Character.GetStatValue(EnumStat.Strength))
                 {
-                    _Character.SetStatValue(EnumStat.Strength,value,true);
+                    _Character.SetStatValue(EnumStat.Strength, value, true);
                     RaisePropertyChanged(nameof(CharacterStrength));
                     RaisePropertyChanged(nameof(TotalStats));
                 }
@@ -135,7 +137,7 @@ namespace Client.ViewModels
             {
                 if (value != _Character.GetStatValue(EnumStat.Dexterity))
                 {
-                    _Character.SetStatValue(EnumStat.Dexterity, value,true);
+                    _Character.SetStatValue(EnumStat.Dexterity, value, true);
                     RaisePropertyChanged(nameof(CharacterDexterity));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -330,7 +332,7 @@ namespace Client.ViewModels
         /// <summary>
         /// 已生成属性集合
         /// </summary>
-        private Stack<RollStatModel> _RollStat = new Stack<RollStatModel>(); 
+        private Stack<RollStatModel> _RollStat = new Stack<RollStatModel>();
         #endregion
 
         #endregion
@@ -368,7 +370,6 @@ namespace Client.ViewModels
             RollStatCommand = new DelegateCommand(RollNewStatsForCharacter);
             UnrollStatCommand = new DelegateCommand(UnrollPreviousStatsForCharacter, CanUnrollStats);
             BeginQuestCommand = new DelegateCommand(BeginQuest, CanBeginQuest);
-            _Character.InitData();
             InitData();
         }
         #endregion
@@ -409,8 +410,9 @@ namespace Client.ViewModels
         /// </summary>
         private void InitData()
         {
+            _Character.InitData();
             Races = Repository.Races;
-            Classes = Repository.Classes; 
+            Classes = Repository.Classes;
 
             RandomlySetCharacterName();
             SetCharacterStats(GenerateRandomCharacterStatSet());
@@ -463,16 +465,14 @@ namespace Client.ViewModels
         /// </summary>
         private void RandomlySetCharacterRace()
         {
-            var raceCount=Races.Count();
-            CharacterRace = Races[RandomHelper.Value(raceCount)];
+            CharacterRace = Races.Pick();
         }
         /// <summary>
         /// 随机设置人物职业
         /// </summary>
         private void RandomlySetCharacterClass()
         {
-            var classCount = Classes.Count();
-            CharacterClass = Classes[RandomHelper.Value(classCount)];
+            CharacterClass = Classes.Pick();
         }
         /// <summary>
         /// 新的人物属性
@@ -509,13 +509,13 @@ namespace Client.ViewModels
         private RollStatModel GenerateRandomCharacterStatSet()
         {
             var stats = new RollStatModel
-            { 
-                Strength = CharacterHelper.InitGeneralStat(), 
-                Constitution = CharacterHelper.InitGeneralStat(), 
-                Dexterity = CharacterHelper.InitGeneralStat(), 
-                Intelligence = CharacterHelper.InitGeneralStat(), 
-                Wisdom = CharacterHelper.InitGeneralStat(), 
-                Charisma = CharacterHelper.InitGeneralStat(), 
+            {
+                Strength = CharacterHelper.InitGeneralStat(),
+                Constitution = CharacterHelper.InitGeneralStat(),
+                Dexterity = CharacterHelper.InitGeneralStat(),
+                Intelligence = CharacterHelper.InitGeneralStat(),
+                Wisdom = CharacterHelper.InitGeneralStat(),
+                Charisma = CharacterHelper.InitGeneralStat(),
             };
 
             stats.HPMax = CharacterHelper.InitMaxHPOrMP(stats.Constitution);
@@ -542,6 +542,7 @@ namespace Client.ViewModels
         /// </summary>
         private void BeginQuest()
         {
+            _Character.InitTask();
             NavigationParameters param = new NavigationParameters();
             param.Add("Character", _Character);
             NavigationToView("GameView", param);

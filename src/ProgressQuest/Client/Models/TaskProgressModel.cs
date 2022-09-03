@@ -3,7 +3,7 @@
     /// <summary>
     /// 任务进程
     /// </summary>
-    public class TaskProgressModel:BaseModel
+    public class TaskProgressModel : BaseModel
     {
         /// <summary>
         /// 

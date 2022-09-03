@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Client.Extensions;
+using Newtonsoft.Json;
 using System;
 
 namespace Client.Models
@@ -9,6 +10,11 @@ namespace Client.Models
     public class ProgressRatePlot : ProgressRateBase
     {
         /// <summary>
+        /// 时间
+        /// </summary>
+        public int CommpleteNeedTime { get; set; } = 1;
+
+        /// <summary>
         /// 名称
         /// </summary>
         [JsonIgnore]
@@ -16,26 +22,13 @@ namespace Client.Models
         {
             get
             {
-                string name = Key;
-                try
-                {
-                    name = System.Windows.Application.Current.FindResource(Key).ToString();
-                    name = name.Replace($"^Time$", new TimeSpan(0, 0,CommpleteNeedTime).ToString(@"hh\:mm\:ss"));
-                }
-                catch
-                {
-                    name = Key;
-                }
+                string name = Key.FindResourceDictionary();
+                name = name.Replace($"^Time$", new TimeSpan(0, 0, CommpleteNeedTime).ToString(@"hh\:mm\:ss"));
                 return name;
             }
             set
             {
             }
         }
-
-        /// <summary>
-        /// 时间
-        /// </summary>
-        public int CommpleteNeedTime { get; set; } = 1;
     }
 }

@@ -14,7 +14,7 @@ namespace Client.Views
         public GameView()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
     }
 }

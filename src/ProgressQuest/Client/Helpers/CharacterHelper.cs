@@ -1,5 +1,4 @@
-﻿using Microsoft.Xaml.Behaviors.Layout;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +7,9 @@ namespace Client.Helpers
 {
     /// <summary>
     /// 人物帮助类
+    /// 1. 名字生成
+    /// 2. 属性值设置逻辑规则
+    /// 3. 各项进度计算规则
     /// </summary>
     public class CharacterHelper
     {
@@ -51,7 +53,7 @@ namespace Client.Helpers
             "锺离", "宇文", "长孙", "慕容", "鲜于", "闾丘", "司徒", "司空", "丌官", "司寇", "子车", "微生",
             "颛孙", "端木", "巫马", "公西", "漆雕", "乐正", "壤驷", "公良", "拓拔", "夹谷", "宰父", "谷梁",
             "段干", "百里", "东郭", "南门", "呼延", "羊舌", "梁丘", "左丘", "东门", "西门", "南宫"
-        }; 
+        };
         #endregion
 
         /// <summary>
@@ -199,8 +201,18 @@ namespace Client.Helpers
         }
         #endregion
 
+
         #region 设定属性值
-        
+        /// <summary>
+        /// 枚举属性范围
+        /// 主要属性,不包括 HP MAx , MP Max
+        /// </summary>
+        public static int EnumStatScope { get; set; } = 6;
+        /// <summary>
+        /// 枚举装备筛选范围(所有装备)
+        /// </summary>
+        public static int EnumEquipmentScope { get; set; } = 12;
+
         /// <summary>
         /// 初始化一般属性
         /// </summary>
@@ -208,7 +220,7 @@ namespace Client.Helpers
         /// <remarks>初始值在 1-16 之间</remarks>
         public static int InitGeneralStat()
         {
-            return RandomHelper.Value(16);
+            return RandomHelper.Value(9, 16);
         }
 
         /// <summary>
@@ -240,7 +252,7 @@ namespace Client.Helpers
         /// <returns></returns>
         public static int LevelUpMaxHPOrMP(int statValue)
         {
-            return statValue / 3 + 1+ RandomHelper.Value(4);
+            return statValue / 3 + 1 + RandomHelper.Value(4);
         }
         #endregion
 
@@ -254,6 +266,18 @@ namespace Client.Helpers
         {
             //1级20分钟,之后指数增长
             return (int)Math.Round((20 + Math.Pow(1.15, level)) * 60);
+        }
+        #endregion
+
+        #region 容量
+        /// <summary>
+        /// 容量
+        /// </summary>
+        /// <param name="strength">力量</param>
+        /// <returns>容量</returns>
+        public static int GetCapacity(int strength)
+        {
+            return strength + 10;
         }
         #endregion
 
@@ -279,6 +303,8 @@ namespace Client.Helpers
         /// <returns></returns>
         public static string Percent(int numA, int numB)
         {
+            if (numB <= 0)
+                return "100 %";
             var percent = Math.Floor(Math.Round(decimal.Parse((numA / numB).ToString("0.000")), 2) * 100);
             return percent.ToString() + "%";
         }

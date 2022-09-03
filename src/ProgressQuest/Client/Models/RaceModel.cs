@@ -6,7 +6,7 @@ namespace Client.Models
     /// <summary>
     /// 种族
     /// </summary>
-    public class RaceModel: BaseModel
+    public class RaceModel : BaseModel
     {
         /// <summary>
         /// 属性集合

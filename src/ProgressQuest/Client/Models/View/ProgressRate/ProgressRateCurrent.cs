@@ -1,10 +1,9 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 法术
+    /// 当前进程
     /// </summary>
-    public class SpellModel : BaseModel
+    public class ProgressRateCurrent: ProgressRateBase
     {
-
     }
 }

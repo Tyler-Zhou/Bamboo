@@ -5,7 +5,7 @@ namespace Client.Models
     /// <summary>
     /// 属性模型
     /// </summary>
-    public class CharacterStat:BaseModel
+    public class CharacterStat : BaseModel
     {
         /// <summary>
         /// 属性

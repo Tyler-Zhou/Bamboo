@@ -14,7 +14,7 @@ namespace Client.Views
         public ArchiveView()
         {
             InitializeComponent();
-        } 
+        }
         #endregion
     }
 }

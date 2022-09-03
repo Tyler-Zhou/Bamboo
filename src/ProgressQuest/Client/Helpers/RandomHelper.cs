@@ -47,8 +47,8 @@ namespace Client.Helpers
         /// <returns>随机值</returns>
         public static int MinValue(int maxValue)
         {
-            int num1= new Random(RandomSeed()).Next(1, maxValue);
-            int num2= new Random(RandomSeed()).Next(1, maxValue);
+            int num1 = new Random(RandomSeed()).Next(1, maxValue);
+            int num2 = new Random(RandomSeed()).Next(1, maxValue);
             return Math.Min(num1, num2);
         }
 

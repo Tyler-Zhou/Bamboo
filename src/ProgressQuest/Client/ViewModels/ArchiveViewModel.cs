@@ -15,6 +15,37 @@ namespace Client.ViewModels
     public class ArchiveViewModel : BaseViewModel
     {
         #region 成员(Member)
+
+        #region 无数据是否可见
+        /// <summary>
+        /// 无数据否可见
+        /// </summary>
+        public bool NoDataVisible
+        {
+            get
+            {
+                if (_Characters.Count > 0)
+                    return false;
+                return true;
+            }
+        }
+        #endregion
+
+        #region 内容是否可见
+        /// <summary>
+        /// 内容是否可见
+        /// </summary>
+        public bool ContentVisible
+        {
+            get
+            {
+                if (_Characters.Count <= 0)
+                    return false;
+                return true;
+            }
+        }
+        #endregion
+
         #region 人物集合(Characters)
         private ObservableCollection<Character> _Characters = new ObservableCollection<Character>();
         /// <summary>
@@ -59,24 +90,72 @@ namespace Client.ViewModels
         {
             _CacheService = cacheService;
             LoadArchiveCommand = new DelegateCommand<Character>(LoadArchive);
-            var result = Task.Run(() => InitData().Result).Result;
+            InitData();
+        }
+        #endregion
+
+        #region 重写方法(Override)
+        /// <summary>
+        /// 是否可以处理请求的导航行为,当前视图/模型是否可以重用
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>true:</remarks>
+        /// <returns></returns>
+        public override bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+        /// <summary>
+        /// 从本页面转到其它页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含目标页面的URI</remarks>
+        public override void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+        }
+        /// <summary>
+        /// 从其它页面导航至本页面时
+        /// </summary>
+        /// <param name="navigationContext">导航内容</param>
+        /// <remarks>NavigationContext包含传递过来的参数</remarks>
+        public override void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            InitData();
         }
         #endregion
 
         #region 方法(Method)
-        async Task<bool> InitData()
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        /// <returns></returns>
+        bool InitData()
         {
-            string basePath=await _CacheService.GetSavePathAsync();
+            Characters.Clear();
+            var result = Task.Run(() => GetCharactersAsync().Result).Result;
+            Characters.AddRange(result);
+            RaisePropertyChanged(nameof(NoDataVisible));
+            RaisePropertyChanged(nameof(ContentVisible));
+            return true;
+        }
+        /// <summary>
+        /// 获取所有人物信息
+        /// </summary>
+        /// <returns></returns>
+        async Task<ObservableCollection<Character>> GetCharactersAsync()
+        {
+            ObservableCollection<Character> result = new ObservableCollection<Character>();
+            string basePath = await _CacheService.GetSavePathAsync();
             DirectoryInfo dir = new DirectoryInfo(basePath);
             FileInfo[] fis = dir.GetFiles();
             for (int i = 0; i < fis.Length; i++)
             {
                 FileInfo fi = fis[i];
-                string name = fi.Name.Replace(fi.Extension,"");
-                Character character=await _CacheService.GetAsync<Character>(name);
-                Characters.Add(character);
+                string name = fi.Name.Replace(fi.Extension, "");
+                Character character = await _CacheService.GetAsync<Character>(name);
+                result.Add(character);
             }
-            return true;
+            return result;
         }
 
         /// <summary>

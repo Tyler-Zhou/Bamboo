@@ -1,14 +1,13 @@
 ﻿using Client.Enums;
 using Client.Extensions;
 using Newtonsoft.Json;
-using System;
 
 namespace Client.Models
 {
     /// <summary>
     /// 人物装备
     /// </summary>
-    public class CharacterEquipment:BaseModel
+    public class CharacterEquipment : BaseModel
     {
         /// <summary>
         /// 装备类型
@@ -39,22 +38,22 @@ namespace Client.Models
             get
             {
                 string description = "";
-                
+
                 if (!string.IsNullOrWhiteSpace(EquipmentKey))
                 {
                     if (Plus != 0)
                     {
-                        description += $"{Plus} ";
+                        description += $"{(Plus > 0 ? "+" : "-")}{Plus} ";
                     }
-                    description += $"{EquipmentKey.FindResourceDictionary()} ";
                     if (!string.IsNullOrWhiteSpace(ModifierKey1))
                     {
-                        description += $"{ModifierKey1.FindResourceDictionary()} ";
+                        description += $"M1:{ModifierKey1.FindResourceDictionary()} ";
                     }
                     if (!string.IsNullOrWhiteSpace(ModifierKey2))
                     {
-                        description += $"{ModifierKey2.FindResourceDictionary()} ";
+                        description += $"M2:{ModifierKey2.FindResourceDictionary()} ";
                     }
+                    description += $"E:{EquipmentKey.FindResourceDictionary()} ";
                 }
                 return description;
             }

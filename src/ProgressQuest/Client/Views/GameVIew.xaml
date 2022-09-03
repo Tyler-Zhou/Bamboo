@@ -60,35 +60,37 @@
         </Grid.ColumnDefinitions>
         <DockPanel Grid.Row="0" Grid.Column="0">
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderCharacterSheet}">
-                <DataGrid ItemsSource="{Binding Traits}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Name}"
-                            HeaderStyle="{StaticResource ColumnHeaderStyleTrait}"
-                            IsReadOnly="True" />
-                        <DataGridTextColumn
-                            Width="*"
-                            Binding="{Binding Value}"
-                            HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
-                            IsReadOnly="True" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                <DockPanel>
+                    <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Traits}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Name}"
+                                HeaderStyle="{StaticResource ColumnHeaderStyleTrait}"
+                                IsReadOnly="True" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Value}"
+                                HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Stats}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Name}"
+                                HeaderStyle="{StaticResource ColumnHeaderStyleStat}"
+                                IsReadOnly="True" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Value}"
+                                HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
+                                IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
             </GroupBox>
-            <DataGrid DockPanel.Dock="Top" ItemsSource="{Binding Stats}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Name}"
-                        HeaderStyle="{StaticResource ColumnHeaderStyleStat}"
-                        IsReadOnly="True" />
-                    <DataGridTextColumn
-                        Width="*"
-                        Binding="{Binding Value}"
-                        HeaderStyle="{StaticResource ColumnHeaderStyleValue}"
-                        IsReadOnly="True" />
-                </DataGrid.Columns>
-            </DataGrid>
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderExperience}">
                 <ProgressBar
                     Height="16"
@@ -97,7 +99,7 @@
                     Value="{Binding ExpTask.Position}" />
             </GroupBox>
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}">
-                <DataGrid ItemsSource="{Binding SpellBooks}">
+                <DataGrid ItemsSource="{Binding SpellBooks}" ScrollViewer.VerticalScrollBarVisibility="Visible">
                     <DataGrid.Columns>
                         <DataGridTextColumn
                             Width="*"
@@ -143,11 +145,14 @@
                             <RowDefinition Height="16" />
                             <RowDefinition Height="16" />
                         </Grid.RowDefinitions>
-                        <DataGrid Grid.Row="0" ItemsSource="{Binding Inventorys}">
+                        <DataGrid
+                            Grid.Row="0"
+                            ItemsSource="{Binding Items}"
+                            ScrollViewer.VerticalScrollBarVisibility="Visible">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
                                     Width="*"
-                                    Binding="{Binding Name}"
+                                    Binding="{Binding Description}"
                                     HeaderStyle="{StaticResource ColumnHeaderStyleItem}"
                                     IsReadOnly="True" />
                                 <DataGridTextColumn
@@ -238,7 +243,8 @@
             <ProgressBar
                 Height="16"
                 DockPanel.Dock="Bottom"
-                Value="20" />
+                Maximum="{Binding CurrentTask.MaxValue}"
+                Value="{Binding CurrentTask.Position}" />
         </DockPanel>
     </Grid>
 </UserControl>
