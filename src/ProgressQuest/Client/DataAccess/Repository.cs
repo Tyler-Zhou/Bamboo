@@ -1,5 +1,4 @@
-﻿using Client.Enums;
-using Client.Models;
+﻿using Client.Models;
 using System.Collections.ObjectModel;
 
 namespace Client.DataAccess
@@ -458,10 +457,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 无聊的物品(BoringItems)
         /// </summary>
-        public ObservableCollection<BoringItemModel> BoringItems { get => _BoringItems; }
-
-
-        ObservableCollection<BoringItemModel> _BoringItems = new ObservableCollection<BoringItemModel>()
+        public static ObservableCollection<BoringItemModel> BoringItems = new ObservableCollection<BoringItemModel>()
         {
             new BoringItemModel(){Key="nail"},
             new BoringItemModel(){Key="lunchpail"},
@@ -512,10 +508,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 怪物(Monsters)
         /// </summary>
-        public ObservableCollection<MonsterModel> Monsters { get => _Monsters; }
-
-
-        ObservableCollection<MonsterModel> _Monsters = new ObservableCollection<MonsterModel>()
+        public static ObservableCollection<MonsterModel> Monsters = new ObservableCollection<MonsterModel>()
         {
             new MonsterModel(){Key="Anhkheg",Level = 6,Item="chitin"},
             new MonsterModel(){Key="Ant",Level = 0,Item="antenna"},
@@ -757,10 +750,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 标题(Titles)
         /// </summary>
-        public ObservableCollection<TitleModel> Titles { get => _Titles; }
-
-
-        ObservableCollection<TitleModel> _Titles = new ObservableCollection<TitleModel>()
+        public static ObservableCollection<TitleModel> Titles = new ObservableCollection<TitleModel>()
         {
             new TitleModel(){Key="Mr."},
             new TitleModel(){Key="Mrs."},
@@ -778,10 +768,7 @@ namespace Client.DataAccess
         /// <summary>
         /// 令人印象深刻的标题(ImpressiveTitles)
         /// </summary>
-        public ObservableCollection<ImpressiveTitleModel> ImpressiveTitles { get => _ImpressiveTitles; }
-
-
-        ObservableCollection<ImpressiveTitleModel> _ImpressiveTitles = new ObservableCollection<ImpressiveTitleModel>()
+        public static ObservableCollection<ImpressiveTitleModel> ImpressiveTitles = new ObservableCollection<ImpressiveTitleModel>()
         {
             new ImpressiveTitleModel(){Key="King"},
             new ImpressiveTitleModel(){Key="Queen"},

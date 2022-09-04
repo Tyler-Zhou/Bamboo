@@ -4,19 +4,19 @@ using Newtonsoft.Json;
 namespace Client.Models
 {
     /// <summary>
-    /// 经验进度
+    /// 经验进度条
     /// </summary>
-    public class ProgressRateExperience : ProgressRateBase
+    public class ExperienceBarModel : BaseBarModel
     {
         /// <summary>
-        /// 名称
+        /// 工具栏提示
         /// </summary>
         [JsonIgnore]
-        public string Name
+        public string ToolTip
         {
             get
             {
-                string name = Key.FindResourceDictionary();
+                string name = "ProgressBarToolTipExperience".FindResourceDictionary();
                 name = name.Replace($"^Remaining$", "" + (MaxValue - Position));
                 return name;
             }

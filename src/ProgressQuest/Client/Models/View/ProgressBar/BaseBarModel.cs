@@ -1,16 +1,12 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 进度对象
+    /// 进度条
     /// </summary>
-    public class ProgressRateBase
+    public class BaseBarModel
     {
         /// <summary>
-        /// 键值
-        /// </summary>
-        public string Key { get; set; } = "";
-        /// <summary>
-        /// 
+        /// 当前位置
         /// </summary>
         public int Position { get; set; }
 

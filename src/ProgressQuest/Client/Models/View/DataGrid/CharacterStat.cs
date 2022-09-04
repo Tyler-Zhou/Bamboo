@@ -1,6 +1,4 @@
-﻿using Client.Enums;
-
-namespace Client.Models
+﻿namespace Client.Models
 {
     /// <summary>
     /// 属性模型

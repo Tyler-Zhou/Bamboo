@@ -201,7 +201,6 @@ namespace Client.Helpers
         }
         #endregion
 
-
         #region 设定属性值
         /// <summary>
         /// 枚举属性范围
@@ -309,5 +308,31 @@ namespace Client.Helpers
             return percent.ToString() + "%";
         }
         #endregion
+
+        #region 杀怪任务区间值
+        /// <summary>
+        /// 杀怪任务区间值
+        /// </summary>
+        /// <param name="monsterLevel">怪物等级</param>
+        /// <param name="characterLevel">人物等级</param>
+        /// <returns>杀怪任务区间值</returns>
+        /// <remarks>每级</remarks>
+        public static int KillTaskDuration(int monsterLevel,int characterLevel)
+        {
+            return (2 * 3 * monsterLevel * 1000)/ characterLevel;
+        }
+        #endregion
+
+        #region 获取完成剧幕所需时间
+        /// <summary>
+        /// 装备价格
+        /// </summary>
+        /// <param name="characterLevel">人物等级</param>
+        public static int EquipmentPrice(int characterLevel)
+        {
+            return 5 * (characterLevel * characterLevel) + 10 * characterLevel + 20;
+        }
+        #endregion
+
     }
 }

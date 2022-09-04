@@ -1,31 +1,31 @@
 ﻿using Client.Extensions;
+using Client.Helpers;
 using Newtonsoft.Json;
 
 namespace Client.Models
 {
     /// <summary>
-    /// 货物进度
+    /// 任务进度条
     /// </summary>
-    public class ProgressRateItem : ProgressRateBase
+    public class QuestBarModel : BaseBarModel
     {
+       
+        
         /// <summary>
         /// 名称
         /// </summary>
         [JsonIgnore]
-        public string Name
+        public string ToolTip
         {
             get
             {
-                string name = Key.FindResourceDictionary();
-                name = name.Replace($"^Position$", "" + Position);
-                name = name.Replace($"^MaxValue$", "" + MaxValue);
+                string name = "ProgressBarToolTipQuest".FindResourceDictionary();
+                name = name.Replace($"^Percent$", CharacterHelper.Percent(Position, MaxValue));
                 return name;
             }
             set
             {
-
             }
         }
-
     }
 }

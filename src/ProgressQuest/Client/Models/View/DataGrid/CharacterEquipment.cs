@@ -1,5 +1,4 @@
-﻿using Client.Enums;
-using Client.Extensions;
+﻿using Client.Extensions;
 using Newtonsoft.Json;
 
 namespace Client.Models

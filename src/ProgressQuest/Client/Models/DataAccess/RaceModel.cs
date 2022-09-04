@@ -1,5 +1,4 @@
-﻿using Client.Enums;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace Client.Models
 {

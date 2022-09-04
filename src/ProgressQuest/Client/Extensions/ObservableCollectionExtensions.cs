@@ -19,6 +19,16 @@ namespace Client.Extensions
         }
 
         /// <summary>
+        /// 从集合中挑选一个(挑选两次，选小的那个)
+        /// </summary>
+        /// <param name="observableCollection">待挑选数据集合</param>
+        /// <returns></returns>
+        public static T MixPick<T>(this ObservableCollection<T> observableCollection)
+        {
+            return observableCollection[RandomHelper.MinValue(0, observableCollection.Count)];
+        }
+
+        /// <summary>
         /// 从集合中挑选一个
         /// </summary>
         /// <param name="observableCollection">待挑选数据集合</param>

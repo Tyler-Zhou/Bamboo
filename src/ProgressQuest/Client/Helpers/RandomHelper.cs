@@ -43,6 +43,19 @@ namespace Client.Helpers
         /// <summary>
         /// 生成两个随机数，返回较小的数字
         /// </summary>
+        /// <param name="minValue">最小值</param>
+        /// <param name="maxValue">最大值</param>
+        /// <returns>随机值</returns>
+        public static int MinValue(int minValue, int maxValue)
+        {
+            int num1 = new Random(RandomSeed()).Next(minValue, maxValue);
+            int num2 = new Random(RandomSeed()).Next(minValue, maxValue);
+            return Math.Min(num1, num2);
+        }
+
+        /// <summary>
+        /// 生成两个随机数，返回较小的数字
+        /// </summary>
         /// <param name="maxValue">最大值</param>
         /// <returns>随机值</returns>
         public static int MinValue(int maxValue)

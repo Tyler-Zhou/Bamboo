@@ -1,4 +1,4 @@
-﻿namespace Client.Enums
+﻿namespace Client
 {
     /// <summary>
     /// 属性类型

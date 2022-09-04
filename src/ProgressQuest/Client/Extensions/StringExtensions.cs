@@ -15,7 +15,7 @@
             try
             {
                 if(string.IsNullOrWhiteSpace(input))
-                    return input;
+                    return "";
                 return System.Windows.Application.Current.FindResource(input).ToString();
             }
             catch

@@ -9,10 +9,10 @@ namespace Client.Models
     public class CharacterAct
     {
         /// <summary>
-        /// 名称
+        /// 描述
         /// </summary>
         [JsonIgnore]
-        public string Name
+        public string Description
         {
             get
             {

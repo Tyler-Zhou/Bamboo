@@ -1,4 +1,4 @@
-﻿namespace Client.Enums
+﻿namespace Client
 {
     /// <summary>
     /// 任务类型

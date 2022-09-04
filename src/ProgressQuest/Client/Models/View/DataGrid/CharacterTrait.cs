@@ -1,9 +1,9 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 特征
+    /// 人物特征
     /// </summary>
-    public class TraitModel : BaseModel
+    public class CharacterTrait : BaseModel
     {
         /// <summary>
         /// 值

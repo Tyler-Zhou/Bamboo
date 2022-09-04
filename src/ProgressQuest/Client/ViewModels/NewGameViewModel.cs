@@ -1,11 +1,8 @@
 ﻿using Client.Common;
 using Client.DataAccess;
-using Client.Enums;
 using Client.Extensions;
 using Client.Helpers;
-using Client.Interfaces;
 using Client.Models;
-using Client.Services;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
@@ -542,7 +539,7 @@ namespace Client.ViewModels
         /// </summary>
         private void BeginQuest()
         {
-            _Character.InitTask();
+            _Character.BeginQuest();
             NavigationParameters param = new NavigationParameters();
             param.Add("Character", _Character);
             NavigationToView("GameView", param);
