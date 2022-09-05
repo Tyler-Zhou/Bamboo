@@ -10,11 +10,6 @@ namespace Client.Models
     public class PlotBarModel : BaseBarModel
     {
         /// <summary>
-        /// 时间
-        /// </summary>
-        public int CommpleteNeedTime { get; set; } = 1;
-
-        /// <summary>
         /// 名称
         /// </summary>
         [JsonIgnore]
@@ -23,7 +18,7 @@ namespace Client.Models
             get
             {
                 string name = "ProgressBarToolTipPlot".FindResourceDictionary();
-                name = name.Replace($"^Time$", new TimeSpan(0, 0, CommpleteNeedTime).ToString(@"hh\:mm\:ss"));
+                name = name.Replace($"^Time$", new TimeSpan(0, 0, (int)(MaxValue - Position)).ToString(@"hh\:mm\:ss"));
                 return name;
             }
             set

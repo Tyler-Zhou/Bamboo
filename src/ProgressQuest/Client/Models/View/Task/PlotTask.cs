@@ -15,7 +15,7 @@ namespace Client.Models
         {
             get
             {
-                return "TaskPlotKey";
+                return "TaskPlot";
             }
         }
         /// <summary>

@@ -1,9 +1,9 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 购买任务
+    /// 前往杀戮战场
     /// </summary>
-    public class BuyTask : BaseTask
+    public class HeadingToKillingFieldsTask : BaseTask
     {
         /// <summary>
         /// SellTaskKey
@@ -12,7 +12,7 @@
         {
             get
             {
-                return "TaskBuy";
+                return "HeadingToKillingFields";
             }
         }
     }

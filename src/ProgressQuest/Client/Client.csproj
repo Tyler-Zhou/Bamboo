@@ -140,7 +140,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\JsonSerializerHelper.cs" />
     <Compile Include="Helpers\CharacterHelper.cs" />
-    <Compile Include="Helpers\MonsterHelper.cs" />
+    <Compile Include="Helpers\BuildResourcesHelper.cs" />
     <Compile Include="Helpers\RandomHelper.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IConfigureService.cs" />
@@ -180,6 +180,7 @@
     <Compile Include="Models\View\DataGrid\CharacterTrait.cs" />
     <Compile Include="Models\View\Task\BaseTask.cs" />
     <Compile Include="Models\View\Task\BuyTask.cs" />
+    <Compile Include="Models\View\Task\HeadingToKillingFieldsTask.cs" />
     <Compile Include="Models\View\Task\HeadingToMarketTask.cs" />
     <Compile Include="Models\View\Task\KillTask.cs" />
     <Compile Include="Models\View\Task\PlotTask.cs" />
@@ -196,11 +197,11 @@
     <Compile Include="Views\NewGameView.xaml.cs">
       <DependentUpon>NewGameView.xaml</DependentUpon>
     </Compile>
-    <Page Include="Resources\Character\en-US.xaml">
+    <Page Include="Resources\DataAccess\en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Character\zh-CN.xaml">
+    <Page Include="Resources\DataAccess\zh-CN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,14 +213,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Classes\en-US.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Classes\zh-CN.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Resources\Enum\en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -228,19 +221,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Plot\en-US.xaml">
+    <Page Include="Resources\Task\en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Plot\zh-CN.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Races\en-US.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Races\zh-CN.xaml">
+    <Page Include="Resources\Task\zh-CN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="ApplicationTitle">Progress Quest</sys:String>
+    <!--  Menu  -->
     <sys:String x:Key="MenuItemGame">Game</sys:String>
     <sys:String x:Key="MenuItemNewGame">New Game</sys:String>
     <sys:String x:Key="MenuItemSelectArchive">Select Archive</sys:String>
@@ -10,6 +11,7 @@
     <sys:String x:Key="MenuItemSwitchLanguage">Language</sys:String>
     <sys:String x:Key="MenuItemChinese">Chinese</sys:String>
     <sys:String x:Key="MenuItemEnglish">English</sys:String>
+    <!--  New Game View  -->
     <sys:String x:Key="LabelRandomName">Name:</sys:String>
     <sys:String x:Key="ButtonToolTipRandomName">Roll new name</sys:String>
     <sys:String x:Key="GroupBoxHeaderRace">Race</sys:String>
@@ -21,24 +23,40 @@
     <sys:String x:Key="ButtonUnRollContent">UnRoll</sys:String>
     <sys:String x:Key="ButtonUnRollToolTip">Restore previously rolled stats</sys:String>
     <sys:String x:Key="ButtonBeginQuest">Begin Quest</sys:String>
+    <!--  Archive View  -->
     <sys:String x:Key="TextBlockNoData">No Archive Data</sys:String>
+    <!--  Game View  -->
+    <!--  Group Box Character Sheet  -->
     <sys:String x:Key="GroupBoxHeaderCharacterSheet">Character Sheet</sys:String>
     <sys:String x:Key="DataGridColumnHeaderValue">Value</sys:String>
     <sys:String x:Key="DataGridColumnHeaderTrait">Trait</sys:String>
     <sys:String x:Key="DataGridColumnHeaderStat">Stat</sys:String>
+    <sys:String x:Key="DataGridName">Name</sys:String>
+    <sys:String x:Key="DataGridRace">Race</sys:String>
+    <sys:String x:Key="DataGridClass">Class</sys:String>
+    <sys:String x:Key="DataGridLevel">Level</sys:String>
+    <!--  Group Box Experience  -->
     <sys:String x:Key="GroupBoxHeaderExperience">Experience</sys:String>
     <sys:String x:Key="ProgressBarToolTipExperience">^Remaining$ XP needed for next level</sys:String>
+    <!--  Group Box Spell Boook  -->
     <sys:String x:Key="GroupBoxHeaderSpellBook">Spell Book</sys:String>
     <sys:String x:Key="DataGridColumnHeaderSpell">Spell</sys:String>
     <sys:String x:Key="DataGridColumnHeaderLevel">Level</sys:String>
+    <!--  Group Box Equipment  -->
     <sys:String x:Key="GroupBoxHeaderEquipment">Equipment</sys:String>
+    <!--  Group Box Plot Development  -->
     <sys:String x:Key="GroupBoxHeaderPlotDevelopment">Plot Development</sys:String>
     <sys:String x:Key="ProgressBarToolTipPlot">^Time$ remaining</sys:String>
+    <sys:String x:Key="DataGridPlotPrologue">Prologue</sys:String>
+    <sys:String x:Key="DataGridPlotAct">Act ^RomanNumber$</sys:String>
+    <!--  Group Box Inventory  -->
     <sys:String x:Key="GroupBoxHeaderInventory">Inventory</sys:String>
     <sys:String x:Key="DataGridColumnHeaderItem">Item</sys:String>
     <sys:String x:Key="DataGridColumnHeaderQuality">Quality</sys:String>
     <sys:String x:Key="TextBlockEncumbrance">Encumbrance</sys:String>
     <sys:String x:Key="ProgressBarToolTipInventory">^Position$/^MaxValue$ cubits</sys:String>
+    <sys:String x:Key="DataGridGold">Gold</sys:String>
+    <!--  Group Box Quests  -->
     <sys:String x:Key="GroupBoxHeaderQuests">Quests</sys:String>
     <sys:String x:Key="ProgressBarToolTipQuest">^Percent$ complete</sys:String>
 </ResourceDictionary>

@@ -16,7 +16,7 @@
         /// <summary>
         /// 盾牌
         /// </summary>
-        Shield = 21,
+        Shield = 2,
         /// <summary>
         /// 头盔
         /// </summary>
@@ -52,6 +52,6 @@
         /// <summary>
         /// 足甲
         /// </summary>
-        Sollerets = 12,
+        Sollerets = 11,
     }
 }

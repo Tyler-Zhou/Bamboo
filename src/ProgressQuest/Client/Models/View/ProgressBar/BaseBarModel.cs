@@ -1,4 +1,6 @@
-﻿namespace Client.Models
+﻿using System;
+
+namespace Client.Models
 {
     /// <summary>
     /// 进度条
@@ -8,12 +10,12 @@
         /// <summary>
         /// 当前位置
         /// </summary>
-        public int Position { get; set; }
+        public double Position { get; set; }
 
         /// <summary>
         /// 最大值
         /// </summary>
-        public int MaxValue { get; set; }
+        public double MaxValue { get; set; }
 
         /// <summary>
         /// 是否完成
@@ -30,7 +32,7 @@
         /// 增量
         /// </summary>
         /// <param name="increment"></param>
-        public void Increment(int increment)
+        public void Increment(double increment)
         {
             Position += increment;
         }
@@ -40,10 +42,20 @@
         /// </summary>
         /// <param name="maxValue"></param>
         /// <param name="position"></param>
-        public void Reset(int maxValue, int position = 0)
+        public void Reset(double maxValue, double position = 0)
         {
             Position = position;
             MaxValue = maxValue;
+        }
+        /// <summary>
+        /// 复位
+        /// </summary>
+        /// <param name="position"></param>
+        public void Reposition(double position)
+        {
+            double oldPosition = Position;
+            position = Math.Min(position, MaxValue);
+            Position = position;
         }
     }
 }

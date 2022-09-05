@@ -17,9 +17,9 @@ namespace Client.Models
         {
             get
             {
-                if (CurrentAct == null)
+                if (Acts == null ||Acts.Count<=1)
                     return 0;
-                return CurrentAct.Index;
+                return Acts.Count -1;
             }
         }
 
@@ -52,18 +52,6 @@ namespace Client.Models
         }
 
         /// <summary>
-        /// 当前章节
-        /// </summary>
-        [JsonIgnore]
-        public CharacterAct CurrentAct
-        {
-            get
-            {
-                return Acts.SingleOrDefault(item => !item.IsCommplete);
-            }
-        }
-
-        /// <summary>
         /// 当前任务
         /// </summary>
         [JsonIgnore]
@@ -71,7 +59,7 @@ namespace Client.Models
         {
             get
             {
-                return Quests.SingleOrDefault(item => !item.IsCommplete);
+                return Quests.FirstOrDefault();
             }
         }
 

@@ -16,10 +16,10 @@ namespace Client.Models
         {
             get
             {
-                string key = "PlotPrologue";
+                string key = "DataGridPlotPrologue";
                 if (Index > 0)
                 {
-                    key = "PlotAct";
+                    key = "DataGridPlotAct";
                 }
                 string name = key.FindResourceDictionary();
                 name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());

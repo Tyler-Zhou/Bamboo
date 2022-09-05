@@ -31,11 +31,12 @@ namespace Client.Models
             get
             {
                 string description = "";
-                if ("CharacterGold".Equals(Key))
+                if ("DataGridGold".Equals(Key))
                 {
                     description = Name;
                 }else
                 {
+                    //TODO:
                     //NPC处随机获取物品 货物特征 + 特价 + 货物名称
                     if (!string.IsNullOrWhiteSpace(Key))
                     {

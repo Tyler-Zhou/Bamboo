@@ -42,9 +42,9 @@ namespace Client.ViewModels
                     RaisePropertyChanged(nameof(Stats));
                     RaisePropertyChanged(nameof(Equipments));
                     RaisePropertyChanged(nameof(SpellBooks));
-                    RaisePropertyChanged(nameof(Items));
                     RaisePropertyChanged(nameof(Acts));
-
+                    RaisePropertyChanged(nameof(Items));
+                    RaisePropertyChanged(nameof(Quests));
                     RaisePropertyChanged(nameof(ExperienceBar));
                     RaisePropertyChanged(nameof(ItemBar));
                     RaisePropertyChanged(nameof(PlotBar));
@@ -119,7 +119,7 @@ namespace Client.ViewModels
             get
             {
                 if(Current.QuestBook==null)
-                    return new ObservableCollection<CharacterAct>();
+                    return null;
                 return Current.QuestBook.Acts;
             }
         }
@@ -132,7 +132,7 @@ namespace Client.ViewModels
             get
             {
                 if (Current.QuestBook == null)
-                    return new ObservableCollection<CharacterQuest>();
+                    return null;
                 return Current.QuestBook.Quests;
             }
         }
@@ -183,10 +183,6 @@ namespace Client.ViewModels
 
         #region 计时器(DispatcherTimer)
         /// <summary>
-        /// 剧情计时器
-        /// </summary>
-        DispatcherTimer plotTimer = new DispatcherTimer();
-        /// <summary>
         /// 任务计时器
         /// </summary>
         DispatcherTimer taskTimer = new DispatcherTimer();
@@ -233,53 +229,53 @@ namespace Client.ViewModels
         /// <param name="e"></param>
         private void TaskTimer_Tick(object sender, EventArgs e)
         {
-            if(Current.TaskQueue.Count>0)
+            if (!CurrentBar.IsCommplete)
             {
-                object objTask = Current.TaskQueue.Peek();
-                if (!CurrentBar.IsCommplete)
-                {
-                    CurrentBar.Increment(1);
-                }
+                CurrentBar.Increment(1);
                 RaisePropertyChanged(nameof(CurrentBar));
-                if (objTask != null)
+                return;
+            }
+            object objTask = TaskPeek();
+            if (objTask != null)
+            {
+                if (objTask is KillTask)
                 {
-                    if (objTask is KillTask)
+                    // 升级
+                    if (ExperienceBar.IsCommplete)
                     {
-                        // 升级
-                        if (ExperienceBar.IsCommplete)
-                        {
-                            LevelUp();
-                        }
-                        else
-                        {
-                            ExperienceBar.Increment(ExperienceBar.MaxValue / 1000);
-                        }
-                        // 推进任务
-                        if (Current.QuestBook.ActIndex >= 1)
-                        {
-                            if (QuestBar.IsCommplete)
-                            {
-                                CompleteQuest();
-                            }
-                            else
-                            {
-                                QuestBar.Increment(QuestBar.MaxValue / 1000);
-                            }
-                        }
-                        // 推进剧情
-                        if (PlotBar.IsCommplete)
-                        {
-                            InterPlotCinematic();
-                        }
-                        else
-                        {
-                            PlotBar.Reset(CurrentBar.MaxValue / 1000);
-                        }
+                        LevelUp();
                     }
-
-                    Dequeue();
+                    else
+                    {
+                        ExperienceBar.Increment(CurrentBar.MaxValue);
+                        RaisePropertyChanged(nameof(ExperienceBar));
+                    }
+                }
+                // 推进任务
+                if (Current.QuestBook.ActIndex > 0)
+                {
+                    if (QuestBar.IsCommplete)
+                    {
+                        CompleteQuest();
+                    }
+                    else
+                    {
+                        QuestBar.Increment(CurrentBar.MaxValue);
+                        RaisePropertyChanged(nameof(QuestBar));
+                    }
+                }
+                //推进剧情
+                if (PlotBar.IsCommplete)
+                {
+                    InterPlotCinematic();
+                }
+                else
+                {
+                    PlotBar.Increment(CurrentBar.MaxValue);
+                    RaisePropertyChanged(nameof(PlotBar));
                 }
             }
+            Dequeue();
         }
         #endregion
 
@@ -334,15 +330,51 @@ namespace Client.ViewModels
         }
 
         /// <summary>
-        /// 开启旅程
+        /// 设置任务
         /// </summary>
-        private void BeginQuest()
+        /// <param name="task"></param>
+        /// <returns></returns>
+        public bool TaskSet(BaseTask task)
         {
-           
-            
+            CurrentBar.ToolTip = task.Description;
+            CurrentBar.Reset(task.Duration * 5);
+            Current.TaskQueue.Enqueue(task);
+            RaisePropertyChanged(nameof(CurrentBar));
+            return true;
         }
-        void CompleteQuest()
+
+        /// <summary>
+        /// 当前任务
+        /// </summary>
+        /// <returns></returns>
+        public object TaskPeek()
         {
+            if (Current.TaskQueue.Count > 0)
+                return Current.TaskQueue.Peek();
+            else
+                return null;
+        }
+        /// <summary>
+        /// 任务数量
+        /// </summary>
+        /// <returns></returns>
+        public int TaskCount()
+        {
+            return Current.TaskQueue.Count;
+        }
+
+        /// <summary>
+        /// 移除任务
+        /// </summary>
+        /// <returns></returns>
+        public BaseTask TaskDequeue()
+        {
+            return Current.TaskQueue.Dequeue();
+        }
+
+        private void CompleteQuest()
+        {
+            Current.QuestBar.Reset(50 + RandomHelper.MinValue(1000));
             //任务完成随机获得法术书、装备、属性、货物
             int methodNo = RandomHelper.Value(4);
             switch (methodNo)
@@ -395,6 +427,7 @@ namespace Client.ViewModels
                     break;
             }
             Current.QuestBook.AddQuest(questType, monsterKey, monsterLevel, count, itemKey, specialKey);
+            RaisePropertyChanged(nameof(Quests));
         }
 
         /// <summary>
@@ -410,7 +443,7 @@ namespace Client.ViewModels
             WinStat();
             WinSpell();
             //设置经验进程最大值
-            Current.ExperienceBar.MaxValue = CharacterHelper.GetMaxExperienceByLevel(Current.Level);
+            Current.ExperienceBar.Reset(CharacterHelper.GetMaxExperienceByLevel(Current.Level));
         }
 
         /// <summary>
@@ -539,12 +572,14 @@ namespace Client.ViewModels
             return result;
         }
 
-
+        /// <summary>
+        /// 队尾
+        /// </summary>
         private void Dequeue()
         {
-            while (CurrentBar.IsCommplete && Current.TaskQueue.Count>0)
+            while (CurrentBar.IsCommplete)
             {
-                object objTask = Current.TaskQueue.Peek();
+                object objTask = TaskPeek();
                 if (objTask is KillTask)
                 {
                     KillTask killTask = (KillTask)objTask;
@@ -559,6 +594,7 @@ namespace Client.ViewModels
                         Current.AddItem("", killTask.MonsterKey, killTask.MonsterItemKey, 1);
                     }
                     RaisePropertyChanged(nameof(Items));
+                    RaisePropertyChanged(nameof(ItemBar));
                 }
                 else if (objTask is BuyTask)
                 {
@@ -581,6 +617,7 @@ namespace Client.ViewModels
                         Current.SellItem(taskModel.ItemKey, taskModel.ItemKey1, taskModel.ItemKey2);
                         Current.AddGold(amount);
                         RaisePropertyChanged(nameof(Items));
+                        RaisePropertyChanged(nameof(ItemBar));
                     }
                     if (Current.Items.Count > 1)
                     {
@@ -592,25 +629,38 @@ namespace Client.ViewModels
                             ItemKey2 = item.ItemKey2,
                             ItemQuantity = item.Quality,
                         };
-                        Current.SetTask(taskModel);
+                        TaskSet(taskModel);
                     }
                 }
                 else if (objTask is PlotTask)
                 {
-                    CompleteAct();
+                    PlotTask taskModel = new PlotTask();
+                    Current.QuestBook.CommpleteAct(taskModel.ActIndex);
+                    Current.QuestBook.AddAct(Current.QuestBook.ActIndex + 1);
+                    RaisePropertyChanged(nameof(Acts));
+                    Current.PlotBar.Reset(CharacterHelper.ActTime(Current.QuestBook.ActIndex));
+                    if (Current.QuestBook.ActIndex > 1)
+                    {
+                        WinItem();
+                        WinEquipment();
+                    }
                 }
-                if(Current.TaskQueue.Count>0)
+                if (TaskCount()>0)
                 {
-                    Current.TaskQueue.Dequeue();
-                }else if (Current.ItemBar.IsCommplete)
+                    BaseTask task= TaskDequeue();
+                    CurrentBar.ToolTip = task.Description;
+                    CurrentBar.Reset(task.Duration);
+                    RaisePropertyChanged(nameof(CurrentBar));
+                }
+                else if (Current.ItemBar.IsCommplete)
                 {
                     HeadingToMarketTask taskModel = new HeadingToMarketTask()
                     {
                         Duration = 4,
                     };
-                    Current.SetTask(taskModel);
+                    TaskSet(taskModel);
                 }
-                else if (!(objTask is KillTask) && !(objTask is HeadingToMarketTask))
+                else if (objTask!=null && !(objTask is KillTask) && !(objTask is HeadingToKillingFieldsTask))
                 {
                     //金币够买装备
                     if (Current.GetGold() > CharacterHelper.EquipmentPrice(Current.Level))
@@ -619,20 +669,20 @@ namespace Client.ViewModels
                         {
                             Duration = 5,
                         };
-                        Current.SetTask(taskModel);
+                        TaskSet(taskModel);
                     }
                     else
                     {
-                        HeadingToMarketTask taskModel = new HeadingToMarketTask()
+                        HeadingToKillingFieldsTask taskModel = new HeadingToKillingFieldsTask()
                         {
-                            Duration = 5,
+                            Duration = 4,
                         };
-                        Current.SetTask(taskModel);
+                        TaskSet(taskModel);
                     }
                 }
                 else
                 {
-                    Current.SetTask(
+                    TaskSet(
                         BuilderKillMonster(Current.Level
                         , Current.QuestBook.MonsterKey
                         , Current.QuestBook.MonsterLevel));
@@ -781,28 +831,28 @@ namespace Client.ViewModels
                 case 1:
                     //TODO:常规任务键值添加
                     //Exhausted, you arrive at a friendly oasis in a hostile land
-                    Current.SetTask(
+                    TaskSet(
                         new RegularTask
                         {
                             Key = "TaskRegularExhausted",
                             Duration = 1,
                         });
                     //You greet old friends and meet new allies
-                    Current.SetTask(
+                    TaskSet(
                         new RegularTask
                         {
                             Key = "TaskRegularGreet",
                             Duration = 2,
                         });
                     //You are privy to a council of powerful do-gooders
-                    Current.SetTask(
+                    TaskSet(
                         new RegularTask
                         {
                             Key = "TaskRegularCouncil",
                             Duration = 2,
                         });
                     //There is much to be done. You are chosen!
-                    Current.SetTask(
+                    TaskSet(
                         new RegularTask
                         {
                             Key = "TaskRegularChosen",
@@ -811,7 +861,7 @@ namespace Client.ViewModels
                     break;
                 case 2:
                     //Your quarry is in sight, but a mighty enemy bars your path!
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegularSight",
@@ -821,7 +871,7 @@ namespace Client.ViewModels
                     MonsterModel nemesis = UnNamedMonster(Current.Level + 3);
                     //A desperate struggle commences with {nemesis}
                     monsterName = CharacterHelper.GenerateEnglishName();
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegularNemesis",
@@ -837,7 +887,7 @@ namespace Client.ViewModels
                         {
                             case 0:
                                 //Locked in grim combat with {nemesis}
-                                Current.SetTask(
+                                TaskSet(
                                    new RegularTask
                                    {
                                        Key = "TaskRegularLockedInNemesis",
@@ -848,7 +898,7 @@ namespace Client.ViewModels
                                 break;
                             case 1:
                                 //{nemesis} seems to have the upper hand
-                                Current.SetTask(
+                                TaskSet(
                                    new RegularTask
                                    {
                                        Key = "TaskRegularNemesisUpperHand",
@@ -859,7 +909,7 @@ namespace Client.ViewModels
                                 break;
                             case 2:
                                 //You seem to gain the advantage over {nemesis}
-                                Current.SetTask(
+                                TaskSet(
                                    new RegularTask
                                    {
                                        Key = "TaskRegularAdvantageOverNemesis",
@@ -871,7 +921,7 @@ namespace Client.ViewModels
                         }
                     }
                     //Victory! {nemesis} is slain!Exhausted, you lose conciousness
-                    Current.SetTask(
+                    TaskSet(
                                    new RegularTask
                                    {
                                        Key = "TaskRegularLoseConciousness",
@@ -880,7 +930,7 @@ namespace Client.ViewModels
                                        Duration = 4,
                                    });
                     //You awake in a friendly place, but the road awaits
-                    Current.SetTask(
+                    TaskSet(
                                   new RegularTask
                                   {
                                       Key = "TaskRegularFriendlyPlace",
@@ -894,42 +944,42 @@ namespace Client.ViewModels
                     if (RandomHelper.Value(2) == 2)
                         monsterName = CharacterHelper.GenerateEnglishName();
                     //Oh sweet relief!You've reached the protection of the good{nemesis}
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegularRelief",
                            Duration = 2,
                        });
                     //There is rejoicing,and an unnerving encouter with {nemesis} in private
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegular",
                            Duration = 3,
                        });
                     //You forget your {boring_item()} and go back to get it
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegular",
                            Duration = 2,
                        });
                     //What's this!? You overhear something shocking!
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegular",
                            Duration = 2,
                        });
                     //Could {nemesis} be a dirty double-dealer?
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegular",
                            Duration = 2,
                        });
                     //Who can possibly be trusted with this news!? ...Oh yes, of course
-                    Current.SetTask(
+                    TaskSet(
                        new RegularTask
                        {
                            Key = "TaskRegular",
@@ -937,25 +987,8 @@ namespace Client.ViewModels
                        });
                     break;
             }
-            Current.SetTask(new PlotTask { ActIndex = Current.QuestBook.ActIndex + 1, Duration = 1 });
+            TaskSet(new PlotTask { ActIndex = Current.QuestBook.ActIndex + 1, Duration = 2 });
         }
-        /// <summary>
-        /// 完成剧幕
-        /// </summary>
-        private void CompleteAct()
-        {
-            Current.QuestBook.CommpleteAct(Current.QuestBook.ActIndex);
-            RaisePropertyChanged(nameof(Acts));
-            Current.QuestBook.AddAct(Current.QuestBook.ActIndex + 1);
-            PlotBar.Reset(CharacterHelper.ActTime(Current.QuestBook.ActIndex));
-            if (Current.QuestBook.ActIndex > 1)
-            {
-                WinItem();
-                WinEquipment();
-            }
-            RaisePropertyChanged(nameof(Acts));
-        }
-
         /// <summary>
         /// 加载人物
         /// </summary>

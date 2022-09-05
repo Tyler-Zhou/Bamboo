@@ -1,7 +1,7 @@
 ﻿namespace Client.Models
 {
     /// <summary>
-    /// 前往杀戮场
+    /// 走向市场
     /// </summary>
     public class HeadingToMarketTask: BaseTask
     {
@@ -12,7 +12,7 @@
         {
             get
             {
-                return "TaskHeadingToMarketKey";
+                return "TaskHeadingToMarket";
             }
         }
     }

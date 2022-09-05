@@ -2,7 +2,6 @@
 using Client.Helpers;
 using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -79,8 +78,6 @@ namespace Client.Models
         /// 货物集合
         /// </summary>
         public ObservableCollection<CharacterItem> Items = new ObservableCollection<CharacterItem>();
-        
-       
         #endregion
 
         #region 进度条
@@ -110,7 +107,7 @@ namespace Client.Models
         /// <summary>
         /// 当前待执行任务队列
         /// </summary>
-        public Queue TaskQueue = new Queue(); 
+        public Queue<BaseTask> TaskQueue = new Queue<BaseTask>(); 
         #endregion
 
         #endregion
@@ -172,7 +169,7 @@ namespace Client.Models
             Items.Clear();
             Items.AddRange(new ObservableCollection<CharacterItem>()
             {
-                new CharacterItem(){Key="CharacterGold",Quality = 0 },
+                new CharacterItem(){Key="DataGridGold",Quality = 0 },
             });
             #endregion
 
@@ -187,10 +184,10 @@ namespace Client.Models
         {
             return new ObservableCollection<CharacterTrait>
             {
-                new CharacterTrait(){ Key="CharacterName",Value = Name },
-                new CharacterTrait(){ Key="CharacterRace",Value = RaceKey.FindResourceDictionary() },
-                new CharacterTrait(){ Key="CharacterClass",Value = ClassKey.FindResourceDictionary()},
-                new CharacterTrait(){ Key="CharacterLevel",Value = ""+Level },
+                new CharacterTrait(){ Key="DataGridName",Value = Name },
+                new CharacterTrait(){ Key="DataGridRace",Value = RaceKey.FindResourceDictionary() },
+                new CharacterTrait(){ Key="DataGridClass",Value = ClassKey.FindResourceDictionary()},
+                new CharacterTrait(){ Key="DataGridLevel",Value = ""+Level },
             };
         }
         /// <summary>
@@ -251,38 +248,25 @@ namespace Client.Models
             {
                 Position = 0,
                 MaxValue = 26,
-                CommpleteNeedTime = CharacterHelper.ActTime(0)
             };
             QuestBar = new QuestBarModel()
             {
                 Position = 0,
-                MaxValue = 0
-            };
-            CurrentBar = new CurrentBarModel()
-            {
-                Position = 0,
-                MaxValue = 30,
+                MaxValue = 28
             };
             QuestBook.AddAct(0);
-            TaskQueue.Enqueue(new PlotTask() { Key = "TaskPlot", ActIndex = QuestBook.ActIndex, Duration = 2 });
-            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskBeginQuest", Duration = 4 });
-            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskFeeling", Duration = 6 });
-            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskSecret", Duration = 6 });
-            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskNightVision", Duration = 10 });
-        }
-
-        /// <summary>
-        /// 设置任务
-        /// </summary>
-        /// <param name="task"></param>
-        /// <returns></returns>
-        public bool SetTask(object task)
-        {
-            BaseTask taskModel = (BaseTask)task;
-            CurrentBar.ToolTip = taskModel.Description;
-            CurrentBar.Reset(taskModel.Duration);
-            TaskQueue.Enqueue(task);
-            return true;
+            PlotTask plotPrologue = new PlotTask() { Key = "TaskPlot", ActIndex = QuestBook.ActIndex, Duration = 2 };
+            CurrentBar = new CurrentBarModel()
+            {
+                ToolTip = plotPrologue.Description,
+                Position = 0,
+                MaxValue = plotPrologue.Duration,
+            };
+            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskNightVision", Duration = 4 });
+            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskUnderestimated", Duration = 6 });
+            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskEvents", Duration = 6 });
+            TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskJourney", Duration = 10 });
+            TaskQueue.Enqueue(plotPrologue);
         }
         /// <summary>
         /// 更新装备
@@ -296,7 +280,7 @@ namespace Client.Models
         /// <exception cref="Exception"></exception>
         public bool UpdateEquipment(EnumEquipment equipmentType, string equipmentKey, string modifierKey1, string modifierKey2, int plus)
         {
-            var equipment =Equipments.SingleOrDefault(item => item.EquipmentType == equipmentType);
+            var equipment =Equipments.SingleOrDefault(item => item.EquipmentType.Equals(equipmentType));
             equipment.EquipmentKey = equipmentKey;
             equipment.ModifierKey1 = modifierKey1;
             equipment.ModifierKey2 = modifierKey2;
@@ -310,20 +294,18 @@ namespace Client.Models
         /// <returns></returns>
         public bool AddGold(int quality)
         {
-            var singItem = Items.SingleOrDefault(item => "CharacterGold".Equals(item.Key));
+            var singItem = Items.SingleOrDefault(item => "DataGridGold".Equals(item.Key));
             singItem.Quality += quality;
             return true;
         }
-
         /// <summary>
         /// 获取金币数量
         /// </summary>
         /// <returns></returns>
         public int GetGold()
         {
-            return Items.SingleOrDefault(item => "CharacterGold".Equals(item.Key)).Quality;
+            return Items.SingleOrDefault(item => "DataGridGold".Equals(item.Key)).Quality;
         }
-
         /// <summary>
         /// 添加货物
         /// </summary>
@@ -346,6 +328,7 @@ namespace Client.Models
                     Key = key,
                     ItemKey1 = itemKey1,
                     ItemKey2 = itemKey2,
+                    Quality = quality,
                 };
                 Items.Add(model);
             }
@@ -353,9 +336,9 @@ namespace Client.Models
             {
                 singItem.Quality += quality;
             }
+            ItemBar.Increment(quality);
             return true;
         }
-
         /// <summary>
         /// 售卖货物
         /// </summary>
@@ -371,9 +354,9 @@ namespace Client.Models
                 && item.ItemKey2.Equals(itemKey2)
                 );
             Items.Remove(singItem);
+            ItemBar.Reposition(Items.Where(item=> !"DataGridGold".Equals(item.Key)).Sum(item=>item.Quality));
             return true;
         }
-
         /// <summary>
         /// 移除货物
         /// </summary>

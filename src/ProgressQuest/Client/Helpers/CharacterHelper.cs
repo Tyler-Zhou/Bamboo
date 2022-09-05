@@ -286,7 +286,7 @@ namespace Client.Helpers
         /// </summary>
         /// <param name="actIndex">剧幕索引</param>
         /// <returns>完成剧幕所需时间</returns>
-        /// <remarks>每个剧幕一个小时</remarks>
+        /// <remarks>每个剧幕(1+5)个小时</remarks>
         public static int ActTime(int actIndex)
         {
             return 60 * 60 * (1 + 5 * actIndex);
@@ -300,7 +300,7 @@ namespace Client.Helpers
         /// <param name="numA"></param>
         /// <param name="numB"></param>
         /// <returns></returns>
-        public static string Percent(int numA, int numB)
+        public static string Percent(double numA, double numB)
         {
             if (numB <= 0)
                 return "100 %";
@@ -319,7 +319,7 @@ namespace Client.Helpers
         /// <remarks>每级</remarks>
         public static int KillTaskDuration(int monsterLevel,int characterLevel)
         {
-            return (2 * 3 * monsterLevel * 1000)/ characterLevel;
+            return (2 * 3 * monsterLevel * 1)/ characterLevel;
         }
         #endregion
 

@@ -9,8 +9,6 @@ namespace Client.Models
     /// </summary>
     public class QuestBarModel : BaseBarModel
     {
-       
-        
         /// <summary>
         /// 名称
         /// </summary>

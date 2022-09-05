@@ -1,5 +1,4 @@
 ﻿using Client.Extensions;
-using Newtonsoft.Json;
 
 namespace Client.Models
 {
@@ -16,12 +15,11 @@ namespace Client.Models
         /// <summary>
         /// 时间间隔(秒)
         /// </summary>
-        public int Duration { get; set; }
+        public double Duration { get; set; }
 
         /// <summary>
         /// 描述
         /// </summary>
-        [JsonIgnore]
         public virtual string Description 
         {
             get
