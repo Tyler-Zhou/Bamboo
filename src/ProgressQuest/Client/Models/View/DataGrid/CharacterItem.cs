@@ -8,20 +8,87 @@ namespace Client.Models
     /// </summary>
     public class CharacterItem : BaseModel
     {
+        #region 特征 Key(NPC)；怪物 Key(Monster)
+        private string _ItemKey1 = "";
         /// <summary>
-        /// Item Key 1
+        /// 特征 Key(NPC)；怪物 Key(Monster)
         /// </summary>
-        public string ItemKey1 { get; set; }
+        public string ItemKey1
+        {
+            get
+            {
+                return _ItemKey1;
+            }
+            set
+            {
+                _ItemKey1 = value;
+                RaisePropertyChanged(nameof(ItemKey1));
+                RaisePropertyChanged(nameof(Description));
+            }
+        }
+        #endregion
 
+        #region 特征 Key(NPC)；怪物 Key(Monster)
+        private string _ItemKey2 = "";
         /// <summary>
-        /// Item Key 1
+        /// 特价 Key(NPC)；怪物装备 Key(Monster)
         /// </summary>
-        public string ItemKey2 { get; set; }
+        public string ItemKey2
+        {
+            get
+            {
+                return _ItemKey2;
+            }
+            set
+            {
+                _ItemKey2 = value;
+                RaisePropertyChanged(nameof(ItemKey2));
+                RaisePropertyChanged(nameof(Description));
+            }
+        }
+        #endregion
+
+        #region 特征 Key(NPC)；怪物 Key(Monster)
+        private string _ItemKey3 = "";
+        /// <summary>
+        /// 货物 Key(NPC)
+        /// </summary>
+        public string ItemKey3
+        {
+            get
+            {
+                return _ItemKey3;
+            }
+            set
+            {
+                _ItemKey3 = value;
+                RaisePropertyChanged(nameof(ItemKey3));
+                RaisePropertyChanged(nameof(Description));
+            }
+        }
+        #endregion
+
+        #region 数量
+        private int _Quality = 0;
         /// <summary>
         /// 数量
         /// </summary>
-        public int Quality { get; set; }
+        public int Quality
+        {
+            get
+            {
+                return _Quality;
+            }
+            set
+            {
+                _Quality = value;
+                RaisePropertyChanged(nameof(Quality));
+                RaisePropertyChanged(nameof(Description));
+            }
+        }
+        #endregion
 
+        #region 描述
         /// <summary>
         /// 描述
         /// </summary>
@@ -34,37 +101,19 @@ namespace Client.Models
                 if ("DataGridGold".Equals(Key))
                 {
                     description = Name;
-                }else
+                }
+                else
                 {
-                    //TODO:
                     //NPC处随机获取物品 货物特征 + 特价 + 货物名称
-                    if (!string.IsNullOrWhiteSpace(Key))
-                    {
-                        if (!string.IsNullOrWhiteSpace(ItemKey1))
-                        {
-                            description += $"IA:{ItemKey1.FindResourceDictionary()} ";
-                        }
-                        if (!string.IsNullOrWhiteSpace(ItemKey2))
-                        {
-                            description += $"S:{ItemKey2.FindResourceDictionary()} ";
-                        }
-                        description += $"I:{Key.FindResourceDictionary()} ";
-                    }
-                    else
-                    {
-                        //战斗获取装备 怪物名称 + 怪物装备
-                        if (!string.IsNullOrWhiteSpace(ItemKey1))
-                        {
-                            description += $"MN:{ItemKey1.FindResourceDictionary()} ";
-                        }
-                        if (!string.IsNullOrWhiteSpace(ItemKey2))
-                        {
-                            description += $"I:{ItemKey2.FindResourceDictionary()} ";
-                        }
-                    }
+                    //战斗获取装备 怪物名称 + 怪物装备
+                    description = Key.FindResourceDictionary();
+                    description = description.Replace("^ItemKey1$", ItemKey1.FindResourceDictionary());
+                    description = description.Replace("^ItemKey2$", ItemKey2.FindResourceDictionary());
+                    description = description.Replace("^ItemKey3$", ItemKey3.FindResourceDictionary());
                 }
                 return description;
             }
-        }
+        } 
+        #endregion
     }
 }

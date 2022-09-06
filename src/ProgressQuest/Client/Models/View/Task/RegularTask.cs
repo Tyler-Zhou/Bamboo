@@ -6,13 +6,14 @@
     public class RegularTask: BaseTask
     {
         /// <summary>
-        /// 怪物 Key
+        /// 任务类型
         /// </summary>
-        public string MonsterKey { get; set; }
-
-        /// <summary>
-        /// 怪物名字
-        /// </summary>
-        public string MonsterName { get; set; }
+        public override EnumTask TaskType
+        {
+            get
+            {
+                return EnumTask.Regular;
+            }
+        }
     }
 }

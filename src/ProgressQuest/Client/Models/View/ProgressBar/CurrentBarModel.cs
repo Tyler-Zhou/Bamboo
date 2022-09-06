@@ -7,10 +7,23 @@ namespace Client.Models
     /// </summary>
     public class CurrentBarModel: BaseBarModel
     {
+        #region 任务类型
+        private EnumTask _TaskType = EnumTask.UnKnown;
         /// <summary>
-        /// 工具栏提示
+        /// 任务类型
         /// </summary>
-        [JsonIgnore]
-        public string ToolTip { get; set; }
+        public EnumTask TaskType
+        {
+            get
+            {
+                return _TaskType;
+            }
+            set
+            {
+                _TaskType = value;
+                RaisePropertyChanged(nameof(TaskType));
+            }
+        }
+        #endregion
     }
 }

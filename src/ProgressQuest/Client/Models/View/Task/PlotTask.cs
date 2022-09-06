@@ -9,6 +9,16 @@ namespace Client.Models
     public class PlotTask : BaseTask
     {
         /// <summary>
+        /// 任务类型
+        /// </summary>
+        public override EnumTask TaskType
+        {
+            get
+            {
+                return EnumTask.Plot;
+            }
+        }
+        /// <summary>
         /// SellTaskKey
         /// </summary>
         public override string Key
@@ -21,7 +31,7 @@ namespace Client.Models
         /// <summary>
         /// 剧幕索引
         /// </summary>
-        public int ActIndex { get; set; }
+        public int ActIndex { get; set; } = 0;
 
         /// <summary>
         /// 描述

@@ -8,11 +8,12 @@ namespace Client.Models
     /// </summary>
     public class ExperienceBarModel : BaseBarModel
     {
+        #region 工具栏提示
         /// <summary>
         /// 工具栏提示
         /// </summary>
         [JsonIgnore]
-        public string ToolTip
+        public override string ToolTip
         {
             get
             {
@@ -23,6 +24,7 @@ namespace Client.Models
             set
             {
             }
-        }
+        } 
+        #endregion
     }
 }

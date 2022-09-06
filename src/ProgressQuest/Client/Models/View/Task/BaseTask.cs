@@ -1,4 +1,5 @@
 ﻿using Client.Extensions;
+using Newtonsoft.Json;
 
 namespace Client.Models
 {
@@ -7,6 +8,10 @@ namespace Client.Models
     /// </summary>
     public class BaseTask
     {
+        /// <summary>
+        /// 任务类型
+        /// </summary>
+        public virtual EnumTask TaskType { get; set; }
         /// <summary>
         /// 任务 Key
         /// </summary>
@@ -20,7 +25,8 @@ namespace Client.Models
         /// <summary>
         /// 描述
         /// </summary>
-        public virtual string Description 
+        [JsonIgnore]
+        public virtual string Description
         {
             get
             {

@@ -1,22 +1,74 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 
 namespace Client.Models
 {
     /// <summary>
     /// 进度条
     /// </summary>
-    public class BaseBarModel
+    public class BaseBarModel: BindableBase
     {
+        #region 当前位置
+        private double _Position = 0;
         /// <summary>
         /// 当前位置
         /// </summary>
-        public double Position { get; set; }
+        public double Position
+        {
+            get
+            {
+                return _Position;
+            }
+            set
+            {
+                _Position = value;
+                RaisePropertyChanged(nameof(Position));
+                RaisePropertyChanged(nameof(ToolTip));
+            }
+        }
+        #endregion
 
+        #region 最大值
+        private double _MaxValue = 0;
         /// <summary>
         /// 最大值
         /// </summary>
-        public double MaxValue { get; set; }
+        public double MaxValue
+        {
+            get
+            {
+                return _MaxValue;
+            }
+            set
+            {
+                _MaxValue = value;
+                RaisePropertyChanged(nameof(MaxValue));
+                RaisePropertyChanged(nameof(ToolTip));
+            }
+        }
+        #endregion
 
+        #region 工具栏提示
+        private string _ToolTip = "";
+        /// <summary>
+        /// 工具栏提示
+        /// </summary>
+        public virtual string ToolTip
+        {
+            get
+            {
+                return _ToolTip;
+            }
+            set
+            {
+                _ToolTip = value;
+                RaisePropertyChanged(nameof(ToolTip));
+            }
+        }
+        #endregion
+
+
+        #region 是否完成
         /// <summary>
         /// 是否完成
         /// </summary>
@@ -27,7 +79,9 @@ namespace Client.Models
                 return Position >= MaxValue;
             }
         }
+        #endregion
 
+        #region 增量
         /// <summary>
         /// 增量
         /// </summary>
@@ -36,7 +90,9 @@ namespace Client.Models
         {
             Position += increment;
         }
+        #endregion
 
+        #region 重置
         /// <summary>
         /// 重置
         /// </summary>
@@ -47,15 +103,18 @@ namespace Client.Models
             Position = position;
             MaxValue = maxValue;
         }
+        #endregion
+
+        #region 复位
         /// <summary>
         /// 复位
         /// </summary>
         /// <param name="position"></param>
         public void Reposition(double position)
         {
-            double oldPosition = Position;
             position = Math.Min(position, MaxValue);
             Position = position;
-        }
+        } 
+        #endregion
     }
 }

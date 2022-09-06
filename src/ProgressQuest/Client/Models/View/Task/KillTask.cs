@@ -9,43 +9,60 @@ namespace Client.Models
     public class KillTask:BaseTask
     {
         /// <summary>
+        /// 是否NPC
+        /// </summary>
+        public bool IsNPC { get; set; } = false;
+        /// <summary>
+        /// 前缀 Key 1
+        /// </summary>
+        public string PrefixKey1 { get; set; } = "";
+        /// <summary>
+        /// 前缀 Key 2
+        /// </summary>
+        public string PrefixKey2 { get; set; } = "";
+        /// <summary>
+        /// 种族
+        /// </summary>
+        public string RaceKey { get; set; } = "";
+        /// <summary>
+        /// NPC(职业) 怪物(标题)
+        /// </summary>
+        public string ClassOrTitleKey { get; set; } = "";
+        /// <summary>
         /// 怪物 Key
         /// </summary>
-        public string MonsterKey { get; set; }
+        public string MonsterKey { get; set; } = "";
         /// <summary>
         /// 怪物携带货物 Key
         /// </summary>
-        public string MonsterItemKey { get; set; }
+        public string MonsterItemKey { get; set; } = "";
 
         /// <summary>
         /// 怪物名称
         /// </summary>
-        public string MonsterName { get; set; }
+        public string MonsterName { get; set; } = "";
 
         /// <summary>
-        /// 是否NPC
+        /// 数量
         /// </summary>
-        public bool IsNPC { get; set; }
-
-        /// <summary>
-        /// 种族
-        /// </summary>
-        public string RaceKey { get; set; }
-
-        /// <summary>
-        /// NPC职业
-        /// </summary>
-        public string NPCClassKey { get; set; }
-
-        /// <summary>
-        /// 标题 Key
-        /// </summary>
-        public string TitleKey { get; set; }
+        public int Quality { get; set; } = 0;
 
         /// <summary>
         /// 等级
         /// </summary>
-        public int Level { get; set; }
+        public int Level { get; set; } = 0;
+
+
+        /// <summary>
+        /// 任务类型
+        /// </summary>
+        public override EnumTask TaskType
+        {
+            get
+            {
+                return EnumTask.Kill;
+            }
+        }
 
         /// <summary>
         /// SellTaskKey
@@ -54,10 +71,7 @@ namespace Client.Models
         {
             get
             {
-                if (IsNPC)
-                    return "TaskKillKeyForNPC";
-                else
-                    return "TaskKillKeyForMonster";
+                return "TaskKillKey";
             }
         }
 
@@ -70,24 +84,33 @@ namespace Client.Models
             get
             {
                 string name = Key.FindResourceDictionary();
-                if(!string.IsNullOrWhiteSpace(RaceKey))
+                name = name.Replace($"^Executing$", (IsNPC ? "TaskKillKeyForNPC".FindResourceDictionary() : "TaskKillKeyForMonster".FindResourceDictionary()));
+                name = name.Replace($"^Level$", "" + Level);
+
+                string description;
+                if (IsNPC)
                 {
-                    //当前为NPC
-                    if (IsNPC)
-                    {
-                        //Executing passing ^NPCRaceName$ ^NPCClassName$
-                        name = name.Replace($"^NPCRaceName$", RaceKey.FindResourceDictionary());
-                        name = name.Replace($"^NPCClassName$", RaceKey.FindResourceDictionary());
-                        
-                    }
-                    else
-                    {
-                        //Executing ^TitleName$ ^NPCClassName$ the ^NPCRaceName$
-                        name = name.Replace($"^TitleName$", TitleKey.FindResourceDictionary());
-                        name = name.Replace($"^MonsterName$", MonsterName.FindResourceDictionary());
-                        name = name.Replace($"^NPCRaceName$", RaceKey.FindResourceDictionary());
-                    }
+                    description = RaceKey.FindResourceDictionary()
+                        + ClassOrTitleKey.FindResourceDictionary();
                 }
+                else
+                {
+                    description = ClassOrTitleKey.FindResourceDictionary()
+                        + MonsterName + RaceKey.FindResourceDictionary();
+                }
+                description = PrefixKey1.FindResourceDictionary()
+                    + PrefixKey2.FindResourceDictionary() 
+                    + description
+                    +MonsterKey.FindResourceDictionary()
+                    +MonsterItemKey.FindResourceDictionary();
+                //无名怪物，前缀前再附加冠词
+                if (string.IsNullOrEmpty(MonsterName))
+                {
+                    description = description.AdditionalIndefiniteArticle(Quality);
+                    if(Quality > 1)
+                        description = description.ToPlural();
+                }
+                name = name.Replace($"^MonsterDescript$", description);
                 return name;
             }
             set

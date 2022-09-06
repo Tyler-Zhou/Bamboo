@@ -132,14 +132,14 @@ namespace Client.Models
             Stats.Clear();
             Stats.AddRange(new List<CharacterStat>
             {
-                new CharacterStat(){ Key="EnumStatStrength",StatType = EnumStat.Strength,Value = 0 },
-                new CharacterStat(){ Key="EnumStatConstitution",StatType = EnumStat.Constitution,Value = 0 },
-                new CharacterStat(){ Key="EnumStatDexterity",StatType = EnumStat.Dexterity,Value = 0 },
-                new CharacterStat(){ Key="EnumStatIntelligence",StatType = EnumStat.Intelligence,Value = 0 },
-                new CharacterStat(){ Key="EnumStatWisdom",StatType = EnumStat.Wisdom,Value = 0 },
-                new CharacterStat(){ Key="EnumStatCharisma",StatType = EnumStat.Charisma,Value = 0 },
-                new CharacterStat(){ Key="EnumStatHPMax",StatType = EnumStat.HPMax,Value = 0 },
-                new CharacterStat(){ Key="EnumStatMPMax",StatType = EnumStat.MPMax,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Strength,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Constitution,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Dexterity,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Intelligence,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Wisdom,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Charisma,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.HPMax,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.MPMax,Value = 0 },
             });
             #endregion
 
@@ -149,17 +149,17 @@ namespace Client.Models
             {
                 Equipments.AddRange(new ObservableCollection<CharacterEquipment>
                 {
-                    new CharacterEquipment(){ Key="EnumEquipmentWeapon" ,EquipmentType = EnumEquipment.Weapon },
-                    new CharacterEquipment(){ Key="EnumEquipmentShield",EquipmentType = EnumEquipment.Shield },
-                    new CharacterEquipment(){ Key="EnumEquipmentHelm",EquipmentType = EnumEquipment.Helm },
-                    new CharacterEquipment(){ Key="EnumEquipmentHauberk",EquipmentType = EnumEquipment.Hauberk },
-                    new CharacterEquipment(){ Key="EnumEquipmentBrassairts",EquipmentType = EnumEquipment.Brassairts },
-                    new CharacterEquipment(){ Key="EnumEquipmentVambraces",EquipmentType = EnumEquipment.Vambraces},
-                    new CharacterEquipment(){ Key="EnumEquipmentGauntlets",EquipmentType = EnumEquipment.Gauntlets },
-                    new CharacterEquipment(){ Key="EnumEquipmentGambeson",EquipmentType = EnumEquipment.Gambeson },
-                    new CharacterEquipment(){ Key="EnumEquipmentCuisses",EquipmentType = EnumEquipment.Cuisses },
-                    new CharacterEquipment(){ Key="EnumEquipmentGreaves",EquipmentType = EnumEquipment.Greaves},
-                    new CharacterEquipment(){ Key="EnumEquipmentSollerets",EquipmentType = EnumEquipment.Sollerets},
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Weapon },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Shield },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Helm },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Hauberk },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Brassairts },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Vambraces},
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Gauntlets },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Gambeson },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Cuisses },
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Greaves},
+                    new CharacterEquipment(){EquipmentType = EnumEquipment.Sollerets},
                 });
             }
             #endregion
@@ -258,6 +258,7 @@ namespace Client.Models
             PlotTask plotPrologue = new PlotTask() { Key = "TaskPlot", ActIndex = QuestBook.ActIndex, Duration = 2 };
             CurrentBar = new CurrentBarModel()
             {
+                TaskType = EnumTask.Plot,
                 ToolTip = plotPrologue.Description,
                 Position = 0,
                 MaxValue = plotPrologue.Duration,
@@ -280,7 +281,7 @@ namespace Client.Models
         /// <exception cref="Exception"></exception>
         public bool UpdateEquipment(EnumEquipment equipmentType, string equipmentKey, string modifierKey1, string modifierKey2, int plus)
         {
-            var equipment =Equipments.SingleOrDefault(item => item.EquipmentType.Equals(equipmentType));
+            var equipment = Equipments.SingleOrDefault(item => item.EquipmentType.Equals(equipmentType));
             equipment.EquipmentKey = equipmentKey;
             equipment.ModifierKey1 = modifierKey1;
             equipment.ModifierKey2 = modifierKey2;
@@ -309,25 +310,27 @@ namespace Client.Models
         /// <summary>
         /// 添加货物
         /// </summary>
-        /// <param name="key"></param>
         /// <param name="itemKey1"></param>
         /// <param name="itemKey2"></param>
+        /// <param name="itemKey3"></param>
         /// <param name="quality"></param>
         /// <returns></returns>
-        public bool AddItem(string key,string itemKey1,string itemKey2,int quality)
+        public bool AddItem(string itemKey1,string itemKey2,string itemKey3,int quality)
         {
             var singItem = Items.SingleOrDefault(
-                item => item.Key.Equals(key)
+                item => "DataGridItemName".Equals(item.Key)
                 && item.ItemKey1.Equals(itemKey1)
                 && item.ItemKey2.Equals(itemKey2)
+                && item.ItemKey3.Equals(itemKey3)
                 );
             if (singItem == null)
             {
                 CharacterItem model = new CharacterItem()
                 {
-                    Key = key,
+                    Key = "DataGridItemName",
                     ItemKey1 = itemKey1,
                     ItemKey2 = itemKey2,
+                    ItemKey3 = itemKey3,
                     Quality = quality,
                 };
                 Items.Add(model);
@@ -342,16 +345,17 @@ namespace Client.Models
         /// <summary>
         /// 售卖货物
         /// </summary>
-        /// <param name="key"></param>
         /// <param name="itemKey1"></param>
         /// <param name="itemKey2"></param>
+        /// <param name="itemKey3"></param>
         /// <returns></returns>
-        public bool SellItem(string key, string itemKey1, string itemKey2)
+        public bool SellItem(string itemKey1, string itemKey2, string itemKey3)
         {
             var singItem = Items.SingleOrDefault(
-                item => item.Key.Equals(key)
+                item => "DataGridItemName".Equals(item.Key)
                 && item.ItemKey1.Equals(itemKey1)
                 && item.ItemKey2.Equals(itemKey2)
+                && item.ItemKey3.Equals(itemKey3)
                 );
             Items.Remove(singItem);
             ItemBar.Reposition(Items.Where(item=> !"DataGridGold".Equals(item.Key)).Sum(item=>item.Quality));

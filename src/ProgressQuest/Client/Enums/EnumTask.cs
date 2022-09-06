@@ -37,5 +37,9 @@
         /// 购买
         /// </summary>
         Buy = 7,
+        /// <summary>
+        /// 克星任务
+        /// </summary>
+        Nemesis = 8,
     }
 }

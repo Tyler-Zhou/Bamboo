@@ -219,7 +219,7 @@ namespace Client.Helpers
         /// <remarks>初始值在 1-16 之间</remarks>
         public static int InitGeneralStat()
         {
-            return RandomHelper.Value(9, 16);
+            return RandomHelper.Value(16);
         }
 
         /// <summary>

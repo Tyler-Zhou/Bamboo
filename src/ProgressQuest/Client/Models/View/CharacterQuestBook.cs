@@ -17,7 +17,7 @@ namespace Client.Models
         {
             get
             {
-                if (Acts == null ||Acts.Count<=1)
+                if (Acts == null)
                     return 0;
                 return Acts.Count -1;
             }
@@ -34,6 +34,20 @@ namespace Client.Models
                 if (CurrentQuest == null)
                     return "";
                 return CurrentQuest.MonsterKey;
+            }
+        }
+
+        /// <summary>
+        /// 怪物携带货物 Key
+        /// </summary>
+        [JsonIgnore]
+        public string MonsterItemKey
+        {
+            get
+            {
+                if (CurrentQuest == null)
+                    return "";
+                return CurrentQuest.ItemKey;
             }
         }
 
@@ -59,7 +73,7 @@ namespace Client.Models
         {
             get
             {
-                return Quests.FirstOrDefault();
+                return Quests.SingleOrDefault(item=>EnumQuest.Exterminate.Equals(item.QuestType) && !item.IsCommplete);
             }
         }
 
@@ -90,6 +104,7 @@ namespace Client.Models
                 return false;
             CharacterAct modelNew = new CharacterAct()
             {
+                Key = index==0? "DataGridPlotPrologue" : "DataGridPlotAct",
                 Index = index,
                 IsCommplete= false
             };
@@ -100,14 +115,13 @@ namespace Client.Models
         /// <summary>
         /// 添加剧幕
         /// </summary>
-        /// <param name="index"></param>
         /// <returns></returns>
-        public bool CommpleteAct(int index)
+        public bool CommpleteAct()
         {
-            var model = Acts.SingleOrDefault(item => item.Index.Equals(index));
-            if (model != null)
+            var acts = Acts.Where(item=>!item.IsCommplete);
+            foreach (var item in acts)
             {
-                model.IsCommplete = true;
+                item.IsCommplete = true;
             }
             return true;
         }
@@ -129,6 +143,7 @@ namespace Client.Models
         {
             CharacterQuest modelNew = new CharacterQuest()
             {
+                Key = "DataGridQuestDescription",
                 QuestType = questType,
                 MonsterKey = monsterKey,
                 MonsterLevel = monsterLevel,
@@ -144,21 +159,13 @@ namespace Client.Models
         /// <summary>
         /// 完成任务
         /// </summary>
-        /// <param name="questType">任务类型</param>
-        /// <param name="monsterKey">怪物 Key</param>
-        /// <param name="itemKey">货物 Key</param>
-        /// <param name="specialKey">特价 Key</param>
         /// <returns></returns>
-        public bool CommpleteQuest(EnumQuest questType, string monsterKey, string itemKey, string specialKey)
+        public bool CommpleteQuest()
         {
-            var model = Quests.SingleOrDefault(item => item.QuestType.Equals(questType) 
-            && item.MonsterKey.Equals(monsterKey) 
-            && item.ItemKey.Equals(itemKey)
-            && item.SpecialKey.Equals(specialKey)
-            && !item.IsCommplete);
-            if (model != null)
+            var quests = Quests.Where(item=>!item.IsCommplete);
+            foreach (var item in quests)
             {
-                model.IsCommplete = true;
+                item.IsCommplete = true;
             }
             return true;
         }
