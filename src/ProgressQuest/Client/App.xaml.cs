@@ -24,10 +24,6 @@ namespace Client
     public partial class App : PrismApplication
     {
         #region 成员(Member)
-        /// <summary>
-        /// 
-        /// </summary>
-        Mutex mutex;
         #endregion
 
         #region 服务(Service)
@@ -72,10 +68,6 @@ namespace Client
         /// <returns></returns>
         protected override Window CreateShell()
         {
-            bool createNew;
-            mutex = new Mutex(true, "ProgressQuest", out createNew);
-            if (!createNew)
-                Environment.Exit(0);
             //UI线程未捕获异常处理事件
             DispatcherUnhandledException += OnDispatcherUnhandledException;
             //Task线程内未捕获异常处理事件

@@ -18,12 +18,11 @@ namespace Client.Models
         /// <summary>
         /// 姓名
         /// </summary>
-        public string Name { get; set; }
-
+        public string Name { get; set; } = "";
         /// <summary>
         /// 种族
         /// </summary>
-        public string RaceKey { get; set; }
+        public string RaceKey { get; set; } = "";
         /// <summary>
         /// 种族名称,显示在存档选择界面
         /// </summary>
@@ -32,12 +31,10 @@ namespace Client.Models
         {
             get { return RaceKey.FindResourceDictionary(); }
         }
-
         /// <summary>
         /// 职业Key
         /// </summary>
-        public string ClassKey { get; set; }
-
+        public string ClassKey { get; set; } = "";
         /// <summary>
         /// 职业名称,显示在存档选择界面
         /// </summary>
@@ -52,6 +49,14 @@ namespace Client.Models
         /// </summary>
         public int Level { get; set; } = 1;
 
+        /// <summary>
+        /// 是否在线
+        /// </summary>
+        public bool IsOnLine { get; set; } = false;
+        /// <summary>
+        /// 注册日期
+        /// </summary>
+        public DateTime BirthDay { get; set; }
         #endregion
 
         #region 任务书
@@ -234,6 +239,8 @@ namespace Client.Models
         /// </summary>
         public void BeginQuest()
         {
+            BirthDay = DateTime.Now;
+            IsOnLine = true;
             ItemBar = new ItemBarModel()
             {
                 Position = 0,

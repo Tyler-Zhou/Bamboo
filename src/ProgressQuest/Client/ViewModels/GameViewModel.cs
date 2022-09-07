@@ -184,9 +184,14 @@ namespace Client.ViewModels
 
         #region 计时器(DispatcherTimer)
         /// <summary>
+        /// 自动保存
+        /// </summary>
+        DispatcherTimer _AutoSaveTimer = new DispatcherTimer();
+
+        /// <summary>
         /// 任务计时器
         /// </summary>
-        DispatcherTimer taskTimer = new DispatcherTimer();
+        DispatcherTimer _TaskTimer = new DispatcherTimer();
         #endregion
         #endregion
 
@@ -218,7 +223,7 @@ namespace Client.ViewModels
             _CacheService = cacheService;
             _Logger = logger;
             windowService.AddFunction(StopDispatcherTimer);
-            windowService.AddFunction(SaveCharacter);
+            windowService.AddFunction(()=>SaveCharacter());
             InitData();
         }
         #endregion
@@ -281,6 +286,15 @@ namespace Client.ViewModels
             RaisePropertyChanged(nameof(ProgressBarPlot));
             Dequeue();
         }
+        /// <summary>
+        /// 自动保存
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AutoSaveTimer_Tick(object sender, EventArgs e)
+        {
+            Task.Run(()=>SaveCharacter(true));
+        }
         #endregion
 
         #region 重写方法(Override)
@@ -301,7 +315,10 @@ namespace Client.ViewModels
         /// <remarks>NavigationContext包含目标页面的URI</remarks>
         public override void OnNavigatedFrom(NavigationContext navigationContext)
         {
-
+            _TaskTimer.Stop();
+            _AutoSaveTimer.Stop();
+            var result = Task.Run(() => SaveCharacter().Result).Result;
+            _Character = null;
         }
         /// <summary>
         /// 从其它页面导航至本页面时
@@ -315,8 +332,13 @@ namespace Client.ViewModels
                 if (navigationContext.Parameters.ContainsKey("Character"))
                 {
                     Character character = navigationContext.Parameters["Character"] as Character;
-                    var result = Task.Run(() => LoadCharacter(character).Result).Result;
-                    RaisePropertyChanged(nameof(Current));
+                    if(character!=null)
+                    {
+                        var result = Task.Run(() => LoadCharacter(character).Result).Result;
+                        RaisePropertyChanged(nameof(Current));
+                        _TaskTimer.Start();
+                        _AutoSaveTimer.Start();
+                    }
                 }
             }
         }
@@ -328,10 +350,17 @@ namespace Client.ViewModels
         /// </summary>
         void InitData()
         {
-            taskTimer.Interval = TimeSpan.FromSeconds(0.1);
-            taskTimer.Tick += TaskTimer_Tick;
-            taskTimer.Start();
+            _TaskTimer.Interval = TimeSpan.FromSeconds(0.1);
+            _TaskTimer.Tick += TaskTimer_Tick;
+            _TaskTimer.Start();
+
+            _AutoSaveTimer.Interval = new TimeSpan(0, 5, 0);
+            _AutoSaveTimer.Tick += AutoSaveTimer_Tick;
+            _AutoSaveTimer.Start();
         }
+
+        
+
         /// <summary>
         /// 设置任务
         /// </summary>
@@ -1069,7 +1098,8 @@ namespace Client.ViewModels
         /// </summary>
         async Task<bool> StopDispatcherTimer()
         {
-            await Task.Run(() => taskTimer.Stop());
+            await Task.Run(() => _AutoSaveTimer.Stop());
+            await Task.Run(() => _TaskTimer.Stop());
             return true;
         }
         /// <summary>
@@ -1095,17 +1125,19 @@ namespace Client.ViewModels
                 }
             }
             Current = character;
+            Current.IsOnLine = true;
             RaisePropertyChanged(nameof(Current));
-            await SaveCharacter();
+            await SaveCharacter(true);
             return true;
         }
         /// <summary>
         /// 保存当前人物
         /// </summary>
-        async Task<bool> SaveCharacter()
+        async Task<bool> SaveCharacter(bool isAutoSave = false)
         {
             if (Current == null || string.IsNullOrWhiteSpace(Current.Name))
                 return false;
+            Current.IsOnLine = isAutoSave;
             //保存当前人物
             await _CacheService.SaveAsync(Current.Name, Current);
             return true;
