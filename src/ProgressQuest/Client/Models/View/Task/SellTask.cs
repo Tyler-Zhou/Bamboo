@@ -1,5 +1,4 @@
 ﻿using Client.Extensions;
-using Newtonsoft.Json;
 
 namespace Client.Models
 {
@@ -49,7 +48,6 @@ namespace Client.Models
         /// <summary>
         /// 描述
         /// </summary>
-        [JsonIgnore]
         public override string Description
         {
             get

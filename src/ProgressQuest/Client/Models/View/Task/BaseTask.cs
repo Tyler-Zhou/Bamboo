@@ -1,7 +1,4 @@
-﻿using Client.Extensions;
-using Newtonsoft.Json;
-
-namespace Client.Models
+﻿namespace Client.Models
 {
     /// <summary>
     /// 任务基类
@@ -25,17 +22,6 @@ namespace Client.Models
         /// <summary>
         /// 描述
         /// </summary>
-        [JsonIgnore]
-        public virtual string Description
-        {
-            get
-            {
-                return Key.FindResourceDictionary();
-            }
-            set
-            {
-
-            }
-        }
+        public virtual string Description { get; set; }
     }
 }

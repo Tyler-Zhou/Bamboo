@@ -67,7 +67,6 @@ namespace Client.Models
         }
         #endregion
 
-
         #region 是否完成
         /// <summary>
         /// 是否完成

@@ -1,4 +1,5 @@
-﻿using Client.DataAccess;
+﻿using Client.Common;
+using Client.DataAccess;
 using Client.Extensions;
 using Client.Helpers;
 using Client.Interfaces;
@@ -10,6 +11,7 @@ using Prism.Regions;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Threading;
 
 namespace Client.ViewModels
@@ -76,7 +78,10 @@ namespace Client.ViewModels
         /// </summary>
         public ObservableCollection<CharacterTrait> DataGridTraits
         {
-            get => Current.Traits();
+            get
+            {
+                return Current.Traits();
+            }
         }
 
         /// <summary>
@@ -237,50 +242,55 @@ namespace Client.ViewModels
         {
             if (!ProgressBarCurrent.IsCommplete)
             {
-                ProgressBarCurrent.Increment(0.1);
+                double increment = double.Parse(ApplicationContext.TaskTimeSpan.TotalSeconds.ToString("0.00"));
+                ProgressBarCurrent.Increment(increment);
                 RaisePropertyChanged(nameof(ProgressBarCurrent));
                 return;
             }
-            if (EnumTask.Kill.Equals(ProgressBarCurrent.TaskType))
+            object objTask = TaskPeek();
+            if(objTask!=null)
             {
-                // 升级
-                if (ProgressBarExperience.IsCommplete)
+                if (objTask is KillTask)
                 {
-                    LevelUp();
-                    //设置经验进程最大值
-                    ProgressBarExperience.Reset(CharacterHelper.GetMaxExperienceByLevel(Current.Level));
-                    RaisePropertyChanged(nameof(DataGridTraits));
-                    RaisePropertyChanged(nameof(DataGridStats));
+                    // 升级
+                    if (ProgressBarExperience.IsCommplete)
+                    {
+                        LevelUp();
+                        //设置经验进程最大值
+                        ProgressBarExperience.Reset(CharacterHelper.GetMaxExperienceByLevel(Current.Level));
+                        RaisePropertyChanged(nameof(DataGridTraits));
+                        RaisePropertyChanged(nameof(DataGridStats));
+                    }
+                    else
+                    {
+                        ProgressBarExperience.Increment(ProgressBarCurrent.MaxValue);
+                    }
+                    RaisePropertyChanged(nameof(ProgressBarExperience));
+                }
+                // 推进任务
+                if (Current.QuestBook.ActIndex > 0)
+                {
+                    if (ProgressBarQuest.IsCommplete)
+                    {
+                        CompleteQuest();
+                        ProgressBarQuest.Reset(50 + RandomHelper.MinValue(1000));
+                        RaisePropertyChanged(nameof(DataGridQuests));
+                    }
+                    else
+                    {
+                        ProgressBarQuest.Increment(ProgressBarCurrent.MaxValue);
+                    }
+                    RaisePropertyChanged(nameof(ProgressBarQuest));
+                }
+                //推进剧情
+                if (ProgressBarPlot.IsCommplete)
+                {
+                    InterPlotCinematic();
                 }
                 else
                 {
-                    ProgressBarExperience.Increment(ProgressBarCurrent.MaxValue);
+                    ProgressBarPlot.Increment(ProgressBarCurrent.MaxValue);
                 }
-                RaisePropertyChanged(nameof(ProgressBarExperience));
-            }
-            // 推进任务
-            if (Current.QuestBook.ActIndex > 0)
-            {
-                if (ProgressBarQuest.IsCommplete)
-                {
-                    CompleteQuest();
-                    ProgressBarQuest.Reset(50 + RandomHelper.MinValue(1000));
-                    RaisePropertyChanged(nameof(DataGridQuests));
-                }
-                else
-                {
-                    ProgressBarQuest.Increment(ProgressBarCurrent.MaxValue);
-                }
-                RaisePropertyChanged(nameof(ProgressBarQuest));
-            }
-            //推进剧情
-            if (ProgressBarPlot.IsCommplete)
-            {
-                InterPlotCinematic();
-            }
-            else
-            {
-                ProgressBarPlot.Increment(ProgressBarCurrent.MaxValue);
             }
             RaisePropertyChanged(nameof(ProgressBarPlot));
             Dequeue();
@@ -349,16 +359,14 @@ namespace Client.ViewModels
         /// </summary>
         void InitData()
         {
-            _TaskTimer.Interval = TimeSpan.FromSeconds(0.1);
+            _TaskTimer.Interval = ApplicationContext.TaskTimeSpan;
             _TaskTimer.Tick += TaskTimer_Tick;
             _TaskTimer.Start();
 
-            _AutoSaveTimer.Interval = new TimeSpan(0, 5, 0);
+            _AutoSaveTimer.Interval = ApplicationContext.AutoSaveTimeSpan;
             _AutoSaveTimer.Tick += AutoSaveTimer_Tick;
             _AutoSaveTimer.Start();
         }
-
-
 
         /// <summary>
         /// 设置任务
@@ -379,8 +387,6 @@ namespace Client.ViewModels
         /// <returns></returns>
         bool TaskAdd(BaseTask task)
         {
-            if (task.Description.Contains("^"))
-                throw new Exception("包含未定义键值");
             ProgressBarCurrent.TaskType = task.TaskType;
             ProgressBarCurrent.ToolTip = task.Description;
             Current.TaskQueue.Enqueue(task);

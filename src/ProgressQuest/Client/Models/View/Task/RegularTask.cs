@@ -1,4 +1,6 @@
-﻿namespace Client.Models
+﻿using Client.Extensions;
+
+namespace Client.Models
 {
     /// <summary>
     /// 常规任务
@@ -13,6 +15,21 @@
             get
             {
                 return EnumTask.Regular;
+            }
+        }
+
+        /// <summary>
+        /// 描述
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return Key.FindResourceDictionary();
+            }
+            set
+            {
+
             }
         }
     }

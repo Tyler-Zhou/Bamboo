@@ -1,4 +1,6 @@
-﻿namespace Client.Models
+﻿using Client.Extensions;
+
+namespace Client.Models
 {
     /// <summary>
     /// 购买任务
@@ -23,6 +25,21 @@
             get
             {
                 return "TaskBuy";
+            }
+        }
+
+        /// <summary>
+        /// 描述
+        /// </summary>
+        public override string Description
+        {
+            get
+            {
+                return Key.FindResourceDictionary();
+            }
+            set
+            {
+
             }
         }
     }

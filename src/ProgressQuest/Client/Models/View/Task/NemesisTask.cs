@@ -1,6 +1,5 @@
 ﻿using Client.Extensions;
 using Client.Helpers;
-using Newtonsoft.Json;
 
 namespace Client.Models.View.Task
 {
@@ -37,7 +36,6 @@ namespace Client.Models.View.Task
         /// <summary>
         /// 描述
         /// </summary>
-        [JsonIgnore]
         public override string Description
         {
             get
