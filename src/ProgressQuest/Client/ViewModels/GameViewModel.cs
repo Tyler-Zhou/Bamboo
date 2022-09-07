@@ -9,7 +9,6 @@ using Prism.Ioc;
 using Prism.Regions;
 using System;
 using System.Collections.ObjectModel;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Threading;
 
@@ -119,7 +118,7 @@ namespace Client.ViewModels
         {
             get
             {
-                if(Current.QuestBook==null)
+                if (Current.QuestBook == null)
                     return null;
                 return Current.QuestBook.Acts;
             }
@@ -223,7 +222,7 @@ namespace Client.ViewModels
             _CacheService = cacheService;
             _Logger = logger;
             windowService.AddFunction(StopDispatcherTimer);
-            windowService.AddFunction(()=>SaveCharacter());
+            windowService.AddFunction(() => SaveCharacter());
             InitData();
         }
         #endregion
@@ -238,7 +237,7 @@ namespace Client.ViewModels
         {
             if (!ProgressBarCurrent.IsCommplete)
             {
-                ProgressBarCurrent.Increment(1);
+                ProgressBarCurrent.Increment(0.1);
                 RaisePropertyChanged(nameof(ProgressBarCurrent));
                 return;
             }
@@ -293,7 +292,7 @@ namespace Client.ViewModels
         /// <param name="e"></param>
         private void AutoSaveTimer_Tick(object sender, EventArgs e)
         {
-            Task.Run(()=>SaveCharacter(true));
+            Task.Run(() => SaveCharacter(true));
         }
         #endregion
 
@@ -332,7 +331,7 @@ namespace Client.ViewModels
                 if (navigationContext.Parameters.ContainsKey("Character"))
                 {
                     Character character = navigationContext.Parameters["Character"] as Character;
-                    if(character!=null)
+                    if (character != null)
                     {
                         var result = Task.Run(() => LoadCharacter(character).Result).Result;
                         RaisePropertyChanged(nameof(Current));
@@ -359,7 +358,7 @@ namespace Client.ViewModels
             _AutoSaveTimer.Start();
         }
 
-        
+
 
         /// <summary>
         /// 设置任务
@@ -380,6 +379,8 @@ namespace Client.ViewModels
         /// <returns></returns>
         bool TaskAdd(BaseTask task)
         {
+            if (task.Description.Contains("^"))
+                throw new Exception("包含未定义键值");
             ProgressBarCurrent.TaskType = task.TaskType;
             ProgressBarCurrent.ToolTip = task.Description;
             Current.TaskQueue.Enqueue(task);
@@ -486,7 +487,7 @@ namespace Client.ViewModels
             WinStat();
             WinStat();
             WinSpell();
-            
+
         }
         /// <summary>
         /// 赢得属性
@@ -610,7 +611,7 @@ namespace Client.ViewModels
                     }
                     else
                     {
-                        Current.AddItem(killTask.MonsterKey, killTask.MonsterItemKey,"",killTask.Quality);
+                        Current.AddItem(killTask.MonsterKey, killTask.MonsterItemKey, "", killTask.Quality);
                     }
                     RaisePropertyChanged(nameof(DataGridItems));
                     RaisePropertyChanged(nameof(ProgressBarItem));
@@ -667,9 +668,9 @@ namespace Client.ViewModels
                         RaisePropertyChanged(nameof(DataGridEquipments));
                     }
                 }
-                if (TaskCount()>0)
+                if (TaskCount() > 0)
                 {
-                    BaseTask task= TaskDequeue();
+                    BaseTask task = TaskDequeue();
                     ProgressBarCurrent.TaskType = task.TaskType;
                     ProgressBarCurrent.ToolTip = task.Description;
                     ProgressBarCurrent.Reset(task.Duration);
@@ -682,7 +683,7 @@ namespace Client.ViewModels
                     };
                     TaskSet(taskModel);
                 }
-                else if (objTask != null && 
+                else if (objTask != null &&
                     (!(objTask is KillTask) && !(objTask is HeadingToKillingFieldsTask)))
                 {
                     //金币够买装备
@@ -881,7 +882,7 @@ namespace Client.ViewModels
         string SickPrefix(int index)
         {
             index = 6 - Math.Abs(index);
-            return MonsterPrefix(Repository.SickPrefixs,index);
+            return MonsterPrefix(Repository.SickPrefixs, index);
         }
         /// <summary>
         /// 年轻的前缀
@@ -908,11 +909,11 @@ namespace Client.ViewModels
         /// <param name="index"></param>
         /// <param name="isNPC"></param>
         /// <returns></returns>
-        string SpecialPrefix(int index,bool isNPC)
+        string SpecialPrefix(int index, bool isNPC)
         {
             if (isNPC)
-                return MonsterPrefix(Repository.SpecialOnePrefixs,index);
-            return MonsterPrefix(Repository.SpecialTwoPrefixs,index);
+                return MonsterPrefix(Repository.SpecialOnePrefixs, index);
+            return MonsterPrefix(Repository.SpecialTwoPrefixs, index);
         }
         /// <summary>
         /// 怪物前缀
@@ -920,7 +921,7 @@ namespace Client.ViewModels
         /// <param name="prefixs">前缀待选列表</param>
         /// <param name="index">前缀索引</param>
         /// <returns></returns>
-        string MonsterPrefix(ObservableCollection<BaseModel> prefixs,int index)
+        string MonsterPrefix(ObservableCollection<BaseModel> prefixs, int index)
         {
             index = Math.Abs(index);
             if (index < 1 || index > prefixs.Count)
@@ -1141,7 +1142,7 @@ namespace Client.ViewModels
             //保存当前人物
             await _CacheService.SaveAsync(Current.Name, Current);
             return true;
-        } 
+        }
         #endregion
     }
 }

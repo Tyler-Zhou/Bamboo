@@ -25,7 +25,7 @@ namespace Client.Models
             set
             {
             }
-        } 
+        }
         #endregion
     }
 }

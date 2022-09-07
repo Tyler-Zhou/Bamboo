@@ -112,7 +112,7 @@ namespace Client.Models
         /// <summary>
         /// 当前待执行任务队列
         /// </summary>
-        public Queue<BaseTask> TaskQueue = new Queue<BaseTask>(); 
+        public Queue<BaseTask> TaskQueue = new Queue<BaseTask>();
         #endregion
 
         #endregion
@@ -322,7 +322,7 @@ namespace Client.Models
         /// <param name="itemKey3"></param>
         /// <param name="quality"></param>
         /// <returns></returns>
-        public bool AddItem(string itemKey1,string itemKey2,string itemKey3,int quality)
+        public bool AddItem(string itemKey1, string itemKey2, string itemKey3, int quality)
         {
             var singItem = Items.SingleOrDefault(
                 item => "DataGridItemName".Equals(item.Key)
@@ -365,7 +365,7 @@ namespace Client.Models
                 && item.ItemKey3.Equals(itemKey3)
                 );
             Items.Remove(singItem);
-            ItemBar.Reposition(Items.Where(item=> !"DataGridGold".Equals(item.Key)).Sum(item=>item.Quality));
+            ItemBar.Reposition(Items.Where(item => !"DataGridGold".Equals(item.Key)).Sum(item => item.Quality));
             return true;
         }
         /// <summary>

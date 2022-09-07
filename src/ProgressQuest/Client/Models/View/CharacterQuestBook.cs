@@ -19,7 +19,7 @@ namespace Client.Models
             {
                 if (Acts == null)
                     return 0;
-                return Acts.Count -1;
+                return Acts.Count - 1;
             }
         }
 
@@ -73,7 +73,7 @@ namespace Client.Models
         {
             get
             {
-                return Quests.SingleOrDefault(item=>EnumQuest.Exterminate.Equals(item.QuestType) && !item.IsCommplete);
+                return Quests.SingleOrDefault(item => EnumQuest.Exterminate.Equals(item.QuestType) && !item.IsCommplete);
             }
         }
 
@@ -99,14 +99,14 @@ namespace Client.Models
         /// <returns></returns>
         public bool AddAct(int index)
         {
-            var model = Acts.SingleOrDefault(item=>item.Index.Equals(index));
+            var model = Acts.SingleOrDefault(item => item.Index.Equals(index));
             if (model != null)
                 return false;
             CharacterAct modelNew = new CharacterAct()
             {
-                Key = index==0? "DataGridPlotPrologue" : "DataGridPlotAct",
+                Key = index == 0 ? "DataGridPlotPrologue" : "DataGridPlotAct",
                 Index = index,
-                IsCommplete= false
+                IsCommplete = false
             };
             Acts.Add(modelNew);
             return true;
@@ -118,7 +118,7 @@ namespace Client.Models
         /// <returns></returns>
         public bool CommpleteAct()
         {
-            var acts = Acts.Where(item=>!item.IsCommplete);
+            var acts = Acts.Where(item => !item.IsCommplete);
             foreach (var item in acts)
             {
                 item.IsCommplete = true;
@@ -137,8 +137,8 @@ namespace Client.Models
         /// <param name="specialKey">特价 Key</param>
         /// <returns></returns>
         public bool AddQuest(EnumQuest questType
-            ,string monsterKey, int monsterLevel, int count
-            ,string itemKey,string specialKey
+            , string monsterKey, int monsterLevel, int count
+            , string itemKey, string specialKey
             )
         {
             CharacterQuest modelNew = new CharacterQuest()
@@ -162,7 +162,7 @@ namespace Client.Models
         /// <returns></returns>
         public bool CommpleteQuest()
         {
-            var quests = Quests.Where(item=>!item.IsCommplete);
+            var quests = Quests.Where(item => !item.IsCommplete);
             foreach (var item in quests)
             {
                 item.IsCommplete = true;

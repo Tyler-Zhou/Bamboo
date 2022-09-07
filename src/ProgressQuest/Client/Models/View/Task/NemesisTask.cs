@@ -7,7 +7,7 @@ namespace Client.Models.View.Task
     /// <summary>
     /// 克星任务
     /// </summary>
-    public class NemesisTask:BaseTask
+    public class NemesisTask : BaseTask
     {
         /// <summary>
         /// 怪物 Key / 令人印象深刻的标题 Key
@@ -41,10 +41,10 @@ namespace Client.Models.View.Task
         public override string Description
         {
             get
-            { 
-                string description= Key.FindResourceDictionary();
+            {
+                string description = Key.FindResourceDictionary();
                 string description1;
-                if(!string.IsNullOrEmpty(Key1))
+                if (!string.IsNullOrEmpty(Key1))
                 {
                     if (string.IsNullOrEmpty(Key2))
                     {

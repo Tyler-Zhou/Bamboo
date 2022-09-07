@@ -1,5 +1,4 @@
 ﻿using Client.Extensions;
-using Microsoft.Xaml.Behaviors.Layout;
 using Newtonsoft.Json;
 
 namespace Client.Models
@@ -165,7 +164,7 @@ namespace Client.Models
                 description = description.Replace("^Equipment$", EquipmentKey.FindResourceDictionary());
                 return description;
             }
-        } 
+        }
         #endregion
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Client.Common;
-using Client.Helpers;
 using Client.Interfaces;
 using Client.Models;
 using Microsoft.Extensions.Logging;
@@ -8,7 +7,6 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;

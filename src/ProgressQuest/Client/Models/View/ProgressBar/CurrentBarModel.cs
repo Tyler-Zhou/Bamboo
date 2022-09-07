@@ -1,11 +1,9 @@
-﻿using Newtonsoft.Json;
-
-namespace Client.Models
+﻿namespace Client.Models
 {
     /// <summary>
     /// 当前任务进度条
     /// </summary>
-    public class CurrentBarModel: BaseBarModel
+    public class CurrentBarModel : BaseBarModel
     {
         #region 任务类型
         private EnumTask _TaskType = EnumTask.UnKnown;

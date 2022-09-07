@@ -17,7 +17,7 @@ namespace Client.Extensions
         {
             try
             {
-                if(string.IsNullOrWhiteSpace(input))
+                if (string.IsNullOrWhiteSpace(input))
                     return "";
                 return System.Windows.Application.Current.FindResource(input).ToString();
             }
@@ -33,29 +33,31 @@ namespace Client.Extensions
         /// <param name="input">字符串</param>
         /// <param name="quality">数量</param>
         /// <returns></returns>
-        public static string AdditionalIndefiniteArticle(this string input,int quality)
+        public static string AdditionalIndefiniteArticle(this string input, int quality)
         {
             try
             {
-                if(quality == 1)
+                if (quality == 1)
                 {
-                    if("en-US".Equals(ApplicationContext.Setting.CultureName))
+                    if ("en-US".Equals(ApplicationContext.Setting.CultureName))
                     {
                         //英文判断元音
-                        if("AEIOUaeiou".IndexOf(input.Substring(0,1)) > 0)
+                        if ("AEIOUaeiou".IndexOf(input.Substring(0, 1)) > 0)
                         {
                             input = "DataGridArticleAn".FindResourceDictionary() + " " + input;
-                        }else
+                        }
+                        else
                         {
-                            input = "DataGridArticleA".FindResourceDictionary()+" " + input;
+                            input = "DataGridArticleA".FindResourceDictionary() + " " + input;
                         }
                         return input;
-                    }else
+                    }
+                    else
                     {
                         return "DataGridArticleAn".FindResourceDictionary() + input;
                     }
                 }
-               return input;
+                return input;
             }
             catch
             {
@@ -100,7 +102,7 @@ namespace Client.Extensions
         /// <returns></returns>
         public static string ToPlural(this string input)
         {
-             if ("en-US".Equals(ApplicationContext.Setting.CultureName))
+            if ("en-US".Equals(ApplicationContext.Setting.CultureName))
             {
                 Regex plural1 = new Regex("(?<keep>[^aeiou])y$");
                 Regex plural2 = new Regex("(?<keep>[aeiou]y)$");
@@ -115,7 +117,8 @@ namespace Client.Extensions
                     return plural3.Replace(input, "${keep}es");
                 else if (plural4.IsMatch(input))
                     return plural4.Replace(input, "${keep}s");
-            }else
+            }
+            else
             {
                 input = input + "DataGridPlural".FindResourceDictionary();
             }

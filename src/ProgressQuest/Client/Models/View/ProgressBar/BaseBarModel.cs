@@ -6,7 +6,7 @@ namespace Client.Models
     /// <summary>
     /// 进度条
     /// </summary>
-    public class BaseBarModel: BindableBase
+    public class BaseBarModel : BindableBase
     {
         #region 当前位置
         private double _Position = 0;
@@ -114,7 +114,7 @@ namespace Client.Models
         {
             position = Math.Min(position, MaxValue);
             Position = position;
-        } 
+        }
         #endregion
     }
 }

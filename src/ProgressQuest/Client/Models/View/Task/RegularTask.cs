@@ -3,7 +3,7 @@
     /// <summary>
     /// 常规任务
     /// </summary>
-    public class RegularTask: BaseTask
+    public class RegularTask : BaseTask
     {
         /// <summary>
         /// 任务类型

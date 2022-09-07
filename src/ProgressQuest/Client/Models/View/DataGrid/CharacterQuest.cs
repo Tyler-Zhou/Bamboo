@@ -6,7 +6,7 @@ namespace Client.Models
     /// <summary>
     /// 任务模型
     /// </summary>
-    public class CharacterQuest:BaseModel
+    public class CharacterQuest : BaseModel
     {
         #region 任务类型
         private EnumQuest _QuestType = EnumQuest.UnKnown;
@@ -181,7 +181,7 @@ namespace Client.Models
                 description = description.Replace("^QuestDescription$", description1);
                 return description;
             }
-        } 
+        }
         #endregion
     }
 }

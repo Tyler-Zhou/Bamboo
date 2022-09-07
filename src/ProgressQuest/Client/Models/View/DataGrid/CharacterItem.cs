@@ -113,7 +113,7 @@ namespace Client.Models
                 }
                 return description;
             }
-        } 
+        }
         #endregion
     }
 }

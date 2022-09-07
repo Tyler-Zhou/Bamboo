@@ -317,9 +317,9 @@ namespace Client.Helpers
         /// <param name="characterLevel">人物等级</param>
         /// <returns>杀怪任务区间值</returns>
         /// <remarks>每级</remarks>
-        public static int KillTaskDuration(int monsterLevel,int characterLevel)
+        public static int KillTaskDuration(int monsterLevel, int characterLevel)
         {
-            return (2 * 3 * monsterLevel * 1)/ characterLevel;
+            return (2 * 3 * monsterLevel * 1) / characterLevel;
         }
         #endregion
 

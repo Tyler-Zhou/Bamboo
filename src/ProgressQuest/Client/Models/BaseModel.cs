@@ -7,7 +7,7 @@ namespace Client.Models
     /// <summary>
     /// 模型基类
     /// </summary>
-    public class BaseModel: BindableBase
+    public class BaseModel : BindableBase
     {
         #region 键值
         private string _Key = "";
@@ -25,7 +25,7 @@ namespace Client.Models
                 _Key = value;
                 RaisePropertyChanged();
             }
-        } 
+        }
         #endregion
 
         /// <summary>

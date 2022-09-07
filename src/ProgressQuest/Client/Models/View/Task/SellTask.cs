@@ -6,7 +6,7 @@ namespace Client.Models
     /// <summary>
     /// 售卖任务
     /// </summary>
-    public class SellTask: BaseTask
+    public class SellTask : BaseTask
     {
         /// <summary>
         /// 货物 Key
@@ -56,14 +56,15 @@ namespace Client.Models
             {
                 string name = Key.FindResourceDictionary();
                 //NPC货物
-                if(!string.IsNullOrWhiteSpace(ItemKey))
+                if (!string.IsNullOrWhiteSpace(ItemKey))
                 {
                     name = name.Replace("^ItemName$"
                         , $"{ItemKey.FindResourceDictionary()} {ItemKey1.FindResourceDictionary()} {ItemKey2.FindResourceDictionary()}");
                     name = name.Replace($"^ItemQuantity$", "" + ItemQuantity);
-                }else
+                }
+                else
                 {
-                    name = name.Replace("^ItemName$" , $"{ItemKey1.FindResourceDictionary()} {ItemKey2.FindResourceDictionary()}");
+                    name = name.Replace("^ItemName$", $"{ItemKey1.FindResourceDictionary()} {ItemKey2.FindResourceDictionary()}");
                     name = name.Replace($"^ItemQuantity$", "" + ItemQuantity);
                 }
                 return name;

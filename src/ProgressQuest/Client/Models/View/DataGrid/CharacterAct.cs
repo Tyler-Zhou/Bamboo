@@ -1,13 +1,12 @@
 ﻿using Client.Extensions;
 using Newtonsoft.Json;
-using Prism.Mvvm;
 
 namespace Client.Models
 {
     /// <summary>
     /// 剧幕实体
     /// </summary>
-    public class CharacterAct: BaseModel
+    public class CharacterAct : BaseModel
     {
         #region 剧幕索引
         private int _Index = 0;
@@ -62,7 +61,7 @@ namespace Client.Models
                 name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
                 return name;
             }
-        } 
+        }
         #endregion
     }
 }

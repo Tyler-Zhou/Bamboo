@@ -6,7 +6,7 @@ namespace Client.Models
     /// <summary>
     /// 杀怪任务
     /// </summary>
-    public class KillTask:BaseTask
+    public class KillTask : BaseTask
     {
         /// <summary>
         /// 是否NPC
@@ -99,15 +99,15 @@ namespace Client.Models
                         + MonsterName + RaceKey.FindResourceDictionary();
                 }
                 description = PrefixKey1.FindResourceDictionary()
-                    + PrefixKey2.FindResourceDictionary() 
+                    + PrefixKey2.FindResourceDictionary()
                     + description
-                    +MonsterKey.FindResourceDictionary()
-                    +MonsterItemKey.FindResourceDictionary();
+                    + MonsterKey.FindResourceDictionary()
+                    + MonsterItemKey.FindResourceDictionary();
                 //无名怪物，前缀前再附加冠词
                 if (string.IsNullOrEmpty(MonsterName))
                 {
                     description = description.AdditionalIndefiniteArticle(Quality);
-                    if(Quality > 1)
+                    if (Quality > 1)
                         description = description.ToPlural();
                 }
                 name = name.Replace($"^MonsterDescript$", description);

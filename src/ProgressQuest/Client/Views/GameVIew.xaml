@@ -102,7 +102,7 @@
                     Value="{Binding ProgressBarExperience.Position}" />
             </GroupBox>
             <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxHeaderSpellBook}">
-                <DataGrid ItemsSource="{Binding DataGridSpellBooks}" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <DataGrid ItemsSource="{Binding DataGridSpellBooks}" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <DataGrid.Columns>
                         <DataGridTextColumn
                             Width="*"
@@ -155,7 +155,7 @@
                         <DataGrid
                             Grid.Row="0"
                             ItemsSource="{Binding DataGridItems}"
-                            ScrollViewer.VerticalScrollBarVisibility="Visible">
+                            ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
                                 <DataGridTextColumn
                                     Width="*"
@@ -192,7 +192,8 @@
                             Grid.Row="0"
                             HorizontalContentAlignment="Left"
                             HeadersVisibility="None"
-                            ItemsSource="{Binding DataGridActs}">
+                            ItemsSource="{Binding DataGridActs}"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
                                 <DataGridCheckBoxColumn
                                     Width="20"
@@ -221,7 +222,8 @@
                             Grid.Row="0"
                             HorizontalContentAlignment="Left"
                             HeadersVisibility="None"
-                            ItemsSource="{Binding DataGridQuests}">
+                            ItemsSource="{Binding DataGridQuests}"
+                            ScrollViewer.VerticalScrollBarVisibility="Auto">
                             <DataGrid.Columns>
                                 <DataGridCheckBoxColumn
                                     Width="20"

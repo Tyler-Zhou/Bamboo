@@ -153,7 +153,7 @@ namespace Client.ViewModels
                 FileInfo fi = fis[i];
                 string name = fi.Name.Replace(fi.Extension, "");
                 Character character = await _CacheService.GetAsync<Character>(name);
-                if(character!=null && !character.IsOnLine)
+                if (character != null && !character.IsOnLine)
                     result.Add(character);
             }
             return result;

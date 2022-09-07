@@ -3,7 +3,7 @@
     /// <summary>
     /// 走向市场
     /// </summary>
-    public class HeadingToMarketTask: BaseTask
+    public class HeadingToMarketTask : BaseTask
     {
         /// <summary>
         /// 任务类型

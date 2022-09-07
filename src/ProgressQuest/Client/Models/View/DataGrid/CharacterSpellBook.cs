@@ -39,7 +39,7 @@ namespace Client.Models
             {
                 return _Level.ToRomanNumber();
             }
-        } 
+        }
         #endregion
     }
 }
