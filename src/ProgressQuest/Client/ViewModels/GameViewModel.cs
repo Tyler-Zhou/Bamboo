@@ -10,6 +10,7 @@ using Prism.Ioc;
 using Prism.Regions;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Threading;
@@ -72,7 +73,38 @@ namespace Client.ViewModels
         }
         #endregion
 
-        #region 展示集合
+        #region 集合
+        ObservableCollection<EnumStat> _PickStats = new ObservableCollection<EnumStat>();
+        /// <summary>
+        /// 所有属性+种族属性+职业属性
+        /// </summary>
+        public ObservableCollection<EnumStat> PickStats
+        {
+            get
+            {
+                if (_PickStats.Count <= 0)
+                {
+                    _PickStats.AddRange(
+                        new ObservableCollection<EnumStat>()
+                        {
+                            EnumStat.Strength,
+                            EnumStat.Constitution,
+                            EnumStat.Dexterity,
+                            EnumStat.Intelligence,
+                            EnumStat.Wisdom,
+                            EnumStat.Charisma,
+                            EnumStat.HPMax,
+                            EnumStat.MPMax,
+                        });
+                    //添加种族属性
+                    _PickStats.AddRange(Repository.Races.SingleOrDefault(item => item.Key.Equals(Current.RaceKey)).Stats);
+                    //添加职业属性
+                    _PickStats.AddRange(Repository.Classes.SingleOrDefault(item => item.Key.Equals(Current.ClassKey)).Stats);
+                }
+                return _PickStats;
+            }
+        }
+
         /// <summary>
         /// 特征集合
         /// </summary>
@@ -327,6 +359,7 @@ namespace Client.ViewModels
             _TaskTimer.Stop();
             _AutoSaveTimer.Stop();
             var result = Task.Run(() => SaveCharacter().Result).Result;
+            _PickStats.Clear();
             _Character = null;
         }
         /// <summary>
@@ -503,7 +536,7 @@ namespace Client.ViewModels
             EnumStat chosenType = EnumStat.UnKnown;
             if (RandomHelper.Odds(1, 2))
             {
-                chosenType = (EnumStat)RandomHelper.Value(CharacterHelper.EnumStatScope);
+                chosenType = PickStats.Pick();
             }
             else
             {
@@ -661,10 +694,10 @@ namespace Client.ViewModels
                 }
                 else if (objTask is PlotTask)
                 {
-                    PlotTask taskModel = new PlotTask();
+                    PlotTask taskModel =(PlotTask)objTask;
                     Current.QuestBook.CommpleteAct();
-                    ProgressBarPlot.Reset(CharacterHelper.ActTime(Current.QuestBook.ActIndex));
-                    Current.QuestBook.AddAct(Current.QuestBook.ActIndex + 1);
+                    ProgressBarPlot.Reset(CharacterHelper.ActTime(taskModel.ActIndex+1));
+                    Current.QuestBook.AddAct(taskModel.ActIndex+1);
                     RaisePropertyChanged(nameof(DataGridActs));
                     if (Current.QuestBook.ActIndex > 1)
                     {

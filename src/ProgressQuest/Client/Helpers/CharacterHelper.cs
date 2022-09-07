@@ -206,7 +206,7 @@ namespace Client.Helpers
         /// 枚举属性范围
         /// 主要属性,不包括 HP MAx , MP Max
         /// </summary>
-        public static int EnumStatScope { get; set; } = 6;
+        public static int EnumStatScope { get; set; } = 7;
         /// <summary>
         /// 枚举装备筛选范围(所有装备)
         /// </summary>
@@ -219,7 +219,7 @@ namespace Client.Helpers
         /// <remarks>初始值在 1-16 之间</remarks>
         public static int InitGeneralStat()
         {
-            return RandomHelper.Value(16);
+            return RandomHelper.Value(1,16);
         }
 
         /// <summary>
@@ -230,7 +230,7 @@ namespace Client.Helpers
         /// <returns></returns>
         public static int InitMaxHPOrMP(int statValue)
         {
-            return RandomHelper.Value(8) + statValue / 6;
+            return RandomHelper.Value(9) + statValue / 6;
         }
 
         /// <summary>
@@ -240,7 +240,7 @@ namespace Client.Helpers
         /// <returns>属性值</returns>
         public static int LevelUpGeneralStat()
         {
-            return RandomHelper.Value(16);
+            return RandomHelper.Value(17);
         }
 
         /// <summary>
@@ -251,7 +251,7 @@ namespace Client.Helpers
         /// <returns></returns>
         public static int LevelUpMaxHPOrMP(int statValue)
         {
-            return statValue / 3 + 1 + RandomHelper.Value(4);
+            return statValue / 3 + 1 + RandomHelper.Value(5);
         }
         #endregion
 

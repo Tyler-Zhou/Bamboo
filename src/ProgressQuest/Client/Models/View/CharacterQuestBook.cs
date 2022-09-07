@@ -113,7 +113,7 @@ namespace Client.Models
         }
 
         /// <summary>
-        /// 添加剧幕
+        /// 完成剧幕
         /// </summary>
         /// <returns></returns>
         public bool CommpleteAct()

@@ -40,7 +40,9 @@ namespace Client.Models
             get
             {
                 string name = Key.FindResourceDictionary();
-                name = name.Replace($"^ActIndex$", ActIndex.ToRomanNumber());
+                string actName = "DataGridPlotAct".FindResourceDictionary();
+                actName = actName.Replace("^RomanNumber$", (ActIndex+1).ToRomanNumber());
+                name = name.Replace($"^ActName$", actName);
                 return name;
             }
             set

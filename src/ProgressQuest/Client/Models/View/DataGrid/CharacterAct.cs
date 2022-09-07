@@ -58,7 +58,7 @@ namespace Client.Models
             get
             {
                 string name = Key.FindResourceDictionary();
-                name = name.Replace($"^RomanNumber$", Index.ToRomanNumber());
+                name = name.Replace($"^RomanNumber$", ""+Index.ToRomanNumber());
                 return name;
             }
         }
