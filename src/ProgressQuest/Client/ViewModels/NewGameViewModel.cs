@@ -6,8 +6,11 @@ using Client.Models;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace Client.ViewModels
@@ -22,7 +25,25 @@ namespace Client.ViewModels
         /// <summary>
         /// 人物实体
         /// </summary>
-        private Character _Character = new Character();
+        private Character _Character = new Character()
+        {
+            Name = "",
+            RaceKey = "",
+            ClassKey = "",
+            Level = 1,
+            QuestBook = new CharacterQuestBook()
+            {
+                Acts = new ObservableCollection<CharacterAct>(),
+                Quests = new ObservableCollection<CharacterQuest>(),
+            },
+
+            Stats = new ObservableCollection<CharacterStat>(),
+            Equipments = new ObservableCollection<CharacterEquipment>(),
+            SpellBooks = new ObservableCollection<CharacterSpellBook>(),
+            Items = new ObservableCollection<CharacterItem>(),
+
+            TaskQueue = new Queue<BaseTask>(),
+        };
         #endregion
 
         #region 种族
@@ -91,12 +112,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterStrength
         {
-            get => _Character.GetStatValue(EnumStat.Strength);
+            get => GetStatValue(EnumStat.Strength);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Strength))
+                if (value != GetStatValue(EnumStat.Strength))
                 {
-                    _Character.SetStatValue(EnumStat.Strength, value, true);
+                    SetStatValue(EnumStat.Strength, value);
                     RaisePropertyChanged(nameof(CharacterStrength));
                     RaisePropertyChanged(nameof(TotalStats));
                 }
@@ -110,12 +131,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterConstitution
         {
-            get => _Character.GetStatValue(EnumStat.Constitution);
+            get => GetStatValue(EnumStat.Constitution);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Constitution))
+                if (value != GetStatValue(EnumStat.Constitution))
                 {
-                    _Character.SetStatValue(EnumStat.Constitution, value, true);
+                    SetStatValue(EnumStat.Constitution, value);
                     RaisePropertyChanged(nameof(CharacterConstitution));
                     RaisePropertyChanged(nameof(TotalStats));
                 }
@@ -129,12 +150,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterDexterity
         {
-            get => _Character.GetStatValue(EnumStat.Dexterity);
+            get => GetStatValue(EnumStat.Dexterity);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Dexterity))
+                if (value != GetStatValue(EnumStat.Dexterity))
                 {
-                    _Character.SetStatValue(EnumStat.Dexterity, value, true);
+                    SetStatValue(EnumStat.Dexterity, value);
                     RaisePropertyChanged(nameof(CharacterDexterity));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -149,12 +170,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterIntelligence
         {
-            get => _Character.GetStatValue(EnumStat.Intelligence);
+            get => GetStatValue(EnumStat.Intelligence);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Intelligence))
+                if (value != GetStatValue(EnumStat.Intelligence))
                 {
-                    _Character.SetStatValue(EnumStat.Intelligence, value, true);
+                    SetStatValue(EnumStat.Intelligence, value);
                     RaisePropertyChanged(nameof(CharacterIntelligence));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -169,12 +190,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterWisdom
         {
-            get => _Character.GetStatValue(EnumStat.Wisdom);
+            get => GetStatValue(EnumStat.Wisdom);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Wisdom))
+                if (value != GetStatValue(EnumStat.Wisdom))
                 {
-                    _Character.SetStatValue(EnumStat.Wisdom, value, true);
+                    SetStatValue(EnumStat.Wisdom, value);
                     RaisePropertyChanged(nameof(CharacterWisdom));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -189,12 +210,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterCharisma
         {
-            get => _Character.GetStatValue(EnumStat.Charisma);
+            get => GetStatValue(EnumStat.Charisma);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.Charisma))
+                if (value != GetStatValue(EnumStat.Charisma))
                 {
-                    _Character.SetStatValue(EnumStat.Charisma, value, true);
+                    SetStatValue(EnumStat.Charisma, value);
                     RaisePropertyChanged(nameof(CharacterCharisma));
                     RaisePropertyChanged(nameof(TotalStats));
                     BeginQuestCommand.RaiseCanExecuteChanged();
@@ -209,12 +230,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterHPMax
         {
-            get => _Character.GetStatValue(EnumStat.HPMax);
+            get => GetStatValue(EnumStat.HPMax);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.HPMax))
+                if (value != GetStatValue(EnumStat.HPMax))
                 {
-                    _Character.SetStatValue(EnumStat.HPMax, value, true);
+                    SetStatValue(EnumStat.HPMax, value);
                     RaisePropertyChanged(nameof(CharacterHPMax));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -228,12 +249,12 @@ namespace Client.ViewModels
         /// </summary>
         public int CharacterMPMax
         {
-            get => _Character.GetStatValue(EnumStat.MPMax);
+            get => GetStatValue(EnumStat.MPMax);
             set
             {
-                if (value != _Character.GetStatValue(EnumStat.MPMax))
+                if (value != GetStatValue(EnumStat.MPMax))
                 {
-                    _Character.SetStatValue(EnumStat.MPMax, value, true);
+                    SetStatValue(EnumStat.MPMax, value);
                     RaisePropertyChanged(nameof(CharacterMPMax));
                     BeginQuestCommand.RaiseCanExecuteChanged();
                 }
@@ -407,7 +428,48 @@ namespace Client.ViewModels
         /// </summary>
         private void InitData()
         {
-            _Character.InitData();
+            #region 属性集合
+            _Character.Stats.Clear();
+            _Character.Stats.AddRange(new List<CharacterStat>
+            {
+                new CharacterStat(){StatType = EnumStat.Strength,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Constitution,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Dexterity,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Intelligence,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Wisdom,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.Charisma,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.HPMax,Value = 0 },
+                new CharacterStat(){StatType = EnumStat.MPMax,Value = 0 },
+            });
+            #endregion
+
+            #region 装备集合
+            _Character.Equipments.Clear();
+            _Character.Equipments.AddRange(new ObservableCollection<CharacterEquipment>
+            {
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Weapon },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Shield },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Helm },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Hauberk },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Brassairts },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Vambraces},
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Gauntlets },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Gambeson },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Cuisses },
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Greaves},
+                new CharacterEquipment(){EquipmentType = EnumEquipment.Sollerets},
+            });
+            #endregion
+
+            #region 货物集合
+            //货物默认添加金币
+            _Character.Items.Clear();
+            _Character.Items.AddRange(new ObservableCollection<CharacterItem>()
+            {
+                new CharacterItem(){Key="DataGridGold",Quality = 0 },
+            });
+            #endregion
+
             Races = Repository.Races;
             Classes = Repository.Classes;
 
@@ -539,11 +601,71 @@ namespace Client.ViewModels
         /// </summary>
         private void BeginQuest()
         {
-            _Character.BeginQuest();
+            _Character.BirthDay = DateTime.Now;
+            _Character.IsOnLine = true;
+            _Character.ItemBar = new ItemBarModel()
+            {
+                Position = 0,
+                MaxValue = CharacterHelper.GetCapacity(GetStatValue(EnumStat.Strength))
+            };
+            _Character.ExperienceBar = new ExperienceBarModel()
+            {
+                Position = 0,
+                MaxValue = CharacterHelper.GetMaxExperienceByLevel(_Character.Level)
+            };
+            _Character.PlotBar = new PlotBarModel()
+            {
+                Position = 0,
+                MaxValue = 26,
+            };
+            _Character.QuestBar = new QuestBarModel()
+            {
+                Position = 0,
+                MaxValue = 28
+            };
+            _Character.QuestBook.AddAct(0);
+            PlotTask plotPrologue = new PlotTask() { Key = "TaskPlot", ActIndex = _Character.QuestBook.ActIndex, Duration = 2 };
+            _Character.CurrentBar = new CurrentBarModel()
+            {
+                TaskType = EnumTask.Plot,
+                ToolTip = plotPrologue.Description,
+                Position = 0,
+                MaxValue = plotPrologue.Duration,
+            };
+            _Character.TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskNightVision", Duration = 4 });
+            _Character.TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskUnderestimated", Duration = 6 });
+            _Character.TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskEvents", Duration = 6 });
+            _Character.TaskQueue.Enqueue(new RegularTask() { Key = "RegularTaskJourney", Duration = 10 });
+            _Character.TaskQueue.Enqueue(plotPrologue);
+
             NavigationParameters param = new NavigationParameters();
             param.Add("Character", _Character);
             NavigationToView("GameView", param);
         }
+        /// <summary>
+        /// 获取属性值
+        /// </summary>
+        /// <param name="statType">属性类型</param>
+        /// <returns>属性值</returns>
+        /// <exception cref="Exception"></exception>
+        public int GetStatValue(EnumStat statType)
+        {
+            return _Character.Stats.SingleOrDefault(item => item.StatType == statType).Value;
+        }
+        /// <summary>
+        /// 设置属性值
+        /// </summary>
+        /// <param name="statType">属性类型</param>
+        /// <param name="statValue"></param>
+        /// <returns>是否设置成功</returns>
+        /// <exception cref="Exception"></exception>
+        public bool SetStatValue(EnumStat statType, int statValue)
+        {
+            var stat = _Character.Stats.SingleOrDefault(item => item.StatType == statType);
+            stat.Value = statValue;
+            return true;
+        }
+
         #endregion
     }
 }

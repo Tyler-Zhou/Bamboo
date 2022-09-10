@@ -18,11 +18,11 @@ namespace Client.Models
         /// <summary>
         /// 姓名
         /// </summary>
-        public string Name { get; set; } = "";
+        public string Name { get; set; }
         /// <summary>
         /// 种族
         /// </summary>
-        public string RaceKey { get; set; } = "";
+        public string RaceKey { get; set; }
         /// <summary>
         /// 种族名称,显示在存档选择界面
         /// </summary>
@@ -34,7 +34,7 @@ namespace Client.Models
         /// <summary>
         /// 职业Key
         /// </summary>
-        public string ClassKey { get; set; } = "";
+        public string ClassKey { get; set; }
         /// <summary>
         /// 职业名称,显示在存档选择界面
         /// </summary>
@@ -47,7 +47,7 @@ namespace Client.Models
         /// <summary>
         /// 等级
         /// </summary>
-        public int Level { get; set; } = 1;
+        public int Level { get; set; }
 
         /// <summary>
         /// 是否在线
@@ -70,19 +70,19 @@ namespace Client.Models
         /// <summary>
         /// 属性集合
         /// </summary>
-        public ObservableCollection<CharacterStat> Stats = new ObservableCollection<CharacterStat>();
+        public ObservableCollection<CharacterStat> Stats { get; set; }
         /// <summary>
         /// 装备集合集合
         /// </summary>
-        public ObservableCollection<CharacterEquipment> Equipments = new ObservableCollection<CharacterEquipment>();
+        public ObservableCollection<CharacterEquipment> Equipments { get; set; }
         /// <summary>
         /// 法术书集合
         /// </summary>
-        public ObservableCollection<CharacterSpellBook> SpellBooks = new ObservableCollection<CharacterSpellBook>();
+        public ObservableCollection<CharacterSpellBook> SpellBooks { get; set; }
         /// <summary>
         /// 货物集合
         /// </summary>
-        public ObservableCollection<CharacterItem> Items = new ObservableCollection<CharacterItem>();
+        public ObservableCollection<CharacterItem> Items { get; set; }
         #endregion
 
         #region 进度条
@@ -112,7 +112,7 @@ namespace Client.Models
         /// <summary>
         /// 当前待执行任务队列
         /// </summary>
-        public Queue<BaseTask> TaskQueue = new Queue<BaseTask>();
+        public Queue<BaseTask> TaskQueue { get; set; }
         #endregion
 
         #endregion
@@ -123,64 +123,12 @@ namespace Client.Models
         /// </summary>
         public Character()
         {
-
+            
         }
         #endregion
 
         #region 公共方法(Public Method)
-        /// <summary>
-        /// 初始化数据
-        /// </summary>
-        public void InitData()
-        {
-            #region 属性集合
-            Stats.Clear();
-            Stats.AddRange(new List<CharacterStat>
-            {
-                new CharacterStat(){StatType = EnumStat.Strength,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.Constitution,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.Dexterity,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.Intelligence,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.Wisdom,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.Charisma,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.HPMax,Value = 0 },
-                new CharacterStat(){StatType = EnumStat.MPMax,Value = 0 },
-            });
-            #endregion
 
-            #region 装备集合
-            Equipments.Clear();
-            if (Equipments == null || Equipments.Count <= 0)
-            {
-                Equipments.AddRange(new ObservableCollection<CharacterEquipment>
-                {
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Weapon },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Shield },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Helm },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Hauberk },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Brassairts },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Vambraces},
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Gauntlets },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Gambeson },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Cuisses },
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Greaves},
-                    new CharacterEquipment(){EquipmentType = EnumEquipment.Sollerets},
-                });
-            }
-            #endregion
-
-            #region 货物集合
-            //货物默认添加金币
-            Items.Clear();
-            Items.AddRange(new ObservableCollection<CharacterItem>()
-            {
-                new CharacterItem(){Key="DataGridGold",Quality = 0 },
-            });
-            #endregion
-
-            QuestBook = new CharacterQuestBook();
-
-        }
         /// <summary>
         /// 获取特征集合
         /// </summary>

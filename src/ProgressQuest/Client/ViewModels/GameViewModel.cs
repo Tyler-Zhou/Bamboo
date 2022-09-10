@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Threading;
+using System.Xml.Linq;
 
 namespace Client.ViewModels
 {
@@ -27,7 +28,7 @@ namespace Client.ViewModels
         /// <summary>
         /// 人物
         /// </summary>
-        private Character _Character = new Character();
+        private Character _Character;
         /// <summary>
         /// 人物
         /// </summary>
@@ -112,7 +113,20 @@ namespace Client.ViewModels
         {
             get
             {
-                return Current.Traits();
+                if (_Character != null)
+                {
+                    return new ObservableCollection<CharacterTrait>
+                    {
+                        new CharacterTrait(){ Key="DataGridName",Value = _Character.Name },
+                        new CharacterTrait(){ Key="DataGridRace",Value = _Character.RaceName },
+                        new CharacterTrait(){ Key="DataGridClass",Value = _Character.ClassName},
+                        new CharacterTrait(){ Key="DataGridLevel",Value = ""+_Character.Level },
+                    };
+                }
+                else
+                {
+                    return new ObservableCollection<CharacterTrait>();
+                }
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using Client.Common;
+using Client.Extensions;
 using Client.Interfaces;
 using Client.Models;
 using Microsoft.Extensions.Logging;
@@ -8,6 +9,7 @@ using Prism.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows;
 
@@ -19,6 +21,18 @@ namespace Client.ViewModels
     public class MainViewModel : BindableBase, IConfigureService, INavigationService, IWindowService
     {
         #region 成员(Member)
+        /// <summary>
+        /// 应用程序标题
+        /// </summary>
+        public string ApplicationTitle 
+        { 
+            get
+            {
+                string title = "ApplicationTitle".FindResourceDictionary();
+                string versionNo= Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                return $"{title} V{versionNo}";
+            }
+        }
         /// <summary>
         /// 
         /// </summary>
