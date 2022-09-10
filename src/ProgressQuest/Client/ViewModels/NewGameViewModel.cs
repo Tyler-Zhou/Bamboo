@@ -623,7 +623,7 @@ namespace Client.ViewModels
                 Position = 0,
                 MaxValue = 28
             };
-            _Character.QuestBook.AddAct(0);
+            _Character.QuestBook.Acts.Add(new CharacterAct {Key = "DataGridPlotPrologue",Index = 0,IsCommplete = false });
             PlotTask plotPrologue = new PlotTask() { Key = "TaskPlot", ActIndex = _Character.QuestBook.ActIndex, Duration = 2 };
             _Character.CurrentBar = new CurrentBarModel()
             {

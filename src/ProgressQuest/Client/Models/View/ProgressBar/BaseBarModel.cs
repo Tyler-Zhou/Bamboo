@@ -81,39 +81,39 @@ namespace Client.Models
         #endregion
 
         #region 增量
-        /// <summary>
-        /// 增量
-        /// </summary>
-        /// <param name="increment"></param>
-        public void Increment(double increment)
-        {
-            Position += increment;
-        }
-        #endregion
+        ///// <summary>
+        ///// 增量
+        ///// </summary>
+        ///// <param name="increment"></param>
+        //public void Increment(double increment)
+        //{
+        //    Position += increment;
+        //}
+        //#endregion
 
-        #region 重置
-        /// <summary>
-        /// 重置
-        /// </summary>
-        /// <param name="maxValue"></param>
-        /// <param name="position"></param>
-        public void Reset(double maxValue, double position = 0)
-        {
-            Position = position;
-            MaxValue = maxValue;
-        }
-        #endregion
+        //#region 重置
+        ///// <summary>
+        ///// 重置
+        ///// </summary>
+        ///// <param name="maxValue"></param>
+        ///// <param name="position"></param>
+        //public void Reset(double maxValue, double position = 0)
+        //{
+        //    Position = position;
+        //    MaxValue = maxValue;
+        //}
+        //#endregion
 
-        #region 复位
-        /// <summary>
-        /// 复位
-        /// </summary>
-        /// <param name="position"></param>
-        public void Reposition(double position)
-        {
-            position = Math.Min(position, MaxValue);
-            Position = position;
-        }
+        //#region 复位
+        ///// <summary>
+        ///// 复位
+        ///// </summary>
+        ///// <param name="position"></param>
+        //public void Reposition(double position)
+        //{
+        //    position = Math.Min(position, MaxValue);
+        //    Position = position;
+        //}
         #endregion
     }
 }

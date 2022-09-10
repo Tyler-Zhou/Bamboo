@@ -34,7 +34,12 @@ namespace Client.ViewModels
         /// </summary>
         public Character Current
         {
-            get => _Character;
+            get
+            {
+                if(_Character == null)
+                    _Character = new Character();
+                return _Character;
+            }
             set
             {
                 if (value != null)
@@ -289,8 +294,7 @@ namespace Client.ViewModels
             if (!ProgressBarCurrent.IsCommplete)
             {
                 double increment = double.Parse(ApplicationContext.TaskTimeSpan.TotalSeconds.ToString("0.00"));
-                ProgressBarCurrent.Increment(increment);
-                RaisePropertyChanged(nameof(ProgressBarCurrent));
+                IncrementCurrent(increment);
                 return;
             }
             object objTask = TaskPeek();
@@ -303,30 +307,28 @@ namespace Client.ViewModels
                     {
                         LevelUp();
                         //设置经验进程最大值
-                        ProgressBarExperience.Reset(CharacterHelper.GetMaxExperienceByLevel(Current.Level));
+                        ResetExperience(CharacterHelper.GetMaxExperienceByLevel(Current.Level));
                         RaisePropertyChanged(nameof(DataGridTraits));
                         RaisePropertyChanged(nameof(DataGridStats));
                     }
                     else
                     {
-                        ProgressBarExperience.Increment(ProgressBarCurrent.MaxValue);
+                        IncrementExperience(ProgressBarCurrent.MaxValue);
                     }
-                    RaisePropertyChanged(nameof(ProgressBarExperience));
                 }
                 // 推进任务
                 if (Current.QuestBook.ActIndex > 0)
                 {
                     if (ProgressBarQuest.IsCommplete)
                     {
-                        CompleteQuest();
-                        ProgressBarQuest.Reset(50 + RandomHelper.MinValue(1000));
+                        UpdateQuest();
+                        ResetQuest(50 + RandomHelper.MinValue(1000));
                         RaisePropertyChanged(nameof(DataGridQuests));
                     }
                     else
                     {
-                        ProgressBarQuest.Increment(ProgressBarCurrent.MaxValue);
+                        IncrementQuest(ProgressBarCurrent.MaxValue);
                     }
-                    RaisePropertyChanged(nameof(ProgressBarQuest));
                 }
                 //推进剧情
                 if (ProgressBarPlot.IsCommplete)
@@ -335,10 +337,9 @@ namespace Client.ViewModels
                 }
                 else
                 {
-                    ProgressBarPlot.Increment(ProgressBarCurrent.MaxValue);
+                    IncrementPlot(ProgressBarCurrent.MaxValue);
                 }
             }
-            RaisePropertyChanged(nameof(ProgressBarPlot));
             Dequeue();
         }
         /// <summary>
@@ -414,65 +415,12 @@ namespace Client.ViewModels
             _AutoSaveTimer.Tick += AutoSaveTimer_Tick;
             _AutoSaveTimer.Start();
         }
-
         /// <summary>
-        /// 设置任务
+        /// 更新任务任务
         /// </summary>
-        /// <param name="task"></param>
-        /// <returns></returns>
-        bool TaskSet(BaseTask task)
+        void UpdateQuest()
         {
-            TaskAdd(task);
-            ProgressBarCurrent.Reset(task.Duration);
-            RaisePropertyChanged(nameof(ProgressBarCurrent));
-            return true;
-        }
-        /// <summary>
-        /// 任务添加(仅添加，不重置当前任务栏)
-        /// </summary>
-        /// <param name="task"></param>
-        /// <returns></returns>
-        bool TaskAdd(BaseTask task)
-        {
-            ProgressBarCurrent.TaskType = task.TaskType;
-            ProgressBarCurrent.ToolTip = task.Description;
-            Current.TaskQueue.Enqueue(task);
-            return true;
-        }
-
-        /// <summary>
-        /// 当前任务
-        /// </summary>
-        /// <returns></returns>
-        object TaskPeek()
-        {
-            if (Current.TaskQueue.Count > 0)
-                return Current.TaskQueue.Peek();
-            else
-                return null;
-        }
-        /// <summary>
-        /// 任务数量
-        /// </summary>
-        /// <returns></returns>
-        int TaskCount()
-        {
-            return Current.TaskQueue.Count;
-        }
-        /// <summary>
-        /// 移除任务
-        /// </summary>
-        /// <returns></returns>
-        BaseTask TaskDequeue()
-        {
-            return Current.TaskQueue.Dequeue();
-        }
-        /// <summary>
-        /// 完成队列
-        /// </summary>
-        void CompleteQuest()
-        {
-            Current.QuestBook.CommpleteQuest();
+            CommpleteQuest();
             //任务完成随机获得法术书、装备、属性、货物
             int methodNo = RandomHelper.Value(4);
             switch (methodNo)
@@ -526,7 +474,7 @@ namespace Client.ViewModels
                     count = 2;
                     break;
             }
-            Current.QuestBook.AddQuest(questType, monsterKey, monsterLevel, count, itemKey, specialKey);
+            AddQuest(questType, monsterKey, monsterLevel, count, itemKey, specialKey);
         }
         /// <summary>
         /// 人物升级
@@ -534,8 +482,8 @@ namespace Client.ViewModels
         void LevelUp()
         {
             Current.Level += 1;
-            Current.SetStatValue(EnumStat.HPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Constitution)));
-            Current.SetStatValue(EnumStat.MPMax, CharacterHelper.LevelUpMaxHPOrMP(Current.GetStatValue(EnumStat.Intelligence)));
+            SetStatValue(EnumStat.HPMax, CharacterHelper.LevelUpMaxHPOrMP(GetStatValue(EnumStat.Constitution)));
+            SetStatValue(EnumStat.MPMax, CharacterHelper.LevelUpMaxHPOrMP(GetStatValue(EnumStat.Intelligence)));
 
             WinStat();
             WinStat();
@@ -569,18 +517,18 @@ namespace Client.ViewModels
                         break;
                 }
             }
-            Current.SetStatValue(chosenType, 1);
+            SetStatValue(chosenType, 1);
         }
         /// <summary>
         /// 赢得法术书
         /// </summary>
         void WinSpell()
         {
-            int maxValue = Math.Min(Current.GetStatValue(EnumStat.Wisdom) + Current.Level, Repository.Spells.Count);
+            int maxValue = Math.Min(GetStatValue(EnumStat.Wisdom) + Current.Level, Repository.Spells.Count);
             BaseModel spell = Repository.Spells.Pick(maxValue);
             if (spell != null)
             {
-                Current.AddSpellBook(new CharacterSpellBook { Key = spell.Key, Level = 1 });
+                AddSpellBook(new CharacterSpellBook { Key = spell.Key, Level = 1 });
             }
         }
         /// <summary>
@@ -633,7 +581,7 @@ namespace Client.ViewModels
                 plus -= modifier.Quality;
                 count += 1;
             }
-            Current.UpdateEquipment(equipmentType, equipment.Key, modifierKey1, modifierKey2, plus);
+            UpdateEquipment(equipmentType, equipment.Key, modifierKey1, modifierKey2, plus);
         }
         /// <summary>
         /// 赢得物品
@@ -644,7 +592,7 @@ namespace Client.ViewModels
             string itemKey2 = Repository.ItemAttributes.Pick().Key;
             string itemKey3 = Repository.Specials.Pick().Key;
             int quality = 1;
-            Current.AddItem(itemKey1, itemKey2, itemKey3, quality);
+            AddItem(itemKey1, itemKey2, itemKey3, quality);
         }
         /// <summary>
         /// 队尾
@@ -664,7 +612,7 @@ namespace Client.ViewModels
                     }
                     else
                     {
-                        Current.AddItem(killTask.MonsterKey, killTask.MonsterItemKey, "", killTask.Quality);
+                        AddItem(killTask.MonsterKey, killTask.MonsterItemKey, "", killTask.Quality);
                     }
                     RaisePropertyChanged(nameof(DataGridItems));
                     RaisePropertyChanged(nameof(ProgressBarItem));
@@ -672,7 +620,7 @@ namespace Client.ViewModels
                 else if (objTask is BuyTask)
                 {
                     //购买装备
-                    Current.AddGold(-CharacterHelper.EquipmentPrice(Current.Level));
+                    AddGold(-CharacterHelper.EquipmentPrice(Current.Level));
                     WinEquipment();
                     RaisePropertyChanged(nameof(DataGridEquipments));
                 }
@@ -687,8 +635,8 @@ namespace Client.ViewModels
                         {
                             amount *= (1 + RandomHelper.MinValue(10)) * (1 + RandomHelper.MinValue(Current.Level));
                         }
-                        Current.SellItem(taskModel.ItemKey, taskModel.ItemKey1, taskModel.ItemKey2);
-                        Current.AddGold(amount);
+                        SellItem(taskModel.ItemKey, taskModel.ItemKey1, taskModel.ItemKey2);
+                        AddGold(amount);
                         RaisePropertyChanged(nameof(DataGridItems));
                         RaisePropertyChanged(nameof(ProgressBarItem));
                     }
@@ -709,9 +657,9 @@ namespace Client.ViewModels
                 else if (objTask is PlotTask)
                 {
                     PlotTask taskModel =(PlotTask)objTask;
-                    Current.QuestBook.CommpleteAct();
-                    ProgressBarPlot.Reset(CharacterHelper.ActTime(taskModel.ActIndex+1));
-                    Current.QuestBook.AddAct(taskModel.ActIndex+1);
+                    CommpleteAct();
+                    ResetPlot(CharacterHelper.ActTime(taskModel.ActIndex+1));
+                    AddAct(taskModel.ActIndex+1);
                     RaisePropertyChanged(nameof(DataGridActs));
                     if (Current.QuestBook.ActIndex > 1)
                     {
@@ -726,7 +674,7 @@ namespace Client.ViewModels
                     BaseTask task = TaskDequeue();
                     ProgressBarCurrent.TaskType = task.TaskType;
                     ProgressBarCurrent.ToolTip = task.Description;
-                    ProgressBarCurrent.Reset(task.Duration);
+                    ResetCurrent(task.Duration);
                 }
                 else if (ProgressBarItem.IsCommplete)
                 {
@@ -740,7 +688,7 @@ namespace Client.ViewModels
                     (!(objTask is KillTask) && !(objTask is HeadingToKillingFieldsTask)))
                 {
                     //金币够买装备
-                    if (Current.GetGold() > CharacterHelper.EquipmentPrice(Current.Level))
+                    if (GetGold() > CharacterHelper.EquipmentPrice(Current.Level))
                     {
                         BuyTask taskModel = new BuyTask()
                         {
@@ -1144,6 +1092,421 @@ namespace Client.ViewModels
             }
             return result;
         }
+        #endregion
+
+        #region 人物信息操作方法(Character Info Operation Method)
+        #region 属性(Stat)
+        /// <summary>
+        /// 获取属性值
+        /// </summary>
+        /// <param name="statType">属性类型</param>
+        /// <returns>属性值</returns>
+        /// <exception cref="Exception"></exception>
+        int GetStatValue(EnumStat statType)
+        {
+            return _Character.Stats.SingleOrDefault(item => item.StatType == statType).Value;
+        }
+        /// <summary>
+        /// 设置属性值
+        /// </summary>
+        /// <param name="statType">属性类型</param>
+        /// <param name="statValue"></param>
+        /// <returns>是否设置成功</returns>
+        /// <exception cref="Exception"></exception>
+        bool SetStatValue(EnumStat statType, int statValue)
+        {
+            var stat = _Character.Stats.SingleOrDefault(item => item.StatType == statType);
+            stat.Value += statValue;
+            if (stat.StatType == EnumStat.Strength)
+            {
+                _Character.ItemBar.MaxValue = CharacterHelper.GetCapacity(stat.Value);
+                RaisePropertyChanged(nameof(ProgressBarItem));
+            }
+            return true;
+        }
+        #endregion
+
+        #region 装备(Qquipment)
+        /// <summary>
+        /// 更新装备
+        /// </summary>
+        /// <param name="equipmentType">装备类型</param>
+        /// <param name="equipmentKey">装备 Key </param>
+        /// <param name="modifierKey1">修饰符 Key 1 </param>
+        /// <param name="modifierKey2">修饰符 Key 2 </param>
+        /// <param name="plus">加成</param>
+        /// <returns>是否更新成功</returns>
+        /// <exception cref="Exception"></exception>
+        bool UpdateEquipment(EnumEquipment equipmentType, string equipmentKey, string modifierKey1, string modifierKey2, int plus)
+        {
+            var equipment = _Character.Equipments.SingleOrDefault(item => item.EquipmentType.Equals(equipmentType));
+            equipment.EquipmentKey = equipmentKey;
+            equipment.ModifierKey1 = modifierKey1;
+            equipment.ModifierKey2 = modifierKey2;
+            equipment.Plus = plus;
+            return true;
+        }
+        #endregion
+
+        #region 货物(Item)
+        /// <summary>
+        /// 存款
+        /// </summary>
+        /// <param name="quality"></param>
+        /// <returns></returns>
+        bool AddGold(int quality)
+        {
+            var singItem = _Character.Items.SingleOrDefault(item => "DataGridGold".Equals(item.Key));
+            singItem.Quality += quality;
+            return true;
+        }
+        /// <summary>
+        /// 获取金币数量
+        /// </summary>
+        /// <returns></returns>
+        int GetGold()
+        {
+            return _Character.Items.SingleOrDefault(item => "DataGridGold".Equals(item.Key)).Quality;
+        }
+        /// <summary>
+        /// 添加货物
+        /// </summary>
+        /// <param name="itemKey1"></param>
+        /// <param name="itemKey2"></param>
+        /// <param name="itemKey3"></param>
+        /// <param name="quality"></param>
+        /// <returns></returns>
+        bool AddItem(string itemKey1, string itemKey2, string itemKey3, int quality)
+        {
+            var singItem = _Character.Items.SingleOrDefault(
+                item => "DataGridItemName".Equals(item.Key)
+                && item.ItemKey1.Equals(itemKey1)
+                && item.ItemKey2.Equals(itemKey2)
+                && item.ItemKey3.Equals(itemKey3)
+                );
+            if (singItem == null)
+            {
+                CharacterItem model = new CharacterItem()
+                {
+                    Key = "DataGridItemName",
+                    ItemKey1 = itemKey1,
+                    ItemKey2 = itemKey2,
+                    ItemKey3 = itemKey3,
+                    Quality = quality,
+                };
+                _Character.Items.Add(model);
+            }
+            else
+            {
+                singItem.Quality += quality;
+            }
+            IncrementItem(quality);
+            return true;
+        } 
+        /// <summary>
+        /// 售卖货物
+        /// </summary>
+        /// <param name="itemKey1"></param>
+        /// <param name="itemKey2"></param>
+        /// <param name="itemKey3"></param>
+        /// <returns></returns>
+        bool SellItem(string itemKey1, string itemKey2, string itemKey3)
+        {
+            var singItem = _Character.Items.SingleOrDefault(
+                item => "DataGridItemName".Equals(item.Key)
+                && item.ItemKey1.Equals(itemKey1)
+                && item.ItemKey2.Equals(itemKey2)
+                && item.ItemKey3.Equals(itemKey3)
+                );
+            RemoveItem(singItem);
+            RepositionItem(_Character.Items.Where(item => !"DataGridGold".Equals(item.Key)).Sum(item => item.Quality));
+            return true;
+        }
+        /// <summary>
+        /// 移除货物
+        /// </summary>
+        /// <param name="model">待移除货物实体</param>
+        /// <returns></returns>
+        bool RemoveItem(CharacterItem model)
+        {
+            if (_Character.Items.Count == 1)
+                return true;
+            _Character.Items.Remove(model);
+            return true;
+        }
+        #endregion
+
+        #region 法术书(Spell Book)
+        /// <summary>
+        /// 添加法术书
+        /// </summary>
+        /// <param name="model">法术书实体</param>
+        /// <returns>是否新增成功</returns>
+        /// <exception cref="Exception"></exception>
+        bool AddSpellBook(CharacterSpellBook model)
+        {
+            var spellBook = _Character.SpellBooks.SingleOrDefault(item => item.Key.Equals(model.Key));
+            if (spellBook == null)
+            {
+                _Character.SpellBooks.Add(model);
+            }
+            else
+            {
+                spellBook.Level += 1;
+            }
+            return true;
+        }
+        #endregion
+
+        #region 剧情(Plot)
+        /// <summary>
+        /// 添加剧幕
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        bool AddAct(int index)
+        {
+            var model = _Character.QuestBook.Acts.SingleOrDefault(item => item.Index.Equals(index));
+            if (model != null)
+                return false;
+            CharacterAct modelNew = new CharacterAct()
+            {
+                Key = "DataGridPlotAct",
+                Index = index,
+                IsCommplete = false
+            };
+            _Character.QuestBook.Acts.Add(modelNew);
+            return true;
+        }
+
+        /// <summary>
+        /// 完成剧幕
+        /// </summary>
+        /// <returns></returns>
+        bool CommpleteAct()
+        {
+            var acts = _Character.QuestBook.Acts.Where(item => !item.IsCommplete);
+            foreach (var item in acts)
+            {
+                item.IsCommplete = true;
+            }
+            return true;
+        }
+        #endregion
+
+        #region 游戏任务(Quest)
+        /// <summary>
+        /// 添加任务
+        /// </summary>
+        /// <param name="questType">任务类型</param>
+        /// <param name="monsterKey">怪物 Key</param>
+        /// <param name="monsterLevel">怪物等级</param>
+        /// <param name="count">怪物/货物 数量</param>
+        /// <param name="itemKey">货物 Key</param>
+        /// <param name="specialKey">特价 Key</param>
+        /// <returns></returns>
+        bool AddQuest(EnumQuest questType
+            , string monsterKey, int monsterLevel, int count
+            , string itemKey, string specialKey
+            )
+        {
+            CharacterQuest modelNew = new CharacterQuest()
+            {
+                Key = "DataGridQuestDescription",
+                QuestType = questType,
+                MonsterKey = monsterKey,
+                MonsterLevel = monsterLevel,
+                Count = count,
+                ItemKey = itemKey,
+                SpecialKey = specialKey,
+                IsCommplete = false
+            };
+            _Character.QuestBook.Quests.Add(modelNew);
+            return true;
+        }
+
+        /// <summary>
+        /// 完成任务
+        /// </summary>
+        /// <returns></returns>
+        bool CommpleteQuest()
+        {
+            var quests = _Character.QuestBook.Quests.Where(item => !item.IsCommplete);
+            foreach (var item in quests)
+            {
+                item.IsCommplete = true;
+            }
+            return true;
+        }
+        #endregion
+
+        #region 正在执行任务(Task)
+        /// <summary>
+        /// 设置任务
+        /// </summary>
+        /// <param name="task"></param>
+        /// <returns></returns>
+        bool TaskSet(BaseTask task)
+        {
+            TaskAdd(task);
+            ResetCurrent(task.Duration);
+            return true;
+        }
+        /// <summary>
+        /// 任务添加(仅添加，不重置当前任务栏)
+        /// </summary>
+        /// <param name="task"></param>
+        /// <returns></returns>
+        bool TaskAdd(BaseTask task)
+        {
+            ProgressBarCurrent.TaskType = task.TaskType;
+            ProgressBarCurrent.ToolTip = task.Description;
+            Current.TaskQueue.Enqueue(task);
+            return true;
+        }
+        /// <summary>
+        /// 当前任务
+        /// </summary>
+        /// <returns></returns>
+        object TaskPeek()
+        {
+            if (Current.TaskQueue.Count > 0)
+                return Current.TaskQueue.Peek();
+            else
+                return null;
+        }
+        /// <summary>
+        /// 任务数量
+        /// </summary>
+        /// <returns></returns>
+        int TaskCount()
+        {
+            return Current.TaskQueue.Count;
+        }
+        /// <summary>
+        /// 移除任务
+        /// </summary>
+        /// <returns></returns>
+        BaseTask TaskDequeue()
+        {
+            return Current.TaskQueue.Dequeue();
+        }
+        #endregion
+
+        #region 进度条(ProgressBar)
+        /// <summary>
+        /// 增量任务
+        /// </summary>
+        /// <param name="increment"></param>
+        public void IncrementCurrent(double increment)
+        {
+            ProgressBarCurrent.Position += increment;
+            RaisePropertyChanged(nameof(ProgressBarCurrent));
+        }
+        /// <summary>
+        /// 重置任务
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <param name="position"></param>
+        public void ResetCurrent(double maxValue, double position = 0)
+        {
+            ProgressBarCurrent.Position = position;
+            ProgressBarCurrent.MaxValue = maxValue;
+            RaisePropertyChanged(nameof(ProgressBarCurrent));
+        }
+        /// <summary>
+        /// 增量经验进度条
+        /// </summary>
+        /// <param name="increment"></param>
+        public void IncrementExperience(double increment)
+        {
+            ProgressBarExperience.Position += increment;
+            RaisePropertyChanged(nameof(ProgressBarExperience));
+        }
+        /// <summary>
+        /// 重置经验进度条
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <param name="position"></param>
+        public void ResetExperience(double maxValue, double position = 0)
+        {
+            ProgressBarExperience.Position = position;
+            ProgressBarExperience.MaxValue = maxValue;
+            RaisePropertyChanged(nameof(ProgressBarExperience));
+        }
+
+        /// <summary>
+        /// 增量货物
+        /// </summary>
+        /// <param name="increment"></param>
+        public void IncrementItem(double increment)
+        {
+            ProgressBarItem.Position += increment;
+            RaisePropertyChanged(nameof(ProgressBarItem));
+        }
+        /// <summary>
+        /// 重置货物
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <param name="position"></param>
+        public void ResetItem(double maxValue, double position = 0)
+        {
+            ProgressBarItem.Position = position;
+            ProgressBarItem.MaxValue = maxValue;
+            RaisePropertyChanged(nameof(ProgressBarItem));
+        }
+        /// <summary>
+        /// 复位货物
+        /// </summary>
+        /// <param name="position"></param>
+        public void RepositionItem(double position)
+        {
+            position = Math.Min(position, ProgressBarItem.MaxValue);
+            ProgressBarItem.Position = position;
+            RaisePropertyChanged(nameof(ProgressBarItem));
+        }
+
+        /// <summary>
+        /// 增量剧情
+        /// </summary>
+        /// <param name="increment"></param>
+        public void IncrementPlot(double increment)
+        {
+            ProgressBarPlot.Position += increment;
+            RaisePropertyChanged(nameof(ProgressBarPlot));
+        }
+        /// <summary>
+        /// 重置剧情
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <param name="position"></param>
+        public void ResetPlot(double maxValue, double position = 0)
+        {
+            ProgressBarPlot.Position = position;
+            ProgressBarPlot.MaxValue = maxValue;
+            RaisePropertyChanged(nameof(ProgressBarPlot));
+        }
+        /// <summary>
+        /// 增量任务
+        /// </summary>
+        /// <param name="increment"></param>
+        public void IncrementQuest(double increment)
+        {
+            ProgressBarQuest.Position += increment;
+            RaisePropertyChanged(nameof(ProgressBarQuest));
+        }
+        /// <summary>
+        /// 重置任务
+        /// </summary>
+        /// <param name="maxValue"></param>
+        /// <param name="position"></param>
+        public void ResetQuest(double maxValue, double position = 0)
+        {
+            ProgressBarQuest.Position = position;
+            ProgressBarQuest.MaxValue = maxValue;
+            RaisePropertyChanged(nameof(ProgressBarQuest));
+        }
+        #endregion
         #endregion
 
         #region 异步方法(Async Method)
