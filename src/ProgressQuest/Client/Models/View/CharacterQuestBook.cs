@@ -19,7 +19,7 @@ namespace Client.Models
             {
                 if (Acts == null)
                     return 0;
-                return Acts.Count - 1;
+                return Acts.Max(item=>item.Index);
             }
         }
 

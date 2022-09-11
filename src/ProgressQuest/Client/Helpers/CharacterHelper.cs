@@ -323,11 +323,12 @@ namespace Client.Helpers
         }
         #endregion
 
-        #region 获取完成剧幕所需时间
+        #region 装备价格
         /// <summary>
         /// 装备价格
         /// </summary>
         /// <param name="characterLevel">人物等级</param>
+        /// <remarks>5 * 等级平方 + 10 * 等级 + 20</remarks>
         public static int EquipmentPrice(int characterLevel)
         {
             return 5 * (characterLevel * characterLevel) + 10 * characterLevel + 20;
