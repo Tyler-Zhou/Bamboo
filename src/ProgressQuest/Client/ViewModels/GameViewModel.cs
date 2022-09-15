@@ -658,8 +658,8 @@ namespace Client.ViewModels
                 {
                     PlotTask taskModel =(PlotTask)objTask;
                     CommpleteAct(taskModel.ActIndex);
-                    ResetPlot(CharacterHelper.ActTime(taskModel.ActIndex));
-                    AddAct(taskModel.ActIndex);
+                    ResetPlot(CharacterHelper.ActTime(taskModel.ActIndex + 1));
+                    AddAct(taskModel.ActIndex + 1);
                     RaisePropertyChanged(nameof(DataGridActs));
                     if (Current.QuestBook.ActIndex > 1)
                     {
@@ -873,7 +873,7 @@ namespace Client.ViewModels
                        });
                     break;
             }
-            TaskAdd(new PlotTask { ActIndex = Current.QuestBook.ActIndex + 1, Duration = 2 });
+            TaskAdd(new PlotTask { ActIndex = Current.QuestBook.ActIndex, Duration = 2 });
         }
         /// <summary>
         /// 生病的前缀
@@ -1286,7 +1286,7 @@ namespace Client.ViewModels
         /// <returns></returns>
         bool CommpleteAct(int index)
         {
-            var acts = _Character.QuestBook.Acts.Where(item => !item.IsCommplete && item.Index < index);
+            var acts = _Character.QuestBook.Acts.Where(item => !item.IsCommplete && item.Index == index);
             foreach (var item in acts)
             {
                 item.IsCommplete = true;
