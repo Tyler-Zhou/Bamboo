@@ -657,9 +657,9 @@ namespace Client.ViewModels
                 else if (objTask is PlotTask)
                 {
                     PlotTask taskModel =(PlotTask)objTask;
-                    CommpleteAct();
-                    ResetPlot(CharacterHelper.ActTime(taskModel.ActIndex+1));
-                    AddAct(taskModel.ActIndex+1);
+                    CommpleteAct(taskModel.ActIndex);
+                    ResetPlot(CharacterHelper.ActTime(taskModel.ActIndex));
+                    AddAct(taskModel.ActIndex);
                     RaisePropertyChanged(nameof(DataGridActs));
                     if (Current.QuestBook.ActIndex > 1)
                     {
@@ -1262,7 +1262,7 @@ namespace Client.ViewModels
         /// <summary>
         /// 添加剧幕
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="index">剧幕索引</param>
         /// <returns></returns>
         bool AddAct(int index)
         {
@@ -1282,10 +1282,11 @@ namespace Client.ViewModels
         /// <summary>
         /// 完成剧幕
         /// </summary>
+        /// <param name="index">剧幕索引</param>
         /// <returns></returns>
-        bool CommpleteAct()
+        bool CommpleteAct(int index)
         {
-            var acts = _Character.QuestBook.Acts.Where(item => !item.IsCommplete);
+            var acts = _Character.QuestBook.Acts.Where(item => !item.IsCommplete && item.Index < index);
             foreach (var item in acts)
             {
                 item.IsCommplete = true;
