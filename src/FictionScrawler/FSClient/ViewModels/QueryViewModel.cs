@@ -1,7 +1,9 @@
-﻿using FSClient.Models;
+﻿using FSClient.Core;
+using FSClient.Models;
 using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using System;
 using System.Collections.ObjectModel;
 
 namespace FSClient.ViewModels
@@ -14,20 +16,17 @@ namespace FSClient.ViewModels
         #region 成员(Member)
 
         #region 查询文本
-        private string _QueryText = "";
+        private string _KeyWord = "";
         /// <summary>
         /// 查询文本
         /// </summary>
-        public string QueryText
+        public string KeyWord
         {
-            get
-            {
-                return _QueryText;
-            }
+            get { return _KeyWord; }
             set
             {
-                _QueryText = value;
-                RaisePropertyChanged();
+                _KeyWord = value;
+                RaisePropertyChanged(nameof(KeyWord));
             }
         }
         #endregion
@@ -36,12 +35,24 @@ namespace FSClient.ViewModels
         /// 书籍集合
         /// </summary>
         public ObservableCollection<BookModel> Books{get; set;}
+        /// <summary>
+        /// 小说解析器
+        /// </summary>
+        FictionParser _FictionParser;
         #endregion
 
         #region 服务(Services)
+        /// <summary>
+        /// 爬虫服务
+        /// </summary>
+        IScrawlerService _ScrawlerService;
         #endregion
 
         #region 命令(Commands)
+        /// <summary>
+        /// 查询
+        /// </summary>
+        public DelegateCommand QueryCommand { get; private set; }
         /// <summary>
         /// 下载
         /// </summary>
@@ -53,8 +64,11 @@ namespace FSClient.ViewModels
         /// 查询视图模型
         /// </summary>
         /// <param name="containerProvider"></param>
-        public QueryViewModel(IContainerProvider containerProvider) : base(containerProvider)
+        /// <param name="scrawlerService"></param>
+        public QueryViewModel(IContainerProvider containerProvider, IScrawlerService scrawlerService) : base(containerProvider)
         {
+            _ScrawlerService = scrawlerService;
+            QueryCommand = new DelegateCommand(Query);
             DownloadCommand = new DelegateCommand<BookModel>(Download);
             InitData();
         }
@@ -95,22 +109,35 @@ namespace FSClient.ViewModels
         /// </summary>
         private void InitData()
         {
-            Books = new ObservableCollection<BookModel>()
-            {
-                new BookModel()
-                {
-                    Key = "0001",
-                    Name = "书籍1",
-                    Author="作者1"
-                },
-                new BookModel()
-                {
-                    Key = "0002",
-                    Name = "书籍1",
-                    Author="作者2"
-                },
-            };
+            Books = new ObservableCollection<BookModel>();
         }
+        /// <summary>
+        /// 下载选中书籍
+        /// </summary>
+        /// <param name="keyWord">输入搜索词</param>
+        private void Query()
+        {
+            if (string.IsNullOrWhiteSpace(KeyWord))
+                return;
+
+            BookSourceModel bookSource = new BookSourceModel()
+            {
+                Key = Guid.NewGuid(),
+                Name = "笔趣阁库小说",
+                Url = "https://www.shuquge.com/",
+                SearchUrl = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
+                Group = "网络小说",
+                XPath_List = "//table[starts-with(@class,'grid')]/tr",
+                XPath_Name = "//td[1]/a",
+                XPath_Type = "",
+                XPath_Author = "//td[3]",
+                XPath_Status = "//td[6]",
+            };
+            FictionParser fictionParser = new FictionParser(bookSource);
+            Books = fictionParser.QueryBooks(KeyWord);
+            RaisePropertyChanged(nameof(Books));
+        }
+
         /// <summary>
         /// 下载选中书籍
         /// </summary>

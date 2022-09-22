@@ -1,4 +1,5 @@
-﻿using FSClient.Interfaces;
+﻿using FSClient.Core;
+using FSClient.Interfaces;
 using FSClient.ViewModels;
 using FSClient.Views;
 using Microsoft.Extensions.Logging;
@@ -106,6 +107,7 @@ namespace FSClient
             containerRegistry.RegisterInstance(_Logger);
             //Service
             containerRegistry.Register<IWindowService, MainViewModel>();
+            containerRegistry.Register<IScrawlerService, ScrawlerService>();
 
             //View & ViewModel
             containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();

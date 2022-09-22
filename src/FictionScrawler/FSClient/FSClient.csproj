@@ -190,6 +190,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FSClient.Core\FSClient.Core.csproj">
+      <Project>{55a28f36-e672-4906-8eb9-2c461ed459df}</Project>
+      <Name>FSClient.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FSClient.Models\FSClient.Models.csproj">
       <Project>{e5860d35-ee03-47e9-ba7c-38ae98bcd0f1}</Project>
       <Name>FSClient.Models</Name>

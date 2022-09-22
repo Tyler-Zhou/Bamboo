@@ -39,9 +39,22 @@
             VerticalContentAlignment="Stretch"
             prism:RegionManager.RegionName="{x:Static localCommon:PrismConstant.MAIN_VIEW_REGION_NAME}" />
         <StatusBar Grid.Row="2">
-            <StackPanel Orientation="Horizontal">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <TextBlock x:Name="TextBlockMessage" Text="" />
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="1">
                 <TextBlock Text="{Binding CurrentTime}" />
-            </StackPanel>
+            </StatusBarItem>
         </StatusBar>
     </Grid>
 </Window>

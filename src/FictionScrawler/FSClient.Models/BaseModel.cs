@@ -1,4 +1,5 @@
 ﻿using Prism.Mvvm;
+using System;
 
 namespace FSClient.Models
 {
@@ -8,11 +9,11 @@ namespace FSClient.Models
     public class BaseModel : BindableBase
     {
         #region 键值
-        private string _Key = "";
+        private Guid _Key = Guid.Empty;
         /// <summary>
         /// 键值
         /// </summary>
-        public string Key
+        public Guid Key
         {
             get
             {
