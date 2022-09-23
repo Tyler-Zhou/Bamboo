@@ -7,6 +7,25 @@ namespace Reader.Client.Models
     /// </summary>
     public class BookModel : BaseModel
     {
+        #region 标识键
+        private string _Key = "";
+        /// <summary>
+        /// 标识键
+        /// </summary>
+        public string Key
+        {
+            get
+            {
+                return _Key;
+            }
+            set
+            {
+                _Key = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 名称
         private string _Name = "";
         /// <summary>
@@ -45,39 +64,39 @@ namespace Reader.Client.Models
         }
         #endregion
 
-        #region 类型
-        private string _Type = "";
+        #region 标签(类型)
+        private string _Tag = "";
         /// <summary>
-        /// 类型
+        /// 标签(类型)
         /// </summary>
-        public string Type
+        public string Tag
         {
             get
             {
-                return _Type;
+                return _Tag;
             }
             set
             {
-                _Type = value;
+                _Tag = value;
                 RaisePropertyChanged();
             }
         }
         #endregion
 
-        #region 网址
-        private string _Url = "";
+        #region 链接
+        private string _Link = "";
         /// <summary>
-        /// 网址
+        /// 链接
         /// </summary>
-        public string Url
+        public string Link
         {
             get
             {
-                return _Url;
+                return _Link;
             }
             set
             {
-                _Url = value;
+                _Link = value;
                 RaisePropertyChanged();
             }
         }
@@ -121,12 +140,50 @@ namespace Reader.Client.Models
         }
         #endregion
 
+        #region 简介
+        private string _Introduction = "";
+        /// <summary>
+        /// 简介
+        /// </summary>
+        public string Introduction
+        {
+            get
+            {
+                return _Introduction;
+            }
+            set
+            {
+                _Introduction = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region 封面链接
+        private string _PosterUrl = "";
+        /// <summary>
+        /// 封面链接
+        /// </summary>
+        public string PosterUrl
+        {
+            get
+            {
+                return _PosterUrl;
+            }
+            set
+            {
+                _PosterUrl = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 书源 Key
-        private Guid _SourceKey = Guid.Empty;
+        private string _SourceKey = "";
         /// <summary>
         /// 书源 Key
         /// </summary>
-        public Guid SourceKey
+        public string SourceKey
         {
             get
             {

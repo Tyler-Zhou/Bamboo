@@ -111,7 +111,7 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 单书源可见
-        public bool _SingleVisible = true;
+        private bool _SingleVisible = true;
         /// <summary>
         /// 单书源可见
         /// </summary>
@@ -174,7 +174,7 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 多书源可见
-        public bool _MultipleVisible = false;
+        private bool _MultipleVisible = false;
         /// <summary>
         /// 多书源可见
         /// </summary>
@@ -239,10 +239,22 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 书籍集合
+        ObservableCollection<BookModel> _Books;
         /// <summary>
         /// 书籍集合
         /// </summary>
-        public ObservableCollection<BookModel> Books { get; set; } 
+        public ObservableCollection<BookModel> Books
+        {
+            get
+            {
+                return _Books;
+            }
+            set
+            {
+                _Books = value;
+                RaisePropertyChanged(nameof(Books));
+            }
+        }
         #endregion
         #endregion
 
@@ -312,16 +324,16 @@ namespace Reader.Client.ViewModels
             {
                 new BookSourceModel()
                 {
-                    Key = Guid.NewGuid(),
+                    Key = "shuquge",
                     Name = "笔趣阁库小说",
-                    Url = "https://www.shuquge.com/",
-                    SearchUrl = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
+                    Link = "https://www.shuquge.com/",
+                    SearchLink = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
                     Group = "网络小说",
-                    XPath_List = "//table[starts-with(@class,'grid')]/tr",
-                    XPath_Name = "//td[1]/a",
-                    XPath_Type = "",
-                    XPath_Author = "//td[3]",
-                    XPath_Status = "//td[6]",
+                    SearchXPathList = "//table[starts-with(@class,'grid')]/tr",
+                    SearchXPathName = "//td[1]/a",
+                    SearchXPathTag = "",
+                    SearchXPathAuthor = "//td[3]",
+                    SearchXPathStatus = "//td[6]",
                 },
             };
             Books = new ObservableCollection<BookModel>();
@@ -329,7 +341,6 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 下载选中书籍
         /// </summary>
-        /// <param name="keyWord">输入搜索词</param>
         private void SearchBookList()
         {
             if (string.IsNullOrWhiteSpace(KeyWord))
@@ -365,11 +376,11 @@ namespace Reader.Client.ViewModels
                 }
                 if (Books.Count <= 0)
                 {
-                    ShowInformation("未找到书籍");
+                    ShowInformation("无匹配查询结果，请更换关键词后重试！");
                 }
                 else
                 {
-                    ShowInformation($"共找到书籍{Books.Count}");
+                    ShowInformation($"查找成功，相关数据[{Books.Count}]条");
                 }
 
                 RaisePropertyChanged(nameof(Books));
@@ -386,8 +397,10 @@ namespace Reader.Client.ViewModels
         /// <param name="model">书籍对象</param>
         private void Download(BookModel model)
         {
-            BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.Key.Equals(model.Key));
+            BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.Key.Equals(model.SourceKey));
             FictionSpider fictionSpider = new FictionSpider(bookSource);
+            ObservableCollection<ChapterModel> chapters= fictionSpider.ReplenishBookReturnChapterList(model);
+            RaisePropertyChanged(nameof(Books));
         }
         #endregion
     }

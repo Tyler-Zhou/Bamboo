@@ -291,7 +291,9 @@ namespace Reader.Client.Spider
                 _Request.CookieContainer = RequestCookies;
             }
         }
-
+        /// <summary>
+        /// 释放资源
+        /// </summary>
         public virtual void Dispose()
         {
             if (_Response != null)

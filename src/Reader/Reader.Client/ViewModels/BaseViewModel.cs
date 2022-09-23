@@ -2,6 +2,7 @@
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
+using Reader.Client.Events;
 using Reader.Client.Extensions;
 using Reader.Client.Interfaces;
 using Reader.Client.Models;
@@ -38,7 +39,7 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 基本视图模型
         /// </summary>
-        /// <param name="containerProvider"></param>
+        /// <param name="containerProvider">容器提供者(DryICO)</param>
         public BaseViewModel(IContainerProvider containerProvider)
         {
             ContainerProvider = containerProvider;

@@ -40,18 +40,6 @@ namespace Reader.Client.ViewModels
         }
         #endregion
 
-        #region 正在加载窗体是否可见
-        public bool _LoadingVisible = false;
-        /// <summary>
-        /// 正在加载窗体是否可见
-        /// </summary>
-        public bool LoadingVisible
-        {
-            get { return _LoadingVisible; }
-            set { _LoadingVisible = value; RaisePropertyChanged(); }
-        }
-        #endregion
-
         /// <summary>
         /// 方法集合
         /// </summary>
@@ -85,9 +73,7 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="logger"></param>
-        /// <param name="regionManager"></param>
-        /// <param name="eventAggregator"></param>
+        /// <param name="containerProvider">容器提供者(DryICO)</param>
         public MainViewModel(IContainerProvider containerProvider)
         {
             ContainerProvider = containerProvider;

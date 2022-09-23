@@ -9,19 +9,19 @@ namespace Reader.Client.Models
     public class BaseModel : BindableBase
     {
         #region 键值
-        private Guid _Key = Guid.Empty;
+        private Guid _ID = Guid.Empty;
         /// <summary>
         /// 键值
         /// </summary>
-        public Guid Key
+        public Guid ID
         {
             get
             {
-                return _Key;
+                return _ID;
             }
             set
             {
-                _Key = value;
+                _ID = value;
                 RaisePropertyChanged();
             }
         }

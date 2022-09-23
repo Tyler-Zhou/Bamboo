@@ -3,196 +3,194 @@
     /// <summary>
     /// 书源模型
     /// </summary>
-    public class BookSourceModel : BaseModel
+    public class BookSourceModel
     {
-        #region 名称
-        private string _Name = "";
+        /// <summary>
+        /// 键值
+        /// </summary>
+        public string Key { get; set; } = "";
         /// <summary>
         /// 名称
         /// </summary>
-        public string Name
-        {
-            get
-            {
-                return _Name;
-            }
-            set
-            {
-                _Name = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
+        public string Name{ get;set;} = "";
 
-        #region 分组
-        private string _Group = "";
         /// <summary>
         /// 分组
         /// </summary>
-        public string Group
-        {
-            get
-            {
-                return _Group;
-            }
-            set
-            {
-                _Group = value;
-                RaisePropertyChanged();
-            }
-        }
+        public string Group { get; set; } = "";
+
+        /// <summary>
+        /// 链接
+        /// </summary>
+        public string Link { get; set; } = "";
+        /// <summary>
+        /// 是否调试
+        /// </summary>
+        public bool IsDebug { get; set; } = false;
+
+        #region 搜索(Search)
+        /// <summary>
+        /// 搜索-链接
+        /// </summary>
+        public string SearchLink { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍列表
+        /// </summary>
+        public string SearchXPathList { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍Key
+        /// </summary>
+        public string SearchXPathKey { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-Regex书籍Key
+        /// </summary>
+        public string SearchRegexKey { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍名称
+        /// </summary>
+        public string SearchXPathName { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍链接
+        /// </summary>
+        public string SearchXPathLink { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-Attribute书籍链接
+        /// </summary>
+        public string SearchAttributeLink { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍封面链接
+        /// </summary>
+        public string SearchXPathPosterLink { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-Attribute书籍封面Url
+        /// </summary>
+        public string SearchAttributePosterUrl { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍标签(分类)
+        /// </summary>
+        public string SearchXPathTag { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍作者
+        /// </summary>
+        public string SearchXPathAuthor { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍更新时间
+        /// </summary>
+        public string SearchXPathUpdateTime { get; set; } = "";
+
+        /// <summary>
+        /// 搜索-XPath书籍状态
+        /// </summary>
+        public string SearchXPathStatus { get; set; } = "";
         #endregion
 
-        #region 网址
-        private string _Url = "";
+        #region 详细(Detail)
         /// <summary>
-        /// 网址
+        /// 详细-XPath书籍信息
         /// </summary>
-        public string Url
-        {
-            get
-            {
-                return _Url;
-            }
-            set
-            {
-                _Url = value;
-                RaisePropertyChanged();
-            }
-        }
+        public string DetailXPathInfo { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍Key
+        /// </summary>
+        public string DetailXPathKey { get; set; } = "";
+
+        /// <summary>
+        /// 详细-Regex书籍Key
+        /// </summary>
+        public string DetailRegexKey { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍名称
+        /// </summary>
+        public string DetailXPathName { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍标签(分类)
+        /// </summary>
+        public string DetailXPathTag { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍作者
+        /// </summary>
+        public string DetailXPathAuthor { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍简介
+        /// </summary>
+        public string DetailXPathIntroduction { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍更新时间
+        /// </summary>
+        public string DetailXPathUpdateTime { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍状态
+        /// </summary>
+        public string DetailXPathStatus { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath书籍封面链接
+        /// </summary>
+        public string DetailXPathPosterLink { get; set; } = "";
+
+        /// <summary>
+        /// 详细-Attribute书籍封面Url
+        /// </summary>
+        public string DetailAttributePosterUrl { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath章节列表
+        /// </summary>
+        public string DetailXPathChapterList { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath章节Key
+        /// </summary>
+        public string DetailXPathChapterKey { get; set; } = "";
+
+        /// <summary>
+        /// 详细-Regex章节Key
+        /// </summary>
+        public string DetailRegexChapterKey { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath章节名称
+        /// </summary>
+        public string DetailXPathChapterName { get; set; } = "";
+
+        /// <summary>
+        /// 详细-XPath章节链接
+        /// </summary>
+        public string DetailXPathChapterLink { get; set; } = "";
         #endregion
 
-        #region 查询网址
-        private string _SearchUrl = "";
+        #region 章节(Chapter)
         /// <summary>
-        /// 查询网址
+        /// 章节-XPath名称
         /// </summary>
-        public string SearchUrl
-        {
-            get
-            {
-                return _SearchUrl;
-            }
-            set
-            {
-                _SearchUrl = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
+        public string ChapterXPathName { get; set; } = "";
 
-        #region 查询-XPath书籍列表
-        private string _XPath_List = "";
         /// <summary>
-        /// 查询-XPath书籍列表
+        /// 章节-XPath内容
         /// </summary>
-        public string XPath_List
-        {
-            get
-            {
-                return _XPath_List;
-            }
-            set
-            {
-                _XPath_List = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 查询-XPath书籍名称
-        private string _XPath_Name = "";
+        public string ChapterXPathContent { get; set; } = "";
         /// <summary>
-        /// 查询-XPath书籍名称
+        /// 章节-Regex内容
         /// </summary>
-        public string XPath_Name
-        {
-            get
-            {
-                return _XPath_Name;
-            }
-            set
-            {
-                _XPath_Name = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 查询-XPath书籍类型
-        private string _XPath_Type = "";
-        /// <summary>
-        /// 查询-XPath书籍类型
-        /// </summary>
-        public string XPath_Type
-        {
-            get
-            {
-                return _XPath_Type;
-            }
-            set
-            {
-                _XPath_Type = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 查询-XPath书籍作者
-        private string _XPath_Author = "";
-        /// <summary>
-        /// 查询-XPath书籍作者
-        /// </summary>
-        public string XPath_Author
-        {
-            get
-            {
-                return _XPath_Author;
-            }
-            set
-            {
-                _XPath_Author = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 查询-XPath书籍更新时间
-        private string _XPath_UpdateTime = "";
-        /// <summary>
-        /// 查询-XPath书籍更新时间
-        /// </summary>
-        public string XPath_UpdateTime
-        {
-            get
-            {
-                return _XPath_UpdateTime;
-            }
-            set
-            {
-                _XPath_UpdateTime = value;
-                RaisePropertyChanged();
-            }
-        }
-        #endregion
-
-        #region 查询-XPath书籍状态
-        private string _XPath_Status = "";
-        /// <summary>
-        /// 查询-XPath书籍状态
-        /// </summary>
-        public string XPath_Status
-        {
-            get
-            {
-                return _XPath_Status;
-            }
-            set
-            {
-                _XPath_Status = value;
-                RaisePropertyChanged();
-            }
-        }
+        public string ChapterRegexContent { get; set; } = "";
         #endregion
     }
 }

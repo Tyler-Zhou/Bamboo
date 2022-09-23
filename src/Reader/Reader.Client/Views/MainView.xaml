@@ -27,11 +27,23 @@
                     Command="{Binding NavigateViewCommand}"
                     CommandParameter="IndexView"
                     Header="{DynamicResource MenuItemIndex}" />
+                <MenuItem Command="{Binding ExitApplicationCommand}" Header="{DynamicResource MenuItemExitApplication}" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource MenuItemSearch}">
                 <MenuItem
                     Command="{Binding NavigateViewCommand}"
                     CommandParameter="SearchView"
-                    Header="{DynamicResource MenuItemSearch}" />
-                <MenuItem Command="{Binding ExitApplicationCommand}" Header="{DynamicResource MenuItemExitApplication}" />
+                    Header="{DynamicResource MenuItemSearchBook}" />
+            </MenuItem>
+            <MenuItem Header="{DynamicResource MenuItemBookSource}">
+                <MenuItem
+                    Command="{Binding NavigateViewCommand}"
+                    CommandParameter="BookSourceManageView"
+                    Header="{DynamicResource MenuItemBookSourceManage}" />
+                <MenuItem
+                    Command="{Binding NavigateViewCommand}"
+                    CommandParameter="BookSourceDebugView"
+                    Header="{DynamicResource MenuItemBookSourceDebug}" />
             </MenuItem>
         </Menu>
         <ContentControl

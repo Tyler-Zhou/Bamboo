@@ -1,7 +1,6 @@
 ﻿using Prism.Events;
-using Prism.Services.Dialogs;
+using Reader.Client.Events;
 using Reader.Client.Extensions;
-using Reader.Client.Models;
 using Reader.Client.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -38,6 +37,7 @@ namespace Reader.Client.Views
         /// <summary>
         /// MainView.xaml 的交互逻辑
         /// </summary>
+        /// <param name="eventAggregator">事件聚合器</param>
         public MainView(IEventAggregator eventAggregator)
         {
             InitializeComponent();
