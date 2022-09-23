@@ -134,7 +134,7 @@ namespace Reader.Client.Spider
                     //获取小说简介
                     bookModel.Introduction = docOne.XPathInnerText(_BookSource.DetailXPathIntroduction, _BookSource.IsDebug);
                     //小说封皮链接
-                    bookModel.PosterUrl = docOne.XPathAttributeValue(_BookSource.DetailXPathPosterLink, _BookSource.DetailAttributePosterUrl, _BookSource.IsDebug);
+                    bookModel.PosterLink = docOne.XPathAttributeValue(_BookSource.DetailXPathPosterLink, _BookSource.DetailAttributePosterUrl, _BookSource.IsDebug);
                     //获取小说封皮
                     //获取最后更新章节及链接
                 }

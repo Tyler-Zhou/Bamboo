@@ -160,19 +160,38 @@ namespace Reader.Client.Models
         #endregion
 
         #region 封面链接
-        private string _PosterUrl = "";
+        private string _PosterLink = "";
         /// <summary>
         /// 封面链接
         /// </summary>
-        public string PosterUrl
+        public string PosterLink
         {
             get
             {
-                return _PosterUrl;
+                return _PosterLink;
             }
             set
             {
-                _PosterUrl = value;
+                _PosterLink = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region 封面链接
+        private byte[] _PosterContent = null;
+        /// <summary>
+        /// 封面(二进制)
+        /// </summary>
+        public byte[] PosterContent
+        {
+            get
+            {
+                return _PosterContent;
+            }
+            set
+            {
+                _PosterContent = value;
                 RaisePropertyChanged();
             }
         }
