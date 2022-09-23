@@ -178,7 +178,7 @@ namespace Reader.Client.Models
         }
         #endregion
 
-        #region 封面链接
+        #region 封面(二进制)
         private byte[] _PosterContent = null;
         /// <summary>
         /// 封面(二进制)
