@@ -218,31 +218,45 @@
                 </DockPanel>
             </TabItem>
             <TabItem Header="{DynamicResource TabItemSourceList}">
-                <ListBox
-                    x:Name="ListBoxBookSourceListBox"
-                    ItemsSource="{Binding BookSources}"
-                    SelectedItem="{Binding CurrentSource}">
-                    <behavior:Interaction.Triggers>
-                        <behavior:EventTrigger EventName="MouseDoubleClick">
-                            <behavior:InvokeCommandAction Command="{Binding EditSourceCommand}" CommandParameter="{Binding ElementName=ListBoxBookSourceListBox, Path=SelectedItem}" />
-                        </behavior:EventTrigger>
-                    </behavior:Interaction.Triggers>
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <DockPanel LastChildFill="False">
-                                <TextBlock
-                                    DockPanel.Dock="Top"
-                                    FontWeight="Bold"
-                                    Text="{Binding Name}"
-                                    TextAlignment="Left" />
-                                <TextBlock
-                                    DockPanel.Dock="Bottom"
-                                    Text="{Binding Link}"
-                                    TextAlignment="Left" />
-                            </DockPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                <DockPanel>
+                    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                        <Button
+                            Margin="5,5"
+                            Command="{Binding AddCommand}"
+                            Content="{DynamicResource TabItemButtonAdd}" />
+                        <Button
+                            Margin="5,5"
+                            Command="{Binding RemoveCommand}"
+                            Content="{DynamicResource TabItemButtonRemove}" />
+                    </StackPanel>
+                    <ListBox
+                        x:Name="ListBoxBookSourceListBox"
+                        Margin="0,5"
+                        DockPanel.Dock="Bottom"
+                        ItemsSource="{Binding BookSources}"
+                        SelectedItem="{Binding CurrentSource}">
+                        <behavior:Interaction.Triggers>
+                            <behavior:EventTrigger EventName="MouseDoubleClick">
+                                <behavior:InvokeCommandAction Command="{Binding EditCommand}" CommandParameter="{Binding ElementName=ListBoxBookSourceListBox, Path=SelectedItem}" />
+                            </behavior:EventTrigger>
+                        </behavior:Interaction.Triggers>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <DockPanel LastChildFill="False">
+                                    <TextBlock
+                                        DockPanel.Dock="Top"
+                                        FontWeight="Bold"
+                                        Text="{Binding Name}"
+                                        TextAlignment="Left" />
+                                    <TextBlock
+                                        DockPanel.Dock="Bottom"
+                                        Text="{Binding Link}"
+                                        TextAlignment="Left" />
+                                </DockPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
             </TabItem>
         </TabControl>
     </Grid>

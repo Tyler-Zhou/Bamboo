@@ -114,10 +114,9 @@ namespace Reader.Client.ViewModels
 
         #region 命令(Commands)
         /// <summary>
-        /// 查询
+        /// 编辑源
         /// </summary>
-        public DelegateCommand<BookSourceModel> EditSourceCommand { get; private set; }
-
+        public DelegateCommand<BookSourceModel> EditCommand { get; private set; }
         /// <summary>
         /// 调试
         /// </summary>
@@ -130,6 +129,14 @@ namespace Reader.Client.ViewModels
         /// 生成源
         /// </summary>
         public DelegateCommand GenerateCommand { get; private set; }
+        /// <summary>
+        /// 添加源
+        /// </summary>
+        public DelegateCommand AddCommand { get; private set; }
+        /// <summary>
+        /// 删除源
+        /// </summary>
+        public DelegateCommand RemoveCommand { get; private set; }
         #endregion
 
         #region 构造函数(Constructor)
@@ -140,7 +147,9 @@ namespace Reader.Client.ViewModels
         public BookSourceDebugViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
-            EditSourceCommand = new DelegateCommand<BookSourceModel>(EditSource);
+            AddCommand = new DelegateCommand(AddSource);
+            EditCommand = new DelegateCommand<BookSourceModel>(EditSource);
+            RemoveCommand = new DelegateCommand(RemoveSource);
             DebugCommand = new DelegateCommand(DebugSource);
             SaveCommand = new DelegateCommand(SaveSource);
             GenerateCommand = new DelegateCommand(GenerateSource);
@@ -185,7 +194,19 @@ namespace Reader.Client.ViewModels
         {
             BookSources = _BookSourceService.GetAll();
         }
-
+        /// <summary>
+        /// 添加源
+        /// </summary>
+        private void AddSource()
+        {
+            if (string.IsNullOrWhiteSpace(CurrentSource.Name) || string.IsNullOrWhiteSpace(CurrentSource.Link))
+                return;
+            BookSourceModel model = new BookSourceModel();
+            model.ID = Guid.NewGuid();
+            model.Name = "新书源";
+            BookSources.Insert(0,model);
+            CurrentSource = model;
+        }
         /// <summary>
         /// 编辑书源
         /// </summary>
@@ -193,6 +214,13 @@ namespace Reader.Client.ViewModels
         private void EditSource(BookSourceModel model)
         {
             CurrentSource = model;
+        }
+        /// <summary>
+        /// 删除源
+        /// </summary>
+        private void RemoveSource()
+        {
+            BookSources.Remove(CurrentSource);
         }
         /// <summary>
         /// 
@@ -244,6 +272,7 @@ namespace Reader.Client.ViewModels
         {
             stringBuilder.Clear();
             CurrentSource.IsDebug = false;
+            _BookSourceService.Save(CurrentSource);
             ResultText = _BookSourceService.Generate(CurrentSource);
         }
         /// <summary>
