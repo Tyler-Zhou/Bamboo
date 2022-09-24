@@ -16,7 +16,7 @@ namespace Reader.Client.Extensions
         {
             try
             {
-                return input.ToString(@"d\.mm\:ss\.fff");
+                return input.ToString(@"mm\:ss\.fff");
             }
             catch
             {

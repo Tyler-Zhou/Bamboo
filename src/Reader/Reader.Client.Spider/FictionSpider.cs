@@ -209,6 +209,12 @@ namespace Reader.Client.Spider
                     bookModel.PosterLink = docOne.XPathAttributeValue(_BookSource.DetailXPathPosterLink, _BookSource.DetailAttributePosterLink, _BookSource.IsDebug);
                     WriteDebugLog($"└{bookModel.PosterLink}");
                     //获取小说封皮
+                    if(!string.IsNullOrWhiteSpace(bookModel.PosterLink))
+                    {
+                        WriteDebugLog($"┌完善书籍封皮");
+                        bookModel.PosterContent = BookPoster(bookModel.PosterLink);
+                        WriteDebugLog($"┌封皮字节大小:{bookModel.PosterContent.Length}");
+                    }
                     //获取最后更新章节及链接
                 } 
                 #endregion
@@ -233,7 +239,7 @@ namespace Reader.Client.Spider
                         //章节Key
                         WriteDebugLog($"┌获取章节Key");
                         string keyText = docOne.XPathInnerText(_BookSource.DetailXPathChapterKey, _BookSource.IsDebug);
-                        chapter.Key = keyText.RegexText(_BookSource.DetailRegexKey, "R", _BookSource.IsDebug);
+                        chapter.Key = keyText.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
                         WriteDebugLog($"└{chapter.Key}");
                         //章节名称
                         WriteDebugLog($"┌获取章节名称");
@@ -249,7 +255,7 @@ namespace Reader.Client.Spider
                         if (string.IsNullOrWhiteSpace(chapter.Key) && !string.IsNullOrWhiteSpace(chapter.Link))
                         {
                             WriteDebugLog($"┌从链接获取章节Key");
-                            chapter.Key = chapter.Link.RegexText(_BookSource.DetailRegexKey, "R", _BookSource.IsDebug);
+                            chapter.Key = chapter.Link.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
                             WriteDebugLog($"└{chapter.Key}");
                         }
                         chapters.Add(chapter);
@@ -264,6 +270,17 @@ namespace Reader.Client.Spider
                 throw ex;
             }
             return chapters;
+        }
+
+        /// <summary>
+        /// 根据封面链接获取封面
+        /// </summary>
+        /// <param name="posterLink"></param>
+        /// <returns></returns>
+        public byte[] BookPoster(string posterLink)
+        {
+            Url = posterLink;
+            return GetImageByte();
         }
 
         /// <summary>

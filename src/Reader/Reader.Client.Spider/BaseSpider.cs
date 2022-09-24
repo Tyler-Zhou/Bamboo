@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 
 namespace Reader.Client.Spider
@@ -90,6 +91,15 @@ namespace Reader.Client.Spider
         public virtual void PostHtmlContent()
         {
             HtmlContent = string.Empty;
+        }
+
+        /// <summary>
+        /// 获取图片字节
+        /// </summary>
+        /// <returns></returns>
+        public virtual byte[] GetImageByte()
+        {
+            return null;
         }
         #endregion
     }
@@ -410,7 +420,69 @@ namespace Reader.Client.Spider
             }
         }
 
+        /// <summary>
+        /// 获取图片字节
+        /// </summary>
+        /// <returns></returns>
+        public override byte[] GetImageByte()
+        {
+            InitSetting();
+            byte[] imgByte = null;
+            _Response = _Request.GetResponse() as HttpWebResponse;
+            try
+            {
+                using (Stream respStream = _Response.GetResponseStream())
+                {
+                    byte[] buffer = new byte[1024];
+                    int byteCount;
+                    //如果包含GZIP,需要解压
+                    if (!string.IsNullOrEmpty(_Response.ContentEncoding) && _Response.ContentEncoding.ToUpper().IndexOf("GZIP") > -1)
+                    {
+                        //using (MemoryStream sr = new MemoryStream(new GZipStream(respStream, CompressionMode.Decompress), Encoding.Default))
+                        //{
+                        //    HtmlContent = sr.ReadToEnd();
 
+                        //}
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            do
+                            {
+                                byteCount = respStream.Read(buffer, 0, buffer.Length);
+                                memoryStream.Write(buffer, 0, byteCount);
+                            } while (byteCount > 0);
+                            memoryStream.Seek(0, SeekOrigin.Begin);
+                            imgByte = memoryStream.ToArray();
+                        }
+                    }
+                    else
+                    {
+                        using (MemoryStream memoryStream = new MemoryStream())
+                        {
+                            do
+                            {
+                                byteCount = respStream.Read(buffer, 0, buffer.Length);
+                                memoryStream.Write(buffer, 0, byteCount);
+                            } while (byteCount > 0);
+                            memoryStream.Seek(0, SeekOrigin.Begin);
+                            imgByte = memoryStream.ToArray();
+                        }
+                    }
+                }
+            }
+            catch (WebException webEx)
+            {
+                throw webEx;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                Dispose();
+            }
+            return imgByte;
+        }
         #endregion
     }
 }
