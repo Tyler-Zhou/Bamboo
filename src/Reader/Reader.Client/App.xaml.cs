@@ -107,6 +107,7 @@ namespace Reader.Client
             ////View & ViewModel
             //containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
             containerRegistry.RegisterForNavigation<SearchView, SearchViewModel>();
+            containerRegistry.RegisterForNavigation<BookSourceDebugView, BookSourceDebugViewModel>();
 
         }
         #endregion

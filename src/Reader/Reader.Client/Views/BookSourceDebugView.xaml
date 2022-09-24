@@ -1,0 +1,228 @@
+﻿<UserControl
+    x:Class="Reader.Client.Views.BookSourceDebugView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Reader.Client.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,5,5,0" />
+            <Setter Property="DockPanel.Dock" Value="Left" />
+            <Setter Property="TextAlignment" Value="Right" />
+            <Setter Property="Width" Value="125" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,5,0" />
+            <Setter Property="DockPanel.Dock" Value="Right" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="0.6*" />
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Column="0">
+            <DockPanel>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxBase}">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockName}" />
+                            <TextBox Text="{Binding CurrentSource.Name}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockGroup}" />
+                            <TextBox Text="{Binding CurrentSource.Group}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockLink}" />
+                            <TextBox Text="{Binding CurrentSource.Link}" />
+                        </DockPanel>
+                    </DockPanel>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxSearch}">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchLink}" />
+                            <TextBox Text="{Binding CurrentSource.SearchLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathList}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathList}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathKey}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchRegexKey}" />
+                            <TextBox Text="{Binding CurrentSource.SearchRegexKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathName}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathName}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathLink}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchAttributeLink}" />
+                            <TextBox Text="{Binding CurrentSource.SearchAttributeLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathPosterLink}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathPosterLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchAttributePosterLink}" />
+                            <TextBox Text="{Binding CurrentSource.SearchAttributePosterLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathTag}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathTag}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathAuthor}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathAuthor}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathUpdateTime}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathUpdateTime}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockSearchXPathStatus}" />
+                            <TextBox Text="{Binding CurrentSource.SearchXPathStatus}" />
+                        </DockPanel>
+                    </DockPanel>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxDetail}">
+                    <DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathInfo}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathInfo}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathKey}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailRegexKey}" />
+                            <TextBox Text="{Binding CurrentSource.DetailRegexKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathName}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathName}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathTag}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathTag}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathAuthor}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathAuthor}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathIntroduction}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathIntroduction}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathUpdateTime}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathUpdateTime}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathStatus}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathStatus}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathPosterLink}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathPosterLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailAttributePosterLink}" />
+                            <TextBox Text="{Binding CurrentSource.DetailAttributePosterLink}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathChapterList}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathChapterList}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathChapterKey}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathChapterKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailRegexChapterKey}" />
+                            <TextBox Text="{Binding CurrentSource.DetailRegexChapterKey}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathChapterName}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathChapterName}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailXPathChapterLink}" />
+                            <TextBox Text="{Binding CurrentSource.DetailXPathChapterLink}" />
+                        </DockPanel>
+                    </DockPanel>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxChapter}">
+                    <DockPanel LastChildFill="False">
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockChapterXPathName}" />
+                            <TextBox Text="{Binding CurrentSource.ChapterXPathName}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockChapterXPathContent}" />
+                            <TextBox Text="{Binding CurrentSource.ChapterXPathContent}" />
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockChapterRegexContent}" />
+                            <TextBox Text="{Binding CurrentSource.ChapterRegexContent}" />
+                        </DockPanel>
+                    </DockPanel>
+                </GroupBox>
+            </DockPanel>
+        </ScrollViewer>
+        <TabControl Grid.Column="1">
+            <TabItem Header="{DynamicResource TabItemSourceDebug}">
+                <TextBox
+                    AcceptsReturn="True"
+                    IsReadOnly="True"
+                    TextWrapping="Wrap"
+                    VerticalScrollBarVisibility="Visible" />
+            </TabItem>
+            <TabItem Header="{DynamicResource TabItemSourceList}">
+                <ListBox
+                    x:Name="ListBoxBookSourceListBox"
+                    ItemsSource="{Binding BookSources}"
+                    SelectedItem="{Binding CurrentSource}">
+                    <behavior:Interaction.Triggers>
+                        <behavior:EventTrigger EventName="MouseDoubleClick">
+                            <behavior:InvokeCommandAction Command="{Binding EditSourceCommand}" CommandParameter="{Binding ElementName=ListBoxBookSourceListBox, Path=SelectedItem}" />
+                        </behavior:EventTrigger>
+                    </behavior:Interaction.Triggers>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel LastChildFill="False">
+                                <TextBlock
+                                    DockPanel.Dock="Top"
+                                    FontWeight="Bold"
+                                    Text="{Binding Name}"
+                                    TextAlignment="Left" />
+                                <TextBlock
+                                    DockPanel.Dock="Bottom"
+                                    Text="{Binding Link}"
+                                    TextAlignment="Left" />
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>

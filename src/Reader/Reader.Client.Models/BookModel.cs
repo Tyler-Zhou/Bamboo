@@ -198,19 +198,19 @@ namespace Reader.Client.Models
         #endregion
 
         #region 书源 Key
-        private string _SourceKey = "";
+        private Guid _SourceID = Guid.Empty;
         /// <summary>
         /// 书源 Key
         /// </summary>
-        public string SourceKey
+        public Guid SourceID
         {
             get
             {
-                return _SourceKey;
+                return _SourceID;
             }
             set
             {
-                _SourceKey = value;
+                _SourceID = value;
                 RaisePropertyChanged();
             }
         }

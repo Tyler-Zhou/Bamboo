@@ -8,10 +8,10 @@ namespace Reader.Client.Models
     /// </summary>
     public class BaseModel : BindableBase
     {
-        #region 键值
+        #region 主键
         private Guid _ID = Guid.Empty;
         /// <summary>
-        /// 键值
+        /// 主键
         /// </summary>
         public Guid ID
         {

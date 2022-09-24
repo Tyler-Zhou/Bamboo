@@ -324,7 +324,7 @@ namespace Reader.Client.ViewModels
             {
                 new BookSourceModel()
                 {
-                    Key = "shuquge",
+                    ID = Guid.NewGuid(),
                     Name = "笔趣阁库小说",
                     Link = "https://www.shuquge.com/",
                     SearchLink = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
@@ -397,7 +397,7 @@ namespace Reader.Client.ViewModels
         /// <param name="model">书籍对象</param>
         private void Download(BookModel model)
         {
-            BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.Key.Equals(model.SourceKey));
+            BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
             FictionSpider fictionSpider = new FictionSpider(bookSource);
             ObservableCollection<ChapterModel> chapters= fictionSpider.ReplenishBookReturnChapterList(model);
             RaisePropertyChanged(nameof(Books));

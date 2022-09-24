@@ -75,7 +75,7 @@ namespace Reader.Client.Spider
                     bookModel.UpdateTime = docOne.XPathDateTime(_BookSource.SearchXPathUpdateTime);
                     //获取小说状态
                     bookModel.Status = docOne.XPathInnerText(_BookSource.SearchXPathStatus, _BookSource.IsDebug);
-                    bookModel.SourceKey = _BookSource.Key;
+                    bookModel.SourceID = _BookSource.ID;
 
                     books.Add(bookModel);
                 }
@@ -134,7 +134,7 @@ namespace Reader.Client.Spider
                     //获取小说简介
                     bookModel.Introduction = docOne.XPathInnerText(_BookSource.DetailXPathIntroduction, _BookSource.IsDebug);
                     //小说封皮链接
-                    bookModel.PosterLink = docOne.XPathAttributeValue(_BookSource.DetailXPathPosterLink, _BookSource.DetailAttributePosterUrl, _BookSource.IsDebug);
+                    bookModel.PosterLink = docOne.XPathAttributeValue(_BookSource.DetailXPathPosterLink, _BookSource.DetailAttributePosterLink, _BookSource.IsDebug);
                     //获取小说封皮
                     //获取最后更新章节及链接
                 }
