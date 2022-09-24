@@ -102,6 +102,7 @@ namespace Reader.Client
             containerRegistry.RegisterInstance(_Logger);
             ////Service
             containerRegistry.RegisterSingleton<IApplicationService, ApplicationService>();
+            containerRegistry.RegisterSingleton<ICacheService, CacheService>();
 
             ////View & ViewModel
             //containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
