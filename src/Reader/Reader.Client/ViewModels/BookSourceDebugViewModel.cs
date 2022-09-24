@@ -1,17 +1,20 @@
-﻿using Prism.Commands;
+﻿using ImTools;
+using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using Reader.Client.Extensions;
+using Reader.Client.Interfaces;
 using Reader.Client.Models;
 using Reader.Client.Spider;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Reader.Client.ViewModels
 {
+    
     /// <summary>
     /// 书源调试
     /// </summary>
@@ -19,15 +22,53 @@ namespace Reader.Client.ViewModels
     {
         #region 成员(Member)
 
+        #region 查询文本
+        private string _KeyWord = "仙逆";
+        /// <summary>
+        /// 查询文本
+        /// </summary>
+        public string KeyWord
+        {
+            get { return _KeyWord; }
+            set
+            {
+                _KeyWord = value;
+                RaisePropertyChanged(nameof(KeyWord));
+            }
+        }
+        #endregion
+
+        #region 结果文本
+        StringBuilder stringBuilder = new StringBuilder();
+        /// <summary>
+        /// 结果文本
+        /// </summary>
+        public string ResultText
+        {
+            get
+            {
+                return stringBuilder.ToString();
+            }
+            set
+            {
+                stringBuilder.AppendLine(value);
+                RaisePropertyChanged(nameof(ResultText));
+            }
+        }
+        #endregion
+
+        #region 当前书源
         private BookSourceModel _CurrentSource;
         /// <summary>
-        /// 书源
+        /// 当前书源
         /// </summary>
         public BookSourceModel CurrentSource
         {
             get
             {
-                if(_CurrentSource==null && BookSources!=null && BookSources.Count>0)
+                if (_CurrentSource == null)
+                    _CurrentSource = new BookSourceModel() { ID = Guid.NewGuid() };
+                if (string.IsNullOrWhiteSpace(_CurrentSource.Name) && BookSources != null && BookSources.Count > 0)
                 {
                     _CurrentSource = BookSources.FirstOrDefault();
                 }
@@ -38,7 +79,8 @@ namespace Reader.Client.ViewModels
                 _CurrentSource = value;
                 RaisePropertyChanged(nameof(CurrentSource));
             }
-        }
+        } 
+        #endregion
 
         #region 书源集合
         private ObservableCollection<BookSourceModel> _BookSources;
@@ -59,9 +101,15 @@ namespace Reader.Client.ViewModels
         }
         #endregion
 
+        Stopwatch _Stopwatch = new Stopwatch();
+
         #endregion
 
         #region 服务(Services)
+        /// <summary>
+        /// 书源服务
+        /// </summary>
+        IBookSourceService _BookSourceService;
         #endregion
 
         #region 命令(Commands)
@@ -69,6 +117,19 @@ namespace Reader.Client.ViewModels
         /// 查询
         /// </summary>
         public DelegateCommand<BookSourceModel> EditSourceCommand { get; private set; }
+
+        /// <summary>
+        /// 调试
+        /// </summary>
+        public DelegateCommand DebugCommand { get; private set; }
+        /// <summary>
+        /// 保存源
+        /// </summary>
+        public DelegateCommand SaveCommand { get; private set; }
+        /// <summary>
+        /// 生成源
+        /// </summary>
+        public DelegateCommand GenerateCommand { get; private set; }
         #endregion
 
         #region 构造函数(Constructor)
@@ -78,7 +139,11 @@ namespace Reader.Client.ViewModels
         /// <param name="containerProvider"></param>
         public BookSourceDebugViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
+            _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             EditSourceCommand = new DelegateCommand<BookSourceModel>(EditSource);
+            DebugCommand = new DelegateCommand(DebugSource);
+            SaveCommand = new DelegateCommand(SaveSource);
+            GenerateCommand = new DelegateCommand(GenerateSource);
             InitData();
         }
         #endregion
@@ -118,23 +183,9 @@ namespace Reader.Client.ViewModels
         /// </summary>
         private void InitData()
         {
-            BookSources = new ObservableCollection<BookSourceModel>()
-            {
-                new BookSourceModel()
-                {
-                    ID = Guid.NewGuid(),
-                    Name = "笔趣阁库小说",
-                    Link = "https://www.shuquge.com/",
-                    SearchLink = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
-                    Group = "网络小说",
-                    SearchXPathList = "//table[starts-with(@class,'grid')]/tr",
-                    SearchXPathName = "//td[1]/a",
-                    SearchXPathTag = "",
-                    SearchXPathAuthor = "//td[3]",
-                    SearchXPathStatus = "//td[6]",
-                },
-            };
+            BookSources = _BookSourceService.GetAll();
         }
+
         /// <summary>
         /// 编辑书源
         /// </summary>
@@ -142,6 +193,66 @@ namespace Reader.Client.ViewModels
         private void EditSource(BookSourceModel model)
         {
             CurrentSource = model;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void DebugSource()
+        {
+            stringBuilder.Clear();
+            try
+            {
+                SaveSource();
+                _Stopwatch.Start();
+                CurrentSource.IsDebug = true;
+                FictionSpider fictionSpider = new FictionSpider(CurrentSource);
+                fictionSpider.OnWriteDebugLog = WriteDebugLog;
+                ObservableCollection<BookModel> books= fictionSpider.SearchBookList(KeyWord);
+                if(books!=null && books.Count>0)
+                {
+                    ObservableCollection<ChapterModel> chapters = fictionSpider.ReplenishBookReturnChapterList(books.FirstOrDefault());
+                    if(chapters!=null && chapters.Count>0)
+                    {
+                        fictionSpider.ReplenishChapter(chapters.FirstOrDefault());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                WriteDebugLog(ex.Message);
+            }
+            finally
+            {
+                if(_Stopwatch != null)
+                {
+                    _Stopwatch.Stop();
+                    _Stopwatch.Reset();
+                }
+            }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void SaveSource()
+        {
+            _BookSourceService.Save(CurrentSource);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        private void GenerateSource()
+        {
+            stringBuilder.Clear();
+            CurrentSource.IsDebug = false;
+            ResultText = _BookSourceService.Generate(CurrentSource);
+        }
+        /// <summary>
+        /// 写入调试日志
+        /// </summary>
+        /// <param name="logString"></param>
+        private void WriteDebugLog(string logString)
+        {
+            ResultText = $"[{_Stopwatch.ElapsedToLogString()}]{logString}";
         }
         #endregion
     }

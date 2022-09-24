@@ -79,6 +79,16 @@ namespace Reader.Client.Services
         }
 
         /// <summary>
+        /// 生成Json文本
+        /// </summary>
+        /// <param name="configName">配置名称</param>
+        /// <param name="obj">配置文件对象</param>
+        public async Task<string> GenerateAsync(string configName, object obj)
+        {
+            return await Task.Run(() => GenerateJSON(configName, obj));
+        }
+
+        /// <summary>
         /// 获取配置
         /// </summary>
         /// <param name="configName">配置名称</param>
@@ -100,6 +110,28 @@ namespace Reader.Client.Services
         {
             return _BasePath;
         }
+
+        /// <summary>
+        /// 保存配置文件
+        /// </summary>
+        /// <param name="configName">配置名称</param>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        string GenerateJSON(string configName, object obj)
+        {
+            try
+            {
+                string fullPath = Path.Combine(_BasePath, configName + _ExtensionName);
+                //序列化
+                return JsonSerializerHelper.SerializeObject(obj);
+            }
+            catch (Exception ex)
+            {
+                _Logger.LogError(ex.Message);
+                return ex.Message;
+            }
+        }
+
         /// <summary>
         /// 保存配置文件
         /// </summary>

@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using Reader.Client.Interfaces;
 using Reader.Client.Models;
 using Reader.Client.Spider;
 using System;
@@ -259,6 +260,10 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 服务(Services)
+        /// <summary>
+        /// 书源服务
+        /// </summary>
+        IBookSourceService _BookSourceService;
         #endregion
 
         #region 命令(Commands)
@@ -279,6 +284,7 @@ namespace Reader.Client.ViewModels
         /// <param name="containerProvider"></param>
         public SearchViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
+            _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             SearchCommand = new DelegateCommand(SearchBookList);
             DownloadCommand = new DelegateCommand<BookModel>(Download);
             InitData();
@@ -320,22 +326,7 @@ namespace Reader.Client.ViewModels
         /// </summary>
         private void InitData()
         {
-            BookSources = new ObservableCollection<BookSourceModel>()
-            {
-                new BookSourceModel()
-                {
-                    ID = Guid.NewGuid(),
-                    Name = "笔趣阁库小说",
-                    Link = "https://www.shuquge.com/",
-                    SearchLink = "https://www.xxbiqudu.com/modules/article/search.php?searchkey=",
-                    Group = "网络小说",
-                    SearchXPathList = "//table[starts-with(@class,'grid')]/tr",
-                    SearchXPathName = "//td[1]/a",
-                    SearchXPathTag = "",
-                    SearchXPathAuthor = "//td[3]",
-                    SearchXPathStatus = "//td[6]",
-                },
-            };
+            BookSources = _BookSourceService.GetAll();
             Books = new ObservableCollection<BookModel>();
         }
         /// <summary>

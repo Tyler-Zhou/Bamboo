@@ -12,6 +12,14 @@ namespace Reader.Client.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<string> GetSavePathAsync();
+
+        /// <summary>
+        /// 生成Json文本
+        /// </summary>
+        /// <param name="configName">配置名称</param>
+        /// <param name="obj">Json对象</param>
+        Task<string> GenerateAsync(string configName, object obj);
+
         /// <summary>
         /// 保存Json文件
         /// </summary>

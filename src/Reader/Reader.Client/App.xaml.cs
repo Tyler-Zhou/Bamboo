@@ -103,6 +103,7 @@ namespace Reader.Client
             ////Service
             containerRegistry.RegisterSingleton<IApplicationService, ApplicationService>();
             containerRegistry.RegisterSingleton<ICacheService, CacheService>();
+            containerRegistry.RegisterSingleton<IBookSourceService, BookSourceService>();
 
             ////View & ViewModel
             //containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();

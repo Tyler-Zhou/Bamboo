@@ -28,7 +28,20 @@
             <ColumnDefinition Width="0.4*" />
             <ColumnDefinition Width="0.6*" />
         </Grid.ColumnDefinitions>
-        <ScrollViewer Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <ToolBar AllowDrop="False">
+                <Button Command="{Binding DebugCommand}" Content="{DynamicResource ToolBarButtonDebug}" />
+                <Separator />
+                <Button Command="{Binding SaveCommand}" Content="{DynamicResource ToolBarButtonSave}" />
+                <Separator />
+                <Button Command="{Binding GenerateCommand}" Content="{DynamicResource ToolBarButtonGenerate}" />
+            </ToolBar>
+        </DockPanel>
+        <ScrollViewer Grid.Row="1" Grid.Column="0">
             <DockPanel>
                 <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxBase}">
                     <DockPanel>
@@ -168,6 +181,10 @@
                             <TextBlock Text="{DynamicResource TextBlockDetailXPathChapterLink}" />
                             <TextBox Text="{Binding CurrentSource.DetailXPathChapterLink}" />
                         </DockPanel>
+                        <DockPanel DockPanel.Dock="Top">
+                            <TextBlock Text="{DynamicResource TextBlockDetailAttributeChapterLink}" />
+                            <TextBox Text="{Binding CurrentSource.DetailAttributeChapterLink}" />
+                        </DockPanel>
                     </DockPanel>
                 </GroupBox>
                 <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxChapter}">
@@ -188,13 +205,17 @@
                 </GroupBox>
             </DockPanel>
         </ScrollViewer>
-        <TabControl Grid.Column="1">
+        <TabControl Grid.Row="1" Grid.Column="1">
             <TabItem Header="{DynamicResource TabItemSourceDebug}">
-                <TextBox
-                    AcceptsReturn="True"
-                    IsReadOnly="True"
-                    TextWrapping="Wrap"
-                    VerticalScrollBarVisibility="Visible" />
+                <DockPanel>
+                    <TextBox DockPanel.Dock="Top" Text="{Binding KeyWord}" />
+                    <TextBox
+                        AcceptsReturn="True"
+                        DockPanel.Dock="Bottom"
+                        Text="{Binding ResultText}"
+                        TextWrapping="Wrap"
+                        VerticalScrollBarVisibility="Visible" />
+                </DockPanel>
             </TabItem>
             <TabItem Header="{DynamicResource TabItemSourceList}">
                 <ListBox

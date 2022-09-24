@@ -7,11 +7,11 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Reader.Client")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Reader")]
+[assembly: AssemblyDescription("Reader")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Reader.Client")]
+[assembly: AssemblyCompany("zhoubiyu@hotmail.com")]
+[assembly: AssemblyProduct("Reader")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

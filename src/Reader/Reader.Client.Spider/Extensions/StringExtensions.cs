@@ -15,31 +15,27 @@ namespace Reader.Client.Spider.Extensions
         /// </summary>
         /// <param name="input">字符串</param>
         /// <param name="regexExpression">正则表达式</param>
+        /// <param name="groupName">组名</param>
         /// <param name="isDebug">是否调试</param>
         /// <returns></returns>
-        public static string RegexText(this string input,string regexExpression, bool isDebug = true)
+        public static string RegexText(this string input,string regexExpression,string groupName="R", bool isDebug = false)
         {
             StringBuilder regexText =new StringBuilder();
             try
             {
                 if (!string.IsNullOrEmpty(input))
                 {
-                    MatchCollection collection = Regex.Matches(input, regexExpression);
-                    if (collection.Count>0)
+                    MatchCollection matches = Regex.Matches(input, regexExpression, RegexOptions.Compiled | RegexOptions.Singleline);
+                    foreach (Match match in matches)
                     {
-                        List<string> listResult = new List<string>();
-                        int count = collection.Count;
-                        for (int i = 0; i < count; i++)
+                        GroupCollection groups = match.Groups;
+                        foreach (Group group in groups)
                         {
-                            string item = collection[i].Value;
-                            if (!listResult.Contains(item))
-                            {
-                                regexText.Append(item);
-                            }
+                            if (groupName.Equals(group.Name))
+                                return group.Value;
                         }
                     }
                 }
-                
             }
             catch (Exception ex)
             {

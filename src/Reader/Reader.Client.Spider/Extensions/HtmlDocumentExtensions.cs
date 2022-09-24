@@ -15,18 +15,19 @@ namespace Reader.Client.Spider.Extensions
         /// <param name="XPath">XPath路径</param>
         /// <param name="isDebug">是否调试</param>
         /// <returns></returns>
-        public static string XPathInnerText(this HtmlDocument input, string XPath, bool isDebug = true)
+        public static string XPathInnerText(this HtmlDocument input, string XPath, bool isDebug = false)
         {
             string innerText = "";
             try
             {
-                if (!string.IsNullOrWhiteSpace(XPath))
+                if (string.IsNullOrWhiteSpace(XPath))
                 {
-                    HtmlNode htmlNode = input.DocumentNode.SelectSingleNode(XPath);
-                    if (htmlNode != null)
-                    {
-                        innerText = htmlNode.InnerText;
-                    }
+                    throw new Exception("未配置");
+                }
+                HtmlNode htmlNode = input.DocumentNode.SelectSingleNode(XPath);
+                if (htmlNode != null)
+                {
+                    innerText = htmlNode.InnerText;
                 }
             }
             catch(Exception ex)
@@ -74,7 +75,7 @@ namespace Reader.Client.Spider.Extensions
         /// <param name="attribute">标签值</param>
         /// <param name="isDebug">是否调试</param>
         /// <returns></returns>
-        public static string XPathAttributeValue(this HtmlDocument input, string XPath,string attribute, bool isDebug = true)
+        public static string XPathAttributeValue(this HtmlDocument input, string XPath,string attribute, bool isDebug = false)
         {
             string attributeValue = "";
             try

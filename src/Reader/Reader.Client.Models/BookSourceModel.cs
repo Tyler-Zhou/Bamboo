@@ -525,7 +525,7 @@
         #endregion
 
         #region 详细-Attribute书籍封面链接
-        private string _DetailAttributePosterLink = "";
+        private string _DetailAttributePosterLink = "src";
         /// <summary>
         /// 详细-Attribute书籍封面链接
         /// </summary>
@@ -638,6 +638,24 @@
         }
         #endregion
 
+        #region 详细-Attribute章节链接
+        private string _DetailAttributeChapterLink = "href";
+        /// <summary>
+        /// 详细-Attribute章节链接
+        /// </summary>
+        public string DetailAttributeChapterLink
+        {
+            get
+            {
+                return _DetailAttributeChapterLink;
+            }
+            set
+            {
+                _DetailAttributeChapterLink = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
         #endregion
 
         #region 章节(Chapter)
