@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 namespace Reader.Client.Services
 {
     /// <summary>
-    /// 书源服务
+    /// 书籍服务
     /// </summary>
-    public class BookSourceService: IBookSourceService
+    public class BookService: IBookService
     {
         #region 成员(Member)
         /// <summary>
         /// 存储目录
         /// </summary>
-        string SubDirectory = "\\Source\\";
+        string SubDirectory = "\\Book\\";
         #endregion
 
         #region 服务(Services)
@@ -27,10 +27,10 @@ namespace Reader.Client.Services
 
         #region 构造函数(Constructor)
         /// <summary>
-        /// 书源服务
+        /// 书籍服务
         /// </summary>
         /// <param name="cacheService"></param>
-        public BookSourceService(ICacheService cacheService)
+        public BookService(ICacheService cacheService)
         {
             _CacheService = cacheService;
         }
@@ -38,32 +38,23 @@ namespace Reader.Client.Services
 
         #region 方法(Method)
         /// <summary>
-        /// 保存书源
+        /// 保存书籍
         /// </summary>
-        /// <param name="model">书源实体</param>
+        /// <param name="model">书籍实体</param>
         /// <returns></returns>
-        public bool Save(BookSourceModel model)
+        public bool Save(BookModel model)
         {
+            SubDirectory = $"\\Book\\";
             return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.ID}", model).Result).Result;
         }
-
         /// <summary>
-        /// 生成源
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
-        public string Generate(BookSourceModel model)
-        {
-            return Task.Run(() => _CacheService.GenerateAsync(model).Result).Result;
-        }
-
-        /// <summary>
-        /// 获取所有书源
+        /// 获取所有书籍
         /// </summary>
         /// <returns></returns>
-        public ObservableCollection<BookSourceModel> GetAll()
+        public ObservableCollection<BookModel> GetAll()
         {
-            ObservableCollection<BookSourceModel> result = new ObservableCollection<BookSourceModel>();
+            SubDirectory = $"\\Book\\";
+            ObservableCollection<BookModel> result = new ObservableCollection<BookModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
             DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
             FileInfo[] fis = dir.GetFiles();
@@ -71,7 +62,7 @@ namespace Reader.Client.Services
             {
                 FileInfo fi = fis[i];
                 string name = fi.Name.Replace(fi.Extension, "");
-                BookSourceModel model = Task.Run(() => _CacheService.GetAsync<BookSourceModel>(SubDirectory, name).Result).Result;
+                BookModel model = Task.Run(() => _CacheService.GetAsync<BookModel>(SubDirectory, name).Result).Result;
                 if (model != null)
                 {
                     result.Add(model);
@@ -81,15 +72,14 @@ namespace Reader.Client.Services
         }
 
         /// <summary>
-        /// 删除书源
+        /// 删除书籍
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool Remove(BookSourceModel model)
+        public bool Remove(BookModel model)
         {
             return true;
         }
-
         #endregion
     }
 }

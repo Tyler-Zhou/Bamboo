@@ -195,11 +195,23 @@ namespace Reader.Client.ViewModels
             BookSources = _BookSourceService.GetAll();
         }
         /// <summary>
+        /// 无效数据
+        /// </summary>
+        /// <returns></returns>
+        private bool InvalidData()
+        {
+            if (string.IsNullOrWhiteSpace(CurrentSource.Name) 
+                || string.IsNullOrWhiteSpace(CurrentSource.Link)
+                )
+                return true;
+            return false;
+        }
+        /// <summary>
         /// 添加源
         /// </summary>
         private void AddSource()
         {
-            if (string.IsNullOrWhiteSpace(CurrentSource.Name) || string.IsNullOrWhiteSpace(CurrentSource.Link))
+            if (InvalidData())
                 return;
             BookSourceModel model = new BookSourceModel();
             model.ID = Guid.NewGuid();

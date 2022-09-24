@@ -1,10 +1,31 @@
-﻿namespace Reader.Client.Models
+﻿using System;
+
+namespace Reader.Client.Models
 {
     /// <summary>
     /// 章节模型
     /// </summary>
     public class ChapterModel:BaseModel
     {
+        #region 书籍主键
+        private Guid _BookID = Guid.Empty;
+        /// <summary>
+        /// 书籍主键
+        /// </summary>
+        public Guid BookID
+        {
+            get
+            {
+                return _BookID;
+            }
+            set
+            {
+                _BookID = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 书籍标识键
         private string _BookKey = "";
         /// <summary>

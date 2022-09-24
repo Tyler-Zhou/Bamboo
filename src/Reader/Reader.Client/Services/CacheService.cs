@@ -71,32 +71,33 @@ namespace Reader.Client.Services
         /// <summary>
         /// 保存配置文件
         /// </summary>
+        /// <param name="subDirectory">子目录</param>
         /// <param name="configName">配置名称</param>
         /// <param name="obj">配置文件对象</param>
-        public async Task<bool> SaveAsync(string configName, object obj)
+        public async Task<bool> SaveAsync(string subDirectory, string configName, object obj)
         {
-            return await Task.Run(() => SaveConfig(configName, obj));
+            return await Task.Run(() => SaveConfig(subDirectory, configName, obj));
         }
 
         /// <summary>
         /// 生成Json文本
         /// </summary>
-        /// <param name="configName">配置名称</param>
         /// <param name="obj">配置文件对象</param>
-        public async Task<string> GenerateAsync(string configName, object obj)
+        public async Task<string> GenerateAsync(object obj)
         {
-            return await Task.Run(() => GenerateJSON(configName, obj));
+            return await Task.Run(() => GenerateJSON(obj));
         }
 
         /// <summary>
         /// 获取配置
         /// </summary>
+        /// <param name="subDirectory">子目录</param>
         /// <param name="configName">配置名称</param>
         /// <typeparam name="TSetting">设置实体对象</typeparam>
         /// <returns></returns>
-        public async Task<TSetting> GetAsync<TSetting>(string configName)
+        public async Task<TSetting> GetAsync<TSetting>(string subDirectory, string configName)
         {
-            return await Task.Run(() => GetConfig<TSetting>(configName));
+            return await Task.Run(() => GetConfig<TSetting>(subDirectory,configName));
         }
 
         #endregion
@@ -114,14 +115,12 @@ namespace Reader.Client.Services
         /// <summary>
         /// 保存配置文件
         /// </summary>
-        /// <param name="configName">配置名称</param>
         /// <param name="obj"></param>
         /// <returns></returns>
-        string GenerateJSON(string configName, object obj)
+        string GenerateJSON(object obj)
         {
             try
             {
-                string fullPath = Path.Combine(_BasePath, configName + _ExtensionName);
                 //序列化
                 return JsonSerializerHelper.SerializeObject(obj);
             }
@@ -135,14 +134,15 @@ namespace Reader.Client.Services
         /// <summary>
         /// 保存配置文件
         /// </summary>
+        /// <param name="subDirectory">子目录</param>
         /// <param name="configName">配置名称</param>
         /// <param name="obj"></param>
         /// <returns></returns>
-        bool SaveConfig(string configName, object obj)
+        bool SaveConfig(string subDirectory, string configName, object obj)
         {
             try
             {
-                string fullPath = Path.Combine(_BasePath, configName + _ExtensionName);
+                string fullPath = $"{_BasePath}{subDirectory}{configName}{_ExtensionName}";
                 //序列化
                 string josnText = JsonSerializerHelper.SerializeObject(obj);
                 //写入文件流
@@ -162,14 +162,19 @@ namespace Reader.Client.Services
         /// <summary>
         /// 获取配置
         /// </summary>
+        /// <param name="subDirectory">子目录</param>
         /// <param name="configName">配置名称</param>
         /// <typeparam name="TSetting">设置实体对象</typeparam>
         /// <returns></returns>
-        TSetting GetConfig<TSetting>(string configName)
+        TSetting GetConfig<TSetting>(string subDirectory, string configName)
         {
             try
             {
-                string fullPath = Path.Combine(_BasePath, configName + _ExtensionName);
+                string fullPath = $"{_BasePath}{subDirectory}{configName}{_ExtensionName}";
+                if (!File.Exists(fullPath))
+                {
+                    throw new Exception($"文件[{fullPath}]不存在");
+                }
                 string josnText = "";
                 using (StreamReader sr = new StreamReader(fullPath, Encoding.UTF8))
                 {

@@ -27,5 +27,11 @@ namespace Reader.Client.Interfaces
         /// </summary>
         /// <returns></returns>
         ObservableCollection<BookSourceModel> GetAll();
+        /// <summary>
+        /// 删除书源
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        bool Remove(BookSourceModel model);
     }
 }

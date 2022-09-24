@@ -235,6 +235,7 @@ namespace Reader.Client.Spider
                         docOne.LoadHtml(htmlNode.InnerHtml);
 
                         ChapterModel chapter = new ChapterModel();
+                        chapter.BookID = bookModel.ID;
                         chapter.BookKey = bookModel.Key;
                         //章节Key
                         WriteDebugLog($"┌获取章节Key");

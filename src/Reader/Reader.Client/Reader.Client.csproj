@@ -149,12 +149,16 @@
     <Compile Include="Extensions\StopwatchExtensions.cs" />
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Helpers\JsonSerializerHelper.cs" />
+    <Compile Include="Interfaces\IBookService.cs" />
     <Compile Include="Interfaces\IBookSourceService.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
+    <Compile Include="Interfaces\IChapterService.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />
     <Compile Include="Services\ApplicationService.cs" />
+    <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\BookSourceService.cs" />
     <Compile Include="Services\CacheService.cs" />
+    <Compile Include="Services\ChapterService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\BookSourceDebugViewModel.cs" />
     <Compile Include="ViewModels\BookSourceManageViewModel.cs" />
