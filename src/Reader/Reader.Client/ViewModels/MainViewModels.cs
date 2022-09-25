@@ -1,25 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Events;
 using Prism.Ioc;
 using Prism.Mvvm;
-using Prism.Regions;
-using Reader.Client.Common;
 using Reader.Client.Events;
 using Reader.Client.Extensions;
 using Reader.Client.Interfaces;
-using Reader.Client.Models;
-using Reader.Client.Services;
-using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Threading;
 
 namespace Reader.Client.ViewModels
 {

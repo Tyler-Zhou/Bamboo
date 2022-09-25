@@ -314,7 +314,10 @@ namespace Reader.Client.Spider
             }
             if (_Request != null)
             {
-                _Request.Connection.Clone();
+                if(_Request.Connection!=null)
+                {
+                    _Request.Connection.Clone();
+                }
                 _Request.Abort();
                 _Request = null;
             }

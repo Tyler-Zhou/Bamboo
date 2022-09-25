@@ -19,13 +19,9 @@
         </Style>
         <Style TargetType="TextBlock">
             <Setter Property="DockPanel.Dock" Value="Top" />
-            <Setter Property="Margin" Value="5,5,5,5" />
-            <Setter Property="Height" Value="18" />
         </Style>
         <Style TargetType="ProgressBar">
-            <Setter Property="DockPanel.Dock" Value="Bottom" />
-            <Setter Property="Margin" Value="5,5,5,5" />
-            <Setter Property="Height" Value="18" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
         </Style>
     </UserControl.Resources>
     <DockPanel>
@@ -41,16 +37,17 @@
             <ListBox
                 x:Name="ListBoxData"
                 Margin="0,5"
-                DockPanel.Dock="Bottom"
                 ItemsSource="{Binding TaskProgresss}"
                 SelectedItem="{Binding CurrentTaskProgress}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <DockPanel LastChildFill="False">
-                            <TextBlock Text="{Binding TaskProgresss.Name}" />
-                            <TextBlock Text="{Binding TaskProgresss.ToolTip}" />
-                            <ProgressBar Maximum="{Binding TaskProgresss.MaxValue}" Value="{Binding TaskProgresss.Position}" />
-                        </DockPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <DockPanel LastChildFill="False">
+                                <TextBlock FontWeight="Bold" Text="{Binding Name}" />
+                                <TextBlock Text="{Binding ToolTip}" />
+                                <ProgressBar Maximum="{Binding MaxValue}" Value="{Binding Position}" />
+                            </DockPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

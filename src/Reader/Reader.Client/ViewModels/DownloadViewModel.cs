@@ -53,10 +53,12 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 下载进程集合
         /// </summary>
-        ObservableCollection<TaskProgress> TaskProgresss
+        public ObservableCollection<TaskProgress> TaskProgresss
         {
             get
             {
+                if (_TaskProgresss == null)
+                    _TaskProgresss = new ObservableCollection<TaskProgress>();
                 return _TaskProgresss;
             }
             set
@@ -145,7 +147,11 @@ namespace Reader.Client.ViewModels
                 if (taskProgress != null)
                     return;
                 TaskProgress model = new TaskProgress(_ContainerProvider, taskKey, taskName);
-                TaskProgresss.Add(model);
+                System.Windows.Application.Current.Dispatcher.Invoke((Action)(() =>
+                {
+                    TaskProgresss.Add(model);
+                }));
+                
                 RaisePropertyChanged(nameof(TaskProgresss));
             }
             catch (Exception ex)

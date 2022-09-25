@@ -132,8 +132,7 @@ namespace Reader.Client.Spider
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                books = new ObservableCollection<BookModel>();
+                throw ex;
             }
             return books;
         }

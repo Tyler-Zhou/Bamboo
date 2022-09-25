@@ -421,6 +421,7 @@ namespace Reader.Client.ViewModels
         /// <param name="model">书籍对象</param>
         private void Download(BookModel model)
         {
+            NavigationToView("DownloadView", null);
             Task.Run(() => {
                 try
                 {
@@ -434,7 +435,6 @@ namespace Reader.Client.ViewModels
                         _DownloadTaskService.Save(downloadTask);
                     }
                     AddDownloadTask(bookModel.Key,bookModel.Name);
-                    NavigationToView("DownloadView",null);
                 }
                 catch (Exception ex)
                 {
@@ -450,7 +450,14 @@ namespace Reader.Client.ViewModels
         /// <param name="taskName">任务名称</param>
         private void AddDownloadTask(string taskKey,string taskName)
         {
-            _EventAggregator.SendTask(new TaskModel() { Key= taskKey, Name= taskName });
+            try
+            {
+                _EventAggregator.SendTask(new TaskModel() { Key = taskKey, Name = taskName });
+            }
+            catch (Exception ex)
+            {
+                ShowError($"添加下载任务出现异常:{ex.Message}");
+            }
         }
         #endregion
     }

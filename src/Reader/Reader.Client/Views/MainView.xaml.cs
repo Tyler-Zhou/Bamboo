@@ -1,4 +1,5 @@
-﻿using Prism.Events;
+﻿using Microsoft.Extensions.Logging;
+using Prism.Events;
 using Reader.Client.Events;
 using Reader.Client.Extensions;
 using Reader.Client.ViewModels;
@@ -31,16 +32,22 @@ namespace Reader.Client.Views
         #endregion
 
         #region 服务(Service)
+        /// <summary>
+        /// 日志服务
+        /// </summary>
+        ILogger _Logger;
         #endregion
 
         #region 构造函数(Constructor)
         /// <summary>
         /// MainView.xaml 的交互逻辑
         /// </summary>
+        /// <param name="logger">日志服务</param>
         /// <param name="eventAggregator">事件聚合器</param>
-        public MainView(IEventAggregator eventAggregator)
+        public MainView(ILogger logger,IEventAggregator eventAggregator)
         {
             InitializeComponent();
+            _Logger = logger;
             //注册提示消息
             eventAggregator.ResgiterMessage(arg =>
             {
@@ -83,6 +90,10 @@ namespace Reader.Client.Views
                 return;
             }
             TipsInfo tipsInfo = tipsInfos.Dequeue();
+            if(tipsInfo.Type==EnumTipsType.Error)
+            {
+                _Logger.LogError(tipsInfo.Content);
+            }
             TextBlockTipsContent.Text = tipsInfo.Content;
         }
         /// <summary>
