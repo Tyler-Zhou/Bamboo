@@ -113,6 +113,7 @@ namespace Reader.Client
             containerRegistry.RegisterForNavigation<SearchView, SearchViewModel>();
             containerRegistry.RegisterForNavigation<DebugView, DebugViewModel>();
             containerRegistry.RegisterForNavigation<DownloadView, DownloadViewModel>();
+            containerRegistry.RegisterForNavigation<ExportView, ExportViewModel>();
 
         }
         #endregion

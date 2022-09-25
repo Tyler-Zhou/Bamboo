@@ -17,9 +17,18 @@ namespace Reader.Client.Interfaces
         /// <summary>
         /// 单个章节
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <param name="key">章节 Key</param>
         /// <returns></returns>
-        ChapterModel SingleOrDefault(string key);
+        ChapterModel SingleOrDefault(string bookKey, string key);
+
+        /// <summary>
+        /// 获取所有章节Key
+        /// </summary>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <returns></returns>
+        ObservableCollection<string> GetAllKey(string bookKey);
+
         /// <summary>
         /// 获取所有章节
         /// </summary>

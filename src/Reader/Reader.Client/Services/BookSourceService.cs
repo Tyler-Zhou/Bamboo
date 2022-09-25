@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Reader.Client.Services
 {
@@ -57,22 +58,8 @@ namespace Reader.Client.Services
         {
             if (id!=null && !id.Equals(Guid.Empty))
             {
-                string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-                DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
-                FileInfo[] fis = dir.GetFiles();
-                for (int i = 0; i < fis.Length; i++)
-                {
-                    FileInfo fi = fis[i];
-                    string name = fi.Name.Replace(fi.Extension, "");
-                    if (name.Equals(""+id))
-                    {
-                        BookSourceModel model = Task.Run(() => _CacheService.GetAsync<BookSourceModel>(SubDirectory, name).Result).Result;
-                        if (model != null)
-                        {
-                            return model;
-                        }
-                    }
-                }
+                BookSourceModel model = Task.Run(() => _CacheService.GetAsync<BookSourceModel>(SubDirectory, $"{id}").Result).Result;
+                return model;
             }
             return null;
         }

@@ -65,23 +65,8 @@ namespace Reader.Client.Services
             if (string.IsNullOrWhiteSpace(bookKey) || string.IsNullOrWhiteSpace(key))
                 return null;
             SubDirectory = $"\\Book\\Task\\{bookKey}\\";
-            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
-            FileInfo[] fis = dir.GetFiles();
-            for (int i = 0; i < fis.Length; i++)
-            {
-                FileInfo fi = fis[i];
-                string name = fi.Name.Replace(fi.Extension, "");
-                if (name.Equals(key))
-                {
-                    DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, name).Result).Result;
-                    if (model != null)
-                    {
-                        return model;
-                    }
-                }
-            }
-            return null;
+            DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, key).Result).Result;
+            return model;
         }
         /// <summary>
         /// 获取下载任务

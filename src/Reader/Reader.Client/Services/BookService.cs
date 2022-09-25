@@ -62,18 +62,7 @@ namespace Reader.Client.Services
         public BookModel GetSingleOrDefault(string booKey)
         {
             SubDirectory = $"\\Book\\";
-            BookModel result = null;
-            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
-            FileInfo[] fis = dir.GetFiles();
-            for (int i = 0; i < fis.Length; i++)
-            {
-                FileInfo fi = fis[i];
-                string name = fi.Name.Replace(fi.Extension, "");
-                BookModel searchModel = Task.Run(() => _CacheService.GetAsync<BookModel>(SubDirectory, name).Result).Result;
-                if(booKey.Equals(searchModel.Key))
-                    result= searchModel;
-            }
+            BookModel result = Task.Run(() => _CacheService.GetAsync<BookModel>(SubDirectory, booKey).Result).Result;
             return result;
         }
 

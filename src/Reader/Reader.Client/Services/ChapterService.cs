@@ -1,6 +1,5 @@
 ﻿using Reader.Client.Interfaces;
 using Reader.Client.Models;
-using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
@@ -57,30 +56,39 @@ namespace Reader.Client.Services
         /// <summary>
         /// 单个章节
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <param name="key">章节 Key</param>
         /// <returns></returns>
-        public ChapterModel SingleOrDefault(string key)
+        public ChapterModel SingleOrDefault(string bookKey,string key)
         {
-            if (!string.IsNullOrWhiteSpace(key))
+            if (string.IsNullOrWhiteSpace(bookKey) || string.IsNullOrWhiteSpace(key))
             {
-                string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-                DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
-                FileInfo[] fis = dir.GetFiles();
-                for (int i = 0; i < fis.Length; i++)
-                {
-                    FileInfo fi = fis[i];
-                    string name = fi.Name.Replace(fi.Extension, "");
-                    if (name.Equals(key))
-                    {
-                        ChapterModel model = Task.Run(() => _CacheService.GetAsync<ChapterModel>(SubDirectory, name).Result).Result;
-                        if (model != null)
-                        {
-                            return model;
-                        }
-                    }
-                }
+                return null;
             }
-            return null;
+            SubDirectory = $"\\Book\\{bookKey}\\";
+            ChapterModel model = Task.Run(() => _CacheService.GetAsync<ChapterModel>(SubDirectory, key).Result).Result;
+            return model;
+        }
+
+        /// <summary>
+        /// 获取所有章节Key
+        /// </summary>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <returns></returns>
+        public ObservableCollection<string> GetAllKey(string bookKey)
+        {
+            SubDirectory = $"\\Book\\{bookKey}\\";
+            ObservableCollection<string> result = new ObservableCollection<string>();
+            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            FileInfo[] fis = dir.GetFiles();
+            for (int i = 0; i < fis.Length; i++)
+            {
+                FileInfo fi = fis[i];
+                string name = fi.Name.Replace(fi.Extension, "");
+                result.Add(name);
+            }
+            return result;
         }
 
         /// <summary>
