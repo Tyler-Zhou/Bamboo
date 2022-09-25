@@ -3,14 +3,14 @@
 namespace Reader.Client.Views
 {
     /// <summary>
-    /// BookSourceManageView.xaml 的交互逻辑
+    /// BookSourceDebugView.xaml 的交互逻辑
     /// </summary>
-    public partial class BookSourceManageView : UserControl
+    public partial class DebugView : UserControl
     {
         /// <summary>
-        /// BookSourceManageView.xaml 的交互逻辑
+        /// BookSourceDebugView.xaml 的交互逻辑
         /// </summary>
-        public BookSourceManageView()
+        public DebugView()
         {
             InitializeComponent();
         }

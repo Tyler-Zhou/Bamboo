@@ -106,11 +106,12 @@ namespace Reader.Client
             containerRegistry.RegisterSingleton<IBookSourceService, BookSourceService>();
             containerRegistry.RegisterSingleton<IBookService, BookService>();
             containerRegistry.RegisterSingleton<IChapterService, ChapterService>();
+            containerRegistry.RegisterSingleton<IBookTaskService, BookTaskService>();
 
             ////View & ViewModel
             //containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
             containerRegistry.RegisterForNavigation<SearchView, SearchViewModel>();
-            containerRegistry.RegisterForNavigation<BookSourceDebugView, BookSourceDebugViewModel>();
+            containerRegistry.RegisterForNavigation<DebugView, DebugViewModel>();
 
         }
         #endregion

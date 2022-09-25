@@ -1,5 +1,4 @@
 ﻿using Reader.Client.Models;
-using System;
 using System.Collections.ObjectModel;
 
 namespace Reader.Client.Interfaces
@@ -19,9 +18,9 @@ namespace Reader.Client.Interfaces
         /// <summary>
         /// 获取所有章节
         /// </summary>
-        /// <param name="bookID">书籍ID</param>
+        /// <param name="bookKey">书籍 Key</param>
         /// <returns></returns>
-        ObservableCollection<ChapterModel> GetAll(Guid bookID);
+        ObservableCollection<ChapterModel> GetAll(string bookKey);
 
         /// <summary>
         /// 删除章节

@@ -18,7 +18,7 @@ namespace Reader.Client.ViewModels
     /// <summary>
     /// 书源调试
     /// </summary>
-    public class BookSourceDebugViewModel : BaseViewModel
+    public class DebugViewModel : BaseViewModel
     {
         #region 成员(Member)
 
@@ -144,7 +144,7 @@ namespace Reader.Client.ViewModels
         /// 书源调试
         /// </summary>
         /// <param name="containerProvider"></param>
-        public BookSourceDebugViewModel(IContainerProvider containerProvider) : base(containerProvider)
+        public DebugViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             AddCommand = new DelegateCommand(AddSource);
@@ -247,13 +247,14 @@ namespace Reader.Client.ViewModels
                 CurrentSource.IsDebug = true;
                 FictionSpider fictionSpider = new FictionSpider(CurrentSource);
                 fictionSpider.OnWriteDebugLog = WriteDebugLog;
-                ObservableCollection<BookModel> books= fictionSpider.SearchBookList(KeyWord);
+                ObservableCollection<BookModel> books= fictionSpider.SearchBookList(KeyWord,true);
                 if(books!=null && books.Count>0)
                 {
-                    ObservableCollection<ChapterModel> chapters = fictionSpider.ReplenishBookReturnChapterList(books.FirstOrDefault());
-                    if(chapters!=null && chapters.Count>0)
+                    BookModel model = books.FirstOrDefault();
+                    BookTaskModel bookTask = fictionSpider.ReplenishBookReturnBookTask(model);
+                    if(bookTask != null && bookTask.ChapterTasks.Count>0)
                     {
-                        fictionSpider.ReplenishChapter(chapters.FirstOrDefault());
+                        fictionSpider.GetChapter(bookTask.ChapterTasks.FirstOrDefault());
                     }
                 }
             }

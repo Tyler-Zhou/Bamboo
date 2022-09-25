@@ -7,6 +7,7 @@ using Reader.Client.Spider;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Reader.Client.ViewModels
 {
@@ -29,6 +30,22 @@ namespace Reader.Client.ViewModels
             {
                 _KeyWord = value;
                 RaisePropertyChanged(nameof(KeyWord));
+            }
+        }
+        #endregion
+
+        #region 精确搜索
+        private bool _PreciseSearch = true;
+        /// <summary>
+        /// 精确搜索
+        /// </summary>
+        public bool PreciseSearch
+        {
+            get { return _PreciseSearch; }
+            set
+            {
+                _PreciseSearch = value;
+                RaisePropertyChanged(nameof(PreciseSearch));
             }
         }
         #endregion
@@ -60,6 +77,7 @@ namespace Reader.Client.ViewModels
                 {
                     SingleVisible = false;
                     MultipleVisible = true;
+                    PreciseSearch = true;
                 }
                 RaisePropertyChanged(nameof(SelectBookSourceType));
             }
@@ -264,6 +282,14 @@ namespace Reader.Client.ViewModels
         /// 书源服务
         /// </summary>
         IBookSourceService _BookSourceService;
+        /// <summary>
+        /// 书籍服务
+        /// </summary>
+        IBookService _BookService;
+        /// <summary>
+        /// 书籍下载任务
+        /// </summary>
+        IBookTaskService _BookTaskService;
         #endregion
 
         #region 命令(Commands)
@@ -285,6 +311,8 @@ namespace Reader.Client.ViewModels
         public SearchViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
+            _BookService = containerProvider.Resolve<IBookService>();
+            _BookTaskService = containerProvider.Resolve<IBookTaskService>();
             SearchCommand = new DelegateCommand(SearchBookList);
             DownloadCommand = new DelegateCommand<BookModel>(Download);
             InitData();
@@ -344,7 +372,7 @@ namespace Reader.Client.ViewModels
                 {
                     BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.Name.Equals(SingleSelectBookSource.Name));
                     FictionSpider fictionSpider = new FictionSpider(bookSource);
-                    Books.AddRange(fictionSpider.SearchBookList(KeyWord));
+                    Books.AddRange(fictionSpider.SearchBookList(KeyWord, PreciseSearch));
                 }
                 else
                 {
@@ -353,7 +381,7 @@ namespace Reader.Client.ViewModels
                         foreach (var item in BookSources)
                         {
                             FictionSpider fictionSpider = new FictionSpider(item);
-                            Books.AddRange(fictionSpider.SearchBookList(KeyWord));
+                            Books.AddRange(fictionSpider.SearchBookList(KeyWord, PreciseSearch));
                         }
                     }
                     else
@@ -361,7 +389,7 @@ namespace Reader.Client.ViewModels
                         foreach (var item in BookSources.Where(item => item.Group.Equals(MultipleSelectBookSource.Name)))
                         {
                             FictionSpider fictionSpider = new FictionSpider(item);
-                            Books.AddRange(fictionSpider.SearchBookList(KeyWord));
+                            Books.AddRange(fictionSpider.SearchBookList(KeyWord, PreciseSearch));
                         }
                     }
                 }
@@ -375,6 +403,9 @@ namespace Reader.Client.ViewModels
                 }
 
                 RaisePropertyChanged(nameof(Books));
+            }catch(Exception ex)
+            {
+                ShowError($"查找书籍出现异常:{ex.Message}");
             }
             finally
             {
@@ -388,10 +419,25 @@ namespace Reader.Client.ViewModels
         /// <param name="model">书籍对象</param>
         private void Download(BookModel model)
         {
-            BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
-            FictionSpider fictionSpider = new FictionSpider(bookSource);
-            ObservableCollection<ChapterModel> chapters= fictionSpider.ReplenishBookReturnChapterList(model);
-            RaisePropertyChanged(nameof(Books));
+            Task.Run(() => DownloadBook(model));
+        }
+
+        private void DownloadBook(BookModel model)
+        {
+            try
+            {
+                BookModel bookModel = Books.SingleOrDefault(item => item.ID.Equals(model.ID));
+                BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
+                FictionSpider fictionSpider = new FictionSpider(bookSource);
+                BookTaskModel bookTask = fictionSpider.ReplenishBookReturnBookTask(bookModel);
+                _BookService.Save(bookModel);
+                _BookTaskService.Save(bookTask);
+                RaisePropertyChanged(nameof(Books));
+            }
+            catch (Exception ex)
+            {
+                ShowError($"查找书籍出现异常:{ex.Message}");
+            }
         }
         #endregion
     }

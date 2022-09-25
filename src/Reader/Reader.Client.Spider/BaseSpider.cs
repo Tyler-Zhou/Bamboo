@@ -293,7 +293,7 @@ namespace Reader.Client.Spider
                 _Request.Headers.Add("Accept-Encoding", AcceptEncoding);
                 _Request.Headers.Add("Accept-Language", AcceptLanguage);
                 _Request.Method = Method;
-                _Request.Timeout = 20 * 1000;
+                _Request.Timeout = 5 * 1000;
                 _Request.KeepAlive = false;
                 _Request.ServicePoint.Expect100Continue = false;
                 if (RequestCookies == null)

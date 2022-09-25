@@ -46,9 +46,10 @@ namespace Reader.Client.Spider
         /// <summary>
         /// 查找书籍
         /// </summary>
-        /// <param name="keyWord"></param>
+        /// <param name="keyWord">搜索关键字</param>
+        /// <param name="preciseSearch">精确搜索</param>
         /// <returns></returns>
-        public ObservableCollection<BookModel> SearchBookList(string keyWord)
+        public ObservableCollection<BookModel> SearchBookList(string keyWord,bool preciseSearch=false)
         {
             ObservableCollection<BookModel> books = new ObservableCollection<BookModel>();
             try
@@ -77,15 +78,18 @@ namespace Reader.Client.Spider
                 {
                     HtmlDocument docOne = new HtmlDocument();
                     docOne.LoadHtml(htmlNode.InnerHtml);
-                    BookModel bookModel = new BookModel();
-                    bookModel.Name = docOne.XPathInnerText(_BookSource.SearchXPathName, _BookSource.IsDebug);
-                    if (_BookSource.IsDebug)
+                    string bookName = docOne.XPathInnerText(_BookSource.SearchXPathName, _BookSource.IsDebug);
+                    
+                    if (preciseSearch)
                     {
-                        if (!keyWord.Equals(bookModel.Name))
+                        if (!keyWord.Equals(bookName))
                         {
                             continue;
                         }
                     }
+                    BookModel bookModel = new BookModel();
+                    bookModel.ID = Guid.NewGuid();
+                    bookModel.Name = bookName;
                     //获取小说名称
                     WriteDebugLog($"┌获取书籍名称");
                     WriteDebugLog($"└{bookModel.Name}");
@@ -135,13 +139,13 @@ namespace Reader.Client.Spider
         }
 
         /// <summary>
-        /// 补充书籍信息并返回章节列表
+        /// 补充书籍信息并返回书籍下载任务
         /// </summary>
         /// <param name="bookModel"></param>
         /// <returns></returns>
-        public ObservableCollection<ChapterModel> ReplenishBookReturnChapterList(BookModel bookModel)
+        public BookTaskModel ReplenishBookReturnBookTask(BookModel bookModel)
         {
-            ObservableCollection<ChapterModel> chapters = new ObservableCollection<ChapterModel>();
+            
             try
             {
                 Url = bookModel.Link;
@@ -152,7 +156,7 @@ namespace Reader.Client.Spider
                 _doc_Main.LoadHtml(HtmlContent);
                 //判断是否有数据
                 if (_doc_Main.Text == "")
-                    return chapters;
+                    return null;
                 WriteDebugLog($"{_doc_Main.Text}");
                 //获取小说信息
                 WriteDebugLog($"详细页书籍信息");
@@ -216,16 +220,22 @@ namespace Reader.Client.Spider
                         WriteDebugLog($"┌封皮字节大小:{bookModel.PosterContent.Length}");
                     }
                     //获取最后更新章节及链接
-                } 
+                }
                 #endregion
+
+                BookTaskModel bookTask = new BookTaskModel();
+                bookTask.BookKey = bookModel.Key;
+                bookTask.SourceID = bookModel.SourceID;
 
                 //获取章节列表
                 WriteDebugLog($"获取章节列表");
                 HtmlNodeCollection _hnc_Chapter_List = _doc_Main.DocumentNode.SelectNodes(_BookSource.DetailXPathChapterList);
                 if (_hnc_Chapter_List != null && _hnc_Chapter_List.Count != 0)
                 {
-                    int orderIndex = chapters.Count;
-                    WriteDebugLog($"└列表大小:{orderIndex}");
+                    WriteDebugLog($"└列表大小:{_hnc_Chapter_List.Count}");
+
+                   
+                    int orderIndex = 0;
 
                     #region 循环章节列表
                     foreach (HtmlNode htmlNode in _hnc_Chapter_List)
@@ -234,43 +244,41 @@ namespace Reader.Client.Spider
                         HtmlDocument docOne = new HtmlDocument();
                         docOne.LoadHtml(htmlNode.InnerHtml);
 
-                        ChapterModel chapter = new ChapterModel();
-                        chapter.BookID = bookModel.ID;
-                        chapter.BookKey = bookModel.Key;
-                        //章节Key
+                        ChapterTaskModel chapterTask = new ChapterTaskModel();
+                        chapterTask.BookID = bookModel.ID;
+                        chapterTask.BookKey = bookModel.Key;
+                        //章节名称
                         WriteDebugLog($"┌获取章节Key");
                         string keyText = docOne.XPathInnerText(_BookSource.DetailXPathChapterKey, _BookSource.IsDebug);
-                        chapter.Key = keyText.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapter.Key}");
+                        chapterTask.Key = keyText.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
+                        WriteDebugLog($"└{chapterTask.Key}");
                         //章节名称
                         WriteDebugLog($"┌获取章节名称");
-                        chapter.Name = docOne.XPathInnerText(_BookSource.DetailXPathChapterName, _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapter.Name}");
+                        chapterTask.Name = docOne.XPathInnerText(_BookSource.DetailXPathChapterName, _BookSource.IsDebug);
+                        WriteDebugLog($"└{chapterTask.Name}");
                         //章节链接
                         WriteDebugLog($"┌获取章节链接");
-                        chapter.Link = docOne.XPathAttributeValue(_BookSource.DetailXPathChapterLink,_BookSource.DetailAttributeChapterLink, _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapter.Link}");
-                        WriteDebugLog($"┌获取章节索引");
-                        chapter.OrderIndex = orderIndex;
-                        WriteDebugLog($"└{chapter.OrderIndex}");
-                        if (string.IsNullOrWhiteSpace(chapter.Key) && !string.IsNullOrWhiteSpace(chapter.Link))
+                        chapterTask.Link = docOne.XPathAttributeValue(_BookSource.DetailXPathChapterLink,_BookSource.DetailAttributeChapterLink, _BookSource.IsDebug);
+                        WriteDebugLog($"└{chapterTask.Link}");
+                        if (string.IsNullOrWhiteSpace(chapterTask.Key) && !string.IsNullOrWhiteSpace(chapterTask.Link))
                         {
                             WriteDebugLog($"┌从链接获取章节Key");
-                            chapter.Key = chapter.Link.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
-                            WriteDebugLog($"└{chapter.Key}");
+                            chapterTask.Key = chapterTask.Link.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
+                            WriteDebugLog($"└{chapterTask.Key}");
                         }
-                        chapters.Add(chapter);
+                        bookTask.ChapterTasks.Add(chapterTask);
                         if (_BookSource.IsDebug)
                             break;
                     } 
                     #endregion
                 }
+
+                return bookTask;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return chapters;
         }
 
         /// <summary>
@@ -285,12 +293,12 @@ namespace Reader.Client.Spider
         }
 
         /// <summary>
-        /// 完善章节信息
+        /// 获取章节信息
         /// </summary>
-        /// <param name="chapter"></param>
-        public void ReplenishChapter(ChapterModel chapter)
+        /// <param name="chapterTask">章节任务</param>
+        public ChapterModel GetChapter(ChapterTaskModel chapterTask)
         {
-            Url = chapter.Link;
+            Url = chapterTask.Link;
             WriteDebugLog($"访问链接:{Url}");
             GetHtmlContent();
             WriteDebugLog($"开始解析网页内容");
@@ -298,33 +306,41 @@ namespace Reader.Client.Spider
             _doc_Main.LoadHtml(HtmlContent);
             //判断是否有数据
             if (_doc_Main.Text == "")
-                return;
+                return null;
             WriteDebugLog($"{_doc_Main.Text}");
+            ChapterModel chapterModel = new ChapterModel();
+            chapterModel.Key = chapterTask.Key;
+            chapterModel.Link = chapterTask.Link;
+            chapterModel.Name = chapterTask.Name;
+            chapterModel.BookID = chapterTask.BookID;
+            chapterModel.BookKey = chapterTask.BookKey;
+            chapterModel.ID = Guid.NewGuid();
             //章节名称
-            if (string.IsNullOrWhiteSpace(chapter.Name))
+            if (string.IsNullOrWhiteSpace(chapterModel.Name))
             {
                 WriteDebugLog($"┌从详细页获取章节名称");
-                chapter.Name = _doc_Main.XPathInnerText(_BookSource.ChapterXPathName);
-                WriteDebugLog($"└{chapter.Name}");
+                chapterModel.Name = _doc_Main.XPathInnerText(_BookSource.ChapterXPathName);
+                WriteDebugLog($"└{chapterModel.Name}");
             }
             //获取章节内容
             try
             {
                 WriteDebugLog($"┌从详细页获取章节内容");
                 HtmlNode htmlNodeContent = _doc_Main.DocumentNode.SelectSingleNode(_BookSource.ChapterXPathContent);
-                chapter.Content = htmlNodeContent.InnerHtml;
-                WriteDebugLog($"└{chapter.Content}");
+                chapterModel.Content = htmlNodeContent.InnerHtml;
+                WriteDebugLog($"└{chapterModel.Content}");
             }
             catch(Exception ex)
             {
                 WriteDebugLog($"└{ex.Message}");
             }
-            if (string.IsNullOrWhiteSpace(chapter.Content))
+            if (string.IsNullOrWhiteSpace(chapterModel.Content))
             {
                 WriteDebugLog($"┌正则表达式匹配章节内容");
-                chapter.Content = _doc_Main.Text.RegexText(_BookSource.ChapterRegexContent);
-                WriteDebugLog($"└{chapter.Content}");
+                chapterModel.Content = _doc_Main.Text.RegexText(_BookSource.ChapterRegexContent);
+                WriteDebugLog($"└{chapterModel.Content}");
             }
+            return chapterModel;
         }
         /// <summary>
         /// 写入日志，加判断委托是否为空

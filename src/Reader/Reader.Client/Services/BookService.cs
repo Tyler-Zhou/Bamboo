@@ -44,9 +44,39 @@ namespace Reader.Client.Services
         /// <returns></returns>
         public bool Save(BookModel model)
         {
+            if(string.IsNullOrWhiteSpace(model.Key))
+                return false;
             SubDirectory = $"\\Book\\";
-            return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.ID}", model).Result).Result;
+            BookModel singleModel = GetSingleOrDefault(model.Key);
+            if(singleModel!=null)
+            {
+                model.ID= singleModel.ID;
+            }
+            return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.Key}", model).Result).Result;
         }
+
+        /// <summary>
+        /// 获取所有书籍
+        /// </summary>
+        /// <returns></returns>
+        public BookModel GetSingleOrDefault(string booKey)
+        {
+            SubDirectory = $"\\Book\\";
+            BookModel result = null;
+            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            FileInfo[] fis = dir.GetFiles();
+            for (int i = 0; i < fis.Length; i++)
+            {
+                FileInfo fi = fis[i];
+                string name = fi.Name.Replace(fi.Extension, "");
+                BookModel searchModel = Task.Run(() => _CacheService.GetAsync<BookModel>(SubDirectory, name).Result).Result;
+                if(booKey.Equals(searchModel.Key))
+                    result= searchModel;
+            }
+            return result;
+        }
+
         /// <summary>
         /// 获取所有书籍
         /// </summary>

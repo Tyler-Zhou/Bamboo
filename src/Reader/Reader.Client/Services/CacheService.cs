@@ -142,7 +142,9 @@ namespace Reader.Client.Services
         {
             try
             {
-                string fullPath = $"{_BasePath}{subDirectory}{configName}{_ExtensionName}";
+                string basePath= $"{_BasePath}{subDirectory}";
+                EnsureDirectoryExists(basePath);
+                string fullPath = $"{basePath}{configName}{_ExtensionName}";
                 //序列化
                 string josnText = JsonSerializerHelper.SerializeObject(obj);
                 //写入文件流
@@ -186,6 +188,17 @@ namespace Reader.Client.Services
             {
                 _Logger.LogError(ex.Message);
                 return default(TSetting);
+            }
+        }
+        /// <summary>
+        /// 确保目录存在
+        /// </summary>
+        /// <param name="dir"></param>
+        void EnsureDirectoryExists(string dir)
+        {
+            if(!Directory.Exists(dir))
+            {
+                Directory.CreateDirectory(dir);
             }
         }
         #endregion

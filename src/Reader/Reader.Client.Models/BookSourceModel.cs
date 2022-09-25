@@ -1,4 +1,6 @@
-﻿namespace Reader.Client.Models
+﻿using System.Runtime.Serialization;
+
+namespace Reader.Client.Models
 {
     /// <summary>
     /// 书源模型
@@ -67,6 +69,7 @@
         /// <summary>
         /// 是否调试
         /// </summary>
+        [IgnoreDataMember]
         public bool IsDebug
         {
             get

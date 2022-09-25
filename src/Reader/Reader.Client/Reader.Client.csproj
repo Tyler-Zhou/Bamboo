@@ -153,22 +153,21 @@
     <Compile Include="Interfaces\IBookSourceService.cs" />
     <Compile Include="Interfaces\ICacheService.cs" />
     <Compile Include="Interfaces\IChapterService.cs" />
+    <Compile Include="Interfaces\IBookTaskService.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />
     <Compile Include="Services\ApplicationService.cs" />
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\BookSourceService.cs" />
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Services\ChapterService.cs" />
+    <Compile Include="Services\BookTaskService.cs" />
+    <Compile Include="Services\DownloadService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\BookSourceDebugViewModel.cs" />
-    <Compile Include="ViewModels\BookSourceManageViewModel.cs" />
+    <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\MainViewModels.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
-    <Compile Include="Views\BookSourceDebugView.xaml.cs">
-      <DependentUpon>BookSourceDebugView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BookSourceManageView.xaml.cs">
-      <DependentUpon>BookSourceManageView.xaml</DependentUpon>
+    <Compile Include="Views\DebugView.xaml.cs">
+      <DependentUpon>DebugView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoadingView.xaml.cs">
       <DependentUpon>LoadingView.xaml</DependentUpon>
@@ -221,15 +220,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Resources\StringResource.xaml">
+    <Page Include="Resources\Resource.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\BookSourceDebugView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\BookSourceManageView.xaml">
+    <Page Include="Views\DebugView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
