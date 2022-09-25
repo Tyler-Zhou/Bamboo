@@ -19,7 +19,7 @@ namespace Reader.Client.ViewModels
 
         #region 服务(Service)
         /// <summary>
-        /// 容器提供者(DryICO)
+        /// 容器提供者(DryIOC)
         /// </summary>
         public readonly IContainerProvider ContainerProvider;
         /// <summary>
@@ -29,7 +29,7 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 应用程序服务
         /// </summary>
-        public readonly IApplicationService _ApplicationService;
+        public readonly IApplicationService AppService;
         #endregion
 
         #region 命令(Command)
@@ -39,11 +39,11 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 基本视图模型
         /// </summary>
-        /// <param name="containerProvider">容器提供者(DryICO)</param>
+        /// <param name="containerProvider">容器提供者(DryIOC)</param>
         public BaseViewModel(IContainerProvider containerProvider)
         {
             ContainerProvider = containerProvider;
-            _ApplicationService = ContainerProvider.Resolve<IApplicationService>();
+            AppService = ContainerProvider.Resolve<IApplicationService>();
             _EventAggregator = ContainerProvider.Resolve<IEventAggregator>();
         }
         #endregion
@@ -84,7 +84,7 @@ namespace Reader.Client.ViewModels
         /// <param name="navigationParams">导航参数</param>
         public virtual void NavigationToView(string viewName, NavigationParameters navigationParams)
         {
-            _ApplicationService.NavigationToView(viewName, navigationParams);
+            AppService.NavigationToView(viewName, navigationParams);
         }
 
         /// <summary>

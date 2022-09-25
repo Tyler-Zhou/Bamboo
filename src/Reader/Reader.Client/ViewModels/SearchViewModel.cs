@@ -1,6 +1,8 @@
 ﻿using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
+using Reader.Client.Events;
+using Reader.Client.Extensions;
 using Reader.Client.Interfaces;
 using Reader.Client.Models;
 using Reader.Client.Spider;
@@ -287,9 +289,9 @@ namespace Reader.Client.ViewModels
         /// </summary>
         IBookService _BookService;
         /// <summary>
-        /// 书籍下载任务
+        /// 下载任务
         /// </summary>
-        IBookTaskService _BookTaskService;
+        IDownloadTaskService _DownloadTaskService;
         #endregion
 
         #region 命令(Commands)
@@ -312,7 +314,7 @@ namespace Reader.Client.ViewModels
         {
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             _BookService = containerProvider.Resolve<IBookService>();
-            _BookTaskService = containerProvider.Resolve<IBookTaskService>();
+            _DownloadTaskService = containerProvider.Resolve<IDownloadTaskService>();
             SearchCommand = new DelegateCommand(SearchBookList);
             DownloadCommand = new DelegateCommand<BookModel>(Download);
             InitData();
@@ -419,25 +421,36 @@ namespace Reader.Client.ViewModels
         /// <param name="model">书籍对象</param>
         private void Download(BookModel model)
         {
-            Task.Run(() => DownloadBook(model));
+            Task.Run(() => {
+                try
+                {
+                    BookModel bookModel = Books.SingleOrDefault(item => item.ID.Equals(model.ID));
+                    BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
+                    FictionSpider fictionSpider = new FictionSpider(bookSource);
+                    ObservableCollection<DownloadTaskModel> downloadTasks = fictionSpider.ReplenishBookReturnBookTask(bookModel);
+                    _BookService.Save(bookModel);
+                    foreach (DownloadTaskModel downloadTask in downloadTasks)
+                    {
+                        _DownloadTaskService.Save(downloadTask);
+                    }
+                    AddDownloadTask(bookModel.Key,bookModel.Name);
+                    NavigationToView("DownloadView",null);
+                }
+                catch (Exception ex)
+                {
+                    ShowError($"查找书籍出现异常:{ex.Message}");
+                }
+            });
         }
 
-        private void DownloadBook(BookModel model)
+        /// <summary>
+        /// 添加下载任务
+        /// </summary>
+        /// <param name="taskKey">任务 Key</param>
+        /// <param name="taskName">任务名称</param>
+        private void AddDownloadTask(string taskKey,string taskName)
         {
-            try
-            {
-                BookModel bookModel = Books.SingleOrDefault(item => item.ID.Equals(model.ID));
-                BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
-                FictionSpider fictionSpider = new FictionSpider(bookSource);
-                BookTaskModel bookTask = fictionSpider.ReplenishBookReturnBookTask(bookModel);
-                _BookService.Save(bookModel);
-                _BookTaskService.Save(bookTask);
-                RaisePropertyChanged(nameof(Books));
-            }
-            catch (Exception ex)
-            {
-                ShowError($"查找书籍出现异常:{ex.Message}");
-            }
+            _EventAggregator.SendTask(new TaskModel() { Key= taskKey, Name= taskName });
         }
         #endregion
     }

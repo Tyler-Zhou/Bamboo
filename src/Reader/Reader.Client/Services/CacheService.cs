@@ -76,7 +76,7 @@ namespace Reader.Client.Services
         /// <param name="obj">配置文件对象</param>
         public async Task<bool> SaveAsync(string subDirectory, string configName, object obj)
         {
-            return await Task.Run(() => SaveConfig(subDirectory, configName, obj));
+            return await Task.Run(() => SaveJSON(subDirectory, configName, obj));
         }
 
         /// <summary>
@@ -97,9 +97,18 @@ namespace Reader.Client.Services
         /// <returns></returns>
         public async Task<TSetting> GetAsync<TSetting>(string subDirectory, string configName)
         {
-            return await Task.Run(() => GetConfig<TSetting>(subDirectory,configName));
+            return await Task.Run(() => GetJSON<TSetting>(subDirectory,configName));
         }
 
+        /// <summary>
+        /// 删除Json文件
+        /// </summary>
+        /// <param name="subDirectory">子目录</param>
+        /// <param name="configName">配置名称</param>
+        public async Task<bool> RemoveAsync(string subDirectory, string configName)
+        {
+            return await Task.Run(() => RemoveJSON(subDirectory, configName));
+        }
         #endregion
 
         #region 私有方法(Private Method)
@@ -138,7 +147,7 @@ namespace Reader.Client.Services
         /// <param name="configName">配置名称</param>
         /// <param name="obj"></param>
         /// <returns></returns>
-        bool SaveConfig(string subDirectory, string configName, object obj)
+        bool SaveJSON(string subDirectory, string configName, object obj)
         {
             try
             {
@@ -162,13 +171,36 @@ namespace Reader.Client.Services
         }
 
         /// <summary>
+        /// 删除配置文件
+        /// </summary>
+        /// <param name="subDirectory">子目录</param>
+        /// <param name="configName">配置名称</param>
+        /// <returns></returns>
+        bool RemoveJSON(string subDirectory, string configName)
+        {
+            try
+            {
+                string basePath = $"{_BasePath}{subDirectory}";
+                EnsureDirectoryExists(basePath);
+                string fullPath = $"{basePath}{configName}{_ExtensionName}";
+                File.Delete(fullPath);
+            }
+            catch (Exception ex)
+            {
+                _Logger.LogError(ex.Message);
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
         /// 获取配置
         /// </summary>
         /// <param name="subDirectory">子目录</param>
         /// <param name="configName">配置名称</param>
-        /// <typeparam name="TSetting">设置实体对象</typeparam>
+        /// <typeparam name="TJSON">设置实体对象</typeparam>
         /// <returns></returns>
-        TSetting GetConfig<TSetting>(string subDirectory, string configName)
+        TJSON GetJSON<TJSON>(string subDirectory, string configName)
         {
             try
             {
@@ -182,12 +214,12 @@ namespace Reader.Client.Services
                 {
                     josnText = sr.ReadToEnd();
                 }
-                return JsonSerializerHelper.DeserializeObject<TSetting>(josnText);
+                return JsonSerializerHelper.DeserializeObject<TJSON>(josnText);
             }
             catch (Exception ex)
             {
                 _Logger.LogError(ex.Message);
-                return default(TSetting);
+                return default(TJSON);
             }
         }
         /// <summary>

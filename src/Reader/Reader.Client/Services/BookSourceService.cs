@@ -1,5 +1,6 @@
 ﻿using Reader.Client.Interfaces;
 using Reader.Client.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
@@ -48,6 +49,35 @@ namespace Reader.Client.Services
         }
 
         /// <summary>
+        /// 获取单个书源
+        /// </summary>
+        /// <param name="id">标识键</param>
+        /// <returns></returns>
+        public BookSourceModel SingleOrDefault(Guid id)
+        {
+            if (id!=null && !id.Equals(Guid.Empty))
+            {
+                string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+                DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+                FileInfo[] fis = dir.GetFiles();
+                for (int i = 0; i < fis.Length; i++)
+                {
+                    FileInfo fi = fis[i];
+                    string name = fi.Name.Replace(fi.Extension, "");
+                    if (name.Equals(""+id))
+                    {
+                        BookSourceModel model = Task.Run(() => _CacheService.GetAsync<BookSourceModel>(SubDirectory, name).Result).Result;
+                        if (model != null)
+                        {
+                            return model;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
         /// 生成源
         /// </summary>
         /// <param name="model"></param>
@@ -83,11 +113,11 @@ namespace Reader.Client.Services
         /// <summary>
         /// 删除书源
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="id">主键</param>
         /// <returns></returns>
-        public bool Remove(BookSourceModel model)
+        public bool Remove(Guid id)
         {
-            return true;
+            return Task.Run(() => _CacheService.RemoveAsync(SubDirectory, $"{id}").Result).Result;
         }
 
         #endregion

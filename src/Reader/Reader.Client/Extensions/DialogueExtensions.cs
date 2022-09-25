@@ -10,6 +10,7 @@ namespace Reader.Client.Extensions
     /// </summary>
     public static class DialogueExtensions
     {
+        #region Loading
         /// <summary>
         /// 注册等待消息
         /// </summary>
@@ -29,7 +30,9 @@ namespace Reader.Client.Extensions
         {
             aggregator.GetEvent<LoadingEvent>().Publish(model);
         }
+        #endregion
 
+        #region Message
         /// <summary>
         /// 注册提示消息 
         /// </summary>
@@ -60,5 +63,28 @@ namespace Reader.Client.Extensions
                 Tips = tipsInfo,
             });
         }
+        #endregion
+
+        #region Task
+        /// <summary>
+        /// 注册任务订阅
+        /// </summary>
+        /// <param name="aggregator"></param>
+        /// <param name="action"></param>
+        public static void ResgiterTask(this IEventAggregator aggregator,Action<TaskModel> action)
+        {
+            aggregator.GetEvent<TaskEvent>().Subscribe(action);
+        }
+
+        /// <summary>
+        /// 发送任务
+        /// </summary>
+        /// <param name="aggregator"></param>
+        /// <param name="taskModel">任务模型</param>
+        public static void SendTask(this IEventAggregator aggregator, TaskModel taskModel)
+        {
+            aggregator.GetEvent<TaskEvent>().Publish(taskModel);
+        }
+        #endregion
     }
 }

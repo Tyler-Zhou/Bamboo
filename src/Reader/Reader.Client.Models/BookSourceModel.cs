@@ -7,6 +7,25 @@ namespace Reader.Client.Models
     /// </summary>
     public class BookSourceModel: BaseModel
     {
+        #region 标识键
+        private string _Key = "";
+        /// <summary>
+        /// 标识键
+        /// </summary>
+        public string Key
+        {
+            get
+            {
+                return _Key;
+            }
+            set
+            {
+                _Key = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 名称
         private string _Name = "";
         /// <summary>

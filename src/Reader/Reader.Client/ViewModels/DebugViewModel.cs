@@ -11,6 +11,8 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace Reader.Client.ViewModels
 {
@@ -194,6 +196,9 @@ namespace Reader.Client.ViewModels
         {
             BookSources = _BookSourceService.GetAll();
         }
+
+        
+
         /// <summary>
         /// 无效数据
         /// </summary>
@@ -251,10 +256,10 @@ namespace Reader.Client.ViewModels
                 if(books!=null && books.Count>0)
                 {
                     BookModel model = books.FirstOrDefault();
-                    BookTaskModel bookTask = fictionSpider.ReplenishBookReturnBookTask(model);
-                    if(bookTask != null && bookTask.ChapterTasks.Count>0)
+                    ObservableCollection<DownloadTaskModel> downloadTask = fictionSpider.ReplenishBookReturnBookTask(model);
+                    if(downloadTask != null && downloadTask.Count>0)
                     {
-                        fictionSpider.GetChapter(bookTask.ChapterTasks.FirstOrDefault());
+                        fictionSpider.GetChapter(downloadTask.FirstOrDefault());
                     }
                 }
             }

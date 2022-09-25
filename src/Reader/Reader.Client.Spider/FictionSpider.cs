@@ -143,7 +143,7 @@ namespace Reader.Client.Spider
         /// </summary>
         /// <param name="bookModel"></param>
         /// <returns></returns>
-        public BookTaskModel ReplenishBookReturnBookTask(BookModel bookModel)
+        public ObservableCollection<DownloadTaskModel> ReplenishBookReturnBookTask(BookModel bookModel)
         {
             
             try
@@ -223,18 +223,13 @@ namespace Reader.Client.Spider
                 }
                 #endregion
 
-                BookTaskModel bookTask = new BookTaskModel();
-                bookTask.BookKey = bookModel.Key;
-                bookTask.SourceID = bookModel.SourceID;
-
+                ObservableCollection<DownloadTaskModel> DownloadTasks = new ObservableCollection<DownloadTaskModel>();
                 //获取章节列表
                 WriteDebugLog($"获取章节列表");
                 HtmlNodeCollection _hnc_Chapter_List = _doc_Main.DocumentNode.SelectNodes(_BookSource.DetailXPathChapterList);
                 if (_hnc_Chapter_List != null && _hnc_Chapter_List.Count != 0)
                 {
                     WriteDebugLog($"└列表大小:{_hnc_Chapter_List.Count}");
-
-                   
                     int orderIndex = 0;
 
                     #region 循环章节列表
@@ -244,36 +239,36 @@ namespace Reader.Client.Spider
                         HtmlDocument docOne = new HtmlDocument();
                         docOne.LoadHtml(htmlNode.InnerHtml);
 
-                        ChapterTaskModel chapterTask = new ChapterTaskModel();
-                        chapterTask.BookID = bookModel.ID;
-                        chapterTask.BookKey = bookModel.Key;
+                        DownloadTaskModel downloadTask = new DownloadTaskModel();
+                        downloadTask.BookID = bookModel.ID;
+                        downloadTask.BookKey = bookModel.Key;
+                        downloadTask.SourceID = bookModel.SourceID;
                         //章节名称
                         WriteDebugLog($"┌获取章节Key");
                         string keyText = docOne.XPathInnerText(_BookSource.DetailXPathChapterKey, _BookSource.IsDebug);
-                        chapterTask.Key = keyText.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapterTask.Key}");
+                        downloadTask.Key = keyText.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
+                        WriteDebugLog($"└{downloadTask.Key}");
                         //章节名称
                         WriteDebugLog($"┌获取章节名称");
-                        chapterTask.Name = docOne.XPathInnerText(_BookSource.DetailXPathChapterName, _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapterTask.Name}");
+                        downloadTask.Name = docOne.XPathInnerText(_BookSource.DetailXPathChapterName, _BookSource.IsDebug);
+                        WriteDebugLog($"└{downloadTask.Name}");
                         //章节链接
                         WriteDebugLog($"┌获取章节链接");
-                        chapterTask.Link = docOne.XPathAttributeValue(_BookSource.DetailXPathChapterLink,_BookSource.DetailAttributeChapterLink, _BookSource.IsDebug);
-                        WriteDebugLog($"└{chapterTask.Link}");
-                        if (string.IsNullOrWhiteSpace(chapterTask.Key) && !string.IsNullOrWhiteSpace(chapterTask.Link))
+                        downloadTask.Link = docOne.XPathAttributeValue(_BookSource.DetailXPathChapterLink,_BookSource.DetailAttributeChapterLink, _BookSource.IsDebug);
+                        WriteDebugLog($"└{downloadTask.Link}");
+                        if (string.IsNullOrWhiteSpace(downloadTask.Key) && !string.IsNullOrWhiteSpace(downloadTask.Link))
                         {
                             WriteDebugLog($"┌从链接获取章节Key");
-                            chapterTask.Key = chapterTask.Link.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
-                            WriteDebugLog($"└{chapterTask.Key}");
+                            downloadTask.Key = downloadTask.Link.RegexText(_BookSource.DetailRegexChapterKey, "R", _BookSource.IsDebug);
+                            WriteDebugLog($"└{downloadTask.Key}");
                         }
-                        bookTask.ChapterTasks.Add(chapterTask);
+                        DownloadTasks.Add(downloadTask);
                         if (_BookSource.IsDebug)
                             break;
                     } 
                     #endregion
                 }
-
-                return bookTask;
+                return DownloadTasks;
             }
             catch (Exception ex)
             {
@@ -296,7 +291,7 @@ namespace Reader.Client.Spider
         /// 获取章节信息
         /// </summary>
         /// <param name="chapterTask">章节任务</param>
-        public ChapterModel GetChapter(ChapterTaskModel chapterTask)
+        public ChapterModel GetChapter(DownloadTaskModel chapterTask)
         {
             Url = chapterTask.Link;
             WriteDebugLog($"访问链接:{Url}");

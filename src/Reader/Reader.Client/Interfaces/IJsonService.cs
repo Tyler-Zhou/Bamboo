@@ -35,5 +35,12 @@ namespace Reader.Client.Interfaces
         /// <typeparam name="TJson">Json对象</typeparam>
         /// <returns></returns>
         Task<TJson> GetAsync<TJson>(string subDirectory, string configName);
+
+        /// <summary>
+        /// 删除Json文件
+        /// </summary>
+        /// <param name="subDirectory">子目录</param>
+        /// <param name="configName">配置名称</param>
+        Task<bool> RemoveAsync(string subDirectory, string configName);
     }
 }

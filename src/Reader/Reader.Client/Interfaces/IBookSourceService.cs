@@ -1,4 +1,5 @@
 ﻿using Reader.Client.Models;
+using System;
 using System.Collections.ObjectModel;
 
 namespace Reader.Client.Interfaces
@@ -14,11 +15,16 @@ namespace Reader.Client.Interfaces
         /// <param name="model">书源实体</param>
         /// <returns></returns>
         bool Save(BookSourceModel model);
-
+        /// <summary>
+        /// 获取单个书源
+        /// </summary>
+        /// <param name="id">标识键</param>
+        /// <returns></returns>
+        BookSourceModel SingleOrDefault(Guid id);
         /// <summary>
         /// 生成源
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">书源模型</param>
         /// <returns></returns>
         string Generate(BookSourceModel model);
 
@@ -30,8 +36,8 @@ namespace Reader.Client.Interfaces
         /// <summary>
         /// 删除书源
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="id">主键</param>
         /// <returns></returns>
-        bool Remove(BookSourceModel model);
+        bool Remove(Guid id);
     }
 }

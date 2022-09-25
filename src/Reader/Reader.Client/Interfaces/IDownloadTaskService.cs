@@ -4,33 +4,33 @@ using System.Collections.ObjectModel;
 namespace Reader.Client.Interfaces
 {
     /// <summary>
-    /// 章节服务接口
+    /// 下载任务服务接口
     /// </summary>
-    public interface IChapterService
+    public interface IDownloadTaskService
     {
         /// <summary>
-        /// 保存章节
+        /// 保存下载任务
         /// </summary>
         /// <param name="model">章节实体</param>
         /// <returns></returns>
-        bool Save(ChapterModel model);
+        bool Save(DownloadTaskModel model);
         /// <summary>
-        /// 单个章节
+        /// 下载任务
         /// </summary>
-        /// <param name="key"></param>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <param name="key">任务 Key</param>
         /// <returns></returns>
-        ChapterModel SingleOrDefault(string key);
+        DownloadTaskModel SingleOrDefault(string bookKey,string key);
         /// <summary>
-        /// 获取所有章节
+        /// 获取下载任务
         /// </summary>
         /// <param name="bookKey">书籍 Key</param>
         /// <returns></returns>
-        ObservableCollection<ChapterModel> GetAll(string bookKey);
-
+        ObservableCollection<DownloadTaskModel> GetAll(string bookKey);
         /// <summary>
-        /// 删除章节
+        /// 删除任务
         /// </summary>
-        /// <param name="key">标识键</param>
+        /// <param name="key"></param>
         /// <returns></returns>
         bool Remove(string key);
     }

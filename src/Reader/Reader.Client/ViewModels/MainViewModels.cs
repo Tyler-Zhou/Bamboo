@@ -45,16 +45,11 @@ namespace Reader.Client.ViewModels
         }
         #endregion
 
-        /// <summary>
-        /// 方法集合
-        /// </summary>
-        private static List<Func<Task>> _Functions = new List<Func<Task>>();
-
         #endregion
 
         #region 服务(Service)
         /// <summary>
-        /// 容器提供者(DryICO)
+        /// 容器提供者(DryIOC)
         /// </summary>
         public readonly IContainerProvider ContainerProvider;
         /// <summary>
@@ -72,7 +67,7 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 书籍下载任务
         /// </summary>
-        IBookTaskService _BookTaskService;
+        IDownloadTaskService _BookTaskService;
         /// <summary>
         /// 章节服务
         /// </summary>
@@ -85,10 +80,6 @@ namespace Reader.Client.ViewModels
         /// </summary>
         public DelegateCommand<string> NavigateViewCommand { get; private set; }
         /// <summary>
-        /// 开始下载
-        /// </summary>
-        public DelegateCommand StartDownloadCommand { get; private set; }
-        /// <summary>
         /// 退出程序
         /// </summary>
         public DelegateCommand ExitApplicationCommand { get; private set; }
@@ -98,17 +89,16 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="containerProvider">容器提供者(DryICO)</param>
+        /// <param name="containerProvider">容器提供者(DryIOC)</param>
         public MainViewModel(IContainerProvider containerProvider)
         {
             ContainerProvider = containerProvider;
             _EventAggregator = ContainerProvider.Resolve<IEventAggregator>();
             _ApplicationService = ContainerProvider.Resolve<IApplicationService>();
             _BookSourceService = ContainerProvider.Resolve<IBookSourceService>();
-            _BookTaskService = ContainerProvider.Resolve<IBookTaskService>();
+            _BookTaskService = ContainerProvider.Resolve<IDownloadTaskService>();
             _ChapterService = ContainerProvider.Resolve<IChapterService>();
 
-            StartDownloadCommand = new DelegateCommand(StartDownload);
             NavigateViewCommand = new DelegateCommand<string>(NavigateView);
             ExitApplicationCommand = new DelegateCommand(ExitApplication);
             InitData();
@@ -141,83 +131,19 @@ namespace Reader.Client.ViewModels
         /// </summary>
         public bool ClosingWindow()
         {
-            return !Task.Run(() => ExecuteAllFunction().Result).Result;
+            return !_ApplicationService.ExitApplication();
         }
         /// <summary>
         /// 退出应用程序
         /// </summary>
         void ExitApplication()
         {
-            var result = Task.Run(() => ExecuteAllFunction().Result).Result;
-            Application.Current.Shutdown();
-        }
-        /// <summary>
-        /// 执行所有方法
-        /// </summary>
-        /// <returns></returns>
-        async Task<bool> ExecuteAllFunction()
-        {
-            if (_Functions != null && _Functions.Count > 0)
+            if(_ApplicationService.ExitApplication())
             {
-                var functions = _Functions.Select(command => command());
-                await Task.WhenAll(functions);
-
-                return _Functions.Count > 0;
-            }
-            return true;
-        }
-        /// <summary>
-        /// 开始下载
-        /// </summary>
-        void StartDownload()
-        {
-            Task.Run(() =>
-            {
-                ObservableCollection<BookSourceModel> bookSources = _BookSourceService.GetAll();
-                ObservableCollection<BookTaskModel> bookTasks = _BookTaskService.GetAll();
-                foreach (BookTaskModel bookTask in bookTasks)
-                {
-                    BookSourceModel bookSource = bookSources.SingleOrDefault(item => item.ID.Equals(bookTask.SourceID));
-
-                    //书源不为空
-                    if (bookSource != null)
-                    {
-                        Task.Run(() => StartBookTask(bookTask, bookSource));
-                    }
-                    
-                }
-            });
-        }
-
-        void StartBookTask(BookTaskModel bookTask, BookSourceModel bookSource)
-        {
-            int[] TotolChapterCount = new int[1];
-            ConcurrentQueue<ChapterTaskModel> queue = new ConcurrentQueue<ChapterTaskModel>();
-            // 创建线程池 4 个线程
-            Thread[] ThreadPool = new Thread[4];
-            // 初始化
-            for (sbyte i = 0; i < ThreadPool.Length; i++)
-            {
-                ThreadPool[i] = new Thread(new ThreadStart(new DownloadService(queue, bookSource, _ChapterService, TotolChapterCount).Start));
-                ThreadPool[i].Start();
-            }
-            // 向线程池提交任务
-            foreach (ChapterTaskModel chapterTask in bookTask.ChapterTasks.Where(item => !item.IsDownload))
-            {
-                queue.Enqueue(chapterTask);
-                Thread.Sleep(5000);
-            }
-            while (true) // 等待所以章节下载完
-            {
-                if (TotolChapterCount[0] == bookTask.ChapterTasks.Count)
-                {
-                    break;
-                }
-                Thread.Sleep(1000);
-                continue;
+                Application.Current.Shutdown();
             }
         }
-
+        
         /// <summary>
         /// 正在加载
         /// </summary>

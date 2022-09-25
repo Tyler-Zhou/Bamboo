@@ -34,7 +34,10 @@
                     Command="{Binding NavigateViewCommand}"
                     CommandParameter="SearchView"
                     Header="{DynamicResource MenuItemSearchBook}" />
-                <MenuItem Command="{Binding StartDownloadCommand}" Header="{DynamicResource MenuItemStartDownload}" />
+                <MenuItem
+                    Command="{Binding NavigateViewCommand}"
+                    CommandParameter="DownloadView"
+                    Header="{DynamicResource MenuItemDownloadTask}" />
             </MenuItem>
             <MenuItem Header="{DynamicResource MenuItemBookSource}">
                 <MenuItem

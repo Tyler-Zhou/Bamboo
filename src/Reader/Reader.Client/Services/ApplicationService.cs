@@ -2,6 +2,10 @@
 using Prism.Regions;
 using Reader.Client.Common;
 using Reader.Client.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System;
+using System.Linq;
 
 namespace Reader.Client.Services
 {
@@ -10,6 +14,13 @@ namespace Reader.Client.Services
     /// </summary>
     public class ApplicationService: IApplicationService
     {
+        #region 成员(Member)
+        /// <summary>
+        /// 方法集合
+        /// </summary>
+        private static List<Func<Task>> _Functions = new List<Func<Task>>();
+        #endregion
+
         #region 服务(Service)
         /// <summary>
         /// 日志服务
@@ -62,6 +73,40 @@ namespace Reader.Client.Services
         {
             Navigate(viewName, navigationParams);
         }
+
+        /// <summary>
+        /// 退出应用程序
+        /// </summary>
+        public bool ExitApplication()
+        {
+            return Task.Run(() => ExecuteAllFunction().Result).Result;
+        }
+
+        /// <summary>
+        /// 执行所有方法
+        /// </summary>
+        /// <returns></returns>
+        async Task<bool> ExecuteAllFunction()
+        {
+            if (_Functions != null && _Functions.Count > 0)
+            {
+                var functions = _Functions.Select(command => command());
+                await Task.WhenAll(functions);
+
+                return _Functions.Count > 0;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 添加方法
+        /// </summary>
+        /// <param name="func"></param>
+        public void AddFunction(Func<Task> func)
+        {
+            _Functions.Add(func);
+        }
+
         #endregion
     }
 }

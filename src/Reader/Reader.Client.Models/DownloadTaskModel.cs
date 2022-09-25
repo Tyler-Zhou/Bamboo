@@ -4,10 +4,29 @@ using System;
 namespace Reader.Client.Models
 {
     /// <summary>
-    /// 章节任务
+    /// 下载任务模型
     /// </summary>
-    public class ChapterTaskModel : BindableBase
+    public class DownloadTaskModel : BindableBase
     {
+        #region 书源 Key
+        private Guid _SourceID = Guid.Empty;
+        /// <summary>
+        /// 书源 Key
+        /// </summary>
+        public Guid SourceID
+        {
+            get
+            {
+                return _SourceID;
+            }
+            set
+            {
+                _SourceID = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 书籍主键
         private Guid _BookID = Guid.Empty;
         /// <summary>

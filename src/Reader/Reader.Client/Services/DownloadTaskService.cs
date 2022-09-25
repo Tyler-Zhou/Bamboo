@@ -1,22 +1,23 @@
 ﻿using Reader.Client.Interfaces;
 using Reader.Client.Models;
-using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace Reader.Client.Services
 {
     /// <summary>
-    /// 章节服务
+    /// 下载任务服务
     /// </summary>
-    public class ChapterService: IChapterService
+    public class DownloadTaskService: IDownloadTaskService
     {
         #region 成员(Member)
         /// <summary>
         /// 存储目录
         /// </summary>
-        string SubDirectory = "\\Book\\";
+        string SubDirectory = "\\Book\\DownloadTask\\";
         #endregion
 
         #region 服务(Services)
@@ -28,10 +29,10 @@ namespace Reader.Client.Services
 
         #region 构造函数(Constructor)
         /// <summary>
-        /// 章节服务
+        /// 下载任务服务
         /// </summary>
         /// <param name="cacheService"></param>
-        public ChapterService(ICacheService cacheService)
+        public DownloadTaskService(ICacheService cacheService)
         {
             _CacheService = cacheService;
         }
@@ -39,59 +40,31 @@ namespace Reader.Client.Services
 
         #region 方法(Method)
         /// <summary>
-        /// 保存章节
+        /// 保存书籍下载任务
         /// </summary>
         /// <param name="model">章节实体</param>
         /// <returns></returns>
-        public bool Save(ChapterModel model)
+        public bool Save(DownloadTaskModel model)
         {
-            if(string.IsNullOrWhiteSpace(model.BookKey))
+            if (string.IsNullOrWhiteSpace(model.Key)
+                || string.IsNullOrWhiteSpace(model.BookKey))
                 return false;
-            if (string.IsNullOrWhiteSpace(model.Key))
-                return false;
-            SubDirectory = $"\\Book\\{model.BookKey}\\";
+            
+            SubDirectory = $"\\Book\\Task\\{model.BookKey}\\";
             Remove(model.Key);
             return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.Key}", model).Result).Result;
         }
-
         /// <summary>
-        /// 单个章节
-        /// </summary>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public ChapterModel SingleOrDefault(string key)
-        {
-            if (!string.IsNullOrWhiteSpace(key))
-            {
-                string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-                DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
-                FileInfo[] fis = dir.GetFiles();
-                for (int i = 0; i < fis.Length; i++)
-                {
-                    FileInfo fi = fis[i];
-                    string name = fi.Name.Replace(fi.Extension, "");
-                    if (name.Equals(key))
-                    {
-                        ChapterModel model = Task.Run(() => _CacheService.GetAsync<ChapterModel>(SubDirectory, name).Result).Result;
-                        if (model != null)
-                        {
-                            return model;
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// 获取所有章节
+        /// 下载任务
         /// </summary>
         /// <param name="bookKey">书籍 Key</param>
+        /// <param name="key">任务 Key</param>
         /// <returns></returns>
-        public ObservableCollection<ChapterModel> GetAll(string bookKey)
+        public DownloadTaskModel SingleOrDefault(string bookKey,string key)
         {
-            SubDirectory = $"\\Book\\{bookKey}\\";
-            ObservableCollection<ChapterModel> result = new ObservableCollection<ChapterModel>();
+            if (string.IsNullOrWhiteSpace(bookKey) || string.IsNullOrWhiteSpace(key))
+                return null;
+            SubDirectory = $"\\Book\\Task\\{bookKey}\\";
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
             DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
             FileInfo[] fis = dir.GetFiles();
@@ -99,7 +72,36 @@ namespace Reader.Client.Services
             {
                 FileInfo fi = fis[i];
                 string name = fi.Name.Replace(fi.Extension, "");
-                ChapterModel model = Task.Run(() => _CacheService.GetAsync<ChapterModel>(SubDirectory, name).Result).Result;
+                if (name.Equals(key))
+                {
+                    DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, name).Result).Result;
+                    if (model != null)
+                    {
+                        return model;
+                    }
+                }
+            }
+            return null;
+        }
+        /// <summary>
+        /// 获取下载任务
+        /// </summary>
+        /// <param name="bookKey">书籍 Key</param>
+        /// <returns></returns>
+        public ObservableCollection<DownloadTaskModel> GetAll(string bookKey)
+        {
+            if (string.IsNullOrWhiteSpace(bookKey))
+                return null;
+            SubDirectory = $"\\Book\\Task\\{bookKey}\\";
+            ObservableCollection<DownloadTaskModel> result = new ObservableCollection<DownloadTaskModel>();
+            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            FileInfo[] fis = dir.GetFiles();
+            for (int i = 0; i < fis.Length; i++)
+            {
+                FileInfo fi = fis[i];
+                string name = fi.Name.Replace(fi.Extension, "");
+                DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, name).Result).Result;
                 if (model != null)
                 {
                     result.Add(model);
@@ -109,14 +111,15 @@ namespace Reader.Client.Services
         }
 
         /// <summary>
-        /// 删除章节
+        /// 删除任务
         /// </summary>
-        /// <param name="key">标识键</param>
+        /// <param name="key"></param>
         /// <returns></returns>
         public bool Remove(string key)
         {
             return Task.Run(() => _CacheService.RemoveAsync(SubDirectory, key).Result).Result;
         }
+
         #endregion
     }
 }
