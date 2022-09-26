@@ -522,6 +522,7 @@ namespace Reader.Client.ViewModels
                         tocContent.AppendLine("</navPoint>");
                         #endregion
 
+                        List<BaseDataModel> replaceRules = ReplaceRules.Where(item => item.IsSelected).ToList();
                         foreach (string chapterKey in chapterKeys.OrderBy(item => item, new SemiNumericComparer()))
                         {
                             index++;
@@ -529,7 +530,6 @@ namespace Reader.Client.ViewModels
                             ChapterModel chapter = _ChapterService.SingleOrDefault(bookKey, chapterKey);
                             Dictionary<string, object> dicDetail = new Dictionary<string, object>();
                             dicDetail.Add(chapter.GetType().Name, chapter);
-                            List<BaseDataModel> replaceRules = ReplaceRules.Where(item => item.IsSelected).ToList();
                             //小说中包含链接，移除后重新添加到隐藏链接中
                             BaseDataModel replaceRule = new BaseDataModel() { IsSelected = true, Name = chapter.Link, Description = "" };
                             replaceRules.Add(replaceRule);

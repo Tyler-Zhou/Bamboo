@@ -79,7 +79,11 @@ namespace Reader.Client.Services
             EnsureDirectoryExists(_SavePath);
             string fullPath = $"{_SavePath}{fileName}";
             string htmlContent = model.Description;
-
+            //替换影响呈现内容
+            foreach (BaseDataModel item in ReplaceRules)
+            {
+                htmlContent = htmlContent.Replace(item.Name, item.Description);
+            }
             Regex regex = new Regex("\\$(?<R>[\\w\\.]*)\\$");
             MatchCollection matchs= regex.Matches(model.Description);
             foreach (Match match in matchs)
@@ -104,11 +108,6 @@ namespace Reader.Client.Services
                         htmlContent = htmlContent.Replace($"${matchString}$", $"{objValue}");
                     }
                 }
-            }
-            //替换影响呈现内容
-            foreach (BaseDataModel item in ReplaceRules)
-            {
-                htmlContent = htmlContent.Replace(item.Name, item.Description);
             }
             WriteFile(fullPath, htmlContent);
         }
