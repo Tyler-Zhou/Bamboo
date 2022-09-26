@@ -47,6 +47,33 @@ namespace Reader.Client.Services
 
         #region 方法(Method)
         /// <summary>
+        /// 导航到视图
+        /// </summary>
+        /// <param name="viewName">视图名称</param>
+        /// <param name="navigationParams">导航参数</param>
+        public void NavigationToView(string viewName, NavigationParameters navigationParams = null)
+        {
+            Navigate(viewName, navigationParams);
+        }
+        /// <summary>
+        /// 添加方法
+        /// </summary>
+        /// <param name="func"></param>
+        public void AddFunction(Func<Task> func)
+        {
+            _Functions.Add(func);
+        }
+        /// <summary>
+        /// 退出应用程序
+        /// </summary>
+        public bool ExitApplication()
+        {
+            return Task.Run(() => ExecuteAllFunction().Result).Result;
+        }
+        #endregion
+
+        #region 私有方法(Private Method)
+        /// <summary>
         /// 导航
         /// </summary>
         /// <param name="viewName">视图名称</param>
@@ -61,27 +88,6 @@ namespace Reader.Client.Services
                     _Logger.LogError(back.Error.Message);
             }, navigationParams);
         }
-        #endregion
-
-        #region IApplicationService
-        /// <summary>
-        /// 导航到视图
-        /// </summary>
-        /// <param name="viewName">视图名称</param>
-        /// <param name="navigationParams">导航参数</param>
-        public void NavigationToView(string viewName, NavigationParameters navigationParams=null)
-        {
-            Navigate(viewName, navigationParams);
-        }
-
-        /// <summary>
-        /// 退出应用程序
-        /// </summary>
-        public bool ExitApplication()
-        {
-            return Task.Run(() => ExecuteAllFunction().Result).Result;
-        }
-
         /// <summary>
         /// 执行所有方法
         /// </summary>
@@ -98,14 +104,7 @@ namespace Reader.Client.Services
             return true;
         }
 
-        /// <summary>
-        /// 添加方法
-        /// </summary>
-        /// <param name="func"></param>
-        public void AddFunction(Func<Task> func)
-        {
-            _Functions.Add(func);
-        }
+        
 
         #endregion
     }

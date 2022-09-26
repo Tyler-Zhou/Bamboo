@@ -17,12 +17,6 @@
             <Setter Property="Height" Value="18" />
             <Setter Property="Width" Value="80" />
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="DockPanel.Dock" Value="Top" />
-        </Style>
-        <Style TargetType="ProgressBar">
-            <Setter Property="DockPanel.Dock" Value="Top" />
-        </Style>
     </UserControl.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
@@ -34,23 +28,32 @@
             <Button Content="Stop All" />
         </StackPanel>
         <GroupBox DockPanel.Dock="Top" Header="Task List">
-            <ListBox
-                x:Name="ListBoxData"
-                Margin="0,5"
-                ItemsSource="{Binding TaskProgresss}"
-                SelectedItem="{Binding CurrentTaskProgress}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <DockPanel LastChildFill="False">
-                                <TextBlock FontWeight="Bold" Text="{Binding Name}" />
-                                <TextBlock Text="{Binding ToolTip}" />
-                                <ProgressBar Maximum="{Binding MaxValue}" Value="{Binding Position}" />
+            <DockPanel>
+                <ListBox
+                    x:Name="ListBoxData"
+                    Margin="0,5"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Stretch"
+                    ItemsSource="{Binding TaskProgresss}"
+                    SelectedItem="{Binding CurrentTaskProgress}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <DockPanel MaxHeight="50" LastChildFill="False">
+                                <TextBlock
+                                    DockPanel.Dock="Top"
+                                    FontWeight="Bold"
+                                    Text="{Binding Name}" />
+                                <TextBlock DockPanel.Dock="Top" Text="{Binding ToolTip}" />
+                                <ProgressBar
+                                    Height="16"
+                                    DockPanel.Dock="Bottom"
+                                    Maximum="{Binding MaxValue}"
+                                    Value="{Binding Position}" />
                             </DockPanel>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
         </GroupBox>
     </DockPanel>
 </UserControl>

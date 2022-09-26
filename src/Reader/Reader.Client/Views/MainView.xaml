@@ -29,7 +29,7 @@
                     Header="{DynamicResource MenuItemIndex}" />
                 <MenuItem Command="{Binding ExitApplicationCommand}" Header="{DynamicResource MenuItemExitApplication}" />
             </MenuItem>
-            <MenuItem Header="{DynamicResource MenuItemSearch}">
+            <MenuItem Header="{DynamicResource MenuItemBook}">
                 <MenuItem
                     Command="{Binding NavigateViewCommand}"
                     CommandParameter="SearchView"
@@ -38,6 +38,10 @@
                     Command="{Binding NavigateViewCommand}"
                     CommandParameter="DownloadView"
                     Header="{DynamicResource MenuItemDownloadTask}" />
+                <MenuItem
+                    Command="{Binding NavigateViewCommand}"
+                    CommandParameter="ExportView"
+                    Header="{DynamicResource MenuItemExport}" />
             </MenuItem>
             <MenuItem Header="{DynamicResource MenuItemBookSource}">
                 <MenuItem

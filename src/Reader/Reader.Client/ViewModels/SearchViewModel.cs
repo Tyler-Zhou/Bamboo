@@ -438,7 +438,7 @@ namespace Reader.Client.ViewModels
                 }
                 catch (Exception ex)
                 {
-                    ShowError($"查找书籍出现异常:{ex.Message}");
+                    ShowError($"下载书籍出现异常:{ex.Message}");
                 }
             });
         }

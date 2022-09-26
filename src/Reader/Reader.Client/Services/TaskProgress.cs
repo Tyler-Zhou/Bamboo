@@ -76,6 +76,8 @@ namespace Reader.Client.Services
             set
             {
                 _Position = value;
+                if(_Position>=MaxValue)
+                    _IsStop = true;
                 RaisePropertyChanged(nameof(Position));
             }
         }

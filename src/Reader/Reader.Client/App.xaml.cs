@@ -87,6 +87,11 @@ namespace Reader.Client
         /// </summary>
         bool InitContent()
         {
+            var service = Container.Resolve<IApplicationService>();
+            if (service != null)
+            {
+                service.NavigationToView("IndexView");
+            }
             return true;
         }
 
@@ -109,7 +114,7 @@ namespace Reader.Client
             containerRegistry.RegisterSingleton<IDownloadTaskService, DownloadTaskService>();
 
             ////View & ViewModel
-            //containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
+            containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();
             containerRegistry.RegisterForNavigation<SearchView, SearchViewModel>();
             containerRegistry.RegisterForNavigation<DebugView, DebugViewModel>();
             containerRegistry.RegisterForNavigation<DownloadView, DownloadViewModel>();

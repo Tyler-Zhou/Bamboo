@@ -1,21 +1,10 @@
-﻿using DryIoc;
-using Prism.Ioc;
+﻿using Prism.Ioc;
 using Prism.Regions;
-using Reader.Client.Events;
 using Reader.Client.Extensions;
-using Reader.Client.Interfaces;
-using Reader.Client.Models;
 using Reader.Client.Services;
-using Reader.Client.Spider;
 using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace Reader.Client.ViewModels
 {

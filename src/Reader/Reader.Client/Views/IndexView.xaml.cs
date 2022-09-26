@@ -3,14 +3,14 @@
 namespace Reader.Client.Views
 {
     /// <summary>
-    /// ExportView.xaml 的交互逻辑
+    /// IndexView.xaml 的交互逻辑
     /// </summary>
-    public partial class ExportView : UserControl
+    public partial class IndexView : UserControl
     {
         /// <summary>
-        /// ExportView.xaml 的交互逻辑
+        /// IndexView.xaml 的交互逻辑
         /// </summary>
-        public ExportView()
+        public IndexView()
         {
             InitializeComponent();
         }

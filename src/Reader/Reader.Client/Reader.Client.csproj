@@ -167,6 +167,7 @@
     <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\DownloadViewModel.cs" />
     <Compile Include="ViewModels\ExportViewModel.cs" />
+    <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\MainViewModels.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="Views\DebugView.xaml.cs">
@@ -177,6 +178,9 @@
     </Compile>
     <Compile Include="Views\ExportView.xaml.cs">
       <DependentUpon>ExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IndexView.xaml.cs">
+      <DependentUpon>IndexView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoadingView.xaml.cs">
       <DependentUpon>LoadingView.xaml</DependentUpon>
@@ -242,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ExportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IndexView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
