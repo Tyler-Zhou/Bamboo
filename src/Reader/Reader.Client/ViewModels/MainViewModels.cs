@@ -129,7 +129,7 @@ namespace Reader.Client.ViewModels
         /// </summary>
         async Task<bool> SaveSetting()
         {
-            return await _SettingService.SaveAsync("", "Setting", ReaderContext.Setting);
+            return await _SettingService.SaveAsync("\\", "Setting", ReaderContext.Setting);
         }
 
         /// <summary>

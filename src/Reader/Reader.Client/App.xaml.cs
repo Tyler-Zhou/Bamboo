@@ -107,7 +107,7 @@ namespace Reader.Client
         async Task<bool> InitSetting()
         {
             var settingService = Container.Resolve<ISettingService>();
-            ReaderContext.Setting = await settingService.GetAsync<ReaderSetting>("","Setting");
+            ReaderContext.Setting = await settingService.GetAsync<ReaderSetting>("\\","Setting");
             if (ReaderContext.Setting == null)
                 ReaderContext.Setting = new ReaderSetting();
             return true;
