@@ -26,7 +26,7 @@ namespace Reader.Client.Services
         /// <summary>
         /// 文档服务
         /// </summary>
-        /// <param name="savePath"></param>
+        /// <param name="savePath">保存路径</param>
         public DocumentService(string savePath)
         {
             _SavePath = savePath;
@@ -51,6 +51,20 @@ namespace Reader.Client.Services
                 stringBuilder.AppendLine($"{item.Description}");
             }
             WriteFile(fullPath, stringBuilder.ToString());
+        }
+        /// <summary>
+        /// 封面
+        /// </summary>
+        /// <param name="fileName">文件名</param>
+        /// <param name="posterContent">封面内容</param>
+        public void Poster(string fileName, byte[] posterContent)
+        {
+            EnsureDirectoryExists(_SavePath);
+            string fullPath = $"{_SavePath}{fileName}";
+            if(posterContent != null)
+            {
+                File.WriteAllBytes(fullPath, posterContent);
+            }
         }
 
         /// <summary>

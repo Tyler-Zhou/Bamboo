@@ -89,7 +89,7 @@ namespace Reader.Client.ViewModels
         {
             get
             {
-                if (BookTypes != null && BookTypes.Count>0)
+                if (_SelectBookType ==null && BookTypes != null && BookTypes.Count>0)
                 {
                     _SelectBookType = BookTypes.FirstOrDefault();
                 }
@@ -458,11 +458,36 @@ namespace Reader.Client.ViewModels
                     ObservableCollection<string> chapterKeys = _ChapterService.GetAllKey(bookKey);
                     if (chapterKeys != null && chapterKeys.Count > 0)
                     {
-                        DocumentService documentService = new DocumentService($"{ExportPath}\\{bookKey}\\");
-                        documentService.StyleSheet("0001", CSSStyles.Where(item => item.IsSelected));
-                        StringBuilder tocContent = new StringBuilder();
                         int index = 0;
-                        string startFileName = index.Completion(4, "part", ".xhtml");
+                        string extensionName = ".xhtml";
+                        string contentSrc = "<content src=\"$fileName$\"/>";
+                        if ("AWZ3".Equals(SelectBookType.Name))
+                        {
+                            extensionName = ".html";
+                            //Calibre 将 AWZ3 的 html 文件自动添加到text目录
+                            contentSrc = "<content src=\"text/$fileName$\"/>";
+                        }
+                        DocumentService documentService = new DocumentService($"{ExportPath}\\{bookKey}\\");
+                        try
+                        {
+                            documentService.StyleSheet("0001", CSSStyles.Where(item => item.IsSelected));
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowError($"[{CurrentBook.Name}]导出样式表发生异常:{ex.Message}");
+                        }
+                        try
+                        {
+                            documentService.Poster("cover.jpg", CurrentBook.PosterContent);
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowError($"[{CurrentBook.Name}]导出封面发生异常:{ex.Message}");
+                        }
+
+                        StringBuilder tocContent = new StringBuilder();
+                        
+                        string startFileName = index.Completion(4, "part", extensionName);
 
                         #region 目录标题
                         tocContent.AppendLine("<docTitle>");
@@ -471,12 +496,17 @@ namespace Reader.Client.ViewModels
                         tocContent.AppendLine("<navMap>");
                         #endregion
 
-                        
-
                         Dictionary<string, object> dicMain = new Dictionary<string, object>();
                         dicMain.Add(CurrentBook.GetType().Name, CurrentBook);
 
-                        documentService.HtmlPage(startFileName, IndexTemplate, ReplaceRules.Where(item => item.IsSelected), dicMain);
+                        try
+                        {
+                            documentService.HtmlPage(startFileName, IndexTemplate, ReplaceRules.Where(item => item.IsSelected), dicMain);
+                        }
+                        catch (Exception ex)
+                        {
+                            ShowError($"[{CurrentBook.Name}]导出首页发生异常:{ex.Message}");
+                        }
 
                         #region 首页目录
                         //<navPoint>
@@ -488,22 +518,14 @@ namespace Reader.Client.ViewModels
                         //</navLabel>
                         tocContent.AppendLine("</navLabel>");
                         //<content />
-                        if ("EPUB".Equals(SelectBookType.Name))
-                        {
-                            tocContent.AppendLine($"<content src=\"{startFileName}\"/>");
-                        }
-                        else
-                        {
-                            //Calibre 将 AWZ3 的 html 文件自动添加到text目录
-                            tocContent.AppendLine($"<content src=\"text/{startFileName}\"/>");
-                        }
+                        tocContent.AppendLine(contentSrc.Replace("$fileName$", startFileName));
                         tocContent.AppendLine("</navPoint>");
                         #endregion
 
                         foreach (string chapterKey in chapterKeys.OrderBy(item => item, new SemiNumericComparer()))
                         {
                             index++;
-                            string fileName = index.Completion(4, "part", ".xhtml");
+                            string fileName = index.Completion(4, "part", extensionName);
                             ChapterModel chapter = _ChapterService.SingleOrDefault(bookKey, chapterKey);
                             Dictionary<string, object> dicDetail = new Dictionary<string, object>();
                             dicDetail.Add(chapter.GetType().Name, chapter);
@@ -511,7 +533,14 @@ namespace Reader.Client.ViewModels
                             //小说中包含链接，移除后重新添加到隐藏链接中
                             BaseDataModel replaceRule = new BaseDataModel() { IsSelected = true, Name = chapter.Link, Description = "" };
                             replaceRules.Add(replaceRule);
-                            documentService.HtmlPage(fileName, DetailTemplate, replaceRules, dicDetail);
+                            try
+                            {
+                                documentService.HtmlPage(fileName, DetailTemplate, replaceRules, dicDetail);
+                            }
+                            catch (Exception ex)
+                            {
+                                ShowError($"[{CurrentBook.Name}]导出章节[{chapter.Name}]发生异常:{ex.Message}");
+                            }
                             replaceRules.Remove(replaceRule);
 
                             #region 章节目录
@@ -524,18 +553,11 @@ namespace Reader.Client.ViewModels
                             //</navLabel>
                             tocContent.AppendLine("</navLabel>");
                             //<content />
-                            if ("EPUB".Equals(SelectBookType.Name))
-                            {
-                                tocContent.AppendLine($"<content src=\"{fileName}\"/>");
-                            }
-                            else
-                            {
-                                //Calibre 将 AWZ3 的 html 文件自动添加到text目录
-                                tocContent.AppendLine($"<content src=\"text/{fileName}\"/>");
-                            }
+                            tocContent.AppendLine(contentSrc.Replace("$fileName$", startFileName));
                             tocContent.AppendLine("</navPoint>");
                             #endregion
                         }
+                        //</navMap>
                         tocContent.AppendLine("</navMap>");
                         documentService.TocFile("toc.txt", tocContent.ToString());
 
