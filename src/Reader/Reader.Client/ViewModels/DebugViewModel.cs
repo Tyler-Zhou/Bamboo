@@ -116,10 +116,6 @@ namespace Reader.Client.ViewModels
 
         #region 命令(Commands)
         /// <summary>
-        /// 编辑源
-        /// </summary>
-        public DelegateCommand<BookSourceModel> EditCommand { get; private set; }
-        /// <summary>
         /// 调试
         /// </summary>
         public DelegateCommand DebugCommand { get; private set; }
@@ -150,7 +146,6 @@ namespace Reader.Client.ViewModels
         {
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             AddCommand = new DelegateCommand(AddSource);
-            EditCommand = new DelegateCommand<BookSourceModel>(EditSource);
             RemoveCommand = new DelegateCommand(RemoveSource);
             DebugCommand = new DelegateCommand(DebugSource);
             SaveCommand = new DelegateCommand(SaveSource);
@@ -197,8 +192,6 @@ namespace Reader.Client.ViewModels
             BookSources = _BookSourceService.GetAll();
         }
 
-        
-
         /// <summary>
         /// 无效数据
         /// </summary>
@@ -224,14 +217,7 @@ namespace Reader.Client.ViewModels
             BookSources.Insert(0,model);
             CurrentSource = model;
         }
-        /// <summary>
-        /// 编辑书源
-        /// </summary>
-        /// <param name="model"></param>
-        private void EditSource(BookSourceModel model)
-        {
-            CurrentSource = model;
-        }
+        
         /// <summary>
         /// 删除源
         /// </summary>

@@ -3,10 +3,29 @@
 namespace Reader.Client.Models
 {
     /// <summary>
-    /// 
+    /// 基础绑定数据模型
     /// </summary>
-    public class ComboBoxModel: BindableBase
+    public class BaseDataModel: BindableBase
     {
+        #region 是否选中
+        private bool _IsSelected = false;
+        /// <summary>
+        /// 是否选中
+        /// </summary>
+        public bool IsSelected
+        {
+            get
+            {
+                return _IsSelected;
+            }
+            set
+            {
+                _IsSelected = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
         #region 名称
         private string _Name = "";
         /// <summary>

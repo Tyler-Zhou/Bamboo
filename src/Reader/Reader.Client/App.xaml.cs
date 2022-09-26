@@ -112,6 +112,7 @@ namespace Reader.Client
             containerRegistry.RegisterSingleton<IBookService, BookService>();
             containerRegistry.RegisterSingleton<IChapterService, ChapterService>();
             containerRegistry.RegisterSingleton<IDownloadTaskService, DownloadTaskService>();
+            containerRegistry.RegisterSingleton<ITemplateService, TemplateService>();
 
             ////View & ViewModel
             containerRegistry.RegisterForNavigation<IndexView, IndexViewModel>();

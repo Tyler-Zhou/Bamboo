@@ -30,7 +30,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <GroupBox Grid.Row="0" Header="查询选项">
+        <GroupBox Grid.Row="0" Header="{DynamicResource GroupBoxOption}">
             <StackPanel Orientation="Horizontal">
                 <ComboBox
                     Height="21"
@@ -85,7 +85,7 @@
                     Content="{DynamicResource ButtonSearch}" />
             </StackPanel>
         </GroupBox>
-        <GroupBox Grid.Row="1" Header="查询结果">
+        <GroupBox Grid.Row="1" Header="{DynamicResource GroupBoxSearchResult}">
             <ScrollViewer>
                 <ItemsControl
                     Name="ItemsControlBook"

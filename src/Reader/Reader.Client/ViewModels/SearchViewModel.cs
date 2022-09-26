@@ -53,11 +53,11 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 书源类型选中项
-        private ComboBoxModel _SelectBookSourceType = null;
+        private BaseDataModel _SelectBookSourceType = null;
         /// <summary>
         /// 书源类型选中项
         /// </summary>
-        public ComboBoxModel SelectBookSourceType
+        public BaseDataModel SelectBookSourceType
         {
             get
             {
@@ -87,20 +87,20 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 书源类型集合
-        private ObservableCollection<ComboBoxModel> _BookSourceTypes;
+        private ObservableCollection<BaseDataModel> _BookSourceTypes;
         /// <summary>
         /// 书源类型集合
         /// </summary>
-        public ObservableCollection<ComboBoxModel> BookSourceTypes
+        public ObservableCollection<BaseDataModel> BookSourceTypes
         {
             get
             {
                 if (_BookSourceTypes == null)
-                    _BookSourceTypes = new ObservableCollection<ComboBoxModel>();
+                    _BookSourceTypes = new ObservableCollection<BaseDataModel>();
                 if (_BookSourceTypes.Count <= 0)
                 {
-                    _BookSourceTypes.Add(new ComboBoxModel() {Name="Single", Description = "单源" });
-                    _BookSourceTypes.Add(new ComboBoxModel() {Name= "Multiple", Description = "多源" });
+                    _BookSourceTypes.Add(new BaseDataModel() {Name="Single", Description = "单源" });
+                    _BookSourceTypes.Add(new BaseDataModel() {Name= "Multiple", Description = "多源" });
                 }
                 return _BookSourceTypes;
             }
@@ -144,11 +144,11 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 单书源选中项
-        private ComboBoxModel _SingleSelectBookSource = null;
+        private BaseDataModel _SingleSelectBookSource = null;
         /// <summary>
         /// 单书源选中项
         /// </summary>
-        public ComboBoxModel SingleSelectBookSource
+        public BaseDataModel SingleSelectBookSource
         {
             get
             {
@@ -167,21 +167,21 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 单书源集合
-        private ObservableCollection<ComboBoxModel> _SingleBookSources;
+        private ObservableCollection<BaseDataModel> _SingleBookSources;
         /// <summary>
         /// 单书源集合
         /// </summary>
-        public ObservableCollection<ComboBoxModel> SingleBookSources
+        public ObservableCollection<BaseDataModel> SingleBookSources
         {
             get
             {
                 if (_SingleBookSources == null)
-                    _SingleBookSources = new ObservableCollection<ComboBoxModel>();
+                    _SingleBookSources = new ObservableCollection<BaseDataModel>();
                 if(_SingleBookSources.Count<=0)
                 {
                     foreach (var item in BookSources)
                     {
-                        _SingleBookSources.Add(new ComboBoxModel() {Name=item.Name, Description =item.Name });
+                        _SingleBookSources.Add(new BaseDataModel() {Name=item.Name, Description =item.Name });
                     }
                 }
                 return _SingleBookSources;
@@ -207,11 +207,11 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 多源选中项
-        private ComboBoxModel _MultipleSelectBookSource = null;
+        private BaseDataModel _MultipleSelectBookSource = null;
         /// <summary>
         /// 多源选中项
         /// </summary>
-        public ComboBoxModel MultipleSelectBookSource
+        public BaseDataModel MultipleSelectBookSource
         {
             get
             {
@@ -231,22 +231,22 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 多书源集合
-        private ObservableCollection<ComboBoxModel> _MultipleBookSources;
+        private ObservableCollection<BaseDataModel> _MultipleBookSources;
         /// <summary>
         /// 多书源集合
         /// </summary>
-        public ObservableCollection<ComboBoxModel> MultipleBookSources
+        public ObservableCollection<BaseDataModel> MultipleBookSources
         {
             get
             {
                 if (_MultipleBookSources == null)
-                    _MultipleBookSources = new ObservableCollection<ComboBoxModel>();
+                    _MultipleBookSources = new ObservableCollection<BaseDataModel>();
                 if (_MultipleBookSources.Count <= 0)
                 {
-                    _MultipleBookSources.Add(new ComboBoxModel() {Name="All", Description = $"所有({BookSources.Count()})" });
+                    _MultipleBookSources.Add(new BaseDataModel() {Name="All", Description = $"所有({BookSources.Count()})" });
                     foreach (var item in BookSources.GroupBy(item=>item.Group))
                     {
-                        _MultipleBookSources.Add(new ComboBoxModel() {Name=item.Key, Description = $"{item.Key}({item.Count()})" });
+                        _MultipleBookSources.Add(new BaseDataModel() {Name=item.Key, Description = $"{item.Key}({item.Count()})" });
                     }
                 }
                 return _MultipleBookSources;

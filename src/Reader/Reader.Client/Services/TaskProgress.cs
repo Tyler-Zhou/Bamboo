@@ -76,8 +76,6 @@ namespace Reader.Client.Services
             set
             {
                 _Position = value;
-                if(_Position>=MaxValue)
-                    _IsStop = true;
                 RaisePropertyChanged(nameof(Position));
             }
         }
@@ -319,6 +317,8 @@ namespace Reader.Client.Services
                             _EventAggregator.ShowMessage(new TipsInfo() { Content = $"完成任务[{downloadTask.Name}]", Type = EnumTipsType.Information });
                             Position++;
                             ToolTip = $"总{MaxValue}项,当前{Position}项";
+                            if(Position >= MaxValue)
+                                _IsStop = true;
                         }
                     }
                     catch (Exception ex)

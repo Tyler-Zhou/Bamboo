@@ -115,6 +115,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -156,13 +157,16 @@
     <Compile Include="Interfaces\IChapterService.cs" />
     <Compile Include="Interfaces\IDownloadTaskService.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />
+    <Compile Include="Interfaces\ITemplateService.cs" />
     <Compile Include="Services\ApplicationService.cs" />
     <Compile Include="Services\BookService.cs" />
     <Compile Include="Services\BookSourceService.cs" />
     <Compile Include="Services\CacheService.cs" />
     <Compile Include="Services\ChapterService.cs" />
+    <Compile Include="Services\DocumentService.cs" />
     <Compile Include="Services\DownloadTaskService.cs" />
     <Compile Include="Services\TaskProgress.cs" />
+    <Compile Include="Services\TemplateService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\DebugViewModel.cs" />
     <Compile Include="ViewModels\DownloadViewModel.cs" />

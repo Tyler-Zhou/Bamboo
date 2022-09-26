@@ -2,6 +2,7 @@
     x:Class="Reader.Client.Views.ExportView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:behavior="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Reader.Client.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -15,79 +16,202 @@
             <Setter Property="Margin" Value="0,5,5,0" />
             <Setter Property="DockPanel.Dock" Value="Left" />
             <Setter Property="TextAlignment" Value="Right" />
-            <Setter Property="Width" Value="125" />
+            <Setter Property="Width" Value="80" />
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="0,5,5,0" />
             <Setter Property="DockPanel.Dock" Value="Right" />
         </Style>
+        <Style x:Key="TextBoxExample" TargetType="TextBox">
+            <Setter Property="Margin" Value="0,5,5,0" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+            <Setter Property="IsReadOnly" Value="True" />
+            <Setter Property="Width" Value="500" />
+            <Setter Property="Foreground" Value="Red" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsReturn" Value="True" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="5,5" />
-            <Setter Property="Width" Value="80" />
+            <Setter Property="Width" Value="100" />
         </Style>
     </UserControl.Resources>
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <DockPanel Margin="0,5,0,5" DockPanel.Dock="Top">
-                    <TextBlock Text="Select Path" />
-                    <TextBox Text="Select Path" />
+                    <TextBlock Text="{DynamicResource TextBoxExportPath}" />
+                    <TextBox
+                        x:Name="TextBoxSelectPath"
+                        IsReadOnly="True"
+                        Text="{Binding ExportPath, Mode=OneWay}">
+                        <behavior:Interaction.Triggers>
+                            <behavior:EventTrigger EventName="MouseDoubleClick">
+                                <behavior:InvokeCommandAction Command="{Binding SelectPathCommand}" />
+                            </behavior:EventTrigger>
+                        </behavior:Interaction.Triggers>
+                    </TextBox>
                 </DockPanel>
                 <DockPanel Margin="0,5,0,5" DockPanel.Dock="Top">
-                    <TextBlock Text="Select Book" />
-                    <ComboBox>
-                        <ComboBoxItem IsSelected="True">Select Book</ComboBoxItem>
+                    <TextBlock Text="{DynamicResource TextBoxExportBook}" />
+                    <ComboBox
+                        Margin="0,5,5,0"
+                        ItemsSource="{Binding Books}"
+                        SelectedItem="{Binding CurrentBook}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </DockPanel>
+                <DockPanel Margin="0,5,0,5" DockPanel.Dock="Top">
+                    <TextBlock Text="{DynamicResource TextBoxExportType}" />
+                    <ComboBox
+                        Height="21"
+                        Margin="0,5,5,0"
+                        ItemsSource="{Binding BookTypes}"
+                        SelectedItem="{Binding SelectBookType}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Description}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
                     </ComboBox>
                 </DockPanel>
                 <DockPanel
                     Margin="0,5,0,5"
                     HorizontalAlignment="Left"
                     DockPanel.Dock="Top">
-                    <Button Margin="130,5,0,0" Content="Export" />
+                    <Button
+                        Margin="80,5,0,0"
+                        Command="{Binding ExportCommand}"
+                        Content="{DynamicResource ButtonExportResources}" />
                 </DockPanel>
             </DockPanel>
         </DockPanel>
-        <GroupBox Header="Template">
-            <TabControl>
-                <TabItem Header="Css">
-                    <DockPanel>
-                        <DataGrid DockPanel.Dock="Top" />
-                        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
-                            <DockPanel DockPanel.Dock="Top">
-                                <TextBlock Text="Key" />
-                                <TextBox Text="Key" />
-                            </DockPanel>
-                            <DockPanel DockPanel.Dock="Top">
-                                <TextBlock Text="Value" />
-                                <TextBox
-                                    AcceptsReturn="True"
-                                    Text="Value"
-                                    TextWrapping="Wrap"
-                                    VerticalScrollBarVisibility="Visible" />
+        <GroupBox HorizontalContentAlignment="Left" Header="{DynamicResource GroupBoxTemplate}">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Button Command="{Binding AddStyleCommand}" Content="{DynamicResource ButtonAddStyle}" />
+                    <Button Command="{Binding RemoveStyleCommand}" Content="{DynamicResource ButtonRemoveStyle}" />
+                    <Button Command="{Binding AddReplaceRuleCommand}" Content="{DynamicResource ButtonAddReplaceRule}" />
+                    <Button Command="{Binding RemoveReplaceRuleCommand}" Content="{DynamicResource ButtonRemoveReplaceRule}" />
+                    <Button Command="{Binding SaveCommand}" Content="{DynamicResource ButtonSaveTemplate}" />
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <TextBox Style="{StaticResource TextBoxExample}" Text="$fictionName$" />
+                </StackPanel>
+                <TabControl DockPanel.Dock="Top">
+                    <TabItem Header="{DynamicResource TabItemStyleSheet}">
+                        <DockPanel>
+                            <ListBox
+                                x:Name="ListBoxCSSStyle"
+                                Width="400"
+                                Margin="0,5"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                DockPanel.Dock="Left"
+                                ItemsSource="{Binding CSSStyles}"
+                                SelectedItem="{Binding SelectCSSStyle}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel MaxHeight="16" LastChildFill="False">
+                                            <CheckBox
+                                                Width="120"
+                                                Content="{Binding Name}"
+                                                IsChecked="{Binding IsSelected}" />
+                                            <TextBlock
+                                                Margin="5,0,0,0"
+                                                DockPanel.Dock="Left"
+                                                Text="{Binding Description}" />
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <DockPanel DockPanel.Dock="Right">
+                                <DockPanel DockPanel.Dock="Top">
+                                    <TextBlock Text="Key" />
+                                    <TextBox Text="{Binding SelectCSSStyle.Name}" />
+                                </DockPanel>
+                                <DockPanel DockPanel.Dock="Top">
+                                    <TextBlock Text="Value" />
+                                    <TextBox
+                                        AcceptsReturn="True"
+                                        Text="{Binding SelectCSSStyle.Description}"
+                                        TextWrapping="Wrap"
+                                        VerticalScrollBarVisibility="Visible" />
+                                </DockPanel>
                             </DockPanel>
                         </DockPanel>
-                    </DockPanel>
-                </TabItem>
-                <TabItem Header="Html">
-                    <DockPanel>
-                        <DataGrid DockPanel.Dock="Top" />
-                        <DockPanel DockPanel.Dock="Top" LastChildFill="False">
-                            <DockPanel DockPanel.Dock="Top">
-                                <TextBlock Text="Key" />
-                                <TextBox Text="Key" />
-                            </DockPanel>
-                            <DockPanel DockPanel.Dock="Top">
-                                <TextBlock Text="Value" />
-                                <TextBox
-                                    AcceptsReturn="True"
-                                    Text="Value"
-                                    TextWrapping="Wrap"
-                                    VerticalScrollBarVisibility="Visible" />
+                    </TabItem>
+                    <TabItem Header="{DynamicResource TabItemIndexTemplate}">
+                        <DockPanel>
+                            <TextBox
+                                AcceptsReturn="True"
+                                Text="{Binding IndexTemplate.Description}"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Visible" />
+                        </DockPanel>
+                    </TabItem>
+                    <TabItem Header="{DynamicResource TabItemChapterTemplate}">
+                        <DockPanel>
+                            <TextBox
+                                AcceptsReturn="True"
+                                Text="{Binding DetailTemplate.Description}"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Visible" />
+                        </DockPanel>
+                    </TabItem>
+                    <TabItem Header="{DynamicResource TabItemReplaceRule}">
+                        <DockPanel>
+                            <ListBox
+                                x:Name="ListBoxReplaceRule"
+                                Width="400"
+                                Margin="0,5"
+                                HorizontalAlignment="Stretch"
+                                HorizontalContentAlignment="Stretch"
+                                DockPanel.Dock="Left"
+                                ItemsSource="{Binding ReplaceRules}"
+                                SelectedItem="{Binding SelectReplaceRule}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel MaxHeight="16" LastChildFill="False">
+                                            <CheckBox
+                                                Width="120"
+                                                Content="{Binding Name}"
+                                                IsChecked="{Binding IsSelected}" />
+                                            <TextBlock
+                                                Margin="5,0,0,0"
+                                                DockPanel.Dock="Left"
+                                                Text="{Binding Description}" />
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                            <DockPanel DockPanel.Dock="Right">
+                                <DockPanel DockPanel.Dock="Top">
+                                    <TextBlock Text="Key" />
+                                    <TextBox Text="{Binding SelectReplaceRule.Name}" />
+                                </DockPanel>
+                                <DockPanel DockPanel.Dock="Top">
+                                    <TextBlock Text="Value" />
+                                    <TextBox
+                                        AcceptsReturn="True"
+                                        Text="{Binding SelectReplaceRule.Description}"
+                                        TextWrapping="Wrap"
+                                        VerticalScrollBarVisibility="Visible" />
+                                </DockPanel>
                             </DockPanel>
                         </DockPanel>
-                    </DockPanel>
-                </TabItem>
-            </TabControl>
+                    </TabItem>
+                </TabControl>
+            </DockPanel>
         </GroupBox>
     </DockPanel>
 </UserControl>

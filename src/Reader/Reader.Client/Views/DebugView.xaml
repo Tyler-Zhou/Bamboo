@@ -233,11 +233,6 @@
                         DockPanel.Dock="Bottom"
                         ItemsSource="{Binding BookSources}"
                         SelectedItem="{Binding CurrentSource}">
-                        <behavior:Interaction.Triggers>
-                            <behavior:EventTrigger EventName="MouseDoubleClick">
-                                <behavior:InvokeCommandAction Command="{Binding EditCommand}" CommandParameter="{Binding ElementName=ListBoxBookSourceListBox, Path=SelectedItem}" />
-                            </behavior:EventTrigger>
-                        </behavior:Interaction.Triggers>
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <DockPanel LastChildFill="False">
