@@ -2,10 +2,13 @@
 using Prism.Events;
 using Prism.Ioc;
 using Prism.Mvvm;
+using Reader.Client.Common;
 using Reader.Client.Events;
 using Reader.Client.Extensions;
 using Reader.Client.Interfaces;
+using Reader.Client.Services;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace Reader.Client.ViewModels
@@ -48,17 +51,9 @@ namespace Reader.Client.ViewModels
         /// </summary>
         public readonly IApplicationService _ApplicationService;
         /// <summary>
-        /// 书源服务
+        /// 设置服务
         /// </summary>
-        IBookSourceService _BookSourceService;
-        /// <summary>
-        /// 书籍下载任务
-        /// </summary>
-        IDownloadTaskService _BookTaskService;
-        /// <summary>
-        /// 章节服务
-        /// </summary>
-        IChapterService _ChapterService;
+        ISettingService _SettingService;
         #endregion
 
         #region 命令(Commands)
@@ -82,9 +77,7 @@ namespace Reader.Client.ViewModels
             ContainerProvider = containerProvider;
             _EventAggregator = ContainerProvider.Resolve<IEventAggregator>();
             _ApplicationService = ContainerProvider.Resolve<IApplicationService>();
-            _BookSourceService = ContainerProvider.Resolve<IBookSourceService>();
-            _BookTaskService = ContainerProvider.Resolve<IDownloadTaskService>();
-            _ChapterService = ContainerProvider.Resolve<IChapterService>();
+            _SettingService = ContainerProvider.Resolve<ISettingService>();
 
             NavigateViewCommand = new DelegateCommand<string>(NavigateView);
             ExitApplicationCommand = new DelegateCommand(ExitApplication);
@@ -102,7 +95,7 @@ namespace Reader.Client.ViewModels
         /// </summary>
         private void InitData()
         {
-           
+            _ApplicationService.AddFunction(SaveSetting);
         }
         /// <summary>
         /// 导航到视图
@@ -130,12 +123,20 @@ namespace Reader.Client.ViewModels
                 Application.Current.Shutdown();
             }
         }
-        
+
+        /// <summary>
+        /// 保存设置
+        /// </summary>
+        async Task<bool> SaveSetting()
+        {
+            return await _SettingService.SaveAsync("", "Setting", ReaderContext.Setting);
+        }
+
         /// <summary>
         /// 正在加载
         /// </summary>
         /// <param name="IsOpen">是否打开</param>
-        public void ShowLoading(bool IsOpen)
+        void ShowLoading(bool IsOpen)
         {
             _EventAggregator.ShowLoading(new LoadingModel()
             {
@@ -147,7 +148,7 @@ namespace Reader.Client.ViewModels
         /// 显示普通信息
         /// </summary>
         /// <param name="message">消息</param>
-        public void ShowInformation(string message)
+        void ShowInformation(string message)
         {
             _EventAggregator.ShowMessage(new TipsInfo() { Content = message, Type = EnumTipsType.Information });
         }
@@ -156,7 +157,7 @@ namespace Reader.Client.ViewModels
         /// 显示警告信息
         /// </summary>
         /// <param name="message">消息</param>
-        public void ShowWarning(string message)
+        void ShowWarning(string message)
         {
             _EventAggregator.ShowMessage(new TipsInfo() { Content = message, Type = EnumTipsType.Warning });
         }
@@ -165,7 +166,7 @@ namespace Reader.Client.ViewModels
         /// 显示错误信息
         /// </summary>
         /// <param name="message">消息</param>
-        public void ShowError(string message)
+        void ShowError(string message)
         {
             _EventAggregator.ShowMessage(new TipsInfo() { Content = message, Type = EnumTipsType.Error });
         }

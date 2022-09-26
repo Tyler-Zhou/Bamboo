@@ -26,7 +26,7 @@
             <Setter Property="Margin" Value="0,5,5,0" />
             <Setter Property="DockPanel.Dock" Value="Top" />
             <Setter Property="IsReadOnly" Value="True" />
-            <Setter Property="Width" Value="500" />
+            <Setter Property="Width" Value="200" />
             <Setter Property="Foreground" Value="Red" />
             <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="AcceptsReturn" Value="True" />
@@ -104,9 +104,6 @@
                     <Button Command="{Binding RemoveReplaceRuleCommand}" Content="{DynamicResource ButtonRemoveReplaceRule}" />
                     <Button Command="{Binding SaveCommand}" Content="{DynamicResource ButtonSaveTemplate}" />
                 </StackPanel>
-                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <TextBox Style="{StaticResource TextBoxExample}" Text="$fictionName$" />
-                </StackPanel>
                 <TabControl DockPanel.Dock="Top">
                     <TabItem Header="{DynamicResource TabItemStyleSheet}">
                         <DockPanel>
@@ -153,6 +150,10 @@
                     <TabItem Header="{DynamicResource TabItemIndexTemplate}">
                         <DockPanel>
                             <TextBox
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource TextBoxExample}"
+                                Text="{Binding BookExample, Mode=OneWay}" />
+                            <TextBox
                                 AcceptsReturn="True"
                                 Text="{Binding IndexTemplate.Description}"
                                 TextWrapping="Wrap"
@@ -161,6 +162,10 @@
                     </TabItem>
                     <TabItem Header="{DynamicResource TabItemChapterTemplate}">
                         <DockPanel>
+                            <TextBox
+                                DockPanel.Dock="Left"
+                                Style="{StaticResource TextBoxExample}"
+                                Text="{Binding ChapterExample, Mode=OneWay}" />
                             <TextBox
                                 AcceptsReturn="True"
                                 Text="{Binding DetailTemplate.Description}"

@@ -1,4 +1,5 @@
-﻿using Prism.Ioc;
+﻿using Prism.Commands;
+using Prism.Ioc;
 using Prism.Regions;
 using Reader.Client.Extensions;
 using Reader.Client.Services;
@@ -19,7 +20,7 @@ namespace Reader.Client.ViewModels
         /// <summary>
         /// 当前下载进程
         /// </summary>
-        TaskProgress CurrentTaskProgress
+        public TaskProgress CurrentTaskProgress
         {
             get
             {
@@ -67,7 +68,31 @@ namespace Reader.Client.ViewModels
         #endregion
 
         #region 命令(Commands)
-
+        /// <summary>
+        /// 暂停
+        /// </summary>
+        public DelegateCommand PauseCommand { get; private set; }
+        /// <summary>
+        /// 停止
+        /// </summary>
+        public DelegateCommand StopCommand { get; private set; }
+        /// <summary>
+        /// 继续
+        /// </summary>
+        public DelegateCommand ContinueCommand { get; private set; }
+        /// <summary>
+        /// 暂停所有
+        /// </summary>
+        public DelegateCommand PauseAllCommand { get; private set; }
+        /// <summary>
+        /// 停止所有
+        /// </summary>
+        public DelegateCommand StopAllCommand { get; private set; }
+        /// <summary>
+        /// 继续所有
+        /// </summary>
+        public DelegateCommand ContinueAllCommand { get; private set; }
+        
         #endregion
 
         #region 构造函数(Constructor)
@@ -78,10 +103,21 @@ namespace Reader.Client.ViewModels
         public DownloadViewModel(IContainerProvider containerProvider) : base(containerProvider)
         {
             _ContainerProvider = containerProvider;
+
+            PauseCommand = new DelegateCommand(PauseTask);
+            StopCommand = new DelegateCommand(StopTask);
+            ContinueCommand = new DelegateCommand(ContinueTask);
+            PauseAllCommand = new DelegateCommand(PauseAllTask);
+            StopAllCommand = new DelegateCommand(StopAllTask);
+            ContinueAllCommand = new DelegateCommand(ContinueAllTask);
+
+
             _EventAggregator.ResgiterTask(arg =>
             {
                 AddTaskProgress(arg.Key,arg.Name);
             });
+
+            InitData();
         }
         #endregion
 
@@ -122,7 +158,64 @@ namespace Reader.Client.ViewModels
         {
             
         }
+        /// <summary>
+        /// 暂停
+        /// </summary>
+        void PauseTask()
+        {
+            CurrentTaskProgress.Pause();
+        }
+        /// <summary>
+        /// 停止任务
+        /// </summary>
+        void StopTask()
+        {
+            CurrentTaskProgress.Stop();
+        }
+        /// <summary>
+        /// 继续任务
+        /// </summary>
+        void ContinueTask()
+        {
+            CurrentTaskProgress.Continue();
+        }
 
+        /// <summary>
+        /// 暂停所有任务
+        /// </summary>
+        void PauseAllTask()
+        {
+            foreach (TaskProgress item in TaskProgresss)
+            {
+                item.Pause();
+            }
+        }
+        /// <summary>
+        /// 停止所有任务
+        /// </summary>
+        void StopAllTask()
+        {
+            foreach (TaskProgress item in TaskProgresss)
+            {
+                item.Stop();
+            }
+        }
+        /// <summary>
+        /// 继续所有任务
+        /// </summary>
+        void ContinueAllTask()
+        {
+            foreach (TaskProgress item in TaskProgresss)
+            {
+                item.Continue();
+            }
+        }
+
+        /// <summary>
+        /// 添加任务
+        /// </summary>
+        /// <param name="taskKey">任务 Key</param>
+        /// <param name="taskName">任务名称</param>
         void AddTaskProgress(string taskKey,string taskName)
         {
             try

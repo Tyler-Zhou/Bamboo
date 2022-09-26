@@ -10,6 +10,10 @@ using Reader.Client.Interfaces;
 using System.Threading.Tasks;
 using Reader.Client.Services;
 using System.Collections.Generic;
+using Reader.Client.Extensions;
+using System.Text;
+using System.Reflection;
+using Reader.Client.Common;
 
 namespace Reader.Client.ViewModels
 {
@@ -20,16 +24,15 @@ namespace Reader.Client.ViewModels
     {
         #region 成员(Member)
         #region 导出路径
-        private string _ExportPath = "";
         /// <summary>
         /// 导出路径
         /// </summary>
         public string ExportPath
         {
-            get { return _ExportPath; }
+            get { return ReaderContext.Setting.LastExportPath; }
             set
             {
-                _ExportPath = value;
+                ReaderContext.Setting.LastExportPath = value;
                 RaisePropertyChanged(nameof(ExportPath));
             }
         }
@@ -122,6 +125,38 @@ namespace Reader.Client.ViewModels
             {
                 _BookTypes = value;
                 RaisePropertyChanged(nameof(BookTypes));
+            }
+        }
+        #endregion
+
+        #region 书籍属性集
+        private string _BookExample = "";
+        /// <summary>
+        /// 书籍属性集
+        /// </summary>
+        public string BookExample
+        {
+            get { return _BookExample; }
+            set
+            {
+                _BookExample = value;
+                RaisePropertyChanged(nameof(BookExample));
+            }
+        }
+        #endregion
+
+        #region 章节属性集
+        private string _ChapterExample = "";
+        /// <summary>
+        /// 章节属性集
+        /// </summary>
+        public string ChapterExample
+        {
+            get { return _ChapterExample; }
+            set
+            {
+                _ChapterExample = value;
+                RaisePropertyChanged(nameof(ChapterExample));
             }
         }
         #endregion
@@ -362,6 +397,37 @@ namespace Reader.Client.ViewModels
             IndexTemplate = _TemplateService.GetSingle("Index");
             DetailTemplate = _TemplateService.GetSingle("Detail");
             ReplaceRules = _TemplateService.GetCollection("ReplaceRule");
+            BookExample = BookExampleText();
+            ChapterExample = ChapterExampleText();
+        }
+        /// <summary>
+        /// 书籍举例文本
+        /// </summary>
+        /// <returns></returns>
+        string BookExampleText()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            PropertyInfo[] properties = typeof(BookModel).GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            foreach (PropertyInfo item in properties)
+            {
+                stringBuilder.AppendLine($"{typeof(BookModel).Name}.{item.Name}");
+            }
+            return stringBuilder.ToString();
+        }
+
+        /// <summary>
+        /// 章节举例文本
+        /// </summary>
+        /// <returns></returns>
+        string ChapterExampleText()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            PropertyInfo[] properties = typeof(ChapterModel).GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            foreach (PropertyInfo item in properties)
+            {
+                stringBuilder.AppendLine($"{typeof(ChapterModel).Name}.{item.Name}");
+            }
+            return stringBuilder.ToString();
         }
 
         /// <summary>
@@ -387,33 +453,93 @@ namespace Reader.Client.ViewModels
             {
                 try
                 {
+                    ShowInformation($"开始导出[{CurrentBook.Name}]");
                     string bookKey = CurrentBook.Key;
                     ObservableCollection<string> chapterKeys = _ChapterService.GetAllKey(bookKey);
                     if (chapterKeys != null && chapterKeys.Count > 0)
                     {
+                        DocumentService documentService = new DocumentService($"{ExportPath}\\{bookKey}\\");
+                        documentService.StyleSheet("0001", CSSStyles.Where(item => item.IsSelected));
+                        StringBuilder tocContent = new StringBuilder();
+                        int index = 0;
+                        string startFileName = index.Completion(4, "part", ".xhtml");
+
+                        #region 目录标题
+                        tocContent.AppendLine("<docTitle>");
+                        tocContent.AppendLine($"<text>{CurrentBook.Name}</text>");
+                        tocContent.AppendLine("</docTitle>");
+                        tocContent.AppendLine("<navMap>");
+                        #endregion
+
+                        
+
+                        Dictionary<string, object> dicMain = new Dictionary<string, object>();
+                        dicMain.Add(CurrentBook.GetType().Name, CurrentBook);
+
+                        documentService.HtmlPage(startFileName, IndexTemplate, ReplaceRules.Where(item => item.IsSelected), dicMain);
+
+                        #region 首页目录
+                        //<navPoint>
+                        tocContent.AppendLine($"<navPoint id=\"num_{(index + 1)}\" playOrder=\"{(index + 1)}\">");
+                        //<navLabel>
+                        tocContent.AppendLine("<navLabel>");
+                        //<text></text>
+                        tocContent.AppendLine($"<text>首页</text>");
+                        //</navLabel>
+                        tocContent.AppendLine("</navLabel>");
+                        //<content />
                         if ("EPUB".Equals(SelectBookType.Name))
                         {
-
-                            DocumentService documentService = new DocumentService($"{ExportPath}\\{bookKey}\\");
-                            documentService.StyleSheet("0001", CSSStyles.Where(item => item.IsSelected));
-                            Dictionary<string, object> dicMain=new Dictionary<string, object>();
-                            dicMain.Add(CurrentBook.GetType().Name, CurrentBook);
-                            documentService.HtmlPage("Start", IndexTemplate, ReplaceRules.Where(item => item.IsSelected), dicMain);
-                            foreach (string chapterKey in chapterKeys)
-                            {
-                                ChapterModel chapter = _ChapterService.SingleOrDefault(bookKey, chapterKey);
-                                ShowInformation($"开始导出[{chapter.Name}]");
-
-                                Dictionary<string, object> dicDetail = new Dictionary<string, object>();
-                                dicDetail.Add(chapter.GetType().Name, chapter);
-
-                                documentService.HtmlPage(chapterKey, DetailTemplate, ReplaceRules.Where(item => item.IsSelected), dicDetail);
-                            }
+                            tocContent.AppendLine($"<content src=\"{startFileName}\"/>");
                         }
                         else
                         {
-
+                            //Calibre 将 AWZ3 的 html 文件自动添加到text目录
+                            tocContent.AppendLine($"<content src=\"text/{startFileName}\"/>");
                         }
+                        tocContent.AppendLine("</navPoint>");
+                        #endregion
+
+                        foreach (string chapterKey in chapterKeys.OrderBy(item => item, new SemiNumericComparer()))
+                        {
+                            index++;
+                            string fileName = index.Completion(4, "part", ".xhtml");
+                            ChapterModel chapter = _ChapterService.SingleOrDefault(bookKey, chapterKey);
+                            Dictionary<string, object> dicDetail = new Dictionary<string, object>();
+                            dicDetail.Add(chapter.GetType().Name, chapter);
+                            List<BaseDataModel> replaceRules = ReplaceRules.Where(item => item.IsSelected).ToList();
+                            //小说中包含链接，移除后重新添加到隐藏链接中
+                            BaseDataModel replaceRule = new BaseDataModel() { IsSelected = true, Name = chapter.Link, Description = "" };
+                            replaceRules.Add(replaceRule);
+                            documentService.HtmlPage(fileName, DetailTemplate, replaceRules, dicDetail);
+                            replaceRules.Remove(replaceRule);
+
+                            #region 章节目录
+                            //<navPoint>
+                            tocContent.AppendLine($"<navPoint id=\"num_{index + 1}\" playOrder=\"{index + 1}\">");
+                            //<navLabel>
+                            tocContent.AppendLine("<navLabel>");
+                            //<text></text>
+                            tocContent.AppendLine($"<text>{chapter.Name}</text>");
+                            //</navLabel>
+                            tocContent.AppendLine("</navLabel>");
+                            //<content />
+                            if ("EPUB".Equals(SelectBookType.Name))
+                            {
+                                tocContent.AppendLine($"<content src=\"{fileName}\"/>");
+                            }
+                            else
+                            {
+                                //Calibre 将 AWZ3 的 html 文件自动添加到text目录
+                                tocContent.AppendLine($"<content src=\"text/{fileName}\"/>");
+                            }
+                            tocContent.AppendLine("</navPoint>");
+                            #endregion
+                        }
+                        tocContent.AppendLine("</navMap>");
+                        documentService.TocFile("toc.txt", tocContent.ToString());
+
+                        ShowInformation($"导出[{CurrentBook.Name}]完成");
                     }
                 }
                 catch (Exception ex)

@@ -2,11 +2,14 @@
 using NLog.Extensions.Logging;
 using Prism.DryIoc;
 using Prism.Ioc;
+using Reader.Client.Common;
 using Reader.Client.Interfaces;
 using Reader.Client.Services;
 using Reader.Client.ViewModels;
 using Reader.Client.Views;
 using System;
+using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
@@ -92,6 +95,21 @@ namespace Reader.Client
             {
                 service.NavigationToView("IndexView");
             }
+
+            var result = Task.Run(() => InitSetting().Result).Result;
+
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        async Task<bool> InitSetting()
+        {
+            var settingService = Container.Resolve<ISettingService>();
+            ReaderContext.Setting = await settingService.GetAsync<ReaderSetting>("","Setting");
+            if (ReaderContext.Setting == null)
+                ReaderContext.Setting = new ReaderSetting();
             return true;
         }
 
@@ -108,6 +126,7 @@ namespace Reader.Client
             ////Service
             containerRegistry.RegisterSingleton<IApplicationService, ApplicationService>();
             containerRegistry.RegisterSingleton<ICacheService, CacheService>();
+            containerRegistry.RegisterSingleton<ISettingService, SettingService>();
             containerRegistry.RegisterSingleton<IBookSourceService, BookSourceService>();
             containerRegistry.RegisterSingleton<IBookService, BookService>();
             containerRegistry.RegisterSingleton<IChapterService, ChapterService>();

@@ -63,7 +63,7 @@ namespace Reader.Client.Services
         public void HtmlPage(string fileName,BaseDataModel model, IEnumerable<BaseDataModel> ReplaceRules, Dictionary<string,object> dicModel)
         {
             EnsureDirectoryExists(_SavePath);
-            string fullPath = $"{_SavePath}{fileName}.xhtml";
+            string fullPath = $"{_SavePath}{fileName}";
             string htmlContent = model.Description;
 
             Regex regex = new Regex("\\$(?<R>[\\w\\.]*)\\$");
@@ -98,7 +98,21 @@ namespace Reader.Client.Services
             }
             WriteFile(fullPath, htmlContent);
         }
-
+        /// <summary>
+        /// 存储Toc目录文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="content"></param>
+        public void TocFile(string fileName,string content)
+        {
+            EnsureDirectoryExists(_SavePath);
+            string fullPath = $"{_SavePath}{fileName}";
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+            WriteFile(fullPath, content);
+        }
         /// <summary>
         /// 写入文件
         /// </summary>

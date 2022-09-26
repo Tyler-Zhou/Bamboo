@@ -143,11 +143,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Common\ReaderContext.cs" />
+    <Compile Include="Common\ReaderSetting.cs" />
     <Compile Include="Converters\BooleanToVisibilityConveter.cs" />
     <Compile Include="Events\LoadingEvent.cs" />
     <Compile Include="Events\TaskEvent.cs" />
     <Compile Include="Events\TipsEvent.cs" />
     <Compile Include="Extensions\DialogueExtensions.cs" />
+    <Compile Include="Extensions\IntExtensions.cs" />
+    <Compile Include="Extensions\SemiNumericComparer.cs" />
     <Compile Include="Extensions\StopwatchExtensions.cs" />
     <Compile Include="Extensions\TimeSpanExtensions.cs" />
     <Compile Include="Helpers\JsonSerializerHelper.cs" />
@@ -157,6 +161,7 @@
     <Compile Include="Interfaces\IChapterService.cs" />
     <Compile Include="Interfaces\IDownloadTaskService.cs" />
     <Compile Include="Interfaces\IJsonService.cs" />
+    <Compile Include="Interfaces\ISettingService.cs" />
     <Compile Include="Interfaces\ITemplateService.cs" />
     <Compile Include="Services\ApplicationService.cs" />
     <Compile Include="Services\BookService.cs" />
@@ -165,6 +170,7 @@
     <Compile Include="Services\ChapterService.cs" />
     <Compile Include="Services\DocumentService.cs" />
     <Compile Include="Services\DownloadTaskService.cs" />
+    <Compile Include="Services\SettingService.cs" />
     <Compile Include="Services\TaskProgress.cs" />
     <Compile Include="Services\TemplateService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
