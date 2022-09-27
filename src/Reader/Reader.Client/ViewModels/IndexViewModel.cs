@@ -161,6 +161,10 @@ namespace Reader.Client.ViewModels
         /// 下载任务
         /// </summary>
         IDownloadTaskService _DownloadTaskService;
+        /// <summary>
+        /// 章节服务
+        /// </summary>
+        IChapterService _ChapterService;
         #endregion
 
         #region 命令(Commands)
@@ -196,6 +200,7 @@ namespace Reader.Client.ViewModels
             _BookService = containerProvider.Resolve<IBookService>();
             _BookSourceService = containerProvider.Resolve<IBookSourceService>();
             _DownloadTaskService = containerProvider.Resolve<IDownloadTaskService>();
+            _ChapterService = containerProvider.Resolve<IChapterService>();
             DownloadCommand = new DelegateCommand<BookModel>(Download);
             EditBookCommand = new DelegateCommand<BookModel>(EditBook);
             AddBookCommand = new DelegateCommand(AddBook);
@@ -263,13 +268,14 @@ namespace Reader.Client.ViewModels
                 {
                     try
                     {
-                        if (_DownloadTaskService.GetCount(model.Key) <= 0)
+                        if (_DownloadTaskService.GetAll(model.Key).Count <= 0)
                         {
                             BookSourceModel bookSource = BookSources.SingleOrDefault(item => item.ID.Equals(model.SourceID));
                             if (bookSource != null)
                             {
                                 FictionSpider fictionSpider = new FictionSpider(bookSource);
                                 ObservableCollection<DownloadTaskModel> downloadTasks = fictionSpider.ReplenishBookReturnBookTask(model);
+                                _BookService.Save(model);
                                 foreach (DownloadTaskModel downloadTask in downloadTasks)
                                 {
                                     _DownloadTaskService.Save(downloadTask);

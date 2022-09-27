@@ -101,7 +101,12 @@ namespace Reader.Client.Services
             SubDirectory = $"\\Book\\{bookKey}\\";
             ObservableCollection<ChapterModel> result = new ObservableCollection<ChapterModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                return new ObservableCollection<ChapterModel>();
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
             FileInfo[] fis = dir.GetFiles();
             for (int i = 0; i < fis.Length; i++)
             {
@@ -115,7 +120,25 @@ namespace Reader.Client.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// 获取章节数量
+        /// </summary>
+        /// <param name="bookKey"></param>
+        /// <returns></returns>
+        public int GetCount(string bookKey)
+        {
+            if (string.IsNullOrWhiteSpace(bookKey))
+                return 0;
+            SubDirectory = $"\\Book\\{bookKey}\\";
+            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                return 0;
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
+            return dir.GetFiles().Length;
+        }
         /// <summary>
         /// 删除章节
         /// </summary>

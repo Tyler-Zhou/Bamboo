@@ -82,7 +82,12 @@ namespace Reader.Client.Services
         {
             ObservableCollection<BookSourceModel> result = new ObservableCollection<BookSourceModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                return new ObservableCollection<BookSourceModel>();
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
             FileInfo[] fis = dir.GetFiles();
             for (int i = 0; i < fis.Length; i++)
             {

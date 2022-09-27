@@ -35,7 +35,12 @@ namespace Reader.Client.Interfaces
         /// <param name="bookKey">书籍 Key</param>
         /// <returns></returns>
         ObservableCollection<ChapterModel> GetAll(string bookKey);
-
+        /// <summary>
+        /// 获取章节数量
+        /// </summary>
+        /// <param name="bookKey"></param>
+        /// <returns></returns>
+        int GetCount(string bookKey);
         /// <summary>
         /// 删除章节
         /// </summary>

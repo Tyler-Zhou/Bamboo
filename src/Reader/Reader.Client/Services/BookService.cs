@@ -75,7 +75,12 @@ namespace Reader.Client.Services
             SubDirectory = $"\\Book\\";
             ObservableCollection<BookModel> result = new ObservableCollection<BookModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                return new ObservableCollection<BookModel>();
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
             FileInfo[] fis = dir.GetFiles();
             for (int i = 0; i < fis.Length; i++)
             {

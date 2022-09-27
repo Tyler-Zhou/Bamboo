@@ -316,10 +316,10 @@ namespace Reader.Client.Services
                             ChapterModel chapter = _FictionSpider.GetChapter(downloadTask);
                             _ChapterService.Save(chapter);
                             //删除任务
-                            _DownloadTaskService.Remove(downloadTask.Key);
-                            _EventAggregator.ShowMessage(new TipsInfo() { Content = $"完成任务[{downloadTask.Name}]", Type = EnumTipsType.Information });
+                            downloadTask.IsDownload = true;
+                            _DownloadTaskService.Save(downloadTask);
                             Position++;
-                            ToolTip = $"总{MaxValue}项,当前{Position}项";
+                            ToolTip = $"总{MaxValue}项,当前完成{Position}项  链接[{downloadTask.Link}]";
                             if(Position >= MaxValue)
                                 _IsStop = true;
                         }

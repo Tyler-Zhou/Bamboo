@@ -49,9 +49,14 @@ namespace Reader.Client.Services
             if (string.IsNullOrWhiteSpace(model.Key)
                 || string.IsNullOrWhiteSpace(model.BookKey))
                 return false;
-            
             SubDirectory = $"\\Book\\Task\\{model.BookKey}\\";
-            Remove(model.Key);
+
+            DownloadTaskModel singleModel = SingleOrDefault(model.BookKey,model.Key);
+            //下载状态从旧配置获取
+            if(singleModel!=null)
+            {
+                model.IsDownload = singleModel.IsDownload;
+            }
             return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.Key}", model).Result).Result;
         }
         /// <summary>
@@ -96,14 +101,14 @@ namespace Reader.Client.Services
         public ObservableCollection<DownloadTaskModel> GetAll(string bookKey)
         {
             if (string.IsNullOrWhiteSpace(bookKey))
-                return null;
+                return new ObservableCollection<DownloadTaskModel>();
             SubDirectory = $"\\Book\\Task\\{bookKey}\\";
             ObservableCollection<DownloadTaskModel> result = new ObservableCollection<DownloadTaskModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
             string cachePath = $"{basePath}{SubDirectory}";
             if (!Directory.Exists(cachePath))
             {
-                Directory.CreateDirectory(cachePath);
+                return new ObservableCollection<DownloadTaskModel>();
             }
             DirectoryInfo dir = new DirectoryInfo(cachePath);
             FileInfo[] fis = dir.GetFiles();
@@ -112,7 +117,7 @@ namespace Reader.Client.Services
                 FileInfo fi = fis[i];
                 string name = fi.Name.Replace(fi.Extension, "");
                 DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, name).Result).Result;
-                if (model != null)
+                if (model != null && !model.IsDownload)
                 {
                     result.Add(model);
                 }
