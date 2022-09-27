@@ -20,12 +20,12 @@
     </UserControl.Resources>
     <DockPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-            <Button Content="{DynamicResource ButtonPasuse}" />
-            <Button Content="{DynamicResource ButtonStop}" />
-            <Button Content="{DynamicResource ButtonContinue}" />
-            <Button Content="{DynamicResource ButtonPasuseAll}" />
-            <Button Content="{DynamicResource ButtonStopAll}" />
-            <Button Content="{DynamicResource ButtonContinueAll}" />
+            <Button Command="{Binding PauseCommand}" Content="{DynamicResource ButtonPasuse}" />
+            <Button Command="{Binding ContinueCommand}" Content="{DynamicResource ButtonContinue}" />
+            <Button Command="{Binding StopCommand}" Content="{DynamicResource ButtonStop}" />
+            <Button Command="{Binding PauseAllCommand}" Content="{DynamicResource ButtonPasuseAll}" />
+            <Button Command="{Binding ContinueAllCommand}" Content="{DynamicResource ButtonContinueAll}" />
+            <Button Command="{Binding StopAllCommand}" Content="{DynamicResource ButtonStopAll}" />
         </StackPanel>
         <GroupBox DockPanel.Dock="Top" Header="{DynamicResource GroupBoxTaskList}">
             <DockPanel>

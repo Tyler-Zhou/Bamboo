@@ -256,17 +256,20 @@ namespace Reader.Client.Services
         /// </summary>
         void InitData()
         {
-            //开启线程池
-            for (sbyte i = 0; i < _ThreadPool.Length; i++)
-            {
-                _ThreadPool[i] = new Thread(new ThreadStart(DownloadTask));
-                _ThreadPool[i].Start();
-            }
-            // 向线程池提交任务
             ObservableCollection<DownloadTaskModel> DownloadTasks = _DownloadTaskService.GetAll(Key);
-            foreach (DownloadTaskModel chapterTask in DownloadTasks)
+            if(DownloadTasks !=null && DownloadTasks.Count>0)
             {
-                DownloadTaskQueue.Enqueue(chapterTask);
+                //开启线程池
+                for (sbyte i = 0; i < _ThreadPool.Length; i++)
+                {
+                    _ThreadPool[i] = new Thread(new ThreadStart(DownloadTask));
+                    _ThreadPool[i].Start();
+                }
+                // 向线程池提交任务
+                foreach (DownloadTaskModel chapterTask in DownloadTasks)
+                {
+                    DownloadTaskQueue.Enqueue(chapterTask);
+                }
             }
             MaxValue = DownloadTaskQueue.Count;
             Position = 0;

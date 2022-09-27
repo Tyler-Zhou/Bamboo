@@ -68,6 +68,26 @@ namespace Reader.Client.Services
             DownloadTaskModel model = Task.Run(() => _CacheService.GetAsync<DownloadTaskModel>(SubDirectory, key).Result).Result;
             return model;
         }
+
+        /// <summary>
+        /// 获取下载任务数量
+        /// </summary>
+        /// <param name="bookKey"></param>
+        /// <returns></returns>
+        public int GetCount(string bookKey)
+        {
+            if (string.IsNullOrWhiteSpace(bookKey))
+                return 0;
+            SubDirectory = $"\\Book\\Task\\{bookKey}\\";
+            string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                return 0;
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
+            return dir.GetFiles().Length;
+        }
         /// <summary>
         /// 获取下载任务
         /// </summary>
@@ -80,7 +100,12 @@ namespace Reader.Client.Services
             SubDirectory = $"\\Book\\Task\\{bookKey}\\";
             ObservableCollection<DownloadTaskModel> result = new ObservableCollection<DownloadTaskModel>();
             string basePath = Task.Run(() => _CacheService.GetSavePathAsync().Result).Result;
-            DirectoryInfo dir = new DirectoryInfo($"{basePath}{SubDirectory}");
+            string cachePath = $"{basePath}{SubDirectory}";
+            if (!Directory.Exists(cachePath))
+            {
+                Directory.CreateDirectory(cachePath);
+            }
+            DirectoryInfo dir = new DirectoryInfo(cachePath);
             FileInfo[] fis = dir.GetFiles();
             for (int i = 0; i < fis.Length; i++)
             {

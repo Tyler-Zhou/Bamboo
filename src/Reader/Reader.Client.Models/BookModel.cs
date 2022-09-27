@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Windows.Media;
 
 namespace Reader.Client.Models
 {
@@ -192,6 +195,39 @@ namespace Reader.Client.Models
             set
             {
                 _PosterContent = value;
+                RaisePropertyChanged();
+            }
+        }
+        #endregion
+
+        #region 封面
+        private ImageSource _Poster = null;
+        /// <summary>
+        /// 封面
+        /// </summary>
+        [IgnoreDataMember]
+        public ImageSource Poster
+        {
+            get
+            {
+                try
+                {
+                    if (PosterContent != null && PosterContent.Length != 0)
+                    {
+                        MemoryStream ms = new MemoryStream(PosterContent);
+                        ImageSourceConverter imageSourceConverter = new ImageSourceConverter();
+                        _Poster = (ImageSource)imageSourceConverter.ConvertFrom(ms);
+                    }
+                }
+                catch
+                {
+                    _Poster = null;
+                }
+                return _Poster;
+            }
+            set
+            {
+                _Poster = value;
                 RaisePropertyChanged();
             }
         }

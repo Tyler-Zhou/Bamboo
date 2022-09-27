@@ -28,6 +28,12 @@ namespace Reader.Client.Interfaces
         /// <returns></returns>
         ObservableCollection<DownloadTaskModel> GetAll(string bookKey);
         /// <summary>
+        /// 获取下载任务数量
+        /// </summary>
+        /// <param name="bookKey"></param>
+        /// <returns></returns>
+        int GetCount(string bookKey);
+        /// <summary>
         /// 删除任务
         /// </summary>
         /// <param name="key"></param>

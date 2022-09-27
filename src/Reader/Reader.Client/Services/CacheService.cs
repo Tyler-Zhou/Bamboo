@@ -204,7 +204,9 @@ namespace Reader.Client.Services
         {
             try
             {
-                string fullPath = $"{_BasePath}{subDirectory}{configName}{_ExtensionName}";
+                string basePath = $"{_BasePath}{subDirectory}";
+                EnsureDirectoryExists(basePath);
+                string fullPath = $"{basePath}{configName}{_ExtensionName}";
                 if (!File.Exists(fullPath))
                 {
                     throw new Exception($"文件[{fullPath}]不存在");
