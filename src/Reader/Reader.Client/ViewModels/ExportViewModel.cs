@@ -553,7 +553,7 @@ namespace Reader.Client.ViewModels
                             //</navLabel>
                             tocContent.AppendLine("</navLabel>");
                             //<content />
-                            tocContent.AppendLine(contentSrc.Replace("$fileName$", startFileName));
+                            tocContent.AppendLine(contentSrc.Replace("$fileName$", fileName));
                             tocContent.AppendLine("</navPoint>");
                             #endregion
                         }
