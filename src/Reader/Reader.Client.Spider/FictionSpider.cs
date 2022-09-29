@@ -3,16 +3,9 @@ using Reader.Client.Models;
 using Reader.Client.Spider.Extensions;
 using System;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Xml;
 
 namespace Reader.Client.Spider
 {
-    /// <summary>
-    /// 写入调试日志
-    /// </summary>
-    /// <param name="logString"></param>
-    public delegate void DelegateWriteDebugLog(string logString);
 
     /// <summary>
     /// 小说爬虫
@@ -25,10 +18,7 @@ namespace Reader.Client.Spider
         /// </summary>
         BookSourceModel _BookSource { get; set; }
 
-        /// <summary>
-        /// 写入调试日志
-        /// </summary>
-        public DelegateWriteDebugLog OnWriteDebugLog;
+        
         #endregion
 
         #region 构造函数(Constructor)
@@ -335,15 +325,6 @@ namespace Reader.Client.Spider
                 WriteDebugLog($"└{chapterModel.Content}");
             }
             return chapterModel;
-        }
-        /// <summary>
-        /// 写入日志，加判断委托是否为空
-        /// </summary>
-        /// <param name="logString"></param>
-        private void WriteDebugLog(string logString)
-        {
-            if(OnWriteDebugLog!=null)
-                OnWriteDebugLog(logString);
         }
         #endregion
     }

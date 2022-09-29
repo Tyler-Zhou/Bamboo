@@ -51,7 +51,10 @@ namespace Reader.Client.Spider
         /// Post 参数
         /// </summary>
         public Dictionary<string, string> PostParams { get; set; }
-
+        /// <summary>
+        /// 写入调试日志
+        /// </summary>
+        public DelegateWriteDebugLog OnWriteDebugLog;
         #endregion
 
         #region 方法(Methods)
@@ -100,6 +103,16 @@ namespace Reader.Client.Spider
         public virtual byte[] GetImageByte()
         {
             return null;
+        }
+
+        /// <summary>
+        /// 写入日志，加判断委托是否为空
+        /// </summary>
+        /// <param name="logString"></param>
+        public virtual void WriteDebugLog(string logString)
+        {
+            if (OnWriteDebugLog != null)
+                OnWriteDebugLog(logString);
         }
         #endregion
     }

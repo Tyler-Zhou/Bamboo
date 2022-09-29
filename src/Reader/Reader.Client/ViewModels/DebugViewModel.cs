@@ -1,5 +1,4 @@
-﻿using ImTools;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Ioc;
 using Prism.Regions;
 using Reader.Client.Extensions;
@@ -11,12 +10,10 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 
 namespace Reader.Client.ViewModels
 {
-    
+
     /// <summary>
     /// 书源调试
     /// </summary>
@@ -103,6 +100,9 @@ namespace Reader.Client.ViewModels
         }
         #endregion
 
+        /// <summary>
+        /// 计时器
+        /// </summary>
         Stopwatch _Stopwatch = new Stopwatch();
 
         #endregion
