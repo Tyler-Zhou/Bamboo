@@ -51,12 +51,6 @@ namespace Reader.Client.Services
                 return false;
             SubDirectory = $"\\Book\\Task\\{model.BookKey}\\";
 
-            DownloadTaskModel singleModel = SingleOrDefault(model.BookKey,model.Key);
-            //下载状态从旧配置获取
-            if(singleModel!=null)
-            {
-                model.IsDownload = singleModel.IsDownload;
-            }
             return Task.Run(() => _CacheService.SaveAsync(SubDirectory, $"{model.Key}", model).Result).Result;
         }
         /// <summary>
