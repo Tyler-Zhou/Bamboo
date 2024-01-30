@@ -1,0 +1,135 @@
+<%@ CodeTemplate Language="C#" Inherits="CodeSmith.BaseTemplates.SqlCodeTemplate" TargetLanguage="XML" Description="Generates a typed DataSet class based on a database table schema." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Category="Context" Description="Table that the typed DataSet should contain." %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.BaseTemplates" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Xml" %>
+<script runat="template">
+
+    //????
+	public string GetClassName(SchemaExplorer.TableSchema  table,string type)
+	{
+         if(type=="list")
+        {
+		    return table.Name +"List";
+        }
+        else
+        {
+            return table.Name +"Info";
+        }
+	}
+    
+    //?????
+	public string GetClassDescription(SchemaExplorer.TableSchema  table,string type)
+	{
+        if(type=="list")
+        {
+		    return table.Description +"-????";
+        }
+        else
+        {
+            return table.Description +"-????";
+        }
+	}
+	
+    //?????
+    public string GetColumnDescription(ColumnSchema column)
+	{
+       return column.Description;
+	}
+    
+        public string GetColumnRequiredDescription(ColumnSchema column)
+	{
+       return column.Description+"????.";
+	}
+    
+    
+    ///????????
+	public bool SizeMatters(ColumnSchema column)
+	{
+		switch (column.DataType)
+		{
+			case DbType.String:
+			case DbType.AnsiString:
+			case DbType.AnsiStringFixedLength:
+			{
+				return true;
+			}
+			default:
+			{
+				return false;
+			}
+		}
+	}
+    
+    //?????
+    public string  GetColumnType(ColumnSchema column)
+	{
+        if(!SizeMatters(column) && column.AllowDBNull)
+        {
+             return   GetCSharpVariableType(column)+"?";
+        }
+        else
+        {
+             return   GetCSharpVariableType(column);
+        }
+            
+	}
+    
+
+</script>
+
+<?xml version="1.0"?>
+<%
+XmlTextWriter w = new XmlTextWriter(Response);
+w.Formatting = Formatting.Indented;
+
+//?????
+w.WriteStartElement("class");
+w.WriteAttributeString("name", GetClassName(SourceTable,"list"));
+w.WriteAttributeString("description",GetClassDescription(SourceTable,"list"));
+
+for (int i = 0; i < SourceTable.Columns.Count; i++) { 
+    //??
+    w.WriteStartElement("field");
+    w.WriteAttributeString("name", SourceTable.Columns[i].Name );
+    w.WriteAttributeString("type",GetColumnType(SourceTable.Columns[i]));
+    w.WriteAttributeString("description",GetColumnDescription(SourceTable.Columns[i]));
+  
+   if (SourceTable.Columns[i].IsPrimaryKeyMember ) { 
+        w.WriteAttributeString("isid","true" );
+    }
+    
+    //??????
+    if (SizeMatters(SourceTable.Columns[i])) { 
+        w.WriteStartElement("validation");
+        w.WriteAttributeString("type","stringlength");
+        w.WriteAttributeString("length",SourceTable.Columns[i].Size.ToString() );
+        w.WriteEndElement(); // </validation>
+    }
+    
+     
+    
+    //??????
+     if (!SourceTable.Columns[i].AllowDBNull) {
+            w.WriteStartElement("validation");
+            w.WriteAttributeString("type","required");
+              w.WriteAttributeString("errmsg",GetColumnRequiredDescription(SourceTable.Columns[i]));
+            w.WriteEndElement(); // </validation>
+    }
+            
+    w.WriteEndElement();// </field>
+}
+
+w.WriteEndElement(); // </class>
+
+
+//?????
+w.WriteStartElement("class");
+w.WriteAttributeString("name", GetClassName(SourceTable,"info"));
+w.WriteAttributeString("baseclass", GetClassName(SourceTable,"list"));
+w.WriteAttributeString("description",GetClassDescription(SourceTable,"info"));
+w.WriteEndElement(); // </class>
+%>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ReportCenterDataClass">
+  <DataContextMoniker Name="/ReportCenterDataClassDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c3e4c052-f574-40d1-9847-b250697fc4f1" absoluteBounds="0.75, 1, 2, 2.2914453124999996">
+      <DataClassMoniker Name="/ReportCenterDataClassDataContext/CostFee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6e66bbda-b6fa-486a-b1e1-6f94029d14d0" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.7314453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="99327795-bfd1-41b3-a93f-cf2f8c645219" absoluteBounds="3.5, 1.125, 2, 2.1228255208333335">
+      <DataClassMoniker Name="/ReportCenterDataClassDataContext/CostFeeDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e930af29-f68a-45fa-823c-0c3ac04ef74a" absoluteBounds="3.515, 1.585, 1.9700000000000002, 1.5628255208333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.18641276041667); (3.5 : 2.18641276041667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ReportCenterDataClassDataContext/CostFee/CostFee_CostFeeDetail" />
+      <nodes>
+        <classShapeMoniker Id="c3e4c052-f574-40d1-9847-b250697fc4f1" />
+        <classShapeMoniker Id="99327795-bfd1-41b3-a93f-cf2f8c645219" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0d8bc75d-13a8-4a1e-8210-203ae16d32c0" absoluteBounds="2.375, 4.75, 2, 1.7855859375">
+      <DataClassMoniker Name="/ReportCenterDataClassDataContext/DeficitOperationWorkFlowLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1fefb93a-c0be-43e5-8cb4-9b8b201edab2" absoluteBounds="2.39, 5.21, 1.9700000000000002, 1.2255859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

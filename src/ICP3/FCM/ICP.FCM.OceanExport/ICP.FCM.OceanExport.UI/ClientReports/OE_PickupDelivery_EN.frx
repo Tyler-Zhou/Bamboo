@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="06/22/2011 09:58:37" ReportInfo.Modified="12/15/2011 17:33:32" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyTelFax" DataType="System.String"/>
+      <Column Name="PickupAtInfo" DataType="System.String"/>
+      <Column Name="CreateTime" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="CurrentUserName" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="TotalPKGS" DataType="System.String"/>
+      <Column Name="PickupAtInfo" DataType="System.String"/>
+      <Column Name="CustomerRefNo" DataType="System.String"/>
+      <Column Name="PickupContact" DataType="System.String"/>
+      <Column Name="PickupDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="DeliveryToInfo" DataType="System.String"/>
+      <Column Name="DeliveryRefrenceNo" DataType="System.String"/>
+      <Column Name="DeliveryContact" DataType="System.String"/>
+      <Column Name="DeliveryDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="LastFreeDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="BillToInfo" DataType="System.String"/>
+      <Column Name="BillToRefNO" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="BookingNO" DataType="System.String"/>
+      <Column Name="VesselName" DataType="System.String"/>
+      <Column Name="ContainerNOs" DataType="System.String"/>
+      <Column Name="HBLNo" DataType="System.String"/>
+      <Column Name="PortofReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="PKGS" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page630729935" PaperWidth="215.9" PaperHeight="279.4" FirstPageSource="4" OtherPagesSource="4">
+    <PageHeaderBand Name="PageHeader1" Top="20" Width="740.5" Height="94.32">
+      <TextObject Name="CompanyName" Width="718.2" Height="32" CanGrow="true" Text="[ReportSource.CompanyName]" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="CompanyAddress" Top="30.24" Width="718.2" Height="24" CanGrow="true" Text="[ReportSource.CompanyAddress]" HorzAlign="Center"/>
+      <TextObject Name="CompanyTelFax" Top="45.36" Width="718.2" Height="24" CanGrow="true" Text="[ReportSource.CompanyTelFax]" HorzAlign="Center"/>
+      <TextObject Name="textbox1" Top="68.04" Width="718.2" Height="26.28" CanGrow="true" Text="PICK-UP &amp; DELIVERY INSTRUCTION" HorzAlign="Center" Font="Arial, 20pt, style=Bold" TextFill.Color="DarkRed"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand630729935" Top="134.32" Width="740.5" Height="884.52">
+      <TableObject Name="Table1" Left="3.78" Top="3.78" Width="710.64" Height="612.36" Border.Lines="All" Border.Color="DarkRed" Border.Width="2">
+        <TableColumn Name="Column1" Width="355.32"/>
+        <TableColumn Name="Column2" Width="177.66"/>
+        <TableColumn Name="Column3" Width="177.66"/>
+        <TableRow Name="Row1" Height="22.68">
+          <TableCell Name="Cell1" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="To Trucking Co.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell2" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Date:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell3" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="By:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="45.36">
+          <TableCell Name="Cell6" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.PickupAtInfo]" Font="Arial, 9pt, style=Bold" RowSpan="3"/>
+          <TableCell Name="Cell7" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.CreateTime]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell8" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.CurrentUserName]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Commodity:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell13" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Total Pkgs.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="45.36">
+          <TableCell Name="Cell16" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell17" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.Commodity]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell18" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.TotalPKGS]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell21" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Freight Location:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell22" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Customer Ref. No:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell23" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Pick - Up Contact :" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell26" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.PickupAtInfo]" Font="Arial, 9pt, style=Bold" RowSpan="3"/>
+          <TableCell Name="Cell27" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.CustomerRefNo]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell28" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.PickupContact]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="22.68">
+          <TableCell Name="Cell31" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell32" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Pick - Up Date / Time:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon" ColSpan="2"/>
+          <TableCell Name="Cell33" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="45.36">
+          <TableCell Name="Cell36" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell37" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.PickupDate]" Font="Arial, 9pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell38" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="22.68">
+          <TableCell Name="Cell41" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Deliver To :" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell42" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Delivery Ref.No.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell43" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Delivery Contact :" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="22.68">
+          <TableCell Name="Cell46" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.DeliveryToInfo]" Font="Arial, 9pt, style=Bold" RowSpan="3"/>
+          <TableCell Name="Cell47" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.DeliveryRefrenceNo]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell48" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.DeliveryContact]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row11" Height="22.68">
+          <TableCell Name="Cell51" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell52" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Delivery Date/Time" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell53" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Cut Off Date :" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row12" Height="22.68">
+          <TableCell Name="Cell56" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell57" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.DeliveryDate]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell58" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.LastFreeDate]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="22.68">
+          <TableCell Name="Cell61" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Bill To:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell62" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Billing Reference No.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell63" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Carrier:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row14" Height="45.36">
+          <TableCell Name="Cell66" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.BillToInfo]" Font="Arial, 9pt, style=Bold" RowSpan="3"/>
+          <TableCell Name="Cell67" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.BillToRefNO]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell68" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.Carrier]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="22.68">
+          <TableCell Name="Cell71" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell72" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Booking Nos:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell73" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Vessel/Voyage No:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row16" Height="45.36">
+          <TableCell Name="Cell76" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell77" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.BookingNO]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell78" Border.Lines="All" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.VesselName]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row17" Height="22.68">
+          <TableCell Name="Cell81" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="P/U Empty  CNTR Loc.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell82" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="House B/L No:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell83" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Carrier Booking no:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row18" Height="22.68">
+          <TableCell Name="Cell86" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.ContainerNOs]" Font="Arial, 9pt, style=Bold" RowSpan="5"/>
+          <TableCell Name="Cell87" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.HBLNo]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell88" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row19" Height="22.68">
+          <TableCell Name="Cell91" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell92" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Port of Receipt:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon" ColSpan="2"/>
+          <TableCell Name="Cell93" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row21" Height="22.68">
+          <TableCell Name="Cell99" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell100" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.PortofReceipt]" Font="Arial, 9pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell101" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row20" Height="22.68">
+          <TableCell Name="Cell96" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell97" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="Place of Loading:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell98" Border.Lines="Left, Right, Top" Border.Color="DarkRed" Border.Width="2" Text="E.T.D:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row22" Height="22.68">
+          <TableCell Name="Cell102" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell103" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.POL]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell104" Border.Lines="Left, Right, Bottom" Border.Color="DarkRed" Border.Width="2" Text="[ReportSource.ETD]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table2" Left="3.78" Top="619.92" Width="712.57" Height="132.3">
+        <TableColumn Name="Column4" Width="141.75"/>
+        <TableColumn Name="Column5" Width="213.61"/>
+        <TableColumn Name="Column6" Width="119.07"/>
+        <TableColumn Name="Column7" Width="119.07"/>
+        <TableColumn Name="Column8" Width="119.07"/>
+        <TableRow Name="Row23" Height="22.68">
+          <TableCell Name="Cell105" Fill.Color="LightSkyBlue" Text="Marks" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell106" Fill.Color="LightSkyBlue" Text="Description" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell107" Fill.Color="LightSkyBlue" Text="PKGS" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell108" Fill.Color="LightSkyBlue" Text="WEIGHT" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell109" Fill.Color="LightSkyBlue" Text="MEASUREMENT" HorzAlign="Justify" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row24" Height="109.62">
+          <TableCell Name="Cell110" Text="[ReportSource.Marks]"/>
+          <TableCell Name="Cell111" Text="[ReportSource.GoodsDescription]"/>
+          <TableCell Name="Cell112" Text="[ReportSource.PKGS]" HorzAlign="Right"/>
+          <TableCell Name="Cell113" Text="[ReportSource.Weight]" HorzAlign="Right"/>
+          <TableCell Name="Cell114" Text="[ReportSource.Measurement]" HorzAlign="Justify"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table3" Left="3.78" Top="763.56" Width="712.53" Height="64.26" Border.Lines="All" Border.Color="DarkRed" Border.Width="2">
+        <TableColumn Name="Column9" Width="126.63"/>
+        <TableColumn Name="Column10" MaxWidth="585.9" Width="585.9"/>
+        <TableRow Name="Row25" Height="64.26">
+          <TableCell Name="Cell115" Text="SPECIAL INSTRUCTION:" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell116" Text="CITY OCEAN REQUIRES ALL DELIVERIES TO BE LIVE-UNLOAD BASIS. IT IS TRUCKER'S RESPONSIBILITY TO RETURN THE EMPTY EQUIPMENTS PROMPTLY AFTER DELIVERY. CITY OCEAN WILL NOT BE RESPONSIBLE FOR ANY DRIVER DETENTION OR PER-DIEM WITHOUT PRIOR NOTIFICATION AND AUTHORIZATION." Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="3.78" Top="835.38" Width="710.64" Height="34.02" Text="You are requested to inform us immediately of any occurrence.&#13;&#10;Thank You for your service !" HorzAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="DarkRed"/>
+    </ColumnHeaderBand>
+  </ReportPage>
+</Report>

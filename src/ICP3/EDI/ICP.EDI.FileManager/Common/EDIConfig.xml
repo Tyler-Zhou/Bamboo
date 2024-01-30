@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+	<Service description="中海补料">
+		<Key>CHINASHIPPING-FEEDING</Key>
+		<Assembly>CSCL-SI-New,CSCL.SI.MappingMapToIFTMIN</Assembly>
+		<Companys>
+			<Company>
+				<EMail>
+					<ServerAddress>mail.cityocean.com</ServerAddress>
+					<UserName>faxsz</UserName>
+					<PassWord>faxsz</PassWord>
+					<EMailAddress>CITYOCEAN@AS400.CHINASHIPPING.COM.HK</EMailAddress>
+				</EMail>
+			</Company>
+		</Companys>
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SPR_EDI_GetEDIDataSource '{0}'</StoreProduce>
+			<DataSchema>mbl.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>txt</DocumentFormart>
+	</Service>
+	<Service description="韩进补料">
+		<Key>HANJINSHIPPING-FEEDING</Key>
+		<Assembly>HANJINSI,HANJIN.SI.MappingMapToIFTMIN</Assembly>
+		<Companys>
+			<Company>
+				<FTP>
+					<Host>edi.cn.hanjin.com</Host>
+					<Path>hjs/in</Path>
+					<UserName>shacity</UserName>
+					<PassWord>city0905</PassWord>
+				</FTP>
+			</Company>
+		</Companys>
+
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SPR_EDI_GetEDIDataSource '{0}'</StoreProduce>
+			<DataSchema>mbl.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>txt</DocumentFormart>
+	</Service>
+	<Service description="韩进订仓">
+		<Key>HANJINSHIPPING-BOOKING</Key>
+		<Assembly>HANJINBooking,HANJIN.Booking.MappingMapToIFTMBF</Assembly>
+		<Companys>
+			<Company>
+				<FTP>
+					<Host>edi.cn.hanjin.com</Host>
+					<Path>hjs/in</Path>
+					<UserName>shacity</UserName>
+					<PassWord>city0905</PassWord>
+				</FTP>
+			</Company>
+		</Companys>
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SPR_EDI_GetEDIDataSource '{0}'</StoreProduce>
+			<DataSchema>mbl.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>txt</DocumentFormart>
+	</Service>
+	<Service description="AMS">
+		<Key>AMS</Key>
+		<Assembly>AMS-New,AMS.MappingMapToCCF_Target</Assembly>
+		<Companys>
+			<Company>
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>test</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="57C0032C-572C-48B2-AD2D-75458F2F8B63">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>chongqing</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B1AFAD8F-55DD-4E29-A250-EB82AB3971FE">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>dalian</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="FD69B51B-E71F-4040-8F4B-28447A003C93">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>guangzhou</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="5A827ADF-38C7-4A2F-99A7-AD717CE91718">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>hochiminh</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="A62A9F8E-E69C-4E6E-AD85-E75AED3C6CF9">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>ningbo</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="F289109A-C29E-4B0B-A41A-C22D9E70A72F">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>qingdao</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="1DBF7671-0D2D-4F08-A8A9-3663A0DB0037">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>selangor</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B13FAC2D-8250-4990-A622-5ECA00D3A030">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shanghai</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="41D7D3FE-183A-41CD-A725-EB6F728541EC">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shenzhen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="D8D57403-D663-4A93-A927-144907B7963B">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>tianjin</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="2AFAC53A-2AF9-46ED-8C4B-7035FEDC0279">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>xiamen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+		</Companys>
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SDP_EDI_ExportAMSFiling '{0}',0</StoreProduce>
+			<RuleFile>AMS-Rule.xml</RuleFile>
+			<DataSchema>AMS.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>xml</DocumentFormart>
+	</Service>
+	<Service description="ACI">
+		<Key>ACI</Key>
+		<Assembly>AMS-New,AMS.MappingMapToCCF_Target</Assembly>
+		<Companys>
+			<Company>
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>test</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="57C0032C-572C-48B2-AD2D-75458F2F8B63">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>chongqing</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B1AFAD8F-55DD-4E29-A250-EB82AB3971FE">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>dalian</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="FD69B51B-E71F-4040-8F4B-28447A003C93">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>guangzhou</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="5A827ADF-38C7-4A2F-99A7-AD717CE91718">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>hochiminh</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="A62A9F8E-E69C-4E6E-AD85-E75AED3C6CF9">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>ningbo</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="F289109A-C29E-4B0B-A41A-C22D9E70A72F">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>qingdao</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="1DBF7671-0D2D-4F08-A8A9-3663A0DB0037">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>selangor</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B13FAC2D-8250-4990-A622-5ECA00D3A030">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shanghai</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="41D7D3FE-183A-41CD-A725-EB6F728541EC">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shenzhen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="D8D57403-D663-4A93-A927-144907B7963B">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>tianjin</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="2AFAC53A-2AF9-46ED-8C4B-7035FEDC0279">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>xiamen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+		</Companys>
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SDP_EDI_ExportAMSFiling '{0}',1</StoreProduce>
+			<RuleFile>ACI-Rule.xml</RuleFile>
+			<DataSchema>AMS.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>xml</DocumentFormart>
+	</Service>
+	<Service description="AMSANDACI">
+		<Key>AMSANDACI</Key>
+		<Assembly>AMS-New,AMS.MappingMapToCCF_Target</Assembly>
+		<Companys>
+			<Company>
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>test</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="57C0032C-572C-48B2-AD2D-75458F2F8B63">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>chongqing</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B1AFAD8F-55DD-4E29-A250-EB82AB3971FE">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>dalian</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="FD69B51B-E71F-4040-8F4B-28447A003C93">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>guangzhou</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="5A827ADF-38C7-4A2F-99A7-AD717CE91718">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>hochiminh</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="A62A9F8E-E69C-4E6E-AD85-E75AED3C6CF9">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>ningbo</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="F289109A-C29E-4B0B-A41A-C22D9E70A72F">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>qingdao</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="1DBF7671-0D2D-4F08-A8A9-3663A0DB0037">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>selangor</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="B13FAC2D-8250-4990-A622-5ECA00D3A030">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shanghai</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="41D7D3FE-183A-41CD-A725-EB6F728541EC">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>shenzhen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="D8D57403-D663-4A93-A927-144907B7963B">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>tianjin</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+			<Company id="2AFAC53A-2AF9-46ED-8C4B-7035FEDC0279">
+				<FTP>
+					<Host>ftp.tradetech.net</Host>
+					<Path>xiamen</Path>
+					<UserName>ftpCTYO</UserName>
+					<PassWord>THCRVMRE</PassWord>
+				</FTP>
+			</Company>
+
+		</Companys>
+		<DataBase>
+			<ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+			<StoreProduce>SDP_EDI_ExportAMSFiling '{0}',2</StoreProduce>
+			<RuleFile>AMSACI-Rule.xml</RuleFile>
+			<DataSchema>AMS.xsd</DataSchema>
+		</DataBase>
+		<DocumentFormart>xml</DocumentFormart>
+	</Service>
+
+  <Service description="泛洋船务补料">
+    <Key>FYCW-BOOKING</Key>
+    <Assembly>FYCW-BOOKING,FYCW.Booking.MappingMapToTextfile</Assembly>
+    <Companys>
+      <Company>
+        <EMail>
+          <ServerAddress>mail.cityocean.com</ServerAddress>
+          <UserName>faxsz</UserName>
+          <PassWord>faxsz</PassWord>
+          <EMailAddress>think@longwin.net</EMailAddress>
+        </EMail>
+      </Company>
+    </Companys>
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP2005;user id=icp2005;Pwd=longwinicp2005951;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>SDP_EDI_ExportIFCSUMFiling '{0}'</StoreProduce>
+      <DataSchema>IFSCUM_FYCW.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+</Services>

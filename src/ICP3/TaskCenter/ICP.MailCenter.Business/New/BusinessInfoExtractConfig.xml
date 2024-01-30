@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <Item ParameterType="ICP.TaskCenter.ServiceInterface.NodeInfo"
+        ExtractorType="ICP.TaskCenter.UI.TaskCenterBusinessInfoExtractor,ICP.TaskCenter.UI" 
+        CustomColumnGetterType="" 
+        QueryCriteriaGetterType="ICP.TaskCenter.UI.TaskCenterQueryCriteriaGetter,ICP.TaskCenter.UI" 
+        QueryServiceGetterType="ICP.TaskCenter.UI.TaskCenterQueryServiceGetter,ICP.TaskCenter.UI" 
+        DataBinderType="ICP.TaskCenter.UI.TaskCenterDataBinder,ICP.TaskCenter.UI" 
+        PostHandlerType="" 
+        SpecialConditionerType="" />
+  <Item ParameterType="ICP.Message.ServiceInterface.Message" 
+        ExtractorType="ICP.MailCenter.Business.UI.MessageBusinessInfoExtractor,ICP.MailCenter.Business.UI" 
+        QueryCriteriaGetterType="ICP.MailCenter.Business.UI.MessageQueryCriteriaGetter,ICP.MailCenter.Business.UI" 
+        CustomColumnGetterType="ICP.MailCenter.Business.UI.MessageCustomColumnGetter,ICP.MailCenter.Business.UI" 
+        QueryServiceGetterType="ICP.MailCenter.Business.UI.MessageBusinessQueryServiceGetter,ICP.MailCenter.Business.UI" 
+        DataBinderType="ICP.MailCenter.Business.UI.MessageDataBinder,ICP.MailCenter.Business.UI" 
+        PostHandlerType="ICP.MailCenter.Business.UI.MessagePostDataBindHandler,ICP.MailCenter.Business.UI" 
+        SpecialConditionerType="ICP.MailCenter.Business.UI.MessageSpecialConditioner,ICP.MailCenter.Business.UI" />
+</Items>

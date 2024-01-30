@@ -1,0 +1,116 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generate a CAB WorkItem." Debug="True" ResponseEncoding="UTF-8" NoWarn="0108,0618,1572,1573,1574,0162,2002"%>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="CodeBuilder" %>
+<%@ Assembly Name="CodeBuilder" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Text" %>
+
+
+<script runat="template">
+    Builder builder = new Builder() ; 
+
+    string _descriptionFile= string.Empty ;    
+    [Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))] 
+	[CodeTemplateProperty(CodeTemplatePropertyOption.Required)]
+	[Category("Generation")]
+	[Description("鎻忚堪鏂囦欢鍦板潃")]
+	[DefaultValue("")]
+	public string DescriptionFile 
+	{ 
+		get
+		{			
+				return _descriptionFile;			
+		}
+		set
+		{
+			if (value.EndsWith("\\")) value = value.Substring(0, value.Length - 1);
+			_descriptionFile = value;
+		} 
+	}
+    
+    void Init(){
+        builder.Load(DescriptionFile);
+    }
+    
+</script>
+    <%Init();%>
+
+
+namespace <%=builder.Namespace%>.ServiceInterface.DataObjects
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using System.ComponentModel.DataAnnotations ; 
+    using ICP.Framework ;
+    using CommonData = ICP.Common.ServiceInterface.DataObjects;
+
+    <% foreach(Entity c in builder.entityBuilder.Entities ) { %>
+    /// <summary>
+    /// <%=c.Description%>
+    /// </summary>
+    [Serializable]
+    public partial class <%=c.Name%> : <%=c.BaseEntity%>
+    {
+       <%foreach(Field f in c.Fields){%>
+        private <%=f.Type%>  <%=f.Name.ToLower()%>  ;
+        
+        /// <summary>
+        /// <%=f.Description%>
+        /// </summary>
+        <% foreach(string att in f.Validations){%>
+        <% =att%>
+        <%}%>
+        public <%=f.Type %>  <%=f.Name%> 
+        {
+        get{
+            return <%=f.Name.ToLower()%> ;
+            }
+            
+        set{
+            <%=f.Name.ToLower()%> = value;
+            base.OnPropertyChanged("<%=f.Name%>", value);
+            }
+        }
+        
+       <%}%>
+        <%if(string.IsNullOrEmpty(c.IDFieldName) == false){%>
+         /// <summary>
+        /// Determines whether the specified System.Object is equal to the current System.Object.
+        /// </summary>
+        /// <returns>true if the specified System.Object is equal to the current System.Object;otherwise, false.</returns>
+        public override bool Equals(object obj)
+        {
+            <%=c.Name%> newObj = obj as <%=c.Name%>;
+            if (newObj ==null ) 
+            {
+                return false;
+           }
+    
+            return newObj.<%=c.IDFieldName%> == this.<%=c.IDFieldName%>; 
+        }
+        
+        /// <summary>
+        /// Serves as a hash function for a particular type.
+        /// </summary>
+        /// <returns>A hash code for the current System.Object.</returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        <%}%>
+    }
+    
+    <%}%>   
+}
+

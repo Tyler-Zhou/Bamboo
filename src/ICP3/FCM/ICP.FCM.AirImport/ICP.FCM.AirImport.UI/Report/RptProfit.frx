@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/15/2011 15:45:40" ReportInfo.Modified="12/21/2011 09:46:48" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Common_ProfitReportData" ReferenceName="Common_ProfitReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="PrintDate" DataType="System.String"/>
+      <Column Name="AgentName" DataType="System.String"/>
+      <Column Name="DiscPortName" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="ReferenceNo" DataType="System.String"/>
+      <Column Name="FlightNo" DataType="System.String"/>
+      <Column Name="TotalRevenue" DataType="System.Decimal"/>
+      <Column Name="TotalCost" DataType="System.Decimal"/>
+      <Column Name="TotalAgent" DataType="System.Decimal"/>
+      <Column Name="Profit" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Common_ProfitReportFeeData" ReferenceName="Common_ProfitReportFeeData" DataType="System.Int32" Enabled="true">
+      <Column Name="agent" DataType="System.Decimal"/>
+      <Column Name="ChargeItemDescription" DataType="System.String"/>
+      <Column Name="company" DataType="System.String"/>
+      <Column Name="Cost" DataType="System.Decimal"/>
+      <Column Name="currency" DataType="System.String"/>
+      <Column Name="InvNo" DataType="System.String"/>
+      <Column Name="pmt" DataType="System.String"/>
+      <Column Name="PostDate" DataType="System.String"/>
+      <Column Name="Revenue" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="260">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="907.2" Height="207.9">
+      <TextObject Name="Text1" Top="9.45" Width="907.2" Height="37.8" Text="PROFIT BY H B/L" HorzAlign="Center" Font="宋体, 20pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text24" Top="47.25" Width="94.5" Height="18.9" Text="Printed On:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text25" Top="75.6" Width="94.5" Height="18.9" Text="Currency:" TextFill.Color="Maroon"/>
+      <LineObject Name="Line3" Top="94.5" Width="907.2" Border.Color="Maroon" Border.Width="4"/>
+      <TextObject Name="Text26" Top="103.95" Width="132.3" Height="18.9" Text="REFERENCE NO:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text27" Left="122.85" Top="103.95" Width="160.65" Height="18.9" Text="[Common_ProfitReportData.ReferenceNo]"/>
+      <TextObject Name="Text28" Top="132.3" Width="132.3" Height="18.9" Text="MASTER B/L NO:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text29" Left="122.85" Top="132.3" Width="160.65" Height="18.9" Text="[Common_ProfitReportData.MasterBLNo]"/>
+      <TextObject Name="Text30" Top="160.65" Width="132.3" Height="18.9" Text="HOUSE B/L NO:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text31" Left="122.85" Top="160.65" Width="160.65" Height="18.9" Text="[Common_ProfitReportData.HouseBLNo]"/>
+      <TextObject Name="Text32" Top="189" Width="132.3" Height="18.9" Text="AGENT NAME:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text33" Left="122.85" Top="189" Width="529.2" Height="18.9" Text="[Common_ProfitReportData.AgentName]"/>
+      <TextObject Name="Text34" Left="481.95" Top="103.95" Width="151.2" Height="18.9" Text="VSL/VOY (FLIGHT):" TextFill.Color="Maroon"/>
+      <TextObject Name="Text35" Left="623.7" Top="103.95" Width="283.5" Height="18.9" Text="[Common_ProfitReportData.FlightNo]"/>
+      <TextObject Name="Text36" Left="481.95" Top="132.3" Width="141.75" Height="18.9" Text="P.O.L/ETD:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text37" Left="623.7" Top="132.3" Width="283.5" Height="18.9" Text="[Common_ProfitReportData.LoadPortName]  [Common_ProfitReportData.ETD]"/>
+      <TextObject Name="Text39" Left="481.95" Top="160.65" Width="141.75" Height="18.9" Text="P.O.D/ETA:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text40" Left="623.7" Top="160.65" Width="283.5" Height="18.9" Text="[Common_ProfitReportData.DiscPortName]  [Common_ProfitReportData.ETA]"/>
+      <TextObject Name="Text42" Left="94.5" Top="75.6" Width="122.85" Height="18.9" Text="[Common_ProfitReportFeeData.currency]"/>
+      <TextObject Name="Text41" Left="94.5" Top="47.25" Width="141.75" Height="18.9" Text="[Common_ProfitReportData.PrintDate]"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="247.9" Width="907.2" Height="54.81" Border.Lines="Left" Border.Color="Maroon">
+      <LineObject Name="Line1" Top="52.92" Width="907.2" Border.Color="Maroon" Border.Width="4"/>
+      <LineObject Name="Line4" Width="907.2" Border.Color="Maroon" Border.Width="4"/>
+      <TextObject Name="Text2" Width="113.4" Height="51.03" Text="INV.NO" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text3" Left="113.4" Width="85.05" Height="51.03" Border.Lines="Left" Border.Color="Maroon" Text="POST DATE" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text4" Left="198.45" Width="189" Height="51.03" Border.Lines="Left" Border.Color="Maroon" Text="COMPANY" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text5" Left="387.45" Width="170.1" Height="51.03" Border.Lines="Left" Border.Color="Maroon" Text="CHARGE DESCRIPTION" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Left="557.55" Width="217.35" Height="26.46" Border.Lines="Left, Bottom" Border.Color="Maroon" Text="LOCAL" HorzAlign="Center" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text7" Left="557.55" Top="26.46" Width="103.95" Height="24.57" Border.Lines="Left" Border.Color="Maroon" Text="Revenue" HorzAlign="Right" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text8" Left="661.5" Top="26.46" Width="113.4" Height="28.35" Border.Lines="Left" Border.Color="Maroon" Text="Cost" HorzAlign="Right" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text9" Left="774.9" Width="94.5" Height="51.03" Border.Lines="Left" Border.Color="Maroon" Text="Agent" HorzAlign="Right" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text10" Left="869.4" Width="37.8" Height="51.03" Border.Lines="Left" Border.Color="Maroon" Text="PMT" VertAlign="Center" TextFill.Color="Maroon"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="322.71" Width="907.2" Height="32.13" DataSource="Common_ProfitReportFeeData">
+      <TextObject Name="Text11" Width="122.85" Height="18.9" Text="[Common_ProfitReportFeeData.InvNo]" Font="宋体, 9pt"/>
+      <TextObject Name="Text12" Left="113.4" Width="85.05" Height="18.9" Text="[Common_ProfitReportFeeData.PostDate]" Font="宋体, 9pt"/>
+      <TextObject Name="Text13" Left="198.45" Width="189" Height="18.9" Text="[Common_ProfitReportFeeData.company]" Font="宋体, 9pt"/>
+      <TextObject Name="Text14" Left="387.45" Width="170.1" Height="18.9" Text="[Common_ProfitReportFeeData.ChargeItemDescription]" Font="宋体, 9pt"/>
+      <TextObject Name="Text15" Left="557.55" Width="103.95" Height="18.9" Text="[Common_ProfitReportFeeData.Revenue]" HorzAlign="Right" Font="宋体, 9pt"/>
+      <TextObject Name="Text16" Left="661.5" Width="113.4" Height="18.9" Text="[Common_ProfitReportFeeData.Cost]" HorzAlign="Right" Font="宋体, 9pt"/>
+      <TextObject Name="Text17" Left="774.9" Width="94.5" Height="18.9" Text="[Common_ProfitReportFeeData.agent]" HorzAlign="Right" Font="宋体, 9pt"/>
+      <TextObject Name="Text18" Left="869.4" Width="85.05" Height="18.9" Text="[Common_ProfitReportFeeData.pmt]" Font="宋体, 9pt"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="374.84" Width="907.2" Height="160.65">
+      <TextObject Name="Text20" Left="472.5" Top="3.78" Width="75.6" Height="18.9" Text="Total" Font="宋体, 12pt, style=Bold" TextFill.Color="Maroon"/>
+      <LineObject Name="Line2" Width="907.2" Border.Color="Maroon"/>
+      <TextObject Name="Text19" Left="548.1" Width="103.95" Height="18.9" Text="[Common_ProfitReportData.TotalRevenue]" HorzAlign="Right"/>
+      <TextObject Name="Text21" Left="652.05" Width="113.4" Height="18.9" Text="[Common_ProfitReportData.TotalCost]" HorzAlign="Right"/>
+      <TextObject Name="Text22" Left="765.45" Width="94.5" Height="18.9" Text="[Common_ProfitReportData.TotalAgent]" HorzAlign="Right"/>
+      <LineObject Name="Line5" Left="548.1" Top="37.8" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text23" Left="472.5" Top="47.25" Width="75.6" Height="18.9" Text="PROFIT" Font="宋体, 10pt, style=Bold" TextFill.Color="Red"/>
+      <TextObject Name="Text38" Left="548.1" Top="47.25" Width="103.95" Height="18.9" Text="[Common_ProfitReportData.Profit]" HorzAlign="Right"/>
+      <LineObject Name="Line6" Top="75.6" Width="907.2" Border.Color="Maroon" Border.Width="2"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="555.49" Width="907.2" Height="37.8"/>
+  </ReportPage>
+</Report>

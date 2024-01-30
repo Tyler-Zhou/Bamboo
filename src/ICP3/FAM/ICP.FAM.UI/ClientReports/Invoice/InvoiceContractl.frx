@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/15/2011 15:45:40" ReportInfo.Modified="09/24/2014 12:08:02" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="InvoiceTotal" ReferenceName="InvoiceTotal" DataType="System.Int32" Enabled="true">
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="Date" DataType="System.String"/>
+      <Column Name="DateMonth" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="InvoiceData" ReferenceName="InvoiceData" DataType="System.Int32" Enabled="true">
+      <Column Name="InvoiceNo" DataType="System.String"/>
+      <Column Name="InvoiceDate" DataType="System.Int32"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="ContractNo" DataType="System.String"/>
+      <Column Name="VesselName" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Delivery" DataType="System.String"/>
+      <Column Name="ExpressNo" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="USDAmount" DataType="System.String"/>
+      <Column Name="RMBAmount" DataType="System.String"/>
+      <Column Name="OtherAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" FirstPageSource="4" OtherPagesSource="4">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="538.65">
+      <TextObject Name="Text1" Top="47.25" Width="718.2" Height="47.25" Text="国际货运代理服务合同" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text3" Top="207.9" Width="718.2" Height="28.35" Text="甲方：[InvoiceTotal.CustomerName]" VertAlign="Center"/>
+      <TextObject Name="Text4" Top="236.25" Width="718.2" Height="28.35" Text="乙方：[InvoiceTotal.CompanyName]" VertAlign="Center"/>
+      <TextObject Name="Text5" Top="264.6" Width="718.2" Height="47.25" Text="    甲乙双方本着平等互利的原则，经友好协商，就双方在国际货运代理事宜、开具增值税普通发票及付款条件，达成以下协议。" VertAlign="Center"/>
+      <TextObject Name="Text6" Top="311.85" Width="718.2" Height="75.6" Text="一、甲方：&#13;&#10;　　甲方作为托运人，向乙方委托代理国际海运业务时，有责任按乙方的有关要求，提供正确的相关资料，向乙方订舱。因甲方订舱信息提供错误或内容不全造成的货物不能及时出运、运错目的地、不能提货等，从而产生的一切责任、风险、费用与乙方无关。" VertAlign="Center"/>
+      <TextObject Name="Text7" Top="387.45" Width="718.2" Height="66.15" Text="二、乙方：&#13;&#10;　　乙方作为甲方的国际海运代理人，在接受甲方订舱后，应尽快放舱位给甲方；提供货物集装箱并及时反馈装船信息。&#13;&#10;" VertAlign="Center"/>
+      <TextObject Name="Text8" Top="453.6" Width="718.2" Height="28.35" Text="三、业务详细资料" VertAlign="Center"/>
+      <TextObject Name="Text9" Top="481.95" Width="28.35" Height="56.7" Border.Lines="All" Text="序号" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text10" Left="28.35" Top="481.95" Width="47.25" Height="56.7" Border.Lines="All" Text="合同号" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text11" Left="75.6" Top="481.95" Width="122.85" Height="56.7" Border.Lines="All" Text="服务接收方名称" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text12" Left="198.45" Top="481.95" Width="56.7" Height="56.7" Border.Lines="All" Text="提(运)单号" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text13" Left="255.15" Top="481.95" Width="75.6" Height="56.7" Border.Lines="All" Text="发票号码" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text14" Left="330.75" Top="481.95" Width="47.25" Height="56.7" Border.Lines="All" Text="船名航次" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text15" Left="378" Top="481.95" Width="47.25" Height="56.7" Border.Lines="All" Text="起运港" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text16" Left="425.25" Top="481.95" Width="47.25" Height="56.7" Border.Lines="All" Text="卸货港" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text17" Left="472.5" Top="481.95" Width="47.25" Height="56.7" Border.Lines="All" Text="目的港" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text18" Left="519.75" Top="481.95" Width="170.1" Height="28.35" Border.Lines="All" Text="申报的国际货代免税收入" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text19" Left="689.85" Top="481.95" Width="28.35" Height="56.7" Border.Lines="All" Text="备&#13;&#10;注" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text20" Left="519.75" Top="510.3" Width="66.15" Height="28.35" Border.Lines="All" Text="国际运费(USD)" HorzAlign="Center"/>
+      <TextObject Name="Text21" Left="585.9" Top="510.3" Width="66.15" Height="28.35" Border.Lines="All" Text="港口码头费(RMB)" HorzAlign="Center"/>
+      <TextObject Name="Text22" Left="652.05" Top="510.3" Width="37.8" Height="28.35" Border.Lines="All" Text="其他" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text47" Top="94.5" Width="718.2" Height="113.4" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text2" Width="633.15" Height="47.25" Text="合同编号：" HorzAlign="Right" VertAlign="Center"/>
+      <TextObject Name="Text48" Left="633.15" Width="94.5" Height="47.25" Text="[InvoiceTotal.DateMonth]" VertAlign="Center"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="542.65" Width="718.2" Height="64.26" CanGrow="true" Guides="434.7,434.7,434.7,434.7,0,0,0" DataSource="InvoiceData" RowCount="2">
+      <TextObject Name="Text23" Width="28.35" Height="64.26" Border.Lines="All" Text="[Row#]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text24" Left="28.35" Width="47.25" Height="64.26" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text25" Left="75.6" Width="122.85" Height="64.26" Border.Lines="All" Text="[InvoiceData.CustomerName]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text26" Left="198.45" Width="56.7" Height="64.26" Border.Lines="All" Text="[InvoiceData.BLNo]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text27" Left="255.15" Width="75.6" Height="64.26" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text28" Left="330.75" Width="47.25" Height="64.26" Border.Lines="All" Text="[InvoiceData.VesselName]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text29" Left="378" Width="47.25" Height="64.26" Border.Lines="All" Text="[InvoiceData.POL]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text30" Left="425.25" Width="47.25" Height="64.26" Border.Lines="All" Text="[InvoiceData.POD]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text31" Left="472.5" Width="47.25" Height="64.26" Border.Lines="All" Text="[InvoiceData.Delivery]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text32" Left="519.75" Width="66.15" Height="64.26" Border.Lines="All" Text="[InvoiceData.USDAmount]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text34" Left="585.9" Width="66.15" Height="64.26" Border.Lines="All" Text="[InvoiceData.RMBAmount]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text35" Left="652.05" Width="37.8" Height="64.26" Border.Lines="All" Text="[InvoiceData.OtherAmount]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text36" Left="689.85" Width="28.35" Height="64.26" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="610.91" Width="718.2" Height="349.65" CanGrow="true" Guides="0">
+      <TextObject Name="Text33" Top="18.9" Width="718.2" Height="28.35" Text="四、甲方应及时将代理运费汇入乙方结算账户，以便乙方及时安排放货事宜。" VertAlign="Center"/>
+      <TextObject Name="Text37" Top="47.25" Width="718.2" Height="28.35" Text="五、此合同一式两份，双方各执一份，盖章(签字)起生效。" VertAlign="Center"/>
+      <TextObject Name="Text38" Top="75.6" Width="718.2" Height="28.35" Text="    本合同未尽事宜，双方协商解决。" VertAlign="Center"/>
+      <TextObject Name="Text39" Top="103.95" Width="718.2" Height="37.8" VertAlign="Center"/>
+      <TextObject Name="Text40" Top="141.75" Width="349.65" Height="28.35" Text="甲方：[InvoiceTotal.CustomerName]" VertAlign="Center"/>
+      <TextObject Name="Text41" Left="349.65" Top="141.75" Width="368.55" Height="28.35" Text="乙方：[InvoiceTotal.CompanyName]" VertAlign="Center"/>
+      <TextObject Name="Text42" Top="170.1" Width="718.2" Height="37.8" VertAlign="Center"/>
+      <TextObject Name="Text43" Top="207.9" Width="349.65" Height="28.35" Text="甲方公司（签字盖章）" VertAlign="Center"/>
+      <TextObject Name="Text44" Left="349.65" Top="207.9" Width="368.55" Height="28.35" Text="乙方公司（签字盖章）" VertAlign="Center"/>
+      <TextObject Name="Text45" Left="349.65" Top="236.25" Width="368.55" Height="28.35" Text="[InvoiceTotal.Date]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text46" Top="236.25" Width="349.65" Height="28.35" Text="[InvoiceTotal.Date]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text49" Width="718.2" Height="18.9" VertAlign="Center"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

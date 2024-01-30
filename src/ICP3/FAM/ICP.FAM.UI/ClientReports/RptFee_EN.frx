@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="11/16/2010 17:08:10" ReportInfo.Modified="07/25/2011 16:24:28" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="FeeList" ReferenceName="FeeList" DataType="System.Int32" Enabled="true">
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="ChargeCodeID" DataType="System.Guid"/>
+      <Column Name="ChargeCodeName" DataType="System.String"/>
+      <Column Name="CRAmount" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="DRAmount" DataType="System.Decimal"/>
+      <Column Name="ExchangeRate" DataType="System.Decimal"/>
+      <Column Name="Id" DataType="System.Guid"/>
+      <Column Name="IsAgent" DataType="System.Boolean"/>
+      <Column Name="PaymentMode" DataType="System.String"/>
+      <Column Name="Price" DataType="System.Decimal"/>
+      <Column Name="Qty" DataType="System.Decimal"/>
+      <Column Name="Way" DataType="System.Int16"/>
+      <Column Name="WayName" DataType="System.String"/>
+      <Column Name="BillToName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Parameter Name="SONO" DataType="System.String"/>
+    <Parameter Name="VesselAndVoyageSecond" DataType="System.String"/>
+    <Parameter Name="ETDFirstAndCloseDate" DataType="System.String"/>
+    <Parameter Name="ETDSecondAndCloseDate" DataType="System.String"/>
+    <Parameter Name="ETA" DataType="System.String"/>
+    <Parameter Name="ContainerSizeAndType" DataType="System.String"/>
+    <Parameter Name="CotntainerNo" DataType="System.String"/>
+    <Parameter Name="JobCode" DataType="System.String"/>
+    <Parameter Name="HBLText" DataType="System.String"/>
+    <Parameter Name="POL" DataType="System.String"/>
+    <Parameter Name="POD" DataType="System.String"/>
+    <Parameter Name="Destination" DataType="System.String"/>
+    <Parameter Name="InvoiceNo" DataType="System.String"/>
+    <Parameter Name="WriteOffPeople" DataType="System.String"/>
+    <Parameter Name="Sales" DataType="System.String"/>
+    <Parameter Name="Calculater" DataType="System.String"/>
+    <Parameter Name="USDDebit" DataType="System.String"/>
+    <Parameter Name="HKDDebit" DataType="System.String"/>
+    <Parameter Name="RMBDebit" DataType="System.String"/>
+    <Parameter Name="USDCredit" DataType="System.String"/>
+    <Parameter Name="HKDCredit" DataType="System.String"/>
+    <Parameter Name="RMBCredit" DataType="System.String"/>
+    <Parameter Name="IsEnglish" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page91277724">
+    <PageHeaderBand Name="PageHeaderBand91277724" Top="20" Width="718.2" Height="30.24">
+      <TextObject Name="textbox1" Left="7.56" Width="699.3" Height="30.24" CanGrow="true" Text="Fee List" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand91277724" Top="70.24" Width="718.2" Height="185.22">
+      <TextObject Name="textbox30" Left="470.5" Top="6" Width="124.85" Height="19" CanGrow="true" Text="[Date]"/>
+      <TextObject Name="textbox31" Left="389.23" Top="6" Width="81.27" Height="19" CanGrow="true" Text="Print Date:" HorzAlign="Right"/>
+      <TableObject Name="Table2" Left="7.56" Top="26.46" Width="699.64" Height="158.76">
+        <TableColumn Name="Column1" Width="174.91"/>
+        <TableColumn Name="Column2" Width="174.91"/>
+        <TableColumn Name="Column3" Width="174.91"/>
+        <TableColumn Name="Column4" Width="174.91"/>
+        <TableRow Name="Row1" Height="22.68">
+          <TableCell Name="Cell1" Text="SONO" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Text="[SONO]" VertAlign="Center"/>
+          <TableCell Name="Cell3" Text="Consign No." VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Text="[JobCode]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="22.68">
+          <TableCell Name="Cell6" Text="Ves&amp;VoySecond" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Text="[VesselAndVoyageSecond]" VertAlign="Center"/>
+          <TableCell Name="Cell8" Text="B/L No." VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell9" Text="[HBLText]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Text="Ves&amp;VoyFirst" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Text="[ETDFirstAndCloseDate]" VertAlign="Center"/>
+          <TableCell Name="Cell13" Text="POL" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell14" Text="[POL]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.68">
+          <TableCell Name="Cell16" Text="Cut-Off Sec" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Text="[ETDSecondAndCloseDate]" VertAlign="Center"/>
+          <TableCell Name="Cell18" Text="POD" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Text="[POD]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell21" Text="ETA" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell22" Text="[ETA]" VertAlign="Center"/>
+          <TableCell Name="Cell23" Text="Destination" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Text="[Destination]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell25" Text="CNT" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell26" Text="[ContainerSizeAndType]" VertAlign="Center"/>
+          <TableCell Name="Cell27" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell28" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="22.68">
+          <TableCell Name="Cell29" Text="CNT No." VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell30" Text="[CotntainerNo]" VertAlign="Center"/>
+          <TableCell Name="Cell31" Text="Invoice No." VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell32" Text="[InvoiceNo]" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="table1" Top="318.14" Width="718.2" Height="22.68" DataSource="FeeList">
+      <TableObject Name="Table6" Left="7.56" Width="700.92" Height="22.68">
+        <TableColumn Name="Column27" Width="55.08"/>
+        <TableColumn Name="Column28" Width="145.8"/>
+        <TableColumn Name="Column29" Width="58.86"/>
+        <TableColumn Name="Column30" Width="73.98"/>
+        <TableColumn Name="Column31" Width="92.88"/>
+        <TableColumn Name="Column32" Width="274.32"/>
+        <TableRow Name="Row15" Height="22.68">
+          <TableCell Name="Cell91" Text="cost" VertAlign="Center"/>
+          <TableCell Name="Cell92" Text="Fee Name" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell93" Text="Cur." HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell94" Text="Amount" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell95" Text="Amt. To USD" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell96" Text="Customer" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Top="275.46" Width="718.2" Height="22.68">
+        <TableObject Name="Table3" Left="7.56" Width="700.92" Height="22.68">
+          <TableColumn Name="Column5" Width="55.08"/>
+          <TableColumn Name="Column6" Width="145.8"/>
+          <TableColumn Name="Column8" Width="58.86"/>
+          <TableColumn Name="Column9" Width="73.98"/>
+          <TableColumn Name="Column10" Width="92.88"/>
+          <TableColumn Name="Column11" Width="274.32"/>
+          <TableRow Name="Row8" Height="22.68">
+            <TableCell Name="Cell33" Border.Lines="Bottom" Border.Width="2" VertAlign="Center"/>
+            <TableCell Name="Cell34" Border.Lines="Bottom" Border.Width="2" Text="Fee Name" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell36" Border.Lines="Bottom" Border.Width="2" Text="Cur." HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell37" Border.Lines="Bottom" Border.Width="2" Text="Amount" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell38" Border.Lines="Bottom" Border.Width="2" Text="Amt. To USD" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell39" Border.Lines="Bottom" Border.Width="2" Text="Customer" HorzAlign="Center" VertAlign="Center"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Top="360.82" Width="718.2" Height="105.84">
+        <TableObject Name="Table5" Left="7.56" Width="706.59" Height="45.36">
+          <TableColumn Name="Column18" Width="58.86"/>
+          <TableColumn Name="Column19" Width="43.74"/>
+          <TableColumn Name="Column20" Width="100.44"/>
+          <TableColumn Name="Column21" Width="47.52"/>
+          <TableColumn Name="Column22" Width="89.1"/>
+          <TableColumn Name="Column23" Width="51.3"/>
+          <TableColumn Name="Column24" Width="96.39"/>
+          <TableColumn Name="Column25" Width="92.61"/>
+          <TableColumn Name="Column26" Width="126.63"/>
+          <TableRow Name="Row10" Height="22.68">
+            <TableCell Name="Cell46" Border.Lines="Top" Border.Width="2" Text="Deposit:" VertAlign="Center"/>
+            <TableCell Name="Cell47" Border.Lines="Top" Border.Width="2" Text="USD:" VertAlign="Center"/>
+            <TableCell Name="Cell48" Border.Lines="Top" Border.Width="2" VertAlign="Center"/>
+            <TableCell Name="Cell49" Border.Lines="Top" Border.Width="2" Text="RMB:" VertAlign="Center"/>
+            <TableCell Name="Cell50" Border.Lines="Top" Border.Width="2" VertAlign="Center"/>
+            <TableCell Name="Cell51" Border.Lines="Top" Border.Width="2" Text="HKD:" VertAlign="Center"/>
+            <TableCell Name="Cell58" Border.Lines="Top" Border.Width="2"/>
+            <TableCell Name="Cell60" Border.Lines="Top" Border.Width="2"/>
+            <TableCell Name="Cell62" Border.Lines="Top" Border.Width="2"/>
+          </TableRow>
+          <TableRow Name="Row11" Height="22.68">
+            <TableCell Name="Cell52" Text="Check:" VertAlign="Center"/>
+            <TableCell Name="Cell53" Text="USD:" VertAlign="Center"/>
+            <TableCell Name="Cell54" VertAlign="Center"/>
+            <TableCell Name="Cell55" Text="RMB:" VertAlign="Center"/>
+            <TableCell Name="Cell56" VertAlign="Center"/>
+            <TableCell Name="Cell57" Text="HKD:" VertAlign="Center"/>
+            <TableCell Name="Cell59"/>
+            <TableCell Name="Cell61" Text="Profit:USD" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+            <TableCell Name="Cell63" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          </TableRow>
+        </TableObject>
+        <TableObject Name="Table7" Left="7.56" Top="75.6" Width="706.59" Height="22.68">
+          <TableColumn Name="Column33" Width="55.08"/>
+          <TableColumn Name="Column34" Width="108"/>
+          <TableColumn Name="Column35" Width="85.32"/>
+          <TableColumn Name="Column36" Width="55.08"/>
+          <TableColumn Name="Column37" Width="183.6"/>
+          <TableColumn Name="Column38" Width="92.88"/>
+          <TableColumn Name="Column39" Width="126.63"/>
+          <TableRow Name="Row16" Height="22.68">
+            <TableCell Name="Cell97" VertAlign="Center"/>
+            <TableCell Name="Cell98" Text="WriteOffPeople" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell99" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell100" Text="Sales" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell101" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell102" Text="Auditor:" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell103"/>
+          </TableRow>
+        </TableObject>
+      </DataFooterBand>
+    </DataBand>
+  </ReportPage>
+</Report>

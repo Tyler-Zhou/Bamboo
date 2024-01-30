@@ -1,0 +1,1828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B81BBAA-EE9D-4BB5-B33D-581DCDCD5391}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.Common.UI</RootNamespace>
+    <AssemblyName>ICP.Common.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells, Version=7.2.1.0, Culture=neutral, PublicKeyToken=304f5aa34aff2288, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Pdf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b44de83eed7e98a7, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Slides, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Words, Version=11.3.0.0, Culture=neutral, PublicKeyToken=47d5d0e1ef9d080b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Client\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=1.2.47.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL" />
+    <Reference Include="FastReport.Editor, Version=1.2.47.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL" />
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Common.ServiceInterface.DLL</HintPath>
+    </Reference>
+    <Reference Include="ICP.Crawler.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Crawler.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Crawler.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Crawler.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.OA.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.ReportCenter.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.ReportCenter.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.TaskCenter.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authcodes\AuthcodeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeEdit.Designer.cs">
+      <DependentUpon>AuthcodeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeList.Designer.cs">
+      <DependentUpon>AuthcodeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeMainWorkSpace.Designer.cs">
+      <DependentUpon>AuthcodeMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeSearch.Designer.cs">
+      <DependentUpon>AuthcodeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeTool..cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeTool..Designer.cs">
+      <DependentUpon>AuthcodeTool..cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authcodes\AuthcodeWorkItem.cs" />
+    <Compile Include="BindHelper\CustomerForNewFinderBridge.cs" />
+    <Compile Include="BindHelper\CustomerFinderBridge.cs" />
+    <Compile Include="BindHelper\CustomerFinderBridgeForAMS.cs" />
+    <Compile Include="BindHelper\ICPCommUIHelper.cs" />
+    <Compile Include="BindHelper\LocationFinderBridge.cs" />
+    <Compile Include="BindHelper\PortFinderBridge.cs" />
+    <Compile Include="ClientService\BaseDataNotifyService.cs" />
+    <Compile Include="ClientService\ClientBaseDataService.cs" />
+    <Compile Include="CommonModuleInit.cs" />
+    <Compile Include="Common\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ExcelService.cs" />
+    <Compile Include="Common\ShiplineTreeSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\CheckDateFromToEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\CheckDateFromToEdit.Designer.cs">
+      <DependentUpon>CheckDateFromToEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\CommonController.cs" />
+    <Compile Include="Common\FileConvertService.cs" />
+    <Compile Include="Common\UCVoyageLookupEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\UIProxies.cs" />
+    <Compile Include="Common\Uitlity.cs" />
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderToolBar.Designer.cs">
+      <DependentUpon>ChargingCodeFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderWorkitem.cs" />
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderWorkspace.Designer.cs">
+      <DependentUpon>ChargingCodeFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoFinder.cs" />
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoFinderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoFinderSearchPart.Designer.cs">
+      <DependentUpon>ChargingCodeInfoFinderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoMainListPart.Designer.cs">
+      <DependentUpon>ChargingCodeInfoMainListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\ChargingCodeFinder.cs" />
+    <Compile Include="Configure\ChargingCode\Finder\ChargingCodeFinderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\ChargingCodeFinderSearchPart.Designer.cs">
+      <DependentUpon>ChargingCodeFinderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\ChargingCodeMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\ChargingCodeMainListPart.Designer.cs">
+      <DependentUpon>ChargingCodeMainListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderToolBar.Designer.cs">
+      <DependentUpon>ChargingCodeMultiFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderWorkitem.cs" />
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderWorkspace.Designer.cs">
+      <DependentUpon>ChargingCodeMultiFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiSelectedListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiSelectedListPart.Designer.cs">
+      <DependentUpon>ChargingCodeMultiSelectedListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderSelectedToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderSelectedToolBar.Designer.cs">
+      <DependentUpon>ChargingCodeMultiFinderSelectedToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderToolBar.Designer.cs">
+      <DependentUpon>ChargingCodeSingleFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderWorkitem.cs" />
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderWorkspace.Designer.cs">
+      <DependentUpon>ChargingCodeSingleFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingCodeEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingCodeEditPart.Designer.cs">
+      <DependentUpon>ChargingCodeEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingCodeSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingCodeSearchPart.Designer.cs">
+      <DependentUpon>ChargingCodeSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingCodeUIProxyLogic.cs" />
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingGroupEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ChargingCode\UIProxy\ChargingGroupEditPart.Designer.cs">
+      <DependentUpon>ChargingGroupEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureBridge.cs" />
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureWorkItem.cs" />
+    <Compile Include="Configure\CommpanyConfigure\CompanyConfigureSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CompanyConfigureSearchPart.Designer.cs">
+      <DependentUpon>CompanyConfigureSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureEditPart.Designer.cs">
+      <DependentUpon>CommpanyConfigureEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureUIProxy.cs" />
+    <Compile Include="Configure\CommpanyConfigure\CompanyFaxConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CompanyFaxConfigureListPart.Designer.cs">
+      <DependentUpon>CompanyFaxConfigureListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\ConfigureKeyValueEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\ConfigureKeyValueEditPart.Designer.cs">
+      <DependentUpon>ConfigureKeyValueEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\Constants.cs" />
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureController.cs" />
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyConfigureToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyReportConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyReportConfigureListPart.designer.cs">
+      <DependentUpon>CommpanyReportConfigureListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyEDIConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\CommpanyEDIConfigureListPart.designer.cs">
+      <DependentUpon>CommpanyEDIConfigureListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\SetReportParameterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configure\CommpanyConfigure\SetReportParameterForm.Designer.cs">
+      <DependentUpon>SetReportParameterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Currency\CurrencyEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Currency\CurrencyEditPart.Designer.cs">
+      <DependentUpon>CurrencyEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\TerminalLogins\TerminalLoginsSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\TerminalLogins\TerminalLoginsSearchPart.designer.cs">
+      <DependentUpon>TerminalLoginsSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Currency\CurrencySearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Currency\CurrencySearchPart.designer.cs">
+      <DependentUpon>CurrencySearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Currency\CurrencyUIProxiesLogic.cs" />
+    <Compile Include="Configure\EDIConfigure\EDIConfigureSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureSearchPart.Designer.cs">
+      <DependentUpon>EDIConfigureSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureBridge.cs" />
+    <Compile Include="Configure\EDIConfigure\EDIConfigureController.cs" />
+    <Compile Include="Configure\EDIConfigure\EDIConfigureEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureEditPart.Designer.cs">
+      <DependentUpon>EDIConfigureEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDIConfigureWorkItem.cs" />
+    <Compile Include="Configure\EDIConfigure\Constants.cs" />
+    <Compile Include="Configure\EDIConfigure\EDICommpanyListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\EDIConfigure\EDICommpanyListEditPart.designer.cs">
+      <DependentUpon>EDICommpanyListEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\Constants.cs" />
+    <Compile Include="Configure\ReportConfigure\ReportConfigureSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureSearchPart.Designer.cs">
+      <DependentUpon>ReportConfigureSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportCommpanyListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportCommpanyListEditPart.designer.cs">
+      <DependentUpon>ReportCommpanyListEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureBridge.cs" />
+    <Compile Include="Configure\ReportConfigure\ReportConfigureController.cs" />
+    <Compile Include="Configure\ReportConfigure\ReportConfigureEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureEditPart.Designer.cs">
+      <DependentUpon>ReportConfigureEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\ReportConfigureWorkItem.cs" />
+    <Compile Include="Configure\ReportConfigure\SetReportParameterForCommpanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Configure\ReportConfigure\SetReportParameterForCommpanyForm.Designer.cs">
+      <DependentUpon>SetReportParameterForCommpanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\Finder\SoluionChargeCodeSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\Finder\SoluionChargeCodeSearchPart.Designer.cs">
+      <DependentUpon>SoluionChargeCodeSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionCodeRuleListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionCodeRuleListPart.Designer.cs">
+      <DependentUpon>SolutionCodeRuleListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionCurrencyListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionCurrencyListPart.Designer.cs">
+      <DependentUpon>SolutionCurrencyListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\SolutionEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\SolutionEditPart.Designer.cs">
+      <DependentUpon>SolutionEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionExchangeRateListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionExchangeRateListPart.Designer.cs">
+      <DependentUpon>SolutionExchangeRateListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionGLConfigListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionGLConfigListPart.Designer.cs">
+      <DependentUpon>SolutionGLConfigListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\SolutionGLGroupEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\SolutionGLGroupEditPart.Designer.cs">
+      <DependentUpon>SolutionGLGroupEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionGLCodeListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\Solution\ListPart\SolutionGLCodeListPart.Designer.cs">
+      <DependentUpon>SolutionGLCodeListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\Solution\SolutionUIProxie.cs" />
+    <Compile Include="Configure\TerminalLogins\TerminalLoginsEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Configure\TerminalLogins\TerminalLoginsEditPart.Designer.cs">
+      <DependentUpon>TerminalLoginsEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configure\TerminalLogins\TerminalLoginsUIProxiesLogic.cs" />
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBoxLocations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBoxChargeCode.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBoxVessel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBoxCarrier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CheckBoxComboBox\CheckBoxComboBoxShippingLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxEdit\ComboBoxEditLocations.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxEdit\ComboBoxEditCurrency.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxTree\ComboBoxTreePopupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ComboBoxTree\ComboBoxTreePopupControl.designer.cs">
+      <DependentUpon>ComboBoxTreePopupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ComboBoxTree\LWComboBoxTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForAMS\CustomerDescriptionForAMSControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForAMS\CustomerDescriptionForAMSControl.Designer.cs">
+      <DependentUpon>CustomerDescriptionForAMSControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForAMS\CustomerPopupContainerEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForNew\CustomerForNewPopupContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForNew\CustomerForNewPopupContainer.Designer.cs">
+      <DependentUpon>CustomerForNewPopupContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomerDescriptionForNew\CustomerForNewPopupContainerEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeCheckControl\TreeCheckControlShippingLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\Constants.cs" />
+    <Compile Include="CooperationCustomer\TabParts\CCBusinessPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCBusinessPart.Designer.cs">
+      <DependentUpon>CCBusinessPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCArchivesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCArchivesPart.Designer.cs">
+      <DependentUpon>CCArchivesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCListPart.Designer.cs">
+      <DependentUpon>CCListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCMainWorkspace.Designer.cs">
+      <DependentUpon>CCMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCEditPrecautionsPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCEditPrecautionsPart.Designer.cs">
+      <DependentUpon>CCEditPrecautionsPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCPartnerPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCPartnerPart.Designer.cs">
+      <DependentUpon>CCPartnerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCReportPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\TabParts\CCReportPart.Designer.cs">
+      <DependentUpon>CCReportPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCSearchPart.Designer.cs">
+      <DependentUpon>CCSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CooperationCustomer\MainWorkspace\CCToolBar.Designer.cs">
+      <DependentUpon>CCToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CooperationCustomer\CCUIAdapter.cs" />
+    <Compile Include="CooperationCustomer\CCWorkitem.cs" />
+    <Compile Include="CustomerFinder\CustomerFinder.cs" />
+    <Compile Include="CustomerFinder\CustomerFinderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\CustomerFinderSearchPart.Designer.cs">
+      <DependentUpon>CustomerFinderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\CustomerMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\CustomerMainListPart.Designer.cs">
+      <DependentUpon>CustomerMainListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiFinderToolBar.Designer.cs">
+      <DependentUpon>CustomerMultiFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiFinderWorkitem.cs" />
+    <Compile Include="CustomerFinder\Multi\CustomerMultiFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiFinderWorkspace.Designer.cs">
+      <DependentUpon>CustomerMultiFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiSelectedListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\CustomerMultiSelectedListPart.Designer.cs">
+      <DependentUpon>CustomerMultiSelectedListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\MultiFinderSelectedToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Multi\MultiFinderSelectedToolBar.Designer.cs">
+      <DependentUpon>MultiFinderSelectedToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Single\CustomerSingleMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Single\CustomerSingleFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Single\CustomerSingleFinderToolBar.Designer.cs">
+      <DependentUpon>CustomerSingleFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFinder\Single\CustomerSingleFinderWorkitem.cs" />
+    <Compile Include="CustomerFinder\Single\CustomerSingleFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFinder\Single\CustomerSingleFinderWorkspace.Designer.cs">
+      <DependentUpon>CustomerSingleFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\ApplyCustomerCodeForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\ApplyCustomerCodeForm.Designer.cs">
+      <DependentUpon>ApplyCustomerCodeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerAuditing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerAuditing.Designer.cs">
+      <DependentUpon>CustomerAuditing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleEditPart.Designer.cs">
+      <DependentUpon>CustomerInvoiceTitleEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleListPart.Designer.cs">
+      <DependentUpon>CustomerInvoiceTitleListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\FindInvoiceTitleMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\FindInvoiceTitleMainWorkSpace.Designer.cs">
+      <DependentUpon>FindInvoiceTitleMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleFinder.cs" />
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\InvoiceTitleSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\InvoiceTitleSearchPart.designer.cs">
+      <DependentUpon>InvoiceTitleSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\TaxCustomerInvoiceTitleListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerInvoiceTitle\TaxCustomerInvoiceTitleListPart.Designer.cs">
+      <DependentUpon>TaxCustomerInvoiceTitleListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerMemoListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\Constants.cs" />
+    <Compile Include="CustomerManager\CustomerManagerBridge.cs" />
+    <Compile Include="CustomerManager\CustomerManagerCheckForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerCheckForm.Designer.cs">
+      <DependentUpon>CustomerManagerCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerCombineListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerCombineListEditPart.Designer.cs">
+      <DependentUpon>CustomerManagerCombineListEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerContactListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerController.cs" />
+    <Compile Include="CustomerManager\CustomerManagerEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerPartnerListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerRules.cs" />
+    <Compile Include="CustomerManager\CustomerManagerToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\CustomerManagerWorkItem.cs" />
+    <Compile Include="CustomerManager\CustomerManagerSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\DisableCustomerMemoContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\DisableCustomerMemoContentForm.Designer.cs">
+      <DependentUpon>DisableCustomerMemoContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerManager\SetCustomerIsDangerousForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerManager\SetCustomerIsDangerousForm.Designer.cs">
+      <DependentUpon>SetCustomerIsDangerousForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerEditPart.Designer.cs">
+      <DependentUpon>CustomerEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerMemoEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerMemoEditPart.Designer.cs">
+      <DependentUpon>CustomerMemoEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Customer\CustomerSearchPart.Designer.cs">
+      <DependentUpon>CustomerSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\CustomerUIProxyLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Geography\CountryProvince\CountryProvinceEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\CountryProvince\CountryProvinceEditPart.Designer.cs">
+      <DependentUpon>CountryProvinceEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\CountryProvince\CountryProvinceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\CountryProvince\CountryProvinceSearchPart.Designer.cs">
+      <DependentUpon>CountryProvinceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\CountryProvince\CountryProvinceUIProxyLogic.cs" />
+    <Compile Include="Geography\Location\Finder\LocationFinderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\LocationFinderSearchPart.Designer.cs">
+      <DependentUpon>LocationFinderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\UIProxy\LocationEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\UIProxy\LocationEditPart.Designer.cs">
+      <DependentUpon>LocationEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\LocationFinder.cs" />
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiFinderWorkitem.cs" />
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiFinderWorkspace.Designer.cs">
+      <DependentUpon>LocationMultiFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiFinderToolBar.Designer.cs">
+      <DependentUpon>LocationMultiFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiSelectedListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\LocationMultiSelectedListPart.Designer.cs">
+      <DependentUpon>LocationMultiSelectedListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\LocationMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\LocationMainListPart.Designer.cs">
+      <DependentUpon>LocationMainListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\UIProxy\LocationSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\UIProxy\LocationSearchPart.Designer.cs">
+      <DependentUpon>LocationSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleFinderWorkitem.cs" />
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleMainListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleFinderWorkspace.Designer.cs">
+      <DependentUpon>LocationSingleFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Single\LocationSingleFinderToolBar.Designer.cs">
+      <DependentUpon>LocationSingleFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Geography\Location\UIProxy\LocationUIProxyLogic.cs" />
+    <Compile Include="Geography\Location\Finder\Multi\MultiFinderSelectedToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Geography\Location\Finder\Multi\MultiFinderSelectedToolBar.Designer.cs">
+      <DependentUpon>MultiFinderSelectedToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoTo\ClientServers.cs" />
+    <Compile Include="GoTo\CommonGotoFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoTo\CommonGotoFrom.Designer.cs">
+      <DependentUpon>CommonGotoFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoTo\CommonSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GoTo\CommonSetting.Designer.cs">
+      <DependentUpon>CommonSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GoTo\GoToControl.cs" />
+    <Compile Include="GoTo\GoToControlReadXml.cs" />
+    <Compile Include="KeyboardHookLib.cs" />
+    <Compile Include="MovieProjects\MovieProjectEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectEdit.Designer.cs">
+      <DependentUpon>MovieProjectEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectMainWorkSpace.Designer.cs">
+      <DependentUpon>MovieProjectMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectSearch.Designer.cs">
+      <DependentUpon>MovieProjectSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectList.Designer.cs">
+      <DependentUpon>MovieProjectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectTool.Designer.cs">
+      <DependentUpon>MovieProjectTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovieProjects\MovieProjectWorkItem.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportView\CompositeReportViewPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportView\CompositeReportViewPart.Designer.cs">
+      <DependentUpon>CompositeReportViewPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportView\FastReportViewerPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportView\FastReportViewerPart.Designer.cs">
+      <DependentUpon>FastReportViewerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportView\ReportViewService.cs" />
+    <Compile Include="Resources\Resource_CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource_EN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_EN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\NationAndPortListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\NationAndPortListEditPart.Designer.cs">
+      <DependentUpon>NationAndPortListEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineListPart.Designer.cs">
+      <DependentUpon>ShippingLineListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineMainWorkspace.Designer.cs">
+      <DependentUpon>ShippingLineMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineMangerWorkItem.cs">
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineSearchPart.Designer.cs">
+      <DependentUpon>ShippingLineSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\ShippingLineToolBarPart.Designer.cs">
+      <DependentUpon>ShippingLineToolBarPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippingLineManager\SippingLineEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShippingLineManager\SippingLineEditPart.Designer.cs">
+      <DependentUpon>SippingLineEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Commodity\CommodityEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Commodity\CommodityEditPart.Designer.cs">
+      <DependentUpon>CommodityEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Commodity\CommoditySearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Commodity\CommoditySearchPart.Designer.cs">
+      <DependentUpon>CommoditySearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Commodity\CommodityUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\Container\ContainerEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Container\ContainerEditPart.Designer.cs">
+      <DependentUpon>ContainerEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Container\ContainerSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Container\ContainerSearchPart.Designer.cs">
+      <DependentUpon>ContainerSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Container\ContainerUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\DataDictionary\DataDictionaryEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\DataDictionary\DataDictionaryEditPart.Designer.cs">
+      <DependentUpon>DataDictionaryEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\DataDictionary\DataDictionarySearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\DataDictionary\DataDictionarySearchPart.Designer.cs">
+      <DependentUpon>DataDictionarySearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransportFoundation\DataDictionary\DataDictionaryUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\Flight\FlightEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Flight\FlightEditPart.Designer.cs">
+      <DependentUpon>FlightEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Flight\FlightSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\Flight\FlightSearchPart.Designer.cs">
+      <DependentUpon>FlightSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\Flight\FlightUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\ShippingLine\ShippingLineEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\ShippingLine\ShippingLineEditPart.Designer.cs">
+      <DependentUpon>ShippingLineEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\ShippingLine\ShippingLineSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\ShippingLine\ShippingLineSearchPart.Designer.cs">
+      <DependentUpon>ShippingLineSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\ShippingLine\ShippingLineUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\TransportClause\TransportClauseEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\TransportClause\TransportClauseEditPart.Designer.cs">
+      <DependentUpon>TransportClauseEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\TransportClause\TransportClauseSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\TransportClause\TransportClauseSearchPart.Designer.cs">
+      <DependentUpon>TransportClauseSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\TransportClause\TransportClauseUIProxyLogic.cs" />
+    <Compile Include="TransportFoundation\VesselVoyage\VesselAddPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselAddPart.Designer.cs">
+      <DependentUpon>VesselAddPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselEditPart.Designer.cs">
+      <DependentUpon>VesselEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselSearchPart.Designer.cs">
+      <DependentUpon>VesselSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VesselVoyageUIProxy.cs" />
+    <Compile Include="TransportFoundation\VesselVoyage\VoyageEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VoyageEditPart.Designer.cs">
+      <DependentUpon>VoyageEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VoyageSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransportFoundation\VesselVoyage\VoyageSearchPart.Designer.cs">
+      <DependentUpon>VoyageSearchPart.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Authcodes\AuthcodeEdit.resx">
+      <DependentUpon>AuthcodeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authcodes\AuthcodeList.resx">
+      <DependentUpon>AuthcodeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authcodes\AuthcodeMainWorkSpace.resx">
+      <DependentUpon>AuthcodeMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authcodes\AuthcodeSearch.resx">
+      <DependentUpon>AuthcodeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authcodes\AuthcodeTool..resx">
+      <DependentUpon>AuthcodeTool..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\CheckDateFromToEdit.resx">
+      <DependentUpon>CheckDateFromToEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderToolBar.resx">
+      <DependentUpon>ChargingCodeFinderToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeFinderWorkspace.resx">
+      <DependentUpon>ChargingCodeFinderWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoFinderSearchPart.resx">
+      <DependentUpon>ChargingCodeInfoFinderSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\ChargingCodeFinder\ChargingCodeInfoMainListPart.resx">
+      <DependentUpon>ChargingCodeInfoMainListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\ChargingCodeFinderSearchPart.resx">
+      <DependentUpon>ChargingCodeFinderSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\ChargingCodeMainListPart.resx">
+      <DependentUpon>ChargingCodeMainListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderToolBar.resx">
+      <DependentUpon>ChargingCodeMultiFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderWorkspace.resx">
+      <DependentUpon>ChargingCodeMultiFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiSelectedListPart.resx">
+      <DependentUpon>ChargingCodeMultiSelectedListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Multi\ChargingCodeMultiFinderSelectedToolBar.resx">
+      <DependentUpon>ChargingCodeMultiFinderSelectedToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderToolBar.resx">
+      <DependentUpon>ChargingCodeSingleFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleFinderWorkspace.resx">
+      <DependentUpon>ChargingCodeSingleFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\Finder\Single\ChargingCodeSingleMainListPart.resx">
+      <DependentUpon>ChargingCodeSingleMainListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\UIProxy\ChargingCodeEditPart.resx">
+      <DependentUpon>ChargingCodeEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\UIProxy\ChargingCodeSearchPart.resx">
+      <DependentUpon>ChargingCodeSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ChargingCode\UIProxy\ChargingGroupEditPart.resx">
+      <DependentUpon>ChargingGroupEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CompanyConfigureSearchPart.resx">
+      <DependentUpon>CompanyConfigureSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CommpanyConfigureEditPart.resx">
+      <DependentUpon>CommpanyConfigureEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CompanyFaxConfigureListPart.resx">
+      <DependentUpon>CompanyFaxConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\ConfigureKeyValueEditPart.resx">
+      <DependentUpon>ConfigureKeyValueEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CommpanyConfigureListPart.resx">
+      <DependentUpon>CommpanyConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CommpanyConfigureToolBarPart.resx">
+      <DependentUpon>CommpanyConfigureToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CommpanyReportConfigureListPart.resx">
+      <DependentUpon>CommpanyReportConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\CommpanyEDIConfigureListPart.resx">
+      <DependentUpon>CommpanyEDIConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\CommpanyConfigure\SetReportParameterForm.resx">
+      <DependentUpon>SetReportParameterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Currency\CurrencyEditPart.resx">
+      <DependentUpon>CurrencyEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\TerminalLogins\TerminalLoginsSearchPart.resx">
+      <DependentUpon>TerminalLoginsSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Currency\CurrencySearchPart.resx">
+      <DependentUpon>CurrencySearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\EDIConfigure\EDIConfigureSearchPart.resx">
+      <DependentUpon>EDIConfigureSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\EDIConfigure\EDIConfigureEditPart.resx">
+      <DependentUpon>EDIConfigureEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\EDIConfigure\EDIConfigureListPart.resx">
+      <DependentUpon>EDIConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\EDIConfigure\EDIConfigureToolBarPart.resx">
+      <DependentUpon>EDIConfigureToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\EDIConfigure\EDICommpanyListEditPart.resx">
+      <DependentUpon>EDICommpanyListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\ReportConfigureSearchPart.resx">
+      <DependentUpon>ReportConfigureSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\ReportCommpanyListEditPart.resx">
+      <DependentUpon>ReportCommpanyListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\ReportConfigureEditPart.resx">
+      <DependentUpon>ReportConfigureEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\ReportConfigureListPart.resx">
+      <DependentUpon>ReportConfigureListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\ReportConfigureToolBarPart.resx">
+      <DependentUpon>ReportConfigureToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\ReportConfigure\SetReportParameterForCommpanyForm.resx">
+      <DependentUpon>SetReportParameterForCommpanyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\Finder\SoluionChargeCodeSearchPart.resx">
+      <DependentUpon>SoluionChargeCodeSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\ListPart\SolutionCodeRuleListPart.resx">
+      <DependentUpon>SolutionCodeRuleListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\ListPart\SolutionCurrencyListPart.resx">
+      <DependentUpon>SolutionCurrencyListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\SolutionEditPart.resx">
+      <DependentUpon>SolutionEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\ListPart\SolutionExchangeRateListPart.resx">
+      <DependentUpon>SolutionExchangeRateListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\ListPart\SolutionGLConfigListPart.resx">
+      <DependentUpon>SolutionGLConfigListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\SolutionGLGroupEditPart.resx">
+      <DependentUpon>SolutionGLGroupEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\Solution\ListPart\SolutionGLCodeListPart.resx">
+      <DependentUpon>SolutionGLCodeListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Configure\TerminalLogins\TerminalLoginsEditPart.resx">
+      <DependentUpon>TerminalLoginsEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxComboBox\CheckBoxComboBoxLocations.resx">
+      <DependentUpon>CheckBoxComboBoxLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxComboBox\CheckBoxComboBoxChargeCode.resx">
+      <DependentUpon>CheckBoxComboBoxChargeCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxComboBox\CheckBoxComboBoxVessel.resx">
+      <DependentUpon>CheckBoxComboBoxVessel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxComboBox\CheckBoxComboBoxCarrier.resx">
+      <DependentUpon>CheckBoxComboBoxCarrier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CheckBoxComboBox\CheckBoxComboBoxShippingLine.resx">
+      <DependentUpon>CheckBoxComboBoxShippingLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomerDescriptionForAMS\CustomerDescriptionForAMSControl.resx">
+      <DependentUpon>CustomerDescriptionForAMSControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomerDescriptionForNew\CustomerForNewPopupContainer.resx">
+      <DependentUpon>CustomerForNewPopupContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\MainWorkspace\CCListPart.resx">
+      <DependentUpon>CCListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\MainWorkspace\CCMainWorkspace.resx">
+      <DependentUpon>CCMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\MainWorkspace\CCSearchPart.resx">
+      <DependentUpon>CCSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\MainWorkspace\CCToolBar.resx">
+      <DependentUpon>CCToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\TabParts\CCBusinessPart.resx">
+      <DependentUpon>CCBusinessPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\TabParts\CCArchivesPart.resx">
+      <DependentUpon>CCArchivesPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\TabParts\CCEditPrecautionsPart.resx">
+      <DependentUpon>CCEditPrecautionsPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CooperationCustomer\TabParts\CCPartnerPart.resx">
+      <DependentUpon>CCPartnerPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\CustomerFinderSearchPart.resx">
+      <DependentUpon>CustomerFinderSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\CustomerMainListPart.resx">
+      <DependentUpon>CustomerMainListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Multi\CustomerMultiFinderToolBar.resx">
+      <DependentUpon>CustomerMultiFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Multi\CustomerMultiFinderWorkspace.resx">
+      <DependentUpon>CustomerMultiFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Multi\CustomerMultiSelectedListPart.resx">
+      <DependentUpon>CustomerMultiSelectedListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Multi\MultiFinderSelectedToolBar.resx">
+      <DependentUpon>MultiFinderSelectedToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Single\CustomerSingleFinderToolBar.resx">
+      <DependentUpon>CustomerSingleFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFinder\Single\CustomerSingleFinderWorkspace.resx">
+      <DependentUpon>CustomerSingleFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\ApplyCustomerCodeForm.resx">
+      <DependentUpon>ApplyCustomerCodeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerAuditing.resx">
+      <DependentUpon>CustomerAuditing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleEditPart.resx">
+      <DependentUpon>CustomerInvoiceTitleEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerInvoiceTitle\CustomerInvoiceTitleListPart.resx">
+      <DependentUpon>CustomerInvoiceTitleListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerInvoiceTitle\FindInvoiceTitleMainWorkSpace.resx">
+      <DependentUpon>FindInvoiceTitleMainWorkSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerInvoiceTitle\InvoiceTitleSearchPart.resx">
+      <DependentUpon>InvoiceTitleSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerInvoiceTitle\TaxCustomerInvoiceTitleListPart.resx">
+      <DependentUpon>TaxCustomerInvoiceTitleListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerMemoListEditPart.resx">
+      <DependentUpon>CustomerManagerMemoListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerCheckForm.resx">
+      <DependentUpon>CustomerManagerCheckForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerCombineListEditPart.resx">
+      <DependentUpon>CustomerManagerCombineListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerContactListEditPart.resx">
+      <DependentUpon>CustomerManagerContactListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerEditPart.resx">
+      <DependentUpon>CustomerManagerEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerListPart.resx">
+      <DependentUpon>CustomerManagerListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerPartnerListEditPart.resx">
+      <DependentUpon>CustomerManagerPartnerListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerSearchPart.resx">
+      <DependentUpon>CustomerManagerSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\CustomerManagerToolBarPart.resx">
+      <DependentUpon>CustomerManagerToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\DisableCustomerMemoContentForm.resx">
+      <DependentUpon>DisableCustomerMemoContentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerManager\SetCustomerIsDangerousForm.resx">
+      <DependentUpon>SetCustomerIsDangerousForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerEditPart.resx">
+      <DependentUpon>CustomerEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerMemoEditPart.resx">
+      <DependentUpon>CustomerMemoEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\CustomerSearchPart.resx">
+      <DependentUpon>CustomerSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\CountryProvince\CountryProvinceEditPart.resx">
+      <DependentUpon>CountryProvinceEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\CountryProvince\CountryProvinceSearchPart.resx">
+      <DependentUpon>CountryProvinceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\LocationFinderSearchPart.resx">
+      <DependentUpon>LocationFinderSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\LocationMainListPart.resx">
+      <DependentUpon>LocationMainListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Multi\LocationMultiFinderToolBar.resx">
+      <DependentUpon>LocationMultiFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Multi\LocationMultiFinderWorkspace.resx">
+      <DependentUpon>LocationMultiFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Multi\LocationMultiSelectedListPart.resx">
+      <DependentUpon>LocationMultiSelectedListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Multi\MultiFinderSelectedToolBar.resx">
+      <DependentUpon>MultiFinderSelectedToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Single\LocationSingleFinderToolBar.resx">
+      <DependentUpon>LocationSingleFinderToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\Finder\Single\LocationSingleFinderWorkspace.resx">
+      <DependentUpon>LocationSingleFinderWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\UIProxy\LocationEditPart.resx">
+      <DependentUpon>LocationEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Geography\Location\UIProxy\LocationSearchPart.resx">
+      <DependentUpon>LocationSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoTo\CommonGotoFrom.resx">
+      <DependentUpon>CommonGotoFrom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GoTo\CommonSetting.resx">
+      <DependentUpon>CommonSetting.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieProjects\MovieProjectEdit.resx">
+      <DependentUpon>MovieProjectEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieProjects\MovieProjectMainWorkSpace.resx">
+      <DependentUpon>MovieProjectMainWorkSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieProjects\MovieProjectSearch.resx">
+      <DependentUpon>MovieProjectSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieProjects\MovieProjectList.resx">
+      <DependentUpon>MovieProjectList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovieProjects\MovieProjectTool.resx">
+      <DependentUpon>MovieProjectTool.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportView\FastReportViewerPart.resx">
+      <DependentUpon>FastReportViewerPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource_CN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_CN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource_EN.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_EN.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\NationAndPortListEditPart.resx">
+      <DependentUpon>NationAndPortListEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\ShippingLineListPart.resx">
+      <DependentUpon>ShippingLineListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\ShippingLineMainWorkspace.resx">
+      <DependentUpon>ShippingLineMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\ShippingLineSearchPart.resx">
+      <DependentUpon>ShippingLineSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\ShippingLineToolBarPart.resx">
+      <DependentUpon>ShippingLineToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShippingLineManager\SippingLineEditPart.resx">
+      <DependentUpon>SippingLineEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Commodity\CommodityEditPart.resx">
+      <DependentUpon>CommodityEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Commodity\CommoditySearchPart.resx">
+      <DependentUpon>CommoditySearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Container\ContainerEditPart.resx">
+      <DependentUpon>ContainerEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Container\ContainerSearchPart.resx">
+      <DependentUpon>ContainerSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\DataDictionary\DataDictionaryEditPart.resx">
+      <DependentUpon>DataDictionaryEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\DataDictionary\DataDictionarySearchPart.resx">
+      <DependentUpon>DataDictionarySearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Flight\FlightEditPart.resx">
+      <DependentUpon>FlightEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\Flight\FlightSearchPart.resx">
+      <DependentUpon>FlightSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\ShippingLine\ShippingLineEditPart.resx">
+      <DependentUpon>ShippingLineEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\ShippingLine\ShippingLineSearchPart.resx">
+      <DependentUpon>ShippingLineSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\TransportClause\TransportClauseEditPart.resx">
+      <DependentUpon>TransportClauseEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\TransportClause\TransportClauseSearchPart.resx">
+      <DependentUpon>TransportClauseSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\VesselVoyage\VesselAddPart.resx">
+      <DependentUpon>VesselAddPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\VesselVoyage\VesselEditPart.resx">
+      <DependentUpon>VesselEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\VesselVoyage\VesselSearchPart.resx">
+      <DependentUpon>VesselSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\VesselVoyage\VoyageEditPart.resx">
+      <DependentUpon>VoyageEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransportFoundation\VesselVoyage\VoyageSearchPart.resx">
+      <DependentUpon>VoyageSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.AuthcodeInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CCBusinessList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CCPrecautionsList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CommodityInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CompanyDescriptionList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CompanyEDIConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CompanyReportCollect.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CompanyReportConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CompanyReportItem.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureBillList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureCustomerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureDefaultValueList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureKeyList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureKeyValueList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureListForEDI.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ContainerInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ContainerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CooperationCustomerArchives.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CooperationCustomerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CooperationCustomerPartnerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CostItemData.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryPortList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryProvinceInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryProvinceList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CurrencyList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerCombineList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerConfirmInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerConfirmList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerContactInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerContactList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerDescriptionForAMS.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerInvoiceTitleInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerMemoList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerPartnerInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerPartnerList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.DataDictionaryInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.EDIDictCodeList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.FileArchiveMenuInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.FlightInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.FlightList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.GLConfigType.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.GoToObject.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.GotoSetting.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.LocationInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.LocationList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.PortNames.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.PostalCodeInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportCollect.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportCompanyConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportCompanyItem.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportItem.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportParameterCollect.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportParameterList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ReportType.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ShippingCountryInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ShippingLineInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ShippingLineList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ShippingPortInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionAgentInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionAgentList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionChargingCodeInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionCurrencyInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.TransportClauseInfo.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ChargingCodeInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ChargingCodeList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ChargingGroupInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ChargingGroupList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CommodityList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ConfigureKeyValueInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryList1.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CurrencyInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CustomerMemoInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionChargingCodeList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionCodeRuleInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionExchangeRateInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLCodeInfo1.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLConfigInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLGroupInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLGroupList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.TransportClauseList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.VerificationSheet.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.VesselInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.VesselList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.VoyageInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.XMLReportParameterList.datasource" />
+    <None Include="Properties\DataSources\ICP.Crawler.ServiceInterface.DataObjects.TerminalLogins.datasource" />
+    <None Include="Properties\DataSources\ICP.Sys.ServiceInterface.DataObjects.OrganizationList.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionCurrencyList.datasource" />
+    <None Include="Resources\gtk-save_345.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionCodeRuleList.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.ChargingCodeList1.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.DataDictionaryList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionExchangeRateList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLCodeList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.SolutionGLConfigList.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.EDIConfigureList.datasource" />
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.VoyageList.datasource" />
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.ConfigureObjects.datasource" />
+    <None Include="Resources\Add_16.png" />
+    <None Include="Resources\Check_16.png" />
+    <None Include="Resources\Close_16.png" />
+    <Content Include="GoTo\Goto.xml" />
+    <Content Include="GoTo\GotoSettingScope.xml" />
+    <Content Include="Resources\Delete_16.png" />
+    <None Include="Resources\DisplayOneColumn16.ico" />
+    <None Include="Resources\DisplaySinglePage16.ico" />
+    <None Include="Resources\DisplayTwoColumn16.ico" />
+    <Content Include="Resources\Disuse_16.png" />
+    <Content Include="Resources\Edit_16.png" />
+    <None Include="Resources\fileexit16.ico" />
+    <None Include="Resources\fileopen16.ico" />
+    <None Include="Resources\filesave16.ico" />
+    <Content Include="Resources\high.bmp" />
+    <Content Include="Resources\new.bmp" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\PrintPreview.png" />
+    <Content Include="Resources\Print_16.png" />
+    <Content Include="Resources\priority.bmp" />
+    <Content Include="Resources\Save_16.png" />
+    <Content Include="Resources\Save_Blue_16.png" />
+    <None Include="Resources\search.gif" />
+    <Content Include="Resources\systemMemo.png" />
+    <None Include="Resources\ZoomOut16.ico" />
+    <None Include="Resources\ZoomMarquee16.ico" />
+    <None Include="Resources\ZOOMIN16.ICO" />
+    <None Include="Resources\ZoomFitWidth16.ico" />
+    <None Include="Resources\ZoomFitVisible16.ico" />
+    <None Include="Resources\ZoomFitHeight16.ico" />
+    <None Include="Resources\ZoomDynamic16.ico" />
+    <None Include="Resources\ZoomActualSize16.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CName" xml:space="preserve">
+    <value>EName</value>
+    <comment>CName</comment>
+  </data>
+  <data name="上个月" xml:space="preserve">
+    <value>Last Month</value>
+    <comment>上个月</comment>
+  </data>
+  <data name="业务信息详细" xml:space="preserve">
+    <value>Job Information Detail</value>
+    <comment>业务信息详细</comment>
+  </data>
+  <data name="业务发生地" xml:space="preserve">
+    <value>Company</value>
+    <comment>业务发生地</comment>
+  </data>
+  <data name="业务员" xml:space="preserve">
+    <value>Sales</value>
+    <comment>业务</comment>
+  </data>
+  <data name="业务所属部门" xml:space="preserve">
+    <value>Department</value>
+    <comment>业务所属部门</comment>
+  </data>
+  <data name="业务时间" xml:space="preserve">
+    <value>Job Date</value>
+    <comment>业务时间</comment>
+  </data>
+  <data name="业务管理成本统计表" xml:space="preserve">
+    <value>Return Commission Report</value>
+    <comment>业务管理成本统计表</comment>
+  </data>
+  <data name="业务类型" xml:space="preserve">
+    <value>Job Type</value>
+    <comment>业务类型</comment>
+  </data>
+  <data name="个人帐单" xml:space="preserve">
+    <value>Cost-Individual Expense</value>
+    <comment>成本分析-个人帐单</comment>
+  </data>
+  <data name="亏损" xml:space="preserve">
+    <value>Loss</value>
+    <comment>亏损</comment>
+  </data>
+  <data name="交货地" xml:space="preserve">
+    <value>Destination</value>
+    <comment>交货地</comment>
+  </data>
+  <data name="今年" xml:space="preserve">
+    <value>This Year</value>
+    <comment>今年</comment>
+  </data>
+  <data name="代理" xml:space="preserve">
+    <value>Agent</value>
+    <comment>代理</comment>
+  </data>
+  <data name="代理人" xml:space="preserve">
+    <value>Agent</value>
+    <comment>代理人</comment>
+  </data>
+  <data name="代理帐款表" xml:space="preserve">
+    <value>Agent Statement Report</value>
+    <comment>代理帐款表</comment>
+  </data>
+  <data name="全部" xml:space="preserve">
+    <value>ALL</value>
+    <comment>全部</comment>
+  </data>
+  <data name="公司货" xml:space="preserve">
+    <value>COMPANY</value>
+    <comment>公司货</comment>
+  </data>
+  <data name="其他业务" xml:space="preserve">
+    <value>OTHER</value>
+    <comment>其他业务</comment>
+  </data>
+  <data name="其它业务" xml:space="preserve">
+    <value>OTHER</value>
+    <comment>其它业务</comment>
+  </data>
+  <data name="凭证明细表" xml:space="preserve">
+    <value>Voucher List</value>
+    <comment>凭证明细表</comment>
+  </data>
+  <data name="出口业务" xml:space="preserve">
+    <value>Export</value>
+    <comment>出口业务</comment>
+  </data>
+  <data name="创建时间" xml:space="preserve">
+    <value>Create Date</value>
+    <comment>创建时间</comment>
+  </data>
+  <data name="利润同期对比图" xml:space="preserve">
+    <value>Profit Same Term Compare Analysis</value>
+    <comment>利润同期对比图</comment>
+  </data>
+  <data name="利润组成分析表" xml:space="preserve">
+    <value>Profit Constitutes Analysis</value>
+    <comment>利润组成分析表</comment>
+  </data>
+  <data name="利润趋势表" xml:space="preserve">
+    <value>Profit Trend Analysis</value>
+    <comment>利润趋势表</comment>
+  </data>
+  <data name="单箱利润表" xml:space="preserve">
+    <value>Per Container Of Profit Graph</value>
+    <comment>单箱利润表</comment>
+  </data>
+  <data name="去年" xml:space="preserve">
+    <value>Last Year</value>
+    <comment>去年</comment>
+  </data>
+  <data name="司机" xml:space="preserve">
+    <value>Drivers</value>
+    <comment>司机</comment>
+  </data>
+  <data name="合约号" xml:space="preserve">
+    <value>S/C No.</value>
+    <comment>合约号</comment>
+  </data>
+  <data name="同行货" xml:space="preserve">
+    <value>NVOCC</value>
+    <comment>同行货</comment>
+  </data>
+  <data name="否" xml:space="preserve">
+    <value>No</value>
+    <comment>否</comment>
+  </data>
+  <data name="员工" xml:space="preserve">
+    <value>Employee</value>
+    <comment>员工</comment>
+  </data>
+  <data name="实收实付凭证" xml:space="preserve">
+    <value>Account Voucher</value>
+    <comment>实收实付凭证</comment>
+  </data>
+  <data name="客户" xml:space="preserve">
+    <value>Customer</value>
+    <comment>客户</comment>
+  </data>
+  <data name="常规" xml:space="preserve">
+    <value>General</value>
+    <comment>常规</comment>
+  </data>
+  <data name="年" xml:space="preserve">
+    <value>Year</value>
+    <comment>年</comment>
+  </data>
+  <data name="应付帐款表" xml:space="preserve">
+    <value>Account Payable Report</value>
+    <comment>应付帐款表</comment>
+  </data>
+  <data name="应收帐款帐龄表" xml:space="preserve">
+    <value>Aging Statement</value>
+    <comment>应收帐款帐龄表</comment>
+  </data>
+  <data name="应收帐款表" xml:space="preserve">
+    <value>Account Receivable Report</value>
+    <comment>应收帐款表</comment>
+  </data>
+  <data name="应收应付盈余表" xml:space="preserve">
+    <value>Surplus Statement Report</value>
+    <comment>应收应付盈余表</comment>
+  </data>
+  <data name="往来单位" xml:space="preserve">
+    <value>Shipper</value>
+    <comment>往来单位</comment>
+  </data>
+  <data name="成本分析图" xml:space="preserve">
+    <value>Cost Constitutes Analysis</value>
+    <comment>成本分析图</comment>
+  </data>
+  <data name="成本同期比较分析图" xml:space="preserve">
+    <value>Cost Same Term Compare Analysis</value>
+    <comment>成本同期比较分析图</comment>
+  </data>
+  <data name="成本趋势分析图" xml:space="preserve">
+    <value>Cost Direction Analysis</value>
+    <comment>成本趋势分析图</comment>
+  </data>
+  <data name="承运人" xml:space="preserve">
+    <value>Carrier</value>
+    <comment>承运人</comment>
+  </data>
+  <data name="报关业务" xml:space="preserve">
+    <value>APPLY TO CUSTOMS</value>
+    <comment>报关业务</comment>
+  </data>
+  <data name="拼箱业务" xml:space="preserve">
+    <value>LCL</value>
+    <comment>拼箱业务</comment>
+  </data>
+  <data name="指定货" xml:space="preserve">
+    <value>AGENT</value>
+    <comment>指定货</comment>
+  </data>
+  <data name="揽货方式" xml:space="preserve">
+    <value>Sales Type</value>
+    <comment>揽货方式</comment>
+  </data>
+  <data name="操作工作量统计" xml:space="preserve">
+    <value>Workload Statistics</value>
+    <comment>操作工作量统计</comment>
+  </data>
+  <data name="散货业务" xml:space="preserve">
+    <value>BULK</value>
+    <comment>散货业务</comment>
+  </data>
+  <data name="日期" xml:space="preserve">
+    <value>Date</value>
+    <comment>日期</comment>
+  </data>
+  <data name="是" xml:space="preserve">
+    <value>Yes</value>
+    <comment>是</comment>
+  </data>
+  <data name="更多" xml:space="preserve">
+    <value>More</value>
+    <comment>更多</comment>
+  </data>
+  <data name="月" xml:space="preserve">
+    <value>Month</value>
+    <comment>月</comment>
+  </data>
+  <data name="本月" xml:space="preserve">
+    <value>This Month</value>
+    <comment>本月</comment>
+  </data>
+  <data name="查询" xml:space="preserve">
+    <value>Search</value>
+    <comment>查询</comment>
+  </data>
+  <data name="盈利" xml:space="preserve">
+    <value>Profit</value>
+    <comment>盈利</comment>
+  </data>
+  <data name="直客货" xml:space="preserve">
+    <value>SALES</value>
+    <comment>直客货</comment>
+  </data>
+  <data name="空运业务" xml:space="preserve">
+    <value>AIR</value>
+    <comment>空运业务</comment>
+  </data>
+  <data name="箱量利润统计表" xml:space="preserve">
+    <value>Volume and Profit By Total</value>
+    <comment>箱量利润统计表</comment>
+  </data>
+  <data name="箱量利润详细表" xml:space="preserve">
+    <value>Volume and Profit By Detail</value>
+    <comment>箱量利润详细表</comment>
+  </data>
+  <data name="箱量同期对比图" xml:space="preserve">
+    <value>TEU Same Term Compare Analysis</value>
+    <comment>箱量同期对比图</comment>
+  </data>
+  <data name="箱量趋势表" xml:space="preserve">
+    <value>Volume Trend Analysis</value>
+    <comment>箱量趋势表</comment>
+  </data>
+  <data name="组织结构" xml:space="preserve">
+    <value>Department</value>
+    <comment>组织结构</comment>
+  </data>
+  <data name="经营状况分析表" xml:space="preserve">
+    <value>Analysis Of Operating Statements</value>
+    <comment>经营状况分析表</comment>
+  </data>
+  <data name="航空公司" xml:space="preserve">
+    <value>Air Company</value>
+    <comment>航空公司</comment>
+  </data>
+  <data name="航线" xml:space="preserve">
+    <value>Line</value>
+    <comment>航线</comment>
+  </data>
+  <data name="船公司" xml:space="preserve">
+    <value>Ship Owner</value>
+    <comment>船公司</comment>
+  </data>
+  <data name="装货港" xml:space="preserve">
+    <value>POL</value>
+    <comment>装货港</comment>
+  </data>
+  <data name="计帐凭证" xml:space="preserve">
+    <value>Billing Voucher</value>
+    <comment>计帐凭证</comment>
+  </data>
+  <data name="请选择业务类型" xml:space="preserve">
+    <value>Pls Select Job Type</value>
+    <comment>请选择业务类型</comment>
+  </data>
+  <data name="请选择分组条件" xml:space="preserve">
+    <value>Please select division</value>
+    <comment>请选择分组条件</comment>
+  </data>
+  <data name="请选择组织结构" xml:space="preserve">
+    <value>Pls select department</value>
+    <comment>请选择组织结构</comment>
+  </data>
+  <data name="费用期间" xml:space="preserve">
+    <value>Fee Date</value>
+    <comment>费用期间</comment>
+  </data>
+  <data name="费用项目" xml:space="preserve">
+    <value>Cost Item</value>
+    <comment>费用项目</comment>
+  </data>
+  <data name="进口业务" xml:space="preserve">
+    <value>IMPORT</value>
+    <comment>进口业务</comment>
+  </data>
+  <data name="部门" xml:space="preserve">
+    <value>Department</value>
+    <comment>部门</comment>
+  </data>
+  <data name="集运业务" xml:space="preserve">
+    <value>TRAILER</value>
+    <comment>集运业务</comment>
+  </data>
+</root>

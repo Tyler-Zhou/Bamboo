@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "ICP Monitor";
+}
+
+<!DOCTYPE html>
+<html style="text-align: center;">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/themes/mobile.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/themes/icon.css">
+    @RenderSection("HeadCss", required: false)
+    <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.easyui.mobile.js"></script>
+    @RenderSection("Scripts", required: false)
+    <style type="text/css">
+        .mymask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+    <body style="text-align: center;">
+        @*<div class="easyui-navpanel">
+            <header>
+                <div class="m-toolbar">
+                    <div class="m-title">
+                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,outline:true" style="width:70px">Home</a>
+                        <a href="javascript:void(0)" class="easyui-linkbutton" data-options="plain:true,outline:true" style="width:50%"></a>
+                        <a href="javascript:void(0)" class="easyui-menubutton" data-options="menu:'#mmHelp',iconCls:'icon-help',outline:true" style="width:70px">Help</a>
+                    </div>
+                </div>
+            </header>
+            <div id="mmHelp" style="width:70px;">
+                <div>Help</div>
+                <div>About</div>
+            </div>
+            @RenderBody()
+        </div>*@
+        @RenderBody()
+    </body>
+</html>

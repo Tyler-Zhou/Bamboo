@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="13">
+	<component name="defaultmap1" blackbox="0" editable="1">
+		<properties SelectedLanguage="cs"/>
+		<structure>
+			<children>
+				<component name="document" library="xml" uid="8" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="18" lty="2" rbx="212" rby="202"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="http://tempuri.org/IFCSUM_FYCW.xsd"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="IFCSUM_FYCW" expanded="1">
+										<entry name="EDI" outkey="77892232" expanded="1">
+											<entry name="EDIDATA" outkey="115184592"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="IFCSUM_FYCW.xsd" outputinstance="C:\Documents and Settings\Administrator\桌面\IFCSUM_FYCW.XML" instanceroot="{http://tempuri.org/IFCSUM_FYCW.xsd}IFCSUM_FYCW" userdefinedschemalocation="D:/Project/ICP2005/LongWin.EDI/LongWin.EDI.FileManager/IFCSUM_FYCW.xsd"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="edi" library="text" uid="10" kind="16">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="385" lty="11" rbx="537" rby="211"/>
+					<data>
+						<root>
+							<header>
+								<namespaces/>
+							</header>
+							<entry name="FileInstance" expanded="1">
+								<entry name="document" expanded="1">
+									<entry name="Rows" inpkey="122312640" expanded="1">
+										<entry name="DATA" inpkey="76359520"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<wsdl/>
+						<text type="csv" encoding="1000" byteorder="1" byteordermark="0">
+							<settings separator="," quote="" firstrownames="false" removeempty="true">
+								<names root="Text file" block="Rows">
+									<field0 name="DATA" type="string"/>
+								</names>
+							</settings>
+						</text>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="77892232">
+						<edges>
+							<edge vertexkey="122312640" edgekey="123137624"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="115184592">
+						<edges>
+							<edge vertexkey="76359520" edgekey="137083264"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

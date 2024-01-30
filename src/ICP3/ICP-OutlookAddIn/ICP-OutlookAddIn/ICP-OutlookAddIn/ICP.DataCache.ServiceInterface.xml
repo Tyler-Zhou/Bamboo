@@ -1,0 +1,1519 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.DataCache.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.DataCache.ServiceInterface.IDataOperation">
+             <summary>
+            Sqlite3缓存操作接口
+             使用时需首先调用Init方法初始化
+             </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Init">
+            <summary>
+            初始化
+            默认连接到test数据库
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Init(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            初始化
+            </summary>
+            <param name="connectionOpts">连接参数</param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Init(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="dbConnectionString">连接字符串</param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.GetAllTableData(System.String)">
+            <summary>
+            返回整表数据
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Get(System.String)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="sql"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Get(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            查询数据
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Get(System.String,System.Data.Common.DbParameter)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="sql"></param>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ExecuteNonQuery(System.String)">
+            <summary>
+            执行Sql
+            </summary>
+            <param name="sql"></param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ExecuteNonQuery(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+             执行Sql
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters">参数</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ExecuteScalar(System.String)">
+            <summary>
+            执行Sql
+            </summary>
+            <param name="sql"></param>
+            <returns>返回第一行第一列的值</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ExecuteScalar(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            执行Sql
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns>返回第一行第一列的值</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.Delete(System.String,System.String)">
+            <summary>
+            删除表数据
+            </summary>
+            <param name="tableName"></param>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ClearDB">
+            <summary>
+            清空整个数据库数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.ClearTable(System.String)">
+            <summary>
+            清空整表数据
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDataOperation.BulkInsert(System.String,System.Collections.Generic.List{System.String},System.Data.DataTable)">
+            <summary>
+            批量插入数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="fieldNames">需插入数据的字段名</param>
+            <param name="source">数据表，表中的数据必须和给出的列名的顺序和数量一致</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.ContentInfo">
+            <summary>
+            文档内容信息
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.Name">
+            <summary>
+            文档名称
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.Content">
+            <summary>
+            文档内容
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.Id">
+            <summary>
+            文档GUID ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.UploadState">
+            <summary>
+            上传状态
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.OperationID">
+            <summary>
+            操作ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.ContentInfo.TypeCode">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.CustomColumnInfo">
+            <summary>
+            客户自定义列信息类
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.Name">
+            <summary>
+            列名
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.VisibleIndex">
+            <summary>
+            可见位置索引
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.Width">
+            <summary>
+            宽度(默认为100)
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.Visible">
+            <summary>
+            可见性(默认为可见)
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.AbsoluteIndex">
+            <summary>
+            绝对索引
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.Fixed">
+            <summary>
+            固定方式
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CustomColumnInfo.SortOrder">
+            <summary>
+            排序规则
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.SortOrder">
+            <summary>
+            排序规则
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.File.IFileConverter">
+            <summary>
+            文档转换器接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.File.BaseFileConverter.Convert(System.String)">
+            <summary>
+            文件转换后的存放路径
+            </summary>
+            <param name="path"></param>
+            <returns>文件转换后的存放路径。注意：BaseFileConverter返回空</returns>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.File.TextConverter">
+            <summary>
+            Txt文件转换封装类
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.File.WordConverter">
+            <summary>
+            Word文件转换封装类
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.File.WordConverter.Convert(System.String)">
+            <summary>
+            传入指定文件路径转换为PDF文件
+            </summary>
+            <param name="path">指定文件路径</param>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.File.WordConverter.FileType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.File.WordConverter.FileExtensions">
+            <summary>
+            文件扩展名集合
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.AgentDispatchInfo">
+            <summary>
+            海进下载分发文档列表信息实体类
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.AgentDispatchParam">
+            <summary>
+            分发文档参数类
+            </summary>
+            
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.BLList">
+            <summary>
+            提单列表数据源
+            </summary>    
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.Id">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.BLNo">
+            <summary>
+            提单号
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.Shipper">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.Consignee">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BLList.Noticer">
+            <summary>
+            通知人
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.BusinessOperationContext">
+            <summary>
+            业务操作上下文类
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.OperationNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.SONO">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.FilesName">
+            <summary>
+            文档名集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.UpdateDate">
+            <summary>
+            业务更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.State">
+            <summary>
+            代理文档状态
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.BusinessOperationContext.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.CommunicationHistory">
+            <summary>
+            业务Email/Fax/EDI历史记录实体类
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.CommunicationHistory.EntryId">
+            <summary>
+            EntryId
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.OperationContactParameters">
+            <summary>
+            联系人参数
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.DispatchStateParam">
+            <summary>
+            分发状态参数类
+            </summary>    
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.DocumentInfo">
+            <summary>
+            文档实体类
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.DocumentInfo.#ctor">
+            <summary>
+            空实例
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.DocumentInfo.#ctor(System.Int32)">
+            <summary>
+            备注: 设置DocumentTypeValue,方便过滤数据
+            </summary>
+            <param name="documentTypeValue"></param>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentInfo.source">
+            <summary>
+            文件来源
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.Id">
+             <summary>
+            文档Id
+             </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.IsDirty">
+            <summary>
+            从数据库取出来的文档IsDirty=false，用户电脑上上传的文档IsDirty=true
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.Type">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.DocumentTypeValue">
+            <summary>
+            文档类型值对应于DocumentType的int值
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.DocumentState">
+            <summary>
+            文档状态
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.Name">
+            <summary>
+            文件名
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.CreateByName">
+            <summary>
+            上传人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.Selected">
+            <summary>
+            文档是否选择
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.CreateDate">
+            <summary>
+            上传日期
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.DocumentTypeName">
+            <summary>
+            文档类型名称
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.OriginalPath">
+            <summary>
+            上传文档时文档初始所在路径
+            <remarks>构建业务文档列表时添加</remarks>
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.PreviewPath">
+            <summary>
+            文件预览路径
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.DocumentInfo.State">
+            <summary>
+            上传状态
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.EmailContactInfo">
+            <summary>
+            联系人信息
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.OperationContactInfo">
+            <summary>
+            业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.ID">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.Mail">
+            <summary>
+            联系人的Email
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.CustomerID">
+            <summary>
+            关联的客户ID
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.Customer">
+            <summary>
+            是否是客户
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.Carrier">
+            <summary>
+            是否是承运人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.OE">
+            <summary>
+            是否是海出业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.OI">
+            <summary>
+            是否是海进业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.AE">
+            <summary>
+            是否是空出业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.AI">
+            <summary>
+            是否是空进业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.Trk">
+            <summary>
+            是否是拖车业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.Other">
+            <summary>
+            是否属于其他业务联系人
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.OperationContactInfo.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.EnName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.CnName">
+            <summary>
+            中文
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.Email1Address">
+            <summary>
+            邮箱地址
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.BusinessTelephoneNumber">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.BusinessFaxNumber">
+            <summary>
+            传真号码
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.MobileTelephoneNumber">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.BusinessAddressStreet">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.JobTitle">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.EmailContactInfo.IsInOffice">
+            <summary>
+            在职
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.FileCopyParameters">
+            <summary>
+            附件列表参数类
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.OperationIDs">
+            <summary>
+            业务ID集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.Documents">
+            <summary>
+            文档集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.DeleteFiles">
+            <summary>
+            删除文件集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.SONOs">
+            <summary>
+            SO　ＮＯ集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.UpdateDates">
+            <summary>
+            更新时间集合
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.FileCopyParameters.HasSONOColumn">
+            <summary>
+            是否包含SONO这列
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.UploadColumnType">
+            <summary>
+            上传文档时所对应的列名，文档路径列名，文档类型
+            创建人：joe
+            创建时间：2013-05-27
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UploadColumnType.DocColumnName">
+            <summary>
+            文档列名
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UploadColumnType.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UploadColumnType.OperateType">
+             <summary>
+            业务类型
+             </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.EmailSourceType">
+            <summary>
+            邮件来源类型
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.EmailSourceType.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.EmailSourceType.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.EmailSourceType.Shipper">
+            <summary>
+            船东
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.EmailSourceType.Colleague">
+            <summary>
+            同事
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.EmailSourceType.Agent">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.ContentType">
+             <summary>
+            文档内容类型
+             </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.UploadState">
+            <summary>
+            文件上传状态
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.FileType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.DocumentState">
+            <summary>
+            文档状态DocS/DocH/DCRev/DCRcv
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentState.Pending">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentState.Dispatched">
+            <summary>
+            已分发
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentState.Accepted">
+            <summary>
+            接收
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentState.Reviseing">
+            <summary>
+            已申请修订
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.DocumentState.Revised">
+            <summary>
+            已审批修订
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.NotifyType">
+            <summary>
+            文档回调通知类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.RecipientType">
+            <summary>
+            文档接受者类型
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.RecipientType.External">
+             <summary>
+            外部代理 
+             </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.RecipientType.Branch">
+            <summary>
+            内部代理
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.RecipientType.OverseasCS">
+            <summary>
+            海外客服
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.DocumentType">
+            <summary>
+            文档类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.MessageRelationType">
+            <summary>
+            消息关联类型
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.MessageRelationType.Auto">
+            <summary>
+            系统自动关联
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.MessageRelationType.Hand">
+            <summary>
+            用户手动关联
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.UpdateDataType">
+            <summary>
+            更改数据类型
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.UpdateDataType.AddNew">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.UpdateDataType.MainForOperationID">
+            <summary>
+            重新保存一票业务的所有关联信息（暂未用到）
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.UpdateDataType.MainForMessageID">
+            <summary>
+            重新保存一封邮件的所有关联信息 
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.SelectionType">
+            <summary>
+            上传附件选择工作类型
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.Normal">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.SI">
+            <summary>
+            上传SI
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.SO">
+             <summary>
+            上传SO 
+             </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.AN">
+            <summary>
+            上传AN
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.MBL">
+            <summary>
+            上传MBL
+            </summary>
+        </member>
+        <member name="F:ICP.DataCache.ServiceInterface.SelectionType.AP">
+            <summary>
+            应付款
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.UploadWay">
+            <summary>
+            上传附件方式
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.AssociateType">
+            <summary>
+            关联类型
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IBusinessContactService">
+            <summary>
+            业务联系人信息服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IBusinessContactService.GetOperationContactByEmails(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据email获取OperationContact业务联系人信息
+            </summary>
+            <param name="emails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IBusinessContactService.GetOperationContactInfo(System.String)">
+            <summary>
+            获取业务联系人信息
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IBusinessContactService.GetEmailContactList">
+            <summary>
+            获取所有邮件联系人对象
+            </summary>
+            <returns>邮件联系人对象集合</returns>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IClientBusinessContactService">
+            <summary>
+            业务联系信息服务客户端接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.GetEmailType(System.String)">
+            <summary>
+            根据发件人地址获取发件人的类型
+            </summary>
+            <param name="senderAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.GetEmailTypes(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据邮件所有外部的邮件获取联系人信息
+            </summary>
+            <param name="emails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.GetOperationContactByEmails(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据email从服务端获取OperationContact业务联系人信息
+            </summary>
+            <param name="emails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.GetOperationContactInfo(System.String)">
+            <summary>
+            从服务端获取业务联系人信息
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.LocalSaveOperationContacts(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.OperationContactInfo})">
+            <summary>
+            保存业务联系人信息到本地缓存
+            </summary>
+            <param name="operationType"></param>
+            <param name="contactList"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessContactService.RemoveMemCacheContacts(System.Collections.Generic.List{System.String})">
+            <summary>
+            移除内存缓存的联系人类型信息
+            </summary>
+            <param name="emailAddresses"></param>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IClientBusinessOperationService">
+            <summary>
+            客户端业务操作接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetLocalOperationViewList(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            获取缓存业务信息
+            </summary>
+            <param name="criteria"></param>
+            <param name="isKeyWordQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetLocalOperationMessageRelationByMessageIdAndReference(System.String,System.String)">
+            <summary>
+            获取本地消息与业务关联信息
+            </summary>
+            <param name="messageId"></param>
+            <param name="reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetOperationMessageRelationByMessageIdAndReference(System.String,System.String)">
+            <summary>
+            获取消息与业务关联信息，如果本地获取不到，则从服务端获取
+            </summary>
+            <param name="messageId"></param>
+            <param name="reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetOperationMessages(System.String,System.Guid[])">
+            <summary>
+            获取本地业务业务关联信息
+            </summary>
+            <param name="operationIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.Get(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,System.String,System.String)">
+            <summary>
+            获取缓存业务信息和邮件关联信息
+            </summary>
+            <param name="criteria"></param>
+            <param name="messageID"></param>
+            <param name="reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.SaveOperationMessageRelation(ICP.Message.ServiceInterface.OperationMessageRelation[])">
+            <summary>
+            保存邮件关联业务信息
+            </summary>
+            <param name="relationMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.RemoveOperationMessageRelation(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据MessageID删除邮件与业务的关联信息
+            </summary>
+            <param name="messageIDs"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.RemoveAndSyncOperationMessageRelations(System.Guid[],System.Nullable{System.DateTime}[])">
+            <summary>
+            主键ID去删除关联信息
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.UpdateLocalBusinessData(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Data.DataTable)">
+            <summary>
+            更新本地缓存业务数据
+            </summary>
+            <param name="operationId"></param>
+            <param name="operationType"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.UpdateLocalBusinessData(System.Collections.Generic.List{System.Guid},ICP.Framework.CommonLibrary.Common.OperationType,System.Data.DataTable)">
+            <summary>
+            批量更新缓存业务数据
+            </summary>
+            <param name="operationIds"></param>
+            <param name="operationType"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.UpdateLocalBusinessData(System.Collections.Generic.List{System.Guid},ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            批量更新本地数据
+            </summary>
+            <param name="operationIds"></param>
+            <param name="operationType"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.UpdateLocalBusinessData(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            更新本地缓存业务数据
+            </summary>
+            <param name="operationId"></param>
+            <param name="operationType"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetLocalOperationViewInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取本地缓存业务数据
+            </summary>
+            <param name="operationId"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetOperationAssistantInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取业务参与者相关信息
+            </summary>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.ClearOperationContactEMail">
+            <summary>
+            清空业务联系人邮件地址
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetLocalOperationViewListBySubjectKeyWord(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            根据邮件主题从本地缓存获取业务信息
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.IsShipmentExists(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            判断业务是否在本地缓存存在
+            </summary>
+            <param name="operationId"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.ExistsRelation(System.String)">
+            <summary>
+            判断是否存在关联
+            </summary>
+            <param name="messageId">消息的MessageID特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.CheckRelationIsChanged(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            判断关联是否发送更改,如发送更改则返回关联,如果关联已被删除，则返回的关联中HasData为false，否则返回null
+            </summary>
+            <param name="messageId">消息的MessageID特性</param>
+            <param name="updateDate">消息的更改时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.SaveLocalOperationMessageRelation(ICP.Message.ServiceInterface.OperationMessageRelation[])">
+            <summary>
+            保存本地缓存邮件关联业务信息
+            </summary>
+            <param name="operationRelation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.SaveMessage(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            保存消息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.EnsureAndSaveMailMessageReference(ICP.Message.ServiceInterface.OperationMessageRelation,ICP.Message.ServiceInterface.Message)">
+            <summary>
+            保存关联，如果关联不存在，则保存消息
+            </summary>
+            <param name="relationMessage"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.HasLocalOperationMessageRelation(System.String)">
+            <summary>
+            本地关联缓存表是否存在该邮件的关联信息
+            </summary>
+            <param name="messageID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.GetOperationMessageRelationByMessageID(System.String)">
+            <summary>
+            根据邮件MessageID获取邮件邮件关联信息
+            </summary>
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBusinessOperationService.SaveLocalOperationContactMail(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.OperationContactParameters})">
+            <summary>
+            保存邮件业务联系人
+            </summary>
+            <param name="ContactParameters"></param>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService">
+            <summary>
+            沟通历史记录客户端服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.GetCommunicationHistoryList(ICP.DataCache.ServiceInterface.BusinessOperationContext)">
+            <summary>
+            业务面板获取沟通历史记录列表
+            </summary>
+            <param name="businessContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.SaveCommunicationHistoryEntry(ICP.DataCache.ServiceInterface.CommunicationHistory)">
+            <summary>
+            保存沟通历史记录
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.GetAttachment(System.Guid,System.Collections.Generic.List{System.Guid})">
+            <summary>
+            获取记录下的所有附件(包含附件内容)
+            </summary>
+            <param name="messageId"></param>
+            <param name="attachmentIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.GetAttachment(System.Guid,System.String)">
+            <summary>
+            暂未实现
+            </summary>
+            <param name="messageId"></param>
+            <param name="attachmentName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.GetCommunicationHistoryDetailInfo(System.Guid)">
+            <summary>
+            获取记录详细详细(不包含附件内容)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.Open(System.Guid,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageId"></param>
+            <param name="attachmentName"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.Open(System.Guid,System.Guid)">
+            <summary>
+            打开附件
+            </summary>
+            <param name="messageId"></param>
+            <param name="attachmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCommunicationHistoryService.SaveAs(System.Guid,System.Guid,System.String)">
+            <summary>
+            保存附件
+            </summary>
+            <param name="messageId"></param>
+            <param name="attachmentId"></param>
+            <param name="displayName"></param>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IClientCustomDataGridService">
+            <summary>
+            客户端用户列表显示自定义服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCustomDataGridService.Save(ICP.DataCache.ServiceInterface.UserCustomGridInfo)">
+            <summary>
+            保存用户列表自定义显示信息
+            </summary>
+            <param name="customInfo"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCustomDataGridService.Get(System.Guid,System.String)">
+            <summary>
+            获取用户列表自定义显示信息
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="listType">列表类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientCustomDataGridService.Get(System.String)">
+            <summary>
+            获取用户列表自定义显示信息
+            </summary>
+            <param name="listType">列表类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.Upload(ICP.DataCache.ServiceInterface.DocumentInfo,System.String)">
+            <summary>
+            客户端上传文件
+            </summary>
+            <param name="businessContext"></param>
+            <param name="id"></param>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.GetBusinessDocumentList(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.BusinessOperationContext})">
+            <summary>
+            获取多票业务下的文档
+            </summary>
+            <param name="contextlist"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.Delete(System.Collections.Generic.List{System.String},System.Guid)">
+            <summary>
+            根据文件名和业务ID批量删除
+            </summary>
+            <param name="fileName"></param>
+            <param name="operationID"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.GenerateThumbImages(System.Collections.Generic.List{System.Guid},System.Guid)">
+            <summary>
+            产生缩略图
+            </summary>
+            <param name="documentIds"></param>
+            <param name="faxId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.SetDispatchState(ICP.DataCache.ServiceInterface.DispatchStateParam)">
+            <summary>
+            更改分发文档状态
+            </summary>
+            <param name="documentIds"></param>
+            <param name="updateDates"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.Save(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.DocumentInfo},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Guid},System.Collections.Generic.List{System.Nullable{System.DateTime}})">
+            <summary>
+            保存文档
+            </summary>
+            <param name="newDocuments">新上传的文档</param>
+            <param name="filePaths">新上传文档的路径</param>
+            <param name="listDeleteIds">需删除文档的Id列表</param>
+            <param name="updateDates">需删除文档的更新时间列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.DeleteDocument(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            删除多个文档
+            </summary> 
+            <param name="ids"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.UpdateDocumentRelation(ICP.DataCache.ServiceInterface.DocumentInfo[],ICP.Framework.CommonLibrary.Common.ManyResult)">
+            <summary>
+            文档保存到远程数据库成功后,更新本地文档Id,UpdateDate
+            </summary>
+            <param name="documents"></param>
+            <param name="results"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.IsExistFileNames(System.Collections.Generic.List{System.String},System.Guid)">
+             <summary>
+            验证当前业务下是否包含传入的文件名集合
+             </summary>
+             <param name="FileNames">文件名集合</param>
+             <param name="operationId">业务号</param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.GetUploadColumnType(System.Int32)">
+            <summary>
+            得到上传文件类型列表   
+            </summary>
+            <param name="operateType">业务类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.ChangeDocumentUploadState(System.Guid[],ICP.DataCache.ServiceInterface.UploadState)">
+            <summary>
+            更改本地缓存文档状态
+            </summary>
+            <param name="ids"></param>
+            <param name="state"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.Accepted(ICP.DataCache.ServiceInterface.AgentDispatchParam)">
+            <summary>
+            签收文件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.AssignTo(ICP.DataCache.ServiceInterface.AgentDispatchParam)">
+            <summary>
+            指派给
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFileService.GetDocumentListByDocumentType(System.Guid,ICP.DataCache.ServiceInterface.DocumentType)">
+            <summary>
+            获取指定业务号下的同属于所指定文档类型的所有文档
+            </summary>
+            <param name="operationId">业务ID</param>
+            <param name="documentType">文档类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFrameworkInitializeService.SaveMultiLanguageList(System.Guid[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.Nullable{System.DateTime}[],ICP.Framework.CommonLibrary.Client.LanguageType[],System.Guid,System.Boolean)">
+            <summary>
+            保存多语言资源
+            </summary>
+            <param name="ids"></param>
+            <param name="fullNames"></param>
+            <param name="formNames"></param>
+            <param name="controlNames"></param>
+            <param name="chineseValues"></param>
+            <param name="englishValues"></param>
+            <param name="updateDates"></param>
+            <param name="languageTypes"></param>
+            <param name="saveByID"></param>
+            <param name="isEnglish"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientFrameworkInitializeService.DeleteMultiLanguageList(System.Guid[],System.Nullable{System.DateTime}[],System.Guid,System.Boolean)">
+            <summary>
+            删除多语言资源
+            </summary>
+            <param name="ids">ID集合</param>
+            <param name="updateDates">更新时间</param>
+            <param name="removeID">删除人</param>
+            <param name="isEnglish">是否英文版本</param>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IClientBulkUploadOperationService">
+            <summary>
+            批量上传数据到服务端接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBulkUploadOperationService.Add(System.DateTime,System.String,System.String,System.String)">
+            <summary>
+            保存用户操作日志到本地缓存表
+            </summary>
+            <param name="OperationTime">操作时间</param>
+            <param name="AssemblyNames">所在程序集</param>
+            <param name="FunctionName">函数名</param>
+            <param name="Content">内容</param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBulkUploadOperationService.BulkInsert">
+            <summary>
+            批量保存用户操作日志到数据库
+            </summary>
+            <param name="CacheTable"></param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IClientBulkUploadOperationService.InsertMessageRelation4Batch">
+            <summary>
+            批量上传关联信息
+            </summary>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.ICustomDataGridService">
+            <summary>
+            用户列表自定义服务接口
+            <remarks>用户自定义列表的显示。可以通过全局变量LocalData.EnableCustomDataGrid禁用此功能</remarks>
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.ICustomDataGridService.Save(ICP.DataCache.ServiceInterface.UserCustomGridInfo)">
+            <summary>
+            保存用户自定义列表显示信息
+            </summary>
+            <param name="customInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.ICustomDataGridService.Get(System.Nullable{System.Guid},System.String)">
+            <summary>
+            得到用户定义列(如果获取失败，则获取默认模板)
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="templateCode">视图代码</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.IDatabaseOperation">
+            <summary>
+            数据库操作接口
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.GetDataTable(System.String)">
+            <summary>
+            数据查询
+            </summary>
+            <param name="sql">查询SQL语句</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.GetData(System.String)">
+            <summary>
+            获取整表数据
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="sql">需执行的SQL语句</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.ExecuteNonQuery(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            执行带参数SQL语句
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句返回单个值
+            </summary>
+            <param name="sql">需执行的SQL语句</param>
+            <returns>返回值;如果语句执行无返回值，则返回空字符串</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.Update(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            更新表数据
+            </summary>
+            <param name="tableName">需更新的表名</param>
+            <param name="data">列名和目标值键值对</param>
+            <param name="where">查询条件</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.Delete(System.String,System.String)">
+            <summary>
+             删除表数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="where">过滤行数据SQL</param>
+            <returns>删除成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.Insert(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            指定列名插入表数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="data">列名列值键值对</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.ClearDB">
+            <summary>
+            清空当前数据库中的所有数据
+            </summary>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IDatabaseOperation.ClearTable(System.String)">
+            <summary>
+            清空表数据
+            </summary>
+            <param name="table">表名</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IFileService.Save(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.DocumentInfo},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Guid})">
+            <summary>
+            保存文档
+            </summary>
+            <param name="newDocuments">新上传的文档</param>
+            <param name="deleteFileNames">需要删除的文档名称列表</param>
+            <param name="operationId">需要删除的文档所属的业务Id</param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IFileService.IsExistFileNames(System.Collections.Generic.List{System.String},System.Guid)">
+             <summary>
+            验证当前业务下是否包含传入的文件名集合
+             </summary>
+             <param name="FileNames">文件名集合</param>
+             <param name="operationId">业务号</param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IFileService.GetUploadColumnType(System.Int32)">
+            <summary>
+            得到上传文件类型列表
+            </summary>
+            <param name="operateType">业务类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.IFileService.GetDocumentListByDocumentType(System.Guid,ICP.DataCache.ServiceInterface.DocumentType)">
+            <summary>
+            获取指定业务号下的同属于所指定文档类型的所有文档
+            </summary>
+            <param name="operationId">业务ID</param>
+            <param name="documentType">文档类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.DataCacheUtility.SaveFileListToDisk(System.Collections.Generic.List{ICP.DataCache.ServiceInterface.ContentInfo})">
+            <summary>
+            保存ContentInfo集合，返回保存路径集合
+            </summary>
+            <param name="contentlist"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.DataCacheUtility.GetExpression(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            构造查询条件语句
+            </summary>
+            <param name="list"></param>
+            <param name="names"></param>
+            <param name="isValueList"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.StopwatchHelper">
+            <summary>
+            操作使用时间帮助类
+            </summary>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.StopwatchHelper.StartStopwatch">
+            <summary>
+            开始监控
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.StopwatchHelper.EndStopwatch(System.Diagnostics.Stopwatch,System.DateTime,System.String,System.String)">
+            <summary>
+            保存操作用时
+            </summary>
+            <param name="stopwatch">时间监控对象</param>
+            <param name="startDatetime">开始时间</param>
+            <param name="assamblyName">程序集</param>
+            <param name="functionName">函数名称</param>
+        </member>
+        <member name="M:ICP.DataCache.ServiceInterface.StopwatchHelper.MailCenterPreviewMailEndStopwatch(System.Diagnostics.Stopwatch,System.DateTime,System.String,System.String)">
+            <summary>
+            邮件中心预览邮件超过3秒就记录日志
+            </summary>
+            <param name="stopwatch"></param>
+            <param name="startDatetime"></param>
+            <param name="assamblyName"></param>
+            <param name="functionName"></param>
+        </member>
+        <member name="T:ICP.DataCache.ServiceInterface.UserCustomGridInfo">
+            <summary>
+            客户列表自定义信息类
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UserCustomGridInfo.UserId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UserCustomGridInfo.TemplateCode">
+            <summary>
+            操作视图代码   
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UserCustomGridInfo.Columns">
+            <summary>
+            列自定义信息
+            </summary>
+        </member>
+        <member name="P:ICP.DataCache.ServiceInterface.UserCustomGridInfo.UpdateDate">
+            <summary>
+            更新或创建时间
+            </summary>
+        </member>
+    </members>
+</doc>

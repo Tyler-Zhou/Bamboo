@@ -1,0 +1,2457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labCShortName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 17</value>
+  </data>
+  <data name="labCShortName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 14</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labCShortName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labCShortName.Text" xml:space="preserve">
+    <value>ShortName</value>
+  </data>
+  <data name="&gt;&gt;labCShortName.Name" xml:space="preserve">
+    <value>labCShortName</value>
+  </data>
+  <data name="&gt;&gt;labCShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCShortName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCShortName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>538, 56</value>
+  </metadata>
+  <metadata name="dxErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>814, 56</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>48</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 587</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
+    <value>bindingSource1</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colCName.Name" xml:space="preserve">
+    <value>colCName</value>
+  </data>
+  <data name="&gt;&gt;colCName.Type" xml:space="preserve">
+    <value>DevExpress.XtraTreeList.Columns.TreeListColumn, DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;colEName.Name" xml:space="preserve">
+    <value>colEName</value>
+  </data>
+  <data name="&gt;&gt;colEName.Type" xml:space="preserve">
+    <value>DevExpress.XtraTreeList.Columns.TreeListColumn, DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;bsGeography.Name" xml:space="preserve">
+    <value>bsGeography</value>
+  </data>
+  <data name="&gt;&gt;bsGeography.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Name" xml:space="preserve">
+    <value>dxErrorProvider1</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navName.Name" xml:space="preserve">
+    <value>navName</value>
+  </data>
+  <data name="&gt;&gt;navName.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBaseInfo.Name" xml:space="preserve">
+    <value>navBaseInfo</value>
+  </data>
+  <data name="&gt;&gt;navBaseInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navContactInfo.Name" xml:space="preserve">
+    <value>navContactInfo</value>
+  </data>
+  <data name="&gt;&gt;navContactInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBankInfo.Name" xml:space="preserve">
+    <value>navBankInfo</value>
+  </data>
+  <data name="&gt;&gt;navBankInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navOtherInfo.Name" xml:space="preserve">
+    <value>navOtherInfo</value>
+  </data>
+  <data name="&gt;&gt;navOtherInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroup, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomerEditPart</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>ICP.Common.UI.Common.BaseControl, ICP.Common.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="txtCShortName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 14</value>
+  </data>
+  <data name="txtCShortName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtCShortName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtCShortName.Name" xml:space="preserve">
+    <value>txtCShortName</value>
+  </data>
+  <data name="&gt;&gt;txtCShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCShortName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCShortName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtCName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 38</value>
+  </data>
+  <data name="txtCName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtCName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Name" xml:space="preserve">
+    <value>txtCName</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labCName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 41</value>
+  </data>
+  <data name="labCName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="labCName.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labCName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;labCName.Name" xml:space="preserve">
+    <value>labCName</value>
+  </data>
+  <data name="&gt;&gt;labCName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtRemark.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="txtRemark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="txtRemark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 78</value>
+  </data>
+  <data name="txtRemark.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Name" xml:space="preserve">
+    <value>txtRemark</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer5</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labCAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 90</value>
+  </data>
+  <data name="labCAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 14</value>
+  </data>
+  <data name="labCAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="labCAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Name" xml:space="preserve">
+    <value>labCAddress</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtCAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 87</value>
+  </data>
+  <data name="txtCAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 44</value>
+  </data>
+  <data name="txtCAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Name" xml:space="preserve">
+    <value>txtCAddress</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtCBillName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 62</value>
+  </data>
+  <data name="txtCBillName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtCBillName.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Name" xml:space="preserve">
+    <value>txtCBillName</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labCBillName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 65</value>
+  </data>
+  <data name="labCBillName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 14</value>
+  </data>
+  <data name="labCBillName.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labCBillName.Text" xml:space="preserve">
+    <value>BillName</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Name" xml:space="preserve">
+    <value>labCBillName</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtTel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 27</value>
+  </data>
+  <data name="txtTel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtTel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Name" xml:space="preserve">
+    <value>txtTel1</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labTel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 30</value>
+  </data>
+  <data name="labTel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 14</value>
+  </data>
+  <data name="labTel1.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labTel1.Text" xml:space="preserve">
+    <value>Tel1</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Name" xml:space="preserve">
+    <value>labTel1</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labTel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtTel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 27</value>
+  </data>
+  <data name="txtTel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 21</value>
+  </data>
+  <data name="txtTel2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Name" xml:space="preserve">
+    <value>txtTel2</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="labTel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 30</value>
+  </data>
+  <data name="labTel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 14</value>
+  </data>
+  <data name="labTel2.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labTel2.Text" xml:space="preserve">
+    <value>Tel2</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Name" xml:space="preserve">
+    <value>labTel2</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labTel2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="txtFax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 50</value>
+  </data>
+  <data name="txtFax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtFax.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Name" xml:space="preserve">
+    <value>txtFax</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtFax.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="labFax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 53</value>
+  </data>
+  <data name="labFax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 14</value>
+  </data>
+  <data name="labFax.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labFax.Text" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="&gt;&gt;labFax.Name" xml:space="preserve">
+    <value>labFax</value>
+  </data>
+  <data name="&gt;&gt;labFax.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labFax.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labFax.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="txtEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 50</value>
+  </data>
+  <data name="txtEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 21</value>
+  </data>
+  <data name="txtEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
+    <value>txtEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="labEmail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 53</value>
+  </data>
+  <data name="labEmail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 14</value>
+  </data>
+  <data name="labEmail.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labEmail.Text" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Name" xml:space="preserve">
+    <value>labEmail</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labEmail.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 74</value>
+  </data>
+  <data name="txtHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Name" xml:space="preserve">
+    <value>txtHomepage</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="labHomepage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 77</value>
+  </data>
+  <data name="labHomepage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 14</value>
+  </data>
+  <data name="labHomepage.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labHomepage.Text" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Name" xml:space="preserve">
+    <value>labHomepage</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtPostCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 74</value>
+  </data>
+  <data name="txtPostCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 21</value>
+  </data>
+  <data name="txtPostCode.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Name" xml:space="preserve">
+    <value>txtPostCode</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="labPostCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 77</value>
+  </data>
+  <data name="labPostCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 14</value>
+  </data>
+  <data name="labPostCode.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labPostCode.Text" xml:space="preserve">
+    <value>Post Code</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Name" xml:space="preserve">
+    <value>labPostCode</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labTaxIdType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 6</value>
+  </data>
+  <data name="labTaxIdType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="labTaxIdType.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="labTaxIdType.Text" xml:space="preserve">
+    <value>TaxIdType</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Name" xml:space="preserve">
+    <value>labTaxIdType</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cmbTaxidType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>324, 3</value>
+  </data>
+  <data name="cmbTaxidType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="cmbTaxidType.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Name" xml:space="preserve">
+    <value>cmbTaxidType</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numCreditLimit.EditValue" type="System.Decimal, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="numCreditLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>324, 27</value>
+  </data>
+  <data name="numCreditLimit.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="numCreditLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="numCreditLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Name" xml:space="preserve">
+    <value>numCreditLimit</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labCreditLimit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 31</value>
+  </data>
+  <data name="labCreditLimit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 14</value>
+  </data>
+  <data name="labCreditLimit.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="labCreditLimit.Text" xml:space="preserve">
+    <value>CreditLimit</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Name" xml:space="preserve">
+    <value>labCreditLimit</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txtTaxidNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 3</value>
+  </data>
+  <data name="txtTaxidNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="txtTaxidNo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Name" xml:space="preserve">
+    <value>txtTaxidNo</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labTaxIdNo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 6</value>
+  </data>
+  <data name="labTaxIdNo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 14</value>
+  </data>
+  <data name="labTaxIdNo.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labTaxIdNo.Text" xml:space="preserve">
+    <value>TaxIdNo</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Name" xml:space="preserve">
+    <value>labTaxIdNo</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labTerm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>521, 31</value>
+  </data>
+  <data name="labTerm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 14</value>
+  </data>
+  <data name="labTerm.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="labTerm.Text" xml:space="preserve">
+    <value>Term</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Name" xml:space="preserve">
+    <value>labTerm</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTerm.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="numTerm.EditValue" type="System.Decimal, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="numTerm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>584, 27</value>
+  </data>
+  <data name="numTerm.Properties.Mask.EditMask" xml:space="preserve">
+    <value>N00</value>
+  </data>
+  <data name="numTerm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="numTerm.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Name" xml:space="preserve">
+    <value>numTerm</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;numTerm.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="labType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>408, 8</value>
+  </data>
+  <data name="labType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 14</value>
+  </data>
+  <data name="labType.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="labType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="&gt;&gt;labType.Name" xml:space="preserve">
+    <value>labType</value>
+  </data>
+  <data name="&gt;&gt;labType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cmbType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 4</value>
+  </data>
+  <data name="cmbType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 21</value>
+  </data>
+  <data name="cmbType.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Name" xml:space="preserve">
+    <value>cmbType</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ImageComboBoxEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;cmbType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chkIsAgentOfCarrier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>622, 6</value>
+  </data>
+  <data name="chkIsAgentOfCarrier.Properties.Caption" xml:space="preserve">
+    <value>IsAgentOfCarrier</value>
+  </data>
+  <data name="chkIsAgentOfCarrier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 19</value>
+  </data>
+  <data name="chkIsAgentOfCarrier.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Name" xml:space="preserve">
+    <value>chkIsAgentOfCarrier</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labTradeTerm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 6</value>
+  </data>
+  <data name="labTradeTerm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 14</value>
+  </data>
+  <data name="labTradeTerm.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="labTradeTerm.Text" xml:space="preserve">
+    <value>TradeTerm</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Name" xml:space="preserve">
+    <value>labTradeTerm</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labPaymentType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 31</value>
+  </data>
+  <data name="labPaymentType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 14</value>
+  </data>
+  <data name="labPaymentType.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="labPaymentType.Text" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Name" xml:space="preserve">
+    <value>labPaymentType</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cmbTradeTerm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 3</value>
+  </data>
+  <data name="cmbTradeTerm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="cmbTradeTerm.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Name" xml:space="preserve">
+    <value>cmbTradeTerm</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmbPaymentType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 27</value>
+  </data>
+  <data name="cmbPaymentType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 21</value>
+  </data>
+  <data name="cmbPaymentType.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Name" xml:space="preserve">
+    <value>cmbPaymentType</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Name" xml:space="preserve">
+    <value>txtCBillName</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCBillName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Name" xml:space="preserve">
+    <value>txtCName</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Name" xml:space="preserve">
+    <value>labCBillName</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCBillName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labCName.Name" xml:space="preserve">
+    <value>labCName</value>
+  </data>
+  <data name="&gt;&gt;labCName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCName.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Name" xml:space="preserve">
+    <value>labCAddress</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;labCAddress.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Name" xml:space="preserve">
+    <value>txtCAddress</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.Parent" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;txtCAddress.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupCNInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupCNInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 138</value>
+  </data>
+  <data name="groupCNInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupCNInfo.Text" xml:space="preserve">
+    <value>CN Info</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Name" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Name" xml:space="preserve">
+    <value>txtEShortName</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Name" xml:space="preserve">
+    <value>txtEBillName</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Name" xml:space="preserve">
+    <value>txtEName</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Name" xml:space="preserve">
+    <value>labEShortName</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Name" xml:space="preserve">
+    <value>labEBillName</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labEName.Name" xml:space="preserve">
+    <value>labEName</value>
+  </data>
+  <data name="&gt;&gt;labEName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Name" xml:space="preserve">
+    <value>labEAddress</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Name" xml:space="preserve">
+    <value>txtEAddress</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="groupENInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 3</value>
+  </data>
+  <data name="groupENInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 138</value>
+  </data>
+  <data name="groupENInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="groupENInfo.Text" xml:space="preserve">
+    <value>EN Info</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Name" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtEShortName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 14</value>
+  </data>
+  <data name="txtEShortName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtEShortName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Name" xml:space="preserve">
+    <value>txtEShortName</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEShortName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtEBillName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 62</value>
+  </data>
+  <data name="txtEBillName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtEBillName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Name" xml:space="preserve">
+    <value>txtEBillName</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEBillName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtEName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 38</value>
+  </data>
+  <data name="txtEName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtEName.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Name" xml:space="preserve">
+    <value>txtEName</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labEShortName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 17</value>
+  </data>
+  <data name="labEShortName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 14</value>
+  </data>
+  <data name="labEShortName.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labEShortName.Text" xml:space="preserve">
+    <value>ShortName</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Name" xml:space="preserve">
+    <value>labEShortName</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEShortName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labEBillName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 65</value>
+  </data>
+  <data name="labEBillName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 14</value>
+  </data>
+  <data name="labEBillName.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labEBillName.Text" xml:space="preserve">
+    <value>BillName</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Name" xml:space="preserve">
+    <value>labEBillName</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEBillName.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labEName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 41</value>
+  </data>
+  <data name="labEName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 14</value>
+  </data>
+  <data name="labEName.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labEName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="&gt;&gt;labEName.Name" xml:space="preserve">
+    <value>labEName</value>
+  </data>
+  <data name="&gt;&gt;labEName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEName.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEName.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="labEAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 90</value>
+  </data>
+  <data name="labEAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 14</value>
+  </data>
+  <data name="labEAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="labEAddress.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Name" xml:space="preserve">
+    <value>labEAddress</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;labEAddress.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtEAddress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 87</value>
+  </data>
+  <data name="txtEAddress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 44</value>
+  </data>
+  <data name="txtEAddress.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Name" xml:space="preserve">
+    <value>txtEAddress</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.Parent" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;txtEAddress.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnToEnInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        AElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnToEnInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 33</value>
+  </data>
+  <data name="btnToEnInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 28</value>
+  </data>
+  <data name="btnToEnInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Name" xml:space="preserve">
+    <value>btnToEnInfo</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnToCnInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnToCnInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>352, 71</value>
+  </data>
+  <data name="btnToCnInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 28</value>
+  </data>
+  <data name="btnToCnInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Name" xml:space="preserve">
+    <value>btnToCnInfo</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 6</value>
+  </data>
+  <data name="labCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 14</value>
+  </data>
+  <data name="labCity.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="&gt;&gt;labCity.Name" xml:space="preserve">
+    <value>labCity</value>
+  </data>
+  <data name="&gt;&gt;labCity.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCity.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labCity.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="popGeography.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 3</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Name" xml:space="preserve">
+    <value>treeGeography</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraTreeList.TreeList, DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Parent" xml:space="preserve">
+    <value>popContainerGeography</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="popContainerGeography.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 106</value>
+  </data>
+  <data name="popContainerGeography.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 197</value>
+  </data>
+  <data name="popContainerGeography.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Name" xml:space="preserve">
+    <value>popContainerGeography</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PopupContainerControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="popGeography.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="popGeography.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Name" xml:space="preserve">
+    <value>popGeography</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PopupContainerEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;popGeography.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="bsGeography.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>683, 56</value>
+  </metadata>
+  <data name="treeGeography.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="treeGeography.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="treeGeography.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 197</value>
+  </data>
+  <data name="treeGeography.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Name" xml:space="preserve">
+    <value>treeGeography</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraTreeList.TreeList, DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.Parent" xml:space="preserve">
+    <value>popContainerGeography</value>
+  </data>
+  <data name="&gt;&gt;treeGeography.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="colCName.Caption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="colCName.Width" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="colEName.Caption" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="colEName.Width" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <metadata name="bsGeography.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>683, 56</value>
+  </metadata>
+  <data name="cmbCity.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 3</value>
+  </data>
+  <data name="cmbCity.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 21</value>
+  </data>
+  <data name="cmbCity.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Name" xml:space="preserve">
+    <value>cmbCity</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ImageComboBoxEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labGeography.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 6</value>
+  </data>
+  <data name="labGeography.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 14</value>
+  </data>
+  <data name="labGeography.TabIndex" type="System.Int32, mscorlib">
+    <value>73</value>
+  </data>
+  <data name="labGeography.Text" xml:space="preserve">
+    <value>Geography</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Name" xml:space="preserve">
+    <value>labGeography</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labGeography.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="labKeyWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 28</value>
+  </data>
+  <data name="labKeyWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 14</value>
+  </data>
+  <data name="labKeyWord.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="labKeyWord.Text" xml:space="preserve">
+    <value>KeyWord</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Name" xml:space="preserve">
+    <value>labKeyWord</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 7</value>
+  </data>
+  <data name="labCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 14</value>
+  </data>
+  <data name="labCode.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="labCode.Text" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="&gt;&gt;labCode.Name" xml:space="preserve">
+    <value>labCode</value>
+  </data>
+  <data name="&gt;&gt;labCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labCode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="txtKeyWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 25</value>
+  </data>
+  <data name="txtKeyWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtKeyWord.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Name" xml:space="preserve">
+    <value>txtKeyWord</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>86, 2</value>
+  </data>
+  <data name="txtCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>246, 21</value>
+  </data>
+  <data name="txtCode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Name" xml:space="preserve">
+    <value>txtCode</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;txtCode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="navName.Caption" xml:space="preserve">
+    <value>Name Info</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Name" xml:space="preserve">
+    <value>groupCNInfo</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;groupCNInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Name" xml:space="preserve">
+    <value>groupENInfo</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;groupENInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Name" xml:space="preserve">
+    <value>btnToEnInfo</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;btnToEnInfo.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Name" xml:space="preserve">
+    <value>btnToCnInfo</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;btnToCnInfo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="navBarGroupControlContainer1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 146</value>
+  </data>
+  <data name="navBarGroupControlContainer1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer1.Name" xml:space="preserve">
+    <value>navBarGroupControlContainer1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer1.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroupControlContainer, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer1.Parent" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Name" xml:space="preserve">
+    <value>labKeyWord</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labKeyWord.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Name" xml:space="preserve">
+    <value>txtCode</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;txtCode.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labCode.Name" xml:space="preserve">
+    <value>labCode</value>
+  </data>
+  <data name="&gt;&gt;labCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labCode.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Name" xml:space="preserve">
+    <value>chkIsAgentOfCarrier</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;chkIsAgentOfCarrier.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;labType.Name" xml:space="preserve">
+    <value>labType</value>
+  </data>
+  <data name="&gt;&gt;labType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;labType.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Name" xml:space="preserve">
+    <value>cmbType</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ImageComboBoxEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;cmbType.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Name" xml:space="preserve">
+    <value>txtKeyWord</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;txtKeyWord.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="navBarGroupControlContainer2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 50</value>
+  </data>
+  <data name="navBarGroupControlContainer2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer2.Name" xml:space="preserve">
+    <value>navBarGroupControlContainer2</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer2.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroupControlContainer, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer2.Parent" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labCity.Name" xml:space="preserve">
+    <value>labCity</value>
+  </data>
+  <data name="&gt;&gt;labCity.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCity.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labCity.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Name" xml:space="preserve">
+    <value>popContainerGeography</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PopupContainerControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;popContainerGeography.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Name" xml:space="preserve">
+    <value>popGeography</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PopupContainerEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;popGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;popGeography.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Name" xml:space="preserve">
+    <value>labPostCode</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labPostCode.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Name" xml:space="preserve">
+    <value>cmbCity</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.ImageComboBoxEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;cmbCity.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Name" xml:space="preserve">
+    <value>labHomepage</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labHomepage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Name" xml:space="preserve">
+    <value>labTel1</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTel1.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labTel1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Name" xml:space="preserve">
+    <value>labEmail</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labEmail.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labEmail.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Name" xml:space="preserve">
+    <value>txtTel1</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtTel1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;labFax.Name" xml:space="preserve">
+    <value>labFax</value>
+  </data>
+  <data name="&gt;&gt;labFax.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labFax.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labFax.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Name" xml:space="preserve">
+    <value>labGeography</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labGeography.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labGeography.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Name" xml:space="preserve">
+    <value>labTel2</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTel2.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;labTel2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Name" xml:space="preserve">
+    <value>txtTel2</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtTel2.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Name" xml:space="preserve">
+    <value>txtPostCode</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtPostCode.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Name" xml:space="preserve">
+    <value>txtFax</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtFax.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtFax.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Name" xml:space="preserve">
+    <value>txtHomepage</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtHomepage.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Name" xml:space="preserve">
+    <value>txtEmail</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;txtEmail.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="navBarGroupControlContainer3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 100</value>
+  </data>
+  <data name="navBarGroupControlContainer3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer3.Name" xml:space="preserve">
+    <value>navBarGroupControlContainer3</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer3.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroupControlContainer, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer3.Parent" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer3.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Name" xml:space="preserve">
+    <value>cmbTaxidType</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbTaxidType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Name" xml:space="preserve">
+    <value>cmbTradeTerm</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbTradeTerm.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Name" xml:space="preserve">
+    <value>labTaxIdType</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Name" xml:space="preserve">
+    <value>labPaymentType</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labPaymentType.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Name" xml:space="preserve">
+    <value>txtTaxidNo</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;txtTaxidNo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Name" xml:space="preserve">
+    <value>labTradeTerm</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTradeTerm.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Name" xml:space="preserve">
+    <value>labTaxIdNo</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTaxIdNo.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Name" xml:space="preserve">
+    <value>labTerm</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labTerm.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Name" xml:space="preserve">
+    <value>numCreditLimit</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;numCreditLimit.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Name" xml:space="preserve">
+    <value>cmbPaymentType</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.Controls.LWImageComboBoxEdit, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;cmbPaymentType.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Name" xml:space="preserve">
+    <value>labCreditLimit</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;labCreditLimit.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Name" xml:space="preserve">
+    <value>numTerm</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;numTerm.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;numTerm.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="navBarGroupControlContainer4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 54</value>
+  </data>
+  <data name="navBarGroupControlContainer4.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer4.Name" xml:space="preserve">
+    <value>navBarGroupControlContainer4</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer4.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroupControlContainer, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer4.Parent" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer4.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Name" xml:space="preserve">
+    <value>txtRemark</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.Parent" xml:space="preserve">
+    <value>navBarGroupControlContainer5</value>
+  </data>
+  <data name="&gt;&gt;txtRemark.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="navBarGroupControlContainer5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>751, 78</value>
+  </data>
+  <data name="navBarGroupControlContainer5.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer5.Name" xml:space="preserve">
+    <value>navBarGroupControlContainer5</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer5.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarGroupControlContainer, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer5.Parent" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarGroupControlContainer5.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="navBaseInfo.Caption" xml:space="preserve">
+    <value>Base Info</value>
+  </data>
+  <data name="navContactInfo.Caption" xml:space="preserve">
+    <value>Contact Info</value>
+  </data>
+  <data name="navBankInfo.Caption" xml:space="preserve">
+    <value>Bank Info</value>
+  </data>
+  <data name="navOtherInfo.Caption" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="navBarControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="navBarControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>755, 583</value>
+  </data>
+  <data name="navBarControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="navBarControl1.Text" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Name" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarControl, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Name" xml:space="preserve">
+    <value>navBarControl1</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraNavBar.NavBarControl, DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;navBarControl1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>776, 587</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+</root>

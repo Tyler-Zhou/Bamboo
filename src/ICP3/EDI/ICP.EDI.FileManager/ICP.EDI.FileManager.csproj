@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C576F8A8-739C-4550-B136-6C11BD6E586F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.EDI.FileManager</RootNamespace>
+    <AssemblyName>ICP.EDI.FileManager</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>c:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.EDI.FileManager.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AMS\AMSDataSource.cs">
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AMS\AMSDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="COSCO\COSCOBookings.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="COSCO\COSCOBookings.Designer.cs">
+      <DependentUpon>COSCOBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COSCO\COSCOSI.cs">
+      <DependentUpon>COSCOSI.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="COSCO\COSCOSI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>COSCOSI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSCL\CSCLBooking.cs">
+      <DependentUpon>CSCLBooking.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CSCL\CSCLBooking.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CSCLBooking.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CSCL\INTRRASI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FYCW\IFCSUM_FYCW.Designer.cs" />
+    <Compile Include="FYCW\IFCSUM_FYCW1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Common\mbl.cs">
+      <DependentUpon>mbl.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\mbl.Designer.cs">
+      <DependentUpon>mbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\mbl1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mbl.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AMS\2013-6-3AMS注册联系人.txt" />
+    <Content Include="Common\CCF_Target.xml" />
+    <Content Include="CSCL\CSCL.XML" />
+    <Content Include="Common\CustomerInfoxml.xml" />
+    <Content Include="Common\EDIConfig.xml" />
+    <Content Include="CSCL\CSCL资料\Booking\CARGO2000SAS EBOOKING EDI样本-SH.TXT" />
+    <Content Include="FYCW\IFCSUM_FYCW.xml" />
+    <Content Include="Common\PortXML.XML" />
+    <Content Include="HANJIN\韩进资料\APERAK_Sample.txt" />
+    <Content Include="HANJIN\韩进资料\IFTMBC_Sample.txt" />
+    <Content Include="HANJIN\韩进资料\IFTMBF_Sample.txt" />
+    <Content Include="HANJIN\韩进资料\IFTMIN_Sample.txt" />
+    <Content Include="TextFile1.txt" />
+    <Content Include="船东IT人员联系方式.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AMS\2013-4-19 XML_CargoSecurityFilingSchema.xlsx" />
+    <None Include="AMS\ACI.mfd" />
+    <None Include="AMS\AMS.mfd" />
+    <None Include="AMS\AMSACI.mfd" />
+    <None Include="AMS\AMSACIISF.mfd" />
+    <None Include="AMS\AMSACIISF.xsd" />
+    <None Include="AMS\AMSDataSource.xsc">
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="AMS\AMSDataSource.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSource.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="AMS\AMSDataSource.xss">
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="AMS\AMSISF.mfd" />
+    <None Include="AMS\各口岸登录用户名列表及部分密码.xlsx" />
+    <None Include="AMS\ISF.mfd" />
+    <None Include="Common\CCF_Target.xsd" />
+    <None Include="COSCO\COSCOBookings.mfd" />
+    <None Include="COSCO\COSCOBookings.xsc" />
+    <None Include="COSCO\COSCOBookings.xss" />
+    <None Include="Common\CustomerInfoxml.xsd" />
+    <None Include="Common\datetime.xsd" />
+    <None Include="COSCO\COSCOSI.xsc">
+      <DependentUpon>COSCOSI.xsd</DependentUpon>
+    </None>
+    <None Include="COSCO\COSCOSI.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>COSCOSI.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="COSCO\COSCOSI.xss">
+      <DependentUpon>COSCOSI.xsd</DependentUpon>
+    </None>
+    <None Include="COSCO\COSCOSINEW.mfd" />
+    <None Include="COSCO\COSCO资料\4010 323 INTL 10 09 07.doc" />
+    <None Include="COSCO\COSCO资料\Inbound EDI_315_MIG_v21.doc" />
+    <None Include="COSCO\COSCO资料\Inbound_301_MIG.DOC" />
+    <None Include="COSCO\COSCO资料\Inbound_Rated_310_MIG[1].doc" />
+    <None Include="COSCO\COSCO资料\Outbound_300_MIG.DOC" />
+    <None Include="COSCO\COSCO资料\2013-6-14补料Outbound_304_MIG.doc" />
+    <None Include="CSCL\CSCL.mfp" />
+    <None Include="CSCL\CSCLBooking.xsc">
+      <DependentUpon>CSCLBooking.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\CSCLBooking.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CSCLBooking.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CSCL\CSCLBooking.xss">
+      <DependentUpon>CSCLBooking.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\CSCL资料\Booking\CARGO2000 SAS系统EDI订舱报文平台文件的解析说明.doc" />
+    <None Include="CSCL\CSCL资料\Booking\CARGO2000SAS订舱报文（FTMBF）平台文件.doc" />
+    <None Include="CSCL\CSCL资料\Booking\电子装箱平台文件.doc" />
+    <None Include="CSCL\CSCL资料\EDIFACT_D99B_IFTMIN_IN_v3.0.pdf" />
+    <None Include="CSCL\IFTMIN-CSCL_NEW.mfd" />
+    <None Include="CSCL\IFTMIN-INTRRA.mfd" />
+    <None Include="CSCL\IFTMIN-INTRRASO.mfd" />
+    <None Include="CSCL\INTRRASI.xsc">
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\INTRRASI.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INTRRASI.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CSCL\INTRRASI.xss">
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\INTRRASO.xsc">
+      <DependentUpon>INTRRASO.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\INTRRASO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INTRRASO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CSCL\INTRRASO.xss">
+      <DependentUpon>INTRRASO.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\mblcsclsi.xsc">
+      <DependentUpon>mblcsclsi.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\mblcsclsi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mblcsclsi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CSCL\mblcsclsi.xss">
+      <DependentUpon>mblcsclsi.xsd</DependentUpon>
+    </None>
+    <None Include="CSCL\Template\CSCLBooking.mft" />
+    <None Include="HANJIN\EDI-HJSC.mfp" />
+    <None Include="Common\EDI-UDF.mfd" />
+    <None Include="EDI配置说明.doc" />
+    <None Include="Common\Exception.xsd" />
+    <None Include="Common\GetGoodsInfo.mfd" />
+    <None Include="Common\IFCSUM_F.DOC 船舶舱单报文.doc" />
+    <None Include="FYCW\IFCSUM_FYCW.mfd" />
+    <None Include="FYCW\IFCSUM_FYCW.xsc">
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </None>
+    <None Include="FYCW\IFCSUM_FYCW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IFCSUM_FYCW1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FYCW\IFCSUM_FYCW.xss">
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </None>
+    <None Include="HANJIN\HJBooking.mfd" />
+    <None Include="HANJIN\韩进资料\补料2013-3更新.pdf" />
+    <None Include="PIL\PIL_Booking.mfd" />
+    <None Include="PIL\PIL资料\Commodity.xls" />
+    <None Include="PIL\PIL资料\Ctnr ISO CODE.xls" />
+    <None Include="PIL\PIL资料\iBooking - PIL EDI Format.xls" />
+    <None Include="PIL\PIL资料\webcsm-vessels-290611.xls" />
+    <None Include="PIL\PIL资料\webCSM_Ports.xls" />
+    <None Include="PIL\PIL资料\常用webCSM Package Code.xls" />
+    <None Include="PIL\PIL资料\运输-托运方式.xls" />
+    <None Include="POS\IFCSUM定义%28POS标准%29.doc" />
+    <None Include="HANJIN\IFTMBF-HJSC.mfd" />
+    <None Include="Common\IFTMIN-CCF.mfd" />
+    <None Include="CSCL\IFTMIN-CSCL.mfd" />
+    <None Include="HANJIN\IFTMIN-HJSC.mfd" />
+    <None Include="Common\mbl.xsc">
+      <DependentUpon>mbl.xsd</DependentUpon>
+    </None>
+    <None Include="Common\mbl.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>mbl1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Common\mbl.xss">
+      <DependentUpon>mbl.xsd</DependentUpon>
+    </None>
+    <None Include="Common\ParseCustomerString.mfd" />
+    <None Include="Common\ParsePortString.mfd" />
+    <None Include="Common\ParseStringToXml.mfd" />
+    <None Include="Common\ParseStringToXML.xsd" />
+    <None Include="Common\ParseStringToXmlForZH.mfd" />
+    <None Include="Common\PortXML.xsd" />
+    <None Include="WebInvoke.mfd" />
+    <None Include="WebService_WebInvoke.mfd" />
+    <None Include="xml_cargosecurityfilingschema.xls" />
+    <None Include="AMS\XML_CargoSecurityFilingSchema.xlsx" />
+    <None Include="HANJIN\韩进资料\APERAK D00A.xls" />
+    <None Include="HANJIN\韩进资料\Container Type Size &amp; ISO Code.xls" />
+    <None Include="HANJIN\韩进资料\EAC_IFTMBF%28MIG%29_CHN_20050601.xls" />
+    <None Include="HANJIN\韩进资料\EAC_IFTMIN%28MIG%29_CHN_20110113.xls" />
+    <None Include="HANJIN\韩进资料\IFTMBC D98B.xls" />
+    <None Include="HANJIN\韩进资料\Package Unit.xls" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

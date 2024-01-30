@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.FileSystem.ServiceInterface", "ICP.FileSystem.ServiceInterface\ICP.FileSystem.ServiceInterface.csproj", "{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.FileSystem.ServiceComponent", "ICP.FileSystem.ServiceComponent\ICP.FileSystem.ServiceComponent.csproj", "{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.FileSystem.Service", "ICP.FileSystem.Service\ICP.FileSystem.Service.csproj", "{3C035483-184F-47F0-A3ED-8A22F74E6718}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB} = {9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}
+		{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2} = {46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.EDIManager.ServiceComponent", "ICP.EDIManager.ServiceComponent\ICP.EDIManager.ServiceComponent.csproj", "{E6C6B05B-32D3-4CF4-AC8B-014F892AE8C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.EDIManager.ServiceInterface", "ICP.EDIManager.ServiceInterface\ICP.EDIManager.ServiceInterface.csproj", "{A2BB5318-4A06-456E-828B-1ADEE0C28292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.FileSystem.UI", "ICP.FileSystem.UI\ICP.FileSystem.UI.csproj", "{039C52FC-CEC3-4746-9C9E-31F5CFBAE35B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E07BF4E-FB18-4716-BB24-5C04E7F6A6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46EB7CD4-C411-4C60-8914-63E6C0D0F7A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C035483-184F-47F0-A3ED-8A22F74E6718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C035483-184F-47F0-A3ED-8A22F74E6718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C035483-184F-47F0-A3ED-8A22F74E6718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C035483-184F-47F0-A3ED-8A22F74E6718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6C6B05B-32D3-4CF4-AC8B-014F892AE8C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6C6B05B-32D3-4CF4-AC8B-014F892AE8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6C6B05B-32D3-4CF4-AC8B-014F892AE8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6C6B05B-32D3-4CF4-AC8B-014F892AE8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2BB5318-4A06-456E-828B-1ADEE0C28292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2BB5318-4A06-456E-828B-1ADEE0C28292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2BB5318-4A06-456E-828B-1ADEE0C28292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2BB5318-4A06-456E-828B-1ADEE0C28292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039C52FC-CEC3-4746-9C9E-31F5CFBAE35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039C52FC-CEC3-4746-9C9E-31F5CFBAE35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039C52FC-CEC3-4746-9C9E-31F5CFBAE35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039C52FC-CEC3-4746-9C9E-31F5CFBAE35B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03A6FCE0-3A18-432A-AF33-54E804537414}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.0.16:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ICP.FileSystem.ServiceInterface\\ICP.FileSystem.ServiceInterface.csproj
+		SccProjectName1 = ICP.FileSystem.ServiceInterface
+		SccLocalPath1 = ICP.FileSystem.ServiceInterface
+		SccProjectUniqueName2 = ICP.FileSystem.ServiceComponent\\ICP.FileSystem.ServiceComponent.csproj
+		SccProjectName2 = ICP.FileSystem.ServiceComponent
+		SccLocalPath2 = ICP.FileSystem.ServiceComponent
+		SccProjectUniqueName3 = ICP.FileSystem.Service\\ICP.FileSystem.Service.csproj
+		SccProjectName3 = ICP.FileSystem.Service
+		SccLocalPath3 = ICP.FileSystem.Service
+		SccProjectUniqueName4 = ICP.EDIManager.ServiceComponent\\ICP.EDIManager.ServiceComponent.csproj
+		SccProjectName4 = ICP.EDIManager.ServiceComponent
+		SccLocalPath4 = ICP.EDIManager.ServiceComponent
+		SccProjectUniqueName5 = ICP.EDIManager.ServiceInterface\\ICP.EDIManager.ServiceInterface.csproj
+		SccProjectName5 = ICP.EDIManager.ServiceInterface
+		SccLocalPath5 = ICP.EDIManager.ServiceInterface
+		SccProjectUniqueName6 = ICP.FileSystem.UI\\ICP.FileSystem.UI.csproj
+		SccProjectName6 = ICP.FileSystem.UI
+		SccLocalPath6 = ICP.FileSystem.UI
+	EndGlobalSection
+EndGlobal

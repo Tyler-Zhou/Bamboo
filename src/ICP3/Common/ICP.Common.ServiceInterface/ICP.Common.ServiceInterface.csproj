@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51B3A0D7-B210-40DE-AF2E-FDE6C8344AE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.Common.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.Common.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.Common.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.Common.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Client\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaiDuAI\IOCRService.cs" />
+    <Compile Include="Client\IClientBaseDataService.cs" />
+    <Compile Include="Client\IReportViewService.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\IOHelper.cs" />
+    <Compile Include="Common\FinderConstants.cs" />
+    <Compile Include="Common\SqlFilterHelper.cs" />
+    <Compile Include="Common\StringExtensionMethods.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\CustomerCompositeObjects.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\ConfigureSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\SaveRequestMapping.cs" />
+    <Compile Include="DataObjects\BaiduAI\BaiDuAIAccessToken.cs" />
+    <Compile Include="DataObjects\BaiduAI\NumberResult.cs" />
+    <Compile Include="DataObjects\BusinessOperationContext.cs" />
+    <Compile Include="DataObjects\CountryPortList.cs" />
+    <Compile Include="DataObjects\CooperationCustomerDataObjects.cs" />
+    <Compile Include="DataObjects\CustomerDescriptionExtensionMethods.cs" />
+    <Compile Include="DataObjects\CustomerDescriptionForNew.cs" />
+    <Compile Include="DataObjects\EventObjects.cs" />
+    <Compile Include="DataObjects\FileArchiveMenuInfo.cs" />
+    <Compile Include="DataObjects\ShippingCountryInfo.cs" />
+    <Compile Include="DataObjects\CustomerDescriptionForAMS.cs" />
+    <Compile Include="DataObjects\CustomerDataObjects.cs" />
+    <Compile Include="DataObjects\DataObjects.cs" />
+    <Compile Include="DataObjects\DataObjectsExtend.cs" />
+    <Compile Include="DataObjects\Enum.cs" />
+    <Compile Include="DataObjects\GoToObject.cs" />
+    <Compile Include="DataObjects\GotoSetting.cs" />
+    <Compile Include="DataObjects\ShippingPortInfo.cs" />
+    <Compile Include="DataObjects\VerificationSheetObjects.cs" />
+    <Compile Include="IBaseDataNotifyService.cs" />
+    <Compile Include="ICommonService.cs" />
+    <Compile Include="IKeyboardEventHandleService.cs" />
+    <Compile Include="IKeyboardEventService.cs" />
+    <Compile Include="Interface\IBaseDataService.cs" />
+    <Compile Include="Interface\IClientServers.cs" />
+    <Compile Include="Interface\ICommonGoTo.cs" />
+    <Compile Include="Interface\IConfigureService.cs" />
+    <Compile Include="Interface\ICooperationCustomerService.cs" />
+    <Compile Include="Interface\IMappingService.cs" />
+    <Compile Include="Interface\ICustomerService.cs" />
+    <Compile Include="Interface\IExcelService.cs" />
+    <Compile Include="Interface\IFileConvertService.cs" />
+    <Compile Include="Interface\IGeographyService.cs" />
+    <Compile Include="Interface\IPDFOperation.cs" />
+    <Compile Include="Interface\ITransportFoundationService.cs" />
+    <Compile Include="Interface\IVerificationSheetService.cs" />
+    <Compile Include="KeyboardEventService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CompositeObjects\SearchParameter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

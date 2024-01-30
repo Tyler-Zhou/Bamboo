@@ -1,0 +1,1613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>4.75cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>4cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.77646cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.77646cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.02645cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.75cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.63492cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox44">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!N3.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>30</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!N2.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <ZIndex>29</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="N1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!N1.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>N1</rd:DefaultName>
+                      <ZIndex>28</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>KGS</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <ZIndex>27</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>CBM</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>26</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>TEU</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>25</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>QTY</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox5</rd:DefaultName>
+                      <ZIndex>24</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.4cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox6">
+                      <CanGrow>true</CanGrow>
+                      <HideDuplicates>DebitnoteAgeForCRDR_Total</HideDuplicates>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!C3.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <Color>RoyalBlue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>RPT_CSP_GetDetailTEUReport</ReportName>
+                              <Parameters>
+                                <Parameter Name="Condition">
+                                  <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(
+Parameters!Condition.Value
+ ,Switch(
+ Fields!N3.Value.ToString().Trim().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Sales".ToUpper() , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N3.Value.ToString().Trim().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet"
+,Fields!N3.Value.ToString().Trim().ToUpper() ="船东".ToUpper() , "CarrierSet" )
+,"'"+Fields!SubId3.Value.ToString()+"'"
+).ToString().Replace("&lt;/root&gt;"," &lt;IsFromDrilling&gt;1&lt;/IsFromDrilling&gt; &lt;/root&gt;")</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox15">
+                      <CanGrow>true</CanGrow>
+                      <HideDuplicates>DebitnoteAgeForCRDR_Total</HideDuplicates>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!C2.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <Color>DodgerBlue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>RPT_CSP_GetDetailTEUReport</ReportName>
+                              <Parameters>
+                                <Parameter Name="Condition">
+                                  <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(Parameters!Condition.Value
+,Switch(
+ Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Sales".ToUpper() , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="船东".ToUpper() , "CarrierSet" )
+,"'"+Fields!SubId3.Value.ToString()  +"'")
+,Switch(
+ Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Sales".ToUpper() , "SalesSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N2.Value.ToString().Trim().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet".ToUpper()
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="船东".ToUpper() , "CarrierSet" )
+,"'"+Fields!SubId2.Value.ToString()+"'"
+).ToString().Replace("&lt;/root&gt;"," &lt;IsFromDrilling&gt;1&lt;/IsFromDrilling&gt; &lt;/root&gt;")</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox17">
+                      <CanGrow>true</CanGrow>
+                      <HideDuplicates>DebitnoteAgeForCRDR_Total</HideDuplicates>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!C1.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <Color>DodgerBlue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>RPT_CSP_GetDetailTEUReport</ReportName>
+                              <Parameters>
+                                <Parameter Name="Condition">
+                                  <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.SetConditionForValue(Parameters!Condition.Value
+,Switch(
+ Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Sales" , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet"
+,Fields!N3.Value.ToString().Trim().ToString().ToUpper() ="船东".ToUpper() , "CarrierSet" )
+,"'"+Fields!SubId3.Value.ToString()+"'")
+,Switch(
+ Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Sales".ToUpper() , "SalesSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet"
+,Fields!N2.Value.ToString().Trim().ToString().ToUpper() ="船东".ToUpper() , "CarrierSet" )
+,"'"+Fields!SubId2.Value.ToString()+"'"
+),
+Switch(
+ Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="POL".ToUpper() , "LoadPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Port Of Load".ToUpper() , "LoadPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="POD".ToUpper() , "DiscPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Port Of Discharge".ToUpper() , "DiscPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Destination".ToUpper() , "DestPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="目的地".ToUpper() , "DestPortSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Sales".ToUpper() , "SalesSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="业务员".ToUpper() , "SalesSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Shipper".ToUpper() , "ShipperSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="发货人".ToUpper() , "ShipperSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="Consignee".ToUpper() , "ConsigneeSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="收货人".ToUpper() , "ConsigneeSet"	
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="ShippOwner".ToUpper() , "CarrierSet"
+,Fields!N1.Value.ToString().Trim().ToString().ToUpper() ="船东".ToUpper() , "CarrierSet" ),
+"'"+Fields!SubId1.Value.ToString()+"'").ToString().Replace("&lt;/root&gt;"," &lt;IsFromDrilling&gt;1&lt;/IsFromDrilling&gt; &lt;/root&gt;")</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="KGS">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!KGS.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>KGS</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CMB">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!CMB.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CMB</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TEU">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!TEU.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TEU</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="HBLQTY">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!HBLQTY.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>HBLQTY</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>1pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>0.5pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.63492cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox29">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox31">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!C2.Value, "table1_Group2")</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="KGS_1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!KGS.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>KGS_1</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CMB_1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!CMB.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CMB_1</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TEU_1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!TEU.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>g</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TEU_1</rd:DefaultName>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="HBLQTY_1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!HBLQTY.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>HBLQTY_1</rd:DefaultName>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.63492cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox36">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=First(Fields!C3.Value, "table1_Group1")</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="KGS_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!KGS.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>KGS_2</rd:DefaultName>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CMB_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!CMB.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CMB_2</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TEU_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!TEU.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>g</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TEU_2</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="HBLQTY_2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!HBLQTY.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>HBLQTY_2</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.55556cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"总计:","Total:")</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>23</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
+                        </TopBorder>
+                        <PaddingLeft>14pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!KGS.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>22</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!CMB.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>21</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!TEU.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>g</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>20</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!HBLQTY.Value)</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember>
+              <Visibility>
+                <Hidden>=IIF(First(Fields!GroupByCount.Value, "DebitnoteAgeForCRDR_Total")&gt;1,FALSE,TRUE)</Hidden>
+              </Visibility>
+            </TablixMember>
+            <TablixMember>
+              <Visibility>
+                <Hidden>=IIF(First(Fields!GroupByCount.Value, "DebitnoteAgeForCRDR_Total")&gt;2,FALSE,TRUE)</Hidden>
+              </Visibility>
+            </TablixMember>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Group1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!C3.Value</GroupExpression>
+                  <GroupExpression>=Fields!SubId3.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="table1_Group2">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!C2.Value</GroupExpression>
+                      <GroupExpression>=Fields!SubId2.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <TablixMembers>
+                    <TablixMember>
+                      <Group Name="table1_Details_Group">
+                        <GroupExpressions>
+                          <GroupExpression>=Fields!SubId3.Value</GroupExpression>
+                          <GroupExpression>=Fields!C3.Value</GroupExpression>
+                          <GroupExpression>=Fields!C2.Value</GroupExpression>
+                          <GroupExpression>=Fields!SubId2.Value</GroupExpression>
+                          <GroupExpression>=Fields!C1.Value</GroupExpression>
+                          <GroupExpression>=Fields!SubId1.Value</GroupExpression>
+                        </GroupExpressions>
+                        <DataElementName>Detail</DataElementName>
+                      </Group>
+                      <SortExpressions>
+                        <SortExpression>
+                          <Value>=Fields!C3.Value</Value>
+                        </SortExpression>
+                        <SortExpression>
+                          <Value>=Fields!C2.Value</Value>
+                        </SortExpression>
+                        <SortExpression>
+                          <Value>=Fields!C1.Value</Value>
+                        </SortExpression>
+                      </SortExpressions>
+                      <TablixMembers>
+                        <TablixMember />
+                      </TablixMembers>
+                      <DataElementName>Detail_Collection</DataElementName>
+                      <DataElementOutput>Output</DataElementOutput>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>=IIF(First(Fields!GroupByCount.Value, "DebitnoteAgeForCRDR_Total")&gt;2,FALSE,TRUE)</Hidden>
+                      </Visibility>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                      <KeepTogether>true</KeepTogether>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <Visibility>
+                    <Hidden>=IIF(First(Fields!GroupByCount.Value, "DebitnoteAgeForCRDR_Total")&gt;1,FALSE,TRUE)</Hidden>
+                  </Visibility>
+                  <KeepWithGroup>Before</KeepWithGroup>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DebitnoteAgeForCRDR_Total</DataSetName>
+        <Top>2.25cm</Top>
+        <Height>2.86032cm</Height>
+        <Width>21.07937cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+      </Tablix>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIF(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString()="0",
+"出货量统计报表",
+"Shipments Statistics ")</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.25cm</Top>
+        <Height>1cm</Height>
+        <Width>17.75cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=IIF(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"DateType").ToString().ToUpper()=0,"ETD:","ETA:")+LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Beginning_Date")+" / "+LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Ending_Date")</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>1.5cm</Top>
+        <Height>0.49999cm</Height>
+        <Width>12.75cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>5.11032cm</Height>
+    <Style />
+  </Body>
+  <Width>21.07937cm</Width>
+  <Page>
+    <PageFooter>
+      <Height>0.34844in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox24">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber.ToString()+"/"+ Globals!TotalPages.ToString()</Value>
+                  <Style>
+                    <FontFamily>宋体</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.25cm</Top>
+          <Height>0.25001in</Height>
+          <Width>17.75cm</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageFooter>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.25cm</LeftMargin>
+    <RightMargin>0.25cm</RightMargin>
+    <TopMargin>0.25cm</TopMargin>
+    <BottomMargin>0.25cm</BottomMargin>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSourceICP2005">
+      <DataSourceReference>DataSourceICP2005</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>76050041-4eb7-4d16-8b60-dd78ead781d6</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DebitnoteAgeForCRDR_Total">
+      <Query>
+        <DataSourceName>DataSourceICP2005</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@Condition">
+            <Value>=Parameters!Condition.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SPR_CSP_GetTotalTEUReport</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="KGS">
+          <DataField>KGS</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="CMB">
+          <DataField>CMB</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TEU">
+          <DataField>TEU</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="HBLQTY">
+          <DataField>HBLQTY</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="BookingCartons">
+          <DataField>BookingCartons</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="GroupByCount">
+          <DataField>GroupByCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="C1">
+          <DataField>C1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubId1">
+          <DataField>SubId1</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="N1">
+          <DataField>N1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C2">
+          <DataField>C2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubId2">
+          <DataField>SubId2</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="N2">
+          <DataField>N2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="C3">
+          <DataField>C3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SubId3">
+          <DataField>SubId3</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="N3">
+          <DataField>N3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="Condition">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;root&gt;
+  &lt;Beginning_Date&gt;2001-01-01&lt;/Beginning_Date&gt;
+  &lt;Ending_Date&gt;2009-01-11&lt;/Ending_Date&gt;
+  &lt;SalesSet&gt;&lt;/SalesSet&gt;
+  &lt;ConsignerSet&gt;&lt;/ConsignerSet&gt;
+  &lt;CarrierSet&gt;&lt;/CarrierSet&gt;
+  &lt;ShippingLineSet&gt;&lt;/ShippingLineSet&gt;
+  &lt;LoadPortSet&gt;&lt;/LoadPortSet&gt;
+  &lt;DiscPortSet&gt;&lt;/DiscPortSet&gt;
+  &lt;DestPortSet&gt;&lt;/DestPortSet&gt; 
+  &lt;GroupString&gt;业务员,POL,POD&lt;/GroupString&gt;
+  &lt;AgentSet&gt;&lt;/AgentSet&gt;
+  &lt;IsEnglish&gt;1&lt;/IsEnglish&gt;
+  &lt;DateType&gt;0&lt;/DateType&gt;
+&lt;/root&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>XML条件</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>zh-CN</Language>
+  <CodeModules>
+    <CodeModule>LongWin.DataWarehouseReport.ToolsMethod, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</CodeModule>
+  </CodeModules>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>3e9bfaaf-edec-4698-b89e-3fd2ca5469ea</rd:ReportID>
+</Report>

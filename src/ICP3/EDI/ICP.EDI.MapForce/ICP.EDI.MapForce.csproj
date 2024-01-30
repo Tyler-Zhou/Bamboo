@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04CF73F0-9D19-4DD6-84FF-8117AD1D0BF3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.EDI.MapForce</RootNamespace>
+    <AssemblyName>ICP.EDI.MapForce</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\icpdlls\ICP.EDI.MapForce.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AMSDataSource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerLoadingPlan.cs">
+      <DependentUpon>ContainerLoadingPlan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerLoadingPlan.Designer.cs">
+      <DependentUpon>ContainerLoadingPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerLoadingPlan1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContainerLoadingPlan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IFCSUM_FYCW.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IFTMIN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IFTMIN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INTRRASI.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INTRRASO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTRRASO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MBL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MBL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AMS.xsc">
+      <DependentUpon>AMS.xsd</DependentUpon>
+    </None>
+    <None Include="AMS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AMS.xss">
+      <DependentUpon>AMS.xsd</DependentUpon>
+    </None>
+    <None Include="AMSDataSource.xsc">
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="AMSDataSource.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AMSDataSource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AMSDataSource.xss">
+      <DependentUpon>AMSDataSource.xsd</DependentUpon>
+    </None>
+    <None Include="CCF_Target.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContainerLoadingPlan.xsc">
+      <DependentUpon>ContainerLoadingPlan.xsd</DependentUpon>
+    </None>
+    <None Include="ContainerLoadingPlan.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ContainerLoadingPlan1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ContainerLoadingPlan.xss">
+      <DependentUpon>ContainerLoadingPlan.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerInfoxml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datetime.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDI-UDF.mfd" />
+    <None Include="Exception.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ICP.EDI.MapForce.mfp" />
+    <None Include="IFCSUM_FYCW.mfd" />
+    <None Include="IFCSUM_FYCW.xsc">
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </None>
+    <None Include="IFCSUM_FYCW.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IFCSUM_FYCW.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IFCSUM_FYCW.xss">
+      <DependentUpon>IFCSUM_FYCW.xsd</DependentUpon>
+    </None>
+    <None Include="IFTMIN-INTRRA.mfd" />
+    <None Include="IFTMIN-INTRRASO.mfd" />
+    <None Include="IFTMIN.xsc">
+      <DependentUpon>IFTMIN.xsd</DependentUpon>
+    </None>
+    <None Include="IFTMIN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IFTMIN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IFTMIN.xss">
+      <DependentUpon>IFTMIN.xsd</DependentUpon>
+    </None>
+    <None Include="INTRRASI.xsc">
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </None>
+    <None Include="INTRRASI.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INTRRASI.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INTRRASI.xss">
+      <DependentUpon>INTRRASI.xsd</DependentUpon>
+    </None>
+    <None Include="INTRRASO.xsc">
+      <DependentUpon>INTRRASO.xsd</DependentUpon>
+    </None>
+    <None Include="INTRRASO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INTRRASO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INTRRASO.xss">
+      <DependentUpon>INTRRASO.xsd</DependentUpon>
+    </None>
+    <None Include="MBL.xsc">
+      <DependentUpon>MBL.xsd</DependentUpon>
+    </None>
+    <None Include="MBL.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MBL.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MBL.xss">
+      <DependentUpon>MBL.xsd</DependentUpon>
+    </None>
+    <None Include="ParseCustomerString.mfd" />
+    <None Include="ParsePortString.mfd" />
+    <None Include="ParseStringToXml.mfd" />
+    <None Include="ParseStringToXML.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ParseStringToXmlForZH.mfd" />
+    <None Include="PortXML.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CCF_Target.xml" />
+    <Content Include="CustomerInfoxml.xml" />
+    <Content Include="PortXML.XML" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/05/2011 11:10:05" ReportInfo.Modified="12/06/2013 16:33:21" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {        
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyTel" DataType="System.String"/>
+      <Column Name="CompanyFax" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="NotifyPartyDescription" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="Agent" DataType="System.String"/>
+      <Column Name="PrintdBy" DataType="System.String"/>
+      <Column Name="PrintTime" DataType="System.DateTime"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="SONo" DataType="System.String"/>
+      <Column Name="OperationNo" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="PortOfLoading" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="CYClosingDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="DOCClosingDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="SODate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="PortOfDischarge" DataType="System.String"/>
+      <Column Name="BookingerName" DataType="System.String"/>
+      <Column Name="BookingerTel" DataType="System.String"/>
+      <Column Name="BookingerEmail" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="Quanity" DataType="System.Int32"/>
+      <Column Name="QuanityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.Decimal"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.Decimal"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="ClosingDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="PickupLocation" DataType="System.String"/>
+      <Column Name="ReturnLocation" DataType="System.String"/>
+      <Column Name="ContainerSize" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="PickupEarliestDate" DataType="System.String"/>
+      <Column Name="ShippingLineRemark" DataType="System.String"/>
+      <Column Name="OktoSub" DataType="System.String"/>
+      <Column Name="RailCutOff" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="ContainerSource" ReferenceName="ContainerSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="ContainerSize" DataType="System.String"/>
+      <Column Name="OktoSub" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page78754282" PaperWidth="216" PaperHeight="450" FirstPageSource="15" OtherPagesSource="15" Guides="359.1">
+    <PageHeaderBand Name="PageHeaderBand78754282" Width="740.88" Height="92.61">
+      <TextObject Name="textbox1" Top="58.59" Width="716.31" Height="34.02" CanGrow="true" Text="BOOKING CONFIRMATION" HorzAlign="Center" Font="Arial, 20pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text40" Left="359.1" Top="9.45" Height="18.9"/>
+      <TextObject Name="Text42" Top="15.12" Width="718.2" Height="28.35" Text="[ReportSource.CompanyAddress]" HorzAlign="Center"/>
+      <TextObject Name="Text43" Top="45.36" Width="718.2" Height="18.9" Text="TEL:[ReportSource.CompanyTel]/FAX:[ReportSource.CompanyFax]" HorzAlign="Center"/>
+      <TextObject Name="Text115" Width="718.2" Height="18.9" Text="[ReportSource.CompanyName]" HorzAlign="Center"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand849282210" Top="96.22" Width="740.88" Height="341.6">
+      <LineObject Name="Line1" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line2" Left="359.1" Height="340.2" Border.Color="Maroon"/>
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Text="SHIPPER" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Top="132.3" Width="94.5" Height="18.9" Text="CONSIGNEE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text3" Left="359.1" Width="141.75" Height="18.9" Text="REFERENCE NO" TextFill.Color="Maroon"/>
+      <LineObject Name="Line5" Left="548.1" Height="90.72" Border.Color="Maroon"/>
+      <TextObject Name="Text4" Left="548.1" Width="94.5" Height="18.9" Text="SODATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text5" Left="359.1" Top="34.02" Width="141.75" Height="18.9" Text="OUR BKG NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Left="548.1" Top="34.02" Width="132.3" Height="18.9" Text="PREPARED BY" TextFill.Color="Maroon"/>
+      <TextObject Name="Text11" Top="236.25" Width="122.85" Height="18.9" Text="NOTIFY PARTY" TextFill.Color="Maroon"/>
+      <LineObject Name="Line11" Left="359.1" Top="200.34" Width="359.1" Border.Color="Maroon"/>
+      <LineObject Name="Line12" Left="359.1" Top="234.36" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text12" Left="359.1" Top="136.08" Width="189" Height="18.9" Text="VESSEL &amp; VOY NO" TextFill.Color="Maroon"/>
+      <LineObject Name="Line13" Left="548.1" Top="132.3" Height="207.9" Border.Color="Maroon"/>
+      <TextObject Name="Text13" Left="359.1" Top="202.23" Width="151.2" Height="18.9" Text="PORT OF LOADING" TextFill.Color="Maroon"/>
+      <TextObject Name="Text14" Left="548.1" Top="202.23" Width="75.6" Height="18.9" Text="POD ETA" TextFill.Color="Maroon"/>
+      <TextObject Name="Text15" Left="359.1" Top="236.25" Width="160.65" Height="18.9" Text="PORT OF DISCHARGE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text16" Left="548.1" Top="236.25" Width="141.75" Height="18.9" Text="AES/DOC CUTOFF" TextFill.Color="Maroon"/>
+      <LineObject Name="Line15" Left="359.1" Top="304.29" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text17" Left="359.1" Top="270.27" Width="160.65" Height="18.9" Text="PLACE OF DELIVERY" TextFill.Color="Maroon"/>
+      <TextObject Name="Text18" Left="548.1" Top="270.27" Width="160.65" Height="18.9" Text="CY CUTOFF" TextFill.Color="Maroon"/>
+      <TextObject Name="Text19" Left="359.1" Top="308.07" Width="151.2" Height="18.9" Text="FINAL DESTINATION" TextFill.Color="Maroon"/>
+      <TextObject Name="Text20" Left="548.1" Top="308.07" Width="170.1" Height="18.9" Text="RAIL CUTOFF" TextFill.Color="Maroon"/>
+      <TextObject Name="Text45" Left="359.1" Top="13.23" Width="189" Height="18.9" Text="[ReportSource.OperationNo]"/>
+      <TextObject Name="Text46" Left="359.1" Top="47.25" Width="189" Height="18.9" Text="[ReportSource.SONo]"/>
+      <TextObject Name="Text47" Left="549.61" Top="47.25" Width="170.1" Height="18.9" Text="[ReportSource.BookingerName]" Font="Arial, 8pt"/>
+      <TextObject Name="Text56" Left="359.1" Top="151.2" Width="198.45" Height="18.9" Text="[ReportSource.VesselVoyage]"/>
+      <TextObject Name="Text57" Left="359.1" Top="217.35" Width="189" Height="18.9" Text="[ReportSource.PortOfLoading]"/>
+      <TextObject Name="Text58" Left="548.1" Top="217.35" Width="170.1" Height="18.9" Text="[ReportSource.ETA]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text61" Left="548.1" Top="321.3" Width="170.1" Height="18.9" Text="[ReportSource.RailCutOff]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text62" Left="359.1" Top="251.37" Width="189" Height="18.9" Text="[ReportSource.PortOfDischarge]"/>
+      <TextObject Name="Text63" Left="359.1" Top="285.39" Width="189" Height="18.9" Text="[ReportSource.PlaceOfDelivery]"/>
+      <TextObject Name="Text64" Left="359.1" Top="322.7" Width="189" Height="18.9" Text="[ReportSource.FinalDestination]"/>
+      <TextObject Name="Text35" Left="548.1" Top="13.23" Width="170.1" Height="18.9" Text="[ReportSource.SODate]"/>
+      <LineObject Name="Line9" Left="359.1" Top="268.38" Width="359.1" Border.Color="Maroon" Diagonal="true"/>
+      <LineObject Name="Line19" Left="359.1" Top="132.3" Width="359.1" Border.Color="Maroon"/>
+      <LineObject Name="Line20" Left="359.1" Top="30.24" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text97" Left="359.1" Top="170.1" Width="151.2" Height="18.9" Text="PLACE OF RECEIPT" TextFill.Color="Maroon"/>
+      <TextObject Name="Text98" Left="359.1" Top="185.22" Width="189" Height="18.9" Text="[ReportSource.PlaceOfReceipt]"/>
+      <LineObject Name="Line21" Left="359.1" Top="166.32" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text99" Left="548.1" Top="170.1" Width="66.15" Height="18.9" Text="SAILING" TextFill.Color="Maroon"/>
+      <TextObject Name="Text100" Left="548.1" Top="185.22" Width="170.1" Height="18.9" Text="[ReportSource.ETD]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text116" Left="549.61" Top="60.48" Width="170.1" Height="18.9" Text="[ReportSource.BookingerTel]" Font="Arial, 8pt"/>
+      <TextObject Name="Text117" Left="549.61" Top="73.71" Width="170.1" Height="18.9" Text="[ReportSource.BookingerEmail]" Font="Arial, 8pt"/>
+      <LineObject Name="Line3" Top="132.3" Width="359.1" Border.Color="Maroon" Diagonal="true"/>
+      <LineObject Name="Line33" Top="236.25" Width="359.1" Border.Color="Maroon" Diagonal="true"/>
+      <LineObject Name="Line4" Height="340.2" Border.Color="Maroon" Diagonal="true"/>
+      <LineObject Name="Line6" Left="718.2" Height="340.2" Border.Color="Maroon" Diagonal="true"/>
+      <TextObject Name="Text7" Top="18.9" Width="359.1" Height="113.4" Text="[ReportSource.ShipperDescription]"/>
+      <TextObject Name="Text119" Top="151.2" Width="359.1" Height="85.05" Text="[ReportSource.ConsigneeDescription]"/>
+      <TextObject Name="Text120" Top="255.15" Width="359.1" Height="85.05" Text="[ReportSource.NotifyPartyDescription]"/>
+      <TextObject Name="Text121" Left="548.1" Top="136.08" Width="198.45" Height="18.9" Text="PICKUP-EARLIEST DATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text122" Left="548.1" Top="151.2" Width="170.1" Height="18.9" Text="[ReportSource.PickupEarliestDate]"/>
+      <TextObject Name="Text123" Left="548.1" Top="251.37" Width="85.05" Height="18.9" Text="[ReportSource.ClosingDate]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text124" Left="548.1" Top="285.39" Width="170.1" Height="18.9" Text="[ReportSource.CYClosingDate]" Format="Date" Format.Format="d"/>
+      <LineObject Name="Line72" Top="340.2" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line73" Left="359.1" Top="90.72" Width="359.1" Border.Color="Maroon"/>
+      <TextObject Name="Text150" Left="359.1" Top="92.61" Width="141.75" Height="18.9" Text="CARRIER" TextFill.Color="Maroon"/>
+      <TextObject Name="Text151" Left="359.1" Top="109.62" Width="359.1" Height="18.9" Text="[ReportSource.Carrier]"/>
+      <TextObject Name="Text152" Left="633.15" Top="251.37" Width="85.05" Height="18.9" Text="[ReportSource.DOCClosingDate]" Format="Date" Format.Format="d"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="473.78" Width="740.88" Height="28.35">
+      <TextObject Name="Text8" Left="9.45" Top="3.78" Width="94.5" Height="18.9" Text="[ContainerSource.ContainerSize]"/>
+      <TextObject Name="Text145" Left="151.2" Top="3.78" Width="103.95" Height="18.9" Text="[ContainerSource.TransportClause]"/>
+      <TextObject Name="Text146" Left="425.25" Top="3.78" Width="94.5" Height="18.9" Text="[ContainerSource.Weight]"/>
+      <TextObject Name="Text147" Left="595.35" Top="3.78" Width="94.5" Height="18.9" Text="[ReportSource.OktoSub]"/>
+      <LineObject Name="Line50" Height="28.35" Border.Color="Maroon"/>
+      <LineObject Name="Line51" Left="141.75" Height="28.35" Border.Color="Maroon"/>
+      <LineObject Name="Line52" Left="255.15" Height="28.35" Border.Color="Maroon"/>
+      <LineObject Name="Line57" Left="557.55" Height="28.35" Border.Color="Maroon"/>
+      <LineObject Name="Line59" Left="718.2" Height="28.35" Border.Color="Maroon"/>
+      <LineObject Name="Line56" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line53" Left="396.9" Height="28.35" Border.Color="Maroon"/>
+      <TextObject Name="Text9" Left="274.05" Top="3.78" Width="94.5" Height="18.9" Text="[ContainerSource.Commodity]"/>
+      <LineObject Name="Line61" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line58" Top="28.35" Width="718.2" Border.Color="Maroon"/>
+      <DataHeaderBand Name="DataHeader1" Top="441.44" Width="740.88" Height="28.73" Guides="0">
+        <LineObject Name="Line64" Height="28.35" Border.Color="Maroon"/>
+        <TextObject Name="Text140" Top="9.45" Width="132.3" Height="18.9" Text="CONTAINER TYPE" TextFill.Color="Maroon"/>
+        <TextObject Name="Text141" Left="151.2" Top="9.45" Width="94.5" Height="18.9" Text="MOVE TYPE" TextFill.Color="Maroon"/>
+        <TextObject Name="Text142" Left="264.6" Top="9.45" Width="122.85" Height="18.9" Text="COMMODITY" TextFill.Color="Maroon"/>
+        <TextObject Name="Text143" Left="415.8" Top="9.45" Width="122.85" Height="18.9" Text="GROSS WEIGHT" TextFill.Color="Maroon"/>
+        <TextObject Name="Text144" Left="595.35" Top="9.45" Width="85.05" Height="18.9" Text="OK TO SUB" TextFill.Color="Maroon"/>
+        <LineObject Name="Line67" Left="141.75" Height="28.35" Border.Color="Maroon"/>
+        <LineObject Name="Line68" Left="255.15" Height="28.35" Border.Color="Maroon"/>
+        <LineObject Name="Line69" Left="396.9" Height="28.35" Border.Color="Maroon"/>
+        <LineObject Name="Line70" Left="557.55" Height="28.35" Border.Color="Maroon"/>
+        <LineObject Name="Line71" Left="718.2" Height="28.35" Border.Color="Maroon"/>
+        <LineObject Name="Line16" Width="718.2" Border.Color="Maroon"/>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="505.74" Width="740.88" Height="1096.2">
+      <LineObject Name="Line29" Top="283.5" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line34" Left="718.2" Height="283.5" Border.Color="Maroon"/>
+      <LineObject Name="Line35" Height="283.5" Border.Color="Maroon"/>
+      <TextObject Name="Text126" Top="170.1" Width="85.05" Height="18.9" Text="REMARKS:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text127" Left="94.5" Top="170.1" Width="623.7" Height="113.4" Text="[ReportSource.Remark]" Format="Date" Format.Format="d"/>
+      <LineObject Name="Line36" Top="170.1" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line37" Left="66.15" Top="47.25" Height="122.85" Border.Color="Maroon"/>
+      <TextObject Name="Text128" Top="47.25" Width="66.15" Height="37.8" Text="PICK-UP LOC" TextFill.Color="Maroon"/>
+      <TextObject Name="Text129" Left="66.15" Top="47.25" Width="292.95" Height="113.4" Text="[ReportSource.PickupLocation]" Format="Date" Format.Format="d"/>
+      <LineObject Name="Line38" Left="359.1" Top="47.25" Height="122.85" Border.Color="Maroon"/>
+      <TextObject Name="Text130" Left="425.25" Top="47.25" Width="292.95" Height="113.4" Text="[ReportSource.ReturnLocation]" Format="Date" Format.Format="d"/>
+      <LineObject Name="Line39" Top="47.25" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line40" Width="718.2" Border.Color="Maroon"/>
+      <TextObject Name="Text131" Top="9.45" Width="718.2" Height="18.9" Text="ALL BOOKINGS ARE SUBJECT TO EQUIPMENT AVAILABILITY" HorzAlign="Center" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text132" Top="28.35" Width="718.2" Height="18.9" Text="PLEASE HAVE YOUR TRUCKER CONFIRM FIRST RECEIVING DATES WITH DESIGNATED TERMINAL." HorzAlign="Center" Font="Arial, 9.75pt, style=Bold"/>
+      <TextObject Name="Text148" Top="292.95" Width="718.2" Height="793.8" Text="THANK YOU FOR BOOKING WITH US. PLEASE CONTACT OUR CUSTOMER SERVICE AS SOON AS POSSIBLE IF THERE IS ANY DISCREPANCY. IF NO CALL IS RECEIVED, WE WILL CONSIDER THE BOOKING DETAILS ACCURATE AT THE END OF THE BUSINESS DAY.&#13;&#10;&#13;&#10;FOR U.S. EXPORT SHIPMENTS ONLY:&#13;&#10;&#13;&#10;**Shipper agrees to take all responsibilities/charges if the AES/SI/CY cut off are missed by Shipper’s delay.**&#13;&#10;**Shipments of Scrap metal, Waste paper, Household Goods, Plastic Scrap or Personal Effects must move on a PREPAID basis.**&#13;&#10;**All Sailing information subject to Change without notice which may affect all Cut-off &amp; Pick-up/Delivery Dates.**&#13;&#10;**All BOOKINGS ARE SUBJECT TO EQUIPMENT AVAILABILITY**&#13;&#10;**TRUCKERS MUST CHECK WITH TERMINALS, FOR PICKUP AND /OR RECEIVING DATES BEFORE ARRIVING AT THE DEPOT/TERMINAL **&#13;&#10;**Shipments of Computer Monitors, Televisions or Cathode Ray Tubes of Any Type, or any Hazardous Electronic Waste Material are prohibited to Hong Kong. Any fines, penalties or other charges that result from these commodities being mis-declared and shipped to Hong Kong, will be the responsibility of the shipper. Shipping Instructions&#13;&#10;submitted to us must certify “This shipment does not contain computer monitors, televisions, CRTs (Cathode Ray Tubes) of any type or any Hazardous Electronic&#13;&#10;Waste/Scrap Material of any type.”**&#13;&#10;** For Automobile Shipments, Customs Clearance must take place at the Port of Load.**&#13;&#10;** Diversions/C.O.D. requests must be received no less than 72 hours prior to vessel arrival at destination provided the cargo being diverted does not require a change in&#13;&#10;transshipment port. If this is the case, notification will need to be received within 48 hours of cargo arrival at transshipment. All cost for the Diversion will be for the Shipper's&#13;&#10;account.**&#13;&#10;** For all Scrap shipments, shipper shall protect, indemnify and hold Carrier harmless from and against any claim, action or proceeding by a governmental entity or third party for damages, fines, costs or penalties of any kind, including all expenses resulting from (a) the shipper’s violation of any applicable laws or regulations, or arising out of Shipper's breach of any provision of this Contract. All relevant cost occurred including equipment demurrage, detention and rail storage shall be for the account of the shipper.**" Format="Date" Format.Format="d"/>
+      <LineObject Name="Line32" Left="425.25" Top="47.25" Height="122.85" Border.Color="Maroon"/>
+      <TextObject Name="Text111" Left="359.1" Top="47.25" Width="66.15" Height="37.8" Text="RETURN LOC" TextFill.Color="Maroon"/>
+      <TextObject Name="Text149" Top="822.15" Width="708.75" Height="255.15" Text="[ReportSource.ShippingLineRemark]"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>275, 17</value>
+  </data>
+  <data name="labCreateDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 191</value>
+  </data>
+  <data name="labCreateDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 14</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labCreateDate.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="labCreateDate.Text" xml:space="preserve">
+    <value>Create Date</value>
+  </data>
+  <data name="&gt;&gt;labCreateDate.Name" xml:space="preserve">
+    <value>labCreateDate</value>
+  </data>
+  <data name="&gt;&gt;labCreateDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labCreateDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labCreateDate.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labCreateBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 166</value>
+  </data>
+  <data name="labCreateBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 14</value>
+  </data>
+  <data name="labCreateBy.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="labCreateBy.Text" xml:space="preserve">
+    <value>Create By</value>
+  </data>
+  <data name="&gt;&gt;labCreateBy.Name" xml:space="preserve">
+    <value>labCreateBy</value>
+  </data>
+  <data name="&gt;&gt;labCreateBy.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labCreateBy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labCreateBy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="labCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 14</value>
+  </data>
+  <data name="labCode.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="labCode.Text" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="&gt;&gt;labCode.Name" xml:space="preserve">
+    <value>labCode</value>
+  </data>
+  <data name="&gt;&gt;labCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labCode.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labIsoCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 31</value>
+  </data>
+  <data name="labIsoCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 14</value>
+  </data>
+  <data name="labIsoCode.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="labIsoCode.Text" xml:space="preserve">
+    <value>ISO Code</value>
+  </data>
+  <data name="&gt;&gt;labIsoCode.Name" xml:space="preserve">
+    <value>labIsoCode</value>
+  </data>
+  <data name="&gt;&gt;labIsoCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labIsoCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labIsoCode.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtCreateBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 163</value>
+  </data>
+  <data name="txtCreateBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 21</value>
+  </data>
+  <data name="txtCreateBy.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;txtCreateBy.Name" xml:space="preserve">
+    <value>txtCreateBy</value>
+  </data>
+  <data name="&gt;&gt;txtCreateBy.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;txtCreateBy.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtCreateBy.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="dxErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>563, 17</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 14</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 53</value>
+  </data>
+  <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 81</value>
+  </data>
+  <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Name" xml:space="preserve">
+    <value>txtDescription</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtDescription.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labDescription.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 54</value>
+  </data>
+  <data name="labDescription.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 14</value>
+  </data>
+  <data name="labDescription.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="labDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="&gt;&gt;labDescription.Name" xml:space="preserve">
+    <value>labDescription</value>
+  </data>
+  <data name="&gt;&gt;labDescription.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labDescription.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labDescription.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="numTeu.EditValue" type="System.Decimal, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="numTeu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 138</value>
+  </data>
+  <data name="numTeu.Properties.Mask.EditMask" xml:space="preserve">
+    <value>F1</value>
+  </data>
+  <data name="numTeu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 21</value>
+  </data>
+  <data name="numTeu.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;numTeu.Name" xml:space="preserve">
+    <value>numTeu</value>
+  </data>
+  <data name="&gt;&gt;numTeu.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SpinEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;numTeu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;numTeu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labTeu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 141</value>
+  </data>
+  <data name="labTeu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 14</value>
+  </data>
+  <data name="labTeu.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="labTeu.Text" xml:space="preserve">
+    <value>TEU</value>
+  </data>
+  <data name="&gt;&gt;labTeu.Name" xml:space="preserve">
+    <value>labTeu</value>
+  </data>
+  <data name="&gt;&gt;labTeu.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;labTeu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labTeu.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="txtIsoCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 27</value>
+  </data>
+  <data name="txtIsoCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 21</value>
+  </data>
+  <data name="txtIsoCode.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;txtIsoCode.Name" xml:space="preserve">
+    <value>txtIsoCode</value>
+  </data>
+  <data name="&gt;&gt;txtIsoCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;txtIsoCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtIsoCode.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="dteCreateDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 188</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v10.1" name="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral" />
+  <data name="dteCreateDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v10.1">
+    <value>Combo</value>
+  </data>
+  <data name="dteCreateDate.Properties.Mask.EditMask" xml:space="preserve">
+    <value />
+  </data>
+  <assembly alias="DevExpress.XtraEditors.v10.1" name="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral" />
+  <data name="dteCreateDate.Properties.Mask.MaskType" type="DevExpress.XtraEditors.Mask.MaskType, DevExpress.XtraEditors.v10.1">
+    <value>None</value>
+  </data>
+  <data name="dteCreateDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 21</value>
+  </data>
+  <data name="dteCreateDate.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;dteCreateDate.Name" xml:space="preserve">
+    <value>dteCreateDate</value>
+  </data>
+  <data name="&gt;&gt;dteCreateDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;dteCreateDate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dteCreateDate.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>319, 219</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Name" xml:space="preserve">
+    <value>bindingSource1</value>
+  </data>
+  <data name="&gt;&gt;bindingSource1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Name" xml:space="preserve">
+    <value>dxErrorProvider1</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ContainerEditPart</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>ICP.Common.UI.BaseControl, ICP.Common.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="txtCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 3</value>
+  </data>
+  <data name="txtCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 21</value>
+  </data>
+  <data name="txtCode.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Name" xml:space="preserve">
+    <value>txtCode</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;txtCode.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtCode.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+</root>

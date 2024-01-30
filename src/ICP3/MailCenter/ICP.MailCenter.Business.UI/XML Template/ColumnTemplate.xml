@@ -1,0 +1,4506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Template Name="Column Template" Author="sunnydeng&lt;sunnydeng@cityocean.com&gt;">
+  <MailLink4in1 Name="MailLink4in1" OperationType="0" BaseCriteria="$@OPD@=0 AND $@ContactMail@ LIKE '%%MailSender%' AND 
+
+$@CompanyID@ in (%CurrentCompany)" UpdateDate="2014-01-13 16:00:00.000">
+    <Columns>
+      <Column Name="Description" Width="180" >
+        <CaptionRname zhcn="描述" enus="Description"></CaptionRname>
+      </Column>
+      <Column Name="RefNO" Width="180"  >
+        <CaptionRname zhcn="参考号" enus="RefNo"></CaptionRname>
+      </Column>
+      <Column Name="BLNO"  Width="145">
+        <CaptionRname zhcn="提单号" enus="BLNo"></CaptionRname>
+      </Column>
+      <Column Name="Operation NO"  Width="118" >
+        <CaptionRname zhcn="业务号" enus="No"></CaptionRname>
+      </Column>
+      <Column Name="Selected" Editable="true" ReadOnly="false"  Width="48" >
+        <CaptionRname zhcn="选择" enus="Selected"></CaptionRname>
+      </Column>
+    </Columns>
+  </MailLink4in1>
+
+  <Shipment4InquirePrices Name="Shipment4InquirePrices" OperationType="0" BaseCriteria="$@InquirePriceOceanID@ IS NOT NUL"
+
+UpdateDate="2014-05-16 12:00:00.000">
+    <Columns>
+      <Column Name="Remark" Width="120" >
+        <CaptionRname zhcn="备注" enus="Remark"></CaptionRname>
+      </Column>
+      <Column Name="Voyage" Width="150" >
+        <CaptionRname zhcn="船名/航次" enus="Voyage"></CaptionRname>
+      </Column>
+      <Column Name="ETD" Width="100" >
+        <CaptionRname zhcn="离港日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="Commodity" Width="120" >
+        <CaptionRname zhcn="商品" enus="Commodity"></CaptionRname>
+      </Column>
+      <Column Name="PlaceOfDelivery" Width="120" >
+        <CaptionRname zhcn="交货地" enus="Place Of Delivery"></CaptionRname>
+      </Column>
+      <Column Name="POD" Width="75" >
+        <CaptionRname zhcn="卸货港" enus="POD"></CaptionRname>
+      </Column>
+      <Column Name="POL"  Width="100" >
+        <CaptionRname zhcn="装货港" enus="POL"></CaptionRname>
+      </Column>
+      <Column Name="Carrier"  Width="120">
+        <CaptionRname zhcn="船公司" enus="Carrier"></CaptionRname>
+      </Column>
+      <Column Name="SOCCD" Width="75"  >
+        <CaptionRname zhcn="SOCCD" enus="SOCCD"></CaptionRname>
+      </Column>
+      <Column Name="Operation NO" Width="120" >
+        <CaptionRname zhcn="业务号" enus="No"></CaptionRname>
+      </Column>
+    </Columns>
+  </Shipment4InquirePrices>
+
+  <!--这里目前做特殊处理 BLRC,RBLD-->
+  <!--任务中心
+    字段名        说明
+    ToolTip       提示信息
+    Width         宽度
+    Convert       针对字段属性是时间的进行处理，当前是否需要转换成yyyy-mm-dd
+    SqlWhere      设置结果集合的分组条件和排序条件
+    Visible       当前列是否显示
+  -->
+  <!--直客  新订单-->
+  <TaskCenter_OceanExport_NewBooking  Name="TaskCenter_OceanExport_NewBooking" OperationType="1"
+                                      BaseCriteria="$@OPD@=0 AND $@SOPV@=1 AND $@APR@=0   
+                                      AND $@ContactMail@ LIKE '%%MailSender%'   
+                                      AND $@CompanyID@ in (%CurrentCompany)  
+                                      AND $@DocByID@ = '%CurrentUser'"
+                                      UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+
+
+      <Column Name="OceanExportPlaceOfReceipt"/>
+
+
+      <Column Name="ContainerDesc"  Width="140"/>
+
+
+      <Column Name="Carrier"  />
+
+
+      <Column Name="Voyage"  />
+
+
+      <Column Name="ETA"/>
+
+
+      <Column Name="ETD" />
+
+      <Column Name="OceanExportPlaceOfDelivery"/>
+      <Column Name="POD"  />
+
+
+      <Column Name="POL"  />
+
+
+      <Column Name="AdjSOCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="ASO">
+        <CaptionRname zhcn="Adj SO Copy" enus="Adj SO Copy"></CaptionRname>
+      </Column>
+      <Column Name="SOCopy"  />
+
+
+      <Column Name="SONO"  Width="140"/>
+
+
+      <Column Name="SOC"  />
+
+      <Column Name="SOPV"  />
+
+
+      <Column Name="TRKA"  />
+
+      <Column Name="SOS"  />
+
+
+      <Column Name="SOD"  />
+
+
+      <Column Name="SOA"  />
+
+      <Column Name="Customer"/>
+
+      <Column Name="Operation NO"  />
+
+
+    </Columns>
+  </TaskCenter_OceanExport_NewBooking>
+
+  <!--直客 本地服务节点-->
+  <TaskCenter_OceanExport_LS Name="TaskCenter_OceanExport_LS" OperationType="1"
+                             BaseCriteria="$@OPD@=0 AND $@RBLD@!=2 AND $@SOS@=1 AND $@SOPV@=1  AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser'' AND $@IsTruck@=1 OR $@IsCustoms@=1"
+                             UpdateDate="2013-08-28 11:02:08.866">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="TrkLoadOn"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="CFD"  />
+      <Column Name="CFA"  />
+      <Column Name="TRKD"  />
+      <Column Name="TRKA"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_LS>
+
+
+
+  <!--直客 核对提单-->
+  <TaskCenter_OceanExport_SILS  Name="TaskCenter_OceanExport_SILS" OperationType="1"
+                                BaseCriteria="$@OPD@=0 AND $@SOS@=1 
+                                AND $@SOPV@=1 AND $@CompanyID@ in (%CurrentCompany) 
+                                AND $@CustomerServiceID@='%CurrentUser'"
+                                UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="BLNO"  />
+      <Column Name="SONO"  Width="140"/>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="Carrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLCfmAgt"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLR"  />
+      <Column Name="MBLD"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_SILS>
+
+
+
+  <!--直客 未装船节点-->
+  <TaskCenter_OceanExport_OnBoard  Name="TaskCenter_OceanExport_SILS" OperationType="1"
+                                BaseCriteria="$@OPD@=0 AND $@OnBoard@!=3 AND $@SOS@=1 AND $@SOPV@=1 AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="BLNO"  />
+      <Column Name="SONO"  Width="140"/>
+      <Column Name="OnBoard"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_OnBoard>
+
+  <!-- 直客 核对账单-->
+  <TaskCenter_OceanExport_Bill Name="TaskCenter_OceanExport_Bill" OperationType="1"
+                           BaseCriteria="$@OPD@=0 AND $@MBLD@=2 AND $@SOS@=1 AND $@SOPV@=1  AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                           UpdateDate="2013-08-28 11:02:08.866">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  Width="140"/>
+      <Column Name="BLNO"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLRC"  />
+      <Column Name="RBLD"  />
+      <Column Name="DCRcv"  />
+      <Column Name="DCRev"  />
+      <Column Name="DocH"  />
+      <Column Name="DocS"  />
+      <Column Name="APR"  />
+      <Column Name="ARA"  />
+      <Column Name="ARCfm"  />
+      <Column Name="APInv"  />
+      <Column Name="APP"  />
+      <Column Name="APA"  />
+      <Column Name="ARP"  />
+      <Column Name="MBLR"  />
+      <Column Name="MBLD"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanExport_Bill>
+
+  <!--直客 已放单节点-->
+  <TaskCenter_OceanExport_ReleaseBL Name="TaskCenter_OceanExport_ReleaseBL" OperationType="1"
+                                    BaseCriteria="$@OPD@=0 AND $@MBLD@=2 
+                                    AND $@IsValid@=1  AND  $@CompanyID@ in (%CurrentCompany)  
+                                    AND $@CustomerServiceID@='%CurrentUser'"
+                                    UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLRC"  />
+      <Column Name="RBLD"  />
+      <Column Name="RBLH"  />
+      <Column Name="RBLA"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_ReleaseBL>
+
+  <!-- 直客全部-->
+  <TaskCenter_OceanExport_All Name="TaskCenter_OceanExport_All" OperationType="1"
+                              BaseCriteria="$@OPD@=0 AND  $@CompanyID@ in (%CurrentCompany) 
+                              AND $@CustomerServiceID@='%CurrentUser'"
+                              UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="MBLD"  />
+      <Column Name="CFD"  />
+      <Column Name="TRKD"  />
+      <Column Name="SOC"  />
+      <Column Name="SOPV"  />
+      <Column Name="SOD"  />
+      <Column Name="BLRC"  />
+      <Column Name="ARCfm"  />
+      <Column Name="RBLD"  />
+      <Column Name="DocS"  />
+      <Column Name="OnBoard"  />
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Consignee"  />
+      <Column Name="Shipper"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Voyage"  />
+      <Column Name="POD"  />
+      <Column Name="OceanExportPlaceOfReceipt"  />
+      <Column Name="POL"  />
+      <Column Name="OceanExportPlaceOfDelivery"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  Width="140"/>
+      <Column Name="BLNO"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_All>
+
+
+
+
+  <!--订舱员  所有新订单-->
+  <TaskCenter_OceanExport_SpaceNewBookingALL Name="TaskCenter_OceanExport_SpaceNewBookingALL" OperationType="1"
+                                             BaseCriteria="$@OPD@=0 AND $@State@=1 AND  $@IsValid@=1  
+                                             AND $@CompanyID@ in (%CurrentCompany) AND $@SoByID@='%CurrentUser'"
+                                             UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="SOCopy"  EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO"/>
+
+      <Column Name="SOF"  />
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+
+
+
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"  />
+
+
+      <Column Name="OEWeight"/>
+      <Column Name="TransportDescription"/>
+      <Column Name="Commodity"/>
+      <Column Name="ContainerDesc"  Width="140"/>
+
+
+
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Consignee"  />
+      <Column Name="Shipper"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Carrier"  />
+      <Column Name="Voyage"  />
+      <Column Name="POD"  />
+      <Column Name="OceanExportPlaceOfReceipt"  />
+      <Column Name="POL"  />
+      <Column Name="OceanExportPlaceOfDelivery"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false" Width="140"/>
+      <Column Name="BLNO"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanExport_SpaceNewBookingALL>
+
+
+
+  <!--订舱员已订舱-->
+  <TaskCenter_OceanExport_SpaceHaveBookingALL Name="TaskCenter_OceanExport_SpaceHaveBookingALL" OperationType="1"
+                                              BaseCriteria="$@OPD@=0 AND $@SOS@=1 AND  $@IsValid@=1  
+                                              AND  $@CompanyID@ in (%CurrentCompany) AND $@SoByID@='%CurrentUser'"
+                                              UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="SOCopy"  EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO"/>
+
+      <Column Name="SOF"  />
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+
+
+
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"  />
+
+
+      <Column Name="OEWeight"/>
+      <Column Name="TransportDescription"/>
+      <Column Name="Commodity"/>
+      <Column Name="ContainerDesc"  Width="140"/>
+
+
+
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Consignee"  />
+      <Column Name="Shipper"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Carrier"  />
+      <Column Name="Voyage"  />
+      <Column Name="POD"  />
+      <Column Name="OceanExportPlaceOfReceipt"  />
+      <Column Name="POL"  />
+      <Column Name="OceanExportPlaceOfDelivery"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false" Width="140"/>
+      <Column Name="BLNO"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanExport_SpaceHaveBookingALL>
+
+
+  <!--订舱员所有订舱单-->
+  <TaskCenter_OceanExport_SpaceALL Name="TaskCenter_OceanExport_SpaceHaveBookingALL" OperationType="1"
+                                   BaseCriteria="$@OPD@=0 AND $@CompanyID@ in (%CurrentCompany) 
+                                   AND $@SoByID@='%CurrentUser'"
+                                   UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="SOCopy"  EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO"/>
+
+      <Column Name="SOF"  />
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+
+
+
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"  />
+
+
+      <Column Name="OEWeight"/>
+      <Column Name="TransportDescription"/>
+      <Column Name="Commodity"/>
+      <Column Name="ContainerDesc"  Width="140"/>
+
+
+
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Consignee"  />
+      <Column Name="Shipper"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Carrier"  />
+      <Column Name="Voyage"  />
+      <Column Name="POD"  />
+      <Column Name="OceanExportPlaceOfReceipt"  />
+      <Column Name="POL"  />
+      <Column Name="OceanExportPlaceOfDelivery"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false" Width="140"/>
+      <Column Name="BLNO"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanExport_SpaceALL>
+
+
+
+
+
+
+  <!--文件员 未补料-->
+
+  <TaskCenter_OceanExport_FillNot Name="TaskCenter_OceanExport_FillNot" OperationType="1"
+                                  BaseCriteria="$@OPD@=0  AND $@SOS@=1 
+                                  AND $@ShippingLineID@ IN(''8F09FD42-3BBA-4EA9-BB5B-80E53770CA84'',''91B68E82-32A9-4A41-
+
+8309-20DE34893C25'',''E2D05D39-B9A2-4C7D-838E-C6FA466509EE'',''FC4361F1-FF7A-4B57-B411-99E106D1B7C0'',''6F51BA0E-397C-4AF8
+
+-A453-617B1051E76B'') 
+                                  AND  $@IsValid@=1  AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@DocByID@='+'''%CurrentUser''"
+                                  UpdateDate="2013-07-12 17:39:28.843">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="Customer"/>
+      <Column Name="SalesName"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  Width="50"/>
+      <Column Name="SINC"/>
+      <Column Name="Operation NO"  Width="140"/>
+
+    </Columns>
+  </TaskCenter_OceanExport_FillNot>
+
+  <!--文件员 已补料-->
+  <TaskCenter_OceanExport_FillHave Name="TaskCenter_OceanExport_FillHave" OperationType="1"
+                                BaseCriteria="$@OPD@=0  AND $@SOS@=1 
+                                  AND $@ShippingLineID@ IN(''8F09FD42-3BBA-4EA9-BB5B-80E53770CA84'',''91B68E82-32A9-4A41-
+
+8309-20DE34893C25'',''E2D05D39-B9A2-4C7D-838E-C6FA466509EE'',''FC4361F1-FF7A-4B57-B411-99E106D1B7C0'',''6F51BA0E-397C-4AF8
+
+-A453-617B1051E76B'') 
+                                  AND  $@IsValid@=1  AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@DocByID@='+'''%CurrentUser''"
+                                UpdateDate="2013-07-12 17:39:28.843">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="Customer"/>
+      <Column Name="SalesName"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Operation NO"   Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_FillHave>
+
+  <!--文件员 所有-->
+  <TaskCenter_OceanExport_FillALL Name="TaskCenter_OceanExport_FillALL" OperationType="1"
+                                BaseCriteria="$@OPD@=0  AND $@SOS@=1 
+                                  AND $@ShippingLineID@ IN(''8F09FD42-3BBA-4EA9-BB5B-80E53770CA84'',''91B68E82-32A9-4A41-
+
+8309-20DE34893C25'',''E2D05D39-B9A2-4C7D-838E-C6FA466509EE'',''FC4361F1-FF7A-4B57-B411-99E106D1B7C0'',''6F51BA0E-397C-4AF8
+
+-A453-617B1051E76B'') 
+                                  AND  $@IsValid@=1  AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@DocByID@='+'''%CurrentUser''"
+                                UpdateDate="2013-07-12 17:39:28.843">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"/>
+      <Column Name="Customer"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Operation NO"   Width="140"/>
+    </Columns>
+  </TaskCenter_OceanExport_FillALL>
+
+
+
+
+
+
+  <!--业务员-->
+  <TaskCenter_OceanExport_Salesman_ALL  Name="TaskCenter_Salesman_ALL" OperationType="1"
+                                       BaseCriteria="$@OPD@=0 AND $@CompanyID@ in (%CurrentCompany) AND  $@IsValid@=1 AND
+
+($@SalesID@='+'''%CurrentUser''OR $@OverSeasFilerId@='+'''%CurrentUser'')"
+                                       UpdateDate="2013-07-26 17:39:28.843" >
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Voyage"  />
+
+      <Column Name="ContainerNO"  />
+      <Column Name="BLNO"  />
+      <Column Name="SONO"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="BLRC"  />
+
+      <Column Name="ARCfm"  />
+      <Column Name="RBLD"  />
+      <Column Name="DocS"  />
+
+      <Column Name="OnBoard"  />
+
+      <Column Name="MBLD"  />
+      <Column Name="CFD"  />
+      <Column Name="TRKD"  />
+      <Column Name="SOPV"  />
+      <Column Name="SOD"  />
+      <Column Name="Operation NO"  Width="140">
+      </Column>
+    </Columns>
+  </TaskCenter_OceanExport_Salesman_ALL>
+
+  <!--海进业务列表
+
+***************************************************************************************************************************
+
+*************************************************************************-->
+
+  <!--今天新下载-->
+  <TaskCenter_OceanImport_TodayDownloaded Name="TaskCenter_OceanImport_TodayDownloaded" OperationType="2"
+                                    BaseCriteria="$@OPD@=0 AND $@CreateDate@=CONVERT(varchar(100), GETDATE(), 23) AND  
+
+$@IsValid@=1 AND $@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='%CurrentUser'"
+                                    UpdateDate="2014-11-12 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_TodayDownloaded>
+
+
+  <!--客服新订单-->
+  <TaskCenter_OceanImport_NewBooking  Name="TaskCenter_OceanImport_NewBooking" OperationType="2"
+                                     BaseCriteria="$@OPD@=0 AND($@ANSC@=0 OR $@APCCfm@=0 )AND  $@IsValid@=1 AND 
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_NewBooking>
+
+  <!--客服未放货-->
+  <TaskCenter_OceanImport_Notreleasecargo  Name="TaskCenter_OceanImport_Notreleasecargo" OperationType="2"
+                                     BaseCriteria="$@OPD@=0 AND $@RC@=0 AND $@ANSC@=1 AND $@APCCfm@=1 AND $@IsValid@=1  AND 
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''AND $@ARC@=0"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_Notreleasecargo>
+
+
+
+  <!--代理新放单通知-->
+
+  <TaskCenter_OceanImport_NewRBL  Name="TaskCenter_OceanImport_NewRBL" OperationType="2"
+                                     BaseCriteria="$@OPD@=0 AND $@RBLD@=1 AND $@RBLRcv@=0 AND  $@IsValid@=1 AND 
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='%CurrentUser'"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_NewRBL>
+
+
+
+  <!--待收放单文件-->
+  <TaskCenter_OceanImport_PendingRBLRcvd  Name="TaskCenter_OceanImport_PendingRBLRcvd" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRBLRcvd>
+
+
+  <!--客服同意放货-->
+  <TaskCenter_OceanImport_AgreeReleaseCargo  Name="TaskCenter_OceanImport_AgreeReleaseCargo" OperationType="2"
+                                     BaseCriteria="$@OPD@=0 AND $@RC@=0 AND $@ANSC@=1 AND $@APCCfm@=1 AND $@IsValid@=1  AND 
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''AND $@ARC@=1"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_AgreeReleaseCargo>
+
+  <!--客服本地服务-->
+  <TaskCenter_OceanImport_LocalService  Name="TaskCenter_OceanImport_LocalService" OperationType="2"
+                                     BaseCriteria="$@OPD@=0 AND ($@IsTruck@=1 OR $@IsCustoms@=1) AND $@ANSC@=1  AND 
+
+$@IsValid@=1 AND $@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_LocalService>
+
+
+  <!--客服未还空柜-->
+  <TaskCenter_OceanImport_EmptyTank  Name="TaskCenter_OceanImport_EmptyTank" OperationType="2"
+                                     BaseCriteria="$@OPD@=0  AND $@ANSC@=1 AND $@APCCfm@=1 AND $@IsValid@=1 AND $@ECR@=0 
+
+AND $@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_EmptyTank>
+
+
+  <!--客服核对账单-->
+  <TaskCenter_OceanImport_Bill  Name="TaskCenter_OceanImport_EmptyTank" OperationType="2"
+                                     BaseCriteria="$@OPD@=0  AND $@ANSC@=1 AND $@APCCfm@=1 AND $@IsValid@=1 AND $@ECR@=0 
+
+AND $@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                     UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_Bill>
+
+  <!--客服所有-->
+  <TaskCenter_OceanImport_ALL  Name="TaskCenter_OceanImport_ALL" OperationType="2"
+                               BaseCriteria="$@OPD@=0 AND $@CompanyID@ in (%CurrentCompany) AND 
+
+$@CustomerServiceID@='+'''%CurrentUser''"
+                               UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+      <Column Name="OceanImportAPP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="CFC"/>
+      <Column Name="OceanImportCFA"/>
+      <Column Name="ECR"/>
+      <Column Name="TrkP"/>
+      <Column Name="OceanImportTrkD"/>
+      <Column Name="DOS"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANRC"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Consignee"/>
+      <Column Name="Shipper"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="Agent"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="ETA"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_ALL>
+
+  <!--今天放货-->
+  <TaskCenter_OceanImport_TodayRC  Name="TaskCenter_OceanImport_TodayRC" OperationType="2"
+                               BaseCriteria=""
+                               UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_TodayRC>
+
+
+
+
+  <!--未完成文件-->
+  <TaskCenter_OceanImport_PendingDOC  Name="TaskCenter_OceanImport_PendingDOC" OperationType="2"
+                               BaseCriteria=""
+                               UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportARP"/>
+      <Column Name="OceanImportAPA"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="RCA"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLD"/>
+      <Column Name="RBLNt"/>
+      <Column Name="DOS"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingDOC>
+
+
+  <!--紧急-->
+  <TaskCenter_OceanImport_CustomerUrgent  Name="TaskCenter_OceanImport_CustomerUrgent" OperationType="2"
+                             BaseCriteria=""
+                             UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLNt"/>
+      <Column Name="RC"/>
+      <Column Name="MBLRelease"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="DOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_CustomerUrgent>
+
+  <!--今天放单通知-->
+  <TaskCenter_OceanImport_CustomerTodayRBLD  Name="TaskCenter_OceanImport_CustomerTodayRBLD" OperationType="2"
+                             BaseCriteria=""
+                             UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLNt"/>
+      <Column Name="RC"/>
+      <Column Name="MBLRelease"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="DOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_CustomerTodayRBLD>
+
+
+  <!--未放单通知-->
+  <TaskCenter_OceanImport_CustomerPendingRBLD  Name="TaskCenter_OceanImport_CustomerPendingRBLD" OperationType="2"
+                             BaseCriteria=""
+                             UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLNt"/>
+      <Column Name="RC"/>
+      <Column Name="MBLRelease"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="DOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_CustomerPendingRBLD>
+
+
+  <!--未收到放单指令-->
+  <TaskCenter_OceanImport_CustomerPendingRo  Name="TaskCenter_OceanImport_CustomerPendingRo" OperationType="2"
+                             BaseCriteria=""
+                             UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLNt"/>
+      <Column Name="RC"/>
+      <Column Name="MBLRelease"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="DOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_CustomerPendingRo>
+
+  <!--所有未放货-->
+  <TaskCenter_OceanImport_CustomerAllPendingRC  Name="TaskCenter_OceanImport_CustomerAllPendingRC" OperationType="2"
+                             BaseCriteria=""
+                             UpdateDate="" >
+    <Columns>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLRcv"/>
+      <Column Name="RBLNt"/>
+      <Column Name="RC"/>
+      <Column Name="MBLRelease"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="DOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_OceanImport_CustomerAllPendingRC>
+
+  <!--文件员 未处理-->
+  <TaskCenter_OceanImport_Filluntreated  Name="TaskCenter_OceanImport_Filluntreated" OperationType="2"
+                                         BaseCriteria="$@OPD@=0 AND  $@ANSC@=0 AND $@APCCfm@=0 AND $@CompanyID@ in 
+
+(%CurrentCompany) AND $@DocByID@='+'''%CurrentUser''"
+                                         UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="AgentDocsState"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="SalesName"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_Filluntreated>
+
+  <!--文件员 已处理-->
+  <TaskCenter_OceanImport_FillHaveDealWith  Name="TaskCenter_OceanImport_FillHaveDealWith" OperationType="2"
+                                            BaseCriteria="$@OPD@=0 AND  $@ANSC@=1 AND $@APCCfm@=1 AND $@CompanyID@ in 
+
+(%CurrentCompany) AND $@DocByID@='+'''%CurrentUser''"
+                                            UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="SalesName"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_FillHaveDealWith>
+
+  <!--文件员 所有-->
+  <TaskCenter_OceanImport_FillALL   Name="TaskCenter_OceanImport_FillALL" OperationType="2"
+                                    BaseCriteria="$@OPD@=0 AND $@CompanyID@ in (%CurrentCompany) AND 
+
+$@DocByID@='+'''%CurrentUser''"
+                                    UpdateDate="2013-11-20 17:39:28.843" >
+    <Columns>
+
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="SalesName"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_FillALL>
+
+  <!--计费员:已申请放货  joe-->
+  <TaskCenter_OceanImport_ApplyReleaseCargo  Name="TaskCenter_OceanImport_ApplyReleaseCargo" OperationType="2"
+                                         BaseCriteria="$@OPD@=0  AND $@IsValid@=1   AND $@RCA@=1  AND $@ARC@=0  AND 
+
+$@CompanyID@ in (%CurrentCompany)"
+                                         UpdateDate="2013-12-10 17:39:28.843" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_ApplyReleaseCargo>
+
+  <!--待放货（买单）-->
+  <TaskCenter_OceanImport_PendingRCNonTerm  Name="TaskCenter_OceanImport_PendingRCNonTerm" OperationType="2"
+                                       BaseCriteria="$@OPD@=0  AND $@IsValid@=1   AND $@RCA@=1  AND $@ARC@=0  AND 
+
+$@CompanyID@ in (%CurrentCompany)"
+                                       UpdateDate="2013-12-10 17:39:28.843" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCNonTerm>
+
+
+  <!--待放货（月结）所有-->
+  <TaskCenter_OceanImport_PendingRCTermALL  Name="TaskCenter_OceanImport_PendingRCTermALL" OperationType="2"
+                                       BaseCriteria=""
+                                       UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermALL>
+  <TaskCenter_OceanImport_PendingRCTermUrgent  Name="TaskCenter_OceanImport_PendingRCTermUrgent" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermUrgent>
+  <TaskCenter_OceanImport_PendingRCTermETA  Name="TaskCenter_OceanImport_PendingRCTermETA" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermETA>
+
+  <!--待放货（投保）所有-->
+  <TaskCenter_OceanImport_PendingRCTermInsuredALL  Name="TaskCenter_OceanImport_PendingRCTermInsuredALL" OperationType="2"
+                                         BaseCriteria=""
+                                         UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermInsuredALL>
+  <TaskCenter_OceanImport_PendingRCTermInsuredUrgent  Name="TaskCenter_OceanImport_PendingRCTermInsuredUrgent" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermInsuredUrgent>
+  <TaskCenter_OceanImport_PendingRCTermInsuredETA  Name="TaskCenter_OceanImport_PendingRCTermInsuredETA" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTermInsuredETA>
+  <TaskCenter_OceanImport_PendingRCInsuredAll  Name="TaskCenter_OceanImport_PendingRCInsuredAll" OperationType="2"
+                                       BaseCriteria=""
+                                       UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCInsuredAll>
+  <TaskCenter_OceanImport_PendingRCInsuredUrgent  Name="TaskCenter_OceanImport_PendingRCInsuredUrgent" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCInsuredUrgent>
+  <TaskCenter_OceanImport_PendingRCTInsuredETA  Name="TaskCenter_OceanImport_PendingRCTInsuredETA" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="true" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRCTInsuredETA>
+  <!--当天付款-->
+  
+  <TaskCenter_OceanImport_PaidToday  Name="TaskCenter_OceanImport_PaidToday" OperationType="2"
+                                       BaseCriteria="$@OPD@=0  AND $@IsValid@=1   AND $@RCA@=1  AND $@ARC@=0  AND 
+
+$@CompanyID@ in (%CurrentCompany)"
+                                       UpdateDate="2013-12-10 17:39:28.843" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PaidToday>
+
+  <!--计费员:已同意放货  joe-->
+  <TaskCenter_OceanImport_AgreedReleaseCargo  Name="TaskCenter_OceanImport_AgreedReleaseCargo" OperationType="2"
+                                         BaseCriteria="$@OPD@=0 AND $@IsValid@=1    AND  $@ARC@=1  AND $@CompanyID@ in 
+
+(%CurrentCompany)"
+                                         UpdateDate="2013-12-10 17:39:28.843" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo"/>
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_AgreedReleaseCargo>
+
+  <!--计费员:所有  joe-->
+  <TaskCenter_OceanImport_ReleaseCargoALL  Name="TaskCenter_OceanImport_ReleaseCargoALL" OperationType="2"
+                                         BaseCriteria="$@OPD@=0  AND $@IsValid@=1   AND $@CompanyID@ in (%CurrentCompany)"
+                                         UpdateDate="2013-12-30 17:39:28.843" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ACCLOS"/>TaskCenter_OceanImport_Paid
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="Release" />
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="BLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_ReleaseCargoALL>
+
+
+
+  <!--待同意送货-->
+  <TaskCenter_OceanImport_PendingAD  Name="TaskCenter_OceanImport_PendingAD" OperationType="2"
+                                        BaseCriteria=""
+                                        UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="Release" />
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RBLD"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="Carrier"/>
+      <Column Name="BLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingAD>
+
+
+  <!--待付款-->
+  <TaskCenter_OceanImport_PendingPayment  Name="TaskCenter_OceanImport_PendingPayment" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="ACCLOS"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsMailDMBL"/>
+      <Column Name="IsOMBLRcved"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RBLD"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingPayment>
+
+  <!--不付款-->
+  <TaskCenter_OceanImport_NoPayment  Name="TaskCenter_OceanImport_NoPayment" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsMailDMBL"/>
+      <Column Name="IsOMBLRcved"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RBLD"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_NoPayment>
+
+
+
+  <TaskCenter_OceanImport_Paid  Name="TaskCenter_OceanImport_Paid" OperationType="2"
+                                 BaseCriteria=""
+                                 UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_Paid>
+
+  <TaskCenter_OceanImport_PendingRBLDToDay  Name="TaskCenter_OceanImport_PendingRBLDToDay" OperationType="2"
+                                 BaseCriteria=""
+                                 UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRBLDToDay>
+
+
+  <TaskCenter_OceanImport_PendingRC  Name="TaskCenter_OceanImport_PendingRC" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_PendingRC>
+
+
+  <TaskCenter_OceanImport_DoneRC  Name="TaskCenter_OceanImport_DoneRC" OperationType="2"
+                                   BaseCriteria=""
+                                   UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_DoneRC>
+
+
+  <TaskCenter_OceanImport_QuestionablePaidNoRC  Name="TaskCenter_OceanImport_QuestionablePaidNoRC" OperationType="2"
+                                  BaseCriteria=""
+                                  UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_QuestionablePaidNoRC>
+
+  <TaskCenter_OceanImport_QuestionableRCNoPay  Name="TaskCenter_OceanImport_QuestionableRCNoPay" OperationType="2"
+                                BaseCriteria=""
+                                UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_QuestionableRCNoPay>
+
+
+
+  <TaskCenter_OceanImport_AlreadyRC   Name="TaskCenter_OceanImport_AlreadyRC" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired" />
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="TelxNo" Width="95"/>
+      <Column Name="MBLRelease" />
+      <Column Name="RBLD"/>
+      <Column Name="Carrier"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+      <Column Name="Selected"/>
+    </Columns>
+  </TaskCenter_OceanImport_AlreadyRC>
+
+
+
+  <!--紧急-->
+  <TaskCenter_OceanImport_Urgent  Name="TaskCenter_OceanImport_Urgent" OperationType="2"
+                                     BaseCriteria=""
+                                     UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_Urgent>
+
+  <!--待通知-->
+  <TaskCenter_OceanImport_PendingNotify  Name="TaskCenter_OceanImport_PendingNotify" OperationType="2"
+                                    BaseCriteria=""
+                                    UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingNotify>
+
+  <!--已通知-->
+  <TaskCenter_OceanImport_Notified  Name="TaskCenter_OceanImport_Notified" OperationType="2"
+                                    BaseCriteria=""
+                                    UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_Notified>
+
+  <!--已放货-->
+  <TaskCenter_OceanImport_Released  Name="TaskCenter_OceanImport_Released" OperationType="2"
+                                  BaseCriteria=""
+                                  UpdateDate="" >
+    <Columns>
+      <Column Name="ETD" Width="78"/>
+      <Column Name="Vessel" Width="110"/>
+      <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="78">
+        <Caption zhcn="航次" enus="Voyage"/>
+      </Column>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release" />
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="HD"/>
+      <Column Name="RC"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLD"/>
+      <Column Name="OceanImportPaid"/>
+      <Column Name="OceanImportReceiveed"/>
+      <Column Name="ETA"/>
+      <Column Name="BLNO" Width="156"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_Released>
+
+  <!--国外版本
+
+*************************************************************************************************************-->
+  <!--直客  新订单-->
+  <TaskCenter_US_OceanExport_NewBooking  Name="TaskCenter_US_OceanExport_NewBooking" OperationType="1"
+                                      BaseCriteria="$@OPD@=0 AND $@SOPV@=1 AND $@APR@=0   
+                                      AND $@ContactMail@ LIKE '%%MailSender%'   
+                                      AND $@CompanyID@ in (%CurrentCompany)  
+                                      AND $@DocByID@ = '%CurrentUser'"
+                                      UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="OceanExportPlaceOfReceipt"/>
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="Carrier"  />
+      <Column Name="Voyage"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD" />
+      <Column Name="OceanExportPlaceOfDelivery"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="Customer"/>
+      <Column Name="AdjSOCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="ASO">
+        <CaptionRname zhcn="Adj SO Copy" enus="Adj SO Copy"></CaptionRname>
+      </Column>
+      <Column Name="SOCopy"  />
+      <Column Name="SONO"  />
+      <Column Name="SOC"  />
+      <Column Name="SOPV"  />
+      <Column Name="SOPA"  />
+      <Column Name="SOCD"  />
+      <Column Name="SOS"  />
+      <Column Name="SOD"  />
+      <Column Name="SOA"  />
+      <Column Name="Operation NO"  />
+    </Columns>
+  </TaskCenter_US_OceanExport_NewBooking>
+
+  <!--直客 本地服务节点-->
+  <TaskCenter_US_OceanExport_LS Name="TaskCenter_US_OceanExport_LS" OperationType="1"
+                             BaseCriteria="$@OPD@=0 AND $@RBLD@!=2 AND $@SOS@=1 AND $@SOPV@=1  AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser'' AND $@IsTruck@=1 OR $@IsCustoms@=1"
+                             UpdateDate="2013-08-28 11:02:08.866">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="TrkLoadOn"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="CFD"  />
+      <Column Name="CFA"  />
+      <Column Name="TRKD"  />
+      <Column Name="TRKA"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_LS>
+
+
+
+  <!--直客 核对提单-->
+  <TaskCenter_US_OceanExport_SILS  Name="TaskCenter_US_OceanExport_SILS" OperationType="1"
+                                BaseCriteria="$@OPD@=0 AND $@SOS@=1 
+                                AND $@SOPV@=1 AND $@CompanyID@ in (%CurrentCompany) 
+                                AND $@CustomerServiceID@='%CurrentUser'"
+                                UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="BLNO"  />
+      <Column Name="SONO"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="Carrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLCfmAgt"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLR"  />
+      <Column Name="MBLD"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_SILS>
+
+
+
+  <!--直客 未装船节点-->
+  <TaskCenter_US_OceanExport_OnBoard  Name="TaskCenter_US_OceanExport_SILS" OperationType="1"
+                                BaseCriteria="$@OPD@=0 AND $@OnBoard@!=3 AND $@SOS@=1 AND $@SOPV@=1 AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                                UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="BLNO"  />
+      <Column Name="SONO"  />
+      <Column Name="OnBoard"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_OnBoard>
+
+  <!-- 直客 核对账单-->
+  <TaskCenter_US_OceanExport_Bill Name="TaskCenter_US_OceanExport_Bill" OperationType="1"
+                           BaseCriteria="$@OPD@=0 AND $@MBLD@=2 AND $@SOS@=1 AND $@SOPV@=1  AND  $@IsValid@=1  AND  
+
+$@CompanyID@ in (%CurrentCompany) AND $@CustomerServiceID@='+'''%CurrentUser''"
+                           UpdateDate="2013-08-28 11:02:08.866">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLRC"  />
+      <Column Name="RBLD"  />
+      <Column Name="DCRcv"  />
+
+      <Column Name="DCRev"  />
+
+      <Column Name="DocH"  />
+
+      <Column Name="DocS"  />
+
+      <Column Name="APR"  />
+
+      <Column Name="ARA"  />
+      <Column Name="ARCfm"  />
+      <Column Name="APInv"  />
+      <Column Name="APP"  />
+      <Column Name="APA"  />
+      <Column Name="ARP"  />
+      <Column Name="MBLR"  />
+      <Column Name="MBLD"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+
+  </TaskCenter_US_OceanExport_Bill>
+
+  <!--直客 已放单节点-->
+  <TaskCenter_US_OceanExport_ReleaseBL Name="TaskCenter_US_OceanExport_ReleaseBL" OperationType="1"
+                                    BaseCriteria="$@OPD@=0 AND $@MBLD@=2 
+                                    AND $@IsValid@=1  AND  $@CompanyID@ in (%CurrentCompany)  
+                                    AND $@CustomerServiceID@='%CurrentUser'"
+                                    UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="OnBoard"  />
+      <Column Name="BLRC"  />
+      <Column Name="RBLD"  />
+      <Column Name="RBLH"  />
+      <Column Name="RBLA"  />
+
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_ReleaseBL>
+
+  <!-- 直客全部-->
+  <TaskCenter_US_OceanExport_All Name="TaskCenter_OceanExport_All" OperationType="1"
+                              BaseCriteria="$@OPD@=0 AND  $@CompanyID@ in (%CurrentCompany) 
+                              AND $@CustomerServiceID@='%CurrentUser'"
+                              UpdateDate="2013-03-25 17:39:28.843">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="Customer"/>
+      <Column Name="SalesName"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Consignee"  />
+      <Column Name="Shipper"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="Voyage"  />
+      <Column Name="POD"  />
+      <Column Name="OceanExportPlaceOfReceipt"  />
+      <Column Name="POL"  />
+      <Column Name="OceanExportPlaceOfDelivery"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="BLRC"  />
+      <Column Name="ARCfm"  />
+      <Column Name="RBLD"  />
+      <Column Name="DocS"  />
+      <Column Name="OnBoard"  />
+      <Column Name="MBLD"  />
+      <Column Name="CFD"  />
+      <Column Name="TRKD"  />
+      <Column Name="SOC"  />
+      <Column Name="SOPV"  />
+      <Column Name="SOD"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ClosingDate" Order="Voyage"/>
+      </Column>
+    </Columns>
+
+  </TaskCenter_US_OceanExport_All>
+
+
+
+
+  <!--订舱员  所有新订单-->
+  <TaskCenter_US_OceanExport_SpaceNewBookingALL Name="TaskCenter_US_OceanExport_SpaceNewBookingALL" OperationType="1"
+                                             BaseCriteria="$@OPD@=0 AND $@State@=1 AND  $@IsValid@=1  
+                                             AND $@CompanyID@ in (%CurrentCompany) AND $@SoByID@='%CurrentUser'"
+                                             UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="TransportDescription"/>
+      <Column Name="OceanExportPlaceOfDelivery"/>
+      <Column Name="OceanExportPlaceOfReceipt"/>
+      <Column Name="OEWeight"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="Carrier"  />
+      <Column Name="Commodity"/>
+      <Column Name="SOCopy"  EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO"/>
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false"/>
+      <Column Name="SOF"  />
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_SpaceNewBookingALL>
+
+
+
+
+  <!--订舱员已订舱-->
+  <TaskCenter_US_OceanExport_SpaceHaveBookingALL Name="TaskCenter_US_OceanExport_SpaceHaveBookingALL" OperationType="1"
+                                              BaseCriteria="$@OPD@=0 AND $@SOS@=1 AND  $@IsValid@=1  
+                                              AND  $@CompanyID@ in (%CurrentCompany) AND $@SoByID@='%CurrentUser'"
+                                              UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="TransportDescription"/>
+      <Column Name="OceanExportPlaceOfDelivery"/>
+      <Column Name="OceanExportPlaceOfReceipt"/>
+      <Column Name="OEWeight"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate" />
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="Carrier"  />
+      <Column Name="Commodity"/>
+      <Column Name="SOCopy"  EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO"/>
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false"/>
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_SpaceHaveBookingALL>
+
+
+  <!--订舱员所有订舱单-->
+  <TaskCenter_US_OceanExport_SpaceALL Name="TaskCenter_US_OceanExport_SpaceHaveBookingALL" OperationType="1"
+                                   BaseCriteria="$@OPD@=0 AND $@CompanyID@ in (%CurrentCompany) 
+                                   AND $@SoByID@='%CurrentUser'"
+                                   UpdateDate="2013-07-10 17:39:28.843">
+    <Columns>
+      <Column Name="Customer"/>
+      <Column Name="Commodity"/>
+      <Column Name="TransportDescription"/>
+      <Column Name="OceanExportPlaceOfDelivery"/>
+      <Column Name="OceanExportPlaceOfReceipt"/>
+      <Column Name="OEWeight"/>
+      <Column Name="ETA"/>
+      <Column Name="ETD"/>
+      <Column Name="RailCyCutOff"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerDesc"   Width="140"/>
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="SOCopy" EditType="Memo" Editable="true" ReadOnly="true" Dropable="true" DocumentType="OSO" />
+      <Column Name="SONO"  EditType="Text" Editable="true" ReadOnly="false"/>
+      <Column Name="SOF"  />
+      <Column Name="SOD"  />
+      <Column Name="SOB"  />
+      <Column Name="SOA"  />
+      <Column Name="Operation NO" Width="140" >
+        <SqlWhere Group="RailCyCutOff" Order="Voyage"/>
+      </Column>
+    </Columns>
+  </TaskCenter_US_OceanExport_SpaceALL>
+
+
+
+
+
+
+  <!--空运出口********************************************************************************************************-->
+  <!--已完成-->
+  <TaskCenter_AirExport_HasCompleted  Name="TaskCenter_AirExport_HasCompleted" OperationType="3"
+                               BaseCriteria="$@OPD@=1 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@FilerId@='+'''%CurrentUser''"
+                               UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="AirExportFilerName"/>
+      <Column Name="AirExportBookingerName"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirExportSODATE"/>
+      <Column Name="ClosingDate"/>
+      <Column Name="AirExportAirCompanyName"/>
+      <Column Name="AgentOfCarrierName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="AirExportBookingCustomerName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="BLNO"/>
+      <Column Name="AgentName"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_AirExport_HasCompleted>
+
+  <!--未完成-->
+  <TaskCenter_AirExport_NotCompleted  Name="TaskCenter_AirExport_NotCompleted" OperationType="3"
+                               BaseCriteria="$@OPD@=0 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@FilerId@='+'''%CurrentUser''"
+                               UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="AirExportFilerName"/>
+      <Column Name="AirExportBookingerName"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirExportSODATE"/>
+      <Column Name="ClosingDate"/>
+      <Column Name="AirExportAirCompanyName"/>
+      <Column Name="AgentOfCarrierName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="AirExportBookingCustomerName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="BLNO"/>
+      <Column Name="AgentName"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_AirExport_NotCompleted>
+
+  <!--所有-->
+  <TaskCenter_AirExport_All  Name="TaskCenter_AirExport_All" OperationType="3"
+                             BaseCriteria="$@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@FilerId@='+'''%CurrentUser''"
+                             UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="AirExportFilerName"/>
+      <Column Name="AirExportBookingerName"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirExportSODATE"/>
+      <Column Name="ClosingDate"/>
+      <Column Name="AirExportAirCompanyName"/>
+      <Column Name="AgentOfCarrierName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="AirExportBookingCustomerName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="BLNO"/>
+      <Column Name="AgentName"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+
+  </TaskCenter_AirExport_All>
+
+  <!--空运进口********************************************************************************************************-->
+  <!--已完成-->
+  <TaskCenter_AirImport_HasCompleted  Name="TaskCenter_AirImport_HasCompleted" OperationType="4"
+                          BaseCriteria="$@OPD@=1 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@ConsigneeID@='+'''%CurrentUser''"
+                          UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="CustomerService"/>
+      <Column Name="AirImportMeasurement"/>
+      <Column Name="AirImportWeight"/>
+      <Column Name="AirImportQuantity"/>
+      <Column Name="AirImportITNO"/>
+      <Column Name="AirImportDeliveryDate"/>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirImportCustomerRefNo"/>
+      <Column Name="Customer"/>
+      <Column Name="AirImportPOLFilerName"/>
+      <Column Name="AgentName"/>
+      <Column Name="AirImportReleaseType"/>
+      <Column Name="APP"/>
+      <Column Name="BLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_AirImport_HasCompleted>
+
+  <!--未完成-->
+  <TaskCenter_AirImport_NotCompleted  Name="TaskCenter_AirImport_NotCompleted" OperationType="4"
+                        BaseCriteria="$@OPD@=0 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@ConsigneeID@='+'''%CurrentUser''"
+                        UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="CustomerService"/>
+      <Column Name="AirImportMeasurement"/>
+      <Column Name="AirImportWeight"/>
+      <Column Name="AirImportQuantity"/>
+      <Column Name="AirImportITNO"/>
+      <Column Name="AirImportDeliveryDate"/>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirImportCustomerRefNo"/>
+      <Column Name="Customer"/>
+      <Column Name="AirImportPOLFilerName"/>
+      <Column Name="AgentName"/>
+      <Column Name="AirImportReleaseType"/>
+      <Column Name="APP"/>
+      <Column Name="BLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_AirImport_NotCompleted>
+
+
+  <!--所有-->
+  <TaskCenter_AirImport_All  Name="TaskCenter_AirImport_ALL" OperationType="4"
+                           BaseCriteria="$@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@ConsigneeID@='+'''%CurrentUser''"
+                           UpdateDate="2013-01-07 14:39:28.843" >
+    <Columns>
+      <Column Name="CustomerService"/>
+      <Column Name="AirImportMeasurement"/>
+      <Column Name="AirImportWeight"/>
+      <Column Name="AirImportQuantity"/>
+      <Column Name="AirImportITNO"/>
+      <Column Name="AirImportDeliveryDate"/>
+      <Column Name="FinalDestinationName"/>
+      <Column Name="ETA">
+        <CaptionRname zhcn="到达日" enus="ETA"></CaptionRname>
+      </Column>
+      <Column Name="ETD">
+        <CaptionRname zhcn="起航日" enus="ETD"></CaptionRname>
+      </Column>
+      <Column Name="PODName"/>
+      <Column Name="POLName"/>
+      <Column Name="ConsigneeName"/>
+      <Column Name="ShipperName"/>
+      <Column Name="FlightNo"/>
+      <Column Name="SalesName"/>
+      <Column Name="AirImportCustomerRefNo"/>
+      <Column Name="Customer"/>
+      <Column Name="AirImportPOLFilerName"/>
+      <Column Name="AgentName"/>
+      <Column Name="AirImportReleaseType"/>
+      <Column Name="APP"/>
+      <Column Name="BLNO"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_AirImport_All>
+
+
+
+
+  <!--其他业务********************************************************************************************************-->
+  <!--已完成-->
+  <TaskCenter_OtherBusiness_HasCompleted  Name="TaskCenter_OtherBusiness_HasCompleted" OperationType="5"
+                           BaseCriteria="$@OPD@=1 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@CreateBy@='+'''%CurrentUser''"
+                           UpdateDate="2014-09-29 14:39:28.843" >
+    <Columns>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="Carrier"  />
+      <Column Name="FinalDestinationName"  />
+      <Column Name="FETA"  />
+      <Column Name="ETD"  />
+      <Column Name="ETA"  />
+      <Column Name="PODName"  />
+      <Column Name="POLName"  />
+      <Column Name="Voyage"  />
+      <Column Name="Customer"  />
+      <Column Name="BLNO"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_OtherBusiness_HasCompleted>
+  <!--未完成-->
+  <TaskCenter_OtherBusiness_NotCompleted
+                           Name="TaskCenter_OtherBusiness_NotCompleted"
+                           OperationType="5"
+                           BaseCriteria=""
+                           UpdateDate="2014-09-29 14:39:28.843" >
+    <Columns>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="Carrier"  />
+      <Column Name="FinalDestinationName"  />
+      <Column Name="FETA"  />
+      <Column Name="ETD"  />
+      <Column Name="ETA"  />
+      <Column Name="PODName"  />
+      <Column Name="POLName"  />
+      <Column Name="Voyage"  />
+      <Column Name="Customer"  />
+      <Column Name="BLNO"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_OtherBusiness_NotCompleted>
+
+  <!--所有-->
+  <TaskCenter_OtherBusiness_All  Name="TaskCenter_OtherBusiness_All" OperationType="5"
+                           BaseCriteria="$@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND 
+
+$@CreateBy@='+'''%CurrentUser''"
+                           UpdateDate="2014-09-29 14:39:28.843" >
+    <Columns>
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="Carrier"  />
+      <Column Name="FinalDestinationName"  />
+      <Column Name="FETA"  />
+      <Column Name="ETD"  />
+      <Column Name="ETA"  />
+      <Column Name="PODName"  />
+      <Column Name="POLName"  />
+      <Column Name="Voyage"  />
+      <Column Name="Customer"  />
+      <Column Name="BLNO"  />
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="ETA" Order=""/>
+      </Column>
+    </Columns>
+  </TaskCenter_OtherBusiness_All>
+
+
+  <!--询价********************************************************************************************************-->
+  <!--海运询价未答复-->
+  <TaskCenter_OceanInquireRate_UnReply
+    Name="TaskCenter_OceanInquireRate_UnReply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="SurCharge" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_OceanInquireRate_UnReply>
+
+  <!--海运询价已答复-->
+  <TaskCenter_OceanInquireRate_Reply
+    Name="TaskCenter_OceanInquireRate_Reply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="SurCharge" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_OceanInquireRate_Reply>
+
+  <!--海运询价所有-->
+  <TaskCenter_OceanInquireRate_All
+    Name="TaskCenter_OceanInquireRate_All"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="SurCharge" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_OceanInquireRate_All>
+
+  <!--空运询价未答复-->
+  <TaskCenter_AirInquireRate_UnReply
+    Name="TaskCenter_AirInquireRate_UnReply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="Routing" />
+      <Column Name="Schedule" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_AirInquireRate_UnReply>
+
+  <!--空运询价已答复-->
+  <TaskCenter_AirInquireRate_Reply
+    Name="TaskCenter_AirInquireRate_Reply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="Routing" />
+      <Column Name="Schedule" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_AirInquireRate_Reply>
+
+  <!--空运询价所有-->
+  <TaskCenter_AirInquireRate_All
+    Name="TaskCenter_AirInquireRate_All"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="Routing" />
+      <Column Name="Schedule" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Currency" />
+      <Column Name="PlaceOfDelivery">
+        <CaptionRname zhcn="Delivery" enus="Delivery"/>
+      </Column>
+      <Column Name="PODName">
+        <CaptionRname zhcn="POD" enus="POD"/>
+      </Column>
+      <Column Name="POLName">
+        <CaptionRname zhcn="POL" enus="POL"/>
+      </Column>
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+    </Columns>
+  </TaskCenter_AirInquireRate_All>
+
+  <!--拖车询价未答复-->
+  <TaskCenter_TruckingInquireRate_UnReply
+    Name="TaskCenter_TruckingInquireRate_UnReply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+      <Column Name="IsShare" />
+      <Column Name="Remark" FieldName="Remark" EditType="Memo" Editable="true" Width="78">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" EditType="DateTime" Editable="true" Convert="true" />
+      <Column Name="DurationFrom" EditType="DateTime" Editable="true" Convert="true" />
+      <Column Name="Total" />
+      <Column Name="FUEL" EditType="Text" Editable="true" />
+      <Column Name="TruckingRate" EditType="Text" Editable="true" />
+      <Column Name="Currency" EditType="Memo" Editable="true" />
+      <Column Name="ZIPCode" EditType="Text" Editable="true" />
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="PlaceOfDelivery" EditType="Text">
+        <CaptionRname zhcn="To" enus="To" />
+      </Column>
+      <Column Name="POLName" EditType="Text">
+        <CaptionRname zhcn="From" enus="From" />
+      </Column>
+    </Columns>
+  </TaskCenter_TruckingInquireRate_UnReply>
+
+  <!--拖车询价已答复-->
+  <TaskCenter_TruckingInquireRate_Reply
+    Name="TaskCenter_TruckingInquireRate_Reply"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="Total" />
+      <Column Name="FUEL" />
+      <Column Name="TruckingRate" />
+      <Column Name="Currency" />
+      <Column Name="ZIPCode" />
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="PlaceOfDelivery" EditType="Text">
+        <CaptionRname zhcn="To" enus="To" />
+      </Column>
+      <Column Name="POLName" EditType="Text">
+        <CaptionRname zhcn="From" enus="From" />
+      </Column>
+    </Columns>
+  </TaskCenter_TruckingInquireRate_Reply>
+
+  <!--拖车询价所有-->
+  <TaskCenter_TruckingInquireRate_All
+    Name="TaskCenter_TruckingInquireRate_All"
+    OperationType="10"
+    BaseCriteria=""
+    UpdateDate="2014-10-15 16:59:31.123">
+    <Columns>
+      <Column Name="UpdateDate" Convert="true" />
+      <Column Name="ShippingLine" />
+      <Column Name="Term" />
+      <Column Name="Commodity">
+        <CaptionRname zhcn="Commodity" enus="Commodity" />
+      </Column>
+      <Column Name="Carrier">
+        <CaptionRname zhcn="Carrier" enus="Carrier" />
+      </Column>
+      <Column Name="IsShare" />
+      <Column Name="Remark">
+        <CaptionRname zhcn="Remark" enus="Remark"/>
+      </Column>
+      <Column Name="DurationTo" Convert="true" />
+      <Column Name="DurationFrom" Convert="true" />
+      <Column Name="Total" />
+      <Column Name="FUEL" />
+      <Column Name="TruckingRate" />
+      <Column Name="Currency" />
+      <Column Name="ZIPCode" />
+      <Column Name="Operation NO">
+        <CaptionRname zhcn="No." enus="No." />
+      </Column>
+      <Column Name="PlaceOfDelivery" EditType="Text">
+        <CaptionRname zhcn="To" enus="To" />
+      </Column>
+      <Column Name="POLName" EditType="Text">
+        <CaptionRname zhcn="From" enus="From" />
+      </Column>
+    </Columns>
+  </TaskCenter_TruckingInquireRate_All>
+
+
+
+
+
+  <!--美国文件员 未补料-->
+
+  <TaskCenter_US_OceanExport_FillNot Name="TaskCenter_US_OceanExport_FillNot" OperationType="1"
+                                  BaseCriteria=""
+                                  UpdateDate="">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="Customer"/>
+      <Column Name="SalesName"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  Width="50"/>
+      <Column Name="SINC"/>
+      <Column Name="Operation NO"  Width="140"/>
+
+    </Columns>
+  </TaskCenter_US_OceanExport_FillNot>
+
+  <!--美国文件员 已补料-->
+  <TaskCenter_US_OceanExport_FillHave Name="TaskCenter_US_OceanExport_FillHave" OperationType="1"
+                                BaseCriteria=""
+                                UpdateDate="">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="Customer"/>
+      <Column Name="SalesName"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Operation NO"   Width="140"/>
+    </Columns>
+  </TaskCenter_US_OceanExport_FillHave>
+
+  <!--美国文件员 所有-->
+  <TaskCenter_US_OceanExport_FillALL Name="TaskCenter_US_OceanExport_FillALL" OperationType="1"
+                                BaseCriteria=""
+                                UpdateDate="">
+    <Columns>
+      <Column Name="DocBy"/>
+      <Column Name="CustomerService"/>
+      <Column Name="SalesName"/>
+      <Column Name="Customer"/>
+      <Column Name="POD"  />
+      <Column Name="POL"  />
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="Carrier"  />
+      <Column Name="AgentOfCarrier"  />
+      <Column Name="OnBoard"  />
+      <Column Name="SONO"  />
+      <Column Name="BLNO"  />
+      <Column Name="ISF"  />
+      <Column Name="AMS"  />
+      <Column Name="MBLD"  />
+      <Column Name="MBLR"  />
+      <Column Name="SICut"  />
+      <Column Name="BLCfm"  />
+      <Column Name="SIR"  />
+      <Column Name="SINC"  />
+      <Column Name="Operation NO"   Width="140"/>
+    </Columns>
+  </TaskCenter_US_OceanExport_FillALL>
+
+  <!--Pending AES-->
+  <TaskCenter_US_OceanExport_PendingAES Name="TaskCenter_US_OceanExport_PendingAES" OperationType="1"
+                            BaseCriteria=""
+                            UpdateDate="">
+    <Columns>
+      <Column Name="ETA"/>
+      <Column Name="ETD"  />
+      <Column Name="ClosingDate"  />
+      <Column Name="TrkLoadOn"  />
+      <Column Name="Voyage"  />
+      <Column Name="ContainerNO"  />
+      <Column Name="ContainerDesc"  Width="140"/>
+      <Column Name="CFD"  />
+      <Column Name="CFA"  />
+      <Column Name="TRKA"  />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+  </TaskCenter_US_OceanExport_PendingAES>
+
+
+  <!--进口文件-->
+
+
+
+  <!--待代理分文件-->
+  <TaskCenter_OceanImport_PendingAgentDocS  Name="TaskCenter_OceanImport_PendingAgentDocS" OperationType="2"
+                                  BaseCriteria=""
+                                  UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingAgentDocS>
+
+  <!-- 待收代理文件-->
+  <TaskCenter_OceanImport_PendingAgentDocH  Name="TaskCenter_OceanImport_PendingAgentDocH" OperationType="2"
+                                BaseCriteria=""
+                                UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingAgentDocH>
+
+
+  <!--待处理紧急文件-->
+  <TaskCenter_OceanImport_PendingUrgentDOC  Name="TaskCenter_OceanImport_PendingUrgentDOC" OperationType="2"
+                               BaseCriteria=""
+                               UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="TelxNo" />
+      <Column Name="Release"/>
+      <Column Name="LastFreeDate" Width="95"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingUrgentDOC>
+
+
+  <!--待发到港通知书-->
+  <TaskCenter_OceanImport_PendingANSC  Name="TaskCenter_OceanImport_PendingANSC" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingANSC>
+
+
+  <!--待费用确认-->
+  <TaskCenter_OceanImport_PendingAPCCfm  Name="TaskCenter_OceanImport_PendingAPCCfm" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_PendingAPCCfm>
+
+
+  <!--ETA在7天前-->
+  <TaskCenter_OceanImport_FileETAdaysago  Name="TaskCenter_OceanImport_FileETAdaysago" OperationType="2"
+                               BaseCriteria=""
+                               UpdateDate="" >
+    <Columns>
+      <Column Name="SalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"/>
+      <Column Name="POL"/>
+      <Column Name="ContainerNO"/>
+      <Column Name="ETD"/>
+      <Column Name="Voyage"/>
+      <Column Name="ANCopy" Editable="true" ReadOnly="true" Dropable="true" DocumentType="AN"/>
+      <Column Name="ANSC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANRC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="MBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140">
+        <SqlWhere Group="" Order="ETA"/>
+      </Column>
+    </Columns>
+  </TaskCenter_OceanImport_FileETAdaysago>
+
+
+  <!--进口客服-->
+
+  <!--待放货-->
+  <TaskCenter_OceanImport_UrgentPendingRC  Name="TaskCenter_OceanImport_UrgentPendingRC" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="RC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_UrgentPendingRC>
+
+
+  <!--ETA在5天前-->
+  <TaskCenter_OceanImport_CustomerETAdaysago  Name="TaskCenter_OceanImport_CustomerETAdaysago" OperationType="2"
+                                BaseCriteria=""
+                                UpdateDate="" >
+    <Columns>
+
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="RC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_CustomerETAdaysago>
+
+
+
+  <!--待提货-->
+  <TaskCenter_OceanImport_UrgentPendingPickUp  Name="TaskCenter_OceanImport_UrgentPendingPickUp" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_UrgentPendingPickUp>
+
+
+
+  <!--待送货-->
+  <TaskCenter_OceanImport_UrgentPendingDelivery  Name="TaskCenter_OceanImport_UrgentPendingDelivery" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_UrgentPendingDelivery>
+
+
+
+  <!--待还空-->
+  <TaskCenter_OceanImport_UrgentPendingECR  Name="TaskCenter_OceanImport_UrgentPendingECR" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+
+
+
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+
+
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+
+
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+
+
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+
+
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_UrgentPendingECR>
+
+
+
+
+  <!--待收款-->
+  <TaskCenter_OceanImport_PendingRCRcvd  Name="TaskCenter_OceanImport_PendingRCRcvd" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+
+      <Column Name="RC"/>
+      <Column Name="ACCLOS"/>
+
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+
+
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+
+
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingRCRcvd>
+
+  <!--待清关-->
+  <TaskCenter_OceanImport_PendingCC  Name="TaskCenter_OceanImport_PendingCC" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="RC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="CCF"/>
+      <Column Name="CCS"/>
+      <Column Name="CCR"/>
+      <Column Name="CCNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingCC>
+
+  <!--待收放货指令-->
+  <TaskCenter_OceanImport_PendingRBLD  Name="TaskCenter_OceanImport_PendingRBLD" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="RC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingRBLD>
+
+  <!--待收放单指令-->
+  <TaskCenter_OceanImport_PendingRORcvd Name="TaskCenter_OceanImport_PendingRORcvd" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="RC"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingRORcvd>
+
+
+
+
+  <!--待派车-->
+  <TaskCenter_OceanImport_PendingDO Name="TaskCenter_OceanImport_PendingDO" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+
+
+
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+
+
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+
+
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+
+
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+
+
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingDO>
+
+  <!--待完全放货-->
+  <TaskCenter_OceanImport_PendingFRC Name="TaskCenter_OceanImport_PendingFRC" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingFRC>
+
+  <!--待提货-->
+  <TaskCenter_OceanImport_PendingPickUp  Name="TaskCenter_OceanImport_PendingPickUp" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingPickUp>
+
+  <!--待送货-->
+  <TaskCenter_OceanImport_PendingDelivery  Name="TaskCenter_OceanImport_PendingDelivery" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingDelivery>
+
+
+
+  <!--待还空-->
+  <TaskCenter_OceanImport_PendingECR  Name="TaskCenter_OceanImport_PendingECR" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+    <Columns>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+
+
+
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+
+
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="ACCLOS"/>
+
+
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+
+
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+
+
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_OceanImport_PendingECR>
+
+
+  <!--所有-->
+  <TaskCenter_US_OceanImport_ALL  Name="TaskCenter_US_OceanImport_ALL" OperationType="2"
+                              BaseCriteria=""
+                              UpdateDate="" >
+
+    <Columns>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_US_OceanImport_ALL>
+
+
+
+  <!--今日放货-->
+  <TaskCenter_US_OceanImport_TodayRC   Name="TaskCenter_US_OceanImport_TodayRC" OperationType="2"
+                            BaseCriteria=""
+                            UpdateDate="" >
+
+    <Columns>
+      <Column Name="APCCfm"/>
+      <Column Name="ANSC"/>
+      <Column Name="RCReceiveed"/>
+      <Column Name="ARC"/>
+      <Column Name="RoRcvd"/>
+      <Column Name="IsReleaseOrderRequired"/>
+      <Column Name="RBLD"/>
+      <Column Name="TelxNo"/>
+      <Column Name="IsOBLRcved"/>
+      <Column Name="Release"/>
+      <Column Name="PayNt"/>
+      <Column Name="RBLNt"/>
+      <Column Name="ReleaseBLDate"/>
+      <Column Name="Agent"/>
+      <Column Name="OiSalesName"/>
+      <Column Name="FinalDestination"/>
+      <Column Name="DETA"/>
+      <Column Name="PlaceOfDelivery"/>
+      <Column Name="POD"  Width="120"/>
+      <Column Name="ETD"/>
+      <Column Name="POL" Width="120"/>
+      <Column Name="Voyage" Width="200"/>
+      <Column Name="ContainerNO" Width="150"/>
+      <Column Name="MBLNO"/>
+      <Column Name="ECR"/>
+      <Column Name="FCD"/>
+      <Column Name="FCP"/>
+      <Column Name="DOS"/>
+      <Column Name="AD"/>
+      <Column Name="HD"/>
+      <Column Name="FRC"/>
+      <Column Name="RC"/>
+      <Column Name="ACCLOS"/>
+      <Column Name="ETA"/>
+      <Column Name="HBLNO"/>
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140"/>
+    </Columns>
+
+  </TaskCenter_US_OceanImport_TodayRC>
+
+  <!--已完成-->
+  <TaskCenter_OtherBusiness_ECommerce_ALL  Name="TaskCenter_OtherBusiness_ECommerce_ALL" OperationType="5"
+                           BaseCriteria="$@OPD@=0 AND $@IsValid@=1 AND  $@CompanyID@ in (%CurrentCompany) AND $@CreateBy@='+'''%CurrentUser''"
+                           UpdateDate="2014-09-29 14:39:28.843" >
+    <Columns>
+      <Column Name="SalesName" />
+      <Column Name="OBMeasurement" />
+      <Column Name="OBWeight" />
+      <Column Name="OBQuantity" />
+      <Column Name="OBCommodity" />
+      <Column Name="OBECExpressNo" />
+      <Column Name="OBECBLNO" />
+      <Column Name="OBECDestination" />
+      <Column Name="OBECDeparture" />
+      <Column Name="Customer"/>
+      <Column Name="Operation NO"  Width="140" />
+    </Columns>
+  </TaskCenter_OtherBusiness_ECommerce_ALL>
+  <!--任务中心-->
+</Template>

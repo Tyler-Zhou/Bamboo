@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="08/08/2011 13:57:09" ReportInfo.Modified="08/31/2012 17:20:36" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {      
+    private void Page1_StartPage(object sender, EventArgs e)
+    {      
+      if((String)Report.GetColumnValue(&quot;AGTReleaseOrder_AGTReleaseOrder.Remark&quot;)==&quot;See attachement&quot;)
+      {
+        Subreport1.Visible = true;
+      }
+      else
+      {
+        Subreport1.Visible = false;
+      }  
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="AGTReleaseOrder_AGTReleaseOrder" ReferenceName="AGTReleaseOrder_AGTReleaseOrder" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyTelFax" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CurrentUser" DataType="System.String"/>
+      <Column Name="CurrentDate" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="SpecialInstruction" DataType="System.String"/>
+      <Column Name="AMSHouseBLNo" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="CustomerRefNo" DataType="System.String"/>
+      <Column Name="FinalWareHouseDescription" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="HouseBLId" DataType="System.Guid"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="ITNo" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="NoOfPackages" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="SubBLNo" DataType="System.String"/>
+      <Column Name="VesselName" DataType="System.String"/>
+      <Column Name="VoyageNo" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData" ReferenceName="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="GODate" DataType="System.String"/>
+      <Column Name="LastFreeDate" DataType="System.String"/>
+      <Column Name="PickupNo" DataType="System.String"/>
+      <Column Name="SealNo" DataType="System.String"/>
+      <Column Name="Size" DataType="System.String"/>
+      <Column Name="Type" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="718.2" Height="85.05">
+      <TextObject Name="Text1" Width="718.2" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CompanyName]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text2" Top="18.9" Width="718.2" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CompanyAddress]" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text3" Top="37.8" Width="718.2" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CompanyTelFax]" HorzAlign="Center"/>
+      <TextObject Name="Text4" Top="56.7" Width="718.2" Height="28.35" Text="RELEASE ORDER / TURNOVER" HorzAlign="Center" Font="Arial, 20.25pt, style=Bold" TextFill.Color="Maroon"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="125.05" Width="718.2" Height="37.8">
+      <TextObject Name="Text5" Left="510.3" Width="47.25" Height="18.9" Text="Date:" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Left="510.3" Top="18.9" Width="47.25" Height="18.9" Text="By:" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text7" Left="557.55" Width="160.65" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CurrentDate]"/>
+      <TextObject Name="Text8" Left="557.55" Top="18.9" Width="160.65" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CurrentUser]"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="182.85" Width="718.2" Height="718.2" AfterDataEvent="Data1_AfterData">
+      <ShapeObject Name="Shape1" Top="9.45" Width="718.2" Height="302.4" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line1" Top="132.3" Width="716.31" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text9" Left="3.78" Top="13.23" Width="56.7" Height="18.9" Text="To:" TextFill.Color="Maroon"/>
+      <LineObject Name="Line2" Left="343.98" Top="9.83" Height="122.85" Border.Color="Maroon"/>
+      <LineObject Name="Line3" Left="349.65" Top="9.45" Height="122.85" Border.Color="Maroon"/>
+      <TextObject Name="Text10" Left="353.43" Top="13.23" Width="94.5" Height="18.9" Text="Release To:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text11" Left="3.78" Top="34.02" Width="340.2" Height="94.5" Text="[AGTReleaseOrder_AGTReleaseOrder.FinalWareHouseDescription]"/>
+      <TextObject Name="Text12" Left="353.43" Top="34.02" Width="359.1" Height="94.5" Text="[AGTReleaseOrder_AGTReleaseOrder.ConsigneeDescription]"/>
+      <TextObject Name="Text13" Left="3.78" Top="141.75" Width="94.5" Height="18.9" Text="Reference No" TextFill.Color="Maroon"/>
+      <TextObject Name="Text14" Left="3.78" Top="170.1" Width="94.5" Height="18.9" Text="Master B/L" TextFill.Color="Maroon"/>
+      <TextObject Name="Text15" Left="3.78" Top="198.45" Width="103.95" Height="18.9" Text="House B/L No." TextFill.Color="Maroon"/>
+      <TextObject Name="Text16" Left="3.78" Top="226.8" Width="94.5" Height="18.9" Text="ISF NO." TextFill.Color="Maroon"/>
+      <TextObject Name="Text17" Left="3.78" Top="255.15" Width="94.5" Height="18.9" Text="AMS B/L No." TextFill.Color="Maroon"/>
+      <TextObject Name="Text18" Left="3.78" Top="283.5" Width="94.5" Height="18.9" Text="ETA" TextFill.Color="Maroon"/>
+      <TextObject Name="Text19" Left="113.4" Top="141.75" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.CustomerRefNo]"/>
+      <TextObject Name="Text20" Left="113.4" Top="170.1" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.MasterBLNo]"/>
+      <TextObject Name="Text21" Left="113.4" Top="198.45" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.HouseBLNo]"/>
+      <TextObject Name="Text22" Left="113.4" Top="226.8" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.SubBLNo]"/>
+      <TextObject Name="Text23" Left="113.4" Top="255.15" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.AMSHouseBLNo]"/>
+      <TextObject Name="Text24" Left="113.4" Top="283.5" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.ETA]"/>
+      <TextObject Name="Text25" Left="349.65" Top="141.75" Width="132.3" Height="18.9" Text="Vessel/Voyage No." TextFill.Color="Maroon"/>
+      <TextObject Name="Text26" Left="349.65" Top="170.1" Width="94.5" Height="18.9" Text="I.T.NO." TextFill.Color="Maroon"/>
+      <TextObject Name="Text27" Left="349.65" Top="198.45" Width="103.95" Height="18.9" Text="Container NO." TextFill.Color="Maroon"/>
+      <TextObject Name="Text28" Left="481.95" Top="141.75" Width="236.25" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.VesselName] / [AGTReleaseOrder_AGTReleaseOrder.VoyageNo]"/>
+      <TextObject Name="Text29" Left="481.95" Top="170.1" Width="226.8" Height="18.9" Text="[AGTReleaseOrder_AGTReleaseOrder.ITNo]"/>
+      <TextObject Name="Text30" Left="349.65" Top="217.35" Width="359.1" Height="85.05" Text="[AGTReleaseOrder_AGTReleaseOrder.Remark]"/>
+      <ShapeObject Name="Shape2" Top="323.19" Width="718.2" Height="160.65" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line4" Top="353.43" Width="716.31" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text31" Left="9.45" Top="330.75" Width="113.4" Height="18.9" Text="MARKS &amp; NOS." TextFill.Color="Maroon"/>
+      <TextObject Name="Text32" Left="151.2" Top="330.75" Width="122.85" Height="18.9" Text="NO.OF PKGS." TextFill.Color="Maroon"/>
+      <TextObject Name="Text33" Left="283.5" Top="330.75" Width="217.35" Height="18.9" Text="DESCRIPTION PACKAGES AND" TextFill.Color="Maroon"/>
+      <TextObject Name="Text34" Left="538.65" Top="330.75" Width="179.55" Height="18.9" Text="PORT OF LOADING &amp; ETD" TextFill.Color="Maroon"/>
+      <TextObject Name="Text35" Left="151.2" Top="359.1" Width="103.95" Height="122.85" Text="[AGTReleaseOrder_AGTReleaseOrder.NoOfPackages]"/>
+      <TextObject Name="Text36" Left="283.5" Top="359.1" Width="217.35" Height="122.85" Text="[AGTReleaseOrder_AGTReleaseOrder.GoodsDescription]"/>
+      <TextObject Name="Text37" Left="538.65" Top="359.1" Width="170.1" Height="122.85" Text="[AGTReleaseOrder_AGTReleaseOrder.LoadPortName]  [AGTReleaseOrder_AGTReleaseOrder.ETD]"/>
+      <ShapeObject Name="Shape3" Top="497.07" Width="718.2" Height="179.55" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line5" Top="529.2" Width="716.31" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text38" Top="505.01" Width="718.2" Height="18.9" Text="SPECIAL INSTRUCTIONS" HorzAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text39" Left="9.45" Top="538.65" Width="699.3" Height="132.3" Text="[AGTReleaseOrder_AGTReleaseOrder.SpecialInstruction]"/>
+      <SubreportObject Name="Subreport1" Left="75.6" Top="689.85" Width="538.65" Height="18.9" ReportPage="Page2"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="921.05" Width="718.2"/>
+  </ReportPage>
+  <ReportPage Name="Page2">
+    <ColumnHeaderBand Name="ColumnHeaderBand1233996129" Top="20" Width="718.2" Height="0.25"/>
+    <DataBand Name="table1" Top="108.25" Width="718.2" Height="24" DataSource="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData">
+      <TextObject Name="ContainerNo_1" Width="141.75" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.ContainerNo]" VertAlign="Center"/>
+      <TextObject Name="Size" Left="141.75" Width="77.49" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.SealNo]" VertAlign="Center"/>
+      <TextObject Name="Type" Left="219.24" Width="56.7" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.Size][LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.Type]" VertAlign="Center"/>
+      <TextObject Name="PickupNo" Left="275.94" Width="132.3" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.PickupNo]" VertAlign="Center"/>
+      <TextObject Name="textbox2" Left="408.24" Width="132.3" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.LastFreeDate]" VertAlign="Center"/>
+      <DataHeaderBand Top="40.25" Width="718.2" Height="48">
+        <TextObject Name="textbox13" Width="540.54" Height="24" Border.Lines="Bottom" CanGrow="true" Text="Container List" Font="Arial, 14pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox3" Top="24" Width="141.75" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="ContainerNo" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox7" Left="141.75" Top="24" Width="77.49" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="Seal No" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox8" Left="219.24" Top="24" Width="56.7" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="Type" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox11" Left="275.94" Top="24" Width="132.3" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="PickupNo" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox12" Left="408.24" Top="24" Width="132.3" Height="24" Border.Lines="All" Border.Color="Maroon" CanGrow="true" Text="LastFreeDate" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      </DataHeaderBand>
+    </DataBand>
+  </ReportPage>
+</Report>

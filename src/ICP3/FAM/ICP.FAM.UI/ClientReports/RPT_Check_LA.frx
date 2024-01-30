@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="05/10/2012 10:07:48" ReportInfo.Modified="06/26/2012 15:37:16" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="BaseReportData" ReferenceName="BaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="CheckDate" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="Total" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerEAddress" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CheckNO" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillListReportData" ReferenceName="BillListReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="RefNo" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="WriteOffAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="230">
+    <ReportTitleBand Name="ReportTitle1" Width="793.8" Height="430.35">
+      <TextObject Name="Text1" Left="463.05" Top="37.8" Width="113.4" Height="24" Text="[BaseReportData.CheckDate]"/>
+      <TextObject Name="Text2" Left="595.35" Top="37.8" Width="122.85" Height="24" Text="[BaseReportData.Amount]"/>
+      <TextObject Name="Text3" Left="28.35" Top="75.6" Width="595.35" Height="28.35" Text="[BaseReportData.Total]"/>
+      <TextObject Name="Text4" Left="28.35" Top="113.4" Width="595.35" Height="28.35" Text="[BaseReportData.CustomerName]"/>
+      <TextObject Name="Text5" Left="28.35" Top="132.3" Width="595.35" Height="101.5" Text="[BaseReportData.CustomerEAddress]"/>
+      <TextObject Name="Text6" Left="585.9" Top="311.85" Width="160.65" Height="24" Text="[BaseReportData.CheckNO]"/>
+      <TextObject Name="Text7" Left="28.35" Top="245.7" Width="595.35" Height="37.8" Text="[BaseReportData.Remark]"/>
+      <TextObject Name="Text8" Left="28.35" Top="387.45" Width="56.7" Height="24" Text="Pay To" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="85.05" Top="387.45" Width="274.05" Height="24" CanGrow="true" CanShrink="true" Text="[BaseReportData.CustomerName]"/>
+      <TextObject Name="Text10" Left="368.55" Top="387.45" Width="85.05" Height="24" Text="Issue Date" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="453.6" Top="387.45" Width="94.5" Height="24" Text="[BaseReportData.CheckDate]"/>
+      <TextObject Name="Text12" Left="557.55" Top="387.45" Width="66.15" Height="24" Text="Amount" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="623.7" Top="387.45" Width="94.5" Height="24" Text="[BaseReportData.Amount]" HorzAlign="Right"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="434.35" Width="793.8" Height="37.8" Fill.Color="LightGray">
+      <TextObject Name="Text15" Left="179.55" Top="9.45" Width="189.2" Height="24" Text="INVOICE NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text14" Left="28.35" Top="9.45" Width="151.2" Height="24" Text="REF NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="368.55" Top="9.45" Width="179.75" Height="23.81" Text="BL NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="548.1" Top="9.45" Width="113.15" Height="23.81" Text="Amount" HorzAlign="Right" Font="宋体, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="476.15" Width="793.8" Height="30.24" DataSource="BillListReportData">
+      <TextObject Name="Text18" Left="28.35" Top="9.45" Width="122.85" Height="18.9" Text="[BillListReportData.RefNo]"/>
+      <TextObject Name="Text20" Left="179.55" Top="9.45" Width="141.75" Height="18.9" Text="[BillListReportData.BillNo]"/>
+      <TextObject Name="Text22" Left="368.55" Top="9.45" Width="141.75" Height="18.9" Text="[BillListReportData.BLNo]"/>
+      <TextObject Name="Text24" Left="604.8" Top="9.45" Width="141.75" Height="18.9" Text="[BillListReportData.WriteOffAmount]"/>
+    </DataBand>
+  </ReportPage>
+</Report>

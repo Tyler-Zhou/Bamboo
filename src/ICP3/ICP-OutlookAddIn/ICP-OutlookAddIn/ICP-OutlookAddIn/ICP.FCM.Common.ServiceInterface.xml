@@ -1,0 +1,4901 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.FCM.Common.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.FCM.Common.ServiceInterface.ClientContactNotifyService">
+            <summary>
+            客户端联系人更改通知服务实现类
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IClientContactNotifyService">
+            <summary>
+            客户端联系人更改通知服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IClientContactNotifyService.SendContactChange(System.Object,System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+             <summary>
+             消息发送成功后，调用邮件中心和任务中心相关联处理动作
+             </summary>
+             <param name="source">触发事件的源控件</param>
+            <param name="contactList">更改的业务联系人列表</param>
+        </member>
+        <member name="E:ICP.FCM.Common.ServiceInterface.IClientContactNotifyService.ContactChanged">
+            <summary>
+            业务联系人保存成功后,推送更改到其他界面事件
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.ClientContactNotifyService.SendContactChange(System.Object,System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+             <summary>
+             消息发送成功后，调用邮件中心和任务中心相关联处理动作
+             </summary>
+             <param name="source">触发事件的源控件</param>
+            <param name="contactList">更改的业务联系人列表</param>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Common.FCMFinderConstants">
+            <summary>
+            搜索器常量
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.Common.FCMFinderConstants.BusinessFinder">
+            <summary>
+            业务搜索器
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.Common.FCMFinderConstants.BusinessFinderForOEAEOB">
+            <summary>
+            业务搜索器,搜索业务类型为海出，空出，其它业务的业务
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.Common.FCMFinderConstants.BusinessFinderForOI">
+            <summary>
+            业务搜索器,搜索业务类型为海进的业务
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Common.FCMPermissionsConstants">
+            <summary>
+            权限常量
+            </summary>
+        </member>
+        <!-- 对于成员“F:ICP.FCM.Common.ServiceInterface.Common.FCMPermissionsConstants.FCM_EditOrder”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:ICP.FCM.Common.ServiceInterface.Common.FCMPermissionsConstants.FCM_NAServices”忽略有格式错误的 XML 注释 -->
+        <member name="T:ICP.FCM.Common.ServiceInterface.Common.FileControl">
+            
+            <summary>
+            文件控制类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.IsCreateFile(System.String)">
+            
+            <summary>
+            判断是否存在指定文件
+            </summary>
+            <param name="Path"></param>
+            <param name="FileName"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.CreateFolder(System.String)">
+            
+            <summary> 
+            在根目录下创建文件夹 
+            </summary> 
+            <param name="FolderPath">要创建的文件路径</param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.DeleteChildFolder(System.String)">
+            
+            <summary> 
+            删除一个文件夹下面的字文件夹和文件 
+            </summary> 
+            <param name="FolderPathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.DeleteFile(System.String)">
+            
+            <summary> 
+            删除一个文件 
+            </summary> 
+            <param name="FilePathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.CreateFile(System.String)">
+            <summary>
+            建立一个文件
+            </summary>
+            <param name="FilePathName"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.DeleParentFolder(System.String)">
+            
+            <summary> 
+            删除整个文件夹及其字文件夹和文件 
+            </summary> 
+            <param name="FolderPathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.ReWriteReadinnerText(System.String,System.String)">
+            
+            <summary> 
+            在文件里追加内容 
+            </summary> 
+            <param name="FilePathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.WriteReadinnerText(System.String,System.String)">
+            <summary> 
+            在文件里追加内容 
+            </summary> 
+            <param name="FilePathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.ReaderFileData(System.String)">
+            
+            <summary> 
+            读取文件里内容 
+            </summary> 
+            <param name="FilePathName"></param> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.FileControl.checkValidSessionPath(System.String)">
+            <summary> 
+            读取文件夹的文件 
+            </summary> 
+            <param name="FilePathName"></param> 
+            <returns></returns> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.SingleRowAsTable(System.Data.DataTable,System.Int32)">
+            <summary>
+            将DataTable的一行转换成Table
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.SingleRowAsTable(System.Data.DataRow)">
+            <summary>
+            将DataRow转换成DataTable        
+            </summary>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetStageNameString(System.String)">
+            <summary>
+            将沟通阶段枚举值字符串转换为沟通阶段名称字符串
+            </summary>
+            <param name="stageValueString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.AppendContactStage(ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects,System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.ContactStage}[])">
+            <summary>
+            追加联系人
+            </summary>
+            <param name="contactInfo"></param>
+            <param name="contactStages"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetStage(ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects)">
+            <summary>
+            获取联系人实体中对应所有沟通阶段的字符串表示
+            </summary>
+            <param name="contactInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.Serializer(System.Type,System.Object)">
+            <summary>
+            序列化
+            </summary>
+            <param name="type">类型</param>
+            <param name="obj">对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.Deserialize(System.Type,System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="type">类型</param>
+            <param name="xml">XML字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.CreateCustomerCarrierInfo(System.Boolean,System.Boolean,System.Boolean,System.String,System.String)">
+            <summary>
+            创建一个客户承运人对象
+            </summary>
+            <param name="isSO"></param>
+            <param name="isBL"></param>
+            <param name="email"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.ConvertContactsToXml(System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+            <summary>
+            将邮件所有外部联系人转换成键值对形式存储
+            </summary>
+            <param name="contacts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.ConvertContacts(System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.MailContactInfo})">
+            <summary>
+            将邮件所有外部联系人地址转换成业务联系人
+            </summary>
+            <param name="mailContactInfos"></param>
+            <param name="operationIDs"></param>
+            <param name="operationTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetMailSenderName(System.String,System.String)">
+            <summary>
+            获取邮件地址名称
+            </summary>
+            <param name="senderName"></param>
+            <param name="senderAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.ExsitsInternalContact(System.String)">
+            <summary>
+            是否存在内部联系人
+            </summary>
+            <param name="address"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetMailContacts(ICP.Message.ServiceInterface.Message,ICP.DataCache.ServiceInterface.BusinessOperationContext,System.Boolean,System.Boolean,System.Boolean,System.Boolean@)">
+             <summary>
+            将邮件的联系人转换成联系人，如果业务中存在该联系人，则覆盖邮件的联系人
+             </summary>
+             <param name="messageInfo"></param>
+             <param name="operationContext"></param>
+             <param name="isSO"></param>
+             <param name="isSI"></param>
+             <param name="isBL"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetOperationContactListByEmails(System.Collections.Generic.List{System.String})">
+            <summary>
+            根据发件人获取联系人列表
+            </summary>
+            <param name="senderForm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetOperationContactsAndMailContacts(ICP.Message.ServiceInterface.Message,ICP.DataCache.ServiceInterface.BusinessOperationContext,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            将邮件的外部联系人和业务现有的联系人（追加联系人）
+            </summary>
+            <param name="message"></param>
+            <param name="operationContext"></param>
+            <param name="isSO"></param>
+            <param name="isSI"></param>
+            <param name="isBL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.ConvertMailAddressToContactList(System.Boolean,ICP.Message.ServiceInterface.Message,ICP.DataCache.ServiceInterface.BusinessOperationContext,System.Boolean,System.Boolean,System.Boolean,System.Boolean@)">
+            <summary>
+            将邮件地址转换成联系人
+            </summary>
+            <param name="isCover"></param>
+            <param name="message"></param>
+            <param name="operationContext"></param>
+            <param name="isSO"></param>
+            <param name="isSI"></param>
+            <param name="isBL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.GetExternalMailToContactList(ICP.Message.ServiceInterface.Message,System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            将邮件的所有外部邮件联系人转换成业务联系人
+            </summary>
+            <param name="messageInfo"></param>
+            <param name="isSO"></param>
+            <param name="isSI"></param>
+            <param name="isBL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Utility.ShowMessageBox(System.String,System.String,System.Windows.Forms.MessageBoxButtons,System.Windows.Forms.MessageBoxIcon)">
+            <summary>
+            弹出对话提示框
+            </summary>
+            <param name="tip"></param>
+            <param name="msg"></param>
+            <param name="btns"></param>
+            <param name="icon"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.MailContactInfo.dicCache">
+            <summary>
+            缓存一封邮件的所有联系人（包括内部联系人）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.MailContactInfo.dicExternalContactCache">
+            <summary>
+            缓存一封邮件所有的外部联系人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.MailContactInfo.dicExternalMailCache">
+            <summary>
+            缓存一封邮件的所有外部联系人地址
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.MailContactInfo.GetAllExternalContacts(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            获取一封邮件所有外部联系人
+            </summary>
+            <param name="messageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.MailContactInfo.GetAllExternalMails(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            获取邮件的所有外部联系人地址
+            </summary>
+            <param name="messageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.VoyageType">
+            <summary>
+            航次类型 驳船或者大船
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.VoyageDateInfo">
+            <summary>
+            航次相关日期信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.VoyageDateInfo.ClosingDate">
+            <summary>
+            截关日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.VoyageDateInfo.CYClosingDate">
+            <summary>
+            截柜日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.VoyageDateInfo.DOCClosingDate">
+            <summary>
+            截文件日
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData">
+            <summary>
+            业务列表数据对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.State">
+            <summary>
+            状态（0待定、1已确认、2已接受、3已打回、4已取消、5已完成）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CompanyID">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.No">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.OceanShippingOrderNo">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CustomerName">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.MBLNo">
+            <summary>
+            MBL号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.HBLNo">
+            <summary>
+            HBL号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ContainerNo">
+            <summary>
+            箱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.PlaceOfReceiptName">
+            <summary>
+            收货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.POLName">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.PODName">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.PlaceOfDeliveryName">
+            <summary>
+            交货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.VesselVoyage">
+            <summary>
+            船名航次
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ShipperName">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ConsigneeName">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.ClosingDate">
+            <summary>
+            截关日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.SODate">
+            <summary>
+            订舱日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.AgentOfCarrierName">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CarrierID">
+            <summary>
+            船公司ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CarrierName">
+            <summary>
+            船公司名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.OEOperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.OEOperationTypeDescription">
+            <summary>
+            业务类型描述
+            仅用于显示订舱单列表的时候
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.SalesName">
+            <summary>
+            揽货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.OverSeasFilerName">
+            <summary>
+            海外部客服
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.BookingerName">
+            <summary>
+            订舱
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.FilerName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.PODContact">
+            <summary>
+            港后客服
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CreateByID">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.BookingDate">
+            <summary>
+            接收委托单日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.OceanShippingOrderID">
+            <summary>
+            装货单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.BookingCustomerName">
+            <summary>
+            订舱客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.AgentName">
+            <summary>
+            代理人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.Paid">
+            <summary>
+            已付
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.BusinessData.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo">
+            <summary>
+            货物跟踪类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.OperationNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.SONO">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.MBLNO">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.Carrier">
+            <summary>
+            船东
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.CarrierID">
+            <summary>
+            船东
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.PreVoyage">
+            <summary>
+            头程船（驳船）船名航次
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.PreETD">
+            <summary>
+            头程船（驳船）离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.Voyage">
+            <summary>
+            大船船名航次
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.VoyageID">
+            <summary>
+            大船船名航次
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.OpenClosePortId">
+            <summary>
+            VoyageID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.OpenPort">
+            <summary>
+            开港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.ClosePort">
+            <summary>
+            截港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.NetETD">
+            <summary>
+            网络上获取的ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.DOCK">
+            <summary>
+            码头
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.IsSearchDock">
+            <summary>
+            是否要查询码头
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.ETD">
+            <summary>
+            大船离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.ETA">
+            <summary>
+            大船到港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.CY_RailCUT">
+            <summary>
+            截柜日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.AESCUT">
+            <summary>
+            截关日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.DOC_SICUT">
+            <summary>
+            截文件日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.AMSClose">
+            <summary>
+            截AMS日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.ReturnLoc">
+            <summary>
+            还柜地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.POL">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.POD">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.PlaceOfDelivery">
+            <summary>
+            交货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.DETA">
+            <summary>
+            到交货地日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.FinalDestination">
+            <summary>
+            最终目的地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.FETA">
+            <summary>
+            到最终目的地日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.PickUpPlace">
+            <summary>
+            提柜地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.PickUpID">
+            <summary>
+            提柜地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingInfo.Containers">
+            <summary>
+            箱信息
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo">
+            <summary>
+            货物跟踪箱信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.MBLNO">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.ContainerID">
+            <summary>
+            箱ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.ContainerNO">
+            <summary>
+            箱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.CustomsRelease">
+            <summary>
+            海关放行
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.CustomsReleaseDesc">
+            <summary>
+            海关放行详细
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.GateIn">
+            <summary>
+            进场日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.GateInDesc">
+            <summary>
+            进场日详细
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.Loadship">
+            <summary>
+            确认上船
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.LoadshipDesc">
+            <summary>
+            确认上船详细
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.IsUpdate">
+            <summary>
+            是否需要更新
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.AvailableDate">
+            <summary>
+            可以提柜日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.LastFreeDate">
+            <summary>
+            免堆日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.PickUpNo">
+            <summary>
+            提货单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.PickUpDate">
+            <summary>
+            提柜时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.ReturnDate">
+            <summary>
+            OIContainerTracking.GenerantTime 还空时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo.Status">
+            <summary>
+            箱子当前状态
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CodeObject">
+            <summary>
+            事件列表Code实体类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CodeObject.CodeType">
+            <summary>
+            Code类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CodeObject.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ContactObjects">
+            <summary>
+            联系人列表实体类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContactObjects.StaffList">
+            <summary>
+            员工列表集合
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContactObjects.CustomerCarrier">
+            <summary>
+            顾客及承运人列表集合
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects">
+            <summary>
+            客户承运实体类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.IsNew">
+            <summary>
+            当Id为null或Guid.Empty时，IsNew取值为true，认为对象是新建对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.CustomerID">
+            <summary>
+            业务联系人所属的客户ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.CustomerName">
+            <summary>
+            业务联系人所属的客户名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.SO">
+            <summary>
+            是否沟通阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Trk">
+            <summary>
+            是否运输阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.CF">
+            <summary>
+            是否报关阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.FU">
+            <summary>
+            是否熏蒸
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.IN">
+            <summary>
+            是否保险
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.SI">
+            <summary>
+            是否补料阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.BL">
+            <summary>
+            是否提单阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.AN">
+            <summary>
+            是否提货通知书阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Name">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Stage">
+            <summary>
+            联系人所属的沟通阶段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Mail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Tel">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ContactStageInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContactStageInfo.Stage">
+            <summary>
+            沟通阶段值
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContactStageInfo.StageName">
+            <summary>
+            沟通阶段名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContactStageInfo.OperationType">
+            <summary>
+            沟通阶段所属的业务类型
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DispatchCompareObject">
+            <summary>
+            分文件比较类。
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OIOperationID">
+            <summary>
+            港后业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEBookingInfo">
+            <summary>
+            海出订单信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEMBLInfo">
+            <summary>
+            海出主提单信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEHBLList">
+            <summary>
+            海出分提单信息列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEContainerList">
+            <summary>
+            海出集装箱信息列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OIOceanBusinessInfo">
+            <summary>
+            港后业务订单信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEOperationID">
+            <summary>
+            港前业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OEBillInfo">
+            <summary>
+            港前业务账单信息列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DispatchCompareObject.OIBillInfo">
+            <summary>
+            港后业务账单信息列表
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Fee">
+            <summary>
+            费用比较信息
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Fee.GetHashCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.ID">
+            <summary>
+            费用ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.BillID">
+            <summary>
+            账单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.Way">
+            <summary>
+            费用类型1为应收，2为应付
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.ChargeCode">
+            <summary>
+            费用代码
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.ChargeName">
+            <summary>
+            费用名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.IsAgent">
+            <summary>
+            费用是否代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.OldSumMoney">
+            <summary>
+            上次费用总和
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.OldRemark">
+            <summary>
+            上次费用说明
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.NewSumMoney">
+            <summary>
+            本次费用总和
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.NewRemark">
+            <summary>
+            本次费用说明
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Fee.UpdateState">
+            <summary>
+            修改状态0:Same,1:Add,2:Modify,3:Delete,4:SelfAdd
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.HBLInfo">
+            <summary>
+            提单比较信息  [AMSNo],[ISFNo],[ShipperID] , [ShipperDescription],[ReceiveOBLDate] 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.No">
+            <summary>
+            原提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldISFNo">
+            <summary>
+            原ISFNo号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldAMSNo">
+            <summary>
+            原AMSNo号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldShipperID">
+            <summary>
+            原收货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldReceiveOBLDate">
+            <summary>
+            原收到正本日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldQuantity">
+            <summary>
+            原数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldWeight">
+            <summary>
+            原重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldMeasurement">
+            <summary>
+            原体积
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.OldDescriptionOfGood">
+            <summary>
+            原货物信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewISFNo">
+            <summary>
+            新ISFNo号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewAMSNo">
+            <summary>
+            新AMSNo号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewShipperID">
+            <summary>
+            新收货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewReceiveOBLDate">
+            <summary>
+            新收到正本日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewQuantity">
+            <summary>
+            新数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewWeight">
+            <summary>
+            新重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewMeasurement">
+            <summary>
+            新体积
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.HBLInfo.NewDescriptionOfGood">
+            <summary>
+            新货物信息
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.ContainerInfo">
+            <summary>
+            集装箱比较信息[No], [TypeID], [SealNo], [Quantity] ,[Weight],[Measurement]  IsPartOf  
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.No">
+            <summary>
+            集装箱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldContainerType">
+            <summary>
+             原集装箱类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewContainerType">
+            <summary>
+             新集装箱类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.HBLNo">
+            <summary>
+            原提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldSealNo">
+            <summary>
+            原封条号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldLocation">
+            <summary>
+            原地点
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldPickUpNo">
+            <summary>
+            原PickUpNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldGODate">
+            <summary>
+            原监管仓日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldAvailableDate">
+            <summary>
+            原可提货日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldLastFreeDate">
+            <summary>
+            原免堆日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldIsPartOf">
+            <summary>
+            原分单
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldQuantity">
+            <summary>
+            原数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldWeight">
+            <summary>
+            原重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.OldMeasurement">
+            <summary>
+            原体积
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewSealNo">
+            <summary>
+            新封条号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewLocation">
+            <summary>
+            新地点
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewPickUpNo">
+            <summary>
+            新PickUpNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewGODate">
+            <summary>
+            新监管仓日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewAvailableDate">
+            <summary>
+            新可提货日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewLastFreeDate">
+            <summary>
+            新免堆日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewIsPartOf">
+            <summary>
+            新分单
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewQuantity">
+            <summary>
+            新数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewWeight">
+             <summary>
+            新重量
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ContainerInfo.NewMeasurement">
+            <summary>
+            新体积
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Bill">
+            <summary>
+            账单比较信息
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Bill.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.ID">
+            <summary>
+            Bill号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.BusinessNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OEBillNO">
+            <summary>
+            海出账单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OECurrencyName">
+            <summary>
+            海出费用币种
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OEAmount">
+            <summary>
+            海出账单总金额
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OIBillNO">
+            <summary>
+            海进账单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OICurrencyName">
+            <summary>
+            海进费用币种
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.OIAmount">
+            <summary>
+            海出账单总金额
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.Fees">
+            <summary>
+            费用列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.Bill.UpdateState">
+            <summary>
+            修改状态0:Same,1:Add,2:Modify,3:Delete,4:SelfAdd
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.BusinessUpdateField">
+            <summary>
+            比较分发业务信息修改字段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.BusinessNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.FieldDBName">
+            <summary>
+            字段对应数据库的列名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.FieldName">
+            <summary>
+            字段名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.OldValue">
+            <summary>
+             字段旧值
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.NewValue">
+            <summary>
+             字段新值
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.IsUpdate">
+            <summary>
+            修改状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.HBLs">
+            <summary>
+            提单信息比较
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessUpdateField.Containers">
+            <summary>
+            集装箱信息比较
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo">
+            <summary>
+            简单的业务信息（ID和NO）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.OIBusinessID">
+            <summary>
+            海进业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.OIBusinessNO">
+            <summary>
+            海进业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.OEBusinessID">
+            <summary>
+            海出业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.OEBusinessNO">
+            <summary>
+            海出业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.DispatchDate">
+            <summary>
+            分发修订时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.DispatchUserName">
+            <summary>
+            分发修订人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.Remark">
+            <summary>
+            Remark
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.AcceptDate">
+            <summary>
+            签收时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.SimpleBusinnessInfo.AcceptUserName">
+            <summary>
+            签收人
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.BusinessAgentAndCustomInfoObject">
+            <summary>
+            业务的代理，文件员，客服信息   joe
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessAgentAndCustomInfoObject.AgentName">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessAgentAndCustomInfoObject.FilerName">
+             <summary>
+            文件员
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.BusinessAgentAndCustomInfoObject.CustomerName">
+            <summary>
+            客服
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DipatchCompareType">
+            <summary>
+            分发签收文档比较类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DipatchCompareType.OEAccept">
+            <summary>
+            海进签收
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DipatchCompareType.OIAccept">
+            <summary>
+            海出签收
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DipatchCompareType.OEAcceptHestory">
+            <summary>
+            海进签收历史
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DipatchCompareType.OIAcceptHestory">
+            <summary>
+            海出签收历史
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.UpdateState">
+            <summary>
+            修改状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.UpdateState.Same">
+            <summary>
+            没有修改
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.UpdateState.Add">
+            <summary>
+            添加
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.UpdateState.Modify">
+            <summary>
+            修改
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.UpdateState.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.UpdateState.SelfAdd">
+            <summary>
+            自己添加
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.ProfitCompare">
+            <summary>
+            签收前后利润比较对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ProfitCompare.OldProfit">
+             <summary>
+            签收前利润
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.ProfitCompare.NewProfit">
+             <summary>
+            签收后利润
+             </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria">
+            <summary>
+            编辑界面数据源条件类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria.#ctor">
+            <summary>
+            无参构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria.#ctor(System.String,System.Object)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="operationNo"></param>
+            <param name="billNo"></param>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria.BillNo">
+            <summary>
+            具体的单证号(如MBL No.,HBL NO.,SO No.)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventCode.Id">
+            <summary>
+            EventId
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventCode.Code">
+            <summary>
+            事件Code
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventCode.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventCode.Category">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventCode.ShowCode">
+            <summary>
+            ShowCode
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects">
+            <summary>
+            事件列表实体类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.FormID">
+            <summary>
+            FormID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.MessageID">
+             <summary>
+            Message
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.EventID">
+            <summary>
+            事件CodeID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Description">
+            <summary>
+            事件描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Priority">
+            <summary>
+            优先级别
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Owner">
+            <summary>
+            所有人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.UpdateBy">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.CategoryName">
+            <summary>
+            分组名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.IsShowAgent">
+            <summary>
+            是否显示给代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.IsShowCustomer">
+             <summary>
+            是否显示给客户
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Type">
+            <summary>
+            沟通类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.ShowImage">
+            <summary>
+            图片是否显示
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.OccurrenceTime">
+            <summary>
+            发生时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.ModifyValue">
+            <summary>
+            任务中心点击列表时需要改变的值
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Logged">
+            <summary>
+            是否已记录事件 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Important">
+            <summary>
+            当前事件是否为重要事件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.EventIndex">
+            <summary>
+            事件列表排序字段
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.ManualImportant">
+            <summary>
+            手动设置当前事件是否为重要事件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.Required">
+            <summary>
+            当前是否为重要事件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects.UIIndex">
+            <summary>
+            页面排序字段
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord">
+            <summary>
+            分文件签收记录
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.ID">
+            <summary>
+            Record Id
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.OEBookingID">
+            <summary>
+            海出业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.Type">
+            <summary>
+            签收类型（1为签收前，2为签收后）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.OperationType">
+            <summary>
+            操作类型（1为海出，2为海进）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.DispatchBy">
+            <summary>
+            分发人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.DispatchOn">
+            <summary>
+            分发时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.AcceptBy">
+            <summary>
+            签收人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.AcceptOn">
+            <summary>
+            签收时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.AssignTo">
+            <summary>
+            分发给
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.Remark">
+            <summary>
+            签收说明
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.HistoryOceanRecord.RefID">
+            <summary>
+            签收关联ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IOperationAgentService">
+            <summary>
+            业务代理服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetOperationAgentInfo(System.Guid)">
+            <summary>
+            通过业务ID得到代理信息
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetOceanimportBusinessID(System.Guid)">
+            <summary>
+            通过港前业务ID 得到港后业务ID
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetOperationDocumentDispatchData(System.Guid)">
+            <summary>
+            通过业务ID得到业务文档分发数据
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetDocumentDispatchInfo(System.Guid)">
+            <summary>
+            通过业务代理信息
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.SaveOperationDocumentDispatchData(ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects,System.Nullable{System.Guid}[],System.Guid[],System.Nullable{System.DateTime}[])">
+            <summary>
+            保存分文档信息
+            </summary>
+            <param name="ContainerObjects"></param>
+            <param name="DispatchFileIDs"></param>
+            <param name="FileIDs"></param>
+            <param name="FileUpdateDates"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetHistoryOceanRecord(System.Guid,System.Int32)">
+            <summary>
+            分文件签收记录列表
+            2013-09-03 joe
+            </summary>
+            <param name="BookingID">业务ID</param>
+            <param name="Type">操作类型（1为海出2为海进）</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetDispatchAndReviseState(System.Guid)">
+            <summary>
+            分文件和修订状态
+            2013-09-13 joe
+            </summary>
+            <param name="BookingID">业务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetStartDateForReviseAgentBill">
+            <summary>
+            分文件和修订状态账单正式使用时间
+            2013-09-17 joe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetIsAcceptDispatch(System.Guid)">
+            <summary>
+            判定业务是否在已下载但还没有分发文件的状态，在这个状态返回1，否则返回0
+            2013-10-08 joe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetCreateDateOIBusiness(System.Guid)">
+            <summary>
+            得到海进业务的创建时间
+            2013-10-10 joe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.BusinessIsDownLoad(System.Guid)">
+            <summary>
+            业务是否下载过
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.RejectDispatchOrRevise(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.String)">
+            <summary>
+            拒签分发文件或账单修订
+            </summary>
+            <param name="OperationID">业务ID</param>
+            <param name="OperationType">业务类型</param>
+            <param name="strReason">拒签原因</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetOperationAgentNameAndCustomer(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            业务的代理，文件员，客服信息   joe
+            </summary>
+            <param name="OperationID">业务ID</param>
+            <param name="OperationType">业务类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetUserOperationViewType(System.Guid)">
+            <summary>
+            得到当前用户拥有的操作节点类型
+            </summary>
+            <param name="userId">当前用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationAgentService.GetProfitCompare(System.Guid,System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            得到当前用户拥有的操作节点类型
+            </summary>
+            <param name="OceanBookingID">海出操作ID</param>
+            <param name="OIBookingID">海出操作ID</param>
+            <param name="OperationType">操作类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.ICargoTrackingService">
+            <summary>
+            员工列表数据接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.ICargoTrackingService.GetOperationContainersInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取箱列表
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="OperationType">业务类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.ICargoTrackingService.SaveCustomsAndGateIn(System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CargoTrackingContainerInfo},System.Guid)">
+            <summary>
+            保存海关放行/进场日期
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.ICargoTrackingService.SaveOpenAndClosePort(System.Nullable{System.Guid},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.Boolean,System.Guid,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String)">
+            <summary>
+            保存开截港
+            </summary>
+            <param name="openPort"></param>
+            <param name="closePort"></param>
+            <param name="portDesc"></param>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpReportData">
+            <summary>
+            提货通知书报表打印数据对象
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects">
+            <summary>
+            员工列表数据类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.IsDirty">
+            <summary>
+            是否是新增的数据
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.CanUpdate">
+            <summary>
+            可以更改数据源
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.FormID">
+            <summary>
+            FormID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Ownerid">
+            <summary>
+            托运单ID，即表单id
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Ownersource">
+            <summary>
+            备注所属业务
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.OperationUpdateDate">
+            <summary>
+            业务更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.UpdateBy">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.CreateDate">
+            <summary>
+            新增时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.CreateBy">
+            <summary>
+            新增人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Role">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.RoleID">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Mail">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects.Tel">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IAgentDocumentDispatchService">
+            <summary>
+            代理文档分发策略接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentDocumentDispatchService.Send(System.Object,ICP.DataCache.ServiceInterface.BusinessOperationContext,System.Collections.Generic.List{System.Guid},System.Boolean)">
+            <summary>
+            向代理分发文件
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IBusinessService">
+            <summary>
+            FCM.Common服务
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IBusinessService.GetVoyageDateInfo(System.Collections.Generic.List{System.Nullable{System.Guid}})">
+            <summary>
+            获取航次相关时间信息
+            </summary>
+            <param name="voyagelIds">航次Id列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IBusinessService.GetBusinessListForDataFinder(ICP.Framework.CommonLibrary.Common.OperationType[],System.Guid[],System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState},ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            获取订舱列表
+            </summary>
+            <param name="companyIDs">业务所在口岸公司(操作的公司)</param>
+            <param name="operationNo">业务号</param>
+            <param name="blNo">提单号</param>
+            <param name="customerName">客户名</param>
+            <param name="polName">装货港名</param>
+            <param name="podName">卸货港名</param>
+            <param name="salesID">业务员</param>
+            <param name="bookingerID">订舱</param>
+            <param name="state">状态()</param>
+            <param name="dateSearchType">日期搜索类型()</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回订舱列表</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IBusinessService.UpdateSoForOperation(ICP.DataCache.ServiceInterface.FileCopyParameters)">
+            <summary>
+            保存附件和SO NO
+            </summary>
+            <param name="ids"></param>
+            <param name="soNOs"></param>
+            <param name="updateDates"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IContactService">
+            <summary>
+            联系人列表数据服务
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.GetContactList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            根据业务ID和业务类型获取联系列表数据
+            </summary>
+            <param name="operationID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.GetContactListByContactStage(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,ICP.FCM.Common.ServiceInterface.DataObjects.ContactType,ICP.FCM.Common.ServiceInterface.DataObjects.ContactStage,System.Nullable{System.Guid})">
+            <summary>
+            根据沟通阶段，获取业务联系人
+            </summary>
+            <param name="operationId">业务Id</param>
+            <param name="operationType">业务类型</param>
+            <param name="contactStage">联系人所属业务阶段,取值为UnKnown时，返回所有沟通阶段的联系人</param>
+            <param name="contactType">联系人类型</param>
+            <param name="CustomerID">业务联系人所属客户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.GetLatestContactList(ICP.Framework.CommonLibrary.Common.OperationType,System.Guid,System.Guid,ICP.FCM.Common.ServiceInterface.DataObjects.ContactType,ICP.FCM.Common.ServiceInterface.DataObjects.ContactStage)">
+            <summary>
+            获取指定客户最近一票的联系人信息
+            </summary>
+            <param name="operationType"></param>
+            <param name="companyID">操作口岸ID</param>
+            <param name="customerId"></param>
+            <param name="contactType"></param>
+            <param name="contactStage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.SaveContactList(System.Nullable{System.Guid}[],System.Guid[],ICP.Framework.CommonLibrary.Common.OperationType[],ICP.FCM.Common.ServiceInterface.DataObjects.ContactType[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.Boolean[],System.String[],System.String[],System.String[],System.String[],System.Nullable{System.DateTime}[],System.Nullable{System.Guid}[],System.Nullable{System.DateTime}[],System.Nullable{System.Guid}[])">
+             <summary>
+             保存联系人列表数据
+             </summary>
+             <param name="Ids">Id</param>
+             <param name="OceanBookingID">业务ID</param>
+             <param name="operationType">业务类型</param>
+             <param name="SOs"></param>
+             <param name="Trks"></param>
+             <param name="CFs"></param>
+             <param name="CIs"></param>
+             <param name="Whss"></param>
+             <param name="QIs"></param>
+             <param name="SIs"></param>
+             <param name="BLs"></param>
+             <param name="ANs">是否提货通知书阶段</param>
+             <param name="CCs"></param>
+             <param name="Name"></param>
+             <param name="Emails"></param>
+             <param name="Tels"></param>
+             <param name="Faxs"></param>
+             <param name="UpdateDates"></param>
+             <param name="CreateByIDs"></param>
+             <param name="CreateDates"></param>
+             <param name="UpdateByIDs"></param>
+            <param name="CustomerIDs">所属客户ID</param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.SaveContactList(System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+            <summary>
+            保存多个联系人
+            </summary>
+            <param name="customerList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.GetOceanContactsByEmails(System.Collections.Generic.List{System.String})">
+            <summary>
+            获取业务联系人
+            </summary>
+            <param name="emails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IContactService.RemoveContactInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            移除联系人列表数据
+            </summary>
+            <param name="Id"></param>
+            <param name="removeByID"></param>
+            <param name="updateDate"></param>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Interfaces.IEventService">
+            <summary>
+            事件列表服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Interfaces.IEventService.GetEventList(System.Guid,System.Nullable{System.Guid})">
+            <summary>
+            获取事件列表
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型(0:海运出口,1:海运进口,2:空运出口,3:空运进口,4:其他出口,5:其它进口)</param>
+            <param name="ownerID">所有者ID</param>
+            <returns>返回备注列表</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Interfaces.IEventService.GetEventCodeList">
+            <summary>
+            获取事件列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IExternalAgentDocumentDispatchService">
+            <summary>
+            外部代理文档分发服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.ICodeService.CodeList(System.String)">
+            <summary>
+            获取CodeList
+            </summary>
+            <param name="operationID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IInternalAgentDocumentDispatchService">
+            <summary>
+            内部代理分发文档服务接口
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IStaffService">
+            <summary>
+            员工列表数据接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IStaffService.GetStaffList(System.Guid)">
+            <summary>
+            获取员工列表数据
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="ownerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IStaffService.GetStaffInfo(System.Guid,System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取参与者信息
+            </summary>
+            <param name="userID"></param>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IStaffService.SaveAssistantInfo(ICP.FCM.Common.ServiceInterface.DataObjects.StaffObjects)">
+            <summary>
+            保存业务参与人
+            </summary>
+            <param name="staff"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IStaffService.GetOceanFixedRoles">
+            <summary>
+            获取海运业务固定角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IStaffService.GetAssistantList(System.Guid,System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取参与人列表
+            </summary>
+            <param name="userID"></param>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IOperationCommonService">
+            <summary>
+            业务公共信息接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationCommonService.GetOperationCommonInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取业务公共信息
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">表单类型</param>
+            <returns>返回业务公共信息</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IOperationCommonService.GetConfigureCustomers(System.Guid)">
+            <summary>
+            获取公司配置客户信息
+            </summary>
+            <param name="companyID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IMemoService">
+            <summary>
+            备注接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.GetMemoList(System.Guid,System.Nullable{System.Guid})">
+            <summary>
+            获取已完成的事件
+            </summary>
+            <param name="operationID"></param>
+            <param name="ownerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.SaveMemoList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],System.String[],ICP.Common.ServiceInterface.DataObjects.MemoType[],ICP.Common.ServiceInterface.DataObjects.MemoPriority[],System.String[],System.String,System.Nullable{System.DateTime}[],System.Guid,System.Boolean,System.String,System.Boolean,System.String[])">
+            <summary>
+            保存备注信息
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="Codes">CODE集合</param>
+            <param name="ids">ID</param>
+            <param name="FormIDs">FORM id</param>
+            <param name="FormTypes">FORM 类型</param>
+            <param name="IsShowAgents">是否显示给代理</param>
+            <param name="IsShowCustomers">是否显示给客户</param>
+            <param name="Subjects">主题集合</param>
+            <param name="Contents">内容集合</param>
+            <param name="Types">类型集合</param>
+            <param name="Categorys">分类</param>
+            <param name="Owner">拥有人</param>
+            <param name="occurrenceTime">发生时间</param>
+            <param name="ManualImportant">当前事件是否手动标识为重要事件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.GetMemoAttachmentContent(System.Guid,System.String)">
+            <summary>
+            获取备注附件内容
+            </summary>
+            <param name="memoID">备注ID</param>
+            <param name="attachName">附件名</param>
+            <returns>返回附件内容</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.SaveMemoInfo(ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects)">
+            <summary>
+            保存备注信息Info
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.RemoveMemoInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除备注信息
+            </summary>
+            <param name="id">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.GetMemoFirst(System.Guid,System.Guid)">
+            <summary>
+            根据业务的ID和代码ID返回最新的备注记录
+            </summary>
+            <param name="operationId">业务ID</param>
+            <param name="operationEventId">代码ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMemoService.GetOperationMemosID(System.Guid,System.String)">
+            <summary>
+            获取OperationMemos表的ID
+            </summary>
+            <param name="operationId">FROMID</param>
+            <param name="code">事件的CODE</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IDocumentService">
+            <summary>
+            文档接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IDocumentService.GetDocumentList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Nullable{System.Guid})">
+            <summary>
+            获取单证列表
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型(0:海运出口,1:海运进口,2:空运出口,3:空运进口,4:其他出口,5:其它进口)</param>
+            <param name="ownerID">所有者ID</param>
+            <returns>返回单证列表</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IDocumentService.SaveDocumentInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Nullable{System.Guid}[],System.String[],ICP.FCM.Common.ServiceInterface.DataObjects.DocumentType[],System.Int16[],System.Int16[],System.DateTime[],System.Nullable{System.DateTime}[],ICP.FCM.Common.ServiceInterface.DataObjects.DocumentReleaseMode[],System.Nullable{System.DateTime}[],System.String[],System.String[],System.Byte[][],System.String[],System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存单证信息
+            </summary>
+            <param name="ownerID">所有者</param>
+            <param name="ownerSource">所属业务(0:海运出口,1:海运进口,2:空运出口,3:空运进口,4:其他出口,5:其它进口)</param>
+            <param name="id">ID</param>
+            <param name="documentNo">单证号</param>
+            <param name="documentType">单证类型（0核销单，1提单等）</param>
+            <param name="numberOfOriginal">正本份数</param>
+            <param name="numberOfCopies">副本份数</param>
+            <param name="receivedDate">接收日期</param>
+            <param name="releaseDate">放单日期</param>
+            <param name="releaseMode">放单方式（0快递，1当面交接）</param>
+            <param name="returnDate">退回日期</param>
+            <param name="trackingNo">快递单号</param>
+            <param name="attachmentName">附件名称</param>
+            <param name="attachmentContent">附件</param>
+            <param name="remark">备注</param>
+            <param name="saveByID">保存人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IDocumentService.GeDocumentAttachmentContent(System.Guid,System.String)">
+            <summary>
+            获取单证附件内容
+            </summary>
+            <param name="documentID">单证ID</param>
+            <param name="attachName">附件名</param>
+            <returns>返回附件内容</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IDocumentService.RemoveDocumentInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除单证信息
+            </summary>
+            <param name="id">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IMailFaxLogService">
+            <summary>
+            邮件日志 接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMailFaxLogService.GetMailFaxLogList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Nullable{System.Guid})">
+            <summary>
+            获取邮件传真日志列表
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型(0:海运出口,1:海运进口,2:空运出口,3:空运进口,4:其他出口,5:其它进口)</param>
+            <param name="ownerID">所有者ID</param>
+            <returns>返回邮件传真日志列表</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMailFaxLogService.SaveMailFaxLogInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Nullable{System.Guid}[],System.Nullable{System.Guid}[],System.Guid[],System.String[],System.String[],System.String[],System.String[],System.String[],ICP.FCM.Common.ServiceInterface.DataObjects.EMailPriority[],System.Boolean[],System.String[],System.Byte[][],System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存邮件传真日志
+            </summary>
+            <param name="ownerID">所有者ID</param>
+            <param name="ownerSource">业务类型(0:海运出口,1:海运进口,2:空运出口,3:空运进口,4:其他出口,5:其它进口)</param>
+            <param name="id">ID</param>
+            <param name="keyID">关键字ID</param>
+            <param name="userMailAccountID">用户邮件账号ID</param>
+            <param name="mailFrom">发件人</param>
+            <param name="mailTo">收件人</param>
+            <param name="mailCC">抄送人</param>
+            <param name="subject">邮件主题</param>
+            <param name="mailContent">邮件内容</param>
+            <param name="priority">重要性（0普通、1高、2低）</param>
+            <param name="isFax">是否发送传真</param>
+            <param name="attachmentNames">附件名列表</param>
+            <param name="attachmentContents">附件内容列表</param>
+            <param name="saveByID">保存人ID</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMailFaxLogService.GetMailLogAttachmentList(System.Guid)">
+            <summary>
+            获取邮件的附件列表
+            </summary>
+            <param name="mailLogID">邮件日志ID</param>
+            <returns>返回邮件的附件列表</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IMailFaxLogService.RemoveMailMessageInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            获取邮件的附件列表
+            </summary>
+            <param name="mailLogID">邮件日志ID</param>
+            <returns>返回邮件的附件列表</returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IFreightRateRequestService">
+            <summary>
+            运价申请接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFreightRateRequestService.GetFreightRateRequestList(System.Guid)">
+            <summary>
+            获取运价申请记录
+            </summary>
+            <param name="oceanBookingID">订单ID</param>
+            <returns>返回运价申请记录</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFreightRateRequestService.RequestFreightRate(System.Nullable{System.Guid},System.Guid,System.Guid,System.DateTime,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            申请运价
+            </summary>
+            <param name="id">ID</param>
+            <param name="oceanBookingID">订单ID</param>
+            <param name="senderID">申请人</param>
+            <param name="senderDate">申请时间</param>
+            <param name="senderRemark">申请备注</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFreightRateRequestService.AnswerOceanFreightRate(System.Guid,System.Guid,System.DateTime,System.String,System.Nullable{System.Guid},System.Nullable{System.DateTime})">
+            <summary>
+            回复运价
+            </summary>
+            <param name="id">ID</param>
+            <param name="solverID">回复人</param>
+            <param name="solveDate">回复时间</param>
+            <param name="solverRemark">回复备注</param>
+            <param name="freightRateID">运价ID</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFreightRateRequestService.RemoveFreightRateRequest(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除运价申请请求
+            </summary>
+            <param name="id">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IAgentRequestService">
+            <summary>
+            申请代理接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.GetAgentRequestInfo(System.Guid)">
+            <summary>
+            获取代理申请
+            </summary>
+            <param name="agentRequestID">agentRequestID</param>
+            <returns>返回代理申请数据</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.GetAgentRequestList(System.String,System.Nullable{ICP.Framework.CommonLibrary.Common.OperationType},System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.AgentType},System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum},System.Nullable{System.Guid},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            获取代理申请列表
+            </summary>
+            <param name="opeartionNO">业务号</param>
+            <param name="operationType">业务类型</param>
+            <param name="agentType">申请代理类型</param>
+            <param name="agentState">申请代理状态</param>
+            <param name="solverID">指定人</param>
+            <param name="sendFrom">申请开始日期</param>
+            <param name="sendTo">申请结束日期</param>
+            <param name="maxRecords">最大行数</param>
+            <returns>返回代理申请列表</returns>        
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.RequestOceanAgent(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Guid,System.DateTime,ICP.FCM.Common.ServiceInterface.DataObjects.AgentType,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            申请代理
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型</param>
+            <param name="senderID">申请人</param>
+            <param name="senderDate">申请时间</param>
+            <param name="agentType">代理类型(0:普通,1:第三方代理,2:需要对收款有特殊要求的代理)</param>
+            <param name="senderRemark">申请人备注</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.RejectAgentRequest(System.Guid,System.Guid,System.DateTime,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            打回代理申请
+            </summary>
+            <param name="id">ID</param>
+            <param name="solverID">打回人</param>
+            <param name="solveDate">打回时间</param>
+            <param name="solverRemark">打回备注</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.AnswerAgentRequest(System.Guid,System.Guid,System.DateTime,System.String,System.Nullable{System.Guid},System.Nullable{System.DateTime})">
+            <summary>
+            回复代理申请
+            </summary>
+            <param name="id">ID</param>
+            <param name="solverID">回复人</param>
+            <param name="solveDate">回复时间</param>
+            <param name="solverRemark">回复备注</param>
+            <param name="agentID">代理ID</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IAgentRequestService.RemoveAgentRequest(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除代理申请
+            </summary>
+            <param name="id">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService">
+            <summary>
+            业务客户端服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService.OpenAgentRequestPart(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Collections.Generic.IDictionary{System.String,System.Object},ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            打开申请代理页面
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型</param>
+            <param name="editPartSaved"></param>
+            <param name="values"></param>
+            <returns>是否申请成功</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService.ShowDocumentList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,Microsoft.Practices.CompositeUI.WorkItem,System.String)">
+            <summary>
+            打开文档页面
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型</param>
+            <param name="workspaceName">workspaceName</param>
+            <param name="workItem"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService.ShowMailFaxLogList(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType,System.Nullable{System.Guid},Microsoft.Practices.CompositeUI.WorkItem,System.String)">
+            <summary>
+            打开传真日志页面
+            </summary>
+            <param name="operationID">业务ID</param>
+            <param name="operationType">业务类型</param>
+            <param name="formId">表单ID</param>
+            <param name="workspaceName">workspaceName</param>
+            <param name="workItem"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService.ShowRemarkDialog(System.String,ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved,Microsoft.Practices.CompositeUI.WorkItem)">
+            <summary>
+            打开备注输入窗体
+            </summary>
+            <param name="title">窗体标题</param>
+            <param name="editPartSaved"></param>
+            <param name="workItem"></param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.IFCMCommonClientService.DispatchDocument(ICP.DataCache.ServiceInterface.BusinessOperationContext,ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            分发文档
+            </summary>
+            <param name="context"></param>
+            <param name="editPartSaved"></param>
+            <param name="workItem"></param>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.Common.ValidateContainerHelper">
+            <summary>
+            验证箱号帮助类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.ValidateContainerHelper.ContainerCheckDigitCharToInt(System.Char)">
+            <summary>
+            核对数：用于计算机核对箱主号与顺序号记录的正确性。核对号一般于顺序号之后，用一位阿拉伯数字表示，并加方框以醒目。
+            核对号是由箱主代码的四位字母和顺序号的六位数字通过以下方式换算而得。具体换算步骤如下：
+            首先，将表示箱主代码的四位字母转化成相应的等效数字，字母和等效数字的对应关系见下表
+            A--10;B--12;C--13;D--14;....J--20;K--21;L--23;M--24;N--25;.....T--31;U--32;V--34;W--35;X--36;Y--37;Z—38
+            从表中可以看出，去掉了11及其倍数的数字，这是因为后面的计算将把11作为模数。
+            然后，将前四位字母对应的等效数字和后面的顺序号的数字（共计10位）采用加权系数法进行计算求和。
+            </summary>
+            <param name="containerChar">验证字串符</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.ValidateContainerHelper.CheckContainerNo(System.String)">
+            <summary>
+            验证箱号
+            </summary>
+            <remarks>
+            标准集装箱箱号由11位编码组成，包括三个部分：
+            1、 第一部分由4位英文大写字母组成。前三位代码 (Owner Code) 主要说明箱主、经营人，第四位代码说明集装箱的类型(U)。列如CBHU 开头的标准集装箱是表明箱主和经营人为中远集运。
+            2、 第二部分由6位数字组成。是箱体注册码（Registration Code）, 用于一个集装箱箱体持有的唯一标识。
+            3、 第三部分为校验码（Check Digit）由前4位字母和6位数字经过校验规则运算得到，用于识别在校验时是否发生错误。即第11位数字。
+                (核对数：用于计算机核对箱主号与顺序号记录的正确性。核对号一般于顺序号之后，用一位阿拉伯数字表示，并加方框以醒目。核对号是由箱主代码的四位字母和顺序号的六位数字通过以下方式换算而得。具体换算步骤如下：
+                         首先，将表示箱主代码的四位字母转化成相应的等效数字，字母和等效数字的对应关系见下表
+                         A--10;B--12;C--13;D--14;....J--20;K--21;L--23;M--24;N--25;.....T--31;U--32;V--34;W--35;X--36;Y--37;Z—38
+                         从表中可以看出，去掉了11及其倍数的数字，这是因为后面的计算将把11作为模数。然后，将前四位字母对应的等效数字和后面的顺序号的数字（共计10位）采用加权系数法进行计算求和。
+            </remarks>
+            <param name="containerNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.Common.ValidateContainerHelper.CheckContainerNo_removed(System.String)">
+            <summary>
+            箱号规则验证
+            </summary>
+            <remarks>
+            标准集装箱箱号由11位编码组成，包括三个部分：
+            1、 第一部分由4位英文大写字母组成。前三位代码 (Owner Code) 主要说明箱主、经营人，第四位代码说明集装箱的类型(U)。列如CBHU 开头的标准集装箱是表明箱主和经营人为中远集运。
+            2、 第二部分由6位数字组成。是箱体注册码（Registration Code）, 用于一个集装箱箱体持有的唯一标识。
+            3、 第三部分为校验码（Check Digit）由前4位字母和6位数字经过校验规则运算得到，用于识别在校验时是否发生错误。即第11位数字。
+                (核对数：用于计算机核对箱主号与顺序号记录的正确性。核对号一般于顺序号之后，用一位阿拉伯数字表示，并加方框以醒目。核对号是由箱主代码的四位字母和顺序号的六位数字通过以下方式换算而得。具体换算步骤如下：
+                         首先，将表示箱主代码的四位字母转化成相应的等效数字，字母和等效数字的对应关系见下表
+                         A--10;B--12;C--13;D--14;....J--20;K--21;L--23;M--24;N--25;.....T--31;U--32;V--34;W--35;X--36;Y--37;Z—38
+                         从表中可以看出，去掉了11及其倍数的数字，这是因为后面的计算将把11作为模数。然后，将前四位字母对应的等效数字和后面的顺序号的数字（共计10位）采用加权系数法进行计算求和。
+            </remarks>
+            <param name="containerNo">箱号</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList">
+            <summary>
+            AgentRequestList
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.POD">
+            <summary>
+            卸货港名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.SenderName">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.SendDate">
+            <summary>
+            申请时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.Type">
+            <summary>
+            要求代理类型(0:普通,1:第三方代理,2:需要对收款有特殊要求的代理)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.SolverName">
+            <summary>
+            审批人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.SolveDate">
+            <summary>
+            审批日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestList.State">
+            <summary>
+            代理状态(0:不确定,1:申请中,2:已回复3.打回)
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo">
+            <summary>
+            AgentRequestInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.SenderID">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.SenderRemark">
+            <summary>
+            申请备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.SolverID">
+            <summary>
+            审批人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.SolverRemark">
+            <summary>
+            审批备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestInfo.AgentName">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList">
+            <summary>
+            单证日志列表
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.OceanBookingID">
+            <summary>
+            托运单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.DocumentNo">
+            <summary>
+            单证号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.DocumentType">
+            <summary>
+            类型（0核销单，1提单等）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.NumberOfOriginal">
+            <summary>
+            正本份数
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.NumberOfCopies">
+            <summary>
+            副本份数
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.ReceivedDate">
+            <summary>
+            接收日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.ReleaseDate">
+            <summary>
+            放单日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.ReleaseMode">
+            <summary>
+            放单方式（0快递，1当面交接）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.ReturnDate">
+            <summary>
+            退回日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.TrackingNo">
+            <summary>
+            快递单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.AttachmentName">
+            <summary>
+            附件名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.Attachment">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.CreateByID">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.CreateDate">
+            <summary>
+            建立时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentList.Memos">
+            <summary>
+            备注列表
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonDocumentInfo">
+            <summary>
+            单证日志信息
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList">
+            <summary>
+            FreightRateRequestList
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.OceanShippingOrderID">
+            <summary>
+            装货单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.SenderName">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.SenderDate">
+            <summary>
+            申请时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.SolverName">
+            <summary>
+            审批人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.SolveDate">
+            <summary>
+            审批日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo">
+            <summary>
+            FreightRateRequestInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.SolverID">
+            <summary>
+            审批人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.SenderID">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.SenderRemark">
+            <summary>
+            申请备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.SolverRemark">
+            <summary>
+            审批备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.FreightRateID">
+            <summary>
+            运价ID（关联运价明细信息）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FreightRateRequestInfo.FreightRateName">
+            <summary>
+            运价名
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList">
+            <summary>
+            邮件传真日志列表
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.UserMailAccountID">
+            <summary>
+            用户邮件帐号ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.FolderID">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Sender">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Subject">
+            <summary>
+            邮件主题
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.To">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.CC">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Size">
+            <summary>
+            邮件大小
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Priority">
+            <summary>
+            重要性
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.Flag">
+            <summary>
+            标记状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.IsIncludeAttachment">
+            <summary>
+            是否包括附件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.MailContent">
+            <summary>
+            邮件内容
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.IsFax">
+            <summary>
+            是否发送传真
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.AttachmentList">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.CreateByID">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.CreateDate">
+            <summary>
+            建立时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMailFaxLogList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AttachmentList">
+            <summary>
+            附件列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AttachmentList.AttachmentName">
+            <summary>
+            附件名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AttachmentList.AttachmentConent">
+            <summary>
+            附件内容
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AttachmentList.AttachmentSize">
+            <summary>
+            附件大小
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AttachmentList.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList">
+            <summary>
+            备注列表
+            </summary> 
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.OwnerID">
+            <summary>
+            托运单ID，即表单id
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.OwnerSource">
+            <summary>
+            备注所属业务
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.Content">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.IsShowAgent">
+            <summary>
+            是否显示给代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.IsShowCustomer">
+            <summary>
+            是否显示给客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.CreateByID">
+            <summary>
+            建立人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.CreateDate">
+            <summary>
+            建立时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoList.UpdateDate">
+            <summary>
+            行版本
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo">
+            <summary>
+            备注信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.KeyID">
+            <summary>
+            关键字ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.KeyName">
+            <summary>
+            关键字
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.AttachmentName">
+            <summary>
+            附件名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.Attachment">
+            <summary>
+            附件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.Type">
+            <summary>
+            类型（系统、重要、正常等）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.CreateByID">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CommonMemoInfo.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo">
+            <summary>
+            业务公共信息
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.#ctor">
+            <summary>
+             TradeCustomers Forms 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.CurrentFormID">
+            <summary>
+            当前表单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.CompanyID">
+            <summary>
+            公司ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.OperationDate">
+            <summary>
+            关帐前以业务时间（出口为ETD、进口为ETA、内贸为ETD、其他为创建时间）,关帐后以当天时间设置帐单建立时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.Forms">
+            <summary>
+            帐单参考列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.FreightID">
+            <summary>
+            合约ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.TradeCustomers">
+            <summary>
+            提单的AgentID,ConsigneeID,CarrierID,CustomerID, 在帐单中可以下拉选择
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.DocumentState">
+            <summary>
+            分文件状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCommonInfo.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCustomer">
+            <summary>
+            业务公共信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCustomer.IsAgent">
+            <summary>
+            是否业务中的代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationCustomer.IsCustomer">
+            <summary>
+            是否业务中的客户
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FormData">
+            <summary>
+            表单数据
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FormData.ID">
+            <summary>
+            表单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FormData.Type">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FormData.No">
+            <summary>
+            表单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FormData.CntQty">
+            <summary>
+            箱数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.FormData.IsCurrent">
+            <summary>
+            是否当前
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo">
+            <summary>
+            业务代理信息实体类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo.IsBranch">
+            <summary>
+            是否是内部代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo.SONO">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.OperationAgentInfo.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo">
+            <summary>
+            文档分发信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.OceanBookingID">
+             <summary>
+            提单ID
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.State">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.AgentMail">
+            <summary>
+            代理邮件地址
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.OverseasCSID">
+            <summary>
+            海外客服ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.OverseasCSName">
+            <summary>
+            海外部客服Name
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.RecipientType">
+            <summary>
+            文档接收者类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchInfo.IsAgainDispatch">
+            <summary>
+            是否再次分发
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchSelectListInfo">
+            <summary>
+            选择的文档列表信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchSelectListInfo.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchSelectListInfo.OperationFileID">
+            <summary>
+            文档ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchSelectListInfo.OceanAgentDispatchID">
+            <summary>
+            文档分发信息ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchSelectListInfo.UpdateDate">
+            <summary>
+            文档更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DescriptionInfo">
+            <summary>
+            日志类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DescriptionInfo.Description">
+            <summary>
+            日志内容
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects">
+            <summary>
+            文档分发界面信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects.AgentInfo">
+            <summary>
+            代理信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects.DocumentListInfo">
+            <summary>
+            选择的文档列表集合
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects.DispatchInfo">
+            <summary>
+            文档分发信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects.Description">
+            <summary>
+            分文件日志
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentDispatchContainerObjects.SaveByID">
+            <summary>
+            保存人ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ContactStage">
+            <summary>
+            业务联系人所属沟通阶段
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.RoleType">
+            <summary>
+            海运业务角色类型
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder">
+            <summary>
+            日期搜索类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder.CreateDate">
+            <summary>
+            创建日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DateSearchTypeForDataFinder.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ContactType">
+             <summary>
+            联系人类型
+             </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ContactType.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ContactType.Carrier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.PaymentType">
+            <summary>
+            付款方式
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.PaymentType.PP">
+            <summary>
+            预付
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.PaymentType.CC">
+            <summary>
+            到付
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentType">
+            <summary>
+            单证类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentType.VerificationSheet">
+            <summary>
+            核销单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentType.BL">
+            <summary>
+            提单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentReleaseMode">
+            <summary>
+            文档交接方式
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentReleaseMode.Express">
+            <summary>
+            快递
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DocumentReleaseMode.Personally">
+            <summary>
+            当面
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.EMailPriority">
+            <summary>
+            重要性（0普通、1高、2低）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.EMailPriority.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.EMailPriority.High">
+            <summary>
+            高
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.EMailPriority.Low">
+            <summary>
+            低
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CargoType">
+            <summary>
+            货物类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.CargoType.Dry">
+            <summary>
+            干货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.CargoType.Reefer">
+            <summary>
+            冷藏货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.CargoType.Dangerous">
+            <summary>
+            危险货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.CargoType.Awkward">
+            <summary>
+            特种货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum">
+            <summary>
+            申请代理的状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum.Requesting">
+            <summary>
+            申请中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum.Respond">
+            <summary>
+            已回复
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentRequestStateEnum.Reject">
+            <summary>
+            打回
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AgentType">
+            <summary>
+            申请的代理类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentType.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentType.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentType.ThirdParty">
+            <summary>
+            第三方代理
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AgentType.Special">
+            <summary>
+            需要对收款有特殊要求的代理
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBindType">
+            <summary>
+            绑定类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBindType.Unknown">
+            <summary>
+            不指定，由LocalData.IsEnglish来确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBindType.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBindType.EName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBindType.CName">
+            <summary>
+            中文名称
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ShowingChildType">
+            <summary>
+            子列表类型
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMOperationType">
+            <summary>
+            业务类型(货物装箱方式)
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMOperationType.FCL">
+            <summary>
+            整箱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMOperationType.LCL">
+            <summary>
+            拼箱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMOperationType.BULK">
+            <summary>
+            散杂货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType">
+            <summary>
+            放单类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType.Original">
+            <summary>
+            正本
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType.Telex">
+            <summary>
+            电放
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType.SeaWay">
+            <summary>
+            Sea way
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState">
+            <summary>
+            放单类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState.Created">
+            <summary>
+            已创建
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState.Released">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState.Received">
+            <summary>
+            已接收
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseState.RC">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBookingMode">
+            <summary>
+            委托方式
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBookingMode.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBookingMode.Fax">
+            <summary>
+            传真订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBookingMode.EMail">
+            <summary>
+            邮件订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBookingMode.Internet">
+            <summary>
+            网上订舱
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState">
+            <summary>
+            PO状态（1待处理、2已确认、3全部发货、4部分发货、5取消订单）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.Processing">
+            <summary>
+            待处理
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.Confirmed">
+            <summary>
+            已确认
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.AllSent">
+            <summary>
+            全部发货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.Partial">
+            <summary>
+            部分发货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMPOState.Cancel">
+            <summary>
+            取消订单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBLType">
+            <summary>
+            提单类型（1:HBL，2:MBL）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBLType.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBLType.MBL">
+            <summary>
+            MBL
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.FCMBLType.HBL">
+            <summary>
+            HBL
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseBLSearchStatue">
+            <summary>
+            放单（1:已放单，2.未放单）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseBLSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseBLSearchStatue.ReleaseBL">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseBLSearchStatue.UnReleaseBL">
+            <summary>
+            未放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseRCSearchStatue">
+            <summary>
+            放货（1:已放货，2.未放货）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseRCSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseRCSearchStatue.ReleaseRC">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseRCSearchStatue.UnReleaseRC">
+            <summary>
+            未放货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyReleaseSearchStatue">
+            <summary>
+            申请放单（1:已申请放单，2.未申请放单）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyReleaseSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyReleaseSearchStatue.ApplyRelease">
+            <summary>
+            已申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyReleaseSearchStatue.UnApplyRelease">
+            <summary>
+            未申请放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReceiveRCSearchStatue">
+            <summary>
+            签收（1:已签收，2.未签收）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReceiveRCSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReceiveRCSearchStatue.ReceiveRC">
+            <summary>
+            已签收
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReceiveRCSearchStatue.UnReceiveRC">
+            <summary>
+            未签收
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyRCSearchStatue">
+            <summary>
+            申请放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyRCSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyRCSearchStatue.ApplyRC">
+            <summary>
+            已申请放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ApplyRCSearchStatue.UnApplyRC">
+            <summary>
+            未申请放货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.URBSearchStatue">
+            <summary>
+            催港前放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.URBSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.URBSearchStatue.URB">
+            <summary>
+            已催单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.URBSearchStatue.UnURB">
+            <summary>
+            未催单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.UDNSearchStatue">
+            <summary>
+            催客户付款
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.UDNSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.UDNSearchStatue.UDN">
+            <summary>
+            已催款
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.UDNSearchStatue.UnUDN">
+            <summary>
+            未催款
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ARCSearchStatue">
+            <summary>
+            同意放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ARCSearchStatue.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ARCSearchStatue.ARC">
+            <summary>
+            已催款
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ARCSearchStatue.UnARC">
+            <summary>
+            未催款
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram">
+            <summary>
+            海出查询方案
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.Custom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.NotApliedReleaseBL">
+            <summary>
+            未申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.AppliedReleaseBL">
+            <summary>
+            已申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.NotReleasedBL">
+            <summary>
+            未下达放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.ReleasedBL">
+            <summary>
+            已下达放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.AcceptedReleaseBL">
+            <summary>
+            已签收放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseProgram.ReleasedCargo">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram">
+            <summary>
+            海进查询方案
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.Custom">
+            <summary>
+            自定义
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.NotReleasedBL">
+            <summary>
+            未下达放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.ReleasedBL">
+            <summary>
+            已下达放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.AcceptedReleaseBL">
+            <summary>
+            已签收放单指令
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.NotApliedReleaseCargo">
+            <summary>
+            未申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.AppliedReleaseCargo">
+            <summary>
+            已申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.ReleaseCargoProgram.ReleasedCargo">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState">
+            <summary>
+            海运进口订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.NewOrder">
+            <summary>
+            新订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Rejected">
+            <summary>
+            已打回
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Checked">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.BookingConfirmed">
+            <summary>
+            已订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.LoadVoyage">
+            <summary>
+            已装船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.PODNotify">
+            <summary>
+            已发送到港通知
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Release">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.PickUp">
+            <summary>
+            已提柜
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OIOrderState.Return">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState">
+            <summary>
+            下载时,海运提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DownLoadBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState">
+            <summary>
+            海出订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.NewOrder">
+            <summary>
+            待订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.Rejected">
+            <summary>
+            已打回订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.Checked">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.BookingConfirmed">
+            <summary>
+            已订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.LoadPreVoyage">
+            <summary>
+            已装驳船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.LoadVoyage">
+            <summary>
+            已装大船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEOrderState.CancelBooking">
+            <summary>
+            取消订舱
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState">
+            <summary>
+            海出提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OEApplication">
+            <summary>
+            装船状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEApplication.Not">
+            <summary>
+            未装船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEApplication.Partially">
+            <summary>
+            已装驳船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OEApplication.Complete">
+            <summary>
+            已装大船
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OECompletionStatus">
+            <summary>
+            完成状态 
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OECompletionStatus.Not">
+            <summary>
+            未完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OECompletionStatus.Partially">
+            <summary>
+            完成部分
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OECompletionStatus.Complete">
+            <summary>
+            已完成
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState">
+            <summary>
+            空进订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.NewOrder">
+            <summary>
+            新订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.Rejected">
+            <summary>
+            已打回
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.Checked">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.ArrivalNoticeSended">
+            <summary>
+            已发送到货通知
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.Release">
+            <summary>
+            已放货
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState">
+            <summary>
+            空进提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState">
+            <summary>
+            空出订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.NewOrder">
+            <summary>
+            新订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.Rejected">
+            <summary>
+            已打回
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.Checked">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.BookingConfirmed">
+            <summary>
+            已订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.Confirmed">
+            <summary>
+            已确认MBL
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState">
+            <summary>
+            空出提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.AEBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState">
+            <summary>
+            其他业务订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState.NewOrder">
+            <summary>
+            新订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState.MBLConfirmed">
+            <summary>
+            已确认
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBOrderState.RBLD">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState">
+            <summary>
+            其他业务提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.OBBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState">
+            <summary>
+            内贸订单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.NewOrder">
+            <summary>
+            待订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.Rejected">
+            <summary>
+            已打回订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.Checked">
+            <summary>
+            已审核
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.BookingConfirmed">
+            <summary>
+            已订舱
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.LoadPreVoyage">
+            <summary>
+            已装驳船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.LoadVoyage">
+            <summary>
+            已装大船
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTOrderState.Closed">
+            <summary>
+            已关单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState">
+            <summary>
+            内贸提单状态(1草稿,对单中,对单完成,完成)
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState.Checking">
+            <summary>
+            对单中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState.Checked">
+            <summary>
+            对单完成
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.Common.ServiceInterface.DataObjects.DTBLState.Release">
+            <summary>
+            已放单
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CargoDescription">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CargoDescription.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CargoDescription.#ctor(ICP.FCM.Common.ServiceInterface.DataObjects.CommonCargo)">
+            <summary>
+            CargoDescription
+            </summary>
+            <param name="cargo"></param>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoDescription.Type">
+            <summary>
+            货物类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.CargoDescription.Cargo">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.CommonCargo">
+            <summary>
+            货物抽象类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.CommonCargo.ToString(System.Boolean)">
+            <summary>
+            转换为字符串描述
+            </summary>
+            <param name="isEnglish">是否英文</param>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DryCargo">
+            <summary>
+            干货描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.DryCargo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.DryCargo.ToString(System.Boolean)">
+            <summary>
+            转换为字符串描述
+            </summary>
+            <param name="isEnglish">是否英文</param>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DryCargo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ReeferCargo">
+            <summary>
+            冷冻货描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ReeferCargo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ReeferCargo.ToString(System.Boolean)">
+            <summary>
+            转换为字符串描述
+            </summary>
+            <param name="isEnglish">是否英文</param>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ReeferCargo.F">
+            <summary>
+            华氏度
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ReeferCargo.C">
+            <summary>
+            摄氏度 
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo">
+            <summary>
+            危险货描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.ToString(System.Boolean)">
+            <summary>
+            转换为字符串描述
+            </summary>
+            <param name="isEnglish">是否英文</param>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.UNNo">
+            <summary>
+            UNNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.Class">
+            <summary>
+            分类
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.Property">
+            <summary>
+            特性
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.DangerousCargo.IMDGCode">
+            <summary>
+            IMDG代码
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo">
+            <summary>
+            特种货描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.ToString(System.Boolean)">
+            <summary>
+            转换为字符串描述
+            </summary>
+            <param name="isEnglish">是否英文</param>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.GrossWeight">
+            <summary>
+            毛重
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.GrossWeightUnit">
+            <summary>
+            毛重单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.NetWeight">
+            <summary>
+            净重
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.NetWeightUnit">
+            <summary>
+            净重单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Length">
+            <summary>
+            长度
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Width">
+            <summary>
+            宽度
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Height">
+            <summary>
+            高度
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.AwkwardCargo.Details">
+            <summary>
+            明细
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription">
+            <summary>
+            箱描述
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="containerInfo">箱信息(2*20GP,3*40HQ)</param>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription.ToString">
+            <summary>
+            转为字符串描述
+            </summary>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription.BuildContainer(System.String)">
+            <summary>
+            根据箱描述串生成箱列表
+            </summary>
+            <param name="containerInfo">箱信息描述</param>
+            <returns>返回箱信息列表</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.ContainerDescription.Containers">
+            <summary>
+            箱列表
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.Container">
+            <summary>
+            箱信息
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.Container.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.Common.ServiceInterface.DataObjects.Container.ToString">
+            <summary>
+            转为字符串描述
+            </summary>
+            <returns>返回字符串描述</returns>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.Container.Size">
+            <summary>
+            箱尺寸
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.Container.Type">
+            <summary>
+            箱型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.Container.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.Container.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.Container.WeightUnit">
+            <summary>
+            重量单位
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription">
+            <summary>
+            提货单信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Type">
+            <summary>
+            方式
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Date">
+            <summary>
+            提货时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Contact">
+            <summary>
+            联系人 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Tel">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.Common.ServiceInterface.DataObjects.PickUpDescription.Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.Common.ServiceInterface.IFCMCommonService">
+            <summary>
+            FCM公共服务
+            </summary>
+        </member>
+    </members>
+</doc>

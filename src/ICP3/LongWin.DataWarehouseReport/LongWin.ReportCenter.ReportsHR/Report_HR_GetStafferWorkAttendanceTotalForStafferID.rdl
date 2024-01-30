@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="HRReportSource">
+      <rd:DataSourceID>f877e6c8-0a6f-49d2-ab53-60e6db48e76c</rd:DataSourceID>
+      <DataSourceReference>HRReportSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>21cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="BeginDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1900-01-01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>BeginDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EndDate">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2073-01-01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>EndDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StafferID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>00000000-0000-0000-0000-000000000000</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StafferID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>29.7cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5cm</RightMargin>
+  <LeftMargin>1cm</LeftMargin>
+  <BottomMargin>1cm</BottomMargin>
+  <rd:ReportID>4e07dcb5-1e7b-4c4b-9c16-b9fd2f93ab91</rd:ReportID>
+  <PageWidth>29.7cm</PageWidth>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ParentId">
+          <DataField>ParentId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IsStaffer">
+          <DataField>IsStaffer</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="YearHoliday">
+          <DataField>YearHoliday</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AlreadyYearHoliday">
+          <DataField>AlreadyYearHoliday</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AffairLeave">
+          <DataField>AffairLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="SickLeave">
+          <DataField>SickLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MarryHoliday">
+          <DataField>MarryHoliday</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="MaternityLeave">
+          <DataField>MaternityLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AccompanyMaternityLeave">
+          <DataField>AccompanyMaternityLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="BeravementLeave">
+          <DataField>BeravementLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OtherLeave">
+          <DataField>OtherLeave</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="LateCount">
+          <DataField>LateCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LeaveEarlyCount">
+          <DataField>LeaveEarlyCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="AbsentWorkCount">
+          <DataField>AbsentWorkCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HRReportSource</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SPR_REP_HRGetStafferWorkAttendanceListForStafferID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@BeginDate">
+            <Value>=Parameters!BeginDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EndDate">
+            <Value>=Parameters!EndDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Width>16.09764cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox1">
+        <Top>0.25cm</Top>
+        <Width>2cm</Width>
+        <Style>
+          <BackgroundColor>LightSkyBlue</BackgroundColor>
+          <FontFamily>宋体</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>考勤信息</Value>
+      </Textbox>
+      <Table Name="table1">
+        <ZIndex>1</ZIndex>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>1cm</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif( Fields!LateCount.Value=0 or isnothing(Fields!LateCount.Value),false,"RPT_HR_StafferWorkAttendanceDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>0</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LateCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif(Fields!LeaveEarlyCount.Value=0 or isnothing(Fields!LeaveEarlyCount.Value),false,"RPT_HR_StafferWorkAttendanceDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>1</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LeaveEarlyCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif(Fields!LeaveEarlyCount.Value=0 or isnothing(Fields!LeaveEarlyCount.Value),false,"RPT_HR_StafferWorkAttendanceDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>2</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AbsentWorkCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!AffairLeave.Value=0 OR ISNOTHING(Fields!AffairLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>3</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AffairLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!SickLeave.Value=0 OR ISNOTHING(Fields!SickLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>4</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SickLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!MarryHoliday.Value=0 OR ISNOTHING(Fields!MarryHoliday.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>5</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!MarryHoliday.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!MaternityLeave.Value=0 OR ISNOTHING(Fields!MaternityLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>6</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!MaternityLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox13">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!AccompanyMaternityLeave.Value=0 OR ISNOTHING(Fields!AccompanyMaternityLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>7</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AccompanyMaternityLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!AlreadyYearHoliday.Value=0 OR ISNOTHING(Fields!AlreadyYearHoliday.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>8</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AlreadyYearHoliday.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!YearHoliday.Value=0 OR ISNOTHING(Fields!YearHoliday.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>9</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!YearHoliday.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox19">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!BeravementLeave.Value=0 OR ISNOTHING(Fields!BeravementLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>10</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BeravementLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=IIF(Fields!OtherLeave.Value=0 OR ISNOTHING(Fields!OtherLeave.Value),false,"RPT_HR_StafferWorkAttendanceHolidayDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="DeptID">
+                              <Value>=Fields!Id.Value</Value>
+                            </Parameter>
+                            <Parameter Name="BeginDate">
+                              <Value>=Parameters!BeginDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="EndDate">
+                              <Value>=Parameters!EndDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="Type">
+                              <Value>11</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>Underline</TextDecoration>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!OtherLeave.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.45cm</Height>
+            </TableRow>
+          </TableRows>
+          <Grouping Name="table1_Details_Group">
+            <GroupExpressions>
+              <GroupExpression>=Fields!Id.Value</GroupExpression>
+            </GroupExpressions>
+            <Parent>=Fields!ParentId.Value</Parent>
+          </Grouping>
+        </Details>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>23</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>迟到</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <rd:DefaultName>textbox15</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>22</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>早退</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox18">
+                      <rd:DefaultName>textbox18</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>21</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>旷工</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>20</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>事假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox25">
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>19</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>病假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>18</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>婚假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox27">
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>产假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>陪产假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <rd:DefaultName>textbox42</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>已休年假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox39">
+                      <rd:DefaultName>textbox39</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>年假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox36">
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>丧假</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>其他</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.26574cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.23746cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.25cm</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+      <Textbox Name="textbox11">
+        <Top>0.25cm</Top>
+        <Width>7.75001cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>8.25cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>="统计时间: "+FormatDateTime(Parameters!BeginDate.Value,2)+"-"+FormatDateTime(Parameters!EndDate.Value,2)</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>2.08492cm</Height>
+  </Body>
+  <Language>zh-CN</Language>
+  <TopMargin>1cm</TopMargin>
+  <PageHeight>21cm</PageHeight>
+</Report>

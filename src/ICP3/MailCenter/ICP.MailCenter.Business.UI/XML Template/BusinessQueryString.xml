@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configs>
+  <!-- _Auto： 表示系统默认执行的查询的语句-->
+  <!--  _KeyWord: 表示用户输入关键字查询的语句 -->
+  <!-- _Contact: 标识根据联系人搜索业务列表-->
+  <!-- _MessageRelation:关联信息搜索业务列表 -->
+  <!-- _SubjectInNO：主题单号搜索业务列表-->
+  
+ <!-- <MailLink4in1_Auto  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE ov.ContactMail LIKE '%{0}%' AND ov.CompanyID IN ({1})  ORDER BY ov.CreateDate DESC" />-->
+  <MailLink4in1_KeyWord  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE ov.CompanyID IN ({0})  {1}  Order By ov.CreateDate DESC" />
+
+  <MailLink4in1_Contact QueryString="SELECT  CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE ov.CompanyID IN ({0}) AND (ov.ContactMailDomain LIKE '%{1}%' OR ov.ContactMail Like '%{2}%')  ORDER BY ov.CreateDate DESC" />
+
+  <MailLink4in1_MessageRelation QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE ov.CompanyID IN ({0}) AND ov.OceanBookingID IN ({1}) " />
+
+  <MailLink4in1_SubjectInNO QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE  ov.CompanyID IN ({0}) {1}  Order  by CreateDate DESC" />
+
+  <!--<MailLink4CarrierAN_KeyWord QueryString="SELECT ov.ANCopy,ov.BLNO,{0} AS Carrier,ov.ContactMail,ov.ContainerDesc ,ov.OceanBookingID,ov.IsValid ,ov.NO AS NO,ov.POD_EName AS POD,ov.POL_EName AS POL,ov.RefNO,ov.UpdateDate,ov.Vessel,ov.Voyage,ov.OperationType FROM OperationViewOECache ov WHERE  ov.CompanyID IN ({1})" />
+  <MailLink4in1_NoSOCopy  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE (ov.SoCopy IS NULL OR ov.SoCopy LIKE '') AND ov.ContactMail LIKE '%{0}%' AND ov.CompanyID IN ({1}) " />
+  <MailLink4in1_NoMBLCopy  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE (ov.MBLCopy IS NULL OR ov.MBLCopy LIKE '') AND ov.ContactMail LIKE '%{0}%' AND ov.CompanyID IN ({1}) " />
+  <MailLink4in1_NoAPCopy  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE (ov.APCopy IS NULL OR ov.APCopy LIKE '') AND ov.ContactMail LIKE '%{0}%' AND ov.CompanyID IN ({1}) " />
+  <MailLink4in1_NoANCopy  QueryString="SELECT CAST(0 AS BIT) AS Selected,SOCopy,MBLCopy,APCopy,ANCopy, ov.BLNO,ov.Description,ov.ContactMail,ov.OceanBookingID,ov.IsValid,ov.NO,ov.RefNO,ov.UpdateDate,ov.OperationType  FROM OperationViewOECache ov WHERE (ov.ANCopy IS NULL OR ov.ANCopy LIKE '') AND ov.ContactMail LIKE '%{0}%' AND ov.CompanyID IN ({1}) " />-->
+</Configs>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Services>
+  <Service description="中海补料">
+    <Key>CSCL_SI</Key>
+    <Assembly>CSCL.SI,CSCL.SI.MappingMapToIFTMIN</Assembly>
+    <Companys>
+      <Company Id="000000-0000-0000-0000-000000000000">
+        <EMail>
+          <ServerAddress>mail.cityocean.com</ServerAddress>
+          <UserName>faxsz</UserName>
+          <PassWord>faxsz</PassWord>
+          <EMailAddress>remyzhou@cityocean.com</EMailAddress>
+        </EMail>
+      </Company>
+    </Companys>
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP3_New;user id=icp3;Pwd=icp3@0401;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>EDI.GetEDIDataSourceForMBL</StoreProduce>
+      <DataSchema>mbl.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+  <Service description="泛洋船务补料">
+    <Key>FYCW_SI</Key>
+    <Assembly>FYCW.SI,FYCW.SI.MappingMapToTextfile</Assembly>
+    <Companys>
+      <Company Id="000000-0000-0000-0000-000000000000">
+        <EMail>
+          <ServerAddress>mail.cityocean.com</ServerAddress>
+          <UserName>faxsz</UserName>
+          <PassWord>faxsz</PassWord>
+          <EMailAddress>remyzhou@cityocean.com</EMailAddress>
+        </EMail>
+      </Company>
+    </Companys>
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP3_New;user id=icp3;Pwd=icp3@0401;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>edi.ExportIFCSUMFiling</StoreProduce>
+      <DataSchema>IFCSUM_FYCW.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+  <Service description="韩进补料">
+    <Key>HANJIN_SI</Key>
+    <Assembly>HANJIN.SI,HANJIN.SI.MappingMapToIFTMIN</Assembly>
+    <Companys>
+      <Company Id="000000-0000-0000-0000-000000000000">
+        <FTP>
+          <Host>192.168.99.105</Host>
+          <Path>EDI</Path>
+          <UserName>longwin</UserName>
+          <PassWord>longwin</PassWord>
+        </FTP>
+      </Company>
+    </Companys>
+
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP3_New;user id=icp3;Pwd=icp3@0401;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>EDI.GetEDIDataSourceForMBL</StoreProduce>
+      <DataSchema>mbl.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+  <Service description="韩进订仓">
+    <Key>HANJIN_Booking</Key>
+    <Assembly>HANJIN.Booking,HANJIN.Booking.MappingMapToIFTMBF</Assembly>
+    <Companys>
+      <Company Id="000000-0000-0000-0000-000000000000">
+        <FTP>
+          <Host>192.168.99.105</Host>
+          <Path>EDI</Path>
+          <UserName>longwin</UserName>
+          <PassWord>longwin</PassWord>
+        </FTP>
+      </Company>
+    </Companys>
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP3_New;user id=icp3;Pwd=icp3@0401;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>EDI.GetEDIDataSourceForBooking</StoreProduce>
+      <DataSchema>mbl.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+  <Service description="中远订舱">
+    <Key>COSCO_Booking</Key>
+    <Assembly>COSCO.Booking,COSCO.Booking.MappingMapToX12</Assembly>
+    <Companys>
+      <Company Id="000000-0000-0000-0000-000000000000">
+        <EMail>
+          <ServerAddress>mail.cityocean.com</ServerAddress>
+          <UserName>faxsz</UserName>
+          <PassWord>faxsz</PassWord>
+          <EMailAddress>remyzhou@cityocean.com</EMailAddress>
+        </EMail>
+      </Company>
+    </Companys>
+    <DataBase>
+      <ConnectString>Data Source=192.168.99.29,3344;database=ICP3_New;user id=icp3;Pwd=icp3@0401;integrated security=true;Trusted_Connection=false;</ConnectString>
+      <StoreProduce>EDI.GetEDIDataSourceForBooking</StoreProduce>
+      <DataSchema>mbl.xsd</DataSchema>
+    </DataBase>
+    <DocumentFormart>txt</DocumentFormart>
+  </Service>
+</Services>
+

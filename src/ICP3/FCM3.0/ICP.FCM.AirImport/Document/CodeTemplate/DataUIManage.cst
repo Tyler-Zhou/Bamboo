@@ -1,0 +1,160 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generate a CAB WorkItem." Debug="True" ResponseEncoding="UTF-8" NoWarn="0108,0618,1572,1573,1574,0162,2002"%>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="CodeBuilder" %>
+<%@ Assembly Name="CodeBuilder" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Text" %>
+
+
+
+<script runat="template">
+
+    Builder b  = new Builder() ; 
+
+    string _descriptionFile= string.Empty ;    
+    [Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))] 
+	[CodeTemplateProperty(CodeTemplatePropertyOption.Required)]
+	[Category("Generation")]
+	[Description("描述文件地址")]
+	[DefaultValue("")]
+	public string DescriptionFile 
+	{ 
+		get
+		{			
+				return _descriptionFile;			
+		}
+		set
+		{
+			if (value.EndsWith("\\")) value = value.Substring(0, value.Length - 1);
+			_descriptionFile = value;
+		} 
+	}
+    
+    void Init(){
+        b.Load(DescriptionFile);
+    }
+    
+</script>
+    <%Init();%>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms; 
+using ICP.Framework ;
+using ICP.Framework.Client ;
+using Microsoft.Practices.ObjectBuilder;
+using Microsoft.Practices.CompositeUI;
+using Microsoft.Practices.CompositeUI.WinForms;
+using <%=b.Namespace%>.UI ;
+using <%=b.Namespace%>.ServiceInterface ;
+using <%=b.Namespace%>.ServiceInterface.DataObjects ;
+
+namespace <%=b.Namespace%>.UI
+{  
+    
+    <% foreach(DataUI c in b.DataUIs ) {%>
+
+    public partial class <%=c.Name%>UIProxy : <%=c.Type%> 
+    {
+       [ServiceDependency]
+       public WorkItem workitem{get;set;}
+        
+       public virtual string Title { get{ return <%=c.Title%> ; }} 
+    
+        ChildConfigureBase childConfigure ;
+        public virtual ChildConfigureBase ChildConfigure{
+            get { 
+                <%if(c.Child != null) {%>
+                if(childConfigure == null) {
+                    <%=c.Child.ExportCode("cc")%>
+                    childConfigure = cc ; 
+                }
+                return childConfigure;
+                <%}else{%>   
+                return null ; 
+                <%}%>
+            }    
+        }                    
+        
+        <%if(c.Type == "IListUIProxy"
+            || c.Type == "ITreeUIProxy"
+            || c.Type == "IListManageUIProxy"
+            || c.Type == "ITreeManageUIProxy"
+            || c.Type == "IListEditUIProxy"
+            ){%>
+        public virtual Type SearchPartType { 
+            get{
+                <%if(string.IsNullOrEmpty(c.SearchPart) == false){%>
+                return typeof(<%=c.SearchPart%>) ;
+                <%}else{%>
+                return null;
+                <%}%>
+               } 
+            }
+    
+       List<PropertyBinding> _pbs ;
+       public virtual List<PropertyBinding> DataBindings 
+       { 
+          get{
+            if(_pbs == null){
+                _pbs = new List<PropertyBinding>() ; 
+                PropertyBinding pb ;
+                <%foreach(GridColumn f in c.Columns){%>
+                pb = new PropertyBinding() ;
+                pb.PropertyName = <%=f.DataProperty%> ;
+                pb.HeaderText = <%=f.HeaderText%> ;
+                pb.PropertyType=typeof(<%=f.DataType%>);
+                pb.ColumnWidth=<%=f.Width%>;
+                <%if(f.Editable == true){%>
+                pb.Editable=<%=f.Editable ? "true":"false"%>;
+                <%}%>
+                <% if(string.IsNullOrEmpty(f.Editinfo.DataFinder ) == false){%>                
+                pb.EditInfo.DataFinderName= "<%=f.Editinfo.DataFinder%>" ;
+                pb.EditInfo.TextField= <%=f.DataProperty%> ;
+                pb.EditInfo.ValueField = "<%=f.Editinfo.ValueField%>" ;
+                pb.EditInfo.ResultValueField = "<%=f.Editinfo.ResultValueField%>" ;
+                pb.EditInfo.ResultTextField= <%=f.Editinfo.ResultTextField%> ;
+                <%}%>
+                _pbs.Add(pb);
+                <%}%>
+            }
+            return _pbs ; 
+          }  
+       }
+        <%}%>    
+        
+         <%if(c.Type == "ITreeUIProxy"
+            || c.Type == "ITreeManageUIProxy"
+            ){%>
+       <%if(string.IsNullOrEmpty(c.ParentFieldName) ==false){%>
+       public virtual string ParentFieldName { get { return "<%=c.ParentFieldName%>"; } }
+       <%}}%>
+    
+        <%if(c.Type == "IListManageUIProxy"
+            || c.Type == "ITreeManageUIProxy"
+            ){%>
+        public virtual Type EditPartType { 
+            get{
+                <%if(string.IsNullOrEmpty(c.EditPart) == false){%>
+                return typeof(<%=c.EditPart%>) ;
+                <%}else{%>
+                return null;
+                <%}%>
+               }             
+        }
+
+       <%}%>
+
+    }
+<%}%>
+}

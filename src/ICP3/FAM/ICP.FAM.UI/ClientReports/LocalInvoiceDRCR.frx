@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="12/01/2010 10:48:48" ReportInfo.Modified="10/11/2018 11:04:48" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Data1_AfterData(object sender, EventArgs e)
+    {
+      int count =Report.GetDataSource(&quot;Fees&quot;).RowCount;
+      if(count &lt;6)
+      {
+        Row80.Height = 22 * (6-count);
+      }                                 
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyDsc" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="DueDate" DataType="System.DateTime"/>
+      <Column Name="Trem" DataType="System.Int32"/>
+      <Column Name="BillToCustomerDsc" DataType="System.String"/>
+      <Column Name="BillToCustomerAdd" DataType="System.String"/>
+      <Column Name="BillToCustomerName" DataType="System.String"/>
+      <Column Name="CreateDate" DataType="System.DateTime"/>
+      <Column Name="PostDate" DataType="System.DateTime"/>
+      <Column Name="ShipperTo" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="MBLNo" DataType="System.String"/>
+      <Column Name="HBLNo" DataType="System.String"/>
+      <Column Name="OperationNo" DataType="System.String"/>
+      <Column Name="AgentRefNo" DataType="System.String"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="Notify" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="FETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Destination" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="DRTotalAmount" DataType="System.String"/>
+      <Column Name="CRTotalAmount" DataType="System.String"/>
+      <Column Name="CrAmount" DataType="System.String"/>
+      <Column Name="APAmount" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="PaidAmount" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="FinAmount" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="Memo" DataType="System.String"/>
+      <Column Name="PaymentMode" DataType="System.String"/>
+      <Column Name="CurrentUser" DataType="System.String"/>
+      <Column Name="MainCurrency" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Fees" ReferenceName="Fees" DataType="System.Int32" Enabled="true">
+      <Column Name="Debit" DataType="System.Decimal"/>
+      <Column Name="Credit" DataType="System.Decimal"/>
+      <Column Name="ChargeName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="216" PaperHeight="279" FirstPageSource="15" OtherPagesSource="15" Guides="359.1,7.56,710.64,347.76,370.44">
+    <ColumnHeaderBand Name="ColumnHeader1" Width="740.88" Height="253.26" CanGrow="true">
+      <TextObject Name="Text17" Left="15.12" Top="11.34" Width="332.64" Height="75.6" Text="[ReportSource.CompanyDsc]" Font="Arial, 8pt"/>
+      <TextObject Name="Text18" Left="370.44" Top="11.34" Width="340.2" Height="34.02" Text="DEBIT NOTE" HorzAlign="Center" VertAlign="Center" Font="Arial, 22pt, style=Bold" TextFill.Color="Maroon"/>
+      <TableObject Name="Table12" Left="7.56" Top="90.72" Width="338.31" Height="75.6" Border.Lines="All" Border.Color="Maroon">
+        <TableColumn Name="Column54" Width="338.31"/>
+        <TableRow Name="Row59" Height="15.12">
+          <TableCell Name="Cell254" Border.Lines="All" Border.Color="Maroon" Text="     AGENT" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row60" Height="60.48">
+          <TableCell Name="Cell255" Text="[ReportSource.BillToCustomerDsc]"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text19" Left="370.44" Top="45.36" Width="45.36" Height="26.46" Text="NO." Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text20" Left="419.58" Top="45.36" Width="291.06" Height="26.46" Text="[ReportSource.BillNo]" Font="Arial, 8pt"/>
+      <TableObject Name="Table13" Left="370.44" Top="90.72" Width="340.2" Height="75.6" Border.Lines="All" Border.Color="Maroon">
+        <TableColumn Name="Column55" Width="113.4"/>
+        <TableColumn Name="Column56" Width="113.4"/>
+        <TableColumn Name="Column57" Width="113.4"/>
+        <TableRow Name="Row61">
+          <TableCell Name="Cell256" Border.Lines="All" Border.Color="Maroon" Text="POST DATE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell257" Border.Lines="All" Border.Color="Maroon" Text="CR/DR DATE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell258" Border.Lines="All" Border.Color="Maroon" Text="DUE DATE" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row62">
+          <TableCell Name="Cell259" Border.Lines="All" Border.Color="Maroon" Text="[ReportSource.PostDate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell260" Border.Lines="All" Border.Color="Maroon" Text="[ReportSource.CreateDate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell261" Border.Lines="All" Border.Color="Maroon" Text="[ReportSource.DueDate]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row63">
+          <TableCell Name="Cell262" Border.Lines="All" Border.Color="Maroon" Text="TERMS " HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell263" Border.Lines="All" Border.Color="Maroon" Text="PROFIT" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell264" Border.Lines="All" Border.Color="Maroon" Text="CURRENCY" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row64">
+          <TableCell Name="Cell265" Border.Lines="All" Border.Color="Maroon" Text="[ReportSource.Trem]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell266" Border.Lines="All" Border.Color="Maroon" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell267" Border.Lines="All" Border.Color="Maroon" Text="[ReportSource.MainCurrency]" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table14" Left="7.56" Top="177.66" Width="340.2" Height="52.92">
+        <TableColumn Name="Column58" Width="98.28"/>
+        <TableColumn Name="Column59" Width="241.92"/>
+        <TableRow Name="Row65" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell268" Text="OUR REF NO" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell269" Text="[ReportSource.OperationNo]" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row66" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell270" Text="AGENT NO" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell271" Text="[ReportSource.AgentRefNo]" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row67" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell272" Text="MASTER B/L NO" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell273" Text="[ReportSource.MBLNo]" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table15" Left="370.44" Top="177.66" Width="340.2" Height="52.92">
+        <TableColumn Name="Column60" Width="51.03"/>
+        <TableColumn Name="Column61" Width="139.86"/>
+        <TableColumn Name="Column62" Width="54.81"/>
+        <TableColumn Name="Column63" Width="94.5"/>
+        <TableRow Name="Row68" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell274" Text="P.O.L" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell275" Text="[ReportSource.POL]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell276" Text="E.T.D." VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell277" Text="[ReportSource.ETD]" Format="Date" Format.Format="MM/dd/yyyy" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row69" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell278" Text="P.O.D" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell279" Text="[ReportSource.POD]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell280" Text="E.T.A." VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell281" Text="[ReportSource.ETA]" Format="Date" Format.Format="MM/dd/yyyy" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+        <TableRow Name="Row70" Height="17.64" AutoSize="true">
+          <TableCell Name="Cell282" Text="P.DEST" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell283" Text="[ReportSource.Destination]" VertAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell284" Text="E.T.A." VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell285" Text="[ReportSource.FETA]" Format="Date" Format.Format="MM/dd/yyyy" VertAlign="Center" Font="Arial, 8pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table16" Left="7.56" Top="230.58" Width="703.08" Height="18.9">
+        <TableColumn Name="Column64" Width="124.74"/>
+        <TableColumn Name="Column65" Width="11.34"/>
+        <TableColumn Name="Column66" Width="287.28"/>
+        <TableColumn Name="Column67" Width="139.86"/>
+        <TableColumn Name="Column68" Width="139.86"/>
+        <TableRow Name="Row71">
+          <TableCell Name="Cell286" Text="VESSEL/FLYGHT NO" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell287" Text=":" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell288" Text="[ReportSource.VesselVoyage]" ColSpan="3"/>
+          <TableCell Name="Cell289"/>
+          <TableCell Name="Cell290"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="283.94" Width="740.88" Height="18.9" CanGrow="true" AfterDataEvent="Data1_AfterData" DataSource="Fees">
+      <TableObject Name="Table23" Left="7.56" Top="-3.78" Width="703.08" Height="22.68">
+        <TableColumn Name="Column118" Width="158.76"/>
+        <TableColumn Name="Column119" Width="158.76"/>
+        <TableColumn Name="Column120" Width="83.16"/>
+        <TableColumn Name="Column121" Width="83.16"/>
+        <TableColumn Name="Column122" Width="33.91"/>
+        <TableColumn Name="Column123" Width="91.37"/>
+        <TableColumn Name="Column124" Width="93.96"/>
+        <TableRow Name="Row79" Height="22.68" AutoSize="true">
+          <TableCell Name="Cell364" Border.Lines="Left, Right" Border.Color="Maroon" Text="[ReportSource.HBLNo]"/>
+          <TableCell Name="Cell365" Border.Lines="Left, Right" Border.Color="Maroon" Text="[Fees.ChargeName]"/>
+          <TableCell Name="Cell366" Border.Lines="Left, Right" Border.Color="Maroon" Text="[Fees.Debit]"/>
+          <TableCell Name="Cell367" Border.Lines="Left, Right" Border.Color="Maroon" Text="[Fees.Credit]"/>
+          <TableCell Name="Cell368" Border.Lines="Left, Right" Border.Color="Maroon" Text="[ReportSource.PaymentMode]"/>
+          <TableCell Name="Cell369" Border.Lines="Left, Right" Border.Color="Maroon" Text="[Fees.Debit]"/>
+          <TableCell Name="Cell370" Border.Lines="Left, Right" Border.Color="Maroon" Text="[Fees.Credit]"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader2" Top="257.26" Width="740.88" Height="22.68" CanGrow="true">
+        <TableObject Name="Table22" Left="7.56" Width="703.08" Height="22.68" GrowToBottom="true">
+          <TableColumn Name="Column111" Width="158.76"/>
+          <TableColumn Name="Column112" Width="158.76"/>
+          <TableColumn Name="Column113" Width="83.16"/>
+          <TableColumn Name="Column114" Width="83.16"/>
+          <TableColumn Name="Column115" Width="33.91"/>
+          <TableColumn Name="Column116" Width="91.37"/>
+          <TableColumn Name="Column117" Width="93.96"/>
+          <TableRow Name="Row78" Height="22.68">
+            <TableCell Name="Cell357" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="BL NO" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell358" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="DESCRIPTION" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell359" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="REVENUE" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell360" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="COST" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell361" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="P/C" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell362" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="DEBIT(+)" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell363" Border.Lines="Left, Right, Top" Border.Color="Maroon" Text="CREDIT(-)" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter2" Top="306.84" Width="740.88" Height="2.78" CanGrow="true">
+        <TableObject Name="tableFooter" Left="7.56" Top="-2.78" Width="703.08" Height="5.56" GrowToBottom="true">
+          <TableColumn Name="Column125" Width="158.76"/>
+          <TableColumn Name="Column126" Width="158.76"/>
+          <TableColumn Name="Column127" Width="83.16"/>
+          <TableColumn Name="Column128" Width="83.16"/>
+          <TableColumn Name="Column129" Width="33.91"/>
+          <TableColumn Name="Column130" Width="91.37"/>
+          <TableColumn Name="Column131" Width="93.96"/>
+          <TableRow Name="Row80" Height="5.56">
+            <TableCell Name="Cell371" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell372" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell373" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell374" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell375" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell376" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+            <TableCell Name="Cell377" Border.Lines="Left, Right, Bottom" Border.Color="Maroon" Font="Microsoft Sans Serif, 8pt" TextFill.Color="Maroon"/>
+          </TableRow>
+        </TableObject>
+      </DataFooterBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="313.62" Width="740.88" Height="136.08" CanGrow="true">
+      <TableObject Name="Table17" Left="9.27" Top="45.36" Width="701.37" Height="64.26" Border.Lines="All" Border.Color="Maroon">
+        <TableColumn Name="Column76" Width="77.4"/>
+        <TableColumn Name="Column78" Width="157.77"/>
+        <TableColumn Name="Column79" Width="157.77"/>
+        <TableColumn Name="Column80" Width="157.77"/>
+        <TableColumn Name="Column81" Width="79.11"/>
+        <TableColumn Name="Column82" Width="71.55"/>
+        <TableRow Name="Row73" Height="64.26">
+          <TableCell Name="Cell322" Text="Remark:" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+          <TableCell Name="Cell324" Text="[ReportSource.Remark]" ColSpan="5"/>
+          <TableCell Name="Cell325"/>
+          <TableCell Name="Cell326"/>
+          <TableCell Name="Cell327"/>
+          <TableCell Name="Cell328"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text21" Left="136.08" Top="18.9" Width="68.04" Height="18.9" Text="DUE TO:" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text22" Left="194.67" Top="18.9" Width="311.85" Height="18.9" Text="[ReportSource.BillToCustomerName]" VertAlign="Center"/>
+      <TextObject Name="Text23" Left="510.3" Top="18.9" Width="109.62" Height="18.9" Text="[ReportSource.CrAmount]" HorzAlign="Right" VertAlign="Center"/>
+      <TextObject Name="Text1" Left="438.48" Width="90.72" Height="18.9" Text="TOTAL:" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Left="510.3" Width="109.62" Height="18.9" Text="[ReportSource.DRTotalAmount]" HorzAlign="Right"/>
+      <TextObject Name="Text24" Left="619.92" Width="109.62" Height="18.9" Text="[ReportSource.CRTotalAmount]" HorzAlign="Center"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

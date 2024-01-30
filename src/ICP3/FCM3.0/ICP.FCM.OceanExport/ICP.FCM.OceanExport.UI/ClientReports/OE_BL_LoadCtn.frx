@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="10/08/2010 10:21:52" ReportInfo.Modified="10/08/2010 15:29:04" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ShipperName" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="ConsigneeName" DataType="System.String"/>
+      <Column Name="NotifyPartyName" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ContainerQtyDescription" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.Int32"/>
+      <Column Name="QuantityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.Decimal"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.Decimal"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <PageHeaderBand Name="PageHeader1" Top="20" Width="718.2" Height="869.76">
+      <TextObject Name="txtShipper" Left="47.04" Top="42.24" Width="318.72" Height="92.16" Text="[ReportSource.ShipperName]"/>
+      <TextObject Name="txtConsignee" Left="47.04" Top="152.64" Width="311.04" Height="95.04" Text="[ReportSource.ConsigneeName]"/>
+      <TextObject Name="txtNotify" Left="47.04" Top="243.84" Width="366.72" Height="69.12" Text="[ReportSource.NotifyPartyName]"/>
+      <TextObject Name="txtRecpiptplace" Left="191.04" Top="329.28" Width="206.4" Height="21.12" Text="Recpiptplace"/>
+      <TextObject Name="txtBLNo" Left="384" Top="49.92" Width="129.6" Height="21.12" Text="[ReportSource.BLNo]"/>
+      <TextObject Name="txtVessel" Left="48" Top="359.04" Width="94.08" Height="21.12" Text="[ReportSource.Vessel]"/>
+      <TextObject Name="txtVoyno" Left="148.8" Top="358.08" Width="82.56" Height="21.12" Text="[ReportSource.Voyage]"/>
+      <TextObject Name="txtPOL" Left="239.04" Top="357.12" Width="129.6" Height="21.12" Text="[ReportSource.POL]"/>
+      <TextObject Name="txtPOD" Left="48.96" Top="399.36" Width="129.6" Height="21.12" Text="[ReportSource.POD]"/>
+      <TextObject Name="txtDeliveryplace" Left="199.68" Top="398.4" Width="129.6" Height="21.12" Text="[ReportSource.PlaceOfDelivery]"/>
+      <TextObject Name="txtCtnNo" Left="40.32" Top="457.92" Width="77.76" Height="178.56" Text="[ReportSource.ContainerQtyDescription]"/>
+      <TextObject Name="txtMarks" Left="114.24" Top="457.92" Width="90.24" Height="175.68" Text="[ReportSource.Marks]"/>
+      <TextObject Name="txtQty" Left="213.12" Top="458.88" Width="56.64" Height="21.12" Text="[ReportSource.Quantity]"/>
+      <TextObject Name="txtQtyUnit" Left="213.12" Top="479.04" Width="64.32" Height="21.12" Text="[ReportSource.QuantityUnit]"/>
+      <TextObject Name="txtGoods" Left="283.2" Top="457.92" Width="253.44" Height="182.4" Text="[ReportSource.GoodsDescription]"/>
+      <TextObject Name="txtDetinationna" Left="634.56" Top="395.52" Width="75.84" Height="21.12" Text="[ReportSource.FinalDestination]"/>
+      <TextObject Name="txtWeight" Left="547.2" Top="454.08" Width="85.44" Height="183.36" Text="[ReportSource.Weight][ReportSource.WeightUnit]"/>
+      <TextObject Name="txtMeausrement" Left="640.32" Top="453.12" Width="74.88" Height="181.44" Text="[ReportSource.Measurement][ReportSource.MeasurementUnit]"/>
+      <TextObject Name="txtCtnInfo" Left="221.76" Top="727.68" Width="408" Height="41.28" Text="[ReportSource.ContainerInfo]"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

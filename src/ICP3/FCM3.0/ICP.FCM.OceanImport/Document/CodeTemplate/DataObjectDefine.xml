@@ -1,0 +1,515 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="ICPFCMOceanExport">
+  <classes>
+    <class name="OIBLList" description="进口提单列表">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="MBLID" type="Guid" description="MBL ID" />
+      <field isid="false" name="BLType" type="BLType" description="提单类型(0:HBL,1:MBL)" />
+      <field isid="false" name="SentAN" type="bool" description="是否已发送到港通知书" />
+      <field isid="false" name="Paid" type="bool" description="是否已付" />
+      <field isid="false" name="TelexRelease" type="bool" description="是否已付" />
+      <field isid="false" name="OperationType" type="OIOperationType" description="业务类型(0:整箱,1:拼箱,2:散货)" />
+      <field isid="false" name="RefNo" type="string" description="业务号" />
+      <field isid="false" name="No" type="string" description="提单号" />
+      <field isid="false" name="CustomerName" type="string" description="客户/代理" />
+      <field isid="false" name="CustomerRefNo" type="string" description="客户参考号/代理参考号" />
+      <field isid="false" name="CarrierName" type="string" description="船东" />
+      <field isid="false" name="AgentOfCarrierName" type="string" description="承运人" />
+      <field isid="false" name="ConsigneeName" type="string" description="收货人" />
+      <field isid="false" name="NotifyPartyName" type="string" description="通知人" />
+      <field isid="false" name="VesselVoyage" type="string" description="船名航次" />
+      <field isid="false" name="POLName" type="string" description="装货港" />
+      <field isid="false" name="ETD" type="DateTime?" description="离港日" />
+      <field isid="false" name="PODName" type="string" description="卸货港" />
+      <field isid="false" name="ETA" type="DateTime?" description="到港日" />
+      <field isid="false" name="PlaceOfDeliveryName" type="string" description="最终目的地" />
+      <field isid="false" name="FETA" type="DateTime?" description="最终到达日" />
+      <field isid="false" name="OperatorName" type="string" description="操作" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+      <field isid="false" name="State" type="BLState" description="状态（0待定、1已换单、2已完成）" />
+    </class>
+    <class name="OIMBLInfo" description="进口主提单信息">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="RefNo" type="string" description="业务号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="AgentRefNo" type="string" description="代理参考号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="No" type="string" description="主单号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="OperationType" type="OIOperationType" description="业务类型" />
+      <field isid="false" name="AgentName" type="string" description="代理" />
+      <field isid="false" name="AgentID" type="Guid" description="代理ID">
+        <validation type="guidrequired" errmsg="代理必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="PlaceOfReceiptID" type="Guid?" description="收货地ID" />
+      <field isid="false" name="PlaceOfReceiptName" type="string" description="收货地" />
+      <field isid="false" name="PlaceOfDeliveryID" type="Guid" description="交货地ID">
+        <validation type="guidrequired" errmsg="交货地必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="PlaceOfDeliveryName" type="string" description="交货地">
+      </field>
+      <field isid="false" name="FETA" type="DateTime?" description="估计到达交货地日期" />
+      <field isid="false" name="CarrierID" type="Guid" description="船东ID">
+        <validation type="guidrequired" errmsg="船东必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CarrierName" type="string" description="船东">
+      </field>
+      <field isid="false" name="AgentOfCarrierID" type="Guid" description="承运人">
+        <validation type="guidrequired" errmsg="承运人必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="AgentOfCarrierName" type="string" description="承运人">
+      </field>
+      <field isid="false" name="VoyageID" type="Guid" description="头程船名航次">
+        <validation type="guidrequired" errmsg="头程船名必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="VesselVoyage" type="string" description="头程船名航次">
+      </field>
+      <field isid="false" name="POLName" type="string" description="头程装货港" />
+      <field isid="false" name="ETD" type="DateTime?" description="头程离港日" />
+      <field isid="false" name="PODName" type="string" description="头程卸货港" />
+      <field isid="false" name="ETA" type="DateTime?" description="头程到港日" />
+      <field isid="false" name="SecondVoyageID" type="Guid?" description="二程船名航次ID" />
+      <field isid="false" name="SecondVesselVoyage" type="string" description="二程船名航次" />
+      <field isid="false" name="SecondPODName" type="string" description="二程卸货港" />
+      <field isid="false" name="SecondETA" type="DateTime?" description="二程到港日" />
+      <field isid="false" name="ShippingLineID" type="Guid" description="航线ID">
+        <validation type="guidrequired" errmsg="航线必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="ShippingLineName" type="string" description="航线">
+      </field>
+      <field isid="false" name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="TransportClauseName" type="string" description="运输条款">
+      </field>
+      <field isid="false" name="PaymentTermID" type="Guid" description="付费条款ID">
+        <validation type="guidrequired" errmsg="付费条款必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="PaymentTermName" type="string" description="付费条款">
+      </field>
+      <field isid="false" name="ReturnLocationID" type="Guid?" description="还柜地点ID" />
+      <field isid="false" name="ReturnLocationName" type="string" description="还柜地点" />
+      <field isid="false" name="ReleaseType" type="ReleaseType" description="放货方式（0不确定、1正本、2电放）" />
+      <field isid="false" name="ReleaseDate" type="DateTime?" description="放货日期" />
+      <field isid="false" name="CompanyID" type="Guid" description="公司ID">
+        <validation type="guidrequired" errmsg="公司必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CompanyName" type="string" description="操作公司">
+        <validation type="required" errmsg="公司必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="LockedDate" type="DateTime?" description="锁定业务时间" />
+      <field isid="false" name="State" type="BLState" description="状态（0待定、1已换单、2已完成）" />
+      <field isid="false" name="CreateByID" type="Guid" description="建立人ID" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+      
+      
+      <field isid="false" name="SubNo" type="string" description="同行提单号" />
+      <field isid="false" name="ITNo" type="string" description="转关号">
+        <validation type="stringlength" length="32" min="0" max="0" />
+      </field>
+      <field isid="false" name="ITDate" type="DateTime?" description="转关日期" />
+      <field isid="false" name="ITPlace" type="string" description="转关地点">
+        <validation type="stringlength" length="100" min="0" max="0" />
+      </field>
+      <field isid="false" name="FreightLocationID" type="Guid?" description="堆场ID" />
+      <field isid="false" name="FreightLocationName" type="string" description="前程运输" />
+      <field isid="false" name="POLOperatorID" type="Guid?" description="装货港操作ID" />
+      <field isid="false" name="POLOperatorName" type="string" description="装货港操作名称" />
+      <field isid="false" name="OperatorID" type="Guid?" description="操作ID" />
+      <field isid="false" name="OperatorName" type="string" description="操作名称" />
+      
+      <field isid="false" name="Containers" type="List&lt;OIMBLContainerList&gt;" description="箱列表" />
+    </class>
+    <class name="OIHBLInfo" description="海运进口分提单">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="OIMBLID" type="Guid" description="MBLID" />
+      <field isid="false" name="OIMBLNo" type="string" description="海运进口主提单号" />
+      <field isid="false" name="OperationType" type="OIOperationType" description="业务类型" />
+      <field isid="false" name="No" type="string" description="海运进口分提单号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+        <validation type="required" errmsg="海运进口分提单号必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="AMSNo" type="string" description="美国舱单系统号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="RefNo" type="string" description="业务号" />
+      <field isid="false" name="ISFNo" type="string" description="ISF No">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="CustomerID" type="Guid?" description="客户ID">
+        <validation type="guidrequired" errmsg="客户必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CustomerName" type="string" description="客户">
+      </field>
+      <field isid="false" name="CustomerRefNo" type="string" description="客户参考号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="ShipperID" type="Guid" description="发货人ID">
+        <validation type="guidrequired" errmsg="发货人必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="ShipperName" type="string" description="发货人">
+      </field>
+      <field isid="false" name="ShipperDescription" type="CustomerDescription" description="发货人详细信息" />
+      <field isid="false" name="ConsigneeID" type="Guid?" description="收货人ID">
+      </field>
+      <field isid="false" name="ConsigneeName" type="string" description="收货人">
+      </field>
+      <field isid="false" name="ConsigneeDescription" type="CustomerDescription" description="收货人详细信息" />
+      <field isid="false" name="NotifyPartyID" type="Guid?" description="通知人ID" />
+      <field isid="false" name="NotifyPartyName" type="string" description="通知人" />
+      <field isid="false" name="NotifyPartyDescription" type="CustomerDescription" description="通知人详细信息" />
+      <field isid="false" name="CustomsBrokerID" type="Guid?" description="报关行ID" />
+      <field isid="false" name="CustomsBrokerName" type="string" description="报关行" />
+      <field isid="false" name="CustomsBrokerDescription" type="CustomerDescription" description="报关行详细信息" />
+      <field isid="false" name="FinalDestinationID" type="Guid" description="最终目的地ID">
+        <validation type="guidrequired" errmsg="最终目的地必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="FinalDestinationName" type="string" description="最终目的地">
+        <validation type="stringlength" length="100" min="0" max="0" />
+        <validation type="required" errmsg="最终目的地必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="FETA" type="DateTime?" description="估计交货日" />
+      <field isid="false" name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="TransportClauseName" type="string" description="运输条款">
+      </field>
+      <field isid="false" name="PaymentTermID" type="Guid" description="付费条款ID">
+        <validation type="guidrequired" errmsg="付费条款必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="PaymentTermName" type="string" description="付费条款">
+      </field>
+      <field isid="false" name="Quantity" type="int" description="包装数量">
+        <validation type="required" errmsg="包装数量必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="QuantityUnitName" type="string" description="包装单位" />
+      <field isid="false" name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="WeightUnitID" type="Guid" description="重量单位ID">
+        <validation type="guidrequired" errmsg="重量单位必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="WeightUnitName" type="string" description="重量单位" />
+      <field isid="false" name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="MeasurementUnitID" type="Guid" description="体积单位ID">
+        <validation type="guidrequired" errmsg="体积单位必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="MeasurementUnitName" type="string" description="体积单位">
+      </field>
+      <field isid="false" name="Marks" type="string" description="唛头" />
+      <field isid="false" name="GoodsDescription" type="string" description="货物描述" />
+      <field isid="false" name="ITNo" type="string" description="转关号">
+        <validation type="stringlength" length="32" min="0" max="0" />
+      </field>
+      <field isid="false" name="ITDate" type="DateTime?" description="转关日期" />
+      <field isid="false" name="ITPlace" type="string" description="转关地点">
+        <validation type="stringlength" length="100" min="0" max="0" />
+      </field>
+      
+      <field isid="false" name="ArrivalNoticeSendDate" type="DateTime?" description="发送到港通知书日期" />
+      <field isid="false" name="IsDetained" type="bool" description="扣货" />
+      <field isid="false" name="IsReleaseOrderRequired" type="bool" description="是否需要放货通知书" />
+      <field isid="false" name="ReleaseOrderSendDate" type="DateTime?" description="发送放货通知书日期" />
+      <field isid="false" name="IsCustomsClearanceRequired" type="bool" description="是否清关" />
+      <field isid="false" name="CustomsClearanceDate" type="DateTime?" description="清关日期" />
+      <field isid="false" name="ReleaseType" type="ReleaseType" description="放货方式（0不确定、1正本、2电放）" />
+      <field isid="false" name="ReleaseDate" type="DateTime?" description="放货日期" />
+      <field isid="false" name="ReleaseByID" type="Guid?" description="放货人ID" />
+      <field isid="false" name="ReleaseByName" type="string" description="放货人" />
+
+      <field isid="false" name="CompanyID" type="Guid" description="口岸公司ID">
+        <validation type="guidrequired" errmsg="口岸公司必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CompanyName" type="string" description="口岸公司">
+      </field>
+      <field isid="false" name="OperatorID" type="Guid" description="操作ID">
+        <validation type="guidrequired" errmsg="操作必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="OperatorName" type="string" description="操作">
+      </field>
+      <field isid="false" name="SalesID" type="Guid?" description="业务员ID" />
+      <field isid="false" name="SalesName" type="string" description="业务员" />
+      <field isid="false" name="SalesTypeID" type="Guid" description="揽货方式ID">
+        <validation type="guidrequired" errmsg="揽货方式必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="SalesTypeName" type="string" description="揽货方式" />
+      <field isid="false" name="SalesDepartmentID" type="Guid" description="揽货部门ID">
+        <validation type="guidrequired" errmsg="揽货部门必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="SalesDepartmentName" type="string" description="揽货部门">
+      </field>
+      <field isid="false" name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" min="0" max="0" />
+      </field>
+      <field isid="false" name="State" type="BLState" description="状态" />
+      <field isid="false" name="VesselVoyage" type="string" description="头程船名航次" />
+      <field isid="false" name="POLName" type="string" description="头程装货港" />
+      <field isid="false" name="ETD" type="DateTime?" description="头程离港日" />
+      <field isid="false" name="PODName" type="string" description="头程卸货港" />
+      <field isid="false" name="ETA" type="DateTime?" description="头程到港日" />
+      <field isid="false" name="CreateByID" type="Guid" description="建立人ID" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+      
+      <field isid="false" name="Containers" type="List&lt;OIHBLContainerList&gt;" description="箱列表" />
+    </class>
+    <class name="OITruckServiceInfo" description="派车服务信息">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="OIHBLID" type="Guid" description="分提单ID" />
+      <field isid="false" name="OIHBLNo" type="string" description="分提单号" />
+      <field isid="false" name="VesselVoyage" type="string" description="船名航次" />
+      <field isid="false" name="CarrierName" type="string" description="船东" />
+      <field isid="false" name="TruckerID" type="Guid" description="拖车公司ID" >
+        <validation type="guidrequired" errmsg="拖车公司必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="TruckerName" type="string" description="拖车公司" />
+      <field isid="false" name="TruckerDescription" type="CustomerDescription" description="拖车公司描述" />
+      <field isid="false" name="PickUpAtID" type="Guid?" description="提货地点ID（关联客户）" />
+      <field isid="false" name="PickUpAtName" type="string" description="提货地点" />
+      <field isid="false" name="PickUpAtDescription" type="CustomerDescription" description="提货地点描述" />
+      <field isid="false" name="PickUpTime" type="DateTime?" description="提货时间" />
+      <field isid="false" name="PickUpSendDate" type="DateTime?" description="发送提货单日" />
+      <field isid="false" name="DeliveryAtID" type="Guid?" description="送货地点ID" />
+      <field isid="false" name="DeliveryAtName" type="string" description="送货地点" />
+      <field isid="false" name="DeliveryAtDescription" type="CustomerDescription" description="送货地点描述" />
+      <field isid="false" name="DeliveryTime" type="DateTime?" description="送货时间" />
+      <field isid="false" name="BillToID" type="Guid?" description="往来单位ID" />
+      <field isid="false" name="BillToName" type="string" description="往来单位名称" />
+      <field isid="false" name="BillToDescription" type="CustomerDescription" description="往来单位描述" />
+      <field isid="false" name="IsDrivingLicence" type="bool" description="需要司机本" />
+      <field isid="false" name="FreigtDescription" type="string" description="运费描述">
+        <validation type="stringlength" length="500" min="0" max="0" />
+      </field>
+      <field isid="false" name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" min="0" max="0" />
+      </field>
+      <field isid="false" name="Containers" type="List&lt;OITruckContainerList&gt;" description="箱列表" />
+      <field isid="false" name="CreateByID" type="Guid" description="建立人ID" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+    </class>
+    <class name="OIContainerList" description="箱列表信息">
+      <field isid="true" name="ID" type="Guid" description="关联表ID键" />
+      <field isid="false" name="ContainerID" type="Guid" description="唯一键" />
+      <field isid="false" name="No" type="string" description="箱号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+        <validation type="required" errmsg="箱号必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="TypeID" type="Guid" description="箱型ID">
+        <validation type="guidrequired" errmsg="箱型必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="TypeName" type="string" description="箱型">
+        <validation type="required" errmsg="箱型必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="SealNo" type="string" description="封条号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="Quantity" type="int" description="包装件数">
+        <validation type="required" errmsg="包装件数必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="PickUpNo" type="string" description="提货号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="GODate" type="DateTime?" description="监管仓日" />
+      <field isid="false" name="AvailableDate" type="DateTime?" description="可以提货日" />
+      <field isid="false" name="LastFreeDate" type="DateTime?" description="最后免费堆存日" />
+      <field isid="false" name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="200" min="0" max="0" />
+      </field>
+      <field isid="false" name="CreateByID" type="Guid" description="建立人ID" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+    </class>
+    <class name="OIMBLContainerList" description="MBL箱列表信息" baseclass="OIContainerList">
+      <field isid="false" name="OIMBLID" type="Guid" description="OIHBL ID" />
+    </class>
+    <class name="OIHBLContainerList" description="HBL箱列表信息" baseclass="OIContainerList">
+      
+      <field isid="false" name="OIHBLID" type="Guid" description="OIHBL ID" />
+    </class>
+    <class name="OITruckContainerList" description="派车箱列表信息" baseclass="OIContainerList">
+      <field isid="false" name="OITruckServiceID" type="Guid" description="OITruckService ID" />
+    </class>
+  </classes>
+  <datauis>
+    <dataui type="ILayoutUIProxy" multiple="false" name="OIBLLayout" title="进口提单列表">
+      <gridcolumns />
+      <childuis>
+        <childui name="oibllistmanage" dock="Fill" height="-1" width="-1" type="OIBLListManage" ismainpart="true" />
+      </childuis>
+      <relations />
+      <actions />
+      <methods />
+      <VirtualMethods />
+    </dataui>
+    <dataui type="ITreeManageUIProxy" multiple="false" name="OIBLListManage" title="进口提单列表" searchpart="ICP.FCM.OceanImport.UI.BL.BLSearchPart" simplesearchpart="ICP.FCM.OceanImport.UI.BL.BLFastSearchPart " entityname="OIBLList" parentfieldname="MBLID">
+      <gridcolumns>
+        <column dataproperty="SentAN" width="60" headertext="到港通知" datatype="bool" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Paid" width="35" headertext="已付" datatype="bool" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="TelexRelease" width="35" headertext="电放" datatype="bool" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="OperationTypeDescription" width="50" headertext="类型" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="RefNo" width="100" headertext="业务号" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="No" width="100" headertext="提单号" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CustomerName" width="150" headertext="客户" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CustomerRefNo" width="100" headertext="客户参考号" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CarrierName" width="150" headertext="船东" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="150" headertext="装货港" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="60" headertext="离港日" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="150" headertext="卸货港" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETA" width="60" headertext="到港日" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PlaceOfDeliveryName" width="150" headertext="交货地" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="FETA" width="60" headertext="交货日" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="OperatorName" width="50" headertext="操作" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateByName" width="50" headertext="创建人" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" headertext="创建时间" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="DownBL" index="0" text="D&amp;own BL" ctext="下载(&amp;O)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DownBL">
+          <steps />
+        </action>
+        <action name="AddHBL" index="1" text="Add &amp;HBL" ctext="新增HBL(&amp;H)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddHBL">
+          <steps />
+        </action>
+        <action name="AddMBL" index="2" text="Add &amp;MBL" ctext="新增MBL(&amp;M)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddMBL">
+          <steps />
+        </action>
+        <action name="CopyBL" index="3" text="&amp;Copy" ctext="拷贝(&amp;C)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="EditBL" index="4" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+        <action name="DeleteBL" index="5" text="&amp;Delete" ctext="删除(&amp;D)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DeleteData">
+          <steps />
+        </action>
+        <action name="Print" index="6" text="&amp;Print" ctext="打印(&amp;P)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="PrintBL">
+          <steps />
+        </action>
+        
+        <action name="BeginGroup1" index="7" text="|" ctext="|" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current">
+          <steps />
+        </action>
+        
+        <action name="OpenTruckServiceList" index="8" text="&amp;Truck" ctext="派车(&amp;T)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenTruckServiceList">
+          <steps />
+        </action>
+
+        <action name="BeginGroup1" index="9" text="|" ctext="|" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current">
+          <steps />
+        </action>
+        
+        <action name="OpenBillList" index="10" text="&amp;Bill" ctext="帐单(&amp;B)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenBillList">
+          <steps />
+        </action>
+        <action name="OpenFeeList" index="11" text="&amp;Fee" ctext="费用(&amp;F)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenFeeList">
+          <steps />
+        </action>
+
+        <action name="BeginGroup2" index="12" text="|" ctext="|" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current">
+          <steps />
+        </action>
+        
+        <action name="OpenDocumentList" index="13" text="Doc&amp;ument" ctext="单证(&amp;U)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenDocumentList">
+          <steps />
+        </action>
+        <action name="OpenFaxEmailList" index="14" text="EMail/Fax" ctext="传真邮件(&amp;I)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenFaxEmailList">
+          <steps />
+        </action>
+        <action name="OpenMemoList" index="15" text="Mem&amp;o" ctext="备注(&amp;O)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="OpenMemoList">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="DownBL">
+          <steps />
+        </method>
+        <method name="AddHBL">
+          <steps />
+        </method>
+        <method name="AddMBL">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="DeleteData">
+          <steps />
+        </method>
+        <method name="PrintBL">
+          <steps />
+        </method>
+        <method name="OpenTruckServiceList">
+          <steps />
+        </method>
+        <method name="OpenBillList">
+          <steps />
+        </method>
+        <method name="OpenFeeList">
+          <steps />
+        </method>
+        <method name="OpenDocumentList">
+          <steps />
+        </method>
+        <method name="OpenFaxEmailList">
+          <steps />
+        </method>
+        <method name="OpenMemoList">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+  </datauis>
+  <services />
+</root>

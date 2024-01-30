@@ -1,0 +1,638 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DataSourceReportDW">
+      <rd:DataSourceID>8a7a6181-3fc1-4596-90fa-a1b6e50fbb9c</rd:DataSourceID>
+      <DataSourceReference>DataSourceReportDW</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="IsEnglish">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>IsEnglish</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Condition">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>="&lt;root&gt;
+  &lt;StructNodeId&gt;701acd43-d49b-422b-83a9-acb56b696995&lt;/StructNodeId&gt;
+  &lt;Beginning_Date&gt;2010-01-01&lt;/Beginning_Date&gt;
+  &lt;Ending_Date&gt;2010-01-31&lt;/Ending_Date&gt;
+  &lt;GroupByTotalType&gt;1&lt;/GroupByTotalType&gt;
+  &lt;UserID /&gt;
+  &lt;LineID /&gt;
+  &lt;CostItemID&gt;00000000-0000-0000-0000-000000000000&lt;/CostItemID&gt;
+  &lt;Number&gt;10&lt;/Number&gt;
+  &lt;OrderBy&gt;0&lt;/OrderBy&gt;
+  &lt;OrderByType&gt;0&lt;/OrderByType&gt;
+  &lt;IsTopLevel&gt;1&lt;/IsTopLevel&gt;
+  &lt;IsEnglish&gt;0&lt;/IsEnglish&gt;
+&lt;/root&gt;"</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Condition</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Beginning_Date">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2008-12-01</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Beginning_Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Ending_Date">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2008-12-31</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Ending_Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StructureNodeName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>StructureNodeName</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>StructureNodeName</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>6e28d714-7c1e-448a-a2a9-406ec7817a48</rd:ReportID>
+  <CodeModules>
+    <CodeModule>LongWin.DataWarehouseReport.ToolsMethod, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</CodeModule>
+  </CodeModules>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="DataSourceReportDW">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BoxCount">
+          <DataField>BoxCount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Profit">
+          <DataField>Profit</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="ProFitForPer">
+          <DataField>ProFitForPer</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RowNumber">
+          <DataField>RowNumber</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSourceReportDW</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SPR_DW_ProfitPerTForAnalysisOfOperating</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Condition">
+            <Value>=Parameters!Condition.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>18.27645cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="textbox3">
+        <rd:DefaultName>textbox3</rd:DefaultName>
+        <Top>1.5cm</Top>
+        <Width>2.53968cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>9cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"GroupByTotalType")</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Top>1.5cm</Top>
+        <Width>7.25cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>="Date:"+Format(Parameters!Beginning_Date.Value,"yyyy/MM/dd")+" - "+Format(Parameters!Ending_Date.Value,"yyyy/MM/dd")</Value>
+      </Textbox>
+      <Table Name="table2">
+        <ZIndex>1</ZIndex>
+        <DataSetName>DataSourceReportDW</DataSetName>
+        <Top>2.5cm</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>RPT_ALLGetJobDetail</ReportName>
+                          <Parameters>
+                            <Parameter Name="Beginning_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Beginning_Date")</Value>
+                            </Parameter>
+                            <Parameter Name="Ending_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Ending_Date")</Value>
+                            </Parameter>
+                            <Parameter Name="StructNodeId">
+                              <Value>=
+IIF(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"GroupByTotalType")=1
+,Fields!ID.Value
+,LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"StructNodeId") )</Value>
+                            </Parameter>
+                            <Parameter Name="ProfitType">
+                              <Value>0</Value>
+                            </Parameter>
+                            <Parameter Name="ConsignerSet">
+                              <Value />
+                            </Parameter>
+                            <Parameter Name="SalesSet">
+                              <Value>=
+IIF(
+LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"GroupByTotalType")=1
+,""
+,"'"+Fields!ID.Value.ToString()+"'")</Value>
+                            </Parameter>
+                            <Parameter Name="SeekField">
+                              <Value />
+                            </Parameter>
+                            <Parameter Name="SeekValue">
+                              <Value />
+                            </Parameter>
+                            <Parameter Name="IsDepartment">
+                              <Value>false</Value>
+                            </Parameter>
+                            <Parameter Name="DateType">
+                              <Value>0</Value>
+                            </Parameter>
+                            <Parameter Name="JobType">
+                              <Value>="0"</Value>
+                            </Parameter>
+                            <Parameter Name="ReportSource">
+                              <Value>1</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>DodgerBlue</Color>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!NAME.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <Style>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Profit.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BoxCount">
+                      <rd:DefaultName>BoxCount</rd:DefaultName>
+                      <Style>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BoxCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="ProFitForPer">
+                      <rd:DefaultName>ProFitForPer</rd:DefaultName>
+                      <Style>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ProFitForPer.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="RowNumber">
+                      <rd:DefaultName>RowNumber</rd:DefaultName>
+                      <Style>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>g</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!RowNumber.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox17">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!NAME.Value</SortExpression>
+                      </UserSort>
+                      <Value>= IIF(Parameters!IsEnglish.Value = "0","公司名称","Company")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Profit.Value</SortExpression>
+                      </UserSort>
+                      <Value>= IIF(Parameters!IsEnglish.Value = "0","业务毛利","Operating Profit")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox2">
+                      <rd:DefaultName>textbox2</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!BoxCount.Value</SortExpression>
+                      </UserSort>
+                      <Value>= IIF(Parameters!IsEnglish.Value = "0","TEU","TEU")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox5">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!ProFitForPer.Value</SortExpression>
+                      </UserSort>
+                      <Value>= IIF(Parameters!IsEnglish.Value = "0","单箱利润","Profit/T")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderColor>
+                          <Default>LightGrey</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <FontSize>11pt</FontSize>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!RowNumber.Value</SortExpression>
+                      </UserSort>
+                      <Value>= IIF(Parameters!IsEnglish.Value = "0","排名","Number")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+          <RepeatOnNewPage>true</RepeatOnNewPage>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.77645cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox14">
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Total:</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox15">
+                      <rd:DefaultName>textbox15</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=sum(Fields!Profit.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BoxCount_1">
+                      <rd:DefaultName>BoxCount_1</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!BoxCount.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=sum(Fields!Profit.Value)/Sum(Fields!BoxCount.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <Style>
+                        <BorderStyle>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Footer>
+      </Table>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Width>17.5cm</Width>
+        <Style>
+          <Color>SteelBlue</Color>
+          <FontFamily>宋体</FontFamily>
+          <FontSize>20pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>0.91429cm</Height>
+        <Value>= IIF(Parameters!IsEnglish.Value = "0","单箱利润分析","Analysis Of TEU")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>4.40476cm</Height>
+  </Body>
+  <Language>zh-CN</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

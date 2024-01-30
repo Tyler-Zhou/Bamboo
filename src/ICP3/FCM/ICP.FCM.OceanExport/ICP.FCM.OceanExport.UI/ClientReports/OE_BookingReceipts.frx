@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="04/02/2018 18:27:35" ReportInfo.Modified="04/03/2018 18:24:00" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ReportTitle" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="LoadShipDate" DataType="System.String"/>
+      <Column Name="SailingDate" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BLInfoSource" ReferenceName="BLInfoSource" DataType="System.Int32" Enabled="true">
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="Cut_OffDate" DataType="System.String"/>
+      <Column Name="PlaceofDelivery" DataType="System.String"/>
+      <Column Name="ShippingAgent" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PaymentTerm" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ExternalNumber" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="Operator" DataType="System.String"/>
+      <Column Name="OperatorTel" DataType="System.String"/>
+      <Column Name="OperatorEMail" DataType="System.String"/>
+      <Column Name="DocBy" DataType="System.String"/>
+      <Column Name="DocTel" DataType="System.String"/>
+      <Column Name="DocEMail" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="ContainerInfoSource" ReferenceName="ContainerInfoSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ContainerType" DataType="System.String"/>
+      <Column Name="ContainerQuantity" DataType="System.String"/>
+      <Column Name="Cartons" DataType="System.String"/>
+      <Column Name="BLQuantity" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" Guides="18.9,652.05,9.45,66.15,236.25,245.7,302.4,472.5,529.2,548.1,718.2,737.1,793.8,822.15,992.25">
+    <ReportTitleBand Name="ReportTitleMain" Width="1047.06" Height="198.45" Guides="9.45,28.35,66.15,85.05">
+      <TextObject Name="lblReportTitle" Left="9.45" Top="9.45" Width="1020.6" Height="37.8" Text="[ReportSource.ReportTitle]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="lblVesselText" Left="9.45" Top="94.5" Width="56.7" Height="18.9" Text="船名：" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblVessel" Left="66.15" Top="94.5" Width="170.1" Height="18.9" Text="[ReportSource.Vessel]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblVoyageText" Left="236.25" Top="94.5" Width="56.7" Height="18.9" Text="航次：" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblVoyage" Left="292.95" Top="94.5" Width="170.1" Height="18.9" Text="[ReportSource.Voyage]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="LoadShipDateText" Left="463.05" Top="94.5" Width="76.36" Height="18.9" Text="装船日期：" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblLoadShipDate" Left="538.65" Top="94.5" Width="170.1" Height="18.9" Text="[ReportSource.LoadShipDate]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblSailingDateText" Left="708.75" Top="94.5" Width="76.36" Height="18.9" Text="开航日期：" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="lblSailingDate" Left="784.35" Top="94.5" Width="170.1" Height="18.9" Text="[ReportSource.SailingDate]" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TableObject Name="TableBLTitle" Left="9.45" Top="113.4" Width="1029.86" Height="85.05" Border.Lines="Left, Right, Top">
+        <TableColumn Name="Column1" Width="109.85"/>
+        <TableColumn Name="Column2" Width="62.6"/>
+        <TableColumn Name="Column3" Width="62.6"/>
+        <TableColumn Name="Column4" Width="43.7"/>
+        <TableColumn Name="Column5" Width="43.7"/>
+        <TableColumn Name="Column6" Width="43.7"/>
+        <TableColumn Name="Column7" Width="34.25"/>
+        <TableColumn Name="Column8" Width="43.7"/>
+        <TableColumn Name="Column9" Width="34.25"/>
+        <TableColumn Name="Column10" Width="34.25"/>
+        <TableColumn Name="Column11" Width="43.7"/>
+        <TableColumn Name="Column12" Width="43.7"/>
+        <TableColumn Name="Column13" Width="53.15"/>
+        <TableColumn Name="Column14" Width="34.25"/>
+        <TableColumn Name="Column15" Width="53.15"/>
+        <TableColumn Name="Column16" Width="62.6"/>
+        <TableColumn Name="Column17" Width="59.04"/>
+        <TableColumn Name="Column18" Width="49.59"/>
+        <TableColumn Name="Column19" Width="59.04"/>
+        <TableColumn Name="Column20" Width="59.04"/>
+        <TableRow Name="RowBLTitle" Height="85.05">
+          <TableCell Name="Cell1" Border.Lines="Left" Text="提单号" Font="Arial, 9pt"/>
+          <TableCell Name="Cell2" Border.Lines="Left" Text="截单日期" Font="Arial, 9pt"/>
+          <TableCell Name="Cell3" Border.Lines="Left" Text="交货地点" Font="Arial, 9pt"/>
+          <TableCell Name="Cell4" Border.Lines="Left" Text="船代" Font="Arial, 9pt"/>
+          <TableCell Name="Cell5" Border.Lines="Left" Text="件数" Font="Arial, 9pt"/>
+          <TableCell Name="Cell6" Border.Lines="Left" Text="毛重" Font="Arial, 9pt"/>
+          <TableCell Name="Cell7" Border.Lines="Left" Text="尺码" Font="Arial, 9pt"/>
+          <TableCell Name="Cell8" Border.Lines="Left" Text="船司" Font="Arial, 9pt"/>
+          <TableCell Name="Cell9" Border.Lines="Left" Text="P/C" Font="Arial, 9pt"/>
+          <TableCell Name="Cell10" Border.Lines="Left" Text="运输条款" Font="Arial, 9pt"/>
+          <TableCell Name="Cell11" Border.Lines="Left" Text="整拼箱/箱数" Font="Arial, 9pt"/>
+          <TableCell Name="Cell12" Border.Lines="Left" Text="外编" Font="Arial, 9pt"/>
+          <TableCell Name="Cell13" Border.Lines="Left" Text="货名" Font="Arial, 9pt"/>
+          <TableCell Name="Cell14" Border.Lines="Left" Text="备注" Font="Arial, 9pt"/>
+          <TableCell Name="Cell15" Border.Lines="Left" Text="操作" Font="Arial, 9pt"/>
+          <TableCell Name="Cell16" Border.Lines="Left" Text="操作电话" Font="Arial, 9pt"/>
+          <TableCell Name="Cell17" Border.Lines="Left" Text="操作邮箱" Font="Arial, 9pt"/>
+          <TableCell Name="Cell18" Border.Lines="Left" Text="单证" Font="Arial, 9pt"/>
+          <TableCell Name="Cell19" Border.Lines="Left" Text="单证电话" Font="Arial, 9pt"/>
+          <TableCell Name="Cell20" Border.Lines="Left" Text="单证邮箱" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </ReportTitleBand>
+    <DataBand Name="DataBL" Top="201.65" Width="1047.06" Height="85.05" DataSource="BLInfoSource">
+      <TableObject Name="TableBLData" Left="9.45" Width="1029.86" Height="85.05">
+        <TableColumn Name="Column21" Width="109.85"/>
+        <TableColumn Name="Column22" Width="62.6"/>
+        <TableColumn Name="Column23" Width="62.6"/>
+        <TableColumn Name="Column24" Width="43.7"/>
+        <TableColumn Name="Column25" Width="43.7"/>
+        <TableColumn Name="Column26" Width="43.7"/>
+        <TableColumn Name="Column27" Width="34.25"/>
+        <TableColumn Name="Column28" Width="43.7"/>
+        <TableColumn Name="Column29" Width="34.25"/>
+        <TableColumn Name="Column30" Width="34.25"/>
+        <TableColumn Name="Column31" Width="43.7"/>
+        <TableColumn Name="Column32" Width="43.7"/>
+        <TableColumn Name="Column33" Width="53.15"/>
+        <TableColumn Name="Column34" Width="34.25"/>
+        <TableColumn Name="Column35" Width="53.15"/>
+        <TableColumn Name="Column36" Width="62.6"/>
+        <TableColumn Name="Column37" Width="59.04"/>
+        <TableColumn Name="Column38" Width="49.59"/>
+        <TableColumn Name="Column39" Width="59.04"/>
+        <TableColumn Name="Column40" Width="59.04"/>
+        <TableRow Name="RowBLData" Height="85.05">
+          <TableCell Name="Cell21" Border.Lines="All" Text="[BLInfoSource.BLNo]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell22" Border.Lines="All" Text="[BLInfoSource.Cut_OffDate]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell23" Border.Lines="All" Text="[BLInfoSource.PlaceofDelivery]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="[BLInfoSource.ShippingAgent]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell25" Border.Lines="All" Text="[BLInfoSource.Quantity]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell26" Border.Lines="All" Text="[BLInfoSource.Weight]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell27" Border.Lines="All" Text="[BLInfoSource.Measurement]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell28" Border.Lines="All" Text="[BLInfoSource.Carrier]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="[BLInfoSource.PaymentTerm]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell30" Border.Lines="All" Text="[BLInfoSource.TransportClause]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell31" Border.Lines="All" Text="[BLInfoSource.ContainerInfo]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell32" Border.Lines="All" Text="[BLInfoSource.ExternalNumber]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell33" Border.Lines="All" Text="[BLInfoSource.Commodity]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell34" Border.Lines="All" Text="[BLInfoSource.Remark]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell35" Border.Lines="All" Text="[BLInfoSource.Operator]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell36" Border.Lines="All" Text="[BLInfoSource.OperatorTel]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell37" Border.Lines="All" Text="[BLInfoSource.OperatorEMail]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell38" Border.Lines="All" Text="[BLInfoSource.DocBy]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell39" Border.Lines="All" Text="[BLInfoSource.DocTel]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell40" Border.Lines="All" Text="[BLInfoSource.DocEMail]" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <DataBand Name="Data1" Top="289.9" Width="1047.06" Height="37.8" DataSource="ContainerInfoSource">
+      <TableObject Name="TableContainerTotal" Left="9.45" Width="920.56" Height="37.8">
+        <TableColumn Name="Column41" Width="127.45"/>
+        <TableColumn Name="Column42" Width="99.11"/>
+        <TableColumn Name="Column43" Width="80.21"/>
+        <TableColumn Name="Column44" Width="80.21"/>
+        <TableColumn Name="Column45" Width="80.21"/>
+        <TableColumn Name="Column49" Width="108.56"/>
+        <TableColumn Name="Column51" Width="344.81"/>
+        <TableRow Name="RowContainerTotalTitle">
+          <TableCell Name="Cell41" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.ContainerType]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell42" Border.Lines="Left, Right, Bottom" Text="标箱数" Font="Arial, 9pt"/>
+          <TableCell Name="Cell43" Border.Lines="Left, Right, Bottom" Text="提单数" Font="Arial, 9pt"/>
+          <TableCell Name="Cell44" Border.Lines="Left, Right, Bottom" Text="件数" Font="Arial, 9pt"/>
+          <TableCell Name="Cell45" Border.Lines="Left, Right, Bottom" Text="毛重" Font="Arial, 9pt"/>
+          <TableCell Name="Cell54" Border.Lines="Left, Right, Bottom" Text="体积" Font="Arial, 9pt"/>
+          <TableCell Name="Cell58" Border.Lines="Left, Right, Bottom" Font="Arial, 9pt" RowSpan="2"/>
+        </TableRow>
+        <TableRow Name="RowContainerTotalData">
+          <TableCell Name="Cell46" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.ContainerQuantity]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell47" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.Cartons]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell48" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.BLQuantity]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell49" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.Quantity]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell50" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.Weight]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell55" Border.Lines="Left, Right, Bottom" Text="[ContainerInfoSource.Measurement]" Font="Arial, 9pt"/>
+          <TableCell Name="Cell59" Border.Lines="Left, Right, Bottom" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+  </ReportPage>
+</Report>

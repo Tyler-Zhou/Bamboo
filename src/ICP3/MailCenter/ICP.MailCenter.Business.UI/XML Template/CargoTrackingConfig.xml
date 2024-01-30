@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<!-- 
+	ICP.FCM.Common.UI.Common.UCCargoTracking.UCOECargoTracking.cs
+	配置文件，用于获取进港日/海关放行/确认上船
+	其中：$CNO：箱号
+		  $BLNO:提单号
+		  $DOCK:港口
+		  $DOCKID:港口ID
+		  $VesselIGZPlus:船名(+)
+		  $VesselIGZ20:船名(20)
+		  $Voyage:航次
+-->
+<CargoTracks>
+  <CargoTrack Desc="深圳">
+    <ID>41D7D3FE-183A-41CD-A725-EB6F728541EC</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://www.igenzong.com/Port/CNSZX</IGZ>
+    <OpenPort Desc="开截港">
+      <Path></Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="武汉">
+    <ID>FEC967BF-275B-453B-AA3B-E7730C907272</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Landframe/CNWHN</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="青岛">
+    <ID>F289109A-C29E-4B0B-A41A-C22D9E70A72F</ID>
+    <CustomsRelease>
+      <Path>http://www.igenzong.com/LandAsync/bl</Path>
+      <PostData>portCode=CNTAO&amp;blno=$CNO&amp;busi=14</PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过CustomsRelease查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn Desc="通过CustomsRelease查询进场">
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Landframe/CNTAO</IGZ>
+    <OpenPort Desc="开截港">
+      <Path></Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="天津">
+    <ID>D8D57403-D663-4A93-A927-144907B7963B</ID>
+    <CustomsRelease>
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNTSN&amp;businessId=25&amp;dockId=-1&amp;pageNo=1&amp;queryPara=$CNO&amp;url=%2FPort%2FCNTSN%2C25%2C-1%2C1%2F$CNO.html</PostData>
+    </CustomsRelease>
+    <Loadship Desc="">
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNTSN&amp;businessId=45&amp;dockId=-1&amp;pageNo=1&amp;queryPara=$CNO&amp;url=%2FPort%2FCNTSN%2C45%2C-1%2C1%2F$CNO.html</PostData>
+    </Loadship>
+    <GateIn>
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNTSN&amp;businessId=42&amp;dockId=-1&amp;pageNo=1&amp;queryPara=$CNO&amp;url=%2FPort%2FCNTSN%2C42%2C-1%2C1%2F$CNO.html</PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/PortFrame/CNTSN</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="厦门">
+    <ID>2AFAC53A-2AF9-46ED-8C4B-7035FEDC0279</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/PortFrame/CNXMN</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="南通">
+    <ID>7FA8E6FF-EFF3-437D-8572-4249BFE78BC4</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Landframe/CNNTG</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="重庆">
+    <ID>57C0032C-572C-48B2-AD2D-75458F2F8B63</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Port/CNNGB</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="长沙">
+    <ID>9A4725F3-E7CF-4AD3-91A4-988892AF2781</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Landframe/CNCSX</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="成都">
+    <ID>98480AD9-6FC8-4ACB-8524-CDE30C0F866A</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Port/CNNGB</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="大连">
+    <ID>B1AFAD8F-55DD-4E29-A250-EB82AB3971FE</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Port/CNNGB</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="广州">
+    <ID>FD69B51B-E71F-4040-8F4B-28447A003C93</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Port/CNCAN</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="连云港">
+    <ID>62d46581-b6cc-477e-8a60-7375facd9813</ID>
+    <CustomsRelease>
+      <Path></Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path></Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/Landframe/CNLYG</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData></PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path></Path>
+      <PostData></PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="宁波">
+    <ID>a62a9f8e-e69c-4e6e-ad85-e75aed3c6cf9</ID>
+    <CustomsRelease>
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNNGB&amp;businessId=49&amp;dockId=144&amp;pageNo=1&amp;queryPara=$CNO&amp;url=%2FPort%2FCNNGB%2C49%2C144%2C1%2F$CNO.html</PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath">
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNNGB&amp;businessId=41&amp;dockId=15&amp;pageNo=1&amp;queryPara=$CNO&amp;isSave=false&amp;url=%2FPort%2FCNNGB%2C5%2C15%2C1%2F$CNO.html</PostData>
+    </Loadship>
+    <GateIn>
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNNGB&amp;businessId=47&amp;dockId=15&amp;pageNo=1&amp;queryPara=$CNO&amp;isSave=false&amp;url=%2FPort%2FCNNGB%2C5%2C15%2C1%2F$CNO.html</PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/PortFrame/CNNGB</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNNGB&amp;businessId=12&amp;dockId=$DOCKID&amp;pageNo=1&amp;queryPara=$VesselIGZPlus%2C$Voyage&amp;url=%2FPort%2FCNNGB%2C12%2C14%2C1%2F$VesselIGZ20%2C$Voyage.html</PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD、Port、开截港">
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNNGB&amp;businessId=16&amp;dockId=-1&amp;pageNo=1&amp;queryPara=$VesselIGZPlus%2C$Voyage&amp;url=%2FPort%2FCNNGB%2C16%2C-1%2C1%2F$VesselIGZ20%2C$Voyage.html</PostData>
+    </ETD>
+  </CargoTrack>
+  <CargoTrack Desc="上海">
+    <ID>b13fac2d-8250-4990-a622-5eca00D3a030</ID>
+    <CustomsRelease>
+      <Path>http://edi.easipass.com/dataportal/query.do?entryid=&amp;blno=$BLNO&amp;ctnno=$CNO&amp;pagesize=30&amp;submit=%D6%B4%D0%D0&amp;qid=402803af0ecb1a4c010ecb1bb471004a</Path>
+      <PostData></PostData>
+    </CustomsRelease>
+    <Loadship Desc="通过GateInPath查询装船">
+      <Path></Path>
+      <PostData></PostData>
+    </Loadship>
+    <GateIn>
+      <Path>http://www.fob001.cn/guestbook/sh_new_api/$DOCK.php?txt=$CNO&amp;Submit=%CC%E1%BD%BB</Path>
+      <PostData></PostData>
+    </GateIn>
+    <IGZ>http://api.igenzong.com/PortFrame/CNSHA</IGZ>
+    <OpenPort Desc="开截港">
+      <Path>http://api.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNSHA&amp;businessId=12&amp;dockId=$DOCKID&amp;pageNo=1&amp;queryPara=$VesselIGZPlus%2C$Voyage&amp;url=%2FPortframe%2FCNSHA%2C12%2C142%2C1%2F$VesselIGZ20%2C$Voyage.html</PostData>
+    </OpenPort>
+    <ETD Desc="可以获取到ETD和Port">
+      <Path>http://www.igenzong.com/Port/TraceAjax</Path>
+      <PostData>portCode=CNSHA&amp;businessId=9&amp;dockId=-1&amp;pageNo=1&amp;queryPara=$VesselIGZPlus%2C$Voyage&amp;url=%2FPort%2FCNSHA%2C9%2C-1%2C1%2F$VesselIGZ20%2C$Voyage.html</PostData>
+    </ETD>
+  </CargoTrack>
+</CargoTracks>

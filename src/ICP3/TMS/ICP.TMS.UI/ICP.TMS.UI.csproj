@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68B9890F-3BC6-4A42-AB3F-52C88FF0C497}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.TMS.UI</RootNamespace>
+    <AssemblyName>ICP.TMS.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.TMS.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CABDevExpress.ExtensionKit, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ICPDlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ICPDlls\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ICPDlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comm\ComboBoxTree\ComboBoxTreePopupControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\ComboBoxTree\ComboBoxTreePopupControl.designer.cs">
+      <DependentUpon>ComboBoxTreePopupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\ComboBoxTree\LWComboBoxTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Constants.cs" />
+    <Compile Include="Comm\ContainerDemandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\ContainerDemandControl.Designer.cs">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\CustomerFinderBridge.cs" />
+    <Compile Include="Comm\LocationFinderBridge.cs" />
+    <Compile Include="Comm\Utility.cs" />
+    <Compile Include="Driver\DriverEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Driver\DriverEdit.Designer.cs">
+      <DependentUpon>DriverEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\DriverList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Driver\DriverList.Designer.cs">
+      <DependentUpon>DriverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\DriverWorkItem.cs" />
+    <Compile Include="Driver\DriverMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Driver\DriverMainWorkSpace.Designer.cs">
+      <DependentUpon>DriverMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\DriverSearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Driver\DriverSearchPanel.Designer.cs">
+      <DependentUpon>DriverSearchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\DriverToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Driver\DriverToolBar.Designer.cs">
+      <DependentUpon>DriverToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TMSModuleInit.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessList.Designer.cs">
+      <DependentUpon>DownloadBusinessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessMain.Designer.cs">
+      <DependentUpon>DownloadBusinessMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownLoadBusinessSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownLoadBusinessSearch.Designer.cs">
+      <DependentUpon>DownLoadBusinessSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessTool.Designer.cs">
+      <DependentUpon>DownloadBusinessTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\DownLoad\DownloadBusinessWorkitem.cs" />
+    <Compile Include="TruckBusiness\TruckBookingsEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsEdit.Designer.cs">
+      <DependentUpon>TruckBookingsEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsListPart.Designer.cs">
+      <DependentUpon>TruckBookingsListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsMainWorkSpace.Designer.cs">
+      <DependentUpon>TruckBookingsMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsSearchPart.Designer.cs">
+      <DependentUpon>TruckBookingsSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsSendTruckInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsSendTruckInfo.Designer.cs">
+      <DependentUpon>TruckBookingsSendTruckInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsToolBar.Designer.cs">
+      <DependentUpon>TruckBookingsToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckBusiness\TruckBookingsWorkitem.cs" />
+    <Compile Include="Truck\TruckEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Truck\TruckEdit.Designer.cs">
+      <DependentUpon>TruckEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Truck\TruckList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Truck\TruckList.Designer.cs">
+      <DependentUpon>TruckList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Truck\TruckMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Truck\TruckMainWorkSpace.Designer.cs">
+      <DependentUpon>TruckMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Truck\TruckSearchPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Truck\TruckSearchPanel.Designer.cs">
+      <DependentUpon>TruckSearchPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Truck\TruckToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Truck\TruckToolBar.Designer.cs">
+      <DependentUpon>TruckToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Truck\TruckWorkItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Comm\ContainerDemandControl.resx">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\DriverEdit.resx">
+      <DependentUpon>DriverEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\DriverList.resx">
+      <DependentUpon>DriverList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\DriverMainWorkSpace.resx">
+      <DependentUpon>DriverMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\DriverSearchPanel.resx">
+      <DependentUpon>DriverSearchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\DriverToolBar.resx">
+      <DependentUpon>DriverToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\DownLoad\DownloadBusinessList.resx">
+      <DependentUpon>DownloadBusinessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\DownLoad\DownloadBusinessMain.resx">
+      <DependentUpon>DownloadBusinessMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\DownLoad\DownLoadBusinessSearch.resx">
+      <DependentUpon>DownLoadBusinessSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\DownLoad\DownloadBusinessTool.resx">
+      <DependentUpon>DownloadBusinessTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsEdit.resx">
+      <DependentUpon>TruckBookingsEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsListPart.resx">
+      <DependentUpon>TruckBookingsListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsMainWorkSpace.resx">
+      <DependentUpon>TruckBookingsMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsSearchPart.resx">
+      <DependentUpon>TruckBookingsSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsSendTruckInfo.resx">
+      <DependentUpon>TruckBookingsSendTruckInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckBusiness\TruckBookingsToolBar.resx">
+      <DependentUpon>TruckBookingsToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Truck\TruckEdit.resx">
+      <DependentUpon>TruckEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Truck\TruckList.resx">
+      <DependentUpon>TruckList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Truck\TruckMainWorkSpace.resx">
+      <DependentUpon>TruckMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Truck\TruckSearchPanel.resx">
+      <DependentUpon>TruckSearchPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Truck\TruckToolBar.resx">
+      <DependentUpon>TruckToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_File_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BillDetails.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueFile_Edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueFile_Lock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BrightFinder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelBullion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChangeReleaseType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Config_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CurrencyRate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DebitDetail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\debts.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DollarSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FirstPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LastPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MultiCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextJobs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NextPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PrevPage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Return_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sarch_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_Blue_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SelectBill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Telex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TelexPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transfer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ViewCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WriteOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.Common.ServiceInterface.DataObjects.CountryProvinceList.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.DownLoadOceanBusinessList.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.DriversDataList.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.TruckBookingsInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.TruckBookingsList.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.TruckContainersList.datasource" />
+    <None Include="Properties\DataSources\ICP.TMS.ServiceInterface.TruckDataList.datasource" />
+    <None Include="Resources\WriteOffPrint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.TMS.ServiceInterface\ICP.TMS.ServiceInterface.csproj">
+      <Project>{5D63F11A-6761-4334-8FD5-3CD8D293F2D0}</Project>
+      <Name>ICP.TMS.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Manifest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="BillOfLading" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BookingDate" type="xs:string"/>
+              <xs:element name="HouseBillNumber" type="xs:string"/>
+              <xs:element name="AMSHBLNumber" type="xs:string"/>
+              <xs:element name="AmendmentFlag" type="xs:string"/>
+              <xs:element name="MasterBillNumber" type="xs:string"/>
+              <xs:element name="OceanBillNumber" type="xs:string"/>
+              <xs:element name="ShipperPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ConsigneePartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                    <xs:element name="ConsigneeNumberQualifier" type="xs:string"/>
+                    <xs:element name="ConsigneeNumber" type="xs:string"/>
+                    <xs:element name="ConsigneeFirstName" type="xs:string"/>
+                    <xs:element name="ConsigneeLastName" type="xs:string"/>
+                    <xs:element name="DOB" type="xs:string"/>
+                    <xs:element name="PassportIssuanceCountry" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ShipToPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BuyerPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                    <xs:element name="ImporterOfRecordNumberQualifier" type="xs:string"/>
+                    <xs:element name="ImporterOfRecordNumber" type="xs:string"/>
+                    <xs:element name="ImporterOfRecordFirstName" type="xs:string"/>
+                    <xs:element name="ImporterOfRecordLastName" type="xs:string"/>
+                    <xs:element name="ImporterOfRecordDOB" type="xs:string"/>
+                    <xs:element name="PassportIssuanceCountry" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SellerPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ManufacturerPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ConsolidatorPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ContainerStuffingLocation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="BookingPartyInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                    <xs:element name="StreetAddress1" type="xs:string" />
+                    <xs:element name="StreetAddress2" type="xs:string"/>
+                    <xs:element name="CityStateZip" type="xs:string"/>
+                    <xs:element name="Country" type="xs:string"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="IMO" type="xs:string"/>
+              <xs:element name="VesselName" type="xs:string"/>
+              <xs:element name="SCAC_Carrier" type="xs:string"/>
+              <xs:element name="VesselFlag" type="xs:string"/>
+              <xs:element name="VoyageNumber" type="xs:string"/>
+              <xs:element name="CarrierCode" type="xs:string"/>
+              <xs:element name="TenTwoEntryType" type="xs:string"/>
+              <xs:element name="CargoType" type="xs:string"/>
+              <xs:element name="BondActivityCode" type="xs:string"/>
+              <xs:element name="BondReferenceNumber" type="xs:string"/>
+              <xs:element name="BondReferenceType" type="xs:string"/>
+              <xs:element name="ISFImporterIDType" type="xs:string"/>
+              <xs:element name="ISFImporterID" type="xs:string"/>
+              <xs:element name="ISFImporterDOB" type="xs:string"/>
+              <xs:element name="ISFImporterCountryOfIssuance" type="xs:string"/>
+              <xs:element name="ISFImporterFirstName" type="xs:string"/>
+              <xs:element name="ISFImporterLastName" type="xs:string"/>
+              <xs:element name="CustomsEntryType" type="xs:string"/>
+              <xs:element name="ACIEntryType" type="xs:string"/>
+              <xs:element name="PlaceOfReceipt">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PortOfLoad">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                    <xs:element name="Date" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="LastForeignPort">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="FirstUSAPort">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                    <xs:element name="Date" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PortOfDischarge">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                    <xs:element name="Date" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PlaceOfDelivery">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PortCode" type="xs:string" />
+                    <xs:element name="Qualifier" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Container">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ContainerNumber" type="xs:string"/>
+                    <xs:element name="Seal" type="xs:string"/>
+                    <xs:element name="ContainerContent">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Kilos" type="xs:string"/>
+                          <xs:element name="Quantity" type="xs:string"/>
+                          <xs:element name="UnitOfMeasure" type="xs:string"/>
+                          <xs:element name="FreeFormDescription" type="xs:string"/>
+                          <xs:element name="ContainerDetails">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="HarmonizedTariffCode" type="xs:string"/>
+                                <xs:element name="CountryOfOrigin" type="xs:string"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

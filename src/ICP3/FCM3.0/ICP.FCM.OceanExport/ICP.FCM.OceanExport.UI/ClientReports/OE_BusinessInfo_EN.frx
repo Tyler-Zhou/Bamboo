@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="08/02/2010 16:02:23" ReportInfo.Modified="12/15/2011 17:33:42" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Data;
+    using FastReport;
+    using FastReport.Data;
+    using FastReport.Dialog;
+    using FastReport.Barcode;
+    using FastReport.Table;
+    using FastReport.Utils;   
+
+namespace FastReport
+{
+  public class ReportScript
+  {                               
+    Report _currentReport =null;
+    private void _StartReport(object sender, EventArgs e)
+    {
+      _currentReport = sender as  Report;   
+    }
+    private void CellBLNo_Click(object sender, EventArgs e)
+    {
+        _currentReport.SendMessage(((FastReport.Table.TableCell)(sender)).Bookmark);
+    }
+  }
+}
+  </ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="OEBusinessReportData" ReferenceName="OEBusinessReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="OperationNo" DataType="System.String"/>
+      <Column Name="State" DataType="System.String"/>
+      <Column Name="Company" DataType="System.String"/>
+      <Column Name="OperationType" DataType="System.String"/>
+      <Column Name="Customer" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="PaymentTerm" DataType="System.String"/>
+      <Column Name="TradeTerm" DataType="System.String"/>
+      <Column Name="Sales" DataType="System.String"/>
+      <Column Name="SalesDep" DataType="System.String"/>
+      <Column Name="SalesType" DataType="System.String"/>
+      <Column Name="BookingMode" DataType="System.String"/>
+      <Column Name="BookingDate" DataType="System.String"/>
+      <Column Name="OverSeasFiler" DataType="System.String"/>
+      <Column Name="Bookinger" DataType="System.String"/>
+      <Column Name="Filer" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="AgentOfCarrier" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PreVoyage" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="ShippingLine" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BLListReportData" ReferenceName="BLListReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="BLNO" DataType="System.String"/>
+      <Column Name="MBLNO" DataType="System.String"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="ID" DataType="System.Guid"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1161167087" PaperWidth="215.9" PaperHeight="279.4" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="4" OtherPagesSource="4" Guides="374.22">
+    <ColumnHeaderBand Name="ColumnHeaderBand1161167087" Top="20" Width="778.3" Height="544.32">
+      <TableObject Name="Table1" Left="11.34" Top="45.36" Width="725.76" Height="498.96" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+        <TableColumn Name="Column1" Width="120.96"/>
+        <TableColumn Name="Column2" Width="241.92"/>
+        <TableColumn Name="Column3" Width="120.96"/>
+        <TableColumn Name="Column4" Width="241.92"/>
+        <TableRow Name="Row27" Height="22.68">
+          <TableCell Name="Cell183" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="Base Info" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White" ColSpan="4"/>
+          <TableCell Name="Cell184" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal"/>
+          <TableCell Name="Cell185" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal"/>
+          <TableCell Name="Cell186" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal"/>
+        </TableRow>
+        <TableRow Name="Row1" Height="22.68">
+          <TableCell Name="Cell178" Border.Lines="All" Border.Color="Teal" Text="OperationNo" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.OperationNo]" VertAlign="Center"/>
+          <TableCell Name="Cell3" Border.Lines="All" Border.Color="Teal" Text="State" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.State]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="22.68">
+          <TableCell Name="Cell6" Border.Lines="All" Border.Color="Teal" Text="Company" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Company]" VertAlign="Center"/>
+          <TableCell Name="Cell8" Border.Lines="All" Border.Color="Teal" Text="OperationType" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell9" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.OperationType]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Border.Lines="All" Border.Color="Teal" Text="Customer" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Customer]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell13" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+          <TableCell Name="Cell14" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="22.68">
+          <TableCell Name="Cell69" Border.Lines="All" Border.Color="Teal" Text="TransportClause" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell70" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.TransportClause]" VertAlign="Center"/>
+          <TableCell Name="Cell71" Border.Lines="All" Border.Color="Teal" Text="PaymentTerm" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell72" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.PaymentTerm]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.68">
+          <TableCell Name="Cell16" Border.Lines="All" Border.Color="Teal" Text="TreadeTerm" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.TradeTerm]" VertAlign="Center"/>
+          <TableCell Name="Cell18" Border.Lines="All" Border.Color="Teal" Text="SalesType" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.SalesType]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell21" Border.Lines="All" Border.Color="Teal" Text="Sales" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell22" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Sales]" VertAlign="Center"/>
+          <TableCell Name="Cell23" Border.Lines="All" Border.Color="Teal" Text="SalesDep" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.SalesDep]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row35" Height="22.68">
+          <TableCell Name="Cell215" Border.Lines="All" Border.Color="Teal" Text="BookingMode" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell216" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.BookingMode]" VertAlign="Center"/>
+          <TableCell Name="Cell217" Border.Lines="All" Border.Color="Teal" Text="BookingDate" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell218" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.BookingDate]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell41" Border.Lines="All" Border.Color="Teal" Text="OverSeasFiler" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell42" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.OverSeasFiler]" VertAlign="Center"/>
+          <TableCell Name="Cell43" Border.Lines="All" Border.Color="Teal" Text="Bookinger" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell44" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Bookinger]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="22.68">
+          <TableCell Name="Cell49" Border.Lines="All" Border.Color="Teal" Text="Filer" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell50" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Filer]" VertAlign="Center"/>
+          <TableCell Name="Cell51" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell52" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row29" Height="22.68">
+          <TableCell Name="Cell191" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="Info" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White" ColSpan="4"/>
+          <TableCell Name="Cell192" Fill.Color="Teal"/>
+          <TableCell Name="Cell193" Fill.Color="Teal"/>
+          <TableCell Name="Cell194" Fill.Color="Teal"/>
+        </TableRow>
+        <TableRow Name="Row19" Height="22.68">
+          <TableCell Name="Cell111" Border.Lines="All" Border.Color="Teal" Text="PlaceOfReceipt" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell112" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.PlaceOfReceipt]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell139" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell140" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row21" Height="22.68">
+          <TableCell Name="Cell119" Border.Lines="All" Border.Color="Teal" Text="POL" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell120" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.POL]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell141" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell142" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row22" Height="22.68">
+          <TableCell Name="Cell123" Border.Lines="All" Border.Color="Teal" Text="POD" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell124" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.POD]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell143" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell144" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row20" Height="22.68">
+          <TableCell Name="Cell115" Border.Lines="All" Border.Color="Teal" Text="PlaceOfDelivery" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell116" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.PlaceOfDelivery]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell145" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell146" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row23" Height="22.68">
+          <TableCell Name="Cell127" Border.Lines="All" Border.Color="Teal" Text="FinalDestination" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell128" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.FinalDestination]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell147" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell148" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row25" Height="22.68">
+          <TableCell Name="Cell135" Border.Lines="All" Border.Color="Teal" Text="AgentOfCarrier" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell136" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.AgentOfCarrier]" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell151" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell152" Border.Lines="All" Border.Color="Teal" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row30" Height="22.68">
+          <TableCell Name="Cell195" Border.Lines="All" Border.Color="Teal" Text="Carrier" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell196" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Carrier]" ColSpan="3"/>
+          <TableCell Name="Cell197" Border.Lines="All" Border.Color="Teal"/>
+          <TableCell Name="Cell198" Border.Lines="All" Border.Color="Teal"/>
+        </TableRow>
+        <TableRow Name="Row31" Height="22.68">
+          <TableCell Name="Cell199" Border.Lines="All" Border.Color="Teal" Text="PreVoyage" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell200" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.PreVoyage]" ColSpan="3"/>
+          <TableCell Name="Cell201" Border.Lines="All" Border.Color="Teal"/>
+          <TableCell Name="Cell202" Border.Lines="All" Border.Color="Teal"/>
+        </TableRow>
+        <TableRow Name="Row32" Height="22.68">
+          <TableCell Name="Cell203" Border.Lines="All" Border.Color="Teal" Text="Voyage" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell204" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.Voyage]" ColSpan="3"/>
+          <TableCell Name="Cell205" Border.Lines="All" Border.Color="Teal"/>
+          <TableCell Name="Cell206" Border.Lines="All" Border.Color="Teal"/>
+        </TableRow>
+        <TableRow Name="Row33" Height="22.68">
+          <TableCell Name="Cell207" Border.Lines="All" Border.Color="Teal" Text="ETD" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell208" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.ETD]"/>
+          <TableCell Name="Cell209" Border.Lines="All" Border.Color="Teal" Text="ETA" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell210" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.ETA]"/>
+        </TableRow>
+        <TableRow Name="Row34" Height="22.68">
+          <TableCell Name="Cell211" Border.Lines="All" Border.Color="Teal" Text="ShippingLine" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell212" Border.Lines="All" Border.Color="Teal" Text="[OEBusinessReportData.ShippingLine]" ColSpan="3"/>
+          <TableCell Name="Cell213" Border.Lines="All" Border.Color="Teal"/>
+          <TableCell Name="Cell214" Border.Lines="All" Border.Color="Teal"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="11.34" Top="7.56" Width="725.76" Height="34.02" Text="BusinessInfo" HorzAlign="Center" VertAlign="Center" Font="Arial Black, 20pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="649.68" Width="778.3" Height="22.68" CanGrow="true" AfterLayoutEvent="Data1_AfterLayout" DataSource="BLListReportData">
+      <TableObject Name="Table3" Left="11.34" Width="729.03" Height="22.68" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+        <TableColumn Name="Column10" Width="131.69"/>
+        <TableColumn Name="Column11" Width="122.89"/>
+        <TableColumn Name="Column12" Width="158.15"/>
+        <TableColumn Name="Column13" Width="158.15"/>
+        <TableColumn Name="Column14" Width="158.15"/>
+        <TableRow Name="Row36" MinHeight="22.68" Height="22.68" AutoSize="true">
+          <TableCell Name="CellBLNo" Border.Lines="All" Border.Color="Teal" Cursor="Hand" Bookmark="[BLListReportData.ID]+&quot;;&quot;+[BLListReportData.MBLNO]" ClickEvent="CellBLNo_Click" Text="[BLListReportData.BLNO]" VertAlign="Center" Font="Arial, 10pt, style=Bold, Underline" TextFill.Color="Blue"/>
+          <TableCell Name="Cell221" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.MBLNO]" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell222" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.Shipper]" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell223" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.Consignee]" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell224" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.NotifyParty]" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="584.32" Width="778.3" Height="45.36">
+        <TableObject Name="Table2" Left="11.34" Top="22.68" Width="729.03" Height="22.68" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+          <TableColumn Name="Column5" Width="131.69"/>
+          <TableColumn Name="Column9" Width="122.89"/>
+          <TableColumn Name="Column6" Width="158.15"/>
+          <TableColumn Name="Column7" Width="158.15"/>
+          <TableColumn Name="Column8" Width="158.15"/>
+          <TableRow Name="Row17" Height="22.68">
+            <TableCell Name="Cell103" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="BLNO" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell219" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="MBLNO" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell104" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="Shipper" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell105" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="Consignee" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell106" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="NotifyParty" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text2" Left="11.34" Width="725.76" Height="18.9" Text="Click BLNO Link To Detail&#13;&#10;" Font="Arial, 8pt"/>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="692.36" Width="778.3" Height="37.8"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.DataOperation.Sqlite3</name>
+    </assembly>
+    <members>
+        <member name="M:ICP.DataOperation.Sqlite3.Sqlite3ModuleInit.AddServices">
+            <summary>
+            注入客户端服务
+            </summary>
+        </member>
+        <member name="P:ICP.DataOperation.Sqlite3.Sqlite3ModuleInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.DataOperation.Sqlite3.SqliteOperation">
+            <summary>
+            Sqlite3缓存操作实现类
+            </summary>
+        </member>
+        <member name="T:ICP.DataOperation.Sqlite3.SQLiteDatabase">
+            <summary>
+            Sqlite3操作辅助类
+            </summary>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.#ctor">
+            <summary>
+            默认构造函数
+            默认数据库为test
+            </summary>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="inputFile">数据库文件</param>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="connectionOpts">连接参数键值对</param>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.GetDataTable(System.String)">
+            <summary>
+            数据查询
+            </summary>
+            <param name="sql">查询SQL语句</param>
+            <returns>数据表</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.GetData(System.String)">
+            <summary>
+            获取整表数据
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.ExecuteNonQuery(System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="sql">需执行的SQL语句</param>
+            <returns>受影响的行数</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.ExecuteNonQuery(System.String,System.Collections.Generic.List{System.Data.Common.DbParameter})">
+            <summary>
+            执行带参数SQL语句
+            </summary>
+            <param name="sql"></param>
+            <param name="parameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.ExecuteScalar(System.String)">
+            <summary>
+            执行SQL语句返回单个值
+            </summary>
+            <param name="sql">需执行的SQL语句</param>
+            <returns>返回值;如果语句执行无返回值，则返回空字符串</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.Update(System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String)">
+            <summary>
+            更新表数据
+            </summary>
+            <param name="tableName">需更新的表名</param>
+            <param name="data">列名和目标值键值对</param>
+            <param name="where">查询条件</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.Delete(System.String,System.String)">
+            <summary>
+             删除表数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="where">过滤行数据SQL</param>
+            <returns>删除成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.Insert(System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            指定列名插入表数据
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="data">列名列值键值对</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.ClearDB">
+            <summary>
+            清空当前数据库中的所有数据
+            </summary>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+        <member name="M:ICP.DataOperation.Sqlite3.SQLiteDatabase.ClearTable(System.String)">
+            <summary>
+            清空表数据
+            </summary>
+            <param name="table">表名</param>
+            <returns>成功返回true,失败返回false</returns>
+        </member>
+    </members>
+</doc>

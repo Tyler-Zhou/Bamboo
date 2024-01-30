@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A18D5A6-BBC9-4D1B-A095-AE862FD07746}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.DataCache.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.DataCache.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>%24/ICP3/MailCenter/ICP.DataCache.ServiceInterface</SccProjectName>
+    <SccLocalPath>.</SccLocalPath>
+    <SccAuxPath>http://tfs.tyler.com:8080/ctoscollection</SccAuxPath>
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDlls\ICP.DataCache.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.DataCache.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDataOperation.cs" />
+    <Compile Include="ContentInfo.cs" />
+    <Compile Include="CustomColumnInfo.cs" />
+    <Compile Include="Interface\ILocalBusinessContactService.cs" />
+    <Compile Include="Interface\IDataCacheOperationService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interface\ILocalBusinessCacheDataOperation.cs" />
+    <Compile Include="Document Management\BaseFileConverter.cs" />
+    <Compile Include="Document Management\ExcelConverter.cs" />
+    <Compile Include="Document Management\HtmlConverter.cs" />
+    <Compile Include="Document Management\IFileConverter.cs" />
+    <Compile Include="Document Management\ImageConverter.cs" />
+    <Compile Include="Document Management\PdfConverter.cs" />
+    <Compile Include="Document Management\PowerPointConverter.cs" />
+    <Compile Include="Document Management\TextConverter.cs" />
+    <Compile Include="Document Management\WordConverter.cs" />
+    <Compile Include="DocumentNotifyClientService.cs" />
+    <Compile Include="DocumentNotifyService.cs" />
+    <Compile Include="Entity\AgentDispatchInfo.cs" />
+    <Compile Include="Entity\AgentDispatchParam.cs" />
+    <Compile Include="Entity\BLListObject.cs" />
+    <Compile Include="Entity\BusinessOperationContext.cs" />
+    <Compile Include="Entity\CommunicationHistory.cs" />
+    <Compile Include="Entity\OperationContactParameters.cs" />
+    <Compile Include="Entity\DispatchStateParam.cs" />
+    <Compile Include="Entity\DocumentInfo.cs" />
+    <Compile Include="Entity\EmailContactInfo.cs" />
+    <Compile Include="Entity\FileCopyParameter.cs" />
+    <Compile Include="Entity\OperationContactInfo.cs" />
+    <Compile Include="Entity\UploadColumnType.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="IBusinessContactService.cs" />
+    <Compile Include="IClientBusinessContactService.cs" />
+    <Compile Include="IClientBusinessOperationService.cs" />
+    <Compile Include="IClientCommunicationHistoryService.cs" />
+    <Compile Include="IClientCustomDataGridService.cs" />
+    <Compile Include="IClientFileService.cs" />
+    <Compile Include="IClientFrameworkInitializeService.cs" />
+    <Compile Include="IClientBulkUploadOperationService.cs" />
+    <Compile Include="ICustomDataGridService.cs" />
+    <Compile Include="IDatabaseOperation.cs" />
+    <Compile Include="Interface\IDataOperation.cs" />
+    <Compile Include="Interface\ICommunicationHistoryService.cs" />
+    <Compile Include="Interface\IDocumentNotifyService.cs" />
+    <Compile Include="Interface\IFileQueueService.cs" />
+    <Compile Include="Interface\IFileService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataCacheUtility.cs" />
+    <Compile Include="StopwatchHelper.cs" />
+    <Compile Include="UserCustomGridInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5192E8D-2CB6-4C7D-AFC4-C36A842BEB5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.OtherBusiness.UI</RootNamespace>
+    <AssemblyName>ICP.FCM.OtherBusiness.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.FCM.OtherBusiness.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.BonusSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Design.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.OfficeSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.RichEdit.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraBars.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraBars.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraEditors.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraLayout.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraLayout.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraNavBar.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraNavBar.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraRichEdit.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraRichEdit.v10.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraTreeList.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraVerticalGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraVerticalGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FAM.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Operation.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.System.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\ClientService.cs" />
+    <Compile Include="Business\LocalService\OBUSPickUpReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\LocalService\OBUSPickUpReport.Designer.cs">
+      <DependentUpon>OBUSPickUpReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\LocalService\TruckEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\LocalService\TruckEditPart.Designer.cs">
+      <DependentUpon>TruckEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\LocalService\RequesAgentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\LocalService\RequesAgentPart.Designer.cs">
+      <DependentUpon>RequesAgentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OBBaseEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBMainToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OBBUIAdapter.cs" />
+    <Compile Include="Common\OBParts\OBListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBListPart.Designer.cs">
+      <DependentUpon>OBListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\OBParts\OBMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBMainWorkSpace.Designer.cs">
+      <DependentUpon>OBMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\OBParts\OBMainToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBMainToolBar.Designer.cs">
+      <DependentUpon>OBMainToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\OBParts\OBSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBSearchPart.Designer.cs">
+      <DependentUpon>OBSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OBBWorkItem.cs" />
+    <Compile Include="Common\OBParts\OBFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBEditPart.Designer.cs">
+      <DependentUpon>OBEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\Constants.cs" />
+    <Compile Include="Common\OBParts\OBFeeEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OBParts\OBFeeEditPart.Designer.cs">
+      <DependentUpon>OBFeeEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService\ClientOtherBusinessService.cs" />
+    <Compile Include="ECommerce\OBECUIAdapter.cs" />
+    <Compile Include="Order\OBOCommandConstants.cs" />
+    <Compile Include="Common\OrganizationEntry.cs" />
+    <Compile Include="Common\OtherBussinessRule.cs" />
+    <Compile Include="Common\CommomConstants.cs" />
+    <Compile Include="Common\Controls\CargoDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionPart.Designer.cs">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\ContainerDemandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\ContainerDemandControl.Designer.cs">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\DateTimeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\DateTimeEdit.Designer.cs">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\LWToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\LWToolBar.designer.cs">
+      <DependentUpon>LWToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\TreeCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\TreeCheckBox.Designer.cs">
+      <DependentUpon>TreeCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\TreeSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\TreeSelectBox.Designer.cs">
+      <DependentUpon>TreeSelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\UserOrganizationTreeCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\UserOrganizationTreeCheckBox.Designer.cs">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\FastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\FastSearchPart.Designer.cs">
+      <DependentUpon>FastSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\FeePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\FeePart.Designer.cs">
+      <DependentUpon>FeePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="ECommerce\OBECEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECEditPart.Designer.cs">
+      <DependentUpon>OBECEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\OBECWorkItem.cs" />
+    <Compile Include="ECommerce\OBECMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECMainToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECSearchPart.Designer.cs">
+      <DependentUpon>OBECSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\OBECListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\OBECListPart.Designer.cs">
+      <DependentUpon>OBECListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\OBECCommandConstants.cs" />
+    <Compile Include="OBBookingFinder.cs" />
+    <Compile Include="OperationFinderBridge.cs" />
+    <Compile Include="Order\OBOrderBaseEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderMainToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OBOrderUIAdapter.cs" />
+    <Compile Include="Order\OBOrderWorkitem.cs" />
+    <Compile Include="OtherBusinessModuleInit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\FCM_CN_Resource.Designer.cs">
+      <DependentUpon>FCM_CN_Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\FCM_EN_Resource.Designer.cs">
+      <DependentUpon>FCM_EN_Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.FCM.Common\ICP.FCM.Common.ServiceInterface\ICP.FCM.Common.ServiceInterface.csproj">
+      <Project>{E3263870-19C7-4986-BD8C-E7C1E4DE615A}</Project>
+      <Name>ICP.FCM.Common.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.FCM.OtherBusiness.ServiceInterface\ICP.FCM.OtherBusiness.ServiceInterface.csproj">
+      <Project>{1191CA0D-A4CD-4BD8-AA5D-C290CEE03602}</Project>
+      <Name>ICP.FCM.OtherBusiness.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Business\LocalService\TruckEditPart.resx">
+      <DependentUpon>TruckEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\LocalService\RequesAgentPart.resx">
+      <DependentUpon>RequesAgentPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBListPart.resx">
+      <DependentUpon>OBListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBMainToolBar.resx">
+      <DependentUpon>OBMainToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBMainWorkSpace.resx">
+      <DependentUpon>OBMainWorkSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBSearchPart.resx">
+      <DependentUpon>OBSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBFastSearchPart.resx">
+      <DependentUpon>OBFastSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBEditPart.resx">
+      <DependentUpon>OBEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\OBParts\OBFeeEditPart.resx">
+      <DependentUpon>OBFeeEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionPart.resx">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.resx">
+      <DependentUpon>AwkwardDescriptionPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.resx">
+      <DependentUpon>DangerousDescriptionPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.resx">
+      <DependentUpon>DryDescriptionPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.resx">
+      <DependentUpon>ReeferDescriptionPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\ContainerDemandControl.resx">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\DateTimeEdit.resx">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\LWToolBar.resx">
+      <DependentUpon>LWToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\TreeCheckBox.resx">
+      <DependentUpon>TreeCheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\TreeSelectBox.resx">
+      <DependentUpon>TreeSelectBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\UserOrganizationTreeCheckBox.resx">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\FastSearchPart.resx">
+      <DependentUpon>FastSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\FeePart.resx">
+      <DependentUpon>FeePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\OBECEditPart.resx">
+      <DependentUpon>OBECEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\OBECFastSearchPart.resx">
+      <DependentUpon>OBECFastSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\OBECMainToolBar.resx">
+      <DependentUpon>OBECMainToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\OBECSearchPart.resx">
+      <DependentUpon>OBECSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\OBECListPart.resx">
+      <DependentUpon>OBECListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FCM_CN_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FCM_CN_Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FCM_EN_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FCM_EN_Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FCM.OtherBusiness.ServiceInterface.DataObjects.ContainerList.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OtherBusiness.ServiceInterface.DataObjects.OtherBusinessInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OtherBusiness.ServiceInterface.DataObjects.OtherBusinessList.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\1.gif" />
+    <Content Include="Resources\2.gif" />
+    <Content Include="Resources\3.gif" />
+    <Content Include="Resources\4.gif" />
+    <Content Include="Resources\Add_File_16.png" />
+    <Content Include="Resources\BillDetails.png" />
+    <Content Include="Resources\BlueFile_Edit_16.png" />
+    <Content Include="Resources\BlueFile_Lock_16.png" />
+    <Content Include="Resources\BrightFinder.png" />
+    <Content Include="Resources\BrightFinder1.png" />
+    <Content Include="Resources\CancelBullion.png" />
+    <Content Include="Resources\ChangeReleaseType.png" />
+    <Content Include="Resources\Close_16.png" />
+    <Content Include="Resources\Config_16.png" />
+    <Content Include="Resources\CurrencyRate.png" />
+    <Content Include="Resources\Data_16.png" />
+    <Content Include="Resources\DebitDetail.png" />
+    <Content Include="Resources\debts.JPG" />
+    <Content Include="Resources\DollarSign.png" />
+    <Content Include="Resources\Down_16.png" />
+    <Content Include="Resources\Down_24.png" />
+    <Content Include="Resources\Empty.png" />
+    <Content Include="Resources\FirstPage.png" />
+    <Content Include="Resources\Go.png" />
+    <Content Include="Resources\Inform.png" />
+    <Content Include="Resources\LastPage.png" />
+    <Content Include="Resources\Lock_16.png" />
+    <Content Include="Resources\MultiCheck.png" />
+    <Content Include="Resources\NextJobs.png" />
+    <Content Include="Resources\NextPage.png" />
+    <Content Include="Resources\Preview.png" />
+    <Content Include="Resources\PrevPage.png" />
+    <Content Include="Resources\Review.png" />
+    <Content Include="Resources\Sarch_16.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\SelectBill.png" />
+    <Content Include="Resources\Telex.png" />
+    <Content Include="Resources\TelexPassword.png" />
+    <Content Include="Resources\User_16.png" />
+    <Content Include="Resources\ViewCheck.png" />
+    <Content Include="Resources\Warning_16.png" />
+    <Content Include="Resources\WriteOff.png" />
+    <Content Include="Resources\WriteOffPrint.png" />
+    <None Include="Report\OBpickupdelivery.frx" />
+    <None Include="Report\OB_OrderInfo_CN.frx" />
+    <None Include="Report\OB_OrderInfo_EN.frx" />
+    <None Include="Report\OB_PickupDelivery_CN.frx" />
+    <None Include="Report\OB_Profit.frx" />
+    <None Include="Report\OE_BookingConfirmation.frx" />
+    <None Include="Report\OE_Profit.frx" />
+    <None Include="Resources\transfer_16.png" />
+    <None Include="Resources\search_16.png" />
+    <None Include="Resources\save_blue_16.png" />
+    <None Include="Resources\save_16.png" />
+    <None Include="Resources\return_16.png" />
+    <None Include="Resources\Refresh_161.png" />
+    <None Include="Resources\refresh_16.png" />
+    <None Include="Resources\print_16.png" />
+    <None Include="Resources\memo_16.png" />
+    <None Include="Resources\left_d_16.png" />
+    <None Include="Resources\ICP.ico" />
+    <None Include="Resources\edit_16.png" />
+    <None Include="Resources\delete_16.png" />
+    <None Include="Resources\copy_16.png" />
+    <None Include="Resources\check_2_16.png" />
+    <None Include="Resources\check_16.png" />
+    <None Include="Resources\center_16.png" />
+    <None Include="Resources\Cancel_16.png" />
+    <None Include="Resources\App.ico" />
+    <None Include="Resources\add_16.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

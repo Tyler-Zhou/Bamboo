@@ -1,0 +1,2898 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.System.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.Sys.ServiceInterface.ISystemService">
+            <summary>
+            系统管理服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.GetAuthCodeList(System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取网卡认证信息列表
+            </summary>
+            <param name="code">网卡地址</param>
+            <param name="senderName">请求认证人</param>
+            <param name="approverName">审批人</param>
+            <param name="sendDateFrom">请求认证时间(开始）</param>
+            <param name="sendDateTo">请求认证时间(结束)</param>
+            <param name="approveDateFrom">审批时间(开始)</param>
+            <param name="approveDateTo">审批时间 （结束）</param>
+            <param name="state">状态</param>
+            <param name="maxRecords">最大记录数(0:不限制,否则按指定记录返回)</param>
+            <returns>返回网卡认证信息列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.GetAuthCodeInfo(System.Guid)">
+            <summary>
+            获取认证详细信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回认证详细信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.RegisterAuthCodeInfo(System.String,System.Guid,System.DateTime,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            申请网卡认证信息
+            </summary>
+            <param name="authCode">网卡地址</param>
+            <param name="senderId">发送人</param>
+            <param name="sendDate">发送时间</param>
+            <param name="senderRemark">申请人备注</param>
+            <param name="updateDate">版本控制</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.ChangeAuthCodeState(System.Guid,System.Boolean,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变状态
+            </summary>
+            <param name="id">ID</param>
+            <param name="isValid">是否有效</param>
+            <param name="remark">备注</param>
+            <param name="changeByID">修改人</param>
+            <param name="updateDate">版本控制</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.GetErrorLogList(System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            获取错误日志列表
+            </summary>
+            <param name="projectName">项目名</param>
+            <param name="senderName">发送人</param>
+            <param name="approveName">审批人</param>
+            <param name="sendDateFrom">发送时间-开始</param>
+            <param name="sendDateTo">发送时间-结束</param>
+            <param name="approveDateFrom">审批时间-开始</param>
+            <param name="approveDateTo">审批时间-结束</param>
+            <param name="maxRecords">最大记录数(0:不限制,否则按指定记录返回)</param>
+            <returns>返回错误日志列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.GetErrorLogInfo(System.Guid)">
+            <summary>
+            获取错误日志详细信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回错误日志详细信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.AddFeedBack(System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.String,System.Byte[])">
+            <summary>
+            向TFS添加反馈。
+            </summary>
+            <param name="title"></param>
+            <param name="desc"></param>
+            <param name="area"></param>
+            <param name="level"></param>
+            <param name="mail"></param>
+            <param name="attachmentID"></param>
+            <param name="attachment"></param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.SaveErrorLogInfo(System.Nullable{System.Guid},System.String,System.String,System.Guid,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            保存错误日志详细信息
+            </summary>
+            <param name="id">ID</param>
+            <param name="projectName">项目模块名</param>
+            <param name="errorContenxt">错误日志内容</param>
+            <param name="senderId">发送人ID</param>
+            <param name="sendDate">发送日期</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.WriteErrorLog(System.String,System.String,System.Guid,System.DateTime,System.Nullable{System.DateTime})">
+            <summary>
+            记录错误日志
+            </summary>
+            <param name="projectName">项目模块名</param>
+            <param name="errorContenxt">错误日志内容</param>
+            <param name="senderId">发送人ID</param>
+            <param name="sendDate">发送日期</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.ISystemService.ChangeErrorLogState(System.Guid,System.Boolean,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变状态
+            </summary>
+            <param name="id">Id</param>
+            <param name="isValid">是否有效</param>
+            <param name="remark">备注</param>
+            <param name="changeById">修改人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.FunctionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.FunctionList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.FunctionList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.CName">
+            <summary>
+            中文名 
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.EName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.Site">
+            <summary>
+            菜单项组容器位置
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.Enable">
+            <summary>
+            是否有权限
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.ParentID">
+            <summary>
+            父节点ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.ParentName">
+            <summary>
+            父节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionList.FunctionType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.FunctionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FunctionInfo.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.RoleAndUserPermissionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleAndUserPermissionInfo.RolePermissions">
+            <summary>
+            角色权限列表
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleAndUserPermissionInfo.UserPermissions">
+            <summary>
+            用户权限列表
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleAndUserPermissionInfo.PermissionId">
+            <summary>
+            功能项或则动作项ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.PermissionID">
+            <summary>
+            功能项或则菜单项ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.PermissionName">
+            <summary>
+            功能项或则菜单项ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.RoleID">
+            <summary>
+            角色ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.RoleName">
+            <summary>
+            角色名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RolePermissionList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.PermissionID">
+            <summary>
+            功能项或则菜单项ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.PermissionName">
+            <summary>
+            功能项或则菜单项名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.OrganizationID">
+            <summary>
+            组织节点ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.OrganizationName">
+            <summary>
+            组织节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserPermissionList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ModuleList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ModuleList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ModuleList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.CName">
+            <summary>
+            中文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.EName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.AssemblyName">
+            <summary>
+            程序集
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UIItemList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UIItemList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UIItemList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.CName">
+            <summary>
+            中文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.EName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.Enable">
+            <summary>
+            是否有权限
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.Site">
+            <summary>
+            菜单项组容器位置
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.FunctionID">
+            <summary>
+            功能ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.ParentID">
+            <summary>
+            父节点ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.ParentName">
+            <summary>
+            父节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.CreateByName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.FunctionType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemList.HierarchyCode">
+            <summary>
+            级联代码
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UIItemInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemInfo.CreateByID">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemInfo.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UIItemInfo.CommandName">
+            <summary>
+            命令名
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.SystemFinderConstants">
+            <summary>
+            搜索器常量
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.RoleFinder">
+            <summary>
+            Role Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.JobFinder">
+            <summary>
+            Job Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.OrganizationJobFinder">
+            <summary>
+            OrganizationJob Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.OrganizationAndJobFinder">
+            <summary>
+            OrganizationAndJobFinder Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.OrganizationFinder">
+            <summary>
+            Organization Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.UserFinder">
+            <summary>
+            User Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.FunctionFinder">
+            <summary>
+            Function Finder
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.SystemFinderConstants.GLCodeGinder">
+            <summary>
+            GLCodeGinder
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IOperationMemoService">
+            <summary>
+            记录系统操作日志
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOperationMemoService.GetAllList(System.Guid)">
+            <summary>
+            获取邮件中心所有操作日志
+            </summary>
+            <param name="companyId"></param>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:ICP.Sys.ServiceInterface.IOperationMemoService.GetSystemErrorLogList(System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})”忽略有格式错误的 XML 注释 -->
+        <member name="M:ICP.Sys.ServiceInterface.IOperationMemoService.GetSystemErrorLogInfoById(System.Guid)">
+            <summary>
+            获取系统错误日志详细信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList">
+            <summary>
+            角色岗位列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.RoleID">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.RoleName">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.OrganizationJobID">
+            <summary>
+            岗位
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.OrganizationJobName">
+            <summary>
+            岗位
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.CreateByName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Role2OrganizationJobList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.RoleList">
+            <summary>
+            角色列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.RoleList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.RoleList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.CName">
+            <summary>
+            中文名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.EName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.CreateByName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.RoleInfo">
+            <summary>
+            角色信息
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.RoleInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.GenderType">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.GenderType.Female">
+            <summary>
+            女
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.GenderType.Male">
+            <summary>
+            男
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.OrganizationType">
+            <summary>
+            组织结构类型
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationType.Root">
+            <summary>
+            公司主节点
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationType.Section">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationType.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationType.Department">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationType.Group">
+            <summary>
+            组
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.OrganizationJobType">
+            <summary>
+            OrganizationJobType
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationJobType.Organization">
+            <summary>
+            组织结构
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.OrganizationJobType.Job">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.FunctionType">
+            <summary>
+            菜单节点项类型
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.FunctionType.Module">
+            <summary>
+            菜单组
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.FunctionType.Function">
+            <summary>
+            菜单项
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.FunctionType.Action">
+            <summary>
+            动作
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UIConfigItemType">
+            <summary>
+            界面节点项类型
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.UIConfigItemType.Container">
+            <summary>
+            容器
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.UIConfigItemType.MenuGroup">
+            <summary>
+            菜单组
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.UIConfigItemType.MenuItem">
+            <summary>
+            菜单项
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.UIConfigItemType.Action">
+            <summary>
+            动作
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.AuthcodeState">
+            <summary>
+            网卡认证申请状态
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.AuthcodeState.Processing">
+            <summary>
+            申请中..
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.AuthcodeState.Agree">
+            <summary>
+            同意
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.AuthcodeState.Disagree">
+            <summary>
+            不同意
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.PermissionRangeType">
+            <summary>
+            获取权限可操作的数据范围
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.PermissionRangeType.All">
+            <summary>
+            包括范围内的所有子节点
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.PermissionRangeType.Company">
+            <summary>
+            包括公司列表
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.SiteType">
+            <summary>
+            组所呈现的位置
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.SiteType.Menu">
+            <summary>
+            呈现在菜单栏中 
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.SiteType.Toolbar">
+            <summary>
+            呈现在工具栏中
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.SiteType.Statusbar">
+            <summary>
+            呈现在状态栏中
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.MailProtocol">
+            <summary>
+            邮件协议
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.MailProtocol.POP">
+            <summary>
+            POP
+            </summary>
+        </member>
+        <member name="F:ICP.Sys.ServiceInterface.DataObjects.MailProtocol.SMTP">
+            <summary>
+            SMTP
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IOrganizationService">
+            <summary>
+            组织结构管理服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.GetOrganizationList(System.String,System.String,System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取组织结构列表
+            </summary>
+            <param name="code">代码</param>
+            <param name="name">名称</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回组织结构列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.GetOfficeList">
+            <summary>
+            获取办事处和公司列表
+            </summary>
+            <returns>返回组织结构列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.GetOrganizationAndChildList(System.Guid[])">
+            <summary>
+            获得指定组织结构以及子节点列表
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.GetOrganizationInfo(System.Guid)">
+            <summary>
+            获取组织结构信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回组织结构信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.GetCompanyInfo(System.Guid)">
+            <summary>
+            指定指定组织结构的部门信息
+            </summary>
+            <param name="orgID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.SaveOrganizationInfo(System.Nullable{System.Guid},System.Nullable{System.Guid},ICP.Sys.ServiceInterface.DataObjects.OrganizationType,System.String,System.String,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存组织结构信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="parentId">父节点Id</param>
+            <param name="type">组织结构类型</param>
+            <param name="code">代码</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="saveById">保存人Id</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.ChangeOrganizationState(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变组织结构状态
+            </summary>
+            <param name="id">id</param>
+            <param name="isValid">是否有效</param>
+            <param name="changeById">改变人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IOrganizationService.SetParentOrganization(System.Guid,System.Nullable{System.Guid},System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            设置组织结构节点的父节点
+            </summary>
+            <param name="childId">子节点Id</param>
+            <param name="parentId">父节点Id</param>
+            <param name="setById">设置人Id</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.Client.IUserClientService">
+            <summary>
+            用户管理客户端服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.Client.IUserClientService.ShowEMailAccountInfo(System.Guid)">
+            <summary>
+            显示邮件帐号信息
+            </summary>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.Client.IUserClientService.ShowUserInfo(System.Guid)">
+            <summary>
+             显示用户信息
+            </summary>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IUserClientService">
+            <summary>
+            用户客户端服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserClientService.DownloadUserPhoto(System.Guid)">
+            <summary>
+            下载文件
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserClientService.SaveUserDetailInfo(System.Guid,System.String,System.String,ICP.Sys.ServiceInterface.DataObjects.GenderType,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Byte[],System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存用户信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="sex">性别</param>
+            <param name="tel">电话</param>
+            <param name="fax">传真</param>
+            <param name="mobile">移动电话</param>
+            <param name="saveById">修改人Id</param>
+            <param name="address">地址</param>
+            <param name="remark">remark</param>
+            <param name="birthday">birthday</param>
+            <param name="photo">photo</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData </returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IJobService">
+            <summary>
+            职位管理服务 
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.GetJobList(System.String,System.String,System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取岗位列表
+            </summary>
+            <param name="code">中文名称</param>
+            <param name="name">名称</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回列表对象</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.GetJobInfo(System.Guid)">
+            <summary>
+            获取信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回编辑信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.GetOrganization2JobList(System.Nullable{System.Guid},System.Nullable{System.Boolean})">
+            <summary>
+            获取组织结构下岗位列表
+            </summary>
+            <param name="organizationID">组织结构</param>
+            <param name="isValid">是否有效</param>
+            <returns>返回组织结构下岗位列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.RemovetOrganization2JobInfo(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            删除组织结构下岗位信息
+            </summary>
+            <param name="ids">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDates">更新时间</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.SetOrganization2JobInfo(System.Guid,System.Nullable{System.Guid}[],System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            设置组织结构下岗位信息
+            </summary>
+            <param name="organizationID">组织结构ID</param>
+            <param name="ids">ID</param>
+            <param name="jobIds">岗位列表</param>
+            <param name="updateDates">更新时间</param>
+            <param name="setByID">设置人</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.SaveJobInfo(System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String,System.String,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="parentId">parentId==null或则parentId==Guid.Empty该职位为顶级节点,否则为对应父结点的子节点</param>
+            <param name="code">代码</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="description">描述</param>
+            <param name="saveById">修改人Id</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.ChangeJobState(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变数据状态
+            </summary>
+            <param name="id">对应唯一键值</param>
+            <param name="isValid">是否有效状态</param>
+            <param name="changeById">修改人</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.SetParentJob(System.Guid,System.Nullable{System.Guid},System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            设置职位的父结点
+            </summary>
+            <param name="id">当前结点</param>
+            <param name="parentId">如果parentId==null 或则parentId==Guid.Empt则,当前结点为顶级节点,否则设置为parentId的子节点</param>
+            <param name="setById">设置人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.SetOrganizationJob2RoleInfo(System.Guid,System.Nullable{System.Guid}[],System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            保存角色岗位信息
+            </summary>
+            <param name="organizationJobID">角色ID</param>
+            <param name="ids">角色岗位ID</param>
+            <param name="roleIDs">岗位ID</param>
+            <param name="updateDates">更新时间</param>
+            <param name="setByID">设置人</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.RemoveOrganizationJob2RoleInfo(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            删除角色岗位信息
+            </summary>
+            <param name="ids">角色岗位ID</param>
+            <param name="updateDates">更新时间</param>
+            <param name="removeByID">删除人</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IJobService.GetRole2OrganizationJobList(System.Guid)">
+            <summary>
+            获取角色下所挂岗位列表
+            </summary>
+            <param name="organizationJobID">角色ID</param>
+            <returns>返回角色下所挂岗位列表</returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IRoleService">
+            <summary>
+            角色管理服务 
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.GetRoleList(System.String,System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取角色列表
+            </summary>
+            <param name="name">名称</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回角色列表对象</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.GetRoleInfo(System.Guid)">
+            <summary>
+            获取角色信息
+            </summary>
+            <param name="id">角色ID</param>
+            <returns>返回角色编辑信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.SaveRoleInfo(System.Nullable{System.Guid},System.String,System.String,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存角色信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增角色数据,否则修改对应键的角色信息</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="description">描述</param>
+            <param name="saveById">修改人</param>
+            <param name="updateDate">版本(更新时间)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.ChangeRoleState(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变角色数据状态
+            </summary>
+            <param name="id">对应角色唯一键值</param>
+            <param name="isValid">是否有效状态</param>
+            <param name="changeById">修改人</param>
+            <param name="updateDate">版本(更新时间)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.GetRole2OrganizationJobList(System.Guid)">
+            <summary>
+            获取角色下所挂岗位列表
+            </summary>
+            <param name="roleID">角色ID</param>
+            <returns>返回角色下所挂岗位列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.SetRole2OrganizationJobInfo(System.Guid,System.Nullable{System.Guid}[],System.Guid[],System.Guid)">
+            <summary>
+            保存角色岗位信息
+            </summary>
+            <param name="roleID">角色ID</param>
+            <param name="ids">角色岗位ID</param>
+            <param name="organizationJobIDs">岗位ID</param>
+            <param name="setByID">更新时间</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.RemoveRole2OrganizationJobInfo(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            删除角色岗位信息
+            </summary>
+            <param name="ids">角色岗位ID</param>
+            <param name="updateDates">更新时间</param>
+            <param name="removeByID">删除人</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IRoleService.GetRolePermissionListByRoleID(System.Guid)">
+            <summary>
+            获取功能或则动作的角色和用户权限列表
+            </summary>
+            <param name="id">功能或则动作ID</param>
+            <returns>返回动作的角色和用户权限列表</returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IPermissionService">
+            <summary>
+            菜单配置管理服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetFunctionList(System.Nullable{System.Boolean})">
+            <summary>
+            获取功能项列表
+            </summary>
+            <param name="isValid">是否有效</param>
+            <returns>返回功能项列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetRoleFunctionList(System.Guid,System.Nullable{System.Boolean})">
+            <summary>
+            获取角色有权访问的功能列表
+            </summary>
+            <param name="roleId">角色ID</param>
+            <param name="isValid">是否有效</param>
+            <returns>返回角色有权访问的功能列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetUserFunctionList(System.Guid,System.Nullable{System.Boolean})">
+            <summary>
+            获取用户有权访问的功能列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="isValid">是否有效</param>
+            <returns>返回角色有权访问的功能列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetUIConfigurationList(ICP.Sys.ServiceInterface.DataObjects.SiteType)">
+            <summary>
+            获取UI配置项列表
+            </summary>
+            <param name="siteType">容器类型</param>
+            <returns>返回UI配置项列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetUIConfigurationInfo(System.Guid)">
+            <summary>
+            获取UI配置项详细信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回UI配置项详细信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SaveUIConfigurationInfo(System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存UI配置项信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="parentId">父节点Id</param>
+            <param name="code">代码</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="description">描述</param>
+            <param name="functionId">功能Id</param>
+            <param name="saveById">保存人Id</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.RemoveUIConfigurationInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除UI配置项
+            </summary>
+            <param name="id">UI配置项ID</param>
+            <param name="removeByID">删除任ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetUIConfigurationPosition(System.Guid,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            设置UI配置项的位置
+            </summary>
+            <param name="id">ID</param>
+            <param name="parentID">父ID</param>
+            <param name="preID">兄弟前一节点</param>
+            <param name="setByID">设置人ID</param>
+            <param name="updateDate">版本控制</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetRolePermissionList(System.Guid)">
+            <summary>
+            获取功能或则动作的角色权限列表
+            </summary>
+            <param name="id">功能或则动作ID</param>
+            <returns>返回动作的角色和用户权限列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetUserPermissionList(System.Guid)">
+            <summary>
+            获取功能或则动作的用户权限列表
+            </summary>
+            <param name="id">功能或则动作ID</param>
+            <returns>返回动作的用户权限列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetActionRoles(System.Guid,System.Guid[],System.Guid)">
+            <summary>
+            设置Action下的角色
+            </summary>
+            <param name="permissionId">Action ID</param>
+            <param name="roleIds">角色ID列表</param>
+            <param name="saveById">保存人ID</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetFunctionRoles(System.Guid,System.Guid[],System.Guid)">
+            <summary>
+            设置功能下角色
+            </summary>
+            <param name="permissionIds">功能ID列表</param>
+            <param name="roleIds">角色ID列表</param>
+            <param name="saveById">保存人ID</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.RemoveActionRolePermission(System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            删除动作项角色权限
+            </summary>
+            <param name="permissionRoleIds">用户权限关系ID列表</param>
+            <param name="removeById">删除人ID</param>
+            <param name="updateDates">版本控制</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.RemoveFunctionRolePermission(System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            删除功能项角色权限
+            </summary>
+            <param name="permissionRoleIds">用户权限关系ID列表</param>
+            <param name="removeById">删除人ID</param>
+            <param name="updateDates">版本控制</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetActionUserPermission(System.Nullable{System.Guid}[],System.Guid[],System.Guid[],System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            设置动作特殊用户权限
+            </summary>
+            <param name="permissionUserIds">关联关系ID</param>
+            <param name="permissionIds">功能或则动作ID</param>
+            <param name="userIds">用户列表</param>
+            <param name="orangnizationIds">组织节点列表</param>
+            <param name="saveById">保存人</param>
+            <param name="updateDates">版本控制</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetFunctionUserPermission(System.Nullable{System.Guid}[],System.Guid[],System.Guid[],System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            设置功能特殊用户权限
+            </summary>
+            <param name="permissionUserIds">关联关系ID</param>
+            <param name="permissionIds">功能或则动作ID</param>
+            <param name="userIds">用户列表</param>
+            <param name="orangnizationIds">组织节点列表</param>
+            <param name="saveById">保存人</param>
+            <param name="updateDates">版本控制</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.RemoveActionUserPermission(System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            删除动作项用户权限
+            </summary>
+            <param name="permissionUserIds">用户权限关系ID列表</param>
+            <param name="removeById">删除人ID</param>
+            <param name="updateDates">版本控制</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.RemoveFunctionUserPermission(System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            删除功能项项用户权限
+            </summary>
+            <param name="permissionUserIds">用户权限关系ID列表</param>
+            <param name="removeById">删除人ID</param>
+            <param name="updateDates">版本控制</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetPermissionOrganizationList(System.Guid,System.String,ICP.Sys.ServiceInterface.DataObjects.PermissionRangeType)">
+            <summary>
+            获取指定用户对某功能的操作范围
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="commandName">命令名</param>
+            <param name="permissionRange">权限范围</param>
+            <returns>返回用户对某功能的操作范围</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.GetModuleUserList(System.String,System.Nullable{System.Guid},System.Int32)">
+            <summary>
+            获取有权限访问该功能模块的用户列表
+            </summary>
+            <param name="commandName">命令代码</param>
+            <param name="organizationID">用户所在的组织结构</param>
+            <param name="maxRecords">最大记录数量</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IPermissionService.SetRoleFunctions(System.Guid,System.Guid[],System.Boolean[],System.Guid)">
+            <summary>
+            设置角色下的功能
+            </summary>
+            <param name="roleID">功能ID列表</param>
+            <param name="functionIDs">角色ID列表</param>
+            <param name="isActions">类型列表</param>
+            <param name="saveById">保存人ID</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserList">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.CName">
+            <summary>
+            中文名 
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.EName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.EMail">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.Gender">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.Tel">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.Fax">
+            <summary>
+            传真
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.Mobile">
+            <summary>
+            手机
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.IsValid">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserInfo">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserInfo.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserInfo.MailAccounts">
+            <summary>
+            MailAccounts
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserOrganizationTreeList">
+            <summary>
+            UserOrganizationTreeList
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.OrganizationList">
+            <summary>
+            组织结构列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.IsNew">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.CShortName">
+            <summary>
+            中文简称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.EShortName">
+            <summary>
+            英文简称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.FullName">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.Type">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.ParentID">
+            <summary>
+            父节点ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationList.HierarchyCode">
+            <summary>
+            级联代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserOrganizationTreeList.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserOrganizationTreeList.HasPermission">
+            <summary>
+            是否有权限
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.OrganizationJobID">
+            <summary>
+            职位ID 
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.OrganizationJobName">
+            <summary>
+            职位
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.IsDefault">
+            <summary>
+            是否默认
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.User2OrganizationJobList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.ConnectUserName">
+            <summary>
+            接收工作人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserConnectionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionInfo.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionInfo.ConnectUserID">
+            <summary>
+            接收人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserConnectionInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.MailAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.MailAccount.ID">
+            <summary>
+            邮件帐号ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.MailAccount.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.MailAccount.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.MailAccount.EMail">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.MailAccount.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList">
+            <summary>
+            UserMailAccountList
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.UserName">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.Email">
+            <summary>
+            邮件
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.IsDefault">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailIncomingProtocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailIncomingHost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailIncomingPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailIncomingLogin">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailIncomingPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailOutgoingProtocol">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailOutgoingHost">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailOutgoingPort">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailOutgoingLogin">
+            <summary>
+            登录名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.MailOutgoingPassword">
+            <summary>
+            登录密码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.FriendlyName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.GetMailAtLogin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.IsValid">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserMailAccountInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo">
+            <summary>
+            UserDetailInfo
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.Birthday">
+            <summary>
+            Birthday
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.Address">
+            <summary>
+            Address
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.EmailPassword">
+            <summary>
+            邮箱密码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.Department">
+            <summary>
+            Department
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.UserDetailInfo.Remark">
+            <summary>
+            Remark
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList">
+            <summary>
+            组织结构岗位列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.RelationID">
+            <summary>
+            关联ID（如果是职位就是job表的ID,如果是组织结构就是org...表的ID）
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.Name">
+            <summary>
+            子节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.ParentID">
+            <summary>
+            角色
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.ParentName">
+            <summary>
+            父节点名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.FullName">
+            <summary>
+            全称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.StructureFullName">
+            <summary>
+            结构全称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.Type">
+            <summary>
+            OrganizationJobType
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.CreateByName">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.Organization2JobList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.JobList">
+            <summary>
+            岗位列表
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.JobList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.JobList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.IsNew">
+            <summary>
+            isNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.CName">
+            <summary>
+            中文名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.EName">
+            <summary>
+            英文名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.ParentID">
+            <summary>
+            父子节点
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.UpdateDate">
+            <summary>
+            版本(控制并发冲突)
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.HierarchyCode">
+            <summary>
+            级联代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.JobInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobInfo.ParentName">
+            <summary>
+            父节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.JobInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.OrganizationInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationInfo.ParentName">
+            <summary>
+            父节点名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.OrganizationInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.AuthCode">
+            <summary>
+            网卡地址
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.SenderName">
+            <summary>
+            发送人名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.SendDate">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.ApproverName">
+            <summary>
+            审批人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.ApproveDate">
+            <summary>
+            审批时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.AuthcodeInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeInfo.SenderRemark">
+            <summary>
+            申请备注
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeInfo.ApproverRemark">
+            <summary>
+            审批备注
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeInfo.SenderId">
+            <summary>
+            发送人Id
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.AuthcodeInfo.ApproverId">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.ProjectName">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.ErrorContent">
+            <summary>
+            错误内容
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.SenderName">
+            <summary>
+            发送人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.SenderDate">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.SolverName">
+            <summary>
+            处理人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.SolveDate">
+            <summary>
+            处理时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.SolverRemark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ErrorLogInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogInfo.SenderId">
+            <summary>
+            发送人Id
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ErrorLogInfo.SolverId">
+            <summary>
+            处理人Id
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ActionList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ActionList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.DataObjects.ActionList.Equals(System.Object)">
+            <summary>
+            Equals
+            </summary>
+            <param name="obj">obj</param>
+            <returns>bool</returns>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.ID">
+            <summary>
+            唯一ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.CName">
+            <summary>
+            中文名 
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.EName">
+            <summary>
+            英文名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionList.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ActionInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionInfo.Enable">
+            <summary>
+            是否有权限
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionInfo.CreateBy">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionInfo.CreateById">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ActionInfo.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.FTPServerConfig">
+            <summary>
+            FTP服务器配置信息
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FTPServerConfig.Host">
+            <summary>
+            主机
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FTPServerConfig.User">
+            <summary>
+            用户
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FTPServerConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.FTPServerConfig.BasePath">
+            <summary>
+            本地路径
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.IUserService">
+            <summary>
+            用户管理服务
+            </summary>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserListByList(System.String,System.String,System.Nullable{ICP.Sys.ServiceInterface.DataObjects.GenderType},System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="code">代码</param>
+            <param name="name">名称</param>
+            <param name="gender">性别</param>
+            <param name="jobId">职位ID</param>
+            <param name="roleId">角色ID</param>
+            <param name="organizationId">部门ID</param>
+            <param name="hasJob">是否有职位</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">最大记录数(0:不限制,否则按指定记录返回)</param>
+            <returns>返回用户列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserListBySearch(System.Guid,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="organizationId">部门Id</param>
+            <param name="roleName">角色名</param>
+            <param name="jobName">职位名</param>
+            <param name="hasJob">是否有职位</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回用户列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUnderlingUserList(System.Guid[],System.String[],System.String[],System.Nullable{System.Boolean})">
+            <summary>
+            获取指定部门下职位的下属用户列表(默认是有职位的用户)
+            </summary>
+            <param name="organizationIDs">部门ID</param>
+            <param name="jobNames">职位名</param>
+            <param name="roleNames">角色名</param>
+            <param name="isValid">是否有效</param>
+            <returns>返回用户列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetSubordinateUserList(System.Guid,System.Nullable{System.Boolean})">
+            <summary>
+            获得指定用户的下属列表
+            </summary>
+            <param name="userID"></param>
+            <param name="isValid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserInfo(System.Guid)">
+            <summary>
+            获取用户详细信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回用户详细信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SaveUserInfo(System.Nullable{System.Guid},System.String,System.String,System.String,ICP.Sys.ServiceInterface.DataObjects.GenderType,System.String,System.String,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存用户信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="code">代码</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="gender">性别</param>
+            <param name="tel">电话</param>
+            <param name="fax">传真</param>
+            <param name="mobile">移动电话</param>
+            <param name="saveById">修改人Id</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData </returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserDetailInfo(System.Guid)">
+            <summary>
+            获取用户详细信息
+            </summary>
+            <param name="id">ID</param>
+            <returns>返回用户详细信息</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetAllUsersDetailInfo(System.Guid)">
+            <summary>
+            获取用户详细信息
+            </summary>
+            <param name="id">用户ID</param>
+            <returns>返回所有用户集合</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetAllContactList(System.Guid)">
+            <summary>
+            获取通讯录列表
+            </summary>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SaveUserDetailInfo(System.Guid,System.String,System.String,ICP.Sys.ServiceInterface.DataObjects.GenderType,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            保存用户信息
+            </summary>
+            <param name="id">id==null或则id==Guid.Empty则新增数据,否则修改对应键的信息</param>
+            <param name="cname">中文名称</param>
+            <param name="ename">英文名称</param>
+            <param name="gender">性别</param>
+            <param name="tel">电话</param>
+            <param name="fax">传真</param>
+            <param name="mobile">移动电话</param>
+            <param name="saveById">修改人Id</param>
+            <param name="address">地址</param>
+            <param name="birthday">birthday</param>
+            <param name="remark">remark</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData </returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetFTPServerConfig">
+            <summary>
+            获取FTP服务器信息
+            </summary>
+            <returns>返回</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.ChangedUserPassword(System.Guid,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            改变密码
+            </summary>
+            <param name="id">id</param>
+            <param name="oldPassword">oldPassword</param>
+            <param name="newPassword">password</param>
+            <param name="updateDate">updateDate</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SetUserDefaultMailAccount(System.Guid,System.Guid)">
+            <summary>
+            设置用户默认邮件帐号
+            </summary>
+            <param name="userMailAccountID">邮件帐号ID</param>
+            <param name="setById">设置人ID</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.ChangedUserMailPassword(System.Guid,System.String)">
+            <summary>
+            改变邮箱密码
+            </summary>
+            <param name="id">id</param>
+            <param name="newPassword">password</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SaveUserMailAccountInfo(System.Guid,System.Guid[],System.String[],ICP.Sys.ServiceInterface.DataObjects.MailProtocol[],System.String[],System.Int32[],System.String[],System.String[],ICP.Sys.ServiceInterface.DataObjects.MailProtocol[],System.String[],System.Int32[],System.String[],System.String[],System.String[],System.Boolean[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            保存用户邮件帐号
+            </summary>
+            <param name="userID">用户ID</param>
+            <param name="ids">邮件帐号ID</param>
+            <param name="emails">邮件地址</param>
+            <param name="mailIncomingProtocols">接收邮件服务器协议</param>
+            <param name="mailIncomingHosts">接收邮件服务器</param>
+            <param name="mailIncomingPorts">接收邮件服务器端口</param>
+            <param name="mailIncomingLogins">接收邮件用户名</param>
+            <param name="mailIncomingPasswords">接收邮件用户密码</param>
+            <param name="mailOutgoingProtocols">发送邮件服务器协议</param>
+            <param name="mailOutgoingHosts">发送邮件服务器</param>
+            <param name="mailOutgoingPorts">发送邮件服务器端口</param>
+            <param name="mailOutgoingLogins">发送邮件用户名</param>
+            <param name="mailOutgoingPasswords">发送邮件用户密码</param>
+            <param name="friendlyNames">用户昵称</param>
+            <param name="saveByID">保存人</param>
+            <param name="getMailAtLogins">是否登录后就接收邮件</param>
+            <param name="updateDates">数据版本</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.RemoveUserMailAccount(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            删除邮件帐号
+            </summary>
+            <param name="ids">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDates">数据版本</param>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetMailAccountList(System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid},System.String,System.String,System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获取邮件列表
+            </summary>
+            <param name="organizationID">organizationID</param>
+            <param name="jobID">jobID</param>
+            <param name="roleID">roleID</param>
+            <param name="userName">userName</param>
+            <param name="email">email</param>
+            <param name="isValid">isValid</param>
+            <param name="maxRecords">maxRecords</param>
+            <returns>MailAccount</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserMailAccountList(System.Guid[])">
+            <summary>
+            获取用户的邮件帐号列表
+            </summary>
+            <param name="userIDs">用户ID</param>
+            <returns>返回用户的邮件帐号列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.ChangeUserState(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            更改用户状态
+            </summary>
+            <param name="userId">用户Id</param>
+            <param name="isValid">是否有效</param>
+            <param name="changeById">修改人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetMergeUserList(System.Guid)">
+            <summary>
+            根据保留用户ID获取被合并用户的日志列表
+            </summary>
+            <param name="preserveUserId">保留用户ID</param>
+            <returns>获取被合并用户的日志列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.MergeUser(System.Guid[],System.Guid,System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            合并用户
+            </summary>
+            <param name="mergeUserIds">要被合并的用户列表ID</param>
+            <param name="preserveUserId">保留的用户Id</param>
+            <param name="mergeById">合并人ID</param>
+            <param name="updateDates">版本(控制并发冲突)</param>
+            <returns>/返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.CancelMergeUser(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            取消合并用户
+            </summary>
+            <param name="ids">用户ID列表</param>
+            <param name="cancelById">取消人ID</param>
+            <param name="updateDates">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserCompanyList(System.Guid,System.Nullable{ICP.Sys.ServiceInterface.DataObjects.OrganizationType})">
+            <summary>
+            获取用户所挂公司列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="type">类型</param>
+            <returns>返回用户所挂公司列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserOrganizationTreeList(System.Guid)">
+            <summary>
+            获取用户所挂公司树列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>返回用户所挂公司树列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUser2OrganizationJobList(System.Guid)">
+            <summary>
+            获取用户职位列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <returns>返回用户职位列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SetUserOrganizationJob(System.Guid,System.Guid[],System.Guid[],System.Boolean[],System.Guid)">
+            <summary>
+            设置用户职位
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="ids">用户职位关系列表</param>
+            <param name="organizationJobIds">组织结构列表</param>
+            <param name="setById">修改人ID </param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.SetUserDefaultOrganizationJob(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            设置默认职位
+            </summary>
+            <param name="userOrganizationJobId">用户职位关系ID</param>
+            <param name="setById">设置人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回ManyResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.RemoveUserOrganizationJob(System.Guid[],System.Nullable{System.DateTime}[],System.Guid)">
+            <summary>
+            删除用户职位
+            </summary>
+            <param name="userOrganizationJobIds">用户职位关系列表</param>
+            <param name="updateDates">版本(控制并发冲突)</param>
+            <param name="removeById">删除人ID</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserConnectionList(System.Guid,System.DateTime,System.DateTime,System.Nullable{System.Boolean},System.Boolean,System.Int32)">
+            <summary>
+            获取用户交接列表
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="fromDate">开始时间</param>
+            <param name="toDate">结束时间</param>
+            <param name="isValid">是否有效</param>
+            <param name="isEnglsih">是否英文</param>
+            <param name="maxRecords">最大记录数</param>
+            <returns>返回用户交接列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserConnectionInfo(System.Guid)">
+            <summary>
+            获取接交日志详细信息
+            </summary>
+            <param name="userConnectionLogId">交接日志ID</param>
+            <returns>返回交接日志列表</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.UserConnection(System.Nullable{System.Guid},System.Guid,System.Guid,System.DateTime,System.DateTime,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            交接用户工作
+            </summary>
+            <param name="id">如果id==null或则id==Guid.Empty则新增，否则修改</param>
+            <param name="fromUserId">交接人</param>
+            <param name="toUserId">接替工作人</param>
+            <param name="fromDate">开始时间</param>
+            <param name="toDate">结束时间</param>
+            <param name="setById">设置人</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData </returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.ChangeUserConnectionState(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变交接状态
+            </summary>
+            <param name="userConnectionId">交接日志ID</param>
+            <param name="isValid">是否有效</param>
+            <param name="changeById">改变人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>/返回SingleResultData </returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.IsUnderlingUser(System.Guid,System.Guid)">
+            <summary>
+            判断两个用户是否上下属关系
+            </summary>
+            <param name="underlingUserId">下属用户ID</param>
+            <param name="seniorUserId">上司用户ID</param>
+            <returns>如果是上下属关系返回true，否则返回fale</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.CheckUserCodeExsit(System.Guid,System.String)">
+            <summary>
+               检测指定用户的账号是否被其它用户使用
+            </summary>
+            <param name="userId">   用户ID</param>
+            <param name="code">    账号</param>
+            <returns>   如果存在返回true,否则返回false</returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.ChangeUserPassword(System.Guid,System.String,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            更改用户密码
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="oldPassword">旧密码</param>
+            <param name="newPassword">新密码</param>
+            <param name="changeById">更改人ID</param>
+            <param name="updateDate">版本(控制并发冲突)</param>
+            <returns>返回SingleResultData</returns>
+        </member>
+        <!-- 对于成员“M:ICP.Sys.ServiceInterface.IUserService.SaveUserInfoForWF(System.String,System.String,System.String,System.String,System.String,System.String,System.Guid,System.Guid,System.Nullable{System.DateTime},System.String,System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Guid)”忽略有格式错误的 XML 注释 -->
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetUserEmailPassword(System.String)">
+            <summary>
+            根据用户邮箱名获取用户邮箱密码
+            </summary>
+            <param name="emailAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Sys.ServiceInterface.IUserService.GetOverseasSalesList(System.String)">
+            <summary>
+            根据部门名称得到UserList
+            </summary>
+            <param name="OperationId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.SystemErrorLogObject">
+            <summary>
+            系统错误日志实体类
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.UserName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.SessionID">
+            <summary>
+            用户当前登陆记录的Session的一个ID
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.ScreenCapture">
+            <summary>
+            错误截屏字节流
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.Description">
+            <summary>
+            错误详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.CreateTime">
+            <summary>
+            错误发生的时间
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.SystemErrorLogObject.Preview">
+            <summary>
+            预览
+            </summary>
+        </member>
+        <member name="T:ICP.Sys.ServiceInterface.DataObjects.ModuleUserList">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleUserList.DepartmentName">
+            <summary>
+            部门名
+            </summary>
+        </member>
+        <member name="P:ICP.Sys.ServiceInterface.DataObjects.ModuleUserList.DepartmentID">
+            <summary>
+            部门ID
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{245AF769-7EBF-4713-8FB9-E25A9A5CE924}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.Common.Business.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.Common.Business.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDlls\ICP.Common.Business.ServiceInterface.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>ICP.Common.Business.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OtherBusiness.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FRM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.Business.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.CommonUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.SubscriptionPublish.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls (192.168.0.174)\ICP.System.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advance Search\frmAdvanceQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Advance Search\frmAdvanceQuery.designer.cs">
+      <DependentUpon>frmAdvanceQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advance Search\IBusinessQueryPart.cs" />
+    <Compile Include="Bkg Failed\BkgFailed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bkg Failed\BkgFailed.Designer.cs">
+      <DependentUpon>BkgFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business Part\BusinessPartFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Business Part\IBusinessPartFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Column Template\CustomColumnInfoComparer.cs" />
+    <Compile Include="CommonModuleInit.cs" />
+    <Compile Include="ContextMenu Template\CustomGridMenu.cs" />
+    <Compile Include="ContextMenu Template\GridMenuUIAdapterFactory.cs" />
+    <Compile Include="ContextMenu Template\MenuItemCollectionUIAdapter.cs" />
+    <Compile Include="ContextMenu Template\MenuItemOwnerCollectionUIAdapter.cs" />
+    <Compile Include="New\BaseBusinessPart_New.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New\BaseBusinessPart_New.Designer.cs">
+      <DependentUpon>BaseBusinessPart_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\BusinessContextMenuItemGeneratorFactory.cs" />
+    <Compile Include="New\BusinessInfoExtractorFactory.cs" />
+    <Compile Include="New\BusinessQueryCriteria.cs" />
+    <Compile Include="New\BusinessSaveParameter.cs" />
+    <Compile Include="New\Constants.cs" />
+    <Compile Include="New\DefaultBusinessSpecialCondictioner.cs" />
+    <Compile Include="New\DefaultCustomColumnGetter.cs" />
+    <Compile Include="New\DefaultPostDataBindHandler.cs" />
+    <Compile Include="New\IBaseBusinessPart_New.cs" />
+    <Compile Include="New\IBusinessContextMenuItemGenerator.cs" />
+    <Compile Include="New\IBusinessQueryService.cs" />
+    <Compile Include="New\IBusinessQueryServiceGetter.cs" />
+    <Compile Include="New\IBusinessInfoExtractor.cs" />
+    <Compile Include="New\IBusinessSpecialConditioner.cs" />
+    <Compile Include="New\ICustomColumnGetter.cs" />
+    <Compile Include="New\IDataBinder.cs" />
+    <Compile Include="New\IListBaseBusinessPart.cs" />
+    <Compile Include="New\IMessageBoxService.cs" />
+    <Compile Include="New\IMessageRelationHandler.cs" />
+    <Compile Include="New\InternalMailBaseBusinessPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New\InternalMailBaseBusinessPart.Designer.cs">
+      <DependentUpon>InternalMailBaseBusinessPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\IPostDataBindHandler.cs" />
+    <Compile Include="New\IQueryCriteriaGetter.cs" />
+    <Compile Include="New\ListBaseBusinessPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New\ListBaseBusinessPart.Designer.cs">
+      <DependentUpon>ListBaseBusinessPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="New\MessageBoxService.cs" />
+    <Compile Include="New\OceanExportBusinessContextMenuItemGenerator.cs" />
+    <Compile Include="New\TabBaseBusinessPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="New\TabBaseBusinessPart.Designer.cs">
+      <DependentUpon>TabBaseBusinessPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Base Control\RepositoryItemMemoExEditBIS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Base Control\RepositoryItemMemoExEditViewInfoBIS.cs" />
+    <Compile Include="BusinessTemplateBaseLoader.cs" />
+    <Compile Include="Column Template\BusinessColumnInfo.cs" />
+    <Compile Include="Column Template\ColumnTemplateFileData.cs" />
+    <Compile Include="Column Template\ColumnTemplateLoader.cs" />
+    <Compile Include="Column Template\ColumnTemplateSectionData.cs" />
+    <Compile Include="Common\ColumnEditFactory.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\MailBusinessHelper.cs" />
+    <Compile Include="Common\MailInfoGetter.cs" />
+    <Compile Include="Common\MenuItemFactory.cs" />
+    <Compile Include="ContextMenu Template\ContextMenuItemInfo.cs" />
+    <Compile Include="ContextMenu Template\ContextMenuFileLoader.cs" />
+    <Compile Include="OperationFactory\BusinessPartParam.cs" />
+    <Compile Include="Service Interface\BusinessOperationHandleService.cs" />
+    <Compile Include="Service Interface\IBusinessOperationHandleService.cs" />
+    <Compile Include="Service Interface\IGetBillInfoFactory.cs" />
+    <Compile Include="Service Interface\IGetDescriptionCommand.cs" />
+    <Compile Include="Service Interface\IGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\GetBillInfoFactory.cs" />
+    <Compile Include="Service Interface\OceanBookingInfoGetDescriptionCommand.cs" />
+    <Compile Include="Service Interface\OceanBookingInfoGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\OceanCustomsGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\OceanCustomsGetDescriptionCommand.cs" />
+    <Compile Include="Service Interface\OceanTruckInfoGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\OceanTruckInfoGetDescriptionCommand.cs" />
+    <Compile Include="Service Interface\OceanHBLInfoGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\OceanHBLInfoGetDescriptionCommand.cs" />
+    <Compile Include="Service Interface\OceanMBLInfoGetRefNoCommand.cs" />
+    <Compile Include="Service Interface\OceanMBLInfoGetDescriptionCommand.cs" />
+    <Compile Include="SubscriptionPublishService\BusinessOperationCallbackService.cs" />
+    <Compile Include="SubscriptionPublishService\IBusinessOperationCallbackService.cs" />
+    <Compile Include="TabControl\TabControl.cs" />
+    <Compile Include="TabControl\TabControlReadXml.cs" />
+    <Compile Include="Toolbar Template\OperationToolbarCommand.cs" />
+    <Compile Include="Toolbar Template\ToobarItemFactory.cs" />
+    <Compile Include="Toolbar Template\ToolbarBuilder.cs" />
+    <Compile Include="Toolbar Template\ToolbarManager.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateFileData.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateLoader.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateSectionData.cs" />
+    <Compile Include="UIHelper.cs" />
+    <Compile Include="UserPrivateInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Advance Search\frmAdvanceQuery.resx">
+      <DependentUpon>frmAdvanceQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bkg Failed\BkgFailed.resx">
+      <DependentUpon>BkgFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\BaseBusinessPart_New.resx">
+      <DependentUpon>BaseBusinessPart_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\InternalMailBaseBusinessPart.resx">
+      <DependentUpon>InternalMailBaseBusinessPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\ListBaseBusinessPart.resx">
+      <DependentUpon>ListBaseBusinessPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New\TabBaseBusinessPart.resx">
+      <DependentUpon>TabBaseBusinessPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.TaskCenter.ServiceInterface\ICP.TaskCenter.ServiceInterface.csproj">
+      <Project>{D87AC354-85E8-496F-97BF-75133E06B6FC}</Project>
+      <Name>ICP.TaskCenter.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="New\BusinessContextMenuItemGenerator.xml" />
+    <Content Include="New\BusinessInfoExtractConfig.xml" />
+    <Content Include="Resources\process2.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

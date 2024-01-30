@@ -1,0 +1,868 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.MailCenter.Business.UI</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart">
+            <summary>
+            海出高级查询用户控件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.userCompanyList">
+            <summary>
+            用户所挂公司列表
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.ids">
+            <summary>
+            用户所挂公司列表组织ID集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.soByusers">
+            <summary>
+            客服数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.overseasCSusers">
+            <summary>
+            海外客服数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.DocByusers">
+            <summary>
+            文件员数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.salesUsers">
+            <summary>
+            揽货人数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetQueryConditions">
+            <summary>
+            获取当前用户的上一次的查询条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.LastAdvanceQueryString(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            初始化上一次查询结果集合的赋值操作
+            </summary>
+            <param name="initValues"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.Strreplace(System.String)">
+            <summary>
+            返回替换好的字符串
+            </summary>
+            <param name="replace">替换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetServiceDataSource">
+            <summary>
+            设置客服数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetSalesDataSource">
+            <summary>
+            设置揽货人数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetOverseasCSDataSource">
+            <summary>
+            设置海外客服数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetOpBranchDataSource">
+            <summary>
+            设置操作口岸数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SetSalesBranchDataSource">
+            <summary>
+            设置揽货部门的数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.Reset">
+            <summary>
+            清空界面数据
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.CreatBusinessQueryCriteria">
+            <summary>
+            创建业务查询实体对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.OperationViewCode">
+            <summary>
+            查询所对应的模板代码
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.selectedCompanyIds">
+            <summary>
+            查询所对应的公司IDs
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.CompanyIDs">
+            <summary>
+            操作口岸ID集合
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SalesBranchIDs">
+            <summary>
+            揽货部门ID集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SalesID">
+            <summary>
+            揽货人ID
+            </summary>
+            
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.DocID">
+            <summary>
+            文件员Id
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.SoByID">
+            <summary>
+            订单员ID
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.OverseasCsID">
+            <summary>
+            海外客服ID
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.LeaveDataTime">
+            <summary>
+            离港时间
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.ArriveDataTime">
+            <summary>
+            到港时间
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.FromDataTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanExportBusinessQueryPart.ToDataTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart">
+            <summary>
+            海出高级查询用户控件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.userCompanyList">
+            <summary>
+            用户所挂公司列表
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.ids">
+            <summary>
+            用户所挂公司列表组织ID集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.soByusers">
+            <summary>
+            客服数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.overseasCSusers">
+            <summary>
+            海外客服数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.DocByusers">
+            <summary>
+            文件员数据源
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.salesUsers">
+            <summary>
+            揽货人数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetQueryConditions">
+            <summary>
+            获取当前用户的上一次的查询条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.LastAdvanceQueryString(System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            初始化上一次查询结果集合的赋值操作
+            </summary>
+            <param name="initValues"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.Strreplace(System.String)">
+            <summary>
+            返回替换好的字符串
+            </summary>
+            <param name="replace">替换的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.Locale">
+            <summary>
+            中英文设置
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.Reset">
+            <summary>
+            清空界面数据
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.CreatBusinessQueryCriteria">
+            <summary>
+            创建业务查询实体对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetCustomer">
+            <summary>
+            设置自定义方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetNotApliedReleaseCargo">
+            <summary>
+            设置未申请放货方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetAppliedReleaseCargo">
+            <summary>
+            设置已申请放货方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetNotReleasedBL">
+            <summary>
+            设置未下达放单指令方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetReleasedBL">
+            <summary>
+            设置已下达放单指令方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetAcceptedReleaseBL">
+            <summary>
+            设置已签收放单指令方案的样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetReleasedCargo">
+            <summary>
+            设置已放货样式
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.BindCustomerService">
+            <summary>
+            绑定客服
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.BindFiler">
+            <summary>
+            绑定文件员
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SetLazyLoaders">
+            <summary>
+            注册延迟加载的数据源
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.cmbSales_Enter(System.Object,System.EventArgs)">
+            <summary>
+            加载揽货人
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.OperationViewCode">
+            <summary>
+            查询所对应的模板代码
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.selectedCompanyIds">
+            <summary>
+            查询所对应的公司IDs
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.companyID">
+            <summary>
+            操作口岸ID
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.SalesID">
+            <summary>
+            揽货人ID
+            </summary>
+            
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.OceanImportBusinessQueryPart.DocID">
+            <summary>
+            文件员Id
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.BusinessModelPluginInit">
+            <summary>
+            邮件业务链接面板模块入口类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.BusinessModelPluginInit.currentPart">
+            <summary>
+            业务面板区域中当前显示的业务面板
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.InnerShowBusinessPart(System.String)">
+            <summary>
+            显示业务面板
+            如果参数中模板代码为空，则根据解析消息获取的模板代码来显示面板
+            ，否则以参数中的模板代码为准
+            </summary>
+            <param name="templateCode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_4in1(System.Object,System.EventArgs)">
+            <summary>
+            打开4合1面板
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_Customer(System.Object,System.EventArgs)">
+            <summary>
+            打开客户面板
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_AllocateSO(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示分配SO界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_UploadMBL(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传MBL界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_UploadAP(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传AP界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_EmailCenter_UploadAN(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传AP界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModelPluginInit.Command_New_Feedback(System.Object,System.EventArgs)">
+            <summary>
+            新增反馈
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.BusinessModelPluginInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.BusinessModelPluginInit.MailAction">
+            <summary>
+            邮件暗码
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.BusinessModuleInit">
+            <summary>
+            邮件业务链接面板模块入口类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.Business.UI.BusinessModuleInit.currentPart">
+            <summary>
+            业务面板区域中当前显示的业务面板
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.InnerShowBusinessPart(System.String)">
+            <summary>
+            显示业务面板
+            如果参数中模板代码为空，则根据解析消息获取的模板代码来显示面板
+            ，否则以参数中的模板代码为准
+            </summary>
+            <param name="templateCode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_4in1(System.Object,System.EventArgs)">
+            <summary>
+            打开4合1面板
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_Customer(System.Object,System.EventArgs)">
+            <summary>
+            打开客户面板
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_AllocateSO(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示分配SO界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_UploadMBL(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传MBL界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_UploadAP(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传AP界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_EmailCenter_UploadAN(System.Object,System.EventArgs)">
+            <summary>
+            邮件中心显示上传AP界面命令
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.BusinessModuleInit.Command_New_Feedback(System.Object,System.EventArgs)">
+            <summary>
+            新增反馈
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.BusinessModuleInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.BusinessModuleInit.MailAction">
+            <summary>
+            邮件暗码
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.SpecifyRoleQueryController">
+            <summary>
+            客户和承运人业务面板查询数据控制器
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.CommonQueryController">
+            <summary>
+            邮件中心查询数据管理者
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.ICommonQuery">
+            <summary>
+            邮件中心业务查询接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.IsUnknownBusinessPart">
+            <summary>
+            是否是未知业务面板业务面板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetLocalOperationViewInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取本地缓存单票业务
+            </summary>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationViewInfo(System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            获取服务端单票业务
+            </summary>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationListByMessageRelations(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,ICP.Message.ServiceInterface.OperationMessageRelation[])">
+            <summary>
+            根据关联信息获取业务列表
+            </summary>
+            <param name="criteria"></param>
+            <param name="messageRelations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationListByContact(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            获取联系人业务列表
+            </summary>
+            <param name="emailAddress"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationListBySubjectInNO(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,ICP.Message.ServiceInterface.Message)">
+            <summary>
+            根据邮件主题关键字获取业务(匹配到多个单号循环从本地缓存查找)
+            </summary>
+            <param name="keyword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationListByKeyWord(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            根据输入单号或客户名称查询业务列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetData(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,ICP.Message.ServiceInterface.Message)">
+            <summary>
+            查询数据
+            </summary>
+            <param name="criteria"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.ICommonQuery.GetOperationViewList(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            获取业务列表
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.GetData(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,ICP.Message.ServiceInterface.Message)">
+            <summary>
+            获取业务数据共用方法
+            </summary>
+            <param name="criteria"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.IsExternalMail">
+            <summary>
+            是否是外部邮件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.IsAllContactExsit">
+            <summary>
+            所有外部联系人都有被存储到数据库
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.InnerGetSenderOperationList">
+             <summary>
+            获取该邮件的发件人的业务   
+             </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.InnerGetMailOperationList">
+            <summary>
+            程序自动从本地缓存查找(根据邮件或主题单号)
+            </summary>
+            <param name="criteria"></param>
+            <param name="sendFrom"></param>
+            <param name="messageID"></param>
+            <param name="messageReference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.MergeDataTable(System.Data.DataTable)">
+             <summary>
+            合并数据 
+             </summary>
+             <param name="tableNew"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.CommonQueryController.MergeDataTable(System.Data.DataTable,System.Data.DataTable)">
+            <summary>
+            合并数据集
+            </summary>
+            <param name="oldTable"></param>
+            <param name="newTable"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.commandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.AutoWaitRelation">
+            <summary>
+            是否自动等待关联, true: 等待，false:不需要等待
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.dataList">
+            <summary>
+            数据集合
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.AdvanceQueryString">
+            <summary>
+            高级查询SQL
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.messageEntity">
+            <summary>
+            消息实体
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.Criteria">
+            <summary>
+            业务查询参数
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.MessageRelations">
+            <summary>
+            关联业务实体
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.CommonQueryController.HasMessageID">
+            <summary>
+            邮件是否存在MessageID
+            </summary>
+        </member>
+        <!-- 对于成员“P:ICP.MailCenter.Business.UI.CommonQueryController.SourceTypes”忽略有格式错误的 XML 注释 -->
+        <member name="M:ICP.MailCenter.Business.UI.SpecifyRoleQueryController.GetOperationListBySubjectInNO(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,ICP.Message.ServiceInterface.Message)">
+            <summary>
+            本地缓存根据邮件主题匹配单号查找到业务
+            </summary>
+            <param name="criteria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.SpecifyRoleQueryController.SaveSingleRelation(System.Data.DataRow,System.String,ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+             <summary>
+            本地缓存业务列表中都是关于当前登录用户的业务，除了搜索栏和高级搜索中搜索业务后，
+             关联该票业务，那么该票业务不属于当前参与者。
+             但根据主题单号查询业务列表条件无关
+             </summary>
+             <param name="dt"></param>
+             <param name="criteria"></param>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessageBusinessInfoExtractor">
+            <summary>
+            消息业务信息抽取类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageBusinessInfoExtractor.GetMessageTemplateCode(ICP.Message.ServiceInterface.Message,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageBusinessInfoExtractor.GetTemplateCode(ICP.Message.ServiceInterface.Message,System.Boolean)">
+            <summary>
+            根据消息获取模板代码
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessageBusinessQueryServiceGetter">
+            <summary>
+            消息业务面板业务数据查询服务类获取器
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageBusinessQueryServiceGetter.SingleQuery(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,System.Object)">
+            <summary>
+            回调刷新邮件中心业务面板时，去查找某票单，如果本地缓存表没有找到，就到服务器数据库找
+            </summary>
+            <param name="criteria"></param>
+            <param name="parameter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessageCustomColumnGetter">
+            <summary>
+            消息业务面板自定义列获取器
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageCustomColumnGetter.Get">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessageDataBinder">
+            <summary>
+            消息业务面板数据绑定器
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageDataBinder.DataBind(ICP.Operation.Common.ServiceInterface.IBaseBusinessPart_New,System.Object,System.Object)">
+            <summary>
+            数据绑定
+            </summary>
+            <param name="basePart"></param>
+            <param name="data"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.MessageDataBinder.commandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessagePostDataBindHandler">
+            <summary>
+            邮件中心业务面板数据绑定后处理器
+            <remarks>处理邮件关联</remarks>
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.PostHandle(ICP.Operation.Common.ServiceInterface.IBaseBusinessPart_New,System.Object,System.Object)">
+            <summary>
+            数据绑定后的处理
+            </summary>
+            <param name="businessPart"></param>
+            <param name="data"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.IsParentMessage(System.String,System.String,System.String)">
+            <summary>
+            根据邮件关联信息的MessageID和当前邮件MessageID对比，如果不一致，表示是父邮件（Reference）
+            </summary>
+            <param name="relationMessageID"></param>
+            <param name="messageId"></param>
+            <param name="referenceId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.SaveStopwatchTime">
+            <summary>
+            保存计时器日志
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.SaveOperationMessages(System.Boolean,ICP.Message.ServiceInterface.Message,System.Collections.Generic.List{ICP.Message.ServiceInterface.OperationMessageRelation},System.String,System.Guid)">
+            <summary>
+            保存邮件与业务的关联信息(发邮件有关联信息，表示父邮件实体和业务联系人已保存)
+            </summary>
+            <param name="hasSavedMessage"></param>
+            <param name="messageRelations"></param>
+            <param name="messageId"></param>
+            <param name="iMessageid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.ConvertContactsToXmlString(System.Boolean,System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects},System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            将邮件所有的业务联系人转换成Xml
+            </summary>
+            <param name="hasSavedMessageRelation"></param>
+            <param name="mailContacts"></param>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.MessagePostDataBindHandler.ConditionColumnGetter">
+            <summary>
+            消息标题单号匹配的列表列获取器
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.MessageQueryCriteriaGetter">
+            <summary>
+            关联邮件业务信息查询条件获取器
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageSpecialConditioner.DefaultMessageRelation(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,System.Object,System.String)">
+            <summary>
+            默认关联邮件与业务的关联， 和联系人与业务的关联
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageSpecialConditioner.HasOperationMessageRelation(System.Collections.Generic.List{ICP.Message.ServiceInterface.OperationMessageRelation})">
+            <summary>
+            是否存在业务关联信息
+            </summary>
+            <param name="operationMessageRelations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageSpecialConditioner.GetLocalOperationViewListBySubjectKeyWord(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria,System.String)">
+            <summary>
+            根据主题单号查找关联信息
+            </summary>
+            <param name="criteria"></param>
+            <param name="advanceQueryString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageSpecialConditioner.GetOperationMessageRelation(System.String,System.String)">
+            <summary>
+            根据邮件，获取关联信息
+            </summary>
+            <param name="messageId"></param>
+            <param name="messageReference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.Business.UI.MessageSpecialConditioner.IsAllContactExsits(ICP.DataCache.ServiceInterface.EmailSourceType[])">
+            <summary>
+            邮件里的所有外部邮件是否都有保存到服务端数据库
+            </summary>
+            <param name="emailSourceTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.MessageSpecialConditioner.commandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.Business.UI.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.Business.UI.Properties.Resources.process2">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+    </members>
+</doc>

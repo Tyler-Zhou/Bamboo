@@ -1,0 +1,4 @@
+﻿namespace ICP.DataCache.ServiceInterface
+{
+    
+}

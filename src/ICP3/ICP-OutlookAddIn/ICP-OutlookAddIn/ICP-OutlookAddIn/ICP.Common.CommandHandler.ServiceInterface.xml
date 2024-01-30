@@ -1,0 +1,2695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.Common.CommandHandler.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler">
+            <summary>
+            空运出口方法
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportAddData(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportCopyData(System.Object,System.EventArgs)">
+            <summary>
+            复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportEditData(System.Object,System.EventArgs)">
+            <summary>
+            编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportCancelData(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportReplyAgent(System.Object,System.EventArgs)">
+            <summary>
+            申请代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportOpenBl(System.Object,System.EventArgs)">
+            <summary>
+            提单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportOpenBill(System.Object,System.EventArgs)">
+            <summary>
+            账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.AirExportPrintOrder(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.AirExportCommandHandler.CommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler">
+            <summary>
+            空运进口方法
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportAddBooking(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportCopyBooking(System.Object,System.EventArgs)">
+            <summary>
+            复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportEditBooking(System.Object,System.EventArgs)">
+            <summary>
+            编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportCancelBooking(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportDownLoad(System.Object,System.EventArgs)">
+            <summary>
+            下载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportOpenBill(System.Object,System.EventArgs)">
+            <summary>
+            打开账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportPrintArrivalNotice(System.Object,System.EventArgs)">
+            <summary>
+            打印到港通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportPrintReleaseOrder(System.Object,System.EventArgs)">
+            <summary>
+            打印放货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportPrintProfit(System.Object,System.EventArgs)">
+            <summary>
+            打印利润表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportPrintAuthority(System.Object,System.EventArgs)">
+            <summary>
+            打印Authority To Make Entry
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportOpenCargoBook(System.Object,System.EventArgs)">
+            <summary>
+            提货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportBusinessTransfer(System.Object,System.EventArgs)">
+            <summary>
+            业务转移
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.AirImportDelivery(System.Object,System.EventArgs)">
+            <summary>
+            放货和取消放货
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.AirImportCommandHandler.CommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit">
+            <summary>
+            命令处理模块
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoAdd(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoEdit(System.Object,System.EventArgs)">
+            <summary>
+            编辑订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoCopy(System.Object,System.EventArgs)">
+            <summary>
+            复制订单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoApplyAgent(System.Object,System.EventArgs)">
+            <summary>
+            申请代理
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoApplySO(System.Object,System.EventArgs)">
+            <summary>
+            向订舱员发起申请订舱 发送邮件
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoCancel(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoResume(System.Object,System.EventArgs)">
+            <summary>
+            恢复订单 
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoOnBoard(System.Object,System.EventArgs)">
+            <summary>
+             确认装船
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoPrintOrder(System.Object,System.EventArgs)">
+            <summary>
+            业务联单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ForSoPrint(System.Object,System.EventArgs)">
+            <summary>
+            订舱确认书
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationBkgFailed(System.Object,System.EventArgs)">
+            <summary>
+            打开Bkg Failed
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAgentDocs(System.Object,System.EventArgs)">
+            <summary>
+            分发文档
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationInquireRates(System.Object,System.EventArgs)">
+            <summary>
+            询价
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationOnlineBkg(System.Object,System.EventArgs)">
+            <summary>
+            电子订舱
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationConfirmDebitFeesCHS(System.Object,System.EventArgs)">
+            <summary>
+            确认费用(中文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationConfirmDebitFeesENG(System.Object,System.EventArgs)">
+            <summary>
+            确认费用(英文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAskProfitPromiseCHS(System.Object,System.EventArgs)">
+            <summary>
+            利润承诺(中文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAskProfitPromiseENG(System.Object,System.EventArgs)">
+            <summary>
+            利润承诺(英文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOCancelationtoCustomerChs(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOCancelationtoCustomerEng(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 邮件英文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAskCustomerForSICHS(System.Object,System.EventArgs)">
+            <summary>
+            客户补料  邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAskCustomerForSIENG(System.Object,System.EventArgs)">
+            <summary>
+            客户补料   邮件英文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOCopyToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+            客户订舱成功 邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOCopyToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+            客户订舱成功 邮件英文版
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOFailureToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+             通知客户订舱失败 邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailSOFailureToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+             通知客户订舱失败 邮件英文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationOpenHBL(System.Object,System.EventArgs)">
+            <summary>
+             打开HBL
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationOpenMBL(System.Object,System.EventArgs)">
+            <summary>
+            打开MBL
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAccInfo(System.Object,System.EventArgs)">
+            <summary>
+            打开账单列表
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationOrderCustoms(System.Object,System.EventArgs)">
+            <summary>
+            报关
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationOrderTruck(System.Object,System.EventArgs)">
+            <summary>
+            派车
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationBLInfo(System.Object,System.EventArgs)">
+            <summary>
+            提单列表
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailBLCopyToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+             客户确认补料 邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailBLCopyToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+             客户确认补料 邮件中文版
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_UploadSIAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传SI附件信息
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_UploadSOAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传SO附件信息
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_EmailCenterUploadAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传海出附件信息
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_EmailCenterUploadDragAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传附件信息(包括拖拽的附件)
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_Submit(System.Object,System.EventArgs)">
+            <summary>
+            保存按钮
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_Refresh(System.Object,System.EventArgs)">
+            <summary>
+            刷新按钮
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_OpenEvent(System.Object,System.EventArgs)">
+            <summary>
+            打开事件列表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ListRefresh(System.Object,System.EventArgs)">
+            <summary>
+            刷新列表的单条记录
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_MailSoConfirmationToAgent(System.Object,System.EventArgs)">
+            <summary>
+            通知代理订舱确认书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.MailCenterToolBarCommand(ICP.Operation.Common.ServiceInterface.ToolBarCommand)">
+            <summary>
+            执行业务面板方法
+            </summary>
+            <param name="flag">1:选择公司,2:查找,3:高级查找,4:关联,5:提交,6:账单列表</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.SaveOperationMessageRelation(ICP.Operation.Common.ServiceInterface.MessageRelationParameter)">
+            <summary>
+            保存业务关联信息
+            </summary>
+            <param name="messageRelationParameter"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ConfirmInquirePriceToShipment(System.Object,System.EventArgs)">
+            <summary>
+            确认业务询价
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_Un_ConfirmInquirePriceToShipment(System.Object,System.EventArgs)">
+            <summary>
+            取消确认业务询价
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_EmailCenterCustomerConfirmeSI(System.Object,System.EventArgs)">
+            <summary>
+            通知客户确认补料
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CommandCommunicationCommidityInspection(System.Object,System.EventArgs)">
+            <summary>
+            打开商检单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CommandTaskCenterSilsMbl(System.Object,System.EventArgs)">
+            <summary>
+            创建一个MBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CommandCommunicationCargoTracking(System.Object,System.EventArgs)">
+            <summary>
+            打开CargoTracking
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CommandTaskCenterSilsHbl(System.Object,System.EventArgs)">
+            <summary>
+            创建一个HBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_LoadContainer(System.Object,System.EventArgs)">
+            <summary>
+            装箱
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_OceanTrackings(System.Object,System.EventArgs)">
+            <summary>
+            审核当前业务存在利润
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationAcptRev(System.Object,System.EventArgs)">
+            <summary>
+            接受代理修订的账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_MailSoConfirmationToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+            通知客户订舱确认书(中文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_MailSoConfirmationToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+             通知客户订舱确认书(英文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_MainSOCustomerServiceSOD(System.Object,System.EventArgs)">
+            <summary>
+            SOD成功以后发送邮件给客服(So Copy)
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_MainSOCustomerServiceSODDocument(System.Object,System.EventArgs)">
+            <summary>
+            SOD成功以后发送邮件给客服(文档列表上传附件)
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CommunicationMailBooking(System.Object,System.EventArgs)">
+            <summary>
+            邮件订舱
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_FailureBlastingWarehouse(System.Object,System.EventArgs)">
+            <summary>
+            订舱失败 爆仓
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_FailureCubicleType(System.Object,System.EventArgs)">
+            <summary>
+            订舱失败 柜型
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_FailureShippingDate(System.Object,System.EventArgs)">
+            <summary>
+            订舱失败 柜型
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_FailureOther(System.Object,System.EventArgs)">
+            <summary>
+            订舱失败 其他
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CancelSourcing(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 货源
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CancelPrice(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 价格
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CancelTrade(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 贸易
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_CancelOther(System.Object,System.EventArgs)">
+            <summary>
+            取消订舱 其他
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_RestoreBooking(System.Object,System.EventArgs)">
+            <summary>
+            恢复订舱
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_ClerkRestoreBooking(System.Object,System.EventArgs)">
+            <summary>
+            订舱员恢复订舱
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_QuickOpenTaskCenter(System.Object,System.EventArgs)">
+            <summary>
+            快捷方式打开任务中心k
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_Edit(System.Object,System.EventArgs)">
+            <summary>
+            海进编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_Cancel(System.Object,System.EventArgs)">
+             <summary>
+            海进业务取消
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_Transfer(System.Object,System.EventArgs)">
+            <summary>
+            海进业务转移
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_PrintArrivalNotice(System.Object,System.EventArgs)">
+            <summary>
+            打印到港通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_ReleaseOrder(System.Object,System.EventArgs)">
+            <summary>
+            打印放货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_PrintProfit(System.Object,System.EventArgs)">
+            <summary>
+            打印利润表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_PrintWorkSheet(System.Object,System.EventArgs)">
+            <summary>
+            打印工作表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_PrintForwardingBill(System.Object,System.EventArgs)">
+            <summary>
+            打印货代提单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_PrintExportBusinessInfo(System.Object,System.EventArgs)">
+            <summary>
+            打印出口业务信息报表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_Bill(System.Object,System.EventArgs)">
+            <summary>
+            打开账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_CargoBook(System.Object,System.EventArgs)">
+            <summary>
+            打印提货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_ReceiveRN(System.Object,System.EventArgs)">
+            <summary>
+            签收放单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_ApplyReleaseCargo(System.Object,System.EventArgs)">
+            <summary>
+            申请放单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_AgreeRC(System.Object,System.EventArgs)">
+            <summary>
+            同意放货
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_MailANToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+            发送到港通知书给客户 (中文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_MailANToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+            发送到港通知书给客户 (英文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_MailPickUpToCustomerCHS(System.Object,System.EventArgs)">
+            <summary>
+            发送提货通知书给客户 (中文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_MailPickUpToCustomerENG(System.Object,System.EventArgs)">
+            <summary>
+            发送提货通知书给客户 (英文版)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_UploadAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传海出附件信息
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImport_CommunicationUploadANAttachment(System.Object,System.EventArgs)">
+            <summary>
+             上传海出AN附件信息
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_AddData(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_CopyData(System.Object,System.EventArgs)">
+            <summary>
+            复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_EditData(System.Object,System.EventArgs)">
+            <summary>
+            编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_CancelData(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_ReplyAgent(System.Object,System.EventArgs)">
+            <summary>
+            申请代理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_OpenBl(System.Object,System.EventArgs)">
+            <summary>
+            打开提单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_OpenBill(System.Object,System.EventArgs)">
+            <summary>
+            打开账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_PrintOrder(System.Object,System.EventArgs)">
+            <summary>
+            业务联单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_AddBooking(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirExport_CopyBooking(System.Object,System.EventArgs)">
+            <summary>
+            复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_AiDownLoad(System.Object,System.EventArgs)">
+            <summary>
+            下载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_EditBooking(System.Object,System.EventArgs)">
+            <summary>
+            编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_CancelBooking(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_BusinessTransfer(System.Object,System.EventArgs)">
+            <summary>
+            业务转移
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_PrintArrivalNotice(System.Object,System.EventArgs)">
+            <summary>
+            到港通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_PrintReleaseOrder(System.Object,System.EventArgs)">
+            <summary>
+            放货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_PrintProfit(System.Object,System.EventArgs)">
+            <summary>
+            利润表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_PrintAuthority(System.Object,System.EventArgs)">
+            <summary>
+            打印Authority To Make Entry
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_OpenBill(System.Object,System.EventArgs)">
+            <summary>
+            账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_OpenCargoBook(System.Object,System.EventArgs)">
+            <summary>
+            提货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_AiDelivery(System.Object,System.EventArgs)">
+            <summary>
+            放货
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.AirImport_CancelDelivery(System.Object,System.EventArgs)">
+            <summary>
+            取消放货
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_EmailMailtoAskpeople(System.Object,System.EventArgs)">
+            <summary>
+            邮件-承运人
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.Command_EmailMailtoCarrier(System.Object,System.EventArgs)">
+            <summary>
+            邮件-询问人
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CurrentBaseBusinessPart">
+            <summary>
+            当前的业务处理面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CurrentListBaseBusinessPart">
+            <summary>
+            当前的列表业务面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanExportCommandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.OceanImportCommandHandler">
+            <summary>
+            海进命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommandHandlerInit.CommonCommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.IBaseComnandHandler">
+            <summary>
+            命令接口
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.IBaseComnandHandler.CurrentBaseBusinessPart">
+            <summary>
+            当前的业务处理面板
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetContextMenuItemBusinessRelatedNo(System.Object,System.Boolean)">
+            <summary>
+            返回业务上下文子菜单项所关联的业务号（比如SO,MBL No.,HBL NO.等)
+            </summary>
+            <param name="sender"></param>
+            <param name="isThrowException"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.CreateBusinessParameter(ICP.Common.ServiceInterface.DataObjects.ActionType,System.Boolean)">
+            <summary>
+            创造业务参数
+            </summary>
+            <param name="actionType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.Refersh">
+            <summary>
+            刷新数据源
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadingSi(System.String,System.Object)">
+            <summary>
+            上传SI附档
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadMBL(System.String,System.Object)">
+            <summary>
+            上传MBL copy       
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadAN(System.String,System.Object)">
+            <summary>
+            上传AN Copy
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadAP(System.String,System.Object)">
+            <summary>
+            上传AN Copy
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadAttachment(System.String,System.Object)">
+            <summary>
+            上传附件
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadAttachment(ICP.DataCache.ServiceInterface.UploadWay,System.String,System.Object,System.Collections.Generic.List{System.String})">
+            <summary>
+            上传附件
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UploadSO(System.String,System.Object)">
+            <summary>
+            上传SO附件
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.Upload(ICP.DataCache.ServiceInterface.UploadWay,System.Guid,System.String,System.Object,ICP.DataCache.ServiceInterface.SelectionType,ICP.Framework.CommonLibrary.Common.OperationType,System.Collections.Generic.List{System.String})">
+            <summary>
+            上传附件通用方法，打开上传附件界面
+            </summary>
+            <param name="way"></param>
+            <param name="operationID"></param>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+            <param name="type"></param>
+            <param name="operationType"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.CreateBusinessOperationContext">
+            <summary>
+            构造业务上下文实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.CreateUploadAttachmentParameter(ICP.DataCache.ServiceInterface.UploadWay,ICP.DataCache.ServiceInterface.SelectionType,ICP.Framework.CommonLibrary.Common.OperationType,ICP.FCM.OceanExport.ServiceInterface.DataObjects.OceanBookingInfo,ICP.DataCache.ServiceInterface.BusinessOperationContext,System.Object,System.String)">
+            <summary>
+            构造上传附件参数实体
+            </summary>
+            <param name="way"></param>
+            <param name="attachmentType"></param>
+            <param name="operationType"></param>
+            <param name="oceanBookingInfo"></param>
+            <param name="operationContext"></param>
+            <param name="mailItem"></param>
+            <param name="templateCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ShowContactPart(ICP.DataCache.ServiceInterface.AssociateType)">
+            <summary>
+            打开设置联系人面板
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.InitContactPart(System.Windows.Forms.Control)">
+            <summary>
+            初始化联系人面板
+            </summary>
+            <param name="contactPart"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.AssistantBindData">
+            <summary>
+            参与者面板绑定数据
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.Clear">
+            <summary>
+            清空参与者面板控件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.AddStaffPart">
+            <summary>
+            初始化参与者面板
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ClearedDataSource">
+            <summary>
+            ClearDataSource是一个全局的标识，是否清空了参与者面板数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.IsShowAssistantPart(System.Nullable{System.Boolean})">
+            <summary>
+            是否显示参与者面板
+            </summary>
+            <param name="_isShowAssistantPart"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.InitControl(ICP.Operation.Common.ServiceInterface.IBaseBusinessPart_New,System.Int32,System.String,System.String)">
+            <summary>
+            根据条件，选择是否加载联系人面板或参与者面板
+            </summary>
+            <param name="_baseBusinessPart"></param>
+            <param name="count"></param>
+            <param name="templateCode"></param>
+            <param name="sendFrom"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ClearControls">
+            <summary>
+            清空参与者面板
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.MailLink4UnknownMessageRelation">
+            <summary>
+            未知业务面板关联
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.RegisterFocusedRowChanged">
+            <summary>
+            订阅FocuseRowChangedHandler事件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.UnRegisterFocusedRowChanged">
+            <summary>
+            取消订阅FocuseRowChangedHandler事件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.OnListPartFocusedRowChanged(System.Object,DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs)">
+            <summary>
+            根据业务列表行改变事件，去设置联系人面板数据源
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.InnerSaveOperationMessageRelation(ICP.Operation.Common.ServiceInterface.MessageRelationParameter)">
+            <summary>
+            保存关联信息
+            </summary>
+            <param name="associateType">关联阶段类型（Normal,SI,SO）</param>
+            <param name="sender">发件人地址</param>
+            <param name="contactType">联系人类型(Customer,Carrier,Unknown)</param>
+            <param name="messageRelationType">关联类型（自动，手动）</param>
+            <param name="updateDateType">更改数据类型（增加，覆盖）</param>
+            <param name="senderName">发件人</param>
+            <param name="messageID"></param>
+            <param name="operationIDs"></param>
+            <param name="operationTypes"></param>
+            <param name="operationNos"></param>
+            <param name="updateDates"></param>
+            <param name="contactMails"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.SaveOperationMessageRelation(ICP.Operation.Common.ServiceInterface.MessageRelationParameter)">
+            <summary>
+            保存关联信息
+            </summary>
+            <param name="associateType">关联阶段类型（Normal,SI,SO）</param>
+            <param name="sender">发件人地址</param>
+            <param name="contactType">联系人类型(Customer,Carrier,Unknown)</param>
+            <param name="messageRelationType">关联类型（自动，手动）</param>
+            <param name="updateDateType">更改数据类型（增加，覆盖）</param>
+            <param name="senderName">发件人</param>
+            <param name="messageID"></param>
+            <param name="operationIDs"></param>
+            <param name="operationTypes"></param>
+            <param name="operationNos"></param>
+            <param name="updateDates"></param>
+            <param name="contactMails"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.SaveOceanContactAndOperationContacts(System.String,System.Guid[],ICP.Framework.CommonLibrary.Common.OperationType[],System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+            <summary>
+            根据联系人最近业务，设置联系人
+            </summary>
+            <param name="sender"></param>
+            <param name="operationIDs"></param>
+            <param name="operationTypes"></param>
+            <param name="operationNos"></param>
+            <param name="contactList"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetQueryCriteria(System.String,ICP.Framework.CommonLibrary.Common.OperationType,System.String)">
+            <summary>
+            构造查询参数实体
+            </summary>
+            <param name="sender"></param>
+            <param name="operationType"></param>
+            <param name="operationNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.SaveMessageRelation(System.Guid,ICP.Operation.Common.ServiceInterface.MessageRelationParameter)">
+            <summary>
+            保存业务信息
+            </summary>
+            <param name="associateType"></param>
+            <param name="relationType"></param>
+            <param name="updateDataType"></param>
+            <param name="operationIDs"></param>
+            <param name="operationTypes"></param>
+            <param name="operationNos"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.SaveMailInfo(ICP.DataCache.ServiceInterface.MessageRelationType,System.String,System.Guid)">
+            <summary>
+            保存邮件
+            </summary>
+            <param name="messageID"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.AddOceanContactsAndOperationContact(System.String,System.String,System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.ContactType},System.Guid[],ICP.Framework.CommonLibrary.Common.OperationType[],System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects})">
+            <summary>
+            保存业务联系人
+            </summary>
+            <param name="judgeContactExsits"></param>
+            <param name="emailAddress"></param>
+            <param name="senderName"></param>
+            <param name="contactType"></param>
+            <param name="operationIDs"></param>
+            <param name="updateDates"></param>
+            <param name="operationTypes"></param>
+            <param name="list"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetOperationMessageRelations(System.Guid,ICP.Operation.Common.ServiceInterface.MessageRelationParameter,System.Collections.Generic.List{ICP.DataCache.ServiceInterface.OperationContactParameters}@)">
+            <summary>
+            设置当前关联信息集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetCurrentMailRelations(System.Guid,ICP.Operation.Common.ServiceInterface.MessageRelationParameter,System.Boolean@)">
+            <summary>
+            获取当前邮件的关联信息
+            </summary>
+            <param name="iMessageId"></param>
+            <param name="messageRelationParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ConvertOceanContactsToXml(ICP.DataCache.ServiceInterface.MessageRelationType,System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects},System.Guid,ICP.Framework.CommonLibrary.Common.OperationType)">
+            <summary>
+            将业务联系人实体转换成Xml
+            </summary>
+            <param name="relationType"></param>
+            <param name="contacts"></param>
+            <param name="operationID"></param>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ConvertMessageInfoToXml(System.Guid,ICP.DataCache.ServiceInterface.MessageRelationType)">
+            <summary>
+            将邮件实体转换成Xml形式
+            </summary>
+            <param name="relationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.RemoveUnnecessaryOperationMessages(System.Guid[],System.Collections.Generic.List{ICP.Message.ServiceInterface.OperationMessageRelation})">
+            <summary>
+            移除多余的服务端数据库关联信息
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetContacts(ICP.Operation.Common.ServiceInterface.MessageRelationParameter,System.Collections.Generic.List{System.String}@)">
+            <summary>
+            获取邮件所有外部业务联系人
+            </summary>
+            <param name="messageRelationParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.GetContactStage(System.Nullable{ICP.DataCache.ServiceInterface.AssociateType})">
+            <summary>
+            获取联系人阶段
+            </summary>
+            <param name="associateType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.AfterSaveRelation(ICP.Operation.Common.UI.ListBaseBusinessPart,System.String[],System.String)">
+            <summary>
+            关联后将关联的业务置顶，并且字体加粗
+            </summary>
+            <param name="basePart"></param>
+            <param name="operationNo"></param>
+            <param name="isAssociatedFieldName"></param>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.CurrentBaseBusinessPart">
+            <summary>
+            当前的业务处理面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.ContactListPart">
+            <summary>
+            单选客户或者承运人面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.StaffListPart">
+            <summary>
+            参与者列表面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.CommonCommandHandler.isShowAssistantPart">
+            <summary>
+            是否显示的是参与者面板
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName">
+            <summary>
+            处理命令名称类（命名规范为Command_业务类型_命令名称）
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_Common_Test">
+            <summary>
+            测试命名
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_Common_Refresh">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoAdd">
+            <summary>
+            新增订舱单         
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoEdit">
+            <summary>
+            编辑/打开 订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoCancel">
+            <summary>
+            取消订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoResume">
+            <summary>
+            恢复订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoApplySo">
+            <summary>
+            申请订舱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoApplyAgent">
+            <summary>
+            申请代理
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoCopy">
+            <summary>
+            复制订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoOnBoard">
+            <summary>
+            订舱装船
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoPrintOrder">
+            <summary>
+            打印订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandForSoPrint">
+            <summary>
+            打印订舱确认书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationBkgFailed">
+            <summary>
+            打开Bkg Failed
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationCargoTracking">
+            <summary>
+            货物跟踪
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAgentDocs">
+            <summary>
+            分发文档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationInquireRates">
+            <summary>
+            询价
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationOnlineBkg">
+            <summary>
+            电子订舱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CommunicationMailBooking">
+            <summary>
+            邮件订舱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationConfirmDebitFeesChs">
+            <summary>
+            确认费用(中文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationConfirmDebitFeesEng">
+            <summary>
+            确认费用(英文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAskProfitPromiseChs">
+            <summary>
+            利润承诺(中文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAskProfitPromiseEng">
+            <summary>
+            利润承诺(英文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoCancelationtoCustomerChs">
+            <summary>
+            取消订舱 邮件中文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoCancelationtoCustomerEng">
+            <summary>
+            取消订舱 邮件英文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAskCustomerForSichs">
+            <summary>
+            客户补料  邮件中文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAskCustomerForSieng">
+            <summary>
+            客户补料   邮件英文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoCopyToCustomerChs">
+            <summary>
+            客户订舱成功 邮件中文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoCopyToCustomerEng">
+            <summary>
+            客户订舱成功 邮件英文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailBlCopyToCustomerChs">
+            <summary>
+            客户确认补料 邮件中文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailBlCopyToCustomerEng">
+            <summary>
+            客户确认补料 邮件英文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoFailureToCustomerChs">
+            <summary>
+            通知客户订舱失败 邮件中文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationMailSoFailureToCustomerEng">
+            <summary>
+            通知客户订舱失败 邮件英文版
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationOpenMbl">
+            <summary>
+            打开MBL
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationOpenHbl">
+            <summary>
+            打开HBL
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationAccInfo">
+            <summary>
+            打开账单列表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationOrderCustoms">
+            <summary>
+            报关
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationOrderTruck">
+            <summary>
+            派车
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationCommidityInspection">
+            <summary>
+            打开商检单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_EmailCenterCustomerConfirmedSI">
+            <summary>
+            要求客户补料确认
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationBlInfo">
+            <summary>
+            打开提单列表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandCommunicationUploadSIAttachment">
+            <summary>
+            任务中心上传SI附件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadSiAttachment">
+            <summary>
+            上传SI附档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadSOAttachment">
+            <summary>
+            上传SO附档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadMBLAttachment">
+            <summary>
+            上传MBL附档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadANAttachment">
+            <summary>
+            上传AN附档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadAPAttachment">
+            <summary>
+            上传SO附档
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadAttachment">
+            <summary>
+            上传附件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandUploadDragAttachment">
+            <summary>
+            上传拖拽附件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandEmailCenterOperationMessageRelation">
+            <summary>
+            设置业务关联
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandEmailCenterAddMbl">
+            <summary>
+            新增MBL
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandEmailCenterAddHbl">
+            <summary>
+            新增HBL
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandLoadContainer">
+            <summary>
+            装箱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_Submit">
+            <summary>
+            保存按钮
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_Refresh">
+            <summary>
+            刷新按钮
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_OpenEvent">
+            <summary>
+            打开事件列表界面
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_ListRefresh">
+            <summary>
+            刷新列表的修改记录
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CommunicationAcptRev">
+            <summary>
+            接受代理修订的账单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_OceanTrackings">
+            <summary>
+            审核当前业务存在利润
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_MailSoConfirmationToCustomerCHS">
+            <summary>
+            通知客户订舱确认书(中文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_MailSoConfirmationToCustomerENG">
+            <summary>
+            通知客户订舱确认书(英文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_MainSOCustomerServiceSOD">
+            <summary>
+            SOD成功以后发送邮件给客服(So Copy)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_MainSOCustomerServiceSODDocument">
+            <summary>
+            SOD成功以后发送邮件给客服(文档列表上传附件)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_MailSoConfirmationToAgent">
+            <summary>
+            通知代理订舱确认书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_FailureBlastingWarehouse">
+            <summary>
+            订舱失败 爆仓
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_FailureCubicleType">
+            <summary>
+            订舱失败 柜型
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_FailureShippingDate">
+            <summary>
+            订舱失败 船期
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_FailureOther">
+            <summary>
+            订舱失败 其他
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CancelSourcing">
+            <summary>
+            取消订舱 货源
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CancelPrice">
+            <summary>
+            取消订舱 价格
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CancelTrade">
+            <summary>
+            取消订舱 贸易
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_CancelOther">
+            <summary>
+            取消订舱 其他
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_RestoreBooking">
+            <summary>
+            恢复订舱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_ClerkRestoreBooking">
+            <summary>
+            订舱员恢复订舱
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_QuickOpenTaskCenter">
+            <summary>
+            快捷方式打开任务中心
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Download">
+            <summary>
+            业务下载
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Edit">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Cancel">
+            <summary>
+            取消海进业务
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Transfer">
+            <summary>
+            海进业务转移
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_PrintArrivalNotice">
+            <summary>
+            打印到港通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_ReleaseOrder">
+            <summary>
+            放货通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_PrintProfit">
+            <summary>
+            打印利润表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_PrintWorkSheet">
+            <summary>
+            打印工作表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_PrintForwardingBill">
+            <summary>
+            打印货单提单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_PrintExportBusinessInfo">
+            <summary>
+            打印出口业务信息报表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Bill">
+            <summary>
+            账单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_CargoBook">
+            <summary>
+            打印提货通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_ReceiveRN">
+            <summary>
+            签收放单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_ApplyReleaseCargo">
+            <summary>
+            申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_AgreeRC">
+            <summary>
+            同意放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_Delivery">
+            <summary>
+            放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_CancelApplyRC">
+            <summary>
+            取消申请放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_CancelAgreeRC">
+            <summary>
+            取消同意放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_CancelDelivery">
+            <summary>
+            取消放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_ExceptionReleaseRC">
+            <summary>
+            海进异常放货申请
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_UploadANAttachment">
+            <summary>
+            上传A/N附件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_UploadAttachment">
+            <summary>
+            海进上传附件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_MailANToCustomerCHS">
+            <summary>
+            发送到港通知书给客户 (中文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_MailANToCustomerENG">
+            <summary>
+            发送到港通知书给客户 (英文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_MailPickUpToCustomerCHS">
+            <summary>
+            发送提货通知书给客户 (中文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.OceanImport_MailPickUpToCustomerENG">
+            <summary>
+            发送提货通知书给客户 (英文版)
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_AddData">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_CopyData">
+            <summary>
+            复制
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_EditData">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_CancelData">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_ReplyAgent">
+            <summary>
+            申请代理
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_OpenBl">
+            <summary>
+            提单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_OpenBill">
+            <summary>
+            账单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_PrintOrder">
+            <summary>
+            业务联单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_AddBooking">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirExport_CopyBooking">
+            <summary>
+            复制
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_AiDownLoad">
+            <summary>
+            业务下载
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_EditBooking">
+            <summary>
+            编辑
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_CancelBooking">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_BusinessTransfer">
+            <summary>
+            业务转移
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_PrintArrivalNotice">
+            <summary>
+            到港通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_PrintReleaseOrder">
+            <summary>
+            放货通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_PrintProfit">
+            <summary>
+            利润表
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_PrintAuthority">
+            <summary>
+            打印Authority To Make Entry
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_OpenBill">
+            <summary>
+            账单
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_OpenCargoBook">
+            <summary>
+            提货通知书
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_AiDelivery">
+            <summary>
+            放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.AirImport_CancelDelivery">
+            <summary>
+            取消放货
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_MailofCustomer">
+            <summary>
+            此业务的客户历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_HistoryofCarrier">
+            <summary>
+            此业务的承运人历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_HistoryofAgent">
+            <summary>
+            此业务的代理历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_MailHistory">
+            <summary>
+            此业务的历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_HistoryofCustomers">
+            <summary>
+            客户的历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_HistoryofCarriers">
+            <summary>
+            业务的承运人历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.CommandMail_HistoryofAgents">
+            <summary>
+            业务的代理历史邮件
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_EmailMailtoAskpeople">
+            <summary>
+            邮件-询问人
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.CommonCommandName.Command_EmailMailtoCarrier">
+            <summary>
+            邮件-承运人
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.MailHelper">
+            <summary>
+            邮件中心关于邮件辅助类
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.MailHelper.GetMailInfo">
+            <summary>
+            获取邮件消息实体(包含邮件原附件)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.MailHelper.GetMessageInfo">
+            <summary>
+            邮件中心获取上传到服务端数据库中邮件的实体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.MailHelper.GetMessageInfo(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            将Message实体中一些不需要的属性值过滤，减少网络带宽
+            </summary>
+            <param name="messageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.MailHelper.GetAttachments">
+            <summary>
+            邮件所有附件（映射本地客户端路劲）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.MailHelper.IMessageID">
+            <summary>
+            邮件主键ID
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.MailHelper.SenderEmailAddress">
+            <summary>
+            邮件发件人地址
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.MailHelper.MessageID">
+            <summary>
+            邮件MessageID
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.MailHelper.MailSubject">
+            <summary>
+            邮件主题
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.MailHelper.ObjMailItem">
+            <summary>
+            将一封邮件MailItem类型转换成Object对象，在使用该对象传参数的地方，就不需要引用Outlook组件
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.Oceanbookinginfo">
+            <summary>
+            海出订单实体
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterOpenSo(System.Object,System.EventArgs)">
+            <summary>
+            编辑订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoAdd(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterSilsMbl(System.Object,System.EventArgs)">
+            <summary>
+            创建一个MBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandOpenInquireRatesListPart">
+            <summary>
+            打开询价
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterSilsHbl(System.Object,System.EventArgs)">
+            <summary>
+            创建一个HBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.GetReallyInquireHistoryName(ICP.FRM.ServiceInterface.DataObjects.InquierType)">
+            <summary>
+            海运询价
+            </summary>
+            <param name="inquierType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterEditMbl(System.Object,System.EventArgs)">
+            <summary>
+            编辑MBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterEditHbl(System.Object,System.EventArgs)">
+            <summary>
+            编辑HBL
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterCommunicationBLInfo">
+            <summary>
+            打开提单
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterOrderCustoms(System.Object,System.EventArgs)">
+            <summary>
+            打开报关单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterOrderTruck(System.Object,System.EventArgs)">
+            <summary>
+            打开派车单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterCommunicationAccInfo(System.Object,System.EventArgs)">
+            <summary>
+            打开账单列表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoApplyAgent(System.Object,System.EventArgs)">
+            <summary>
+            申请代理
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoOnBoard(System.Data.DataRow)">
+            <summary>
+            确认装船
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoCopy(System.Object,System.EventArgs)">
+            <summary>
+            复制订单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoCancel(System.Object,System.EventArgs)">
+            <summary>
+            取消订单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CancelOrder">
+            <summary>
+            取消订单或激活业务
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoResume(System.Object,System.EventArgs)">
+            <summary>
+            恢复订单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoPrintOrder(System.Object,System.EventArgs)">
+            <summary>
+            业务联单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoPrint(System.Object,System.EventArgs)">
+            <summary>
+            订舱确认书
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.OpenBkgFailed(System.Object,System.EventArgs)">
+            <summary>
+            打开Bkg Failed 页面
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.OpenDispatchDocument(System.Object,System.EventArgs)">
+            <summary>
+            分发文档
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterCommunicationInquireRates(System.Object,System.EventArgs)">
+            <summary>
+            询价
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandEmbl(System.Object,System.EventArgs)">
+            <summary>
+            EDI电子订舱
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.BuildBussinessInfo">
+            <summary>
+            业务上下文
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.AskCustomerForSi(System.Boolean)">
+            <summary>
+            客户补料 邮件发送的方法
+            </summary>
+            <param name="isEnglish">是否发送英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailSoCopyToCustomer(System.Boolean)">
+            <summary>
+            客户订舱成功 邮件发送的方法
+            </summary>
+            <param name="isEnglish">是否为英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailSoFailureToCustomer(System.Boolean)">
+            <summary>
+             通知客户订舱失败 邮件发送的方法
+            </summary>
+            <param name="isEnglish"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailSoCancelationtoCustomer(System.Boolean)">
+            <summary>
+            取消订舱 邮件发送的方法
+            </summary>
+            <param name="isEnglish">是否为英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ConfirmDebitFees(System.Boolean)">
+            <summary>
+            费用确认
+            </summary>
+            <param name="isEnglish">是否发送英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.AskProfitPromise(System.Boolean)">
+            <summary>
+            利润承诺
+            </summary>
+            <param name="isEnglish">是否发送英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailBlCopyToCustomer(System.Boolean)">
+            <summary>
+            客户确认补料发送邮件
+            </summary>
+            <param name="isEnglish">是否发送英文版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandTaskCenterForSoApplySo">
+            <summary>
+            向订舱员发起申请订舱 发送邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailCenterCustomerConfirmSI">
+            <summary>
+            通知客户确认补料
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailCenterCommidityInspection">
+            <summary>
+            打开商检单
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.OpenTaskCenter(ICP.DataCache.ServiceInterface.BusinessOperationContext)">
+            <summary>
+            打开任务中心
+            </summary>
+            <param name="operationContext"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ShowErrorInfo(System.String)">
+            <summary>
+            提示信息
+            </summary>
+            <param name="result">提示信息内容</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.LoadContainer">
+            <summary>
+            装箱
+            </summary>
+            <param name="operationNo"></param>
+            <param name="oceanBookingId"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.Open(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            打开事件列表
+            </summary>
+            <param name="listBase">数据列表</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ListRefresh(ICP.Framework.CommonLibrary.Common.OperationType,ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            列表刷新
+            </summary>
+            <param name="operationType">业务列别</param>
+            <param name="listBase">数据列表</param>
+            <param name="tabControl">Tab页面</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ShowReviseAccepte">
+            <summary>
+             弹出海出修订签收比较界面
+             </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.SetUpdateOceanTrackings(System.Guid)">
+            <summary>
+            审核当前业务存在利润
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailSoConfirmationToCustomer(System.Boolean)">
+            <summary>
+            通知客户订舱确认书
+            </summary>
+            <param name="isEnglish">发送邮件版本</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MainSOCustomerServiceSOD">
+            <summary>
+            SOD成功以后发送邮件给客服(So Copy)
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MainSOCustomerServiceSODDocument">
+            <summary>
+            SOD成功以后发送邮件给客服(文档列表上传附件)
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.MailSoConfirmationToAgent">
+            <summary>
+            通知代理订舱确认书
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommunicationMailBooking">
+            <summary>
+            邮件订舱
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.EmailMailtoAskpeople">
+            <summary>
+            邮件-询问人
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.EmailMailtoCarrier">
+            <summary>
+            邮件-承运人
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.OEEmailQueryPartShow(System.String,System.Int32,System.Int32,System.Int32,System.String,System.Nullable{System.Int32},System.String)">
+            <summary>
+            弹出窗体
+            </summary>
+            <param name="no">业务号</param>
+            <param name="noType">业务号类别</param>
+            <param name="types">分类</param>
+            <param name="dateType">时间类型</param>
+            <param name="main">邮件地址</param>
+            <param name="area"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailMailofCustomer">
+            <summary>
+            此业务的客户历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailHistoryofCarrier">
+            <summary>
+            此业务的承运人历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailHistoryofAgent">
+            <summary>
+             此业务的代理历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailMailHistory">
+            <summary>
+            此业务的历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailHistoryofCustomers">
+            <summary>
+            客户的历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailHistoryofCarriers">
+            <summary>
+            业务的承运人历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandMailHistoryofAgents">
+            <summary>
+            业务的代理历史邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.BkgFailedShow(System.String,System.Guid,ICP.Operation.Common.ServiceInterface.CancelBooking,ICP.Operation.Common.ServiceInterface.FailureBooking,System.String)">
+            <summary>
+            弹出输入UI 
+            </summary>
+            <param name="theme">邮件主题</param>
+            <param name="operationId">业务单号</param>
+            <param name="cancelBooking"></param>
+            <param name="failureBooking"></param>
+            <param name="text">表头</param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandFailureBlastingWarehouse">
+            <summary>
+            订舱失败 爆仓
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandFailureCubicleType">
+            <summary>
+            订舱失败 柜型
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandFailureShippingDate">
+            <summary>
+            订舱失败 船期
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandFailureOther">
+            <summary>
+            订舱失败 其他
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandCancelSourcing">
+            <summary>
+            取消订舱 货源
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandCancelPrice">
+            <summary>
+            取消订舱 价格
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandCancelTrade">
+            <summary>
+            取消订舱 贸易
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandCancelOther">
+            <summary>
+            取消订舱 贸易
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.RestoreBooking(System.String)">
+            <summary>
+             恢复订舱
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.QuickOpenTaskCenter">
+            <summary>
+            快捷方式打开任务中心
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.CurrentBaseBusinessPart">
+            <summary>
+            当前的业务处理面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ICPCommonOperationService">
+            <summary>
+            FCM 公共服务接口
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.ClientBusinessOperationService">
+            <summary>
+            客户端业务实现接口
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanExportCommandHandler.BusinessQueryService">
+            <summary>
+            业务查询接口
+            </summary>
+        </member>
+        <member name="T:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="F:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler._BusinessPart">
+            <summary>
+            业务面板需要传递的信息类
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandDownload(System.Object,System.EventArgs)">
+            <summary>
+            海进下载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandEdit(System.Object,System.EventArgs)">
+            <summary>
+            海运进口编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandCancel(System.Object,System.EventArgs)">
+            <summary>
+            取消业务
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandTransfer(System.Object,System.EventArgs)">
+            <summary>
+            业务转移
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintArrivalNotice(System.Object,System.EventArgs)">
+            <summary>
+            打印到港通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandReleaseOrder(System.Object,System.EventArgs)">
+            <summary>
+            打印发货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintProfit(System.Object,System.EventArgs)">
+            <summary>
+            打印利润表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintWorkSheet(System.Object,System.EventArgs)">
+            <summary>
+            打印工作表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintForwardingBill(System.Object,System.EventArgs)">
+            <summary>
+            打印货单提单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintExportBusinessInfo(System.Object,System.EventArgs)">
+            <summary>
+            打印业务信息报表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandOpenBill(System.Object,System.EventArgs)">
+            <summary>
+            打开账单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandPrintCargoBook(System.Object,System.EventArgs)">
+            <summary>
+            打开提货通知书
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandReceiveRN(System.Object,System.EventArgs)">
+            <summary>
+            签收放单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandApplyReleaseCargo(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            申请放单
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandCancelApplyReleaseCargo(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            取消申请放单
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandOceanImportAgreeRC(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            同意放货
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandOceanImportCancelAgreeRC(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            取消同意放货
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandOceanImportDelivery(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            放货
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandOceanImportCancelDelivery(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            取消放货
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandExceptionReleaseRC(ICP.Operation.Common.ServiceInterface.IListBaseBusinessPart)">
+            <summary>
+            异常放货申请
+            </summary>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.MailPickUpToCustomer(System.Boolean)">
+            <summary>
+            发送提货通知书给客户
+            </summary>
+            <param name="isEnglish"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.MailAnToCustomer(System.Boolean)">
+            <summary>
+            发送到港通知书给客户
+            </summary>
+            <param name="isEnglish"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.UploadingAN(System.String,System.Object)">
+            <summary>
+            上传海进AN附件
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.UploadingImportAttachment(System.String,System.Object)">
+            <summary>
+            上传海进附件
+            </summary>
+            <param name="mailSubject"></param>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.RootWorkItem">
+            <summary>
+            WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CommandHandler">
+            <summary>
+            公共命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.OceanExportCommandHandler">
+            <summary>
+            海出命令处理类
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.CurrentBaseBusinessPart">
+            <summary>
+            BaseBusinessPart 面板
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.ICPCommonOperationService">
+            <summary>
+            FCM 公共服务接口
+            </summary>
+        </member>
+        <member name="P:ICP.Common.CommandHandler.ServiceInterface.OceanImportCommandHandler.BusinessPartParam">
+            <summary>
+            业务面板需要传递的信息类
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{69B3181F-FF6E-4391-81F7-4B2E28DCFC7B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.MailCenter.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.MailCenter.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.MailCenter.ServiceInterface.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.MailCenter.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Business.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Common.ServiceInterface.DLL</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.AirExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FRM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FRM.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientService\IEmailTemplateGetter.cs" />
+    <Compile Include="ClientService\IMailCenterTemplateService.cs" />
+    <Compile Include="Common\MailRecipientInfo.cs" />
+    <Compile Include="Common\NodeInfo.cs" />
+    <Compile Include="Common\TimerManager.cs" />
+    <Compile Include="Common\WindowsExtension.cs" />
+    <Compile Include="Common\Enum.cs" />
+    <Compile Include="Constants\CommandNames.cs" />
+    <Compile Include="Constants\DataObjects\ListItem.cs" />
+    <Compile Include="Constants\DataObjects\NodePacked.cs" />
+    <Compile Include="Common\MailUtility.cs" />
+    <Compile Include="Constants\DataObjects\MailTemplateObject.cs" />
+    <Compile Include="Constants\DataObjects\TreeViewPacked.cs" />
+    <Compile Include="DataObjects\ToolMenuItemObject.cs" />
+    <Compile Include="Email Template\EmailTemplateGetvaluation.cs" />
+    <Compile Include="Email Template\TemplateBaseDictionary.cs" />
+    <Compile Include="Email Template\EmailTemplateFileData.cs" />
+    <Compile Include="Email Template\EmailTemplateGetter.cs" />
+    <Compile Include="Email Template\EmailTemplateItemData.cs" />
+    <Compile Include="Email Template\EmailTemplateSectionData.cs" />
+    <Compile Include="Email Template\TemplateFileData.cs" />
+    <Compile Include="Email Template\ITemplateItemData.cs" />
+    <Compile Include="Email Template\TemplateSectionData.cs" />
+    <Compile Include="ClientService\IOutLookService.cs" />
+    <Compile Include="Email Template\EmailTemplateLoader.cs" />
+    <Compile Include="ClientService\IMailCenterManageService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Email Template\en-US.etl" />
+    <None Include="Email Template\zh-CN.etl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Email Template\EmailTemplateHTML\InquireRateBookingConfirmEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\InquireRateRequestEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\InquireRateResultEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirApplySoEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirApplySoSEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirAskCustomerForSICN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirAskCustomerForSIEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirAskProfitPromiseCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirAskProfitPromiseEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBkgFailedCEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBkgFailedEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBkgFailedSEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBookingFailureCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBookingFailureEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBookingFailureNoCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirBookingFailureNoEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirCancelBookingCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirCancelBookingEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirCustomerServiceSODownCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirCustomerServiceSODownEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirDebitFeesCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\ConfirDebitFeesEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailAnToCustomerCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailAnToCustomerEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailPickUpToCustomerCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailPickUpToCustomerEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailSoConfirmationToAgentEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailSoConfirmationToCustomerCN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailSoConfirmationToCustomerEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MailtoCarrierEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\MainSOCustomerServiceSODEN.htm" />
+    <Content Include="Email Template\EmailTemplateHTML\QuotedPriceRequestEN.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.DataCache.ServiceInterface\ICP.DataCache.ServiceInterface.csproj">
+      <Project>{0a18d5a6-bbc9-4d1b-a095-ae862fd07746}</Project>
+      <Name>ICP.DataCache.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

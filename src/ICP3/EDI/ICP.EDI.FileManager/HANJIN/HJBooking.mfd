@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="17">
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties SelectedLanguage="cs"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="274" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="174"/>
+					</targets>
+					<view ltx="1369" lty="787" rbx="1431" rby="803"/>
+					<data>
+						<constant value="182" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="5" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="1364" lty="191" rbx="1414" rby="207"/>
+					<data>
+						<constant value="D" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="1364" lty="209" rbx="1426" rby="225"/>
+					<data>
+						<constant value="98B" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="1364" lty="227" rbx="1420" rby="243"/>
+					<data>
+						<constant value="UN" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="299" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="398"/>
+					</targets>
+					<view ltx="1370" lty="915" rbx="1432" rby="931"/>
+					<data>
+						<constant value="AAE" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="16" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="48"/>
+					</targets>
+					<view ltx="1367" lty="359" rbx="1429" rby="375"/>
+					<data>
+						<constant value="203" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="15" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="49"/>
+					</targets>
+					<view ltx="1366" lty="341" rbx="1428" rby="357"/>
+					<data>
+						<constant value="137" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="now" library="lang" uid="338" kind="5">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="983"/>
+					</targets>
+					<view ltx="306" lty="8" rbx="352" rby="45"/>
+				</component>
+				<component name="constant" library="core" uid="8" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="1365" lty="245" rbx="1427" rby="261"/>
+					<data>
+						<constant value="335" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="340" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="980"/>
+						<datapoint pos="1" key="982"/>
+						<datapoint pos="2" key="978"/>
+						<datapoint pos="3" key="976"/>
+						<datapoint pos="4" key="972"/>
+						<datapoint pos="5" key="974"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="985"/>
+					</targets>
+					<view ltx="667" lty="11" rbx="764" rby="129"/>
+				</component>
+				<component name="ParseDatetimeToXML" library="user" blackbox="0" uid="339" kind="19" visible="0">
+					<view ltx="407" lty="-3" rbx="591" rby="133"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="datatime" inpkey="984" componentid="7"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="DateTime" componentid="36" expanded="1">
+								<entry name="DateTime" expanded="1">
+									<entry name="CC" outkey="979"/>
+									<entry name="YY" outkey="981"/>
+									<entry name="MM" outkey="977"/>
+									<entry name="DD" outkey="975"/>
+									<entry name="HH" outkey="971"/>
+									<entry name="MS" outkey="973"/>
+								</entry>
+							</entry>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="356" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1088"/>
+					</targets>
+					<view ltx="819" lty="35" rbx="887" rby="51"/>
+					<data>
+						<constant value="UNOA" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="354" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1086"/>
+					</targets>
+					<view ltx="822" lty="56" rbx="860" rby="72"/>
+					<data>
+						<constant value="1" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ParseVoyageNo" library="user" blackbox="0" uid="270" kind="19" visible="0">
+					<view ltx="354" lty="365" rbx="483" rby="382"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="value" inpkey="157" componentid="99"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="156" componentid="98"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="25" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="80"/>
+					</targets>
+					<view ltx="392" lty="676" rbx="574" rby="692"/>
+					<data>
+						<constant value="NO WOOD PACKAGING MATERIAL IS USED IN THE SHIPMENT" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="4" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="1364" lty="169" rbx="1444" rby="185"/>
+					<data>
+						<constant value="IFTMBF" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="344" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1022"/>
+					</targets>
+					<view ltx="1371" lty="485" rbx="1427" rby="501"/>
+					<data>
+						<constant value="88" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="28" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="90"/>
+					</targets>
+					<view ltx="1369" lty="504" rbx="1425" rby="520"/>
+					<data>
+						<constant value="11" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="359" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1112"/>
+						<datapoint/>
+						<datapoint pos="2" key="1113"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1115"/>
+					</targets>
+					<view ltx="500" lty="160" rbx="618" rby="230"/>
+				</component>
+				<component name="empty" library="lang" uid="357" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1109"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1110"/>
+					</targets>
+					<view ltx="383" lty="167" rbx="465" rby="204"/>
+				</component>
+				<component name="constant" library="core" uid="12" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="15"/>
+					</targets>
+					<view ltx="681" lty="322" rbx="737" rby="338"/>
+					<data>
+						<constant value="EM" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="11" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="391" lty="211" rbx="447" rby="227"/>
+					<data>
+						<constant value="IC" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="300" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="390"/>
+					</targets>
+					<view ltx="1371" lty="935" rbx="1433" rby="951"/>
+					<data>
+						<constant value="AAW" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="327" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="852"/>
+					</targets>
+					<view ltx="1370" lty="964" rbx="1420" rby="980"/>
+					<data>
+						<constant value="G" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="358" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1106"/>
+						<datapoint/>
+						<datapoint pos="2" key="1107"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1108"/>
+					</targets>
+					<view ltx="754" lty="138" rbx="872" rby="208"/>
+				</component>
+				<component name="if-else" library="core" uid="367" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1130"/>
+						<datapoint/>
+						<datapoint pos="2" key="1131"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1128"/>
+					</targets>
+					<view ltx="792" lty="267" rbx="910" rby="337"/>
+				</component>
+				<component name="empty" library="lang" uid="371" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1173"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1172"/>
+					</targets>
+					<view ltx="594" lty="396" rbx="676" rby="433"/>
+				</component>
+				<component name="empty" library="lang" uid="368" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1132"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1129"/>
+					</targets>
+					<view ltx="386" lty="265" rbx="468" rby="302"/>
+				</component>
+				<component name="if-else" library="core" uid="361" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1117"/>
+						<datapoint/>
+						<datapoint pos="2" key="1118"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1120"/>
+					</targets>
+					<view ltx="525" lty="262" rbx="643" rby="332"/>
+				</component>
+				<component name="constant" library="core" uid="345" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1023"/>
+					</targets>
+					<view ltx="1371" lty="522" rbx="1421" rby="538"/>
+					<data>
+						<constant value="7" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="24" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="78"/>
+					</targets>
+					<view ltx="392" lty="658" rbx="574" rby="674"/>
+					<data>
+						<constant value="WOOD PACKAGING MATERIAL IS USED IN THE SHIPMENT AND HAS BEEN FUMIGATED" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="372" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1175"/>
+						<datapoint/>
+						<datapoint pos="2" key="1176"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1174"/>
+					</targets>
+					<view ltx="622" lty="460" rbx="740" rby="530"/>
+				</component>
+				<component name="constant" library="core" uid="298" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="381"/>
+					</targets>
+					<view ltx="664" lty="578" rbx="708" rby="594"/>
+					<data>
+						<constant value="70" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ICP3ParseStringToXML" library="user" blackbox="0" uid="337" kind="19" visible="0">
+					<view ltx="401" lty="434" rbx="561" rby="502"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="string" inpkey="964" componentid="280"/>
+							<entry name="length" inpkey="962" componentid="281"/>
+							<entry name="maxRow" inpkey="961" componentid="282"/>
+							<entry name="style" inpkey="960" componentid="283"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Header" componentid="284" expanded="1">
+								<entry name="Header" expanded="1">
+									<entry name="List" expanded="1">
+										<entry name="Item" outkey="963"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+					</data>
+				</component>
+				<component name="value-map" library="core" uid="377" kind="23">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1189"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1188"/>
+					</targets>
+					<view ltx="755" lty="665" rbx="837" rby="702"/>
+					<data>
+						<wsdl/>
+						<valuemap>
+							<valuemapTable>
+								<entry from="PP" to="P"/>
+								<entry from="CC" to="C"/>
+							</valuemapTable>
+							<input name="input" type="string"/>
+							<result name="result" type="string"/>
+						</valuemap>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="374" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1190"/>
+					</targets>
+					<view ltx="1371" lty="542" rbx="1427" rby="558"/>
+					<data>
+						<constant value="P1" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="280" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="158"/>
+					</targets>
+					<view ltx="1371" lty="656" rbx="1427" rby="672"/>
+					<data>
+						<constant value="FW" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="383" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1238"/>
+					</targets>
+					<view ltx="767" lty="749" rbx="859" rby="765"/>
+					<data>
+						<constant value="CN094969" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="272" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="172"/>
+					</targets>
+					<view ltx="1369" lty="751" rbx="1437" rby="767"/>
+					<data>
+						<constant value="HJSC" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="355" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1087"/>
+					</targets>
+					<view ltx="817" lty="83" rbx="873" rby="99"/>
+					<data>
+						<constant value="ZZ" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="value-map" library="core" uid="17" kind="23">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="50"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="51"/>
+					</targets>
+					<view ltx="670" lty="228" rbx="752" rby="265"/>
+					<data>
+						<wsdl/>
+						<valuemap>
+							<valuemapTable>
+								<entry from="CY-CY" to="1"/>
+								<entry from="CY-DOOR" to="2"/>
+								<entry from="CY-CFS" to="3"/>
+								<entry from="Cy to C&apos;haul on cy" to="4"/>
+								<entry from="CY-TACKLE" to="5"/>
+								<entry from="CY-FREE OUT" to="6"/>
+								<entry from="Cy to Mixed" to="7"/>
+								<entry from="DOOR-CY" to="8"/>
+								<entry from="DOOR-DOOR" to="9"/>
+								<entry from="DOOR-CFS" to="10"/>
+								<entry from="Door to C&apos;haul on cy" to="11"/>
+								<entry from="Door to Tackle" to="12"/>
+								<entry from="DR-FREE OUT" to="13"/>
+								<entry from="Door to Mixed" to="14"/>
+								<entry from="C&apos;haul on cy to Cy" to="15"/>
+								<entry from="C&apos;haul on cy to Door" to="16"/>
+								<entry from="C&apos;haul on cy to CFS" to="17"/>
+								<entry from="C&apos;haul on cy to C&apos;haul on cy" to="18"/>
+								<entry from="C&apos;haul on cy to Tackle" to="19"/>
+								<entry from="C&apos;haul on cy to Free out" to="20"/>
+								<entry from="C&apos;haul on cy to Mixed" to="21"/>
+								<entry from="TACKLE-CY" to="22"/>
+								<entry from="Tackle to Door" to="23"/>
+								<entry from="TACKLE-CFS" to="24"/>
+								<entry from="Tackle to C&apos;haul on cy" to="25"/>
+								<entry from="Tackle to Tackle" to="26"/>
+								<entry from="Tackle to Free out" to="27"/>
+								<entry from="Tackle to Mixed" to="28"/>
+								<entry from="FREE IN-CY" to="29"/>
+								<entry from="FREE IN-DR" to="30"/>
+								<entry from="Free in to CFS" to="31"/>
+								<entry from="Free in to C&apos;haul on cy" to="32"/>
+								<entry from="Free in to Tackle" to="33"/>
+								<entry from="FREE IN-FREE OUT" to="34"/>
+								<entry from="Free in to Mixed" to="35"/>
+								<entry from="Mixed to Cy" to="36"/>
+								<entry from="Mixed to Door" to="37"/>
+								<entry from="Mixed to CFS" to="38"/>
+								<entry from="Mixed to C&apos;haul on cy" to="39"/>
+								<entry from="Mixed to Tackle" to="40"/>
+								<entry from="Mixed to Free out" to="41"/>
+								<entry from="Mixed to Mixed" to="42"/>
+							</valuemapTable>
+							<input name="input" type="string"/>
+							<result name="result" type="string"/>
+						</valuemap>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="273" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="173"/>
+					</targets>
+					<view ltx="1369" lty="769" rbx="1431" rby="785"/>
+					<data>
+						<constant value="172" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="276" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="175"/>
+					</targets>
+					<view ltx="1372" lty="465" rbx="1422" rby="481"/>
+					<data>
+						<constant value="9" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="376" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1196"/>
+					</targets>
+					<view ltx="1371" lty="688" rbx="1421" rby="704"/>
+					<data>
+						<constant value="4" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="384" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1249"/>
+					</targets>
+					<view ltx="1372" lty="810" rbx="1434" rby="826"/>
+					<data>
+						<constant value="139" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="385" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1250"/>
+					</targets>
+					<view ltx="1374" lty="881" rbx="1424" rby="897"/>
+					<data>
+						<constant value="6" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="position" library="core" uid="312" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="389"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="388"/>
+					</targets>
+					<view ltx="375" lty="317" rbx="451" rby="354"/>
+				</component>
+				<component name="constant" library="core" uid="271" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="171"/>
+					</targets>
+					<view ltx="1368" lty="732" rbx="1418" rby="748"/>
+					<data>
+						<constant value="1" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="386" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1261"/>
+					</targets>
+					<view ltx="1379" lty="998" rbx="1441" rby="1014"/>
+					<data>
+						<constant value="102" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="289" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="184"/>
+					</targets>
+					<view ltx="1368" lty="843" rbx="1424" rby="859"/>
+					<data>
+						<constant value="CN" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="286" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="181"/>
+					</targets>
+					<view ltx="330" lty="435" rbx="374" rby="451"/>
+					<data>
+						<constant value="35" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="287" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="180"/>
+					</targets>
+					<view ltx="329" lty="455" rbx="367" rby="471"/>
+					<data>
+						<constant value="5" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="288" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="179"/>
+					</targets>
+					<view ltx="329" lty="475" rbx="373" rby="491"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="375" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1191"/>
+					</targets>
+					<view ltx="784" lty="481" rbx="930" rby="497"/>
+					<data>
+						<constant value="SAME AS CONSIGNEE" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="ICP3ParseCustomerToList" library="user" blackbox="0" uid="347" kind="19" visible="0">
+					<view ltx="389" lty="536" rbx="556" rby="607"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="string" inpkey="1021" componentid="288"/>
+							<entry name="length" inpkey="1020" componentid="289"/>
+							<entry name="maxRow" inpkey="1019" componentid="290"/>
+							<entry name="style" inpkey="1018" componentid="291"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Header" componentid="292" expanded="1">
+								<entry name="Header" expanded="1">
+									<entry name="List" expanded="1">
+										<entry name="Item" outkey="1017"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+					</data>
+				</component>
+				<component name="ICP3ParseCustomerToList" library="user" blackbox="0" uid="387" kind="19" visible="0">
+					<view ltx="404" lty="711" rbx="571" rby="782"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="string" inpkey="1273" componentid="288"/>
+							<entry name="length" inpkey="1271" componentid="289"/>
+							<entry name="maxRow" inpkey="1269" componentid="290"/>
+							<entry name="style" inpkey="1267" componentid="291"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Header" componentid="292" expanded="1">
+								<entry name="Header" expanded="1">
+									<entry name="List" expanded="1">
+										<entry name="Item" outkey="1272"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="31" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="110"/>
+					</targets>
+					<view ltx="1371" lty="567" rbx="1427" rby="583"/>
+					<data>
+						<constant value="20" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="346" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1024"/>
+					</targets>
+					<view ltx="1371" lty="614" rbx="1427" rby="630"/>
+					<data>
+						<constant value="CZ" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="296" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="185"/>
+					</targets>
+					<view ltx="683" lty="383" rbx="745" rby="399"/>
+					<data>
+						<constant value="AAA" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="18" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="52"/>
+					</targets>
+					<view ltx="1367" lty="377" rbx="1429" rby="393"/>
+					<data>
+						<constant value="AAI" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="23" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="81"/>
+						<datapoint pos="1" key="79"/>
+						<datapoint pos="2" key="82"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="83"/>
+					</targets>
+					<view ltx="609" lty="633" rbx="727" rby="703"/>
+				</component>
+				<component name="ICP3ParseStringToXML" library="user" blackbox="0" uid="369" kind="19" visible="0">
+					<view ltx="758" lty="540" rbx="918" rby="608"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="string" inpkey="1138" componentid="280"/>
+							<entry name="length" inpkey="1139" componentid="281"/>
+							<entry name="maxRow" inpkey="1134" componentid="282"/>
+							<entry name="style" inpkey="1133" componentid="283"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Header" componentid="284" expanded="1">
+								<entry name="Header" expanded="1">
+									<entry name="List" expanded="1">
+										<entry name="Item" outkey="1135"/>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="373" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1178"/>
+						<datapoint/>
+						<datapoint pos="2" key="1179"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1177"/>
+					</targets>
+					<view ltx="781" lty="373" rbx="899" rby="443"/>
+				</component>
+				<component name="document" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="282" rby="1351"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://tempuri.org/EDI-MBL.xsd"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="MBLDataSet" expanded="1">
+										<entry name="EDIDocument" expanded="1">
+											<entry name="CompanyCode" outkey="1089"/>
+											<entry name="CompanyInfo" outkey="941"/>
+											<entry name="DocumentNo" outkey="7"/>
+											<entry name="MBL" outkey="444" expanded="1">
+												<entry name="SoNo" outkey="1204"/>
+												<entry name="SendByName" outkey="8"/>
+												<entry name="SendByEMail" outkey="11"/>
+												<entry name="DeliveryTerm" outkey="64"/>
+												<entry name="PaymentTerm" outkey="189"/>
+												<entry name="ShipperInfo" outkey="1025"/>
+												<entry name="ConisgneeInfo" outkey="1276"/>
+												<entry name="WightUnit" outkey="101"/>
+												<entry name="Weight" outkey="102"/>
+												<entry name="QtyUnitISOCode" outkey="103"/>
+												<entry name="Qty" outkey="104"/>
+												<entry name="VolumeUnit" outkey="105"/>
+												<entry name="Volume" outkey="106"/>
+												<entry name="IsWoodPack" outkey="65"/>
+												<entry name="GoodsInfo" outkey="382"/>
+												<entry name="Vessel" outkey="191"/>
+												<entry name="VesselCode" outkey="192"/>
+												<entry name="Voyage" outkey="193"/>
+												<entry name="PolCode" outkey="196"/>
+												<entry name="PolName" outkey="197"/>
+												<entry name="PodCode" outkey="107"/>
+												<entry name="PodName" outkey="198"/>
+												<entry name="DeliveryCode" outkey="1221"/>
+												<entry name="DeliveryName" outkey="1222"/>
+												<entry name="Flag" outkey="12"/>
+												<entry name="Container" outkey="108" expanded="1">
+													<entry name="ContainerTypeISOCode" outkey="448"/>
+													<entry name="Qty" outkey="1104"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\Common\mbl.xsd" outputinstance="..\Common\mbl.xml" instanceroot="{http://tempuri.org/EDI-MBL.xsd}MBLDataSet"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="edi" library="text" uid="313" kind="16">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="975" lty="-2" rbx="1347" rby="1660"/>
+					<data>
+						<root scrollposition="56">
+							<header>
+								<namespaces/>
+							</header>
+							<entry name="FileInstance" expanded="1">
+								<entry name="document" expanded="1">
+									<entry name="Envelope" expanded="1">
+										<entry name="Interchange" expanded="1">
+											<entry name="UNB">
+												<entry name="S001">
+													<entry name="F0001" inpkey="1090"/>
+													<entry name="F0002" inpkey="1091"/>
+												</entry>
+												<entry name="S002">
+													<entry name="F0004" inpkey="1092"/>
+													<entry name="F0007" inpkey="1093"/>
+												</entry>
+												<entry name="S003">
+													<entry name="F0010" inpkey="1094"/>
+													<entry name="F0007" inpkey="1095"/>
+												</entry>
+												<entry name="F0020" inpkey="1096"/>
+											</entry>
+											<entry name="Group" expanded="1">
+												<entry name="Message_IFTMBF" expanded="1">
+													<entry name="UNH">
+														<entry name="F0062" inpkey="521"/>
+														<entry name="S009">
+															<entry name="F0065" inpkey="590"/>
+															<entry name="F0052" inpkey="591"/>
+															<entry name="F0054" inpkey="592"/>
+															<entry name="F0051" inpkey="593"/>
+														</entry>
+													</entry>
+													<entry name="BGM">
+														<entry name="C002">
+															<entry name="F1001" inpkey="519"/>
+														</entry>
+														<entry name="C106" expanded="1">
+															<entry name="F1004" inpkey="570"/>
+														</entry>
+														<entry name="F1225" inpkey="584"/>
+													</entry>
+													<entry name="CTA">
+														<entry name="F3139" inpkey="594"/>
+														<entry name="C056" expanded="1">
+															<entry name="F3412" inpkey="595"/>
+														</entry>
+													</entry>
+													<entry name="COM">
+														<entry name="C076" expanded="1">
+															<entry name="F3148" inpkey="596"/>
+															<entry name="F3155" inpkey="597"/>
+														</entry>
+													</entry>
+													<entry name="DTM">
+														<entry name="C507" expanded="1">
+															<entry name="F2005" inpkey="523"/>
+															<entry name="F2380" inpkey="528"/>
+															<entry name="F2379" inpkey="524"/>
+														</entry>
+													</entry>
+													<entry name="TSR">
+														<entry name="C536">
+															<entry name="F4065" inpkey="525"/>
+														</entry>
+													</entry>
+													<entry name="FTX" expanded="1">
+														<entry name="F4451" inpkey="589"/>
+														<entry name="C107" expanded="1"/>
+														<entry name="C108" expanded="1">
+															<entry name="F4440" inpkey="587"/>
+														</entry>
+													</entry>
+													<entry name="FTX" expanded="1" clone="1">
+														<entry name="F4451" inpkey="1141"/>
+														<entry name="C108" expanded="1">
+															<entry name="F4440" inpkey="1142"/>
+														</entry>
+													</entry>
+													<entry name="CNT">
+														<entry name="C270" expanded="1"/>
+													</entry>
+													<entry name="SG1">
+														<entry name="DTM">
+															<entry name="C507" expanded="1"/>
+														</entry>
+													</entry>
+													<entry name="SG7" expanded="1">
+														<entry name="TDT" expanded="1">
+															<entry name="F8051" inpkey="537"/>
+															<entry name="F8028" inpkey="563"/>
+															<entry name="C220">
+																<entry name="F8067" inpkey="508"/>
+															</entry>
+															<entry name="C040" expanded="1">
+																<entry name="F3127" inpkey="540"/>
+																<entry name="F1131" inpkey="509"/>
+																<entry name="F3055" inpkey="510"/>
+															</entry>
+															<entry name="C222" expanded="1">
+																<entry name="F8213" inpkey="575"/>
+																<entry name="F8212" inpkey="574"/>
+															</entry>
+														</entry>
+														<entry name="SG8" expanded="1">
+															<entry name="LOC" expanded="1">
+																<entry name="F3227" inpkey="562"/>
+																<entry name="C517" expanded="1">
+																	<entry name="F3225" inpkey="576"/>
+																	<entry name="F1131" inpkey="1241"/>
+																	<entry name="F3055" inpkey="1242"/>
+																	<entry name="F3224" inpkey="577"/>
+																</entry>
+															</entry>
+															<entry name="DTM">
+																<entry name="C507" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="SG8" clone="1">
+															<entry name="LOC" expanded="1">
+																<entry name="F3227" inpkey="1026"/>
+																<entry name="C517" expanded="1">
+																	<entry name="F3225" inpkey="1027"/>
+																	<entry name="F1131" inpkey="1243"/>
+																	<entry name="F3055" inpkey="1244"/>
+																	<entry name="F3224" inpkey="1028"/>
+																</entry>
+															</entry>
+															<entry name="DTM">
+																<entry name="C507" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="SG8" clone="1">
+															<entry name="LOC" expanded="1">
+																<entry name="F3227" inpkey="630"/>
+																<entry name="C517" expanded="1">
+																	<entry name="F3225" inpkey="631"/>
+																	<entry name="F1131" inpkey="1245"/>
+																	<entry name="F3055" inpkey="1246"/>
+																	<entry name="F3224" inpkey="634"/>
+																</entry>
+															</entry>
+															<entry name="DTM">
+																<entry name="C507" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="SG8" clone="1">
+															<entry name="LOC">
+																<entry name="F3227" inpkey="1032"/>
+																<entry name="C517" expanded="1">
+																	<entry name="F3225" inpkey="1033"/>
+																	<entry name="F1131" inpkey="1247"/>
+																	<entry name="F3055" inpkey="1248"/>
+																	<entry name="F3224" inpkey="1034"/>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="SG10">
+														<entry name="NAD" expanded="1">
+															<entry name="F3035" inpkey="512"/>
+															<entry name="C082" expanded="1">
+																<entry name="F3039" inpkey="1239"/>
+															</entry>
+															<entry name="C058" expanded="1">
+																<entry name="F3124" inpkey="585"/>
+															</entry>
+															<entry name="C080" expanded="1"/>
+														</entry>
+														<entry name="SG13">
+															<entry name="RFF" expanded="1">
+																<entry name="C506" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="SG14">
+															<entry name="CPI" expanded="1">
+																<entry name="C229" expanded="1"/>
+															</entry>
+															<entry name="LOC" expanded="1">
+																<entry name="C517" expanded="1"/>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="SG10" expanded="1" clone="1">
+														<entry name="NAD" expanded="1">
+															<entry name="F3035" inpkey="1036"/>
+															<entry name="C058" expanded="1">
+																<entry name="F3124" inpkey="1037"/>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="SG10" expanded="1" clone="1">
+														<entry name="NAD" expanded="1">
+															<entry name="F3035" inpkey="1274"/>
+															<entry name="C058" expanded="1">
+																<entry name="F3124" inpkey="1275"/>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="SG10" expanded="1" clone="1">
+														<entry name="NAD" expanded="1">
+															<entry name="F3035" inpkey="1192"/>
+															<entry name="C058" expanded="1">
+																<entry name="F3124" inpkey="1193"/>
+															</entry>
+														</entry>
+														<entry name="SG14" expanded="1">
+															<entry name="CPI" expanded="1">
+																<entry name="C229" expanded="1">
+																	<entry name="F5237" inpkey="1194"/>
+																</entry>
+																<entry name="F4237" inpkey="1195"/>
+															</entry>
+														</entry>
+													</entry>
+													<entry name="SG16">
+														<entry name="GID" expanded="1">
+															<entry name="F1496" inpkey="1259"/>
+															<entry name="C213" expanded="1">
+																<entry name="F7224" inpkey="572"/>
+																<entry name="F7065" inpkey="559"/>
+															</entry>
+														</entry>
+														<entry name="SG18" expanded="1">
+															<entry name="MEA" expanded="1">
+																<entry name="F6311" inpkey="531"/>
+																<entry name="C502" expanded="1">
+																	<entry name="F6313" inpkey="530"/>
+																</entry>
+																<entry name="C174" expanded="1">
+																	<entry name="F6411" inpkey="556"/>
+																	<entry name="F6314" inpkey="573"/>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="SG18" clone="1">
+															<entry name="MEA" expanded="1">
+																<entry name="F6311" inpkey="532"/>
+																<entry name="C502" expanded="1">
+																	<entry name="F6313" inpkey="533"/>
+																</entry>
+																<entry name="C174" expanded="1">
+																	<entry name="F6411" inpkey="529"/>
+																	<entry name="F6314" inpkey="571"/>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="SG21">
+															<entry name="PCI" expanded="1">
+																<entry name="C210" expanded="1"/>
+															</entry>
+														</entry>
+														<entry name="SG27">
+															<entry name="DGS" expanded="1"/>
+														</entry>
+													</entry>
+													<entry name="SG32" inpkey="554">
+														<entry name="EQD" expanded="1">
+															<entry name="F8053" inpkey="527"/>
+															<entry name="C237" expanded="1"/>
+															<entry name="C224" expanded="1">
+																<entry name="F8155" inpkey="555"/>
+																<entry name="F1131" inpkey="1262"/>
+																<entry name="F3055" inpkey="1263"/>
+															</entry>
+														</entry>
+														<entry name="EQN" expanded="1">
+															<entry name="C523" expanded="1">
+																<entry name="F6350" inpkey="534"/>
+															</entry>
+														</entry>
+														<entry name="SG33">
+															<entry name="DTM" expanded="1"/>
+														</entry>
+													</entry>
+													<entry name="UNT" expanded="1">
+														<entry name="F0062" inpkey="522"/>
+													</entry>
+												</entry>
+											</entry>
+											<entry name="UNZ" expanded="1"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<wsdl/>
+						<text type="edi" kind="EDIFACT" encoding="1" byteorder="1" byteordermark="0" config="EDIFACT.D.1998B\Envelope.Config">
+							<messages>
+								<message type="IFTMBF"/>
+							</messages>
+							<settings unpackedformat="false" autocompletedata="true" terminatewithlinefeed="true" syntaxversionnumber="2" controllingagency="UNO" syntaxlevel="A" writeuna="false">
+								<separators dataelement="+" component=":" subcomponent="%20" segment="&apos;" decimal="." escape="?" repetition="*"/>
+								<validation>
+									<case kind="missing-segment" action="stop"/>
+									<case kind="missing-group" action="stop"/>
+									<case kind="missing-field-or-composite" action="report+reject"/>
+									<case kind="extra-data" action="report+reject"/>
+									<case kind="invalid-field-value" action="report+reject"/>
+									<case kind="invalid-date" action="report+reject"/>
+									<case kind="invalid-time" action="report+reject"/>
+									<case kind="extra-repeat" action="report+reject"/>
+									<case kind="numeric-overflow" action="report+reject"/>
+									<case kind="data-element-too-short" action="report+reject"/>
+									<case kind="data-element-too-long" action="report+reject"/>
+									<case kind="unexpected-eof" action="stop"/>
+									<case kind="invalid-codelist-value" action="report+reject"/>
+									<case kind="semantic" action="report+reject"/>
+									<case kind="segment-not-in-message" action="stop"/>
+									<case kind="unrecognized-segment-id" action="stop"/>
+								</validation>
+							</settings>
+						</text>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="590" edgekey="670"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="591" edgekey="671"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="592" edgekey="672"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="593" edgekey="673"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="519" edgekey="674"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="1113" edgekey="1143"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="1096" edgekey="1097"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="1109" edgekey="1144"/>
+							<edge vertexkey="1107" edgekey="1145"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="1132" edgekey="1149"/>
+							<edge vertexkey="1118" edgekey="1187"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="584" edgekey="681"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="1131" edgekey="1150"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="524" edgekey="685"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="523" edgekey="686"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="525" edgekey="688"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="589" edgekey="689"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="64">
+						<edges>
+							<edge vertexkey="50" edgekey="76"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="81" edgekey="1151"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="78">
+						<edges>
+							<edge vertexkey="79" edgekey="1152"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="80">
+						<edges>
+							<edge vertexkey="82" edgekey="1153"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="83">
+						<edges>
+							<edge vertexkey="587" edgekey="1154"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="90">
+						<edges>
+							<edge vertexkey="630" edgekey="695"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="101">
+						<edges>
+							<edge vertexkey="529" edgekey="855"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="102">
+						<edges>
+							<edge vertexkey="571" edgekey="714"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="103">
+						<edges>
+							<edge vertexkey="559" edgekey="716"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="104">
+						<edges>
+							<edge vertexkey="572" edgekey="718"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="105">
+						<edges>
+							<edge vertexkey="556" edgekey="856"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="106">
+						<edges>
+							<edge vertexkey="573" edgekey="721"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="107">
+						<edges>
+							<edge vertexkey="631" edgekey="723"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="108">
+						<edges>
+							<edge vertexkey="554" edgekey="1202"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="110">
+						<edges>
+							<edge vertexkey="537" edgekey="728"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="156">
+						<edges>
+							<edge vertexkey="563" edgekey="730"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="158">
+						<edges>
+							<edge vertexkey="512" edgekey="731"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="171">
+						<edges>
+							<edge vertexkey="508" edgekey="736"/>
+							<edge vertexkey="1259" edgekey="1260"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="172">
+						<edges>
+							<edge vertexkey="540" edgekey="737"/>
+							<edge vertexkey="1094" edgekey="1098"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="173">
+						<edges>
+							<edge vertexkey="509" edgekey="738"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174">
+						<edges>
+							<edge vertexkey="510" edgekey="739"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="175">
+						<edges>
+							<edge vertexkey="562" edgekey="740"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="179">
+						<edges>
+							<edge vertexkey="960" edgekey="966"/>
+							<edge vertexkey="1018" edgekey="1043"/>
+							<edge vertexkey="1133" edgekey="1155"/>
+							<edge vertexkey="1267" edgekey="1277"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="180">
+						<edges>
+							<edge vertexkey="961" edgekey="967"/>
+							<edge vertexkey="1019" edgekey="1044"/>
+							<edge vertexkey="1134" edgekey="1156"/>
+							<edge vertexkey="1263" edgekey="1264"/>
+							<edge vertexkey="1269" edgekey="1278"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="181">
+						<edges>
+							<edge vertexkey="962" edgekey="968"/>
+							<edge vertexkey="1020" edgekey="1045"/>
+							<edge vertexkey="1271" edgekey="1279"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="184">
+						<edges>
+							<edge vertexkey="527" edgekey="750"/>
+							<edge vertexkey="1274" edgekey="1280"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="185">
+						<edges>
+							<edge vertexkey="1179" edgekey="1180"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="189">
+						<edges>
+							<edge vertexkey="1189" edgekey="1197"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="191">
+						<edges>
+							<edge vertexkey="574" edgekey="754"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="192">
+						<edges>
+							<edge vertexkey="575" edgekey="755"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="193">
+						<edges>
+							<edge vertexkey="157" edgekey="367"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="196">
+						<edges>
+							<edge vertexkey="576" edgekey="758"/>
+							<edge vertexkey="1027" edgekey="1046"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="197">
+						<edges>
+							<edge vertexkey="577" edgekey="759"/>
+							<edge vertexkey="1028" edgekey="1047"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="198">
+						<edges>
+							<edge vertexkey="634" edgekey="760"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="381">
+						<edges>
+							<edge vertexkey="1139" edgekey="1157"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="382">
+						<edges>
+							<edge vertexkey="1173" edgekey="1181"/>
+							<edge vertexkey="1176" edgekey="1182"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="388">
+						<edges>
+							<edge vertexkey="521" edgekey="763"/>
+							<edge vertexkey="522" edgekey="764"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="390">
+						<edges>
+							<edge vertexkey="530" edgekey="765"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="398">
+						<edges>
+							<edge vertexkey="531" edgekey="779"/>
+							<edge vertexkey="532" edgekey="780"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="444">
+						<edges>
+							<edge vertexkey="389" edgekey="493"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="448">
+						<edges>
+							<edge vertexkey="555" edgekey="1203"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="852">
+						<edges>
+							<edge vertexkey="533" edgekey="872"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="941">
+						<edges>
+							<edge vertexkey="964" edgekey="969"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="963">
+						<edges>
+							<edge vertexkey="585" edgekey="970"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="971">
+						<edges>
+							<edge vertexkey="972" edgekey="1003"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="973">
+						<edges>
+							<edge vertexkey="974" edgekey="1004"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="975">
+						<edges>
+							<edge vertexkey="976" edgekey="1005"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="977">
+						<edges>
+							<edge vertexkey="978" edgekey="1006"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="979">
+						<edges>
+							<edge vertexkey="980" edgekey="1007"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="981">
+						<edges>
+							<edge vertexkey="982" edgekey="1008"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="983">
+						<edges>
+							<edge vertexkey="984" edgekey="1009"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="985">
+						<edges>
+							<edge vertexkey="528" edgekey="1010"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1017">
+						<edges>
+							<edge vertexkey="1037" edgekey="1051"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1022">
+						<edges>
+							<edge vertexkey="1026" edgekey="1052"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1023">
+						<edges>
+							<edge vertexkey="1032" edgekey="1053"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1024">
+						<edges>
+							<edge vertexkey="1036" edgekey="1054"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1025">
+						<edges>
+							<edge vertexkey="1021" edgekey="1055"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1086">
+						<edges>
+							<edge vertexkey="1091" edgekey="1099"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1087">
+						<edges>
+							<edge vertexkey="1093" edgekey="1100"/>
+							<edge vertexkey="1095" edgekey="1101"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1088">
+						<edges>
+							<edge vertexkey="1090" edgekey="1102"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1089">
+						<edges>
+							<edge vertexkey="1092" edgekey="1103"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1104">
+						<edges>
+							<edge vertexkey="534" edgekey="1105"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1108">
+						<edges>
+							<edge vertexkey="595" edgekey="1159"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1110">
+						<edges>
+							<edge vertexkey="1106" edgekey="1160"/>
+							<edge vertexkey="1112" edgekey="1170"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1115">
+						<edges>
+							<edge vertexkey="594" edgekey="1162"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1120">
+						<edges>
+							<edge vertexkey="596" edgekey="1164"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1128">
+						<edges>
+							<edge vertexkey="597" edgekey="1165"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1129">
+						<edges>
+							<edge vertexkey="1130" edgekey="1166"/>
+							<edge vertexkey="1117" edgekey="1171"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1135">
+						<edges>
+							<edge vertexkey="1142" edgekey="1167"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1172">
+						<edges>
+							<edge vertexkey="1175" edgekey="1183"/>
+							<edge vertexkey="1178" edgekey="1184"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1174">
+						<edges>
+							<edge vertexkey="1138" edgekey="1185"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1177">
+						<edges>
+							<edge vertexkey="1141" edgekey="1186"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1188">
+						<edges>
+							<edge vertexkey="1195" edgekey="1198"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1190">
+						<edges>
+							<edge vertexkey="1192" edgekey="1199"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1191">
+						<edges>
+							<edge vertexkey="1193" edgekey="1200"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1196">
+						<edges>
+							<edge vertexkey="1194" edgekey="1201"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1204">
+						<edges>
+							<edge vertexkey="570" edgekey="1205"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1221">
+						<edges>
+							<edge vertexkey="1033" edgekey="1236"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1222">
+						<edges>
+							<edge vertexkey="1034" edgekey="1237"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1238">
+						<edges>
+							<edge vertexkey="1239" edgekey="1240"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1249">
+						<edges>
+							<edge vertexkey="1247" edgekey="1251"/>
+							<edge vertexkey="1245" edgekey="1252"/>
+							<edge vertexkey="1243" edgekey="1253"/>
+							<edge vertexkey="1241" edgekey="1254"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1250">
+						<edges>
+							<edge vertexkey="1248" edgekey="1255"/>
+							<edge vertexkey="1246" edgekey="1256"/>
+							<edge vertexkey="1244" edgekey="1257"/>
+							<edge vertexkey="1242" edgekey="1258"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1261">
+						<edges>
+							<edge vertexkey="1262" edgekey="1265"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1272">
+						<edges>
+							<edge vertexkey="1275" edgekey="1281"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="1276">
+						<edges>
+							<edge vertexkey="1273" edgekey="1282"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

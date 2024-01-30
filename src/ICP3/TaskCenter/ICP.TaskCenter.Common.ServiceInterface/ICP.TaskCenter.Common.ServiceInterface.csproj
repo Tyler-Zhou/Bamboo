@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2463A0D9-3DF7-462B-B984-73789006F22D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.TaskCenter.Common.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.TaskCenter.Common.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.BonusSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Charts.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1.Compact, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Data.v10.1.Compact.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1.Linq, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Data.v10.1.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Design.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.RichEdit.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SharePoint.2010.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.SharePoint.2010.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SharePoint.MOSS.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.SharePoint.MOSS.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.SharePoint.WSS.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.SharePoint.WSS.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Tutorials.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Tutorials.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraBars.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraBars.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1.UI, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1.Web, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v10.1.Web.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraCharts.v10.1.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraEditors.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGauges.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v10.1.Design.Win, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGauges.v10.1.Design.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v10.1.Presets, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGauges.v10.1.Presets.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v10.1.Win, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGauges.v10.1.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraLayout.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraLayout.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraNavBar.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraNavBar.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraPivotGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraPivotGrid.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraPivotGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraPrinting.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraPrinting.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraReports.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraReports.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraReports.v10.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.1.Service, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraReports.v10.1.Service.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v10.1.Web, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraReports.v10.1.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraRichEdit.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraRichEdit.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraRichEdit.v10.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Printing, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraRichEdit.v10.1.Printing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.iCalendarExchange, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.iCalendarExchange.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.OutlookExchange, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.OutlookExchange.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.Reporting, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.Reporting.Extensions, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.Reporting.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v10.1.VCalendarExchange, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraScheduler.v10.1.VCalendarExchange.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraSpellChecker.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraSpellChecker.v10.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraSpellChecker.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraSpellChecker.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraTreeList.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraTreeList.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraVerticalGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraVerticalGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraWizard.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraWizard.v10.1.Design, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\DevExpress.XtraWizard.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.CommandHandler.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface.XmlSerializers.dll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.AirExport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.CommonService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.Common.CommonService.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.OceanExport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OtherBusiness.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.FCM.OtherBusiness.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.Framework.ClientComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.Communication, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.Framework.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.CommonUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.MailCenter.CommonUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.MailCenter.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\icp3.5_test\ICP3.5Client\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base Control\RepositoryItemMemoExEditBIS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Base Control\RepositoryItemMemoExEditViewInfoBIS.cs" />
+    <Compile Include="Bkg Failed\BkgFailed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bkg Failed\BkgFailed.Designer.cs">
+      <DependentUpon>BkgFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business Part\BaseBusinessPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business Part\BaseBusinessPart.Designer.cs">
+      <DependentUpon>BaseBusinessPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business Part\BusinessPartFactory.cs" />
+    <Compile Include="Business Part\IBusinessPart.cs" />
+    <Compile Include="Business Part\IBusinessPartFactory.cs" />
+    <Compile Include="BusinessTemplateBaseLoader.cs" />
+    <Compile Include="Column Template\BusinessColumnInfo.cs" />
+    <Compile Include="Column Template\ColumnTemplateFileData.cs" />
+    <Compile Include="Column Template\ColumnTemplateLoader.cs" />
+    <Compile Include="Column Template\ColumnTemplateSectionData.cs" />
+    <Compile Include="Common\ColumnEditFactory.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\MailBusinessHelper.cs" />
+    <Compile Include="Common\MailInfoGetter.cs" />
+    <Compile Include="Common\ToolStripItemFactory.cs" />
+    <Compile Include="ContextMenu Template\ContextMenuFileLoader.cs" />
+    <Compile Include="ContextMenu Template\ContextMenuItemInfo.cs" />
+    <Compile Include="IBusinessOperationHandleService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryColumns Template\QueryColumnsLoader.cs" />
+    <Compile Include="QueryToolbarTemplateLoader.cs" />
+    <Compile Include="Toolbar Template\OperationToolbarCommand.cs" />
+    <Compile Include="Toolbar Template\ToobarItemFactory.cs" />
+    <Compile Include="Toolbar Template\ToolbarBuilder.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateFileData.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateLoader.cs" />
+    <Compile Include="Toolbar Template\ToolbarTemplateSectionData.cs" />
+    <Compile Include="Toolbar Template\UIHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bkg Failed\BkgFailed.resx">
+      <DependentUpon>BkgFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business Part\BaseBusinessPart.resx">
+      <DependentUpon>BaseBusinessPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.TaskCenter.ServiceInterface\ICP.TaskCenter.ServiceInterface.csproj">
+      <Project>{D87AC354-85E8-496F-97BF-75133E06B6FC}</Project>
+      <Name>ICP.TaskCenter.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

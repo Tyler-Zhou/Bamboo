@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="08/20/2012 09:14:52" ReportInfo.Modified="12/06/2012 10:44:31" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+   
+
+    private void Page1_StartPage(object sender, EventArgs e)
+    {
+      Picture1.Image = System.Drawing.Bitmap.FromFile(((String)Report.GetColumnValue(&quot;ReportSource.LogoPath&quot;)) );
+      
+      if(((int)Report.GetColumnValue(&quot;ReportSource.OperationType&quot;))==1)
+      {
+        Row11.Visible = false;       
+        ReportTitle1.Height = ReportTitle1.Height - Row11.Height;
+      }
+      else if(((int)Report.GetColumnValue(&quot;ReportSource.OperationType&quot;))!=2)
+      {
+        Row10.Visible = false;       
+        ReportTitle1.Height = ReportTitle1.Height - Row10.Height;
+      }
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="BillNote" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyDsc" DataType="System.String"/>
+      <Column Name="SuffixNo" DataType="System.String"/>
+      <Column Name="To" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="FETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Destination" DataType="System.String"/>
+      <Column Name="ContainerType" DataType="System.String"/>
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="CommonRemark" DataType="System.String"/>
+      <Column Name="OtherRemark" DataType="System.String"/>
+      <Column Name="MoreRemark" DataType="System.String"/>
+      <Column Name="PrintBy" DataType="System.String"/>
+      <Column Name="PrintByTel" DataType="System.String"/>
+      <Column Name="PrintByFax" DataType="System.String"/>
+      <Column Name="ETACaption" DataType="System.String"/>
+      <Column Name="BillNote" DataType="System.String"/>
+      <Column Name="Signature" DataType="System.String"/>
+      <Column Name="LogoPath" DataType="System.String"/>
+      <Column Name="SalesInfo" DataType="System.String"/>
+      <Column Name="OperationType" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Fees" ReferenceName="Fees" DataType="System.Int32" Enabled="true">
+      <Column Name="Way" DataType="System.Int32"/>
+      <Column Name="Qty" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Debit" DataType="System.Decimal"/>
+      <Column Name="Credit" DataType="System.Decimal"/>
+      <Column Name="DebitForPrint" DataType="System.String"/>
+      <Column Name="CreditForPrint" DataType="System.String"/>
+      <Column Name="Rate" DataType="System.Decimal"/>
+      <Column Name="ChargeName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Total" ReferenceName="Total" DataType="System.Int32" Enabled="true">
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Debit" DataType="System.Decimal"/>
+      <Column Name="Credit" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Balance" ReferenceName="Balance" DataType="System.Int32" Enabled="true">
+      <Column Name="Description" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Debit" DataType="System.Decimal"/>
+      <Column Name="Credit" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" FirstPageSource="15" OtherPagesSource="15" Guides="321.3,170.1" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="718.2" Height="368.55" CanGrow="true">
+      <TextObject Name="Text9" Left="7.9" Top="175.55" Width="699.3" Height="18.9" Text="[ReportSource.SalesInfo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="132.3" Top="197.9" Width="66.15" Height="18.9" Text="INV. No.:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="198.45" Top="198.45" Width="321.3" Height="18.9" Text="[ReportSource.BillNo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text12" Left="523.75" Top="197.9" Width="47.25" Height="18.9" Text="Date:" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="576.45" Top="198.45" Width="132.3" Height="18.9" Text="[ReportSource.BillDate]" Format="Date" Format.Format="d" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text14" Left="325.3" Top="141.75" Width="387.45" Height="28.35" Text="[ReportSource.BillNote]" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TableObject Name="Table2" Left="9" Top="217.35" Width="701.17" Height="151.2">
+        <TableColumn Name="Column5" Width="160.96"/>
+        <TableColumn Name="Column6" Width="157.18"/>
+        <TableColumn Name="Column7" Width="58.9"/>
+        <TableColumn Name="Column8" Width="138.29"/>
+        <TableColumn Name="Column9" Width="92.92"/>
+        <TableColumn Name="Column10" Width="92.92"/>
+        <TableRow Name="Row6" AutoSize="true">
+          <TableCell Name="Cell25" Border.Lines="All" Text="PARTICULARS" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell26" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell27" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell28" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="AMOUNT" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell50" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row7" AutoSize="true">
+          <TableCell Name="Cell30" Border.Lines="Left" Text="B/L No.:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell31" Text="[ReportSource.BLNo]"/>
+          <TableCell Name="Cell32"/>
+          <TableCell Name="Cell33" Border.Lines="Right"/>
+          <TableCell Name="Cell34"/>
+          <TableCell Name="Cell51" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row8" AutoSize="true">
+          <TableCell Name="Cell35" Border.Lines="Left" Text="First Vessel:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell36" Text="[ReportSource.VesselVoyage]"/>
+          <TableCell Name="Cell37"/>
+          <TableCell Name="Cell38" Border.Lines="Right"/>
+          <TableCell Name="Cell39"/>
+          <TableCell Name="Cell52" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row9" AutoSize="true">
+          <TableCell Name="Cell40" Border.Lines="Left" Text="PORT OF LOADING:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell41" Text="[ReportSource.POL]"/>
+          <TableCell Name="Cell42" Text="ETD:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell43" Border.Lines="Right" Text="[ReportSource.ETD]"/>
+          <TableCell Name="Cell44"/>
+          <TableCell Name="Cell53" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row10" AutoSize="true">
+          <TableCell Name="Cell45" Border.Lines="Left" Text="PORT OF DISCHARGE:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell46" Text="[ReportSource.POD]"/>
+          <TableCell Name="Cell47" Text="ETA:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell48" Border.Lines="Right" Text="[ReportSource.ETA]"/>
+          <TableCell Name="Cell49"/>
+          <TableCell Name="Cell54" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row11" AutoSize="true">
+          <TableCell Name="Cell55" Border.Lines="Left" Text="DESTINATION:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell56" Text="[ReportSource.Destination]"/>
+          <TableCell Name="Cell57" Text="[ReportSource.ETACaption]" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell58" Border.Lines="Right" Text="[ReportSource.FETA]"/>
+          <TableCell Name="Cell59"/>
+          <TableCell Name="Cell60" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row12" AutoSize="true">
+          <TableCell Name="Cell61" Border.Lines="Left" Text="CNT QTY/TYPE:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell62" Text="[ReportSource.ContainerType]"/>
+          <TableCell Name="Cell63"/>
+          <TableCell Name="Cell64" Border.Lines="Right"/>
+          <TableCell Name="Cell65"/>
+          <TableCell Name="Cell66" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row14" AutoSize="true">
+          <TableCell Name="Cell73" Border.Lines="Left, Bottom" Text="CONTAINER NO.:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell74" Border.Lines="Bottom" Text="[ReportSource.ContainerNo]"/>
+          <TableCell Name="Cell75" Border.Lines="Bottom"/>
+          <TableCell Name="Cell76" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell77" Border.Lines="Bottom" Text="Debit" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell78" Border.Lines="Right, Bottom" Text="Credit" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table1" Left="5.82" Width="315.46" Height="166.32" Border.Lines="All">
+        <TableColumn Name="Column11" Width="39.83"/>
+        <TableColumn Name="Column12" Width="106.37"/>
+        <TableColumn Name="Column13" Width="34.54"/>
+        <TableColumn Name="Column14" Width="134.72"/>
+        <TableRow Name="Row15" Height="115.92">
+          <TableCell Name="Cell79" Text="To" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell80" Text="[ReportSource.To]" ColSpan="3"/>
+          <TableCell Name="Cell91"/>
+          <TableCell Name="Cell94"/>
+        </TableRow>
+        <TableRow Name="Row16" Height="25.2">
+          <TableCell Name="Cell84" Text="From" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell85" Text="[ReportSource.PrintBy]" ColSpan="3"/>
+          <TableCell Name="Cell92"/>
+          <TableCell Name="Cell95"/>
+        </TableRow>
+        <TableRow Name="Row17" Height="25.2">
+          <TableCell Name="Cell89" Text="Tel:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell90" Text="[ReportSource.PrintByTel]"/>
+          <TableCell Name="Cell93" Text="Fax:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell96" Text="[ReportSource.PrintByFax]"/>
+        </TableRow>
+      </TableObject>
+      <PictureObject Name="Picture1" Left="324.3" Top="9.45" Width="94.5" Height="85.05"/>
+      <TextObject Name="Text16" Left="434.7" Top="9.45" Width="274.05" Height="56.7" Text="[ReportSource.CompanyName]" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text15" Left="434.7" Top="66.15" Width="274.05" Height="66.15" Text="[ReportSource.CompanyDsc]" HorzAlign="Center"/>
+    </ReportTitleBand>
+    <DataBand Name="Data1" Top="408.55" Width="718.2" Height="18.9" DataSource="Fees">
+      <TextObject Name="Text17" Left="9.45" Width="245.7" Height="18.9" Border.Lines="Left" Text="[Fees.ChargeName]" VertAlign="Center"/>
+      <TextObject Name="Text18" Left="255.15" Width="94.5" Height="18.9" Text="[Fees.UnitPrice]" Format="Number" Format.UseLocale="true" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text19" Left="349.65" Width="94.5" Height="18.9" Text="[Fees.Qty]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="3" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text20" Left="448.15" Width="75.6" Height="18.9" Border.Lines="Right" Text="[Fees.Currency]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text21" Left="525.2" Width="94.5" Height="18.9" Text="[Fees.Debit]" Format="Number" Format.UseLocale="true" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text22" Left="624.7" Width="85.05" Height="18.9" Border.Lines="Right" Text="[Fees.Credit]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <DataFooterBand Name="DataFooter1" Top="447.45" Width="718.2">
+        <LineObject Name="Line6" Left="9.45" Width="699.3"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data2" Top="467.45" Width="718.2" Height="18.9" DataSource="Total">
+      <TextObject Name="Text23" Left="9.45" Width="435.7" Height="18.9" Border.Lines="Left" Text="[Total.Description]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text24" Left="448.15" Width="75.6" Height="18.9" Border.Lines="Right" Text="[Total.Currency]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text25" Left="526.2" Width="94.5" Height="18.9" Text="[Total.Debit]" Format="Number" Format.UseLocale="true" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text26" Left="624.7" Width="85.05" Height="18.9" Border.Lines="Right" Text="[Total.Credit]" Format="Number" Format.UseLocale="true" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <DataFooterBand Name="DataFooter2" Top="506.35" Width="718.2">
+        <LineObject Name="Line7" Left="9.45" Width="699.3"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data3" Top="526.35" Width="718.2" Height="18.9" DataSource="Balance">
+      <TextObject Name="Text27" Left="9.45" Width="434.7" Height="18.9" Text="[Balance.Description]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text28" Left="448.15" Width="75.6" Height="18.9" Text="[Balance.Currency]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text29" Left="526.2" Width="94.5" Height="18.9" Text="[Balance.Debit]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+      <TextObject Name="Text30" Left="625.7" Width="85.05" Height="18.9" Text="[Balance.Credit]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center" WordWrap="false" Font="Arial, 10pt, style=Bold" Trimming="EllipsisCharacter"/>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="565.25" Width="718.2" Height="194.67">
+      <TextObject Name="Text31" Left="9.45" Top="4.45" Width="56.7" Height="18.9" Text="Remark"/>
+      <TextObject Name="Text32" Left="71.6" Top="5.45" Width="638.15" Height="18.9" CanGrow="true" Text="[ReportSource.CommonRemark]" VertAlign="Center"/>
+      <TextObject Name="Text33" Left="321.3" Top="141.75" Width="387.45" Height="37.8" CanGrow="true" Text="[ReportSource.Signature]" VertAlign="Center"/>
+      <TextObject Name="Text34" Left="9.45" Top="28.35" Width="699.3" Height="94.5" CanGrow="true" Text="[ReportSource.OtherRemark]" VertAlign="Center"/>
+      <TextObject Name="Text1" Left="9.45" Top="122.85" Width="699.3" Height="18.9" CanGrow="true" Text="[ReportSource.MoreRemark]" Font="宋体, 10pt, style=Bold"/>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

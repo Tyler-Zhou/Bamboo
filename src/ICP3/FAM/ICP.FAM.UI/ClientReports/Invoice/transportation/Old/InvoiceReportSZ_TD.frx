@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="05/18/2012 18:41:04" ReportInfo.Modified="08/08/2012 18:14:29" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="invoiceReportSZ" ReferenceName="invoiceReportSZ" DataType="System.Int32" Enabled="true">
+      <Column Name="InvoiceDate" DataType="System.String"/>
+      <Column Name="InvoiceNo" DataType="System.String"/>
+      <Column Name="CompanyCName" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="Bank1" DataType="System.String"/>
+      <Column Name="Bank2" DataType="System.DateTime"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Company" DataType="System.String"/>
+      <Column Name="Destination" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="invoiceReportFeeDataSZ" ReferenceName="invoiceReportFeeDataSZ" DataType="System.Int32" Enabled="true">
+      <Column Name="ChargingCode" DataType="System.String"/>
+      <Column Name="Amout" DataType="System.String"/>
+      <Column Name="CurrencyName" DataType="System.String"/>
+      <Column Name="AmountOfUSD" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="Rate" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="invoiceReportOthersInfo" ReferenceName="invoiceReportOthersInfo" DataType="System.Int32" Enabled="true">
+      <Column Name="InvoiceCode" DataType="System.String"/>
+      <Column Name="IndustryClassification" DataType="System.String"/>
+      <Column Name="BussinessRegNo" DataType="System.String"/>
+      <Column Name="CheckBy" DataType="System.String"/>
+      <Column Name="BussinessSeal" DataType="System.String"/>
+      <Column Name="TaxpayerIdenNo" DataType="System.String"/>
+      <Column Name="BankAccount" DataType="System.String"/>
+      <Column Name="Bank2Account" DataType="System.String"/>
+      <Column Name="LssuedBy" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="invoiceReportOthers" ReferenceName="invoiceReportOthers" DataType="System.Int32" Enabled="true">
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="CurrencyName" DataType="System.String"/>
+      <Column Name="TotalAmout" DataType="System.String"/>
+      <Column Name="TotalAmout_" DataType="System.String"/>
+      <Column Name="TotalRMB" DataType="System.String"/>
+      <Column Name="Rate" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="230">
+    <PageHeaderBand Name="PageHeader1" Top="20" Width="793.8" Height="708.75">
+      <TextObject Name="Text9" Left="75.6" Top="47.25" Width="94.5" Height="18.9" Text="[invoiceReportSZ.InvoiceDate]" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text10" Left="66.15" Top="75.6" Width="217.35" Height="28.35" Text="[invoiceReportSZ.CompanyCName]" Font="宋体, 9pt"/>
+      <TextObject Name="Text11" Left="311.85" Top="47.25" Width="170.1" Height="18.9" Text="服务业(国际货物代理)" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text12" Left="330.75" Top="75.6" Width="132.3" Height="18.9" Text="[invoiceReportSZ.ETD]" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text13" Left="330.75" Top="103.95" Width="141.75" Height="28.35" Text="[invoiceReportSZ.BLNo]" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text15" Left="75.6" Top="141.75" Width="170.1" Height="28.35" Text="[invoiceReportSZ.POL]" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text17" Left="66.15" Top="113.4" Width="207.9" Height="18.9" Text="[invoiceReportSZ.Vessel] [invoiceReportSZ.Voyage]" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text18" Left="538.65" Top="66.15" Width="283.5" Height="18.9" Text="[invoiceReportSZ.Bank1]" VertAlign="Bottom" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text19" Left="548.1" Top="85.05" Width="274.05" Height="18.9" Text="[invoiceReportOthersInfo.BankAccount]" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text20" Left="538.65" Top="103.95" Width="283.5" Height="18.9" Text="[invoiceReportSZ.Bank2]" Format="Date" Format.Format="d" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text21" Left="548.1" Top="151.2" Width="207.9" Height="18.9" Text="[invoiceReportSZ.Destination]" Font="宋体, 9.2pt"/>
+      <TextObject Name="Text14" Left="330.75" Top="141.75" Width="132.3" Height="28.35" Text="[invoiceReportSZ.POD]" VertAlign="Center" Font="宋体, 9.2pt"/>
+      <SubreportObject Name="Subreport1" Left="9.45" Top="181.44" Width="519.75" Height="189" ReportPage="Page2" PrintOnParent="true"/>
+      <TextObject Name="Text26" Left="519.75" Top="387.45" Width="217.35" Height="18.9" Text="[invoiceReportOthers.TotalAmout]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text22" Left="207.9" Top="387.45" Width="255.15" Height="18.9" Text="[invoiceReportOthers.TotalRMB]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text5" Left="160.65" Top="387.45" Width="94.5" Height="18.9" Text="[invoiceReportOthers.CurrencyName]" Font="宋体, 9pt"/>
+      <TextObject Name="Text52" Left="481.95" Top="387.45" Width="47.25" Height="18.9" Text="[invoiceReportOthers.CurrencyName]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text23" Left="151.2" Top="444.15" Width="141.75" Height="28.35" Text="[invoiceReportOthersInfo.BussinessRegNo]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text28" Left="378" Top="444.15" Width="56.7" Height="28.35" Text="[invoiceReportOthersInfo.CheckBy]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text27" Left="160.65" Top="481.95" Width="141.75" Height="28.35" Text="[invoiceReportOthersInfo.TaxpayerIdenNo]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text29" Left="378" Top="481.95" Width="66.15" Height="28.35" Text="[invoiceReportOthersInfo.LssuedBy]" Font="宋体, 9pt"/>
+      <TextObject Name="Text30" Left="453.6" Top="481.95" Width="283.5" Height="18.9" Text="[invoiceReportSZ.Company]" Font="宋体, 9pt"/>
+      <TextObject Name="Text49" Left="567" Top="245.7" Width="236.25" Height="18.9" Text="[invoiceReportOthers.TotalAmout_]" Format="Number" Format.UseLocale="true" VertAlign="Bottom" Font="宋体, 9pt"/>
+      <TextObject Name="Text31" Left="529.2" Top="189" Width="170.1" Height="28.35" Text="[invoiceReportOthers.Remark]" Font="宋体, 9pt"/>
+      <TextObject Name="Text24" Left="529.2" Top="217.35" Width="132.3" Height="18.9" Text="[invoiceReportOthersInfo.InvoiceCode]" Font="宋体, 9pt"/>
+      <TextObject Name="Text53" Left="548.1" Top="122.85" Width="274.05" Height="18.9" Text="[invoiceReportOthersInfo.BankAccount]" Font="宋体, 9.2pt"/>
+    </PageHeaderBand>
+  </ReportPage>
+  <ReportPage Name="Page2" PaperWidth="173">
+    <DataBand Name="Data2" Top="20" Width="578.34" Height="18.9" DataSource="invoiceReportFeeDataSZ">
+      <TextObject Name="Text50" Width="330.75" Height="18.9" Text="[invoiceReportFeeDataSZ.ChargingCode]" Font="宋体, 9pt"/>
+      <TextObject Name="Text51" Left="415.8" Width="160.65" Height="18.9" Text="[invoiceReportFeeDataSZ.Amout]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.NegativePattern="1" Font="宋体, 9pt"/>
+      <TextObject Name="Text48" Left="349.65" Width="75.6" Height="18.9" Text="[invoiceReportFeeDataSZ.CurrencyName]" Font="宋体, 9pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

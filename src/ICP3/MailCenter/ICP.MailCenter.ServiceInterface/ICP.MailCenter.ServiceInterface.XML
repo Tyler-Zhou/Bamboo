@@ -1,0 +1,1714 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.MailCenter.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter">
+            <summary>
+            邮件模版客户端接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter.Get(System.String,System.Object[])">
+            <summary>
+            获取中文通用值
+            </summary>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter.GetEn(System.String,System.Object[])">
+            <summary>
+            获取英文通用值
+            </summary>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter.Get(System.String,System.String,System.Object[])">
+            <summary>
+            获取中文指定段值
+            </summary>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter.GetEn(System.String,System.String,System.Object[])">
+            <summary>
+            获取英文指定段的值
+            </summary>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IEmailTemplateGetter.ReturnMessage(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            返回Message对象
+            </summary>
+            <param name="isEnglish"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService">
+            <summary>
+            调用邮件模板发送邮件服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplate(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.String,System.Object[])">
+            <summary>
+            调用邮件模板弹出邮件发送界面
+            </summary>
+            <param name="mail">Message对象</param>
+            <param name="isEnglish">模板语言</param>
+            <param name="sectionName">节点名称</param>
+            <param name="itemKey">itemKey</param>
+            <param name="values"></param> 
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplate(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            调用邮件模板Common节点弹出邮件发送界面
+            </summary>
+            <param name="mail">Message对象</param>
+            <param name="isEnglish">模板语言</param>
+            <param name="itemKey">item键</param>
+            <param name="values"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplateEN(ICP.Message.ServiceInterface.Message,System.String,System.String,System.Object[])">
+            <summary>
+            调用邮件英文版本弹出邮件发送界面
+            </summary>
+            <param name="mail"></param>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <param name="values">对象集合(OceanBookingInfo,AirBookingInfo,OceanBusinessInfo,AirBusinessInfo)</param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplateCN(ICP.Message.ServiceInterface.Message,System.String,System.String,System.Object[])">
+             <summary>
+            调用邮件中文模板弹出邮件发送界面
+             </summary>
+             <param name="mail"></param>
+             <param name="sectionName"></param>
+             <param name="itemKey"></param>
+             <param name="values"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplateEN(ICP.Message.ServiceInterface.Message,System.String,System.Object[])">
+            <summary>
+            调用邮件英文模板Common节点弹出邮件发送界面
+            </summary>
+            <param name="mail"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.SendMailWithTemplateCN(ICP.Message.ServiceInterface.Message,System.String,System.Object[])">
+            <summary>
+            调用邮件中文模板Common节点弹出邮件发送界面
+            </summary>
+            <param name="mail"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterTemplateService.AutoSendMailWithTemplate(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            邮件自动发送
+            </summary>
+            <param name="mail">邮件信息实体类</param>
+            <param name="isEnglish">是否发送英文版本</param>
+            <param name="itemKey">发送邮件模版名称</param>
+            <param name="values">发送模版内容</param>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.MailRecipientInfo">
+            <summary>
+            邮件接收方信息类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.MailRecipientInfo.RecipientType">
+            <summary>
+            邮件接收者类型 0:sender 1:To 2:cc 3:BCC
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.Contacts">
+            <summary>
+            联系人
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.Contacts.Name">
+            <summary>
+            显示名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.Contacts.EmailAddress">
+            <summary>
+            邮件地址
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.FolderInfo">
+            <summary>
+            outlook单个文件夹信息
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.NodeInfo">
+            <summary>
+            文件夹节点属性类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.NodeInfo.GetNodeInfo(System.Boolean,System.Int32,System.String)">
+            <summary>
+            获取单个节点信息
+            </summary>
+            <param name="isTotalCountFolder"></param>
+            <param name="count"></param>
+            <param name="folderName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.NodeInfo.HasSameTreeNodeCount(System.String,System.Int32)">
+            <summary>
+            通过上次设置文件夹的数量跟现在需要设置文件夹的数量对比，如果相同，就不需要在去设置文件夹了
+            </summary>
+            <param name="toolTipText">上次设置过的文件夹数量值</param>
+            <param name="count">当前设置的文件夹数量值</param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodeInfo.ForeColor">
+            <summary>
+            前景色
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodeInfo.Text">
+            <summary>
+            节点显示文本
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodeInfo.ToolTip">
+            <summary>
+            节点提示消息
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodeInfo.NodeFont">
+            <summary>
+            节点文本字体
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TimerManager">
+            <summary>
+            计时器管理
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TimerManager.GetConfigNodeValue(System.String)">
+            <summary>
+            获取配置文件节点值
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TimerManager.SetConfigNodeValue(System.String,System.String)">
+            <summary>
+            设置配置文件节点值
+            </summary>
+            <param name="node"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TimerManager.ConvertSecondToMillisecond(System.String)">
+            <summary>
+            默认为2秒时间
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TimerManager.CovnertMinutesToMillisecond(System.String)">
+            <summary>
+            将分钟转换为毫秒
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TimerManager.GetAppSettingValue(System.String,System.Double)">
+            <summary>
+            获取配置文件的Key值
+            </summary>
+            <param name="key"></param>
+            <param name="minutes">如果没有找到Value值，赋值默认值</param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TimerManager.MailReadTimerInterval">
+            <summary>
+            设置邮件已读时间间隔
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TimerManager.ReceivedMailTimerInterval">
+            <summary>
+            设置接收或发送邮件的时间间隔
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.WindowsExtension">
+            <summary>
+            windows扩展
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.SetForegroundWindow(System.IntPtr)">
+            <summary>
+            前置
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.FindWindowEx(System.IntPtr,System.IntPtr,System.String,System.String)">
+            <summary>
+            获取窗口句柄
+            </summary>
+            <param name="lpClassName"></param>
+            <param name="lpWindowName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.SetWindowTheme(System.IntPtr,System.String,System.String)">
+            <summary>
+            设置控件主题
+            </summary>
+            <param name="hwnd"></param>
+            <param name="pszSubAppName"></param>
+            <param name="pszSubIdList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.ShowWindow(System.IntPtr,System.UInt32)">
+            <summary>
+            显示应用程序窗口
+            </summary>
+            <param name="hWnd"></param>
+            <param name="nCmdShow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.ShowWindowAsync(System.IntPtr,System.Int32)">
+            <summary>
+            异步显示程序窗口
+            </summary>
+            <param name="hWnd"></param>
+            <param name="nCmdShow"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension.BringWindowToTop(System.IntPtr)">
+            <summary>
+            把窗口置顶
+            </summary>
+            <param name="hWnd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.WindowsExtension._lopen(System.String,System.Int32)">
+            <summary>
+            文件是否正在被使用
+            </summary>
+            <param name="lpPathName"></param>
+            <param name="iReadWrite"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.HWND">
+            <summary>
+            Window handles (HWND) used for hWndInsertAfter
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.SWP">
+            <summary>
+            SetWindowPos Flags
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.OperationFileType">
+            <summary>
+            文件夹操作类型
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Create">
+            <summary>
+            新建
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Rename">
+            <summary>
+            重命名
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Move">
+            <summary>
+            移动
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Open">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.OpenWith">
+            <summary>
+            选择打开
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.SaveAs">
+            <summary>
+            另存为
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Paste">
+            <summary>
+            粘贴
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.OperationFileType.Clear">
+            <summary>
+            清空
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.RecipientType">
+            <summary>
+            邮件接收者类型
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.RecipientType.Sender">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.RecipientType.Recipient">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.RecipientType.CC">
+            <summary>
+            抄送人
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TimeType">
+            <summary>
+            设置时间种类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.TimeType.MailRead">
+            <summary>
+            设置邮件已读时间
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.TimeType.ReceiveMail">
+            <summary>
+            设置接收邮件时间
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.ActionCode">
+            <summary>
+            动作代码
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.Unknown">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.Customer">
+            <summary>
+            收到客户邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.Carrier">
+            <summary>
+            收到承运人邮件 
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.Agent">
+            <summary>
+            收到代理邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.General">
+            <summary>
+            一般邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.COD">
+            <summary>
+            通知客户有新订单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.ODA">
+            <summary>
+            下达订单（业务联单）
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.ODM">
+            <summary>
+            通知订舱员booking已更改
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CSO">
+            <summary>
+            创建订舱单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOA">
+            <summary>
+            申请订舱
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOM">
+            <summary>
+            变更订舱
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOB">
+            <summary>
+            已向承运人发送订舱请求
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOCfmC">
+            <summary>
+            发订舱确认给客户
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOD">
+            <summary>
+            订舱成功
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOS">
+            <summary>
+            通知客户订舱成功
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOF">
+            <summary>
+            订舱失败
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOFC">
+            <summary>
+            通知客户订舱失败
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOFS">
+            <summary>
+            通知业务员订舱失败
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOAC">
+            <summary>
+            已通知订舱取消
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOC">
+            <summary>
+            订舱已取消
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOCC">
+            <summary>
+            已向商务员询问应付费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOCCD">
+            <summary>
+            商务员已回复应付费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOCD">
+            <summary>
+            已向业务员要求提供应收费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOCDD">
+            <summary>
+            业务已回复应收费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOPV">
+            <summary>
+            已审批SO毛利
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOPA">
+            <summary>
+            客服要求业务员承诺此单可盈利
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SOPP">
+            <summary>
+            业务员承诺此单可盈利
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CTrk">
+            <summary>
+            创建拖车委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TrkA">
+            <summary>
+            已向拖车公司下达委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TrkR">
+            <summary>
+            拖车公司已收到委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TrkD">
+            <summary>
+            拖车公司已通知提柜信息
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TrkF">
+            <summary>
+            拖车公司已更新费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TrkS">
+            <summary>
+            已向客户通知提柜信息
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CCF">
+            <summary>
+            创建报关委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CFA">
+            <summary>
+            已向报关公司下达委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CFR">
+            <summary>
+            报关公司已收到委托单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CFD">
+            <summary>
+            报关公司已提供报关单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CFF">
+            <summary>
+            报关公司已更新费用
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SIN">
+            <summary>
+            提醒文件员补料
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SINC">
+            <summary>
+            已通知客户提供补料
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.SIR">
+            <summary>
+            已收到客户提供的补料
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CHBL">
+            <summary>
+            HBL已创建
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.HBLS">
+            <summary>
+            已发HBL COPY 让客户确认
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.HBLCfm">
+            <summary>
+            已发HBL COPY 让客户确认
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CMBL">
+            <summary>
+            MBL已创建
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.MBLS">
+            <summary>
+            已发MBL COPY 让客户确认
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.MBLD">
+            <summary>
+            SI发送给承运人
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.MBLCfm">
+            <summary>
+            已发MBL COPY 让客户确认
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.MBLR">
+            <summary>
+            承运人已接收MBL Copy
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.AMS">
+            <summary>
+            AMS is done.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.ISF">
+            <summary>
+            ISF is done.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.DNN">
+            <summary>
+            Reminder Customer Service to confirm Debit Note with customers
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CNR">
+            <summary>
+            Credit Note is received from the carrier
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.DNCfm">
+            <summary>
+            Debit Note is confirmed with the customer
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.DNA">
+            <summary>
+            Notified Debit Note to the customer[中威] for pay.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.DNP">
+            <summary>
+            Debit Note[#OESZGS12020374A] is paied from the customer[中威].
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CNA">
+            <summary>
+            运费付讫
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CNP">
+            <summary>
+            Credit Note[#OESZGS12020374J] is paied to MSC.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.CNInv">
+            <summary>
+            Ask the carrier for invoices when the Credit Note is confirmed.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.RBLA">
+            <summary>
+            已申请放单
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.RBLH">
+            <summary>
+            Release BL is approving.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.RBLD">
+             <summary>
+            已放单 
+             </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.RBLRcv">
+            <summary>
+            CS/Agent has received the notice of the releasing BL.
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.BLRC">
+            <summary>
+            BL已放货
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.OBLR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.OBLD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TBLA">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TBLR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.TBLD">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ActionCode.DocS">
+            <summary>
+            The documents are sent to the agent.
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.MailAction">
+            <summary>
+            邮件操作
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.ContactType">
+            <summary>
+            操作联系人
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.NewMail">
+            <summary>
+            新增一封邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.CopyContact">
+            <summary>
+            复制联系人
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.AddToContact">
+            <summary>
+            将联系人添加在联系人列表
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.SendingByContact">
+            <summary>
+            以联系人作为发件人的历史记录
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.ReceivingByContact">
+            <summary>
+            以联系人作为接收人的历史记录
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.ContactType.SendingReceivingByContact">
+            <summary>
+            以联系人作为接收人和发件人的历史记录
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.ScrollBarDirection">
+            <summary>
+            滚动条方向
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.CommandNames">
+            <summary>
+            命令名常量
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.CommandNames.EmailList">
+            <summary>
+            邮件中心列表界面
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.ListItem">
+            <summary>
+            下拉控件子项
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TimeInfo">
+            <summary>
+            设置时间实体类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TimeInfo.KeyName">
+            <summary>
+            客户端配置文件Key值
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TimeInfo.Time">
+            <summary>
+            设置时间值
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TimeInfo.TimeType">
+            <summary>
+            设置时间种类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.SearchFolderInfo">
+            <summary>
+            搜索文件夹参数类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.SearchFolderInfo.Level">
+             <summary>
+            记录没有展开的文件夹到查找到的文件夹之间的层次级别
+             </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.SearchFolderInfo.FolderPaths">
+            <summary>
+            文件夹层次路径
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.SearchFolderInfo.Tag">
+            <summary>
+            查找到的节点的Tag
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.SearchFolderInfo.HasFoundTreeNode">
+            <summary>
+            有没有查找到文件夹
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.SearchFolderInfo.FoundInOutlookFolder">
+            <summary>
+            如果TreeView没有展开节点，就会到Outlook文件夹中去查找
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.NodePacked">
+            <summary>
+            TreeView节点封装类
+            </summary>    
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodePacked.FolderName">
+            <summary>
+            Outlook文件夹名称
+            </summary>       
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodePacked.Count">
+            <summary>
+            文件夹数量
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.NodePacked.TreeeNode">
+            <summary>
+            TreeView文件夹
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TreeNodeParameters">
+            <summary>
+            树节点参数类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TreeNodeParameters.SelectedNode">
+            <summary>
+            选中的节点
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TreeNodeParameters.VisibleTreeNode">
+            <summary>
+            下一个节点
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.beginStopwatch">
+            <summary>
+            记录打开邮件中心的时间
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility._ConfigPath">
+            <summary>
+            文件夹列表配置文件说明： 如果新同事安装ICP，会拷贝老同事ICP目录下所有文件，这时配置文件时别人的，所以通过Mac addresss来命名配置文件，就是读取的是自己电脑配置文件了。
+            加上文件名称为了在一台电脑上，不同用户登录该电脑的ICP
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.GetDropFiles(System.Windows.Forms.IDataObject)">
+            <summary>
+            获取拖拽文件集合
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.ReleaseComObject(System.Object)">
+            <summary>
+            释放组件对象
+            </summary>
+            <param name="comObject"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.PrintFile(System.String)">
+            <summary>
+            打印文件
+            </summary>
+            <param name="fullPath"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.AutoSyncDisable(System.Boolean)">
+            <summary>
+            打开Outlook时是否自动接收和发送邮件
+            </summary>
+            <param name="version"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.RegisterMinToTrayKey(System.String)">
+            <summary>
+            将注册表MinToTray值设置为1,表示outlook最小化时隐藏
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.SingleProcess(System.Boolean)">
+            <summary>
+            只能有一个Outlook进程
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.Killed(System.Diagnostics.Process[])">
+            <summary>
+            如果有两个进程，需要关闭一个进程
+            </summary>
+            <param name="arrProcess"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.OnProcessExited(System.Object,System.EventArgs)">
+            <summary>
+            监听Outlook进程是否被关闭，如果被用户关闭后，就会执行该事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.SpecialFont">
+            <summary>
+            未读数量文件夹字体
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.NormalFont">
+            <summary>
+            普通文件夹字体
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.ShamNodeColor">
+            <summary>
+            正在加载节点颜色
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.NormalColor">
+            <summary>
+            文件夹普通颜色
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.TotalCountColor">
+            <summary>
+            显示所有邮件数量颜色
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.UnreadCountColor">
+            <summary>
+            未读文件夹颜色
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.CN_JunFolders">
+            <summary>
+            垃圾文件夹
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.DOJFolders">
+            <summary>
+            草稿,发件箱,垃圾邮件文件夹名称数组
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.CN_OlMonitorFolders">
+            <summary>
+            监听文件夹
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility.CN_OlTotalCountFolders">
+            <summary>
+            文件夹需要计算出所有邮件数量
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.CreateMenuItem(System.Drawing.Image,System.String,System.Object)">
+            <summary>
+            根据条件创建邮件文件夹上下文菜单项
+            </summary>
+            <param name="image"></param>
+            <param name="text"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.IsContainsFolders(System.String[],System.String,System.Boolean@)">
+            <summary>
+            寻找当前文件夹是否是收件箱，如果没有找到，直往上面节点找
+            </summary>
+            <param name="arrInbox"></param>
+            <param name="folder"></param>
+            <param name="isInboxFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.IsInDOJFolders(System.String)">
+            <summary>
+            判断文件夹是否属于草稿,发件箱,垃圾邮件
+            </summary>
+            <param name="folderFullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.IsContainsFolders(Microsoft.Office.Interop.Outlook.Folders,System.String,System.Boolean@)">
+            <summary>
+            找到当前文件夹下的所有文件夹
+            </summary>
+            <param name="olFolders"></param>
+            <param name="folderName"></param>
+            <param name="isContains"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.IsContainsFolders(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String,System.Boolean@)">
+            <summary>
+            只找到当前文件夹下的文件夹
+            </summary>
+            <param name="olFolder"></param>
+            <param name="folderName"></param>
+            <param name="isContains"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.FindMAPIFolderbyName(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String)">
+             <summary>
+            根据文件夹名称查找Outlook文件夹
+             </summary>
+             <param name="olFolder"></param>
+             <param name="folderName"></param>
+             <param name="isContains"></param>
+             <returns></returns>
+        </member>
+        <member name="F:ICP.MailCenter.ServiceInterface.MailUtility._NullImage">
+            <summary>
+            空白图片
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.StartFileApplication(System.String)">
+            <summary>
+            启动文件应用程序
+            </summary>
+            <param name="file"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.CheckEncode(System.String)">
+            <summary>
+            检查字符串是不是包含中文字符
+            </summary>
+            <param name="srcString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.Merge``1(``0[],``0[])">
+            <summary>
+            将两个数组合并成 一个数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="arr"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.SplitStringToList(System.String,System.Char[])">
+            <summary>
+            将字符串分割成数组(过滤空值)
+            </summary>
+            <param name="text"></param>
+            <param name="charMark"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.ConvertStringArrayToString(System.String,System.String[])">
+            <summary>
+            将数组转换成字符串
+            </summary>
+            <param name="separator"></param>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.SplitGuidToList(System.String,System.Char[])">
+            <summary>
+            将guid字符串分割成泛型集合(过滤空值)
+            </summary>
+            <param name="guid"></param>
+            <param name="charMark"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.AbortThread(System.Threading.Thread)">
+            <summary>
+            终止线程
+            </summary>
+            <param name="thread"></param>        
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.GetFilePath(System.Object)">
+            <summary>
+            获取拖拽文件路径
+            </summary>
+            <param name="objFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.LoadTemplateFromXml(System.String,System.String,System.String)">
+            <summary>
+            加载节点值
+            </summary>
+            <param name="xmlPath"></param>
+            <param name="nodeName"></param>
+            <param name="isEnglish"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.UpdateAndSaveXmlTemplate(System.String,System.String,System.String)">
+            <summary>
+            保存或者更改邮件模板
+            </summary>
+            <param name="xmlPath"></param>
+            <param name="nodeName"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.ToString(System.String[],System.Char)">
+            <summary>
+            将字段以"|"分割成一个字符串
+            </summary>
+            <param name="arrFields"></param>
+            <param name="separator">分隔符,如果为空则取'|'字符</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.MailUtility.SaveMailItemAs(System.Object,System.String)">
+            <summary>
+            以指定路径保存MailItem对象到磁盘MSG文件
+            </summary>
+            <param name="mailItem"></param>
+            <param name="savePath"></param>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.MailUtility.AppStartArgs">
+            <summary>
+            邮件中心程序启动参数
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.MailUtility.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject">
+            <summary>
+            邮件模板参数实体
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.OperationNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.POL">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.POD">
+            <summary>
+             卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.ContainerDescription">
+            <summary>
+            箱型说明
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.Customer">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.SONO">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.Carrier">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.Vessel">
+            <summary>
+            航线
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.FailureDescription">
+            <summary>
+            失败说明
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.Fees">
+            <summary>
+            费用
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.LicensePlateNO">
+            <summary>
+            车牌号
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.MailTemplateObject.SealNO">
+            <summary>
+            封条号
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TreeViewPacked">
+            <summary>
+            树控件的包装类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TreeViewPacked.TreeView">
+            <summary>
+            outlook 文件夹树
+            </summary>            
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TreeViewPacked.ClickNode">
+            <summary>
+            选中的节点
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject">
+            <summary>
+            上下文实体类
+            </summary>
+            
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.MailFolderType">
+            <summary>
+            邮件文件夹操作类型
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.OperationType">
+            <summary>
+            业务操作类型
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.SafeFilePath">
+            <summary>
+            纯文件名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.FullFilePath">
+            <summary>
+            文件完成路径
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.Sender">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.Id">
+            <summary>
+            可以用各种类型的属性
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.SO">
+             <summary>
+            SO号 
+             </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.OperationNO">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.CustomerName">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.POD">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.DataObjects.ToolMenuItemObject.Commodity">
+            <summary>
+            商品
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation">
+            <summary>
+            邮件模版操作类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.ReturnMessage(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            返回Message对象
+            </summary>
+            <param name="isEnglish"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.Get(System.String,System.String,System.String,System.Object[])">
+            <summary>
+            获取指定语言指定段的值
+            </summary>
+            <param name="languageName"></param>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.GetHtml(System.String,System.String,System.String,System.Object[])">
+            <summary>
+            提取HTML的模版内容
+            </summary>
+            <param name="languageName"></param>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.GetSubject(System.String,System.Object[])">
+            <summary>
+             邮件标题
+            </summary>
+            <param name="subject">截取的字符串</param>
+            <param name="values">对象值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.GetBody(System.String,System.Object[])">
+            <summary>
+             邮件内容
+            </summary>
+            <param name="body">截取的字符串</param>
+            <param name="values">对象值</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.SetStrArray(System.String)">
+            <summary>
+            根据字符提取参数
+            </summary>
+            <param name="strObject">字符串</param>
+            <returns>返回分割以后的字符信息</returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.SetString(System.Object,System.String,System.Boolean)">
+            <summary>
+            返回已替换值的字符串
+            </summary>
+            <param name="values">对象</param>
+            <param name="replaceStr">替换字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.SetNewString(System.String,System.Type,System.String,System.Object,System.String,System.String)">
+            <summary>
+            根据条件对于replaceStr字符进行数据替换操作
+            </summary>
+            <param name="verdict">需要移除的字段名</param>
+            <param name="typeObject">Type对象</param>
+            <param name="chars">当前字符</param>
+            <param name="values">替换的数据对象</param>
+            <param name="replaceStr">需要替换的字符</param>
+            <param name="newStr">新的字符串</param>
+            <returns>返回一个新的字符</returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetvaluation.GetObjectName(System.String)">
+            <summary>
+             返回当前对象的名称
+            </summary>
+            <param name="verdict">简写</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TemplateBaseDictionary`2">
+            <summary>
+            Email模板文件信息基类
+            </summary>
+            <typeparam name="K"></typeparam>
+            <typeparam name="V"></typeparam>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateBaseDictionary`2.EnsureExists(`0)">
+            <summary>
+            在访问成员时,确保成员存在
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateFileData">
+            <summary>
+            Email模板文件字典类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TemplateFileData">
+            <summary>
+            模板文件字典类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateFileData.GetFileFullPath">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateFileData.ReadSections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateFileData.Init">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.EmailTemplateFileData.LanguageName">
+            <summary>
+            文件对应的语言
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.EmailTemplateFileData.FileRootPath">
+            <summary>
+            文件根路径
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateGetter">
+            <summary>
+            邮件模版实现类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetter.Get(System.String,System.Object[])">
+            <summary>
+            获取中文通用值
+            </summary>
+            <param name="itemKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetter.GetEn(System.String,System.Object[])">
+            <summary>
+            获取英文通用值
+            </summary>
+            <param name="itemKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetter.Get(System.String,System.String,System.Object[])">
+            <summary>
+            获取中文指定段值
+            </summary>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetter.GetEn(System.String,System.String,System.Object[])">
+            <summary>
+            获取英文指定段的值
+            </summary>
+            <param name="sectionName"></param>
+            <param name="itemKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.EmailTemplateGetter.ReturnMessage(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            返回Message对象
+            </summary>
+            <param name="isEnglish"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateItemData">
+            <summary>
+            Email模板数据项类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.ITemplateItemData">
+            <summary>
+            模板子项接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.ITemplateItemData.Init(System.Xml.Linq.XElement)">
+            <summary>
+            初始化
+            </summary>
+            <param name="element">对应于XML文件中的元素配置信息</param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.EmailTemplateItemData.Name">
+            <summary>
+            项名称标识
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.EmailTemplateItemData.Subject">
+             <summary>
+            邮件标题
+             </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateSectionData">
+            <summary>
+            邮件模板段落类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.TemplateSectionData">
+            <summary>
+            模板段落类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateSectionData.GetTemplateItemData">
+            <summary>
+            获取子项实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateSectionData.GetKeyName(System.Xml.Linq.XElement)">
+            <summary>
+            获取键名
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.TemplateSectionData.GetChildElements">
+            <summary>
+            子项xml节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TemplateSectionData.Name">
+            <summary>
+            段落名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.TemplateSectionData.FilePath">
+            <summary>
+            模板文件绝对路径
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.IOutLookService">
+            <summary>
+            Outlook服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.AddNewEmail(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            Add a New Email 
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.AddNewEmail(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sendTo"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ReplyToSender(System.Object)">
+            <summary>
+            Reply a email to sender
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ReplyToAll(System.Object)">
+            <summary>
+            Reply to All
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ReplyToAllContainsAttachment(System.Object)">
+            <summary>
+            答复所有邮件(包含附件)
+            </summary>
+            <param name="item">答复邮件对象</param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Forward(System.Object)">
+            <summary>
+            Forward email
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Open(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ReplyAll(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Reply(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Forward(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Send(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Resend(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.AutoSend(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="mail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.GetMailItemByMessageID(System.String)">
+            <summary>
+            通过MessageID查询邮件
+            </summary>
+            <param name="strMessageID">MessageID</param>
+            <returns>MailItem</returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.GetByteByMessageID(System.String,System.String,System.String)">
+            <summary>
+            通过MessageID查询并转换成Byte[]
+            </summary>
+            <param name="strEntryID">Mail EntryID(GUID)</param>
+            <param name="strMessageID">MessageID</param>
+            <param name="strIMessageID">IMessageID</param>
+            <returns>byte[]</returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.GetMailItemSaveAsPath(System.String,System.String,System.String)">
+            <summary>
+            获取邮件另存目录
+            </summary>
+            <param name="strEntryID">邮件EntryID</param>
+            <param name="strMessageID">邮件MessageID</param>
+            <param name="strIMessageID">消息Guid</param>
+            <returns>另存目录</returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.Open(System.String)">
+             <summary>
+            打开msg文件
+             </summary>
+             <param name="MsgFilePath"></param>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ConvertMailToPDF(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="mailFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IOutLookService.ConvertMessageToMsg(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.EmailTemplateLoader">
+            <summary>
+            邮件模板文件载入类
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.ServiceInterface.EmailTemplateLoader.Current">
+            <summary>
+            返回唯一实例
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.ServiceInterface.IMailCenterManageService">
+            <summary>
+            邮件中心管理服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterManageService.Exit">
+            <summary>
+            关闭邮件中心
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.ServiceInterface.IMailCenterManageService.RemoveMemCacheContacts(System.Collections.Generic.List{System.String})">
+            <summary>
+            移除内存缓存的联系人类型信息
+            </summary>
+            <param name="emailAddresses"></param>
+        </member>
+    </members>
+</doc>

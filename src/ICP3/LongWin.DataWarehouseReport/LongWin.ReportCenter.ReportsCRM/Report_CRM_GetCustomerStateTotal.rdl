@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="CRMReportSource">
+      <rd:DataSourceID>4486980f-1688-4eaa-bf59-03faa90ab8e7</rd:DataSourceID>
+      <DataSourceReference>CRMReportSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="CompanyName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value> </Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CompanyName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Condition">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>&lt;root&gt;   &lt;StructNodeId&gt;701acd43-d49b-422b-83a9-acb56b696995&lt;/StructNodeId&gt;  &lt;Beginning_Date&gt;2008-01-01&lt;/Beginning_Date&gt;  &lt;Ending_Date&gt;2008-12-31&lt;/Ending_Date&gt;  &lt;SalesSet /&gt;  &lt;CustomerSet /&gt;  &lt;IsEnglish&gt;0&lt;/IsEnglish&gt; &lt;IsDirectClient&gt;0&lt;/IsDirectClient&gt;&lt;/root&gt;</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Condition</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5cm</RightMargin>
+  <LeftMargin>0.5cm</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="GroupByName">
+        <rd:DefaultName>GroupByName</rd:DefaultName>
+        <Top>1.75cm</Top>
+        <Width>2.75cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>3cm</Left>
+        <Value>= Parameters!CompanyName.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>1.75cm</Top>
+        <Width>2.25cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.25cm</Left>
+        <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"所属公司","Department")</Value>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <Width>15.75cm</Width>
+        <Style>
+          <BackgroundColor>White</BackgroundColor>
+          <BorderColor>
+            <Bottom>Black</Bottom>
+          </BorderColor>
+          <BorderWidth>
+            <Bottom>3pt</Bottom>
+          </BorderWidth>
+          <FontFamily>宋体</FontFamily>
+          <FontSize>18pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Height>1cm</Height>
+        <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"合作状态统计","Cooperate Status Total")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.93906in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5cm</BottomMargin>
+  <rd:ReportID>1811b447-7829-4795-aed1-58e23aa3091f</rd:ReportID>
+  <CodeModules>
+    <CodeModule>LongWin.DataWarehouseReport.ToolsMethod, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</CodeModule>
+  </CodeModules>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="CRM_Report">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ParentID">
+          <DataField>ParentID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="NAME">
+          <DataField>NAME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CooperateCount">
+          <DataField>CooperateCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="NotCooperateCount">
+          <DataField>NotCooperateCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LostCount">
+          <DataField>LostCount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="IsStaffer">
+          <DataField>IsStaffer</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>CRMReportSource</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SPR_REP_CRMGetCustomerStateTotal</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@Condition">
+            <Value>=Parameters!Condition.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>16cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>CRM_Report</DataSetName>
+        <Top>0.25cm</Top>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NAME">
+                      <rd:DefaultName>NAME</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <PaddingLeft>=Convert.ToString(2 + (Level()*10)) &amp; "pt"</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!NAME.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CooperateCount">
+                      <rd:DefaultName>CooperateCount</rd:DefaultName>
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif(Fields!CooperateCount.Value=0,false,"Report_CRM_GetCustomerStateDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="Beginning_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Beginning_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="Ending_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Ending_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="SalesSet">
+                              <Value>=IIF(Fields!IsStaffer.Value=1,Fields!ID.Value,LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"SalesSet").ToString().ToUpper())</Value>
+                            </Parameter>
+                            <Parameter Name="CustomerSet">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"CustomerSet").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="StructNodeId">
+                              <Value>=IIF(Fields!IsStaffer.Value=0,Fields!ID.Value,Fields!ParentID.Value)</Value>
+                            </Parameter>
+                            <Parameter Name="IsEnglish">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="CustomerState">
+                              <Value>1</Value>
+                            </Parameter>
+                            <Parameter Name="IsDirectClient">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsDirectClient").ToString().ToUpper()</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>=iif(Fields!CooperateCount.Value=0,"Black","DodgerBlue")</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>=iif(Fields!CooperateCount.Value=0,"None","Underline")</TextDecoration>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CooperateCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="NotCooperateCount">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif(Fields!NotCooperateCount.Value=0,false,"Report_CRM_GetCustomerStateDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="Beginning_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Beginning_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="Ending_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Ending_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="SalesSet">
+                              <Value>=IIF(Fields!IsStaffer.Value=1,Fields!ID.Value,LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"SalesSet").ToString().ToUpper())</Value>
+                            </Parameter>
+                            <Parameter Name="CustomerSet">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"CustomerSet").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="StructNodeId">
+                              <Value>=IIF(Fields!IsStaffer.Value=0,Fields!ID.Value,Fields!ParentID.Value)</Value>
+                            </Parameter>
+                            <Parameter Name="IsEnglish">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="CustomerState">
+                              <Value>0</Value>
+                            </Parameter>
+                            <Parameter Name="IsDirectClient">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsDirectClient").ToString().ToUpper()</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>=iif(Fields!NotCooperateCount.Value=0,"Black","DodgerBlue")</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>=iif(Fields!NotCooperateCount.Value=0,"None","Underline")</TextDecoration>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!NotCooperateCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LostCount">
+                      <Action>
+                        <Drillthrough>
+                          <ReportName>=iif(Fields!LostCount.Value=0,false,"Report_CRM_GetCustomerLostDetail")</ReportName>
+                          <Parameters>
+                            <Parameter Name="Beginning_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Beginning_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="Ending_Date">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"Ending_Date").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="SalesSet">
+                              <Value>=IIF(Fields!IsStaffer.Value=1,Fields!ID.Value,LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"SalesSet").ToString().ToUpper())</Value>
+                            </Parameter>
+                            <Parameter Name="CustomerSet">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"CustomerSet").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="StructNodeId">
+                              <Value>=IIF(Fields!IsStaffer.Value=0,Fields!ID.Value,Fields!ParentID.Value)</Value>
+                            </Parameter>
+                            <Parameter Name="IsEnglish">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()</Value>
+                            </Parameter>
+                            <Parameter Name="IsDirectClient">
+                              <Value>=LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsDirectClient").ToString().ToUpper()</Value>
+                            </Parameter>
+                          </Parameters>
+                        </Drillthrough>
+                      </Action>
+                      <Style>
+                        <Color>=iif(Fields!LostCount.Value=0,"Black","DodgerBlue")</Color>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextDecoration>=iif(Fields!LostCount.Value=0,"None","Underline")</TextDecoration>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LostCount.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+          <Grouping Name="table1_Details_Group">
+            <GroupExpressions>
+              <GroupExpression>=Fields!ID.Value</GroupExpression>
+            </GroupExpressions>
+            <Parent>=Fields!ParentID.Value</Parent>
+          </Grouping>
+          <Sorting>
+            <SortBy>
+              <SortExpression>=Fields!IsStaffer.Value</SortExpression>
+              <Direction>Ascending</Direction>
+            </SortBy>
+          </Sorting>
+          <Visibility>
+            <Hidden>true</Hidden>
+            <ToggleItem>NAME</ToggleItem>
+          </Visibility>
+        </Details>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"组织结构","Department")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox3">
+                      <rd:DefaultName>textbox3</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"合作","Cooperated")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox21">
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"未合作","Non-cooperation")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>SteelBlue</BackgroundColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <FontFamily>宋体</FontFamily>
+                        <TextAlign>Center</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=iif(LongWin.DataWarehouseReport.ToolsMethod.Tools.GetConditionForValue(Parameters!Condition.Value,"IsEnglish").ToString().ToUpper()=0,"遗失","Lost")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.63492cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>5.75cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.25cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.26984cm</Height>
+      </Table>
+    </ReportItems>
+    <Height>1.75cm</Height>
+  </Body>
+  <Language>zh-CN</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox17">
+        <Style>
+          <FontFamily>宋体</FontFamily>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>=Globals!PageNumber.ToString()+"/"+ Globals!TotalPages.ToString()</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

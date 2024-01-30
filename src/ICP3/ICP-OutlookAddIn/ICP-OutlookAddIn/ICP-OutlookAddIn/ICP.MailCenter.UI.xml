@@ -1,0 +1,2661 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.MailCenter.UI</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.MailCenter.UI.ClientProperties">
+            <summary>
+            邮件中心全局存放客户端属性类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.IsExpandTreeNode">
+            <summary>
+            是否展开TreeNode节点
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.IsCollapseTreeNode">
+            <summary>
+            是否折叠TreeNode节点
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.IsReceiveNewMail">
+            <summary>
+            是否接收到新邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.selectedChanged">
+            <summary>
+            是否选择邮件改变了
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.FlagMailItemPropertyChanged">
+            <summary>
+            标识邮件中心邮件列表邮件属性是否被改变
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.BeginTime">
+            <summary>
+            记录用户进入邮件中心时间
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.EndTime">
+            <summary>
+            记录用户结束邮件中心时间
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.selected_MailEntryID">
+            <summary>
+            记录选中的邮件EntryID
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.isReSend">
+            <summary>
+            记录一个标识，邮件是否重新发送
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.UnReadCount">
+            <summary>
+            获取当前接收到未读取的邮件个数
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.RootFolders">
+            <summary>
+            后台同步时记录根目录文件夹集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.IsNeedDeleteConfigFile">
+            <summary>
+            标识是否要删除配置文件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.IsSynchronizingFolders">
+            <summary>
+            是否正在同步文件夹
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties._Copy_Folder_EntryID">
+            <summary>
+            选择文件夹文件夹ID
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.Action">
+            <summary>
+            邮件动作
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.isSendMail">
+            <summary>
+            是否把邮件发送出去标识
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.isOutlookViewCtlValidate">
+            <summary>
+            验证视图控件是否有效，如果无效，就不需要则不需要查看一封邮件，otherwise,可以查看，默认是选中第一封邮件的。
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties.isDragDropLastOne">
+            <summary>
+            拖拽邮件到最后一封邮件时，才需要去显示最后一封邮件的detail
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientProperties._ErrorMessage">
+            <summary>
+            outlook被意外关闭后，错误消息
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.ExpandResetEvent">
+            <summary>
+            搜索文件夹，查找到文件夹后，将其展开延迟等待
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.CurrentSelectedNode">
+            <summary>
+            当前TreeView 选中的节点
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.ObjMailItem">
+            <summary>
+            当前选择的邮件是否属于MailItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.IsCurrentOutlookSupported">
+            <summary>
+            判断当前outlook是否为当前邮件中心支持的版本
+            当前邮件中心支持的Outlook版本为2007(12),2010(14)
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.NewFolder">
+            <summary>
+            新增文件夹
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.ViewXmlTemp">
+            <summary>
+            缓存默认排序的view xml
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.MailReadTimeInterval">
+            <summary>
+            缓存设置邮件已读的时间
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.ClientProperties.DragDropUnreadMail">
+            <summary>
+            记录拖拽邮件至目标文件夹有没有存在未读的邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.OlNS">
+            <summary>
+             邮件应用程序入口
+            </summary>
+            
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.CityoceanDomain">
+            <summary>
+            是否包含cityocean邮箱域名的邮件
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.EmailRelationSaveFolder">
+             <summary>
+            关联邮件保存目录 
+             </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.CustomMessageIDTag">
+            <summary>
+            自定义邮件Message-ID标签值
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.OperationContextTag">
+            <summary>
+            自定义邮件业务上下文标签值
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.OutlookMessageIDTag">
+            <summary>
+            Outlook Message-ID标签值
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.ReferenceTag">
+            <summary>
+            邮件标头中Reference中的标签值
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.index">
+            <summary>
+            outlook应用程序入口
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetOutlookNewNameSpace">
+            <summary>
+            重新获取outlook命名空间
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.CreateOutlookNameSpaceInstance">
+            <summary>
+            生成一个outlook NameSapce实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility._olVersion">
+            <summary>
+            获取Outlook版本号
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility.culture">
+            <summary>
+            outlook语言(zh-cn | en-us)
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility._GreenCategory">
+            <summary>
+            邮件类别名称
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.ClientUtility._FileIcons">
+            <summary>
+            文件类型后缀和对应的文件图标缓冲字典
+            </summary>
+            <summary>
+            缓存文件图标集合
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.IsRelationOperation(Microsoft.Office.Interop.Outlook._MailItem)">
+            <summary>
+            判断邮件是否关联业务
+            </summary>
+            <param name="olItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetMessageId(Microsoft.Office.Interop.Outlook.PropertyAccessor,System.String)">
+            <summary>
+            获取邮件的ID
+            </summary>
+            <param name="pa"></param>
+            <param name="tagName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetMessageID">
+            <summary>
+            获取MessageID
+            </summary>
+            <param name="hostName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetMessageInfo(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            将Message实体中一些不需要的属性值过滤，减少网络带宽
+            </summary>
+            <param name="messageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.CloneMessageInfo(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            克隆Message 实体
+            </summary>
+            <param name="messageInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.HasCityoceanDomainMail(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            是否包含Cityocean域名的邮件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.ConvertMailItemInfo(Microsoft.Office.Interop.Outlook.MailItem,System.Boolean,System.Boolean)">
+            <summary>
+            将MailItem转换成Message实体对象
+            </summary>
+            <param name="mail"></param>
+            <param name="useOriginalSenderAddress"></param>
+            <param name="isNeedConvertAttachmentContent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.ConvertReportItemToMessageInfo(Microsoft.Office.Interop.Outlook._ReportItem)">
+            <summary>
+            将ReportItem（回执）转换成Message实体对象
+            </summary>
+            <param name="reportItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetRealAttachmentList">
+            <summary>
+            将选择的邮件的每个附件都映射本地两个路径（LocalPath，PreviewPath）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetUserPropertiesOjbect(Microsoft.Office.Interop.Outlook.PropertyAccessor)">
+            <summary>
+            获取邮件自定义信息
+            </summary>
+            <param name="pa"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.AddFolder(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String,System.Boolean@)">
+            <summary>
+            添加文件夹目录
+            </summary>
+            <param name="selectFolder">选中文件夹</param>
+            <param name="newFolderName">新文件夹名称</param>
+            <returns>返回值：outlook.MAPIFolder新增成功返回新增的文件夹对象否则返回null</returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GeteRelationEmailFolder(Microsoft.Office.Interop.Outlook.Store)">
+            <summary>
+            从文件夹列表中获取关联邮件保存文件夹对象
+            </summary>
+            <param name="folders">文件夹集合对象</param>
+            <returns>返回值：文件夹对象</returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.ClientUtility.GetInboxFolder(Microsoft.Office.Interop.Outlook.Store)">
+            <summary>
+            从文件夹列表中获取关联邮件保存文件夹对象
+            </summary>
+            <param name="folders">文件夹集合对象</param>
+            <returns>返回值：文件夹对象</returns>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailActionArgHandler">
+             <summary>
+            邮件发送命令参数处理类
+            <remarks>ICP调用发送邮件功能，将发送邮件信息所保存的文件路径作为命令参数传递</remarks>
+             </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.IAPPArgHandler.PreHandle">
+            <summary>
+            预处理方法
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.IAPPArgHandler.Handle">
+            <summary>
+            处理方法
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.IAPPArgHandler.PostHandle">
+            <summary>
+            处理后，清理方法
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.IAPPArgHandler.Parameters">
+            <summary>
+            启动参数
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.FolderWrapper">
+            <summary>
+            邮件文件夹包装类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderWrapper.OnRefershed(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            获取文件夹数量，刷新树节点
+            </summary>
+            <param name="olFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderWrapper.SaveShipmentRelationMail(System.Object)">
+            <summary>
+            保存与业务相关的邮件
+            </summary>
+            <param name="objItem"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderWrapper.InnerRefershed(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            刷新节点
+            </summary>
+            <param name="count"></param>
+            <param name="folderName"></param>
+            <param name="fullPath"></param>
+            <param name="entityID"></param>
+        </member>
+        <member name="T:ICP.MailCenter.UI.MailCenterTemplateService">
+            <summary>
+            调用邮件模板发送邮件服务实现
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterTemplateService.SendMailWithTemplateCN(ICP.Message.ServiceInterface.Message,System.String,System.Object[])">
+            <summary>
+            调用邮件英文模板Common节点弹出邮件发送界面
+            </summary>
+            <param name="mail"></param>
+            <param name="itemKey"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterTemplateService.AutoSendMailWithTemplate(ICP.Message.ServiceInterface.Message,System.Boolean,System.String,System.Object[])">
+            <summary>
+            邮件自动发送
+            </summary>
+            <param name="mail">邮件信息实体类</param>
+            <param name="isEnglish">是否发送英文版本</param>
+            <param name="itemKey">发送邮件模版名称</param>
+            <param name="values">发送模版内容</param>
+        </member>
+        <member name="P:ICP.MailCenter.UI.MailCenterTemplateService.EmailTemplateGetter">
+            <summary>
+            提取邮件信息内容
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.MailListPresenter">
+            <summary>
+            邮件列表呈现类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailListPresenter._CustomViewXml">
+            <summary>
+            读取定制的视图配置文件 
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailListPresenter._DefaultViewXml">
+            <summary>
+            读取默认的视图配置文件 
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.IsContainsRootFolder(System.String)">
+            <summary>
+            是否包含根目录
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetItemByEntryID(System.String)">
+            <summary>
+            获取一个不能确定类型的Item对象
+            </summary>
+            <param name="entryID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.IsContainsOrderColumn(System.String)">
+            <summary>
+            是否包含需要排序的列
+            </summary>
+            <param name="folderName"></param>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailListPresenter.flag">
+            <summary>
+            根据选择文件夹来显示不同的排序列
+            </summary>        
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.SetSplitterPosition(DevExpress.XtraEditors.SplitContainerControl,System.String,System.Int32)">
+            <summary>
+            获取配置文件中节点的配置信息
+            </summary>
+            <param name="splitControl"></param>
+            <param name="configId"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.SaveSplitterPosition(System.String,System.String)">
+            <summary>
+            记录分隔符位置到用户配置文件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.OpenAdvancedSearchPart(ICP.MailCenter.ServiceInterface.ContactType,System.String)">
+            <summary>
+            打开搜索界面后将控件填充值
+            </summary>
+            <param name="type"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.ShowSearchPart">
+            <summary>
+            打开搜索界面
+            </summary>
+            <param name="_emailList"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.HasPermissionsChangedFolder(System.String)">
+            <summary>
+            有权限去更改文件夹信息
+            </summary>
+            <param name="folderName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.AddToContact(System.String,System.String)">
+            <summary>
+            add to contact
+            </summary>
+            <param name="emailAddress"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.SetControlHeight(System.Int32,System.Windows.Forms.FlowLayoutPanel,System.Windows.Forms.Panel)">
+            <summary>
+            dynamic set control height
+            </summary>
+            <param name="width"></param>
+            <param name="flpPanel"></param>
+            <param name="pnlControl"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetFileNameAndMemory(System.String)">
+            <summary>
+            获取附件名称
+            </summary>
+            <param name="attachment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.FixHtmlBody(Microsoft.Office.Interop.Outlook.Attachments,System.String)">
+            <summary>
+            解析邮件的主体
+            1.将邮件中的图片保存到本地，并将邮件中的图片路径替换为本地路径
+            2.抽取邮件中真正的附件，剔除邮件背景图片附件
+            </summary>
+            <param name="attachments"></param>
+            <param name="htmlBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetFileFullPath(System.String)">
+            <summary>
+            得到文件完整路径
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.CreateAttachmentContentInfo(Microsoft.Office.Interop.Outlook.Attachment)">
+            <summary>
+            将附件转换成实体类
+            </summary>
+            <param name="att"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetAttachmentName(Microsoft.Office.Interop.Outlook.Attachment)">
+            <summary>
+            获取附件名称
+            </summary>
+            <param name="attachment"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetAttachmentFullPath(Microsoft.Office.Interop.Outlook.Attachment,System.String@)">
+            <summary>
+            获取附件的本地保存路径
+            </summary>
+            <param name="att"></param>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.SaveAsLocalFile(Microsoft.Office.Interop.Outlook.Attachment,System.String)">
+            <summary>
+            将附件保存到本地磁盘
+            </summary>
+            <param name="att"></param>
+            <param name="fullFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.GetDefaultSearchFolders(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            获取默认搜索文件夹
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.HasSubFolder(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            是否存在子文件夹
+            </summary>
+            <param name="olFolder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.ConvertRecipientsToString(Microsoft.Office.Interop.Outlook.Recipients,System.Int32,System.String@)">
+            <summary>
+            将邮件接收人转换成string字符串，以 ‘;’分割
+            </summary>
+            <param name="olRecipients"></param>
+            <param name="type">类型:发件人为0，接收人为1，CC为2</param>
+            <param name="nameList">发件人或接收人的名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.ReplaceHtmlBodyImagePathWithLocalPath(System.String,System.String,System.String,System.Boolean@)">
+            <summary>
+            将htmlbody中图片路径替换
+            </summary>
+            <param name="htmlBody"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.HasUnreadMail(System.Collections.Generic.List{System.Boolean})">
+             <summary>
+            拖拽文件夹中是否包含未读邮件
+             </summary>
+             <param name="dragDropUnreadMail"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.RenameMAPIFolder(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String)">
+            <summary>
+            重命名Outlook 文件夹名称
+            </summary>
+            <param name="olFolder"></param>
+            <param name="newName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailListPresenter.SetMailCenterText(System.Windows.Forms.Control,System.String,System.Boolean)">
+            <summary>
+            设置邮件中心标题
+            </summary>
+            <param name="control"></param>
+            <param name="text"></param>
+            <param name="setMainFormText"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MenuService.InitContextMenu(System.Windows.Forms.ToolStripItemCollection,System.EventHandler)">
+             <summary>
+            构造联系人邮件菜单
+             </summary>
+             <param name="entryID"></param>
+        </member>
+        <member name="T:ICP.MailCenter.UI.SystemFileIcon">
+            <summary> 
+            提供从操作系统获取不同类型的文件图标的方法 
+            </summary> 
+        </member>
+        <member name="M:ICP.MailCenter.UI.SystemFileIcon.GetIconByFileName(System.String)">
+            <summary> 
+            依据文件名读取图标，若指定文件不存在，则默认图标。 
+            </summary> 
+            <param name="fileName">指定文件的完整路径</param> 
+            <returns>返回指定路径的文件图标</returns> 
+        </member>
+        <member name="M:ICP.MailCenter.UI.SystemFileIcon.GetIconByFileType(System.String,System.Boolean)">
+            <summary> 
+            给出文件扩展名（.*），返回相应图标 
+            若不以"."开头则返回文件夹的图标。 
+            </summary> 
+            <param name="fileType">文件类型</param> 
+            <param name="isLarge"></param> 
+            <returns>返回文件类型所对应的系统图标</returns> 
+        </member>
+        <member name="T:ICP.MailCenter.UI.Win32">
+            <summary> 
+            定义调用的API方法 
+            </summary> 
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeNodeComparer">
+            <summary>
+            树节点比较器
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewDataAccess">
+            <summary>  
+            TreeView串行化类  
+            </summary>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.LoadTreeViewDataFromXml(System.Windows.Forms.TreeView,System.String)">
+            <summary>  
+            加载TreeView  
+            </summary>  
+            <param name="treeView"></param>  
+            <param name="path"></param>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.SaveTreeViewDataToXml(System.Windows.Forms.TreeView,System.String,System.String)">
+            <summary>  
+            保存TreeView到文件  
+            </summary>  
+            <param name="treeView"></param>  
+            <param name="path"></param>  
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewDataAccess.TreeViewData">
+            <summary>  
+            TreeViewData  
+            </summary>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.TreeViewData.#ctor(System.Windows.Forms.TreeView,System.String)">
+            <summary>  
+            递归初始化TreeView数据  
+            </summary>  
+            <param name="treeview"></param>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.TreeViewData.PopulateTree(System.Windows.Forms.TreeView)">
+            <summary>  
+            通过TreeViewData弹出TreeView  
+            </summary>  
+            <param name="treeview"></param>  
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewDataAccess.TreeNodeData">
+            <summary>  
+            TreeNodeData  
+            </summary>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.TreeNodeData.#ctor(System.Windows.Forms.TreeNode,System.String)">
+            <summary>  
+            TreeNode构造函数  
+            </summary>  
+            <param name="node"></param>  
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewDataAccess.TreeNodeData.ToTreeNode">
+            <summary>  
+            TreeNodeData返回TreeNode  
+            </summary>  
+            <returns></returns>  
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewPresenter">
+            <summary>
+            邮件文件夹列表呈现类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.noFoundFolders">
+            <summary>
+            记录刚打开邮件中心时，某个文件夹的子文件夹收到新邮件，
+            但这个时候正在构造树，就找不到该节点，
+            记录下来，等构造树完成后，再将其展开
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.RootFolderPath">
+            <summary>
+            根文件夹路径
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.parentTreeNodes">
+            <summary>
+            记录父节点树集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.arrTreeNodes">
+            <summary>
+            记录所有节点集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.currentTreeNodes">
+            <summary>
+            记录当前节点集合
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.subTreeNodes">
+            <summary>
+            记录子节点集合
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetDefaultUserFolderName">
+            <summary>
+            获取账户发送邮件的文件夹根目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetDefaultUserFolderEntryID">
+            <summary>
+            outlook账户默认使用的文件夹EntryID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.DefaultUseFolder">
+            <summary>
+             outlook 账户默认使用的文件夹
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.DefaultUseFolderFullPath">
+            <summary>
+            默认定位收件箱完整路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter._defaultUseFolder">
+            <summary>
+            用户outlook客户端默认使用的pst文件夹
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter._defaultSelectedFolderPath">
+            <summary>
+            TreeView默认选中文件夹Full Path
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.IsSameFolder(System.Windows.Forms.TreeNode,Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            判断Outlook文件夹和树节点是否相同
+            </summary>
+            <param name="currentSelectedNode"></param>
+            <param name="targetFolder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetRelationMails(Microsoft.Office.Interop.Outlook.MAPIFolder,System.Collections.Generic.List{System.Object}@)">
+            <summary>
+            获取关联邮件
+            </summary>
+            <param name="inboxFolder">收件箱对象</param>
+            <param name="items">返回集合对象：保存关联的邮件</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.AddItemToDictionary(System.String,System.Windows.Forms.TreeNode)">
+            <summary>
+            将项添加到集合
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.RefershTreeView(System.Windows.Forms.TreeView,System.Boolean)">
+            <summary>
+            将树保持和outlook文件夹一致
+            </summary>
+            <param name="tvFolder"></param>
+            <param name="isRegisterEvents"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.Expand(System.Windows.Forms.TreeNode)">
+            <summary>
+            比如当前TreeNode 的Level是3，则 Level分别为2，1都需要将其展开
+            </summary>
+            <param name="_treeNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ReleaseMailCenterHandle">
+            <summary>
+            释放延迟等待
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.AddShamAndRealNode(System.Windows.Forms.TreeNode,Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean)">
+            <summary>
+            新增树节点，并添加一个Loading的子文件夹
+            </summary>
+            <param name="node"></param>
+            <param name="folder"></param>
+            <param name="isRegister"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.CreateNewTreeNode(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            新增一个节点
+            </summary>
+            <param name="olFolder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.CreateShamAndRealNode(System.String,System.String)">
+            <summary>
+            生成一个默认的节点和伪子节点
+            </summary>
+            <param name="folderName"></param>
+            <param name="entryID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.AddShamNode(System.Windows.Forms.TreeNode)">
+            <summary>
+            添加一个伪节点（Loading TreeNode）
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.AddShamNode(System.Windows.Forms.TreeNode,Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            添加一个伪节点
+            </summary>
+            <param name="newNode"></param>
+            <param name="olFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.AddToTreeNode(System.Windows.Forms.TreeNode,System.Windows.Forms.TreeNode)">
+            <summary>
+            追加TreeNode
+            </summary>
+            <param name="node"></param>
+            <param name="subNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.RegisterTreeViewEvents(System.Windows.Forms.TreeNode)">
+             <summary>
+            递归注册所有MAPIFolder事件
+             </summary>
+             <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.LoopRecordTreeNodes(System.Windows.Forms.TreeNode,System.Windows.Forms.TreeNode[],System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            循环遍历记录所有展开的节点，并且注册Folder事件
+            </summary>
+            <param name="node"></param>
+            <param name="isRegisterEvents"></param>
+            <param name="isRegisterSubNodeEvents"></param>
+            <param name="isRefershUI"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.HasParentTreeNode(System.Windows.Forms.TreeNode[],System.String,System.Object,System.Boolean@)">
+            <summary>
+            是否存在父节点
+            </summary>
+            <param name="treeNodes"></param>
+            <param name="nodeText"></param>
+            <param name="tag"></param>
+            <param name="hasParentNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ConvertMAPIFolderToTreeNode(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            将MAPIFolder 转换成TreeNode
+            </summary>
+            <param name="currentFolder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ShowALLFolders(System.Windows.Forms.TreeView,Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean)">
+            <summary>
+            show all folders
+            </summary>
+            <param name="nodes"></param>
+            <param name="folders"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetSameRootFolderName(System.Collections.Generic.List{System.String})">
+            <summary>
+            找到根目录相同文件夹名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.RegisterFolderEvents(Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean)">
+            <summary>
+            将MAPIFolder 注册监听事件
+            </summary>
+            <param name="olFolder"></param>
+            <param name="isChanged"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.gotIt">
+            <summary>
+            根据文件夹名称和文件夹的完整路径查找对应的文件夹节点
+            </summary>
+            <param name="tcNodes"></param>
+            <param name="folderName"></param>
+            <param name="fullFolderPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ExpandByMAPIFolder(System.Windows.Forms.TreeView,ICP.MailCenter.ServiceInterface.FolderInfo)">
+            <summary>
+            通过MAPIFolder文件夹找到TreeNode，再将TreeNode展开
+            </summary>
+            <param name="olFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.InnerExpandByParentFullPath(System.Windows.Forms.TreeView,ICP.MailCenter.ServiceInterface.FolderInfo)">
+            <summary>
+            找到父节点后，去展开子节点
+            </summary>
+            <param name="treeView"></param>
+            <param name="olFolder"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.TreeViewPresenter.nodes">
+            <summary>
+            根据文件夹名称搜索过程中缓存搜索到的节点
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.InnerSearchSingleNode(System.String,System.String,System.Windows.Forms.TreeNode)">
+            <summary>
+            找到文件夹后，缓存到集合中
+            </summary>
+            <param name="folderName"></param>
+            <param name="fullFolderPath"></param>
+            <param name="entityID"></param>
+            <param name="startNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.SetFolderNodeText(System.Windows.Forms.TreeNodeCollection,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            根据文件夹名称和文件夹所包含的未读项数量设置文件夹节点的名称
+            </summary>
+            <param name="tcNodes"></param>
+            <param name="unreadItemCount"></param>
+            <param name="folderName"></param>
+            <param name="fullPathName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetRealTreeNodeName(System.String)">
+            <summary>
+            获取真正的TreeNode文本
+            </summary>
+            <param name="arrNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ConvertSpecialCharacter(System.String)">
+            <summary>
+            转换特殊字符
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.SplitTreeNodeName(System.Char,System.String)">
+            <summary>
+            将树节点名称分割
+            </summary>
+            <param name="charText"></param>
+            <param name="arrNode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.InnerSetTreeNodeText(System.Windows.Forms.TreeNode,System.Int32,System.String)">
+            <summary>
+            根据文件夹名称和文件夹所包含的未读项数量设置文件夹节点的名称
+            </summary>
+            <param name="node"></param>
+            <param name="count"></param>
+            <param name="folderName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ReplaceEntryID(System.String,Microsoft.Office.Interop.Outlook.MAPIFolder,System.String,System.String@)">
+            <summary>
+            将outlook新节点的EntryID替换对应TreeView节点的EntryID
+            </summary>
+            <param name="oFullFolderPath"></param>
+            <param name="targetFolder"></param>
+            <param name="_oNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.IsSameAccount(System.String,System.String)">
+            <summary>
+            实现在链两个不同账户之间文件夹拖拽后，entryID需要改变
+            </summary>
+            <param name="oFullFolderPath"></param>
+            <param name="fullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetImageIndex(System.String)">
+            <summary>
+            设置文件夹显示图标
+            </summary>
+            <param name="lower_FolderName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.RenameTreeNode(System.Windows.Forms.TreeNode)">
+            <summary>
+            将FolderName更改成FolderName1, FolderName[1]=>FolderName1[1], FolderName(1)=>FolderName1(1)
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.SearchAllTreeNodes(System.Windows.Forms.TreeView,System.String)">
+            <summary>
+            遍历所有文件夹
+            </summary>
+            <param name="treeView"></param>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.SearchSingleTreeNode(System.Windows.Forms.TreeNode,System.String,ICP.MailCenter.ServiceInterface.SearchFolderInfo@)">
+            <summary>
+            查找匹配的文件夹
+            </summary>
+            <param name="treeNode"></param>
+            <param name="keyWord"></param>
+            <param name="dataList"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetMatchMAPIFolderByKeyWord(System.String,System.Windows.Forms.TreeNode,ICP.MailCenter.ServiceInterface.SearchFolderInfo@)">
+            <summary>
+            根据输入的关键字去查找Outlook中的文件夹和该文件夹的所有子文件夹
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.ExpandAllSubTreeNodes(System.Windows.Forms.TreeNode)">
+            <summary>
+            如果子节点没有展开，将其展开
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.EnsureTreeNodeExpand(System.Windows.Forms.TreeNode,System.Int32)">
+            <summary>
+            确保所有父节点关系节点展开
+            </summary>
+            <param name="currentNode">父节点</param>
+            <param name="level">指要展开节点的父节点的层次</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.GetMAPIFolderByAllSubMAPIFolder(System.String,Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean@,ICP.MailCenter.ServiceInterface.SearchFolderInfo@)">
+            <summary>
+            查找文件夹下所有子文件夹
+            </summary>
+            <param name="folderName"></param>
+            <param name="parentFolder"></param>
+            <param name="level"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.FindTreeNode(System.Windows.Forms.TreeNodeCollection,System.String,System.Windows.Forms.TreeNode@)">
+            <summary>
+            根据文件夹名称找到TreeNode
+            </summary>
+            <param name="tnCollection"></param>
+            <param name="nodeName"></param>
+            <param name="findNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.FindTreeNodeByName(System.Windows.Forms.TreeNode,System.String,System.Windows.Forms.TreeNode@)">
+            <summary>
+            根据文件夹名称查找TreeView节点
+            </summary>
+            <param name="treeNode"></param>
+            <param name="nodeName"></param>
+            <param name="targetNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.FindTreeNodeByTag(System.Windows.Forms.TreeNodeCollection,System.String,System.Windows.Forms.TreeNode@)">
+            <summary>
+            通过Tag值获取树形节点
+            </summary>
+            <param name="tnCollection">节点集合</param>
+            <param name="tagValue">Tag值</param>
+            <param name="findNode">查找的TreeNode</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.TreeViewPresenter.RegisterTreeNodeEvent(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String)">
+            <summary>
+            注册一个指定的MAPIFolder
+            </summary>
+            <param name="olFolder"></param>
+            <param name="newFolderName"></param>
+        </member>
+        <member name="P:ICP.MailCenter.UI.TreeViewPresenter.DicFolderPathAndNodes">
+            <summary>
+            文件夹路径和对应节点键值对缓存
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewPresenter.GeneralTreeNodesDelegate">
+            <summary>
+            追加树节点后将其展开
+            </summary>
+            <param name="rootNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterMainWorkspace.MailCenterMainWorkspace_SizeChanged(System.Object,System.EventArgs)">
+            <summary>
+            避免系统将文件夹列表和邮件列表宽度设置为零,没有将其显示出来
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailCenterMainWorkspace.IsSplitter">
+            <summary>
+            用户使用分割控件分割一次后，然后代码执行分割，会自动再执行一次分割事件，需要过滤
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailCenterMainWorkspace.isFirstSplitterViewList">
+            <summary>
+            标识第一次打开邮件中心分割视图列表
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterMainWorkspace.SetWorkSpaceWidth">
+            <summary>
+            设置文件夹列表面板和邮件列表面板宽度，设置值来源于客户端用户自定义配置文件
+            </summary>                
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailCenterMainWorkspace.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterMainWorkspace.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailCenterMainWorkspace.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.AddressControl">
+            <summary>
+            地址控件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AddressControl.#ctor(System.String,System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="text"></param>
+            <param name="recipientType"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AddressControl.AddressControl_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            用户点击联系人地址，系统默认使用了Ctrl+V 实现复制功能
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AddressControl.AddressControl_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            双击打开outlook联系人界面
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AddressControl.InnerOpenContactForm(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            打开Outlook联系人界面
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AddressControl.NewMail">
+            <summary>
+             new mail
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AddressControl.RecipientType">
+            <summary>
+            接收人地址类型
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AddressControl.Address">
+            <summary>
+            控件对应的Email地址
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AddressControl.Text">
+            <summary>
+            控件显示的文本
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.FolderLink">
+            <summary>
+            文件夹邮件菜单
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.FolderContextMenu(System.String,System.String)">
+            <summary>
+            init folder context menu
+            </summary>
+            <param name="folderPart"></param>
+            <param name="entryID"></param>
+            <param name="folderName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.GetFolderName(System.String)">
+            <summary>
+            fix folder name
+            </summary>
+            <param name="folderName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.DisableSystemFolderContextMenuStrip">
+            <summary>
+            disable key folder 
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.AddFolder">
+            <summary>
+            add folder
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.DeleteFolder">
+            <summary>
+            delete folder
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.RenameFolder">
+            <summary>
+            rename folder
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.MoveFolder">
+            <summary>
+            move folder
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.FolderLink.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FolderLink.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.FolderLink.EmailAddress">
+            <summary>
+            获取真实的邮件地址
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.btnCancel_Click(System.Object,System.EventArgs)">
+            <summary>
+            取消归档并关闭窗体
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.FrmEmailArchiving_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            窗体即将关闭
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.InitControl">
+            <summary>
+            初始化控件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.EmailArchiving(System.String@,System.String@)">
+            <summary>
+            邮件归档
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.SetCtlMessage(System.Int32,System.Int32)">
+            <summary>
+            设置控件显示文本
+            </summary>
+            <param name="paramIndex">第Index封邮件</param>
+            <param name="paramNum">进度数</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.Cancel">
+            <summary>
+            取消移动：关闭窗体
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.OnProgessChanged(System.Int32)">
+            <summary>
+            进度条改变
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.ThisClose">
+            <summary>
+            关闭窗体
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.FrmEmailArchiving.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmEmailArchiving.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.FrmEmailArchiving.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.FrmEmailArchiving.MailCount">
+            <summary>
+            总邮件数量
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.FrmEmailArchiving.MailProject">
+            <summary>
+            邮件项目
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.FrmEmailArchiving.OnClosed">
+            <summary>
+            关闭窗体
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.frmReminder">
+            <summary>
+            系统右下方温馨提示消息
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.frmReminder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmReminder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmReminder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.btnStart_Click(System.Object,System.EventArgs)">
+            <summary>
+            开始同步
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.btnClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            关闭窗体
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.SynchronAddressBook">
+            <summary>
+            同步ICP通讯录
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.FrmSynchronAddressBook.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.FrmSynchronAddressBook.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.FrmSynchronAddressBook.BusinessContactService">
+            <summary>
+            邮件联系人服务
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.GrowTextBox">
+            <summary>
+            扩展的文本框
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.GrowTextBox.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.GrowTextBox.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.GrowTextBox.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailDetailPart">
+            <summary>
+            邮件阅读窗口类
+            </summary>    
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailDetailPart.IsMailReadKey">
+            <summary>
+            邮件是否已读键
+            当选择一封未读邮件时，当前选择邮件事件会触发两次，
+            为了避免处理两次，临时设置邮件的属性
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailDetailPart.currentMailIsRead">
+            <summary>
+            当前选择的邮件是否以读取过
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailDetailPart.currentMail">
+            <summary>
+            当前邮件对象
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.SelectAllAttachmentControls">
+            <summary>
+            选中所有附件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.HasUserPropertyArchives(Microsoft.Office.Interop.Outlook._MailItem)">
+            <summary>
+            获取邮件UserProperty是否有未读邮件自定义信息
+            </summary>
+            <param name="mailItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.SetUserPropertyValue(Microsoft.Office.Interop.Outlook._MailItem,System.String)">
+            <summary>
+            添加邮件自定义信息
+            </summary>
+            <param name="mailItem"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.GetUserPropertyValue(Microsoft.Office.Interop.Outlook._MailItem)">
+            <summary>
+            获取邮件自定义信息
+            </summary>
+            <param name="mailItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.GetControlWidth(System.String,System.Drawing.Font)">
+            <summary>
+            根据指定字体计算字符串宽度
+            </summary>
+            <param name="str"></param>
+            <param name="font"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.SetMailReadState(System.Boolean)">
+            <summary>
+            设置邮件的状态（已读，未读）
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.CompareEntryID">
+            <summary>
+            比较EntryID，为了处理邮件菜单设置邮件未读或者已读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.IsRestartTimer">
+            <summary>
+            备注:由于所有文件夹都可以将邮件设置成已读，就不需要过滤
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.ApplicationCacheProperties(System.Boolean)">
+            <summary>
+            把需要缓存的属性放入全局变量中
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.FillRecipentsContainer(System.String,System.String)">
+            <summary>
+            init recipents container
+            </summary>
+            <param name="recipients"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.webBContent_PreviewKeyDown(System.Object,System.Windows.Forms.PreviewKeyDownEventArgs)">
+            <summary>
+            防止按F5键邮件正文消失
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailDetailPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailDetailPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailDetailPart.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailDetailPart.listAttachments">
+            <summary>
+            附件集合
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailDetailPart.message">
+            <summary>
+            当前选择的Message对象
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailDetailPart.IsSelectAllAttachments">
+            <summary>
+            是否选中了所有附件
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailWorkItem">
+            <summary>
+            邮件中心WorkItem
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailWorkItem.OnRunStarted">
+            <summary>
+            启动时打开主界面
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.MailCenterCommandConstants">
+            <summary>
+            业务信息命令常量
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailModuleInit">
+            <summary>
+            邮件中心模块初始化类
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailModuleInit.emailWorkItemId">
+            <summary>
+            EmailWorkItem在容器中的ID
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailModuleInit.AddServices">
+            <summary>
+            注入客户端服务
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailModuleInit.Email_EmailList(System.Object,System.EventArgs)">
+            <summary>
+            通过菜单打开邮件中心
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailModuleInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.frmOutlookProperties.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmOutlookProperties.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmOutlookProperties.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.frmSelectFolder">
+            <summary>
+            选择文件夹界面类
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.InitControl">
+            <summary>
+            Init control language
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.GetCurrentFolder">
+            <summary>
+            get current select folder
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.btnOK_Click(System.Object,System.EventArgs)">
+            <summary>
+            get and set current new folder
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.btnCreateFolder_Click(System.Object,System.EventArgs)">
+            <summary>
+            create folder
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.frmSelectFolder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmSelectFolder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.frmSelectFolder.FolderName">
+            <summary>
+            get select node name
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.MailGallery.frmSetTime">
+            <summary>
+            设置接收和发送时间窗体
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.MailGallery.frmSetTime.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailGallery.frmSetTime.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.MailGallery.frmSetTime.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.frmShowProgressBar">
+            <summary>
+            显示移动邮件进度条
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.frmShowProgressBar.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmShowProgressBar.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmShowProgressBar.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.AttachmentsControl">
+            <summary>
+            附件图标和附件名类
+            </summary>
+            
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.Init(System.String,System.String,System.String,System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="img">图标</param>
+            <param name="attFullName">名称及大小字符串</param>
+            <param name="fullPath">附件完整路径</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.lnkAtt_MouseDoubleClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            双击打开文件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.InitFileMenu">
+            <summary>
+            file context menu
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.lnkAtt_MouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
+            <summary>
+            右键单击附件名称显示上下文菜单
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.OnMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            选择右键菜单中的项
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.SaveFile(System.String)">
+            <summary>
+            copy and save file
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.AttachmentsControl.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.AttachmentsControl.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AttachmentsControl.DetailPart">
+            <summary>
+            邮件明细面板
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AttachmentsControl._fileName">
+             <summary>
+            附件的的名称
+             </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AttachmentsControl._displayName">
+            <summary>
+            附件显示名称
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.AttachmentsControl._fileFullPath">
+            <summary>
+            文件完整路径
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.AttachmentAction">
+            <summary>
+            操作附件动作类型
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.Service.OutlookService">
+            <summary>
+            Outlook服务类
+            </summary>
+            
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.AddNewEmail(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            新建一封可以输入的邮件
+            </summary>
+            <param name="emailAddress"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.ReplyToSender(System.Object)">
+            <summary>
+            如果是没有发送出去的邮件，则直接打开原编辑窗口，否则就回复
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.ReplyToAll(System.Object)">
+            <summary>
+            如果是没有发送出去的邮件，则直接打开原编辑窗口，否则就回复所有人
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.ReplyToAllContainsAttachment(System.Object)">
+            <summary>
+            如果是没有发送出去的邮件，则直接打开原编辑窗口，否则就回复所有人
+            </summary>
+            <param name="item">答复邮件</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.Forward(System.Object)">
+            <summary>
+            如果是没有发送出去的邮件，则直接打开原编辑窗口，否则就转发
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.GetMailItemReply(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            构建回复邮件对象
+            </summary>
+            <param name="mail">原始邮件</param>
+            <returns>回复邮件对象</returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.Open(System.String)">
+            <summary>
+            通过outlook打开msg文件
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.OpenMail(System.String,System.Boolean)">
+            <summary>
+            使用Outlook打开Msg文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="isServerDownLoad"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.Service.OutlookService.ExportHtml2PDF(System.String)">
+            <summary>
+            将html转换为pdf文件
+            </summary>
+            <param name="inputFile">html文件</param>
+            <param name="outPutFile">转换后文件的地址</param>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Service.OutlookService.IsEnglish">
+            <summary>
+            是否英文环境
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailListPart">
+            <summary>
+            邮件列表类
+            </summary>    
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.SetCurentMailReadAndRefreshFolderUnReadMailCount(System.Object)">
+            <summary>
+            设置当前选择项已读，并刷新当前邮件所属文件夹的未读项数量
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.RefershFolderUnReadCount(System.Object)">
+            
+            备注：当为文件夹"垃圾邮件","草稿","收件箱"时，则不需要刷新文件夹数量
+            
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.OnSelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            选中邮件改变
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.Command_ChangeEmailCategories(System.Object,System.EventArgs)">
+            <summary>
+            改变邮件的类别图标
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.IsDragDropLastOne">
+            <summary>
+            拖拽邮件到最后一封邮件时，才需要去显示最后一封邮件的detail
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.ShowErrorDialog">
+            <summary>
+            弹出加载配置文件错误的对话框
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.ViewCtlBindData(Microsoft.Office.Interop.Outlook.MAPIFolder,System.String)">
+            <summary>
+            绑定视图控件数据
+            </summary>
+            <param name="folderFullPath"></param>
+            <param name="folderName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.ViewCtlBindData(System.String,System.String)">
+            <summary>
+            绑定视图控件数据
+            </summary>
+            <param name="folderFullPath"></param>
+            <param name="folderName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.IsKilledOutlook">
+            <summary>
+            当读取AxViewCtl控件属性时，没有出现ComException组件异常时，表示没有将outlook关闭，反之关闭
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.Command_EmailArchiving(System.Object,System.EventArgs)">
+            <summary>
+            邮件归档：将已关联邮件移动至已关联文件夹(已关联/IsRelation)
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailListPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailListPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailListPart.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailToolBarPart">
+            <summary>
+            工具栏类
+            </summary>
+            
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.GetSearchFormHandle">
+            <summary>
+            获取搜索窗口句柄
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolEmailArchiving_Click(System.Object,System.EventArgs)">
+            <summary>
+            邮件归档
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolReplyAllContainsAttachment_Click(System.Object,System.EventArgs)">
+            <summary>
+            答复所有(包含附件)
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolSearch_Click(System.Object,System.EventArgs)">
+            <summary>
+            查询
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolSendAndReceiveSendAndReceive_Click(System.Object,System.EventArgs)">
+            <summary>
+            发送和接收邮件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolClose_Click(System.Object,System.EventArgs)">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.syncAddressToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            同步IPC通讯录
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.AutoSync">
+            <summary>
+            自动接收和发送邮件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.toolReminder_Click(System.Object,System.EventArgs)">
+            <summary>
+            设置接收/发送时间
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.SendAndRecive(System.Boolean)">
+            <summary>
+            send and recive mail
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.AlternativeWay">
+            <summary>
+            Sync send/recive mail 
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.SendAndReciveBar(System.String,System.String,System.String)">
+            <summary>
+            send/recive mail
+            </summary>
+            <param name="cbpTools"></param>
+            <param name="cbpSendAndRecive"></param>
+            <param name="cbcSendAndRecive"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.RulesAndAlertsToolBar(System.String,System.String)">
+            <summary>
+            Rules and Alerts 
+            </summary>
+            <param name="cbpTool"></param>
+            <param name="cbcRulesAndNotice"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.AddressBook(System.String)">
+            <summary>
+            Address book
+            </summary>
+            <param name="addressBook"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.SetToolsEnable(System.Boolean)">
+            <summary>
+             Tool bars enable
+            </summary>       
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.SetSynchrousAndRefreshButtonEnable(System.Boolean)">
+            <summary>
+            设置同步和刷新按钮是否可用
+            </summary>
+            <param name="enable"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.Deleted(System.Object)">
+            <summary>
+            转换成相对应的对象后，删除
+            </summary>
+            <param name="objSelection"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailToolBarPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailToolBarPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailToolBarPart.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.frmCreateFolder">
+            <summary>
+            创建文件夹窗体类
+            </summary>
+            
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.#ctor(System.String)">
+            <summary>
+            构造函数 
+            </summary>
+            <param name="folderName">新建文件夹所属的父文件夹ID</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.#ctor">
+            <summary>
+            构造函数 
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.InitControl">
+            <summary>
+            init controls language
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.ValidateFolderName">
+            <summary>
+            验证文件夹名称是否相同
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.frmCreateFolder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.frmCreateFolder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.frmCreateFolder.NewFolderName">
+            <summary>
+            文件夹名称
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.TreeViewEx">
+            <summary>
+            封装树控件类
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.SearchFolderPart">
+            <summary>
+            邮件中心搜索文件夹后定位文件夹,并将其展开
+            备注：如果使用本地缓存，用户在新增文件夹，删除文件夹，更改文件夹，就需要更新本地缓存
+            如果不使用本地缓存，就每次需要循环遍历文件夹查找
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.SearchFolderPart.lastKeyWord">
+            <summary>
+            记录上次搜索的关键字
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.SearchFolderPart.index">
+            <summary>
+            记录上次定位的节点Index
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.SearchFolderPart.dicSearchTreeNodes">
+            <summary>
+            将搜索文件夹缓存在本地
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.SetTextBoxToolTip">
+            <summary>
+            设置TextBox提示
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.HasRecordKeyWord(System.String)">
+            <summary>
+            当前搜索的关键字是否与上次搜索的关键字相同
+            </summary>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.AddItem(System.String,ICP.MailCenter.ServiceInterface.SearchFolderInfo)">
+            <summary>
+            将项添加到搜索结果集合中
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.GetTargetTreeNode(System.String)">
+            <summary>
+            根据输入的关键字直接从缓存集合中获取
+            </summary>
+            <param name="keyWord"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.DrawSearchTextBorder(System.Boolean)">
+            <summary>
+            设置背景颜色
+            </summary>
+            <param name="focused"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.SelectedTreeNode(System.String)">
+            <summary>
+            将查找到的TreeNode选中
+            </summary>
+            <param name="keyWord"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.WaitExpandTreeNode">
+            <summary>
+            等待节点把所有子节点展开完
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.SelectedAndExpandTreeNode(System.Windows.Forms.TreeNodeCollection,System.String,System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            选中和展开文件夹
+            </summary>
+            <param name="nodes"></param>
+            <param name="entryID"></param>
+            <param name="folderPaths"></param>
+            <param name="level"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.InnerExpandTreeNode(System.Windows.Forms.TreeNode)">
+            <summary>
+            展开节点和选中节点
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.btnSearchFolder_Click(System.Object,System.EventArgs)">
+            <summary>
+            搜索事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.SearchFolderPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.SearchFolderPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.Add_16">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.attachment">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.cal_allday">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.cal_recur">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.Center_16">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.contact_dl">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.loading">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.olProperties">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.Outlook2007">
+            <summary>
+              查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.refresh_16">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolAddress_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolClose_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolDeleteMail_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolForward_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolNewMail_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolPrintPreview_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolRefershBar_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolReminder_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolReply_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolReplyAll_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolRules_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolSBSearch_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolSearch_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolSendAndReceive_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.toolSetting_Image">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.Properties.Resources.unknown">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailFolderPart">
+            <summary>
+            邮件文件夹列表面板
+            </summary>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailFolderPart.display_Folder_Count">
+            <summary>
+            文件夹数量文本
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.ShowLoadingImage">
+            <summary>
+            动态显示Loading图片
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.LoadTreeViewFormOutlook(System.Boolean@)">
+            <summary>
+            第一次加载或者加载配置文件出异常时,需要重新加载outlook文件夹
+            </summary>
+            <param name="isLoadFormXml"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.trvFolder_NodeMouseClick(System.Object,System.Windows.Forms.TreeNodeMouseClickEventArgs)">
+            <summary>
+            select folder mail list
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.ShowFolderContextMenu(System.String,System.Windows.Forms.TreeNode)">
+            <summary>
+            show出文件夹上下文菜单
+            </summary>
+            <param name="entryID"></param>
+            <param name="node"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.trvFolder_AfterLabelEdit(System.Object,System.Windows.Forms.NodeLabelEditEventArgs)">
+            <summary>
+            rename the folder name
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.Sort(System.Windows.Forms.TreeNode)">
+            <summary>
+            编辑节点后，将其排序，并且选择相关的节点
+            </summary>
+            <param name="parentNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.MoveMailToFolder(System.Object)">
+            <summary>
+            将邮件移至Outlook文件夹
+            </summary>
+            <param name="objFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.TransformEntity(System.Object,Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean)">
+            <summary>
+            找到相对应的实体，转换成实体
+            </summary>
+            <param name="objSelection"></param>
+            <param name="targetFolder"></param>
+            <param name="isLastMail"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.UpdateFolderUnreadMailCount(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+             <summary>
+            更新文件夹未读项数量
+             </summary>
+             <param name="result"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.UpdateTreeNode(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            更新文件夹数量和展开文件夹
+            </summary>
+            <param name="count"></param>
+            <param name="folderName"></param>
+            <param name="fullPath"></param>
+            <param name="entityID"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.Expand(Microsoft.Office.Interop.Outlook.MAPIFolder)">
+            <summary>
+            收到新邮件后，需要将接收新邮件的文件夹展开
+            </summary>
+            <param name="olFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.ChangedTreeNode(System.Int32,System.String,System.String,System.String)">
+            <summary>
+            更改TreeNode文件夹数量和字体
+            </summary>
+            <param name="count"></param>
+            <param name="folderName"></param>
+            <param name="fullPath"></param>
+            <param name="entryID"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.SetWindowText(System.Windows.Forms.TreeNode)">
+            <summary>
+            收到邮件时，设置窗体的标题，以提示收到新邮件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.LoadAllNodes(System.Windows.Forms.TreeView,System.Boolean)">
+            <summary>
+            直接根据outlook文件夹结构，创建文件夹树
+            </summary>
+            <param name="treeView"></param>
+            <param name="registerEvent"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.DynamicLoadNodes(System.Windows.Forms.TreeView,System.Boolean)">
+            <summary>
+            动态加载treeview节点
+            </summary>
+            <param name="rootFolders"></param>
+            <param name="selectNodeName"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.ReleaseEvent">
+            <summary>
+            释放等待线程，通知其他线程可以 Do SomeThing
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.AddSubNodes(System.Windows.Forms.TreeView,System.Windows.Forms.TreeNode,Microsoft.Office.Interop.Outlook.MAPIFolder,System.Boolean)">
+            <summary>
+            添加子节点，在添加孙伪节点
+            </summary>
+            <param name="node"></param>
+            <param name="olFolder"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.OnSelectedNode(ICP.MailCenter.ServiceInterface.TreeNodeParameters)">
+            <summary>
+            键盘上下键选择树节点
+            </summary>
+            <param name="currentSelectedNode"></param>
+            <param name="nextVisibleNode"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.OnImageAnimate(System.Object,System.EventArgs)">
+            <summary>
+            重绘Image
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.EmailFolderPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.EmailFolderPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailFolderPart.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.EmailFolderPart.CurrentSelectFolderName">
+            <summary>
+            当前选择的文件夹节点名称
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailFolderPart.RemoveNodeDelegate">
+            <summary>
+            删除树节点
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="T:ICP.MailCenter.UI.EmailFolderPart.AddRangeTreeNodesDelegate">
+            <summary>
+            将节点集合添加到节点上
+            </summary>
+            <param name="treeNodes"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UC.CommonDataService.SendRelatedMail">
+            <summary>
+            新增关联业务的邮件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UC.CommonDataService.WithoutRelatedBusinessActionCondition(ICP.MailCenter.ServiceInterface.MailAction,System.Object)">
+            <summary>
+            没有关联业务的邮件
+            </summary>
+            <param name="action"></param>
+            <param name="mailItem"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UC.CommonDataService.SetMailRead(System.Object)">
+            <summary>
+            将邮件设置成已读
+            </summary>
+            <param name="objMailItem"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UC.CommonDataService.RelatedBusinessActionCondition(ICP.MailCenter.ServiceInterface.MailAction,System.Object)">
+            <summary>
+            已关联业务的邮件
+            </summary>
+            <param name="action"></param>
+            <param name="mail"></param>
+            <param name="mailItem"></param>
+        </member>
+        <member name="P:ICP.MailCenter.UI.UC.CommonDataService.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.MailCenter.UI.UCMailSearch">
+            <summary>
+            邮件搜索控件
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.SetDefaultTip(System.Boolean)">
+            <summary>
+            设置搜索框的默认tooltip
+            </summary>
+            <param name="isSearch"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.UCMailSearch_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            销毁时释放键盘事件处理程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.InnerBuildFilter(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            构建过滤条件字符串
+            </summary>
+            <param name="existsFilter"></param>
+            <param name="fields"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.CloseSearch">
+            <summary>
+            关闭搜索
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.SetRestriction(System.String,System.Boolean)">
+            <summary>
+            设置邮件视图控件的过滤约束条件
+            </summary>
+            <param name="filter"></param>
+            <param name="disableSelectionChangeEvent">是否禁止文件夹列表当前选择文件夹改变事件</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.CurrentFolderChanged(System.Object,System.EventArgs)">
+             <summary>
+             焦点文件夹改变事件处理
+            
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.ICP#Common#ServiceInterface#IKeyboardEventHandleService#Handle(ICP.Common.ServiceInterface.KeyboardEventInfo)">
+            <summary>
+            全局键盘事件捕获处理，如果按键为Ctrl+E，则使搜索框获得焦点
+            </summary>
+            <param name="eventInfo"></param>
+        </member>
+        <member name="F:ICP.MailCenter.UI.UCMailSearch.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.MailCenter.UI.UCMailSearch.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.UCMailSearch.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.MailCenter.UI.UCMailSearch.SearchText">
+            <summary>
+            用户当前输入的搜索条件字符串
+            </summary>
+        </member>
+    </members>
+</doc>

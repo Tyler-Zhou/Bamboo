@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChineseDescription" xml:space="preserve">
+    <value>中文环境下,显示的标题</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="CompanySourceTypeDescription" xml:space="preserve">
+    <value>All-&gt;所有公司,Company-&gt;当前用户所公司,Department-&gt;当前用户所在部门.</value>
+  </data>
+  <data name="ControlDataSourceProperties" xml:space="preserve">
+    <value>控件数据源里面的属性</value>
+  </data>
+  <data name="Controlevent" xml:space="preserve">
+    <value>控件事件</value>
+  </data>
+  <data name="ControlProperty" xml:space="preserve">
+    <value>控件属性</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="DataBinding" xml:space="preserve">
+    <value>数据绑定</value>
+  </data>
+  <data name="DataProperty" xml:space="preserve">
+    <value>数据属性</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>数据源</value>
+  </data>
+  <data name="DisplayMember" xml:space="preserve">
+    <value>树节点显示的成员</value>
+  </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>英文环境时,呈现的标题.</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>事件</value>
+  </data>
+  <data name="FullDisplayMember" xml:space="preserve">
+    <value>文本显示成员</value>
+  </data>
+  <data name="MustInput" xml:space="preserve">
+    <value>必须填写</value>
+  </data>
+  <data name="Nameofform" xml:space="preserve">
+    <value>表单名称</value>
+  </data>
+  <data name="NotSupportedDataSource" xml:space="preserve">
+    <value>不支持的数据源,数据源必须是DataTable,DataSet,DataView中的一种</value>
+  </data>
+  <data name="ParentMember" xml:space="preserve">
+    <value>设置父成员(控件以此建立树结构)</value>
+  </data>
+  <data name="Pleasesetthedatasource" xml:space="preserve">
+    <value>请先设置数据源</value>
+  </data>
+  <data name="TargetsControlName" xml:space="preserve">
+    <value>目标控件的名称</value>
+  </data>
+  <data name="TargetsControlProperty" xml:space="preserve">
+    <value>目标控件的属性</value>
+  </data>
+  <data name="Theformofassociation" xml:space="preserve">
+    <value>关联的表单名</value>
+  </data>
+  <data name="Thereisnodata" xml:space="preserve">
+    <value>不存在数据</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="UserBindingSourceDesc" xml:space="preserve">
+    <value>All-&gt;整个鹏城海的用户,Company-&gt;当前用户所在整个公司的用户,Department-&gt;当前用户所在部门的所有用户</value>
+  </data>
+  <data name="ValueMember" xml:space="preserve">
+    <value>值成员</value>
+  </data>
+  <data name="ColumnName" xml:space="preserve">
+    <value>列名</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>如果是文本.则限制最大输入长度.</value>
+  </data>
+  <data name="NumericType" xml:space="preserve">
+    <value>数字类型</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="SelectedText" xml:space="preserve">
+    <value>选择按钮对应的文本</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>项集合</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>岗位</value>
+  </data>
+  <data name="CDisplayMember" xml:space="preserve">
+    <value>中文显示成员</value>
+  </data>
+  <data name="CFullDisplayMember" xml:space="preserve">
+    <value>中文文本显示成员</value>
+  </data>
+  <data name="EDisplayMember" xml:space="preserve">
+    <value>英文显示成员</value>
+  </data>
+  <data name="EFullDisplayMember" xml:space="preserve">
+    <value>英文显示成员</value>
+  </data>
+  <data name="CTextRepeat" xml:space="preserve">
+    <value>[{0}]中文标题存在重复[{1}]</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>错误列表:</value>
+  </data>
+  <data name="ETextRepeat" xml:space="preserve">
+    <value>[{0}]英文标题存在重复[{1}]</value>
+  </data>
+  <data name="NecessaryToProperty" xml:space="preserve">
+    <value>[{0}]必须设置[{1}]属性.</value>
+  </data>
+  <data name="FindType" xml:space="preserve">
+    <value>搜索类型</value>
+  </data>
+  <data name="SearchMember" xml:space="preserve">
+    <value>搜索类型(Customer-&gt;客户,User-&gt;用户)</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>查询</value>
+  </data>
+  <data name="AutoGeneratorNumber" xml:space="preserve">
+    <value>生成单号</value>
+  </data>
+  <data name="CheckBox" xml:space="preserve">
+    <value>复选按钮</value>
+  </data>
+  <data name="ComboBox" xml:space="preserve">
+    <value>组合框</value>
+  </data>
+  <data name="CompanyBindingSource" xml:space="preserve">
+    <value>公司数据</value>
+  </data>
+  <data name="CurrencyBindingSource" xml:space="preserve">
+    <value>币种数据</value>
+  </data>
+  <data name="DataGridView" xml:space="preserve">
+    <value>网格</value>
+  </data>
+  <data name="DatePicker" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="NumericCalcEdit" xml:space="preserve">
+    <value>数字框</value>
+  </data>
+  <data name="Radio" xml:space="preserve">
+    <value>单选</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>文本框</value>
+  </data>
+  <data name="UserBindingSource" xml:space="preserve">
+    <value>用户数据</value>
+  </data>
+  <data name="CompanyBindingSourceDesCompanyBindingSourceDesc" xml:space="preserve">
+    <value>公司数据列表.</value>
+  </data>
+  <data name="CheckBoxDesc" xml:space="preserve">
+    <value>提供一项选择，如“真/假”或“是/否”</value>
+  </data>
+  <data name="CheckBoxTitle" xml:space="preserve">
+    <value>复选按钮</value>
+  </data>
+  <data name="ComBoxDesc" xml:space="preserve">
+    <value>用户可从数据列表中选择一项</value>
+  </data>
+  <data name="ComBoxTitle" xml:space="preserve">
+    <value>下拉框</value>
+  </data>
+  <data name="DataGridViewDesc" xml:space="preserve">
+    <value>提供用来显示数据的可自定义表</value>
+  </data>
+  <data name="DataGridViewTitle" xml:space="preserve">
+    <value>数据列表</value>
+  </data>
+  <data name="DatePickerDesc" xml:space="preserve">
+    <value>用来让用户选择日期和时间，并以指定的格式显示此日期和时间</value>
+  </data>
+  <data name="DatePickerTitle" xml:space="preserve">
+    <value>时间框</value>
+  </data>
+  <data name="LableDesc" xml:space="preserve">
+    <value>通常用于提供控件的描述性文字</value>
+  </data>
+  <data name="LableTitle" xml:space="preserve">
+    <value>标签</value>
+  </data>
+  <data name="NumericCalcEditDesc" xml:space="preserve">
+    <value>带计算器的数字控件</value>
+  </data>
+  <data name="NumericCalcEditTitle" xml:space="preserve">
+    <value>数字框</value>
+  </data>
+  <data name="RadioGroup" xml:space="preserve">
+    <value>单选按钮面板</value>
+  </data>
+  <data name="TextBox" xml:space="preserve">
+    <value>文本框</value>
+  </data>
+  <data name="CompanyBindingSourceDesc" xml:space="preserve">
+    <value>公司数据</value>
+  </data>
+  <data name="ComboBoxTreeViewDesc" xml:space="preserve">
+    <value>下拉树</value>
+  </data>
+  <data name="JobBindingSourceTitle" xml:space="preserve">
+    <value>职位</value>
+  </data>
+  <data name="DataScope" xml:space="preserve">
+    <value>范围</value>
+  </data>
+  <data name="CText" xml:space="preserve">
+    <value>中文标题</value>
+  </data>
+  <data name="EText" xml:space="preserve">
+    <value>英文标题</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="Font" xml:space="preserve">
+    <value>控件字体</value>
+  </data>
+  <data name="Bold" xml:space="preserve">
+    <value>粗体</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>字体</value>
+  </data>
+  <data name="Caption" xml:space="preserve">
+    <value>控件显示的标题</value>
+  </data>
+  <data name="DispAllowNull" xml:space="preserve">
+    <value>允许空</value>
+  </data>
+  <data name="DispCaption" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="DispColumnName" xml:space="preserve">
+    <value>列名</value>
+  </data>
+  <data name="DispFiledType" xml:space="preserve">
+    <value>字段类型</value>
+  </data>
+  <data name="DispLength" xml:space="preserve">
+    <value>长度</value>
+  </data>
+  <data name="FiledType" xml:space="preserve">
+    <value>控件对应的字段类型</value>
+  </data>
+  <data name="ForeColor" xml:space="preserve">
+    <value>控件的字体颜色</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>基础</value>
+  </data>
+  <data name="DispForeColor" xml:space="preserve">
+    <value>颜色</value>
+  </data>
+  <data name="DispFont" xml:space="preserve">
+    <value>字体</value>
+  </data>
+  <data name="Dock" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="EditValue" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="DispText" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="DispTabIndex" xml:space="preserve">
+    <value>Tab顺序</value>
+  </data>
+  <data name="AllowUserToAddRows" xml:space="preserve">
+    <value>增加行</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>自定义数据</value>
+  </data>
+  <data name="AllowUserToDeleteRows" xml:space="preserve">
+    <value>删除行</value>
+  </data>
+  <data name="AllowUserToOrderColumns" xml:space="preserve">
+    <value>移动列顺序</value>
+  </data>
+  <data name="AllowUserToResizeColumns" xml:space="preserve">
+    <value>调整列大小</value>
+  </data>
+  <data name="AllowUserToResizeRows" xml:space="preserve">
+    <value>调整行大小</value>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>选择多行</value>
+  </data>
+  <data name="ReadOnly" xml:space="preserve">
+    <value>只读</value>
+  </data>
+  <data name="BackgroundColor" xml:space="preserve">
+    <value>背景颜色</value>
+  </data>
+  <data name="Anchor" xml:space="preserve">
+    <value>停靠</value>
+  </data>
+  <data name="GridColor" xml:space="preserve">
+    <value>网络行颜色</value>
+  </data>
+  <data name="ColumnHeadersHeightSizeMode" xml:space="preserve">
+    <value>列头模式</value>
+  </data>
+  <data name="BackColor" xml:space="preserve">
+    <value>背景颜色</value>
+  </data>
+  <data name="DispValue" xml:space="preserve">
+    <value>数据值</value>
+  </data>
+  <data name="DateTime" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="CheckedDesc" xml:space="preserve">
+    <value>复选按钮</value>
+  </data>
+  <data name="DispChecked" xml:space="preserve">
+    <value>选择</value>
+  </data>
+  <data name="CompanyBindingSourceTitle" xml:space="preserve">
+    <value>公司</value>
+  </data>
+  <data name="CurrencyBindingSourceTitle" xml:space="preserve">
+    <value>币种</value>
+  </data>
+  <data name="UserBindingSourceTitle" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="ComboBoxType" xml:space="preserve">
+    <value>数据类型</value>
+  </data>
+  <data name="DescColumnCount" xml:space="preserve">
+    <value>设置控件共包含多少列</value>
+  </data>
+  <data name="DescRowCount" xml:space="preserve">
+    <value>设置控件共包含多少行</value>
+  </data>
+  <data name="DispColumnCount" xml:space="preserve">
+    <value>列数</value>
+  </data>
+  <data name="DispColumnStyles" xml:space="preserve">
+    <value>列样式</value>
+  </data>
+  <data name="DispRowCount" xml:space="preserve">
+    <value>行数</value>
+  </data>
+  <data name="DispRowStyles" xml:space="preserve">
+    <value>行样式</value>
+  </data>
+  <data name="TableLayoutPanelDesc" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="TableLayoutPanelTitle" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="LWSplitterDesc" xml:space="preserve">
+    <value>分隔符</value>
+  </data>
+  <data name="LWSplitterTitle" xml:space="preserve">
+    <value>分隔符</value>
+  </data>
+  <data name="DataCustom" xml:space="preserve">
+    <value>数据列定义</value>
+  </data>
+  <data name="ColumnSpan" xml:space="preserve">
+    <value>跨列</value>
+  </data>
+  <data name="EventType" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>布局</value>
+  </data>
+  <data name="RowSpan" xml:space="preserve">
+    <value>跨行</value>
+  </data>
+  <data name="SourceProperty" xml:space="preserve">
+    <value>源属性</value>
+  </data>
+  <data name="AllowNull" xml:space="preserve">
+    <value>可为空</value>
+  </data>
+  <data name="DispParentMember" xml:space="preserve">
+    <value>父成员</value>
+  </data>
+  <data name="JobBindingSourceDesc" xml:space="preserve">
+    <value>职位数据</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>样式</value>
+  </data>
+  <data name="RadioButton" xml:space="preserve">
+    <value>单选按钮</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>默认值</value>
+  </data>
+  <data name="MultiTextBoxDesc" xml:space="preserve">
+    <value>可以跨越多行的文本框</value>
+  </data>
+  <data name="MultiTextBoxTitel" xml:space="preserve">
+    <value>多行文本框</value>
+  </data>
+  <data name="DescScrollBars" xml:space="preserve">
+    <value>滚动条显示方式</value>
+  </data>
+  <data name="DispScrollBars" xml:space="preserve">
+    <value>滚动条</value>
+  </data>
+  <data name="DescSize" xml:space="preserve">
+    <value>设置控件大小</value>
+  </data>
+  <data name="DispSize" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="Columns" xml:space="preserve">
+    <value>列集合</value>
+  </data>
+  <data name="DescTabIndex" xml:space="preserve">
+    <value>设置控件只否可以编辑</value>
+  </data>
+  <data name="DispReadOnly" xml:space="preserve">
+    <value>只读</value>
+  </data>
+  <data name="DispBackColor" xml:space="preserve">
+    <value>设置控件的背景颜色</value>
+  </data>
+  <data name="DispGridColor" xml:space="preserve">
+    <value>网络行颜色</value>
+  </data>
+  <data name="DispColumns" xml:space="preserve">
+    <value>设置列集合</value>
+  </data>
+  <data name="ColumnTypsIsNull" xml:space="preserve">
+    <value>请选择列类型</value>
+  </data>
+  <data name="ColumnHeaderTextIsNull" xml:space="preserve">
+    <value>请输入列头</value>
+  </data>
+  <data name="ColumnNameIsNull" xml:space="preserve">
+    <value>请输入列名</value>
+  </data>
+  <data name="DispHeaderText" xml:space="preserve">
+    <value>列头显示名称 </value>
+  </data>
+  <data name="HeaderText" xml:space="preserve">
+    <value>列头</value>
+  </data>
+  <data name="ColumnsWidth" xml:space="preserve">
+    <value>列宽</value>
+  </data>
+  <data name="DescColumnsWidth" xml:space="preserve">
+    <value>设置列的宽度</value>
+  </data>
+  <data name="DispDataPropertyName" xml:space="preserve">
+    <value>对应的列名</value>
+  </data>
+  <data name="CostTypeDescription" xml:space="preserve">
+    <value>All--&gt;全部,ManagementCost--管理成本,BusinessCost--&gt;业务费用, TransportCost--&gt;运输成本</value>
+  </data>
+  <data name="ChargingGroupTypeDescription" xml:space="preserve">
+    <value>Root--&gt;定级节点,Assets--资产,Liabilities--&gt;负债, OwnerEquity--&gt;所有者权益,Costs--&gt;成本,Income--损益,Expense--&gt;费用</value>
+  </data>
+  <data name="PanelDesc" xml:space="preserve">
+    <value>面板控件</value>
+  </data>
+  <data name="PanelTitle" xml:space="preserve">
+    <value>面板</value>
+  </data>
+  <data name="ColumnNameRepeat" xml:space="preserve">
+    <value>[{ 0 }]列名存在重复[{ 1 }]</value>
+  </data>
+  <data name="FormNotColumn" xml:space="preserve">
+    <value>表单[{0}]没有任何列</value>
+  </data>
+  <data name="DispDataSourceProperties" xml:space="preserve">
+    <value>数据属性</value>
+  </data>
+  <data name="DispEventType" xml:space="preserve">
+    <value>控件事件</value>
+  </data>
+  <data name="DispTargetControlName" xml:space="preserve">
+    <value>目标控件</value>
+  </data>
+  <data name="DispTargetControlProperty" xml:space="preserve">
+    <value>目标控件属性</value>
+  </data>
+  <data name="DispHideFileds" xml:space="preserve">
+    <value>隐藏字段</value>
+  </data>
+  <data name="ReadOnlyDesc" xml:space="preserve">
+    <value>设置控件是否只读</value>
+  </data>
+  <data name="DutyChangeBindingSourceDesc" xml:space="preserve">
+    <value>职位调动类型数据源</value>
+  </data>
+  <data name="DutyChangeBindingSourceTitle" xml:space="preserve">
+    <value>职位调动</value>
+  </data>
+  <data name="PropertyBindingSourceDesc" xml:space="preserve">
+    <value>报销类型数据库源</value>
+  </data>
+  <data name="PropertyBindingSourceTitle" xml:space="preserve">
+    <value>报销类型</value>
+  </data>
+  <data name="FindTextBox" xml:space="preserve">
+    <value>搜索文本框</value>
+  </data>
+  <data name="FindTextBoxDesc" xml:space="preserve">
+    <value>带搜索器的文本框</value>
+  </data>
+  <data name="FindTextDisplayMember" xml:space="preserve">
+    <value>显示成员</value>
+  </data>
+  <data name="FindTextSearchMember" xml:space="preserve">
+    <value>搜索类型</value>
+  </data>
+  <data name="FindTextValueMember" xml:space="preserve">
+    <value>值成员</value>
+  </data>
+  <data name="FindTextFindTypeDesc" xml:space="preserve">
+    <value>搜索类型(Customer-&gt;客户,User-&gt;用户)</value>
+  </data>
+  <data name="FindTextFindTypeSC" xml:space="preserve">
+    <value>搜索类型</value>
+  </data>
+  <data name="FindTextFindTypeSD" xml:space="preserve">
+    <value>搜索类型</value>
+  </data>
+  <data name="LWFindICPCRM" xml:space="preserve">
+    <value>CRM客户</value>
+  </data>
+  <data name="LWFindOperationNo" xml:space="preserve">
+    <value>业务号</value>
+  </data>
+  <data name="DegreeBindingSourceDesc" xml:space="preserve">
+    <value>学历</value>
+  </data>
+  <data name="DegreeBindingSourceTitle" xml:space="preserve">
+    <value>学历</value>
+  </data>
+  <data name="ICPFilePanelDesc" xml:space="preserve">
+    <value>附件控件</value>
+  </data>
+  <data name="ICPFilePanelTitle" xml:space="preserve">
+    <value>附件控件</value>
+  </data>
+  <data name="BankBindingSourceTitle" xml:space="preserve">
+    <value>银行帐号</value>
+  </data>
+  <data name="BankBindingSourceDesc" xml:space="preserve">
+    <value>银行帐号数据源</value>
+  </data>
+  <data name="AccountSubBindingSource" xml:space="preserve">
+    <value>会计科目数据源</value>
+  </data>
+  <data name="AccountSubBindingSourceTitle" xml:space="preserve">
+    <value>会计科目</value>
+  </data>
+  <data name="DataDictionariesSourceDesc" xml:space="preserve">
+    <value>数据字典数据源</value>
+  </data>
+  <data name="DataDictionariesSourceTitle" xml:space="preserve">
+    <value>数据字典</value>
+  </data>
+  <data name="DataDictionaryTypeDescription" xml:space="preserve">
+    <value>数据字典类型</value>
+  </data>
+</root>

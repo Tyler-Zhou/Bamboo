@@ -1,0 +1,1503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cmbDateType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cmbDateType.Items" xml:space="preserve">
+    <value>业务时间</value>
+  </data>
+  <data name="cmbDateType.Items1" xml:space="preserve">
+    <value>创建时间</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cmbDateType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>58, 0</value>
+  </data>
+  <data name="cmbDateType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 20</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="cmbDateType.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;cmbDateType.Name" xml:space="preserve">
+    <value>cmbDateType</value>
+  </data>
+  <data name="&gt;&gt;cmbDateType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbDateType.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;cmbDateType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 3</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>时间类型</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ucDateTime.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ucDateTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="ucDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 124</value>
+  </data>
+  <data name="ucDateTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ucDateTime.Name" xml:space="preserve">
+    <value>ucDateTime</value>
+  </data>
+  <data name="&gt;&gt;ucDateTime.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.DateTimeCtl, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucDateTime.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;ucDateTime.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-10000, -10000</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 167</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl1.Name" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl1.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarContainerControl, Infragistics2.Win.UltraWinExplorerBar.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl1.Parent" xml:space="preserve">
+    <value>ultraExplorerBar1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 186</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>客户</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chbBulk.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbBulk.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbBulk.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 31</value>
+  </data>
+  <data name="chbBulk.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="chbBulk.TabIndex" type="System.Int32, mscorlib">
+    <value>64</value>
+  </data>
+  <data name="chbBulk.Text" xml:space="preserve">
+    <value>BULK</value>
+  </data>
+  <data name="&gt;&gt;chbBulk.Name" xml:space="preserve">
+    <value>chbBulk</value>
+  </data>
+  <data name="&gt;&gt;chbBulk.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbBulk.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbBulk.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chbLCL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbLCL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbLCL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 31</value>
+  </data>
+  <data name="chbLCL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
+  </data>
+  <data name="chbLCL.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="chbLCL.Text" xml:space="preserve">
+    <value>LCL</value>
+  </data>
+  <data name="&gt;&gt;chbLCL.Name" xml:space="preserve">
+    <value>chbLCL</value>
+  </data>
+  <data name="&gt;&gt;chbLCL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbLCL.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbLCL.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chbCTM.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbCTM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbCTM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>105, 53</value>
+  </data>
+  <data name="chbCTM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
+  </data>
+  <data name="chbCTM.TabIndex" type="System.Int32, mscorlib">
+    <value>69</value>
+  </data>
+  <data name="chbCTM.Text" xml:space="preserve">
+    <value>CTM</value>
+  </data>
+  <data name="chbCTM.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;chbCTM.Name" xml:space="preserve">
+    <value>chbCTM</value>
+  </data>
+  <data name="&gt;&gt;chbCTM.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbCTM.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbCTM.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="chbOther.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbOther.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbOther.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 53</value>
+  </data>
+  <data name="chbOther.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 16</value>
+  </data>
+  <data name="chbOther.TabIndex" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="chbOther.Text" xml:space="preserve">
+    <value>OTHER</value>
+  </data>
+  <data name="chbOther.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;chbOther.Name" xml:space="preserve">
+    <value>chbOther</value>
+  </data>
+  <data name="&gt;&gt;chbOther.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbOther.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbOther.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="chbAIR.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbAIR.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbAIR.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 53</value>
+  </data>
+  <data name="chbAIR.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
+  </data>
+  <data name="chbAIR.TabIndex" type="System.Int32, mscorlib">
+    <value>65</value>
+  </data>
+  <data name="chbAIR.Text" xml:space="preserve">
+    <value>AIR</value>
+  </data>
+  <data name="&gt;&gt;chbAIR.Name" xml:space="preserve">
+    <value>chbAIR</value>
+  </data>
+  <data name="&gt;&gt;chbAIR.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbAIR.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbAIR.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="chbFCL.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chbFCL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chbFCL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 31</value>
+  </data>
+  <data name="chbFCL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>42, 16</value>
+  </data>
+  <data name="chbFCL.TabIndex" type="System.Int32, mscorlib">
+    <value>66</value>
+  </data>
+  <data name="chbFCL.Text" xml:space="preserve">
+    <value>FCL</value>
+  </data>
+  <data name="&gt;&gt;chbFCL.Name" xml:space="preserve">
+    <value>chbFCL</value>
+  </data>
+  <data name="&gt;&gt;chbFCL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chbFCL.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;chbFCL.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 8</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>业务类型</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="txtSelectCustomer.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtSelectCustomer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 182</value>
+  </data>
+  <data name="txtSelectCustomer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 21</value>
+  </data>
+  <data name="txtSelectCustomer.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="&gt;&gt;txtSelectCustomer.Name" xml:space="preserve">
+    <value>txtSelectCustomer</value>
+  </data>
+  <data name="&gt;&gt;txtSelectCustomer.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtSelectCustomer.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;txtSelectCustomer.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtSelectSales.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtSelectSales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 158</value>
+  </data>
+  <data name="txtSelectSales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 21</value>
+  </data>
+  <data name="txtSelectSales.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="&gt;&gt;txtSelectSales.Name" xml:space="preserve">
+    <value>txtSelectSales</value>
+  </data>
+  <data name="&gt;&gt;txtSelectSales.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtSelectSales.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;txtSelectSales.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="ccmbJobType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ccmbJobType.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt</value>
+  </data>
+  <data name="ccmbJobType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 2</value>
+  </data>
+  <data name="ccmbJobType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="ccmbJobType.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="&gt;&gt;ccmbJobType.Name" xml:space="preserve">
+    <value>ccmbJobType</value>
+  </data>
+  <data name="&gt;&gt;ccmbJobType.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.CheckComboBox, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ccmbJobType.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;ccmbJobType.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="cmbGroupBy.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cmbGroupBy.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt</value>
+  </data>
+  <data name="cmbGroupBy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 75</value>
+  </data>
+  <data name="cmbGroupBy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="cmbGroupBy.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;cmbGroupBy.Name" xml:space="preserve">
+    <value>cmbGroupBy</value>
+  </data>
+  <data name="&gt;&gt;cmbGroupBy.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.CheckComboBox, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cmbGroupBy.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;cmbGroupBy.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="label7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>宋体, 9pt, style=Bold</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 258</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 12</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>USD</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="label6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 259</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>折合币别：</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 161</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>业务员</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="ucSelectCompany.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="ucSelectCompany.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 99</value>
+  </data>
+  <data name="ucSelectCompany.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 64</value>
+  </data>
+  <data name="ucSelectCompany.TabIndex" type="System.Int32, mscorlib">
+    <value>63</value>
+  </data>
+  <data name="&gt;&gt;ucSelectCompany.Name" xml:space="preserve">
+    <value>ucSelectCompany</value>
+  </data>
+  <data name="&gt;&gt;ucSelectCompany.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.SelectJobPlaceCtl, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;ucSelectCompany.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;ucSelectCompany.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="cmbSalesType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cmbSalesType.Items" xml:space="preserve">
+    <value>同行货 </value>
+  </data>
+  <data name="cmbSalesType.Items1" xml:space="preserve">
+    <value>直客货</value>
+  </data>
+  <data name="cmbSalesType.Items2" xml:space="preserve">
+    <value>指定货</value>
+  </data>
+  <data name="cmbSalesType.Items3" xml:space="preserve">
+    <value>公司货</value>
+  </data>
+  <data name="cmbSalesType.Items4" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="cmbSalesType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 208</value>
+  </data>
+  <data name="cmbSalesType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="cmbSalesType.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;cmbSalesType.Name" xml:space="preserve">
+    <value>cmbSalesType</value>
+  </data>
+  <data name="&gt;&gt;cmbSalesType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbSalesType.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;cmbSalesType.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="cmbIsProfit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cmbIsProfit.Items" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="cmbIsProfit.Items1" xml:space="preserve">
+    <value>盈利</value>
+  </data>
+  <data name="cmbIsProfit.Items2" xml:space="preserve">
+    <value>亏损</value>
+  </data>
+  <data name="cmbIsProfit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 232</value>
+  </data>
+  <data name="cmbIsProfit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 20</value>
+  </data>
+  <data name="cmbIsProfit.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="&gt;&gt;cmbIsProfit.Name" xml:space="preserve">
+    <value>cmbIsProfit</value>
+  </data>
+  <data name="&gt;&gt;cmbIsProfit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbIsProfit.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;cmbIsProfit.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="label9.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 214</value>
+  </data>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>揽货方式</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 238</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>是否亏损</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 80</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>分组方式</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, -56</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 290</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl2.Name" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl2</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl2.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarContainerControl, Infragistics2.Win.UltraWinExplorerBar.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl2.Parent" xml:space="preserve">
+    <value>ultraExplorerBar1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="tableLayoutPanel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="tableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="txtCarrier.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtCarrier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 3</value>
+  </data>
+  <data name="txtCarrier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txtCarrier.TabIndex" type="System.Int32, mscorlib">
+    <value>74</value>
+  </data>
+  <data name="&gt;&gt;txtCarrier.Name" xml:space="preserve">
+    <value>txtCarrier</value>
+  </data>
+  <data name="&gt;&gt;txtCarrier.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtCarrier.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtCarrier.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labShipAgent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labShipAgent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labShipAgent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labShipAgent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 7</value>
+  </data>
+  <data name="labShipAgent.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="labShipAgent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="labShipAgent.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="labShipAgent.Text" xml:space="preserve">
+    <value>承运人</value>
+  </data>
+  <data name="&gt;&gt;labShipAgent.Name" xml:space="preserve">
+    <value>labShipAgent</value>
+  </data>
+  <data name="&gt;&gt;labShipAgent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labShipAgent.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labShipAgent.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="txtDiscPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtDiscPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 111</value>
+  </data>
+  <data name="txtDiscPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txtDiscPort.TabIndex" type="System.Int32, mscorlib">
+    <value>77</value>
+  </data>
+  <data name="&gt;&gt;txtDiscPort.Name" xml:space="preserve">
+    <value>txtDiscPort</value>
+  </data>
+  <data name="&gt;&gt;txtDiscPort.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtDiscPort.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtDiscPort.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labDiscPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labDiscPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labDiscPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labDiscPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 115</value>
+  </data>
+  <data name="labDiscPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="labDiscPort.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="labDiscPort.Text" xml:space="preserve">
+    <value>卸货港</value>
+  </data>
+  <data name="&gt;&gt;labDiscPort.Name" xml:space="preserve">
+    <value>labDiscPort</value>
+  </data>
+  <data name="&gt;&gt;labDiscPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labDiscPort.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labDiscPort.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="txtLoadPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtLoadPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 84</value>
+  </data>
+  <data name="txtLoadPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txtLoadPort.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="&gt;&gt;txtLoadPort.Name" xml:space="preserve">
+    <value>txtLoadPort</value>
+  </data>
+  <data name="&gt;&gt;txtLoadPort.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtLoadPort.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtLoadPort.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="labCarrier.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labCarrier.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labCarrier.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labCarrier.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 34</value>
+  </data>
+  <data name="labCarrier.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="labCarrier.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="labCarrier.Text" xml:space="preserve">
+    <value>船公司</value>
+  </data>
+  <data name="&gt;&gt;labCarrier.Name" xml:space="preserve">
+    <value>labCarrier</value>
+  </data>
+  <data name="&gt;&gt;labCarrier.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labCarrier.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labCarrier.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="mulShippingLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="mulShippingLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 57</value>
+  </data>
+  <data name="mulShippingLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 20</value>
+  </data>
+  <data name="mulShippingLine.TabIndex" type="System.Int32, mscorlib">
+    <value>72</value>
+  </data>
+  <data name="&gt;&gt;mulShippingLine.Name" xml:space="preserve">
+    <value>mulShippingLine</value>
+  </data>
+  <data name="&gt;&gt;mulShippingLine.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.SelectShippingLineCtl, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;mulShippingLine.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;mulShippingLine.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="txtShipOwner.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtShipOwner.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 30</value>
+  </data>
+  <data name="txtShipOwner.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 19</value>
+  </data>
+  <data name="txtShipOwner.TabIndex" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="&gt;&gt;txtShipOwner.Name" xml:space="preserve">
+    <value>txtShipOwner</value>
+  </data>
+  <data name="&gt;&gt;txtShipOwner.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtShipOwner.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtShipOwner.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="labShippingLine.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labShippingLine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labShippingLine.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labShippingLine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 61</value>
+  </data>
+  <data name="labShippingLine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
+  </data>
+  <data name="labShippingLine.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="labShippingLine.Text" xml:space="preserve">
+    <value>航线</value>
+  </data>
+  <data name="&gt;&gt;labShippingLine.Name" xml:space="preserve">
+    <value>labShippingLine</value>
+  </data>
+  <data name="&gt;&gt;labShippingLine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labShippingLine.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labShippingLine.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="labLoadPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labLoadPort.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labLoadPort.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labLoadPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 88</value>
+  </data>
+  <data name="labLoadPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="labLoadPort.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="labLoadPort.Text" xml:space="preserve">
+    <value>装货港</value>
+  </data>
+  <data name="&gt;&gt;labLoadPort.Name" xml:space="preserve">
+    <value>labLoadPort</value>
+  </data>
+  <data name="&gt;&gt;labLoadPort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labLoadPort.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labLoadPort.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="label8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 196</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>合约号</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="txSCNO.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txSCNO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 192</value>
+  </data>
+  <data name="txSCNO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txSCNO.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;txSCNO.Name" xml:space="preserve">
+    <value>txSCNO</value>
+  </data>
+  <data name="&gt;&gt;txSCNO.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txSCNO.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txSCNO.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="labAgent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="labAgent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labAgent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labAgent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 169</value>
+  </data>
+  <data name="labAgent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="labAgent.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="labAgent.Text" xml:space="preserve">
+    <value>代理人</value>
+  </data>
+  <data name="&gt;&gt;labAgent.Name" xml:space="preserve">
+    <value>labAgent</value>
+  </data>
+  <data name="&gt;&gt;labAgent.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labAgent.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;labAgent.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="txtAgent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtAgent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 165</value>
+  </data>
+  <data name="txtAgent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txtAgent.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="&gt;&gt;txtAgent.Name" xml:space="preserve">
+    <value>txtAgent</value>
+  </data>
+  <data name="&gt;&gt;txtAgent.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtAgent.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtAgent.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="label11.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="label11.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 142</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 12</value>
+  </data>
+  <data name="label11.TabIndex" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>交货地</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="txtDestPort.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtDestPort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>84, 138</value>
+  </data>
+  <data name="txtDestPort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 21</value>
+  </data>
+  <data name="txtDestPort.TabIndex" type="System.Int32, mscorlib">
+    <value>86</value>
+  </data>
+  <data name="&gt;&gt;txtDestPort.Name" xml:space="preserve">
+    <value>txtDestPort</value>
+  </data>
+  <data name="&gt;&gt;txtDestPort.Type" xml:space="preserve">
+    <value>LongWin.DataWarehouseReport.WinUI.utlMultiSelect, LongWin.DataWarehouseReport.WinUI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;txtDestPort.Parent" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;txtDestPort.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 221</value>
+  </data>
+  <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>79</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Name" xml:space="preserve">
+    <value>tableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.Parent" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl3</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="txtCarrier" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labShipAgent" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtDiscPort" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labDiscPort" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtLoadPort" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labCarrier" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="mulShippingLine" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="txtShipOwner" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labShippingLine" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="labLoadPort" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="label8" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txSCNO" Row="7" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="labAgent" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtAgent" Row="6" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label11" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="txtDestPort" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,81,Percent,100" /&gt;&lt;Rows Styles="Absolute,27,Absolute,27,Absolute,27,Absolute,27,Absolute,27,Absolute,27,Absolute,27,Absolute,27,Absolute,9" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 293</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 244</value>
+  </data>
+  <data name="ultraExplorerBarContainerControl3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl3.Name" xml:space="preserve">
+    <value>ultraExplorerBarContainerControl3</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl3.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarContainerControl, Infragistics2.Win.UltraWinExplorerBar.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl3.Parent" xml:space="preserve">
+    <value>ultraExplorerBar1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBarContainerControl3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSearch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnSearch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>156, 6</value>
+  </data>
+  <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 23</value>
+  </data>
+  <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnSearch.Text" xml:space="preserve">
+    <value>查询(&amp;S)</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Name" xml:space="preserve">
+    <value>btnSearch</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 562</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 33</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ultraExplorerBar1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ultraExplorerBarGroup1.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="ultraExplorerBarGroup2.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ultraExplorerBarGroup3.Text" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ultraExplorerBar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ultraExplorerBar1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 562</value>
+  </data>
+  <data name="ultraExplorerBar1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBar1.Name" xml:space="preserve">
+    <value>ultraExplorerBar1</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBar1.Type" xml:space="preserve">
+    <value>Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar, Infragistics2.Win.UltraWinExplorerBar.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBar1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ultraExplorerBar1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>239, 595</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TotalForBox_Search</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="zh-CHS" Author="">
+  <Common>
+    <DocumentDispatch  Subject="the BL、Debit Note of SO#{0}" Body="
+      Dear{1} :&#xD;&#xA;
+          Please get the BL、Debit Note of {2}&#xD;&#xA;&#xD;&#xA;
+          Thanks,{3}
+     " />
+    <!--
+      通知客服有新订单 邮件模版
+      {0}业务号
+      {1}起运港
+      {2}目的港
+      {3}箱型
+      {4}收件人名称
+      {5}订舱号
+      {6}当前用户
+    -->
+    <ConfirNewBooking Subject="New BKG,#{0},from {1} to {2}, {3} " Body="
+Hi {4}:&#xD;&#xA;
+New BKG, #{0}, from {1} to {2}, {3}.&#xD;&#xA;&#xD;&#xA;
+{5}.Booking Memo.&#xD;&#xA;&#xD;&#xA;
+Thanks,{6}"/>
+    <!--
+      通知订舱员booking已更改 邮件模版
+      {0}业务号
+      {1}起运港
+      {2}目的港
+      {3}箱型
+      {4}收件人名称
+      {5}订舱号
+      {6}当前用户
+    -->
+    <ConfirChangedBooking Subject="The bkg is changed, #{0}, from {1} to {2}, {3}" Body="
+Hi {4}:&#xD;&#xA;
+The bkg is changed, # {0}, from {1} to {2}, {3}.&#xD;&#xA;&#xD;&#xA;
+{5}.Booking Memo.&#xD;&#xA;&#xD;&#xA;
+Thanks,{6}"/>
+    <!--
+     通知客服有已回复询价  邮件模版
+      {0}业务号
+      {1}起运港
+      {2}目的港
+      {3}箱型
+      {4}收件人名称
+      {5}当前用户
+    -->
+    <ConfirReply Subject="Reply the Rates, #{0}, from {1} to {2}, {3}" Body="
+Hi {4}:&#xD;&#xA;
+The rate is replied, from {1} to {2}, {3}&#xD;&#xA;&#xD;&#xA;
+Thanks,{5}"/>
+
+    <!--
+    提醒客服成功订舱 邮件模版
+    {0} SO号
+    {1} 起运港
+    {2} 目的港
+    {3} 箱型
+    {4} 收件人
+    {5} 当前用户
+    {6} 业务号
+    -->
+    <ConfirBookingSpace Subject="SO #{0}, from {1} to {2}, {3}" Body="
+Hi {4}:&#xD;&#xA;
+The booking #{6}, from {1} to {2}, {3}, has been done.&#xD;&#xA;&#xD;&#xA;
+SO  #{0}&#xD;&#xA;&#xD;&#xA;
+Thanks,{5}"/>
+    
+    <!--
+     通知客户提柜信息 邮件模版
+     {0} SO号
+     {1} 收件人
+     {2} SO号+车牌号+箱号+封号(多个重复)
+     {3} 当前用户
+    -->
+    <ConfirCustomerMentionArk Subject="SO#{0}, the info of Driver, Container and Vehicle" Body="
+Hi {1}:&#xD;&#xA;
+Please get the stuff of Driver, Container and Vehicle as below: &#xD;&#xA;&#xD;&#xA;
+{2} &#xD;&#xA;&#xD;&#xA;
+Thanks,{3}"/>
+
+
+    <!--
+     账单已被代理修订 邮件模版
+     {0} 收件人： 放单管理.代理联系人配置列表
+     {1} 抄送：分文件用户.邮箱
+     {2} 发件人： ICP
+     {3} 主题：警告：没有签收代理分发的文件，HBL：JKKS80028/KSW800992。
+     
+    -->
+    <ConfirApplyBillRevise Subject="@%OE.NO@% Of Business's agent bills are updated by Agent.please accept on time on ICP. " 
+Body="Hi All&#xD;&#xA;&#xD;&#xA;Agent: @%OE.AgentName@%,@%OE.UpdateByName@% at[@%OE.UpdateDate%@] applyed bill revise. Please accept on time .&#xD;&#xA;&#xD;&#xA;Thanks,&#xD;&#xA;&#xD;&#xA;ICP"/>
+
+
+    <!--
+  通知客服已放单 邮件模版
+  {0} 提单号 
+  {1} 收件人
+  {2} 当前用户
+  -->
+    <ConfirCustomerService Subject=" BL#{0} is released." Body="
+Hi {1}:&#xD;&#xA;
+    BL#{0} is released. &#xD;&#xA;&#xD;&#xA;
+   Thanks,{2}"/>
+
+
+    <Cancel Subject="取消" Body=""/>
+    <Close Subject="关闭" Body=""/>
+    <MoreOptions Subject="更多选项" Body=""/>
+    <LessOptions Subject="普通选项" Body=""/>
+    <Actions Subject="动作" Body=""/>
+    <Previous Subject="&lt;上一个" Body=""/>
+    <Next Subject="下一个&gt;" Body=""/>
+    <Finish Subject="完成" Body=""/>
+    <Advanced Subject="高级..." Body=""/>
+  </Common>
+  <OceanExport>
+    <AccessingData Subject="读取数据..." Body=""/>
+    <CantFindObject Subject="没有找到对象" Body=""/>
+    <CantLoadReport Subject="加载报表{0}失败" Body=""/>
+    <ClassError Subject="没有找到报表脚本主类" Body=""/>
+    <Confirmation Subject="确定"/>
+    <DataNotInitialized Subject="数据源没有初始化" Body=""/>
+    <DecompressError Subject="解压文件失败" Body=""/>
+    <DecryptError Subject="解密失败:错误的密码" Body=""/>
+    <DelegateError Subject="{0}方法必须包含两个参数:'sender' 和 'e'" Body=""/>
+    <DeleteAncestor Subject="不能删除{0}, 因为它是父报表中的对象" Body=""/>
+    <DuplicateName Subject="名称为{0}的对象已经存在" Body=""/>
+    <DuplicateStyle Subject="该样式名称已经存在" Body=""/>
+    <Error Subject="错误"/>
+    <EventError Subject="由于代码中有错误,不能创建事件处理程序" Body=""/>
+    <ExportingPage Subject="正在输出第{0}页,共{1}页" Body=""/>
+    <GeneratingPage Subject="正在生成页{0}" Body=""/>
+    <GeneratingPageFirstPass Subject="第一步:正在生成页{0}" Body=""/>
+    <Information Subject="消息" Body=""/>
+    <MatrixError Subject="{0}:矩阵对象至少要一行和一列,并且有一个单元格" Body=""/>
+    <MatrixValueError Subject="值数量与矩阵数据单元个数量不同(必须是{0}个)" Body=""/>
+    <ParentError Subject="{0}类型的对象不能包含{1}类型的对象" Body=""/>
+    <ParentError1 Subject="{0}类型的对象不能包含对象" Body=""/>
+    <Performance Subject="耗时{0}ms" Body=""/>
+    <PreparingData Subject="准备数据..." Body=""/>
+    <PrintingPage Subject="正在打印第{0}页" Body=""/>
+    <RenameAncestor Subject="不能重命名{0},它是父 报表对象" Body=""/>
+    <SaveChanges Subject="是否保存{0}?" Body=""/>
+    <SaveChangesToPreviewPage Subject="是否保存到上一页?" Body=""/>
+    <TableIsNull Subject="表格没有和数据关联,使用Report.RegisterData方法注册数据" Body=""/>
+    <TableManualBuildError Subject="在手工构建过程中,你只能使用TableObject.PrintRow, PrintColumn方法" Body=""/>
+    <Warning Subject="警告" Body=""/>
+    <WrongFileFormat Subject="不能加载文件,未知的文件格式" Body=""/>
+  </OceanExport>
+
+
+
+
+</Language>

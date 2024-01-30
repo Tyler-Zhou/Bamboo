@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="11/16/2010 17:08:10" ReportInfo.Modified="07/25/2011 16:24:36" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="FeeList" ReferenceName="FeeList" DataType="System.Int32" Enabled="true">
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="ChargeCodeID" DataType="System.Guid"/>
+      <Column Name="ChargeCodeName" DataType="System.String"/>
+      <Column Name="CRAmount" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="DRAmount" DataType="System.Decimal"/>
+      <Column Name="ExchangeRate" DataType="System.Decimal"/>
+      <Column Name="Id" DataType="System.Guid"/>
+      <Column Name="IsAgent" DataType="System.Boolean"/>
+      <Column Name="PaymentMode" DataType="System.String"/>
+      <Column Name="Price" DataType="System.Decimal"/>
+      <Column Name="Qty" DataType="System.Decimal"/>
+      <Column Name="Way" DataType="System.Int16"/>
+      <Column Name="WayName" DataType="System.String"/>
+      <Column Name="BillToName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Parameter Name="SONO" DataType="System.String"/>
+    <Parameter Name="VesselAndVoyageSecond" DataType="System.String"/>
+    <Parameter Name="ETDFirstAndCloseDate" DataType="System.String"/>
+    <Parameter Name="ETDSecondAndCloseDate" DataType="System.String"/>
+    <Parameter Name="ETA" DataType="System.String"/>
+    <Parameter Name="ContainerSizeAndType" DataType="System.String"/>
+    <Parameter Name="CotntainerNo" DataType="System.String"/>
+    <Parameter Name="JobCode" DataType="System.String"/>
+    <Parameter Name="HBLText" DataType="System.String"/>
+    <Parameter Name="POL" DataType="System.String"/>
+    <Parameter Name="POD" DataType="System.String"/>
+    <Parameter Name="Destination" DataType="System.String"/>
+    <Parameter Name="InvoiceNo" DataType="System.String"/>
+    <Parameter Name="WriteOffPeople" DataType="System.String"/>
+    <Parameter Name="Sales" DataType="System.String"/>
+    <Parameter Name="Calculater" DataType="System.String"/>
+    <Parameter Name="USDDebit" DataType="System.String"/>
+    <Parameter Name="HKDDebit" DataType="System.String"/>
+    <Parameter Name="RMBDebit" DataType="System.String"/>
+    <Parameter Name="USDCredit" DataType="System.String"/>
+    <Parameter Name="HKDCredit" DataType="System.String"/>
+    <Parameter Name="RMBCredit" DataType="System.String"/>
+    <Parameter Name="IsEnglish" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page91277724">
+    <PageHeaderBand Name="PageHeaderBand91277724" Top="20" Width="718.2" Height="30.24">
+      <TextObject Name="textbox1" Left="7.56" Width="699.3" Height="30.24" CanGrow="true" Text="费用结算单" HorzAlign="Center" VertAlign="Center" Font="宋体, 14pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand91277724" Top="70.24" Width="718.2" Height="185.22">
+      <TextObject Name="textbox30" Left="470.5" Top="6" Width="124.85" Height="19" CanGrow="true" Text="[Date]"/>
+      <TextObject Name="textbox31" Left="389.23" Top="6" Width="81.27" Height="19" CanGrow="true" Text="打印日期" HorzAlign="Right" Font="宋体, 10pt"/>
+      <TableObject Name="Table2" Left="7.56" Top="26.46" Width="699.64" Height="158.76">
+        <TableColumn Name="Column1" Width="174.91"/>
+        <TableColumn Name="Column2" Width="174.91"/>
+        <TableColumn Name="Column3" Width="174.91"/>
+        <TableColumn Name="Column4" Width="174.91"/>
+        <TableRow Name="Row1" Height="22.68">
+          <TableCell Name="Cell1" Text="订舱号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Text="[SONO]" VertAlign="Center"/>
+          <TableCell Name="Cell3" Text="业务号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Text="[JobCode]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="22.68">
+          <TableCell Name="Cell6" Text="二程船名/航次" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Text="[VesselAndVoyageSecond]" VertAlign="Center"/>
+          <TableCell Name="Cell8" Text="提单号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell9" Text="[HBLText]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Text="头程离港/截单日" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Text="[ETDFirstAndCloseDate]" VertAlign="Center"/>
+          <TableCell Name="Cell13" Text="装货港" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell14" Text="[POL]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.68">
+          <TableCell Name="Cell16" Text="二程离港/截单日" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Text="[ETDSecondAndCloseDate]" VertAlign="Center"/>
+          <TableCell Name="Cell18" Text="卸货港" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Text="[POD]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell21" Text="ETA" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell22" Text="[ETA]" VertAlign="Center"/>
+          <TableCell Name="Cell23" Text="目的港" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Text="[Destination]" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell25" Text="箱量/箱型" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell26" Text="[ContainerSizeAndType]" VertAlign="Center"/>
+          <TableCell Name="Cell27" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell28" VertAlign="Center"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="22.68">
+          <TableCell Name="Cell29" Text="箱号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell30" Text="[CotntainerNo]" VertAlign="Center"/>
+          <TableCell Name="Cell31" Text="账单号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell32" Text="[InvoiceNo]" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="table1" Top="318.14" Width="718.2" Height="22.68" DataSource="FeeList">
+      <TableObject Name="Table4" Left="7.56" Width="704.7" Height="22.68">
+        <TableColumn Name="Column12" Width="55.08"/>
+        <TableColumn Name="Column13" Width="145.8"/>
+        <TableColumn Name="Column14" Width="58.86"/>
+        <TableColumn Name="Column15" Width="73.98"/>
+        <TableColumn Name="Column16" Width="89.1"/>
+        <TableColumn Name="Column17" Width="281.88"/>
+        <TableRow Name="Row9" Height="22.68">
+          <TableCell Name="Cell40" Text="应收" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell41" Text="费用名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell42" Text="币制" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell43" Text="金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell44" Text="折合" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell45" Text="收付款单位" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Top="275.46" Width="718.2" Height="22.68">
+        <TableObject Name="Table3" Left="7.56" Width="704.7" Height="22.68">
+          <TableColumn Name="Column5" Width="55.08"/>
+          <TableColumn Name="Column6" Width="145.8"/>
+          <TableColumn Name="Column8" Width="58.86"/>
+          <TableColumn Name="Column9" Width="73.98"/>
+          <TableColumn Name="Column10" Width="89.1"/>
+          <TableColumn Name="Column11" Width="281.88"/>
+          <TableRow Name="Row8" Height="22.68">
+            <TableCell Name="Cell33" Border.Lines="Bottom" Border.Width="2" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell34" Border.Lines="Bottom" Border.Width="2" Text="费用名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell36" Border.Lines="Bottom" Border.Width="2" Text="币制" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell37" Border.Lines="Bottom" Border.Width="2" Text="金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell38" Border.Lines="Bottom" Border.Width="2" Text="折合" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell39" Border.Lines="Bottom" Border.Width="2" Text="收付款单位" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Top="360.82" Width="718.2" Height="105.84">
+        <TableObject Name="Table5" Left="7.56" Width="683.91" Height="105.84">
+          <TableColumn Name="Column18" Width="55.08"/>
+          <TableColumn Name="Column19" Width="43.74"/>
+          <TableColumn Name="Column20" Width="100.44"/>
+          <TableColumn Name="Column21" Width="47.52"/>
+          <TableColumn Name="Column22" Width="89.1"/>
+          <TableColumn Name="Column23" Width="51.3"/>
+          <TableColumn Name="Column24" Width="96.39"/>
+          <TableColumn Name="Column25" Width="69.93"/>
+          <TableColumn Name="Column26" Width="130.41"/>
+          <TableRow Name="Row10" Height="22.68">
+            <TableCell Name="Cell46" Border.Lines="Top" Border.Width="2" Text="应收" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell47" Border.Lines="Top" Border.Width="2" Text="USD:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell48" Border.Lines="Top" Border.Width="2" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell49" Border.Lines="Top" Border.Width="2" Text="RMB:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell50" Border.Lines="Top" Border.Width="2" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell51" Border.Lines="Top" Border.Width="2" Text="HKD:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell58" Border.Lines="Top" Border.Width="2"/>
+            <TableCell Name="Cell60" Border.Lines="Top" Border.Width="2"/>
+            <TableCell Name="Cell62" Border.Lines="Top" Border.Width="2"/>
+          </TableRow>
+          <TableRow Name="Row11" Height="22.68">
+            <TableCell Name="Cell52" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell53" Text="USD:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell54" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell55" Text="RMB:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell56" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell57" Text="HKD:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell59"/>
+            <TableCell Name="Cell61" Text="利润:USD  " VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+            <TableCell Name="Cell63" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          </TableRow>
+          <TableRow Name="Row12">
+            <TableCell Name="Cell64" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell65" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell66" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell67" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell68" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell69" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell70" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell71" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell72" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+          <TableRow Name="Row13">
+            <TableCell Name="Cell73" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell74" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell75" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell76" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell77" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell78" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell79" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell80" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell81" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+          <TableRow Name="Row14" Height="22.68">
+            <TableCell Name="Cell82" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell83" Text="计费:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell84" VertAlign="Center" Font="宋体, 10pt" ColSpan="2"/>
+            <TableCell Name="Cell85" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell86" Text="揽货人:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell87" VertAlign="Center" Font="宋体, 10pt" ColSpan="2"/>
+            <TableCell Name="Cell88" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell89" Text="操作:" VertAlign="Center" Font="宋体, 10pt"/>
+            <TableCell Name="Cell90" VertAlign="Center" Font="宋体, 10pt"/>
+          </TableRow>
+        </TableObject>
+      </DataFooterBand>
+    </DataBand>
+  </ReportPage>
+</Report>

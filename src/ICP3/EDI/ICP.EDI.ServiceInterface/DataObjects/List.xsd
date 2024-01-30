@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="List" targetNamespace="http://tempuri.org/List.xsd" xmlns:mstns="http://tempuri.org/List.xsd" xmlns="http://tempuri.org/List.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+   <xs:element name="List" msprop:Generator_UserTableName="List" msprop:Generator_RowDeletedName="ListRowDeleted" msprop:Generator_TableClassName="ListDataTable" msprop:Generator_RowChangedName="ListRowChanged" msprop:Generator_RowClassName="ListRow" msprop:Generator_RowChangingName="ListRowChanging" msprop:Generator_RowEvArgName="ListRowChangeEvent" msprop:Generator_RowEvHandlerName="ListRowChangeEventHandler" msprop:Generator_TablePropName="_List" msprop:Generator_TableVarName="tableList" msprop:Generator_RowDeletingName="ListRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Item" msprop:Generator_UserColumnName="Item" msprop:Generator_ColumnPropNameInRow="Item" msprop:Generator_ColumnVarNameInTable="columnItem" msprop:Generator_ColumnPropNameInTable="ItemColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+</xs:schema>

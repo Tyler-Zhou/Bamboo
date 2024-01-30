@@ -1,0 +1,218 @@
+﻿<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" namespace="ICP.FCM.Common">
+  <classes>
+    <class name="CommonMemoList" description="备注列表">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="OwnerID" type="Guid" description="托运单ID" />
+      <field isid="false" name="OwnerSource" type="BussinessType" description="备注所属业务" />
+      <field isid="false" name="Subject" type="string" description="主题">
+        <validation type="stringlength" length="200" min="0" max="0" />
+        <validation type="required" errmsg="主题必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="Content" type="string" description="内容">
+        <validation type="stringlength" length="-1" min="0" max="0" />
+      </field>
+      <field isid="false" name="IsShowAgent" type="bool" description="是否显示给代理">
+        <validation type="required" errmsg="是否显示给代理必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="IsShowCustomer" type="bool" description="是否显示给客户">
+        <validation type="required" errmsg="是否显示给客户必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+    </class>
+    <class name="CommonMemoInfo" description="备注信息" baseclass="CommonMemoList">
+      <field isid="false" name="KeyID" type="Guid?" description="关键字ID" />
+      <field isid="false" name="KeyName" type="string" description="关键字" />
+      <field isid="false" name="AttachmentName" type="string" description="附件名">
+        <validation type="stringlength" length="100" min="0" max="0" />
+      </field>
+      <field isid="false" name="Attachment" type="byte[]" description="附件" />
+      <field isid="false" name="Type" type="CommonData.MemoType" description="类型（系统、重要、正常等）">
+        <validation type="required" errmsg="类型（系统、重要、正常等）必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="CreateByID" type="Guid" description="建立人" />
+      <field isid="false" name="DataVersion" type="byte[]" description="行版本" />
+    </class>
+    <class name="CommonMailFaxLogList" description="邮件传真日志列表">
+      <field isid="true" name="ID" type="Guid" description="唯一键" />
+      <field isid="false" name="OceanShippingOrderID" type="Guid" description="装货单ID" />
+      <field isid="false" name="Sender" type="string" description="发件人" />
+      <field isid="false" name="Receiver" type="string" description="收件人" />
+      <field isid="false" name="Subject" type="string" description="邮件主题">
+        <validation type="stringlength" length="500" min="0" max="0" />
+        <validation type="required" errmsg="邮件主题必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="MailContent" type="string" description="邮件内容">
+        <validation type="required" errmsg="邮件内容必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="State" type="byte" description="状态（0草稿、1正在发送、2已发送）">
+        <validation type="required" errmsg="状态（0草稿、1正在发送、2已发送）必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="IsFax" type="bool" description="是否发送传真">
+        <validation type="required" errmsg="是否发送传真必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="AttachmentList" type="List&lt;AttachmentList&gt;" description="附件列表" />
+      <field isid="false" name="CreateByID" type="Guid" description="建立人" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+      <field isid="false" name="DataVersion" type="byte[]" description="行版本" />
+    </class>
+    <class name="CommonDocumentList" description="单证日志列表">
+      <field isid="true" name="ID" type="Guid" description="唯一键">
+        <validation type="required" errmsg="唯一键必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="OceanBookingID" type="Guid" description="托运单ID" />
+      <field isid="false" name="DocumentNo" type="string" description="单证号">
+        <validation type="stringlength" length="20" min="0" max="0" />
+      </field>
+      <field isid="false" name="DocumentType" type="DocumentType" description="类型（0核销单，1提单等）">
+        <validation type="required" errmsg="类型必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="NumberOfOriginal" type="short" description="正本份数">
+        <validation type="required" errmsg="正本份数必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="NumberOfCopies" type="short" description="副本份数">
+        <validation type="required" errmsg="副本份数必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="ReceivedDate" type="DateTime" description="接收日期">
+        <validation type="required" errmsg="接收日期必须填写" length="0" min="0" max="0" />
+      </field>
+      <field isid="false" name="ReleaseDate" type="DateTime?" description="放单日期" />
+      <field isid="false" name="ReleaseMode" type="DocumentReleaseMode" description="放单方式（0快递，1当面交接）" />
+      <field isid="false" name="ReturnDate" type="DateTime?" description="退回日期" />
+      <field isid="false" name="Memos" type="List&lt;CommonMemoList&gt;" description="退回日期" />
+      <field isid="false" name="TrackingNo" type="string" description="快递单号" />
+      <field isid="false" name="AttachmentName" type="string" description="附件名称">
+        <validation type="stringlength" length="100" min="0" max="0" />
+      </field>
+      <field isid="false" name="CreateByID" type="Guid" description="建立人" />
+      <field isid="false" name="CreateByName" type="string" description="建立人" />
+      <field isid="false" name="CreateDate" type="DateTime" description="建立时间" />
+      <field isid="false" name="DataVersion" type="byte[]" description="行版本" />
+      <field isid="false" name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" min="0" max="0" />
+      </field>
+      <field isid="false" name="Attachment" type="byte[]" description="附件" />
+    </class>
+    <class name="CommonDocumentInfo" description="单证日志信息" baseclass="CommonDocumentList" />
+  </classes>
+  <datauis>
+    <dataui type="IListManageUIProxy" multiple="false" name="MemoListManage" title="Memo:备注" entityname="CommonMemoList">
+      <gridcolumns>
+        <column dataproperty="Subject" width="80" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Content" width="80" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="IsShowAgent" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="IsShowCustomer" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateByName" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="Add" index="0" text="&amp;Add" ctext="新增(&amp;A)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddData">
+          <steps />
+        </action>
+        <action name="Save" index="1" text="&amp;Save" ctext="保存(&amp;S)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click DblClickItem" datatype="Current" invokemethod="SaveData">
+          <steps />
+        </action>
+        <action name="Delete" index="2" text="&amp;Delete" ctext="删除(&amp;D)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DeleteData">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddData">
+          <steps />
+        </method>
+        <method name="DeleteData">
+          <steps />
+        </method>
+        <method name="SaveData">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="MailFaxLogListManage" title="MailFaxLog:传真日志" entityname="CommonMailFaxLogList">
+      <gridcolumns>
+        <column dataproperty="AttachmentList" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Receiver" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Subject" width="80" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="MailContent" width="80" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Sender" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions />
+      <methods />
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="DocumentListManage" title="Document:单证" entityname="CommonDocumentList">
+      <gridcolumns>
+        <column dataproperty="DocumentNo" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="TrackingNo" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ReceivedDate" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ReturnDate" width="60" datatype="string" editable="true">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="Add" index="0" text="&amp;Add" ctext="新增(&amp;A)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddData">
+          <steps />
+        </action>
+        <action name="Save" index="1" text="&amp;Save" ctext="保存(&amp;S)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click DblClickItem" datatype="Current" invokemethod="SaveData">
+          <steps />
+        </action>
+        <action name="Delete" index="2" text="&amp;Delete" ctext="删除(&amp;D)" icon="None" enable="false" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DeleteData">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddData">
+          <steps />
+        </method>
+        <method name="DeleteData">
+          <steps />
+        </method>
+        <method name="SaveData">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+  </datauis>
+  <services />
+</root>

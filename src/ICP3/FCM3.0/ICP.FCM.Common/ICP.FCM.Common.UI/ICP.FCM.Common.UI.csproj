@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B71894C2-B22D-4BBA-9B45-65D82447318C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.Common.UI</RootNamespace>
+    <AssemblyName>ICP.FCM.Common.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.FCM.Common.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirExport.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirImport.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanExport.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OtherBusiness.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.CommonUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.OA.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentRequest\AgentRequestListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestListPart.Designer.cs">
+      <DependentUpon>AgentRequestListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestSearchPart.Designer.cs">
+      <DependentUpon>AgentRequestSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestToolBar.Designer.cs">
+      <DependentUpon>AgentRequestToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestWorkitem.cs" />
+    <Compile Include="AgentRequest\AgentRequestWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestWorkspace.Designer.cs">
+      <DependentUpon>AgentRequestWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequstPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequstPart.Designer.cs">
+      <DependentUpon>AgentRequstPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AssignAgentRequestPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AssignAgentRequestPart.Designer.cs">
+      <DependentUpon>AssignAgentRequestPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonModuleInit.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Controls\FromToDateMonthControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\FromToDateMonthControl.Designer.cs">
+      <DependentUpon>FromToDateMonthControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\MemoList\MemoListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\MemoList\MemoListPart.designer.cs">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\EditRemarkPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\EditRemarkPart.Designer.cs">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\VerifiSheetEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\VerifiSheetEditPart.designer.cs">
+      <DependentUpon>VerifiSheetEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UIProxys.cs" />
+    <Compile Include="Common\UserOrganizationTreeCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\UserOrganizationTreeCheckBox.Designer.cs">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Document\DocumentListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\DocumentListPart.Designer.cs">
+      <DependentUpon>DocumentListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\EditDocumentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\EditDocumentPart.Designer.cs">
+      <DependentUpon>EditDocumentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxEMailLog\FaxEMailLogListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaxEMailLog\FaxEMailLogListPart.designer.cs">
+      <DependentUpon>FaxEMailLogListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessSearchPart.designer.cs">
+      <DependentUpon>BusinessSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessListPart.designer.cs">
+      <DependentUpon>BusinessListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessFinder.cs" />
+    <Compile Include="Finder\BusinessFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderToolBar.Designer.cs">
+      <DependentUpon>BusinessFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderWorkspace.Designer.cs">
+      <DependentUpon>BusinessFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Memo\EditMemoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Memo\EditMemoPart.Designer.cs">
+      <DependentUpon>EditMemoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Memo\MemoListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Memo\MemoListPart.Designer.cs">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\FCMCommonClientService.cs" />
+    <Compile Include="Common\VoyageDateInfoHelper.cs" />
+    <Compile Include="Common\UCButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AgentRequest\AgentRequestListPart.resx">
+      <DependentUpon>AgentRequestListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestSearchPart.resx">
+      <DependentUpon>AgentRequestSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestToolBar.resx">
+      <DependentUpon>AgentRequestToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestWorkspace.resx">
+      <DependentUpon>AgentRequestWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequstPart.resx">
+      <DependentUpon>AgentRequstPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AssignAgentRequestPart.resx">
+      <DependentUpon>AssignAgentRequestPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\FromToDateMonthControl.resx">
+      <DependentUpon>FromToDateMonthControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\MemoList\MemoListPart.resx">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\EditRemarkPart.resx">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\VerifiSheetEditPart.resx">
+      <DependentUpon>VerifiSheetEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\UserOrganizationTreeCheckBox.resx">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\DocumentListPart.resx">
+      <DependentUpon>DocumentListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\EditDocumentPart.resx">
+      <DependentUpon>EditDocumentPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxEMailLog\FaxEMailLogListPart.resx">
+      <DependentUpon>FaxEMailLogListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\BusinessSearchPart.resx">
+      <DependentUpon>BusinessSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\BusinessListPart.resx">
+      <DependentUpon>BusinessListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memo\EditMemoPart.resx">
+      <DependentUpon>EditMemoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Memo\MemoListPart.resx">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.FCM.Common.ServiceInterface\ICP.FCM.Common.ServiceInterface.csproj">
+      <Project>{E3263870-19C7-4986-BD8C-E7C1E4DE615A}</Project>
+      <Name>ICP.FCM.Common.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_d_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_blue_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transfer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fee\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2005 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="Manifest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BillOfLading" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BookingDate" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="6"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="RealAccountInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="RealAccount" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="20"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Year" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="2"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DocumentType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="3"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="HouseBillNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="12"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="AMSHBLNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="16"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="AmendmentFlag" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="MasterBillNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="16"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NVOCScac" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="4"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Transshipment" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ShipperReference" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OceanBillNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="21"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BookingNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OriginBranch" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="OriginUserCode" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DestinationBranch" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="DestinationUserCode" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SecurityProcessingStation" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ShipmentType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="1"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SendersUniqueReference" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ShipperPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ConsigneePartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ConsigneeNumberQualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ConsigneeNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="NotifyPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="DeliveryInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ShipToPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BuyerPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ImporterOfRecordNumberQualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ImporterOfRecordNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="SellerPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ManufacturerPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ConsolidatorPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ContainerStuffingLocation">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Name" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="DUNSNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="13"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress1" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="StreetAddress2" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CityStateZip" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="40"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Country" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Contact" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="25"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Phone" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Fax" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="23"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CHBPartyInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="AccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="OtherAccountCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="16"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="AdditionalReference" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="35"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IMO" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="7"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="VesselName" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SCAC_Carrier" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="4"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="VesselFlag" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="2"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="VoyageNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="5"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CarrierCode" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="FeederVesselName" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="TenTwoEntryType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="TenTwoApplicationType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CarnetCountry" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CarnetNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BondType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BondActivityCode" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BondReferenceNumber" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="BondReferenceType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ISFImporterIDType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ISFImporterID" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="SuretyCode" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CustomsEntryType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="2"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ACIEntryType" >
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"></xs:maxLength>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="PlaceOfReceipt">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PortOfLoad">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="LastForeignPort">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FirstUSAPort">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PortOfDischarge">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PlaceOfDelivery">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PortCode" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="200"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Qualifier" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="2"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Date" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Time" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualDate" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="8"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ActualTime" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="4"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Container">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ConsolidatorPartyInfo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OtherAccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="16"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="AdditionalReference" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DUNSNumber" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="13"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress1" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress2" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CityStateZip" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="2"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Contact" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="25"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Phone" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Fax" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ContainerStuffingLocation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OtherAccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="16"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="AdditionalReference" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DUNSNumber" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="13"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress1" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress2" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CityStateZip" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="2"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Contact" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="25"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Phone" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Fax" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ShipToPartyInfo">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="AccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OtherAccountCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="16"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="AdditionalReference" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Name" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="DUNSNumber" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="13"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress1" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="StreetAddress2" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="35"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="CityStateZip" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="40"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Country" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="2"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Contact" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="25"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Phone" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Fax" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="23"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="ContainerNumber" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="11"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="Seal" >
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="15"></xs:maxLength>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ContainerContent">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Kilos" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Quantity" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="10"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="UnitOfMeasure" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="3"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="FreeFormDescription" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="180"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="ContainerDetails">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="HarmonizedTariffCode" >
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="10"></xs:maxLength>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="CountryOfOrigin" >
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:maxLength value="2"></xs:maxLength>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="ManufacturerInfo">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="AccountCode" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="200"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="OtherAccountCode" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="16"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="AdditionalReference" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="35"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Name" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="40"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="DUNSNumber" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="13"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="StreetAddress1" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="35"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="StreetAddress2" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="35"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="CityStateZip" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="40"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Country" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="2"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Contact" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="25"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Phone" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="23"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Fax" >
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="23"></xs:maxLength>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="MarksAndNumbers" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="180"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="Value" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="HazMatCode" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="6"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="HazMatQualifier" >
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:maxLength value="200"></xs:maxLength>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

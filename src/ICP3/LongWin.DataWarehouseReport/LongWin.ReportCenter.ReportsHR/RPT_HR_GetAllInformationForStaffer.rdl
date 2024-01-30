@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="HRReportSource">
+      <rd:DataSourceID>111556ce-10d6-4712-aa10-9dea79fcec6e</rd:DataSourceID>
+      <DataSourceReference>HRReportSource</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="StafferID">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>33681987-CDEE-436B-87C9-07DBC439F4E9</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>员工ID</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:GridSpacing>0.1cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>3ac1296f-99bd-4af5-a6cb-83c4e21812ce</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="HRReportSource">
+      <Fields>
+        <Field Name="StafferID">
+          <DataField>StafferID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="AccountID">
+          <DataField>AccountID</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="BeginDate">
+          <DataField>BeginDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EndDate">
+          <DataField>EndDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>HRReportSource</DataSourceName>
+        <CommandText>SELECT StafferID,AccountID
+,CONVERT(VARCHAR(10),DATEADD(yy, -1,GETDATE()),126) AS BeginDate 
+,EndDate = CONVERT(VARCHAR(10),GETDATE(),126)
+FROM dbo.T_HR_StafferAccount
+WHERE StafferID=@StafferID</CommandText>
+        <QueryParameters>
+          <QueryParameter Name="@StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>19.1cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Subreport Name="subreport2">
+        <ToolTip>教育职称</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>3.8cm</Top>
+        <ReportName>RPT_HR_StafferEducateInfoReport</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <Label>教育职称</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>1.5cm</Top>
+        <Width>1.8cm</Width>
+        <Style>
+          <BackgroundColor>LightSkyBlue</BackgroundColor>
+          <FontFamily>宋体</FontFamily>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>9</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.63492cm</Height>
+        <Value>基本信息</Value>
+      </Textbox>
+      <Subreport Name="subreport1">
+        <ToolTip>基本信息</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>2.25cm</Top>
+        <ReportName>RPT_HR_StafferBaseInfoReport</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>8</ZIndex>
+        <Label>基本信息</Label>
+        <Height>1.5cm</Height>
+      </Subreport>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.2cm</Top>
+        <Width>18.6cm</Width>
+        <Style>
+          <Color>SteelBlue</Color>
+          <FontFamily>宋体</FontFamily>
+          <FontSize>20pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>7</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.91429cm</Height>
+        <Value>员工相关信息</Value>
+      </Textbox>
+      <Subreport Name="subreport3">
+        <ToolTip>部门调动</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>5.1cm</Top>
+        <ReportName>RPT_HR_ApplyLog</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <Label>部门调动</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Subreport Name="subreport4">
+        <ToolTip>奖/惩记录</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+          <Parameter Name="BeginDate">
+            <Value>=CDate(Now().Year().ToString()+"-"+"01-01")</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=now()</Value>
+          </Parameter>
+          <Parameter Name="DeptID">
+            <Value>701ACD43-D49B-422B-83A9-ACB56B696995</Value>
+          </Parameter>
+        </Parameters>
+        <Top>6.4cm</Top>
+        <ReportName>Report_HR_GetStafferAwardPunishTotalForStafferID</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>5</ZIndex>
+        <Label>奖/惩励记录</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Subreport Name="subreport5">
+        <ToolTip>考勤记录</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+          <Parameter Name="BeginDate">
+            <Value>=CDate(Now().Year().ToString()+"-"+"01-01")</Value>
+          </Parameter>
+          <Parameter Name="EndDate">
+            <Value>=Now()</Value>
+          </Parameter>
+        </Parameters>
+        <Top>7.7cm</Top>
+        <ReportName>Report_HR_GetStafferWorkAttendanceTotalForStafferID</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <Label>考勤记录</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Subreport Name="subreport6">
+        <ToolTip>月度考核</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>9cm</Top>
+        <ReportName>RPT_HR_StafferMonthAssessReport</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>3</ZIndex>
+        <Label>月度考核</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Subreport Name="subreport7">
+        <ToolTip>满意度记录</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>10.3cm</Top>
+        <ReportName>RPT_HR_StafferSatisfactionGradeInfoReport</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <Label>满意度记录</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+      <Subreport Name="subreport8">
+        <ToolTip>业绩信息</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferID">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>12.9cm</Top>
+        <ReportName>RPT_GetJobInfoForStafferID</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <Label>业绩信息</Label>
+      </Subreport>
+      <Subreport Name="subreport9">
+        <ToolTip>投诉记录</ToolTip>
+        <Parameters>
+          <Parameter Name="StafferId">
+            <Value>=Parameters!StafferID.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>11.6cm</Top>
+        <ReportName>RPT_HR_StafferComplaintsRelations</ReportName>
+        <Width>19cm</Width>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+        <Label>投诉记录</Label>
+        <Height>1.25cm</Height>
+      </Subreport>
+    </ReportItems>
+    <Height>14.15cm</Height>
+  </Body>
+  <Language>zh-CN</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

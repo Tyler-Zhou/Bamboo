@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="07/05/2011 11:10:05" ReportInfo.Modified="07/06/2011 15:31:41" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="Common_ProfitReportData" ReferenceName="Common_ProfitReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="AgentName" DataType="System.String"/>
+      <Column Name="DiscPortName" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.DateTime"/>
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="ReferenceNo" DataType="System.String"/>
+      <Column Name="VesselName" DataType="System.String"/>
+      <Column Name="VoyageName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Common_ProfitReportFeeData" ReferenceName="Common_ProfitReportFeeData" DataType="System.Int32" Enabled="true">
+      <Column Name="agent" DataType="System.Decimal"/>
+      <Column Name="ChargeItemDescription" DataType="System.String"/>
+      <Column Name="company" DataType="System.String"/>
+      <Column Name="ConsignId" DataType="System.Guid"/>
+      <Column Name="Cost" DataType="System.Decimal"/>
+      <Column Name="currency" DataType="System.String"/>
+      <Column Name="InvNo" DataType="System.String"/>
+      <Column Name="pmt" DataType="System.String"/>
+      <Column Name="PostDate" DataType="System.DateTime"/>
+      <Column Name="Revenue" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page78754282">
+    <PageHeaderBand Name="PageHeaderBand78754282" Top="20" Width="718.2" Height="115.29">
+      <TextObject Name="textbox1" Left="37.8" Top="11.34" Width="933.66" Height="34.02" CanGrow="true" Text="PROFIT&#13;&#10;" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="textbox4" Left="158.76" Top="30.24" Width="139.86" Height="22.68" CanGrow="true" Text="Globals!ExecutionTime"/>
+      <TextObject Name="textbox2" Left="41.58" Top="30.24" Width="96" Height="22.68" CanGrow="true" Text="Printed On:"/>
+      <TextObject Name="textbox5" Left="139.86" Top="73.71" Width="139.86" Height="18.9" CanGrow="true"/>
+      <TextObject Name="textbox3" Left="41.58" Top="73.71" Width="96" CanGrow="true" Text="Currency:"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand849282210" Top="155.29" Width="718.2" Height="158.76">
+      <LineObject Name="line1" Left="30.24" Top="3.78" Width="941.22"/>
+      <TextObject Name="textbox50" Left="661.5" Top="7.56" Width="306.18" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.VesselName]"/>
+      <TextObject Name="textbox46" Left="177.66" Top="7.56" Width="328.86" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.ReferenceNo]"/>
+      <TextObject Name="textbox22" Left="517.86" Top="7.56" Width="139.86" Height="22.68" CanGrow="true" Text="VSL/VOY (FLIGHT):"/>
+      <TextObject Name="textbox15" Left="34.02" Top="7.56" Width="139.86" Height="22.68" CanGrow="true" Text="REFERENCE NO:"/>
+      <TextObject Name="textbox10" Left="884.52" Top="34.02" Width="83.16" Height="22.68" CanGrow="true" Text="iif(year(First([Common_ProfitReportData.ETD],"/>
+      <TextObject Name="textbox51" Left="661.5" Top="34.02" Width="219.24" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.LoadPortName]"/>
+      <TextObject Name="textbox47" Left="177.66" Top="34.02" Width="328.86" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.MasterBLNo]"/>
+      <TextObject Name="textbox21" Left="517.86" Top="34.02" Width="139.86" Height="22.68" CanGrow="true" Text="P.O.L/ETD:"/>
+      <TextObject Name="textbox16" Left="34.02" Top="34.02" Width="139.86" Height="22.68" CanGrow="true" Text="MASTER B/L NO:"/>
+      <TextObject Name="textbox9" Left="884.52" Top="60.48" Width="83.16" Height="22.68" CanGrow="true" Text="iif(year(First([Common_ProfitReportData.ETA],"/>
+      <TextObject Name="textbox52" Left="661.5" Top="60.48" Width="219.24" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.DiscPortName]"/>
+      <TextObject Name="textbox48" Left="177.66" Top="60.48" Width="328.86" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.HouseBLNo]"/>
+      <TextObject Name="textbox20" Left="517.86" Top="60.48" Width="139.86" Height="22.68" CanGrow="true" Text="P.O.D/ETA:"/>
+      <TextObject Name="textbox17" Left="34.02" Top="60.48" Width="139.86" Height="22.68" CanGrow="true" Text="HOUSE B/L NO:"/>
+      <TextObject Name="textbox49" Left="177.66" Top="86.94" Width="328.86" Height="22.68" CanGrow="true" Text="[Common_ProfitReportData.AgentName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox18" Left="34.02" Top="86.94" Width="139.86" Height="22.68" CanGrow="true" Text="AGENT NAME:"/>
+      <TextObject Name="textbox34" Left="695.52" Top="113.4" Width="98.28" Height="18.9" CanGrow="true" Text="LOCAL" HorzAlign="Center"/>
+      <LineObject Name="line2" Left="30.24" Top="113.4" Width="941.22"/>
+      <LineObject Name="line3" Left="234.36" Top="113.4" Height="45.36" Diagonal="true"/>
+      <LineObject Name="line7" Left="926.1" Top="113.4" Height="45.36" Diagonal="true"/>
+      <LineObject Name="line6" Left="835.38" Top="113.4" Height="45.36" Diagonal="true"/>
+      <LineObject Name="line5" Left="653.94" Top="113.4" Height="45.36" Diagonal="true"/>
+      <LineObject Name="line4" Left="476.28" Top="113.4" Height="45.36" Diagonal="true"/>
+      <LineObject Name="line10" Left="132.3" Top="113.4" Height="45.36" Diagonal="true"/>
+      <TextObject Name="textbox37" Left="30.24" Top="124.74" Width="98.28" Height="22.68" CanGrow="true" Text="INV.NO"/>
+      <TextObject Name="textbox31" Left="929.88" Top="124.74" Width="41.58" Height="22.68" CanGrow="true" Text="PMT"/>
+      <TextObject Name="textbox28" Left="839.16" Top="124.74" Width="83.16" Height="22.68" CanGrow="true" Text="Agent" HorzAlign="Right"/>
+      <TextObject Name="textbox8" Left="480.06" Top="124.74" Width="170.1" Height="22.68" CanGrow="true" Text="CHARGE DESCRIPTION"/>
+      <TextObject Name="textbox7" Left="238.14" Top="124.74" Width="234.36" Height="22.68" CanGrow="true" Text="COMPANY"/>
+      <TextObject Name="textbox6" Left="136.08" Top="124.74" Width="94.5" Height="22.68" CanGrow="true" Text="POST DATE" HorzAlign="Right"/>
+      <LineObject Name="line8" Left="653.94" Top="132.3" Width="181.44"/>
+      <LineObject Name="line9" Left="744.66" Top="132.3" Height="26.46" Diagonal="true"/>
+      <TextObject Name="textbox25" Left="748.44" Top="136.08" Width="83.16" Height="18.9" CanGrow="true" Text="Cost" HorzAlign="Right"/>
+      <TextObject Name="textbox19" Left="657.72" Top="136.08" Width="83.16" Height="18.9" CanGrow="true" Text="Revenue" HorzAlign="Right"/>
+    </ColumnHeaderBand>
+    <DataBand Name="table1" Top="334.05" Width="718.2" Height="24.94" DataSource="Common_ProfitReportFeeData">
+      <TextObject Name="InvNo" Width="102.06" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.InvNo]" Font="宋体, 10pt"/>
+      <TextObject Name="PostDate" Left="102.06" Width="102.06" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.PostDate]" Font="宋体, 10pt"/>
+      <TextObject Name="company" Left="204.12" Width="241.92" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.company]" Font="宋体, 10pt"/>
+      <TextObject Name="ChargeItemDescription" Left="446.04" Width="177.66" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.ChargeItemDescription]" Font="宋体, 10pt"/>
+      <TextObject Name="Revenue" Left="623.7" Width="90.72" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.Revenue]" HorzAlign="Right" Font="宋体, 10pt"/>
+      <TextObject Name="Cost" Left="714.42" Width="90.72" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.Cost]" HorzAlign="Right" Font="宋体, 10pt"/>
+      <TextObject Name="agent" Left="805.14" Width="90.72" Height="24.94" CanGrow="true" Text="[Common_ProfitReportData.AgentName]" HorzAlign="Right" Font="宋体, 10pt"/>
+      <TextObject Name="pmt" Left="895.86" Width="45.36" Height="24.94" CanGrow="true" Text="[Common_ProfitReportFeeData.pmt]" Font="宋体, 10pt"/>
+      <DataFooterBand Top="378.99" Width="718.2" Height="49.73">
+        <TextObject Name="textbox14" Width="102.06" Height="25.73" Border.Lines="Top" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox12" Left="102.06" Width="102.06" Height="25.73" Border.Lines="Top" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox13" Left="204.12" Width="241.92" Height="25.73" Border.Lines="Top" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox36" Left="446.04" Width="177.66" Height="25.73" Border.Lines="Top" CanGrow="true" Text="Total" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="textbox33" Left="623.7" Width="90.72" Height="25.73" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox30" Left="714.42" Width="90.72" Height="25.73" Border.Lines="Top, Bottom" CanGrow="true" Text="Sum(fields!Cost.Value)" Font="宋体, 10pt"/>
+        <TextObject Name="textbox27" Left="805.14" Width="90.72" Height="25.73" Border.Lines="Top, Bottom" CanGrow="true" Text="Sum(fields!agent.Value)" Font="宋体, 10pt"/>
+        <TextObject Name="textbox24" Left="895.86" Width="45.36" Height="25.73" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox38" Top="25.73" Width="102.06" Height="24" Border.Lines="Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox39" Left="102.06" Top="25.73" Width="102.06" Height="24" Border.Lines="Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox40" Left="204.12" Top="25.73" Width="241.92" Height="24" Border.Lines="Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox41" Left="446.04" Top="25.73" Width="177.66" Height="24" Border.Lines="Bottom" CanGrow="true" Text="PROFIT" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="textbox42" Left="623.7" Top="25.73" Width="90.72" Height="24" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox43" Left="714.42" Top="25.73" Width="90.72" Height="24" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox44" Left="805.14" Top="25.73" Width="90.72" Height="24" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox45" Left="895.86" Top="25.73" Width="45.36" Height="24" Border.Lines="Top, Bottom" CanGrow="true" Font="宋体, 10pt"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooterBand849282210" Top="448.72" Width="718.2" Height="0.75"/>
+  </ReportPage>
+</Report>

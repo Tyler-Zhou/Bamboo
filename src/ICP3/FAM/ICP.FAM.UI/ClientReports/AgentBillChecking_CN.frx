@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/19/2011 14:40:03" ReportInfo.Modified="11/04/2011 11:10:06" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="AgentBillCheckingBaseReportData" ReferenceName="AgentBillCheckingBaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="PrintDate" DataType="System.DateTime"/>
+      <Column Name="LaunchCompanyName" DataType="System.String"/>
+      <Column Name="LaunchUserName" DataType="System.String"/>
+      <Column Name="CheckCompanyName" DataType="System.String"/>
+      <Column Name="CheckUserName" DataType="System.String"/>
+      <Column Name="OperationTypes" DataType="System.String"/>
+      <Column Name="EndingETD" DataType="System.DateTime"/>
+      <Column Name="TotalLaunchDebit" DataType="System.String"/>
+      <Column Name="TotalLaunchCredit" DataType="System.String"/>
+      <Column Name="TotalLaunchBalance" DataType="System.String"/>
+      <Column Name="TotalGap" DataType="System.String"/>
+      <Column Name="TotalCheckBalance" DataType="System.String"/>
+      <Column Name="TotalCheckDebit" DataType="System.String"/>
+      <Column Name="TotalCheckCredit" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="AgentBillCheckingDetailReportData" ReferenceName="AgentBillCheckingDetailReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="BLNO" DataType="System.String"/>
+      <Column Name="CurrencyName" DataType="System.String"/>
+      <Column Name="LaunchBillNOs" DataType="System.String"/>
+      <Column Name="LaunchDebit" DataType="System.String"/>
+      <Column Name="LaunchCredit" DataType="System.String"/>
+      <Column Name="LaunchBalance" DataType="System.String"/>
+      <Column Name="Gap" DataType="System.String"/>
+      <Column Name="CheckBillNOs" DataType="System.String"/>
+      <Column Name="CheckDebit" DataType="System.String"/>
+      <Column Name="CheckCredit" DataType="System.String"/>
+      <Column Name="CheckBalance" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" FirstPageSource="4" OtherPagesSource="4">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="1047.06" Height="73.71">
+      <TextObject Name="Text1" Top="11.34" Width="1048.95" Height="34.02" Text="Agent BillChecking" HorzAlign="Center" Font="宋体, 20pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Left="820.26" Top="51.03" Width="75.6" Height="18.9" Text="Print Date:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text25" Left="895.86" Top="51.03" Width="141.75" Height="18.9" Text="[Date]" Format="Date" Format.Format="MM/dd/yyyy"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="113.71" Width="1047.06" Height="98.28" CanGrow="true">
+      <TableObject Name="Table1" Left="7.56" Top="60.48" Width="1030.05" Height="37.8">
+        <TableColumn Name="Column1" Width="81.27"/>
+        <TableColumn Name="Column2" Width="115.29"/>
+        <TableColumn Name="Column3" Width="47.25"/>
+        <TableColumn Name="Column4" Width="122.85"/>
+        <TableColumn Name="Column5" Width="75.6"/>
+        <TableColumn Name="Column6" Width="75.6"/>
+        <TableColumn Name="Column10" Width="75.6"/>
+        <TableColumn Name="Column7" Width="75.6"/>
+        <TableColumn Name="Column8" Width="75.6"/>
+        <TableColumn Name="Column9" Width="75.6"/>
+        <TableColumn Name="Column11" Width="75.6"/>
+        <TableColumn Name="Column12" Width="134.19"/>
+        <TableRow Name="Row2">
+          <TableCell Name="Cell13" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Base" HorzAlign="Center" Font="宋体, 10pt, style=Bold" ColSpan="3"/>
+          <TableCell Name="Cell14" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell15" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell16" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Initiating agent" HorzAlign="Center" Font="宋体, 10pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell17" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell18" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell20" Border.Lines="Top" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell21" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Checked Agent " HorzAlign="Center" Font="宋体, 10pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell22" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell23" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Border.Lines="All" Fill.Color="PaleTurquoise" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell1" Border.Lines="All" Fill.Color="PaleTurquoise" Text="ETD"/>
+          <TableCell Name="Cell2" Border.Lines="All" Fill.Color="PaleTurquoise" Text="BL No."/>
+          <TableCell Name="Cell3" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Cur."/>
+          <TableCell Name="Cell4" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Bil lNo."/>
+          <TableCell Name="Cell5" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Debit"/>
+          <TableCell Name="Cell6" Border.Lines="All" Fill.Color="PaleTurquoise" Text="sort out"/>
+          <TableCell Name="Cell10" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Balance"/>
+          <TableCell Name="Cell7" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Gap" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell8" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Balance"/>
+          <TableCell Name="Cell9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Debit"/>
+          <TableCell Name="Cell11" Border.Lines="All" Fill.Color="PaleTurquoise" Text="sort out"/>
+          <TableCell Name="Cell12" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Bil lNo."/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table2" Left="7.56" Top="3.78" Width="1033.26" Height="52.14">
+        <TableColumn Name="Column13" Width="141.83"/>
+        <TableColumn Name="Column14" Width="111.59"/>
+        <TableColumn Name="Column15" Width="138.05"/>
+        <TableColumn Name="Column16" Width="138.05"/>
+        <TableColumn Name="Column18" Width="115.29"/>
+        <TableColumn Name="Column19" Width="387.45"/>
+        <TableColumn Name="Column17" Width="1"/>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell25" Text="Company launched:" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell26" Text="[AgentBillCheckingBaseReportData.LaunchCompanyName]" Font="宋体, 10pt"/>
+          <TableCell Name="Cell27" Text="Company Checked:" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell28" Text="[AgentBillCheckingBaseReportData.CheckCompanyName]" Font="宋体, 10pt"/>
+          <TableCell Name="Cell50" Text="Business Type:" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell53" Text="[AgentBillCheckingBaseReportData.OperationTypes]" Font="宋体, 10pt"/>
+          <TableCell Name="Cell29"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="6.78">
+          <TableCell Name="Cell30" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell31"/>
+          <TableCell Name="Cell32" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell33"/>
+          <TableCell Name="Cell51" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell54"/>
+          <TableCell Name="Cell34"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell35" Text="sponsor:" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell36" Text="[AgentBillCheckingBaseReportData.LaunchUserName]" Font="宋体, 10pt"/>
+          <TableCell Name="Cell37" Text="Checked man:" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell38" Text="[AgentBillCheckingBaseReportData.CheckUserName]" Font="宋体, 10pt"/>
+          <TableCell Name="Cell52" Text="ETD as of :" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell55" Text="[AgentBillCheckingBaseReportData.EndingETD]" Format="Date" Format.Format="MM/dd/yyyy" Font="宋体, 10pt"/>
+          <TableCell Name="Cell39"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="231.99" Width="1047.06" Height="18.9" DataSource="AgentBillCheckingDetailReportData">
+      <TableObject Name="Table3" Left="7.56" Width="1030.05" Height="18.9">
+        <TableColumn Name="Column20" Width="81.27"/>
+        <TableColumn Name="Column21" Width="115.29"/>
+        <TableColumn Name="Column22" Width="47.25"/>
+        <TableColumn Name="Column23" Width="122.85"/>
+        <TableColumn Name="Column24" Width="75.6"/>
+        <TableColumn Name="Column25" Width="75.6"/>
+        <TableColumn Name="Column26" Width="75.6"/>
+        <TableColumn Name="Column27" Width="75.6"/>
+        <TableColumn Name="Column28" Width="75.6"/>
+        <TableColumn Name="Column29" Width="75.6"/>
+        <TableColumn Name="Column30" Width="75.6"/>
+        <TableColumn Name="Column31" Width="134.19"/>
+        <TableRow Name="Row7">
+          <TableCell Name="Cell68" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.ETD]"/>
+          <TableCell Name="Cell69" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.BLNO]"/>
+          <TableCell Name="Cell70" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CurrencyName]"/>
+          <TableCell Name="Cell71" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchBillNOs]"/>
+          <TableCell Name="Cell72" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchDebit]"/>
+          <TableCell Name="Cell73" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchCredit]"/>
+          <TableCell Name="Cell74" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchBalance]"/>
+          <TableCell Name="Cell75" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.Gap]" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell76" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckBalance]"/>
+          <TableCell Name="Cell77" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckDebit]"/>
+          <TableCell Name="Cell78" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckCredit]"/>
+          <TableCell Name="Cell79" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckBillNOs]"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <DataBand Name="Data2" Top="270.89" Width="1047.06" Height="26.46">
+      <TableObject Name="Table4" Left="7.56" Top="3.78" Width="1030.05" Height="22.68">
+        <TableColumn Name="Column32" Width="81.27"/>
+        <TableColumn Name="Column33" Width="115.29"/>
+        <TableColumn Name="Column34" Width="47.25"/>
+        <TableColumn Name="Column35" Width="122.85"/>
+        <TableColumn Name="Column36" Width="75.6"/>
+        <TableColumn Name="Column37" Width="75.6"/>
+        <TableColumn Name="Column38" Width="75.6"/>
+        <TableColumn Name="Column39" Width="75.6"/>
+        <TableColumn Name="Column40" Width="75.6"/>
+        <TableColumn Name="Column41" Width="75.6"/>
+        <TableColumn Name="Column42" Width="75.6"/>
+        <TableColumn Name="Column43" Width="134.19"/>
+        <TableRow Name="Row8" Height="22.68">
+          <TableCell Name="Cell80" Text="Total:" HorzAlign="Right" Font="宋体, 11pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell81"/>
+          <TableCell Name="Cell82"/>
+          <TableCell Name="Cell83"/>
+          <TableCell Name="Cell84" Text="[AgentBillCheckingBaseReportData.TotalLaunchDebit]"/>
+          <TableCell Name="Cell85" Text="[AgentBillCheckingDetailReportData.LaunchCredit]"/>
+          <TableCell Name="Cell86" Text="[AgentBillCheckingBaseReportData.TotalLaunchBalance]"/>
+          <TableCell Name="Cell87" Text="[AgentBillCheckingBaseReportData.TotalGap]" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell88" Text="[AgentBillCheckingBaseReportData.TotalCheckBalance]"/>
+          <TableCell Name="Cell89" Text="[AgentBillCheckingBaseReportData.TotalCheckDebit]"/>
+          <TableCell Name="Cell90" Text="[AgentBillCheckingBaseReportData.TotalCheckCredit]"/>
+          <TableCell Name="Cell91"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="317.35" Width="1047.06" Height="20.79"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{49425F9C-4A94-40BE-BA7C-A3A3AB72A043}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.Document</RootNamespace>
+    <AssemblyName>ICPDocument</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>AppOffLine.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Aspose.Cells, Version=7.2.1.0, Culture=neutral, PublicKeyToken=304f5aa34aff2288, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Cells.GridDesktop, Version=2.7.6.2000, Culture=neutral, PublicKeyToken=4712a945e731d245, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Email, Version=2.9.0.0, Culture=neutral, PublicKeyToken=ad504e9f0d34714a, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Pdf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b44de83eed7e98a7, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Slides, Version=6.4.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Words, Version=11.9.0.0, Culture=neutral, PublicKeyToken=5792fed8a2c090cb, processorArchitecture=MSIL" />
+    <Reference Include="AxInterop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Interop.AcroPDFLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="itextsharp, Version=3.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ClientUtility.cs" />
+    <Compile Include="Common\IOHelper.cs" />
+    <Compile Include="Common\PDFConvert.cs" />
+    <Compile Include="Common\Enum.cs" />
+    <Compile Include="Common\FormException.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\FormException.Designer.cs">
+      <DependentUpon>FormException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\MemberDescriptionAttribute.cs" />
+    <Compile Include="Common\EnumHelper.cs" />
+    <Compile Include="View\Form\FormLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormLoading.Designer.cs">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\LoadingUtility.cs" />
+    <Compile Include="View\Form\FormFilePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormFilePreview.Designer.cs">
+      <DependentUpon>FormFilePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\FormFadeBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormFadeBase.Designer.cs">
+      <DependentUpon>FormFadeBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenter\EventArgs\PDFConvertEventArgs.cs" />
+    <Compile Include="View\Interface\IVPDFConvert.cs" />
+    <Compile Include="Presenter\PPDFConvert.cs" />
+    <Compile Include="Presenter\EventArgs\BusEventArgs.cs" />
+    <Compile Include="Common\ClientConstants.cs" />
+    <Compile Include="Common\LogUtility.cs" />
+    <Compile Include="Models\SqlCeHelper.cs" />
+    <Compile Include="View\UserControl\UCPDFControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\UCPDFControl.Designer.cs">
+      <DependentUpon>UCPDFControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Interface\IVBusiness.cs" />
+    <Compile Include="Common\Entity\BusinessInfo.cs" />
+    <Compile Include="Models\BusinessModel.cs" />
+    <Compile Include="Presenter\PBusiness.cs" />
+    <Compile Include="Presenter\EventArgs\DocumentEventArgs.cs" />
+    <Compile Include="View\Interface\IVDocument.cs" />
+    <Compile Include="View\Interface\IViewBase.cs" />
+    <Compile Include="Common\Entity\DocumentInfo.cs" />
+    <Compile Include="Models\DocumentModel.cs" />
+    <Compile Include="Presenter\PDocument.cs" />
+    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="View\Form\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgramStart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Common\FormException.resx">
+      <DependentUpon>FormException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\FormLoading.resx">
+      <DependentUpon>FormLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\FormFadeBase.resx">
+      <DependentUpon>FormFadeBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\UCDocumentList.resx">
+      <DependentUpon>UCDocumentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\UCBusinessList.resx">
+      <DependentUpon>UCBusinessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\UCPDFControl.resx">
+      <DependentUpon>UCPDFControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl\ViewBase.resx">
+      <DependentUpon>ViewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="View\UserControl\UCDocumentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\UCDocumentList.Designer.cs">
+      <DependentUpon>UCDocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\UCBusinessList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\UCBusinessList.Designer.cs">
+      <DependentUpon>UCBusinessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControl\ViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl\ViewBase.Designer.cs">
+      <DependentUpon>ViewBase.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppOffLine.ico" />
+    <None Include="Resources\Processing.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
