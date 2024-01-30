@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="09/26/2011 10:36:45" ReportInfo.Modified="11/29/2016 11:45:51" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Page1_StartPage(object sender, EventArgs e)
+    {
+      if(string.IsNullOrEmpty((String)Report.GetColumnValue(&quot;BillDunReportData_BaseInfo.ToCurrencyName&quot;)))
+      { 
+        Text18.Visible= false;
+        Text58.Visible= false;
+        Text66.Left = Text18.Left;
+        Text67.Left = Text58.Left;
+      }
+      else
+      {
+        Text18.Visible= true;
+        Text58.Visible= true;
+      }
+      
+     
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="BillDunReportData_BaseInfo" ReferenceName="BillDunReportData_BaseInfo" DataType="System.Int32" Enabled="true">
+      <Column Name="ToCurrencyName" DataType="System.String"/>
+      <Column Name="DunGroupType" DataType="System.String"/>
+      <Column Name="TotalUSDAmount" DataType="System.Decimal"/>
+      <Column Name="TotalRMBAmount" DataType="System.Decimal"/>
+      <Column Name="TotalHKDAmount" DataType="System.Decimal"/>
+      <Column Name="TotalToAmount" DataType="System.Decimal"/>
+      <Column Name="TotalNotPaidUSDAmount" DataType="System.Decimal"/>
+      <Column Name="TotalNotPaidRMBAmount" DataType="System.Decimal"/>
+      <Column Name="TotalNotPaidHKDAmount" DataType="System.Decimal"/>
+      <Column Name="TotalNotPaidToAmount" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillDunReportData_CompanyInfo" ReferenceName="BillDunReportData_CompanyInfo" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="UserName" DataType="System.String"/>
+      <Column Name="UserTel" DataType="System.String"/>
+      <Column Name="UserFax" DataType="System.String"/>
+      <Column Name="BankName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillDunReportData_CustomerInfo" ReferenceName="BillDunReportData_CustomerInfo" DataType="System.Int32" Enabled="true">
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerAddress" DataType="System.String"/>
+      <Column Name="CustomerAttn" DataType="System.String"/>
+      <Column Name="CustomerTel" DataType="System.String"/>
+      <Column Name="CustomerFax" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillDunReportData_BillList" ReferenceName="BillDunReportData_BillList" DataType="System.Int32" Enabled="true">
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="ContainerNos" DataType="System.String"/>
+      <Column Name="PODName" DataType="System.String"/>
+      <Column Name="ChargeName" DataType="System.String"/>
+      <Column Name="USDAmount" DataType="System.Decimal"/>
+      <Column Name="RMBAmount" DataType="System.Decimal"/>
+      <Column Name="HKDAmount" DataType="System.Decimal"/>
+      <Column Name="ToAmount" DataType="System.Decimal"/>
+      <Column Name="USDUnPaidAmount" DataType="System.Decimal"/>
+      <Column Name="RMBUnPaidAmount" DataType="System.Decimal"/>
+      <Column Name="HKDUnPaidAmount" DataType="System.Decimal"/>
+      <Column Name="ToUnPaidAmount" DataType="System.Decimal"/>
+      <Column Name="InvoiceNo" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillDunReportData_AccountList" ReferenceName="BillDunReportData_AccountList" DataType="System.Int32" Enabled="true">
+      <Column Name="CurrencyName" DataType="System.String"/>
+      <Column Name="AccountNo" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Total Name="TotalUSDAmount" Expression="[BillDunReportData_BillList.USDAmount]" Evaluator="Data1"/>
+    <Total Name="TotalRMBAmount" Expression="[BillDunReportData_BillList.RMBAmount]" Evaluator="Data1"/>
+    <Total Name="TotalHKDAmount" Expression="[BillDunReportData_BillList.HKDAmount]" Evaluator="Data1"/>
+    <Total Name="TotalToAmount" Expression="[BillDunReportData_BillList.ToAmount]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="4" OtherPagesSource="4" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="1084.86" Height="179.55">
+      <TextObject Name="Text1" Top="18.9" Width="1035.72" Height="18.9" Text="[BillDunReportData_CompanyInfo.CompanyName]" HorzAlign="Center" Font="宋体, 11pt, style=Bold"/>
+      <TextObject Name="Text2" Top="47.25" Width="1035.72" Height="28.35" Text="[BillDunReportData_CompanyInfo.CompanyAddress]" HorzAlign="Center" Font="宋体, 11pt, style=Bold"/>
+      <TextObject Name="Text3" Top="94.5" Width="37.8" Height="18.9" Text="To:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="47.25" Top="94.5" Width="699.3" Height="18.9" Text="[BillDunReportData_CustomerInfo.CustomerName]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Top="122.85" Width="47.25" Height="18.9" Text="Attn:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="47.25" Top="122.85" Width="255.15" Height="18.9" Text="[BillDunReportData_CustomerInfo.CustomerAttn]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="406.35" Top="122.85" Width="47.25" Height="18.9" Text="Tel:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text10" Left="453.6" Top="122.85" Width="198.45" Height="18.9" Text="[BillDunReportData_CustomerInfo.CustomerTel]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text12" Left="652.05" Top="122.85" Width="37.8" Height="18.9" Text="Fax:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text14" Left="689.85" Top="122.85" Width="160.65" Height="18.9" Text="[BillDunReportData_CustomerInfo.CustomerFax]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Top="151.2" Width="47.25" Height="18.9" Text="From:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="47.25" Top="151.2" Width="255.15" Height="18.9" Text="[BillDunReportData_CompanyInfo.UserName]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text65" Left="406.35" Top="151.2" Width="47.25" Height="18.9" Text="Tel:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="453.6" Top="151.2" Width="198.45" Height="18.9" Text="[BillDunReportData_CompanyInfo.UserTel]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="652.05" Top="151.2" Width="37.8" Height="18.9" Text="Fax:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text15" Left="689.85" Top="151.2" Width="160.65" Height="18.9" Text="[BillDunReportData_CompanyInfo.UserFax]" Font="宋体, 10pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="183.55" Width="1084.86" Height="28.35">
+      <TextObject Name="Text21" Width="117.18" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="帐单号" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text22" Left="117.18" Width="85.05" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="离港日" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text23" Left="202.23" Width="85.05" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="到港日" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text24" Left="287.28" Width="113.4" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="提单号" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text25" Left="400.68" Width="94.5" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="箱号" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text26" Left="495.18" Width="119.07" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="目的港" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text27" Left="718.2" Width="66.15" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="USD" HorzAlign="Right" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text16" Left="784.35" Width="66.15" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="RMB" HorzAlign="Right" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text17" Left="850.5" Width="56.7" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="HKD" HorzAlign="Right" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text18" Left="907.2" Width="81.27" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="[BillDunReportData_BaseInfo.ToCurrencyName]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text45" Left="614.25" Width="103.95" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="费用项目" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+      <TextObject Name="Text66" Left="982.8" Width="81.27" Height="28.35" Border.Lines="Top, Bottom" Border.Color="IndianRed" Border.Width="2" Fill.Color="WhiteSmoke" Text="发票号" HorzAlign="Right" VertAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="215.9" Width="1084.86" Height="23.81" CanGrow="true" DataSource="BillDunReportData_BillList">
+      <TextObject Name="Text28" Width="119.07" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.BillNo]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text29" Left="117.18" Width="85.05" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.ETD]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text31" Left="287.28" Width="113.4" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.BLNo]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text32" Left="400.68" Width="94.5" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.ContainerNos]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text33" Left="495.18" Width="119.07" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.PODName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text34" Left="718.2" Width="66.15" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.USDAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text19" Left="202.23" Width="85.05" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.ETA]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text20" Left="784.35" Width="66.15" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.RMBAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text30" Left="841.05" Width="66.15" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.HKDAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text58" Left="907.2" Width="81.27" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.ToAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text46" Left="614.25" Width="103.95" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.ChargeName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="Text67" Left="982.8" Width="81.27" Height="23.81" Border.Lines="Bottom" Border.Color="IndianRed" Text="[BillDunReportData_BillList.InvoiceNo]" HorzAlign="Right" VertAlign="Center" Font="宋体, 9pt"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="243.71" Width="1084.86" Height="236.25">
+      <TextObject Name="Text35" Left="614.25" Top="5.67" Width="122.85" Height="18.9" Text="Total:" Font="宋体, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text36" Left="727.65" Top="5.67" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalUSDAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text37" Left="803.25" Top="5.67" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalRMBAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text38" Left="878.85" Top="5.67" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalHKDAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text39" Left="954.45" Top="5.67" Width="81.27" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalToAmount]" HideZeros="true" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text40" Top="85.05" Width="680.4" Height="28.35" Text="请贵公司接到催款通知单后，请核对，若无误，请参照ETA速汇款我司，以免产生不必要的堆存费用．汇款时请注明我司的对帐单号多谢合作." Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text41" Top="132.3" Width="66.15" Height="23.81" Text="公司名称:" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text42" Left="66.15" Top="132.3" Width="680.4" Height="23.81" Text="[BillDunReportData_CompanyInfo.CompanyName] / [BillDunReportData_CompanyInfo.CompanyAddress]" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text43" Top="179.55" Width="746.55" Height="18.9" Text="[BillDunReportData_CompanyInfo.BankName]" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text44" Top="207.9" Width="746.55" Height="18.9" CanGrow="true" Text="[BillDunReportData_AccountList.AccountNo]" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text47" Left="611.6" Top="28.35" Width="122.85" Height="18.9" Text="NotPaidTotal:" Font="宋体, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text48" Left="727.65" Top="28.35" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalNotPaidUSDAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text49" Left="803.25" Top="28.35" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalNotPaidRMBAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text50" Left="878.85" Top="28.35" Width="75.6" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalNotPaidHKDAmount]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text51" Left="954.45" Top="28.35" Width="81.27" Height="18.9" CanGrow="true" Text="[BillDunReportData_BaseInfo.TotalNotPaidToAmount]" HideZeros="true" Format="Number" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="" Format.NegativePattern="1" HorzAlign="Right" Font="宋体, 9pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

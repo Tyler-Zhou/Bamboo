@@ -1,0 +1,122 @@
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using ICP.Framework.ClientComponents.UIFramework;
+using ICP.Framework.CommonLibrary.Client;
+using Microsoft.Practices.CompositeUI;
+using DevExpress.XtraBars;
+
+namespace ICP.FCM.AirExport.UI.Booking
+{
+    [ToolboxItem(false)]
+    public partial class BookingToolBar : BaseToolBar
+    {
+        #region Service
+
+        [ServiceDependency]
+        public WorkItem Workitem { get; set; }
+
+        #endregion
+
+        Dictionary<string, BarItem> _barItemDic = new Dictionary<string, BarItem>();
+
+        public BookingToolBar()
+        {
+            InitializeComponent();
+            Disposed += delegate {
+                _barItemDic.Clear();
+                _barItemDic = null;
+                if (Workitem != null)
+                {
+                    Workitem.Items.Remove(this);
+                    Workitem = null;
+                }
+            };
+            if (LocalData.IsEnglish == false) SetCnText();
+
+            BulidBarItemDictionary();
+            BulidCommond();
+        }
+
+        private void BulidBarItemDictionary()
+        {
+            foreach (BarItem item in barManager1.Items)
+            {
+                _barItemDic.Add(item.Name, item);
+            }
+        }
+
+        private void SetCnText()
+        {
+
+
+            barAdd.Caption="新增(&A)";
+            barCopy.Caption="复制(&O)";
+            barCancel.Caption = "取消(&D)";
+            barEdit.Caption="编辑(&E)";
+            barSubPrint.Caption = "打印(&P)";
+            barTruck.Caption="派车(&T)";
+            barReplyAgent.Caption="申请代理(&G)";
+            barE_Booking.Caption="电子订舱(&B)";
+            barBL.Caption= "提单(&L)";
+            barBill.Caption="帐单(&B)";
+            barClose.Caption = "关闭(&C)";
+            barLoadContainer.Caption = "装箱";
+            barRefresh.Caption = "刷新(&R)";
+            barShowSearch.Caption = "查询(&H)";
+            barRefresh.Hint = "刷新(R)";
+            barShowSearch.Hint = "查询(H)";
+
+            barPrintOrder .Caption = "业务联单";
+            barPrintBookingConfirm.Caption = "订舱确认书";
+            barPrintInWarehouse.Caption = "入仓单";
+        }
+
+        private void BulidCommond()
+        {
+            barAdd.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_AddData].Execute(); };
+            barCopy.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_CopyData].Execute(); };
+            barEdit.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_EditData].Execute(); };
+            barCancel.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_CancelData].Execute(); };
+            barTruck.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_Truck].Execute(); };
+            barReplyAgent.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_ReplyAgent].Execute(); };
+            barE_Booking.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_E_Booking].Execute(); };
+            barBL.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_BL].Execute(); };
+            barBill.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_Bill].Execute(); };
+            barShowSearch.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_ShowSearch].Execute(); };
+            barLoadContainer.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_LoadContainer].Execute(); };
+            barRefresh.ItemClick += new ItemClickEventHandler(barRefresh_ItemClick);
+            barPrintOrder.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_PrintOrder].Execute(); };
+            barPrintBookingConfirm.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_PrintBookingConfirm].Execute(); };
+            barPrintInWarehouse.ItemClick += delegate { Workitem.Commands[AEBookingCommandConstants.Command_PrintInWarehouse].Execute(); };
+
+            barClose.ItemClick += delegate { FindForm().Close(); };
+        }
+
+        void barRefresh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Workitem.Commands[AEBookingCommandConstants.Command_RefreshData].Execute();
+        }
+
+        #region IToolBar成员
+
+        public override void SetEnable(string name, bool enable)
+        {
+            if (_barItemDic.ContainsKey(name) && _barItemDic[name] != null)
+                _barItemDic[name].Enabled = enable;
+        }
+
+        public override void SetVisible(string name, bool visible)
+        {
+            if (_barItemDic.ContainsKey(name) && _barItemDic[name] != null)
+                _barItemDic[name].Visibility = visible ? BarItemVisibility.Always : BarItemVisibility.Never;
+        }
+
+        public override void SetText(string name, string text)
+        {
+            if (_barItemDic.ContainsKey(name) && _barItemDic[name] != null)
+                _barItemDic[name].Caption = text;
+        }
+
+        #endregion
+    }
+}

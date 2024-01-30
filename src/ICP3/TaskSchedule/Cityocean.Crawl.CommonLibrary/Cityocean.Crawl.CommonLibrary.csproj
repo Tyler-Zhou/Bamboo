@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{04AAFD01-D865-41B2-9963-A8A7C513AAB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cityocean.Crawl.CommonLibrary</RootNamespace>
+    <AssemblyName>Cityocean.Crawl.CommonLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPWebCrawlerDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>C:\ICPWebCrawlerDLLS\Cityocean.Crawl.CommonLibrary.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPWebCrawlerDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPWebCrawlerDLLS\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attribute\DateTimeConverter.cs" />
+    <Compile Include="DataObjects\LogInfo.cs" />
+    <Compile Include="Exception\CrawlException.cs" />
+    <Compile Include="DataObjects\BaseDataObjects.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Attribute\ShortDateConverter.cs" />
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Extension\CrawlTraceListener.cs" />
+    <Compile Include="Extension\DateTimeConvertHelper.cs" />
+    <Compile Include="Extension\GuidConvertHelper.cs" />
+    <Compile Include="Extension\ObjectConvertHelper.cs" />
+    <Compile Include="Extension\StringConvertHelper.cs" />
+    <Compile Include="Extension\TimeSpanConvertHelper.cs" />
+    <Compile Include="Helper\SerialnumberHelper.cs" />
+    <Compile Include="Helper\JobMemoryCache.cs" />
+    <Compile Include="Helper\ProcessHelper.cs" />
+    <Compile Include="Helper\FileDirectoryEnumerator.cs" />
+    <Compile Include="Helper\FileDirectoryEnumerable.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\Cryptography.cs" />
+    <Compile Include="DataObjects\EResultInfo.cs" />
+    <Compile Include="Common\GlobalMethod.cs" />
+    <Compile Include="Common\GlobalVariable.cs" />
+    <Compile Include="Helper\INIHelper.cs" />
+    <Compile Include="Extension\LimitPropsContractResolver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extension\TypeConvertHelper.cs" />
+    <Compile Include="Attribute\TableFieldAttribute.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

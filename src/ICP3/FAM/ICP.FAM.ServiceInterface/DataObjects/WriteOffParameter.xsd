@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WriteOffParameters" targetNamespace="http://tempuri.org/WriteOffParameter.xsd" xmlns:mstns="http://tempuri.org/WriteOffParameter.xsd" xmlns="http://tempuri.org/WriteOffParameter.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WriteOffParameters" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="WriteOffParameters" msprop:Generator_DataSetName="WriteOffParameters" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="GroupChargeRelation" msprop:Generator_UserTableName="GroupChargeRelation" msprop:Generator_RowDeletedName="GroupChargeRelationRowDeleted" msprop:Generator_RowChangedName="GroupChargeRelationRowChanged" msprop:Generator_RowClassName="GroupChargeRelationRow" msprop:Generator_RowChangingName="GroupChargeRelationRowChanging" msprop:Generator_RowEvArgName="GroupChargeRelationRowChangeEvent" msprop:Generator_RowEvHandlerName="GroupChargeRelationRowChangeEventHandler" msprop:Generator_TableClassName="GroupChargeRelationDataTable" msprop:Generator_TableVarName="tableGroupChargeRelation" msprop:Generator_RowDeletingName="GroupChargeRelationRowDeleting" msprop:Generator_TablePropName="GroupChargeRelation">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="GroupID" msprop:Generator_ColumnPropNameInRow="GroupID" msprop:Generator_ColumnVarNameInTable="columnGroupID" msprop:Generator_ColumnPropNameInTable="GroupIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ChargeID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="ChargeID" msprop:Generator_ColumnPropNameInRow="ChargeID" msprop:Generator_ColumnVarNameInTable="columnChargeID" msprop:Generator_ColumnPropNameInTable="ChargeIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RowVer" msprop:Generator_UserColumnName="RowVer" msprop:Generator_ColumnVarNameInTable="columnRowVer" msprop:Generator_ColumnPropNameInRow="RowVer" msprop:Generator_ColumnPropNameInTable="RowVerColumn" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="CheckID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="CheckID" msprop:Generator_ColumnVarNameInTable="columnCheckID" msprop:Generator_ColumnPropNameInRow="CheckID" msprop:Generator_ColumnPropNameInTable="CheckIDColumn" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Checks" msprop:Generator_UserTableName="Checks" msprop:Generator_RowDeletedName="ChecksRowDeleted" msprop:Generator_RowChangedName="ChecksRowChanged" msprop:Generator_RowClassName="ChecksRow" msprop:Generator_RowChangingName="ChecksRowChanging" msprop:Generator_RowEvArgName="ChecksRowChangeEvent" msprop:Generator_RowEvHandlerName="ChecksRowChangeEventHandler" msprop:Generator_TableClassName="ChecksDataTable" msprop:Generator_TableVarName="tableChecks" msprop:Generator_RowDeletingName="ChecksRowDeleting" msprop:Generator_TablePropName="Checks">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:string" />
+              <xs:element name="CustomerID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" type="xs:string" />
+              <xs:element name="IsShare" msprop:Generator_UserColumnName="IsShare" msprop:Generator_ColumnVarNameInTable="columnIsShare" msprop:Generator_ColumnPropNameInRow="IsShare" msprop:Generator_ColumnPropNameInTable="IsShareColumn" type="xs:boolean" />
+              <xs:element name="CheckDate" msprop:Generator_UserColumnName="CheckDate" msprop:Generator_ColumnVarNameInTable="columnCheckDate" msprop:Generator_ColumnPropNameInRow="CheckDate" msprop:Generator_ColumnPropNameInTable="CheckDateColumn" type="xs:dateTime" />
+              <xs:element name="CheckNo" msprop:Generator_UserColumnName="CheckNo" msprop:Generator_ColumnVarNameInTable="columnCheckNo" msprop:Generator_ColumnPropNameInRow="CheckNo" msprop:Generator_ColumnPropNameInTable="CheckNoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="CompanyID" msprop:Generator_ColumnVarNameInTable="columnCompanyID" msprop:Generator_ColumnPropNameInRow="CompanyID" msprop:Generator_ColumnPropNameInTable="CompanyIDColumn" type="xs:string" />
+              <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" />
+              <xs:element name="BankByID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="BankByID" msprop:Generator_ColumnVarNameInTable="columnBankByID" msprop:Generator_ColumnPropNameInRow="BankByID" msprop:Generator_ColumnPropNameInTable="BankByIDColumn" type="xs:string" />
+              <xs:element name="Remark" msprop:Generator_UserColumnName="Remark" msprop:Generator_ColumnVarNameInTable="columnRemark" msprop:Generator_ColumnPropNameInRow="Remark" msprop:Generator_ColumnPropNameInTable="RemarkColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="WriteOffs" msprop:Generator_UserTableName="WriteOffs" msprop:Generator_RowDeletedName="WriteOffsRowDeleted" msprop:Generator_RowChangedName="WriteOffsRowChanged" msprop:Generator_RowClassName="WriteOffsRow" msprop:Generator_RowChangingName="WriteOffsRowChanging" msprop:Generator_RowEvArgName="WriteOffsRowChangeEvent" msprop:Generator_RowEvHandlerName="WriteOffsRowChangeEventHandler" msprop:Generator_TableClassName="WriteOffsDataTable" msprop:Generator_TableVarName="tableWriteOffs" msprop:Generator_RowDeletingName="WriteOffsRowDeleting" msprop:Generator_TablePropName="WriteOffs" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="Checks_WriteOffs" msdata:parent="Checks" msdata:child="WriteOffs" msdata:parentkey="ID" msdata:childkey="CheckID" msprop:Generator_UserRelationName="Checks_WriteOffs" msprop:Generator_RelationVarName="relationChecks_WriteOffs" msprop:Generator_UserChildTable="WriteOffs" msprop:Generator_UserParentTable="Checks" msprop:Generator_ParentPropName="ChecksRow" msprop:Generator_ChildPropName="GetWriteOffsRows" />
+                  </xs:appinfo>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:string" />
+                    <xs:element name="Currency" msprop:Generator_UserColumnName="Currency" msprop:Generator_ColumnPropNameInRow="Currency" msprop:Generator_ColumnVarNameInTable="columnCurrency" msprop:Generator_ColumnPropNameInTable="CurrencyColumn" type="xs:string" minOccurs="0" />
+                    <xs:element name="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInTable="AmountColumn" type="xs:decimal" />
+                    <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:short" />
+                    <xs:element name="RowVer" msprop:Generator_UserColumnName="RowVer" msprop:Generator_ColumnPropNameInRow="RowVer" msprop:Generator_ColumnVarNameInTable="columnRowVer" msprop:Generator_ColumnPropNameInTable="RowVerColumn" type="xs:base64Binary" minOccurs="0" />
+                    <xs:element name="CheckID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="CheckID" msprop:Generator_ColumnVarNameInTable="columnCheckID" msprop:Generator_ColumnPropNameInRow="CheckID" msprop:Generator_ColumnPropNameInTable="CheckIDColumn" type="xs:string" />
+                    <xs:element name="WriteOffRate" msprop:Generator_UserColumnName="WriteOffRate" msprop:Generator_ColumnPropNameInRow="WriteOffRate" msprop:Generator_ColumnVarNameInTable="columnWriteOffRate" msprop:Generator_ColumnPropNameInTable="WriteOffRateColumn" type="xs:decimal" />
+                    <xs:element name="WriteOffAmount" msprop:Generator_UserColumnName="WriteOffAmount" msprop:Generator_ColumnPropNameInRow="WriteOffAmount" msprop:Generator_ColumnVarNameInTable="columnWriteOffAmount" msprop:Generator_ColumnPropNameInTable="WriteOffAmountColumn" type="xs:decimal" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Checks" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Checks_GroupChargeRelation" msdata:parent="Checks" msdata:child="GroupChargeRelation" msdata:parentkey="ID" msdata:childkey="CheckID" msprop:Generator_UserRelationName="Checks_GroupChargeRelation" msprop:Generator_RelationVarName="relationChecks_GroupChargeRelation" msprop:Generator_UserChildTable="GroupChargeRelation" msprop:Generator_UserParentTable="Checks" msprop:Generator_ParentPropName="ChecksRow" msprop:Generator_ChildPropName="GetGroupChargeRelationRows" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

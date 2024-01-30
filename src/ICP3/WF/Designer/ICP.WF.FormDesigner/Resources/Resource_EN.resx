@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlreadyContainCreatorRegisteredFormat" xml:space="preserve">
+    <value>There is already a creator registered for the format</value>
+  </data>
+  <data name="AreYouSureSaveForm" xml:space="preserve">
+    <value>Form is not preserved, whether or not to preserve the paper form?</value>
+  </data>
+  <data name="CantCreateDatasource" xml:space="preserve">
+    <value>Can't create datasource</value>
+  </data>
+  <data name="Cantopenfile" xml:space="preserve">
+    <value>Can't open file</value>
+  </data>
+  <data name="CodeViewModeNotSupportThisFeature" xml:space="preserve">
+    <value>In the code view mode, do not support this feature</value>
+  </data>
+  <data name="DataSourceDesigner" xml:space="preserve">
+    <value>Data Source Designer</value>
+  </data>
+  <data name="ErrorOccuredInReadingToolboxConfigFile" xml:space="preserve">
+    <value>Error occured in reading Toolbox.xml file.</value>
+  </data>
+  <data name="EventDoesNotExist" xml:space="preserve">
+    <value>Event {0} does not exist on {1}</value>
+  </data>
+  <data name="EventHasNotMethodBoundToIt" xml:space="preserve">
+    <value>Event {0} has no method bound to it</value>
+  </data>
+  <data name="Failly" xml:space="preserve">
+    <value>failly</value>
+  </data>
+  <data name="FileNotExisted" xml:space="preserve">
+    <value>File Not Existed</value>
+  </data>
+  <data name="FormDesigner" xml:space="preserve">
+    <value>Form Designer</value>
+  </data>
+  <data name="FormFile" xml:space="preserve">
+    <value>Form File</value>
+  </data>
+  <data name="FormNameCannotContainSpaceCharacter" xml:space="preserve">
+    <value>Name cannot contain a space character!</value>
+  </data>
+  <data name="InvalidDesignerLoaderHost" xml:space="preserve">
+    <value>Invalid designerLoaderHost.</value>
+  </data>
+  <data name="ItemHasNoTypeAttribute" xml:space="preserve">
+    <value>Item has no type attribute</value>
+  </data>
+  <data name="ItemTypeCouldNotBeFound" xml:space="preserve">
+    <value>Item type {0} could not be found.</value>
+  </data>
+  <data name="llowedHere" xml:space="preserve">
+    <value>Node type {0} is not allowed here</value>
+  </data>
+  <data name="MethodRequiresArguments" xml:space="preserve">
+    <value>Member {0} requires {1} arguments, not {2}.</value>
+  </data>
+  <data name="MustInput" xml:space="preserve">
+    <value>Must Input</value>
+  </data>
+  <data name="NoEventName" xml:space="preserve">
+    <value>No event name</value>
+  </data>
+  <data name="NoMemberAttribute" xml:space="preserve">
+    <value>No member attribute</value>
+  </data>
+  <data name="NoPageDesign" xml:space="preserve">
+    <value>No page design</value>
+  </data>
+  <data name="NotSupportTheFileFormat" xml:space="preserve">
+    <value>Does not support the file format</value>
+  </data>
+  <data name="ObjectTagMissingTypeAttribute" xml:space="preserve">
+    <value>&lt;Object&gt; tag is missing required type attribute</value>
+  </data>
+  <data name="OnlyAllowItemElements" xml:space="preserve">
+    <value>Only Item elements are allowed in collections, not {0} elements.</value>
+  </data>
+  <data name="OnlyAllowPropertyElements" xml:space="preserve">
+    <value>Only Property elements are allowed in collections, not {0} elements.</value>
+  </data>
+  <data name="PropertyDoesNotExist" xml:space="preserve">
+    <value>Property {0} does not exist on {1}</value>
+  </data>
+  <data name="PropertyHasNoName" xml:space="preserve">
+    <value>Property has no name</value>
+  </data>
+  <data name="SaveChangeToDesigner" xml:space="preserve">
+    <value>Save changes to existing designer?</value>
+  </data>
+  <data name="Successfully" xml:space="preserve">
+    <value>Successfully</value>
+  </data>
+  <data name="Tip" xml:space="preserve">
+    <value>Tip</value>
+  </data>
+  <data name="TypeCouldNotBeLoaded" xml:space="preserve">
+    <value>Type {0} could not be loaded.</value>
+  </data>
+  <data name="UnableBindAnyEvents" xml:space="preserve">
+    <value>Unable to contact event binding service so we can't bind any events</value>
+  </data>
+  <data name="UndefinedHostType" xml:space="preserve">
+    <value>Undefined Host Type</value>
+  </data>
+  <data name="UnexpectedElementType" xml:space="preserve">
+    <value>Unexpected element type {0}</value>
+  </data>
+  <data name="UnsavedChanges" xml:space="preserve">
+    <value>Unsaved Changes</value>
+  </data>
+  <data name="WrongNameOrFileNotExisted" xml:space="preserve">
+    <value>Wrong file name or the path of the file does not exist</value>
+  </data>
+  <data name="NoExistsConfigFile" xml:space="preserve">
+    <value>No Exists Toolbox Config File</value>
+  </data>
+  <data name="FileIsexists" xml:space="preserve">
+    <value>File Already Exists!!!</value>
+  </data>
+</root>

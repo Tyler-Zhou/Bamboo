@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5D63F11A-6761-4334-8FD5-3CD8D293F2D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FAM.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.FAM.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.FAM.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.FAM.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>ICP.FAM.ServiceInterface.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>ICP.FAM.ServiceInterface.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\FAMCommonConstants.cs" />
+    <Compile Include="Common\FAMFinderConstants.cs" />
+    <Compile Include="Common\ReportHelper.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\SaveRequestBankTransaction2Checks.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\BankDirectSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\SaveRequestBill.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\SaveRequestBillConvert.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\SaveRequestFinanceMapping.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\AssociationSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\BankDirectSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\BankReceiptSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\BankTransactionSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\BankTransaction2ChecksSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\WriteOffSearchParameter.cs" />
+    <Compile Include="DataObjects\BankDataObjects.cs" />
+    <Compile Include="DataObjects\BankDirectObjects.cs" />
+    <Compile Include="DataObjects\BillCheck.cs" />
+    <Compile Include="DataObjects\BillList.cs" />
+    <Compile Include="DataObjects\BillObjects.cs" />
+    <Compile Include="DataObjects\BusinessObjects.cs" />
+    <Compile Include="DataObjects\CustomerCode.cs" />
+    <Compile Include="DataObjects\ExtensionMethods\BillExtensionMethods.cs" />
+    <Compile Include="DataObjects\FreightIncludedInfo.cs" />
+    <Compile Include="DataObjects\BankReceiptList.cs" />
+    <Compile Include="DataObjects\LedgerList.cs" />
+    <Compile Include="DataObjects\Report\AccountingReportObjects.cs" />
+    <Compile Include="DataObjects\ComissionObject.cs" />
+    <Compile Include="DataObjects\DataObjects.cs" />
+    <Compile Include="DataObjects\Enum.cs" />
+    <Compile Include="DataObjects\FormData.cs" />
+    <Compile Include="DataObjects\InvoiceDataObjects.cs" />
+    <Compile Include="DataObjects\Journal.cs" />
+    <Compile Include="DataObjects\MonthlyClosingAgreementDataObjects.cs" />
+    <Compile Include="DataObjects\ReleaseBLObjects.cs" />
+    <Compile Include="DataObjects\ReleaseRCObject.cs" />
+    <Compile Include="DataObjects\ReportEnums.cs" />
+    <Compile Include="DataObjects\Report\AgentBillCheckingReportData.cs" />
+    <Compile Include="DataObjects\Report\BankDirectReportData.cs" />
+    <Compile Include="DataObjects\Report\BatchBillReportData.cs" />
+    <Compile Include="DataObjects\Report\BillReportData.cs" />
+    <Compile Include="DataObjects\Report\CustomerBillReportData.cs" />
+    <Compile Include="DataObjects\Report\DebitnoteAgeSumData.cs" />
+    <Compile Include="DataObjects\Report\FeeReportData.cs" />
+    <Compile Include="DataObjects\Report\InvoiceReportData.cs" />
+    <Compile Include="DataObjects\Report\JournalReportData.cs" />
+    <Compile Include="DataObjects\Report\UFReportObjects.cs" />
+    <Compile Include="DataObjects\Report\WriteOffBillReportData.cs" />
+    <Compile Include="DataObjects\WriteOffCustomerBankInfo.cs" />
+    <Compile Include="InterFaces\IBankDirectServie.cs" />
+    <Compile Include="InterFaces\IBankReceiptService.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\BankReceiptSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\BankSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\CustomerLogSaveSequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\FollowBusinessSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\JournalSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\MonthlyClosingEntrySaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\TelexRequestSaveRequest.cs" />
+    <Compile Include="DataObjects\TelexApplyManagementDataObjects.cs" />
+    <Compile Include="DataObjects\WriteOffDataObjects.cs" />
+    <Compile Include="Client\IFinanceClientService.cs" />
+    <Compile Include="InterFaces\ICSPFinanceService.cs" />
+    <Compile Include="InterFaces\IFinanceReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IFinanceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\ILedgerService.cs" />
+    <Compile Include="InterFaces\Report\IAccountingReportService.cs" />
+    <Compile Include="InterFaces\IAgentBillCheckingService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IBankService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IBillService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IBusinessService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\ICustomerBillService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IInvoiceService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IJournalService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IMonthlyClosingAgreementService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IReleaseBlService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IReleaseRCService.cs" />
+    <Compile Include="InterFaces\ITelexApplyService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\IWriteOffService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\Report\ICustomerBillReportService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InterFaces\Report\IUFReportService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\CredentialsDetailSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SaveRequest\WriteOffSaveRequest.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\AccReceControlSearchParameter.cs" />
+    <Compile Include="CompositeObjects\SearchParameter\MonthlyClosingEntrySearchParameter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

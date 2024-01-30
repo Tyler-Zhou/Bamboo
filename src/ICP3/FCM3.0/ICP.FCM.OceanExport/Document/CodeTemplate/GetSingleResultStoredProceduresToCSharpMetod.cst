@@ -1,0 +1,99 @@
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" CompilerVersion="v3.5" Description="Template description here." %>
+<%@ Property Name="StoredProcedures" Type="SchemaExplorer.CommandSchemaCollection" Category="Database" Description="Stored procedure(s) from which to extract descriptions" %>
+<%@ Property Name="ResultObjectType" Type="System.String"  Category="Booleans" Description="This is a sample boolean property." %>
+
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="CodeSmith.BaseTemplates" %>
+
+<%@ Import Namespace="CodeSmith.BaseTemplates" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+
+<%@ Map Name="CSharpAlias" Src="System-CSharpAlias" Description="System to C# Type Map" %>
+<% foreach (CommandSchema storedProc in StoredProcedures){%> 
+    try
+    {
+        Database db = DatabaseFactory.CreateDatabase();
+        DbCommand dbCommand = db.GetStoredProcCommandWithTimeout("<%=storedProc.Name%>");
+        
+        <%foreach (ParameterSchema param in storedProc.AllInputParameters){%>
+        db.AddInParameter(dbCommand, "<%=param.Name%>", <%=GetParamDBType(param)%>, <%=GetParamName(param)%>);
+        <%}%>
+    
+        <%if(ResultObjectType=="ManyResultData"){%>
+        ManyResultData result = db.ManyResult(dbCommand,Guid.Empty);
+        return result;
+         <%}else if( ResultObjectType=="SingleResultData"){%>
+        SingleResultData result = db.SingleResult(dbCommand);
+        return result;
+        <%}else{%>
+        DataSet ds = null;
+        ds = db.ExecuteDataSet(dbCommand);
+        if (ds == null || ds.Tables.Count < 1) 
+        {
+            return null;
+        }
+    
+        <%foreach (CommandResultSchema result in storedProc.CommandResults){%>
+        <%=ResultObjectType%> result = (from b in ds.Tables[0].AsEnumerable()
+                                                                    select new <%=ResultObjectType%>
+                                                                    {
+                                                                    <%foreach (CommandResultColumnSchema  col in result.Columns ) { %>
+                                                                        <%=col.Name%>=b.Field<<%=GetResultColumnType(col)%>>("<%=col.Name%>"),
+                                                                    <%}%>
+                                                                    }).SingleOrDefault();
+        
+        return result;
+        <%}%>
+        <%}%>
+    }
+    catch (SqlException sqlException)
+    {
+        throw new ApplicationException(sqlException.Message);
+    }
+    catch(Exception ex)
+    {
+        throw ex;
+    }
+<%}%>
+<script runat="template">
+public string GetParamName(ParameterSchema param)
+{
+	return  StringUtil.ToCamelCase (param.Name.Replace("@",""));
+}
+
+public string GetParamType(ParameterSchema param)
+{
+	return param.SystemType.ToString().Replace("System.","");
+}
+
+public string GetParamDBType(ParameterSchema param)
+{
+	return param.SystemType.ToString().Replace("System.","DbType.");
+}
+
+
+public string GetResultColumnType(CommandResultColumnSchema col)
+{
+	return col.SystemType.ToString().Replace("System.","");
+}
+
+private string BuildSqlText(CommandSchema storedProc)
+{
+    string sqlCommand="";
+    string sqlValue="";
+    int tempIndex=0;
+    foreach(ParameterSchema param in storedProc.NonReturnValueParameters)
+    {
+        if(string.IsNullOrEmpty(sqlCommand)==false)  sqlCommand+=",";
+        sqlCommand+="'{"+tempIndex.ToString()+"}'";
+        
+         if(string.IsNullOrEmpty(sqlValue)==false)  sqlValue+=",";
+        sqlValue+=GetParamName(param);
+        
+        tempIndex++;
+    }
+    
+	return   "\"exec "+storedProc.Name+ " "+sqlCommand+"\","+sqlValue;
+}
+</script>

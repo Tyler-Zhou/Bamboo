@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="08/02/2010 16:02:23" ReportInfo.Modified="06/17/2011 11:33:28" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Data;
+    using FastReport;
+    using FastReport.Data;
+    using FastReport.Dialog;
+    using FastReport.Barcode;
+    using FastReport.Table;
+    using FastReport.Utils;
+
+    namespace FastReport
+    {
+    public class ReportScript
+    {
+
+
+    private void _StartReport(object sender, EventArgs e)
+    {
+
+    }
+    }
+    }
+  </ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyTel" DataType="System.String"/>
+      <Column Name="CompanyFax" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="Agent" DataType="System.String"/>
+      <Column Name="PrintdBy" DataType="System.String"/>
+      <Column Name="PrintTime" DataType="System.DateTime"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="SONo" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="PortOfLoading" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="PortOfDischarge" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="Quanity" DataType="System.Int32"/>
+      <Column Name="QuanityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.Decimal"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.Decimal"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="ClosingDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="PickupLocation" DataType="System.String"/>
+      <Column Name="ContainerSize" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1161167087" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="4" OtherPagesSource="4">
+    <PageHeaderBand Name="PageHeaderBand1161167087" Top="20" Width="756" Height="109.86">
+      <TextObject Name="textbox1" Left="-1.34" Width="756" Height="33.8" CanGrow="true" Text="[ReportSource.CompanyName]" HorzAlign="Center" Font="Arial, 18pt, style=Bold"/>
+      <TextObject Name="textbox2" Left="-1.34" Top="25.25" Width="756" Height="20.25" CanGrow="true" Text="[ReportSource.CompanyAddress]" HorzAlign="Center"/>
+      <TextObject Name="textbox83" Left="-1.34" Top="40.75" Width="756" Height="20.25" CanGrow="true" Text="Tel:[ReportSource.CompanyTel] Fax:[ReportSource.CompanyFax]" HorzAlign="Center"/>
+      <TextObject Name="textbox84" Left="-1.34" Top="59.2" Width="756" Height="20.25" CanGrow="true" HorzAlign="Center"/>
+      <TextObject Name="textbox4" Left="-1.34" Top="75.95" Width="756" Height="33.91" CanGrow="true" Text="BOOKING CONFIRMATION" HorzAlign="Center" Font="Arial, 22pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand1161167087" Top="149.86" Width="756" Height="884.22">
+      <TextObject Name="textbox3" Top="247.59" Width="756" Height="18" Border.Lines="Top, Bottom" Fill.Color="AliceBlue" CanGrow="true" Text="AS PER YOUR DESCRIPTION" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox5" Top="340.21" Width="756" Height="18" Border.Lines="Top, Bottom" Fill.Color="AliceBlue" CanGrow="true" Text="PLEASE DELIVER YOUR CARGO" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox6" Top="475.93" Width="756" Height="18" Border.Lines="Top, Bottom" Fill.Color="AliceBlue" CanGrow="true" Text="EMPTY CONTAINER PICK-UP LOCATION" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox9" Top="590.6" Width="756" Height="18" Border.Lines="Top, Bottom" Fill.Color="AliceBlue" CanGrow="true" Text="REMARK" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <ShapeObject Name="Shape2" Top="3.78" Width="759.78" Height="820.26"/>
+      <TextObject Name="textbox82" Left="1.23" Top="610.5" Width="756" Height="194.34" CanGrow="true" Text="[ReportSource.Remark]"/>
+      <TextObject Name="Text1" Top="3.78" Width="756" Height="126.63" Border.Lines="Top, Bottom"/>
+      <TextObject Name="textbox12" Left="90.5" Top="4.34" Width="252.35" Height="79.58" CanGrow="true" Text="[ReportSource.ShipperDescription]"/>
+      <TextObject Name="textbox24" Left="496.05" Top="4.34" Width="218.45" Height="18.9" CanGrow="true" Text="[ReportSource.PrintdBy]"/>
+      <TextObject Name="textbox89" Left="466.35" Top="4.34" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox13" Left="347.1" Top="4.34" Width="112.5" Height="18.9" CanGrow="true" Text="PREPARED BY    " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox11" Left="1.45" Top="4.34" Width="65.6" Height="18.35" CanGrow="true" Text="SHIPPER " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox113" Left="68.85" Top="4.34" Width="20.6" Height="18.35" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox23" Left="677.09" Top="28.92" Width="139.62" Height="18.9" CanGrow="true" Text="[Date]" Format="Date" Format.Format="d"/>
+      <TextObject Name="textbox22" Left="496.05" Top="28.92" Width="123.95" Height="18.9" CanGrow="true" Text="[ReportSource.SONo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="textbox91" Left="466.35" Top="28.92" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox14" Left="347.1" Top="28.92" Width="112.5" Height="18.9" CanGrow="true" Text="OUR BKG NO.  " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox18" Left="624.92" Top="28.92" Width="51.03" Height="18.9" CanGrow="true" Text="DATE :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox93" Left="466.35" Top="55.7" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox21" Left="496.05" Top="55.7" Width="257.05" Height="18.9" CanGrow="true" Text="[ReportSource.Consignee]"/>
+      <TextObject Name="textbox15" Left="347.1" Top="55.7" Width="112.5" Height="18.9" CanGrow="true" Text="CONSIGNEE" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox94" Left="466.35" Top="83.38" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox17" Left="347.1" Top="83.38" Width="112.5" Height="18.9" CanGrow="true" Text="NOTIFY PARTY " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox20" Left="496.05" Top="83.38" Width="257.05" Height="18.9" CanGrow="true" Text="[ReportSource.NotifyParty]"/>
+      <TextObject Name="textbox19" Left="1.45" Top="83.15" Width="57.6" Height="20" CanGrow="true" Text="AGENT" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox96" Left="66.85" Top="83.15" Width="20.6" Height="20" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox25" Left="89.5" Top="83.15" Width="253.35" Height="42.68" CanGrow="true" Text="[ReportSource.Agent]"/>
+      <TextObject Name="textbox98" Left="466.35" Top="109.61" Width="20.6" Height="20" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox16" Left="347.1" Top="109.61" Width="112.5" Height="20" CanGrow="true" Text="EXPORT REF NO " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox29" Left="496.4" Top="109.61" Width="257.05" Height="20" CanGrow="true"/>
+      <TextObject Name="textbox45" Left="496.94" Top="133.12" Width="258.39" Height="18.9" CanGrow="true" Text="[ReportSource.PlaceOfReceipt]"/>
+      <TextObject Name="textbox102" Left="466.29" Top="133.12" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox35" Left="345.92" Top="133.12" Width="112.5" Height="18.9" CanGrow="true" Text="PL. OF Rec" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox28" Left="150.02" Top="133.12" Width="182.95" Height="18.9" CanGrow="true" Text="[ReportSource.VesselVoyage]"/>
+      <TextObject Name="textbox30" Left="0.27" Top="133.12" Width="126.6" Height="18.9" CanGrow="true" Text="VESSEL/VOY. NO " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox95" Left="127.67" Top="133.12" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox85" Left="670.38" Top="155.7" Width="85.39" Height="18.9" CanGrow="true" Text="[ReportSource.ETD]" Format="Date" Format.Format="d"/>
+      <TextObject Name="textbox44" Left="496.94" Top="155.7" Width="118.95" Height="18.9" CanGrow="true" Text="[ReportSource.PortOfLoading]"/>
+      <TextObject Name="textbox101" Left="466.29" Top="155.7" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox86" Left="623.95" Top="155.7" Width="45.38" Height="18.9" CanGrow="true" Text="ETD :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox34" Left="345.92" Top="155.7" Width="112.5" Height="18.9" CanGrow="true" Text="P.O.L. " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox43" Left="496.94" Top="179.25" Width="265.95" Height="18.9" CanGrow="true" Text="[ReportSource.PortOfDischarge]"/>
+      <TextObject Name="textbox100" Left="466.29" Top="179.25" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox33" Left="345.92" Top="179.25" Width="112.5" Height="18.9" CanGrow="true" Text="P.O.D. " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox41" Left="0.27" Top="179.25" Width="126.6" Height="18.9" CanGrow="true" Text="VESSEL CARRIER" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox92" Left="127.67" Top="179.25" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox27" Left="150.02" Top="179.25" Width="182.95" Height="18.9" CanGrow="true" Text="[ReportSource.Carrier]"/>
+      <TextObject Name="textbox99" Left="466.29" Top="201.8" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox42" Left="496.94" Top="201.8" Width="265.95" Height="18.9" CanGrow="true" Text="[ReportSource.PlaceOfDelivery]"/>
+      <TextObject Name="textbox32" Left="345.92" Top="201.8" Width="112.5" Height="18.9" CanGrow="true" Text="PL. OF DEL. " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox40" Left="0.27" Top="227.27" Width="126.6" Height="18.9" CanGrow="true" Text="CARRIER'S BKG NO" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox26" Left="150.02" Top="227.27" Width="182.95" Height="18.9" CanGrow="true" Text="[ReportSource.SONo]" Font="Arial, 10pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox90" Left="127.67" Top="227.27" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox97" Left="466.29" Top="227.27" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox87" Left="669.88" Top="227.27" Width="85.39" Height="18.9" CanGrow="true" Text="[ReportSource.ETA]" Format="Date" Format.Format="d"/>
+      <TextObject Name="textbox88" Left="623.45" Top="227.27" Width="45.38" Height="18.9" CanGrow="true" Text="ETA :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox46" Left="496.94" Top="227.27" Width="118.95" Height="18.9" CanGrow="true" Text="[ReportSource.FinalDestination]"/>
+      <TextObject Name="textbox31" Left="345.92" Top="227.27" Width="112.5" Height="18.9" CanGrow="true" Text="F. DEST. " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox52" Left="119.93" Top="265.83" Width="225.95" Height="71.9" CanGrow="true" Text="[ReportSource.Marks]"/>
+      <TextObject Name="textbox51" Left="506.93" Top="265.83" Width="97.95" Height="18.9" CanGrow="true" Text="[ReportSource.Weight][ReportSource.WeightUnit]"/>
+      <TextObject Name="textbox53" Left="1.23" Top="265.83" Width="91.6" Height="18.9" CanGrow="true" Text="COMMODITY " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox114" Left="95.63" Top="265.83" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox63" Left="677.29" Top="265.83" Width="91.95" Height="18.9" CanGrow="true" Text="0"/>
+      <TextObject Name="textbox54" Left="347.1" Top="265.83" Width="116.6" Height="18.9" CanGrow="true" Text="KGS" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox62" Left="616.59" Top="265.83" Width="35.6" Height="18.9" CanGrow="true" Text="LBS" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox108" Left="655.63" Top="265.83" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="textbox105" Left="466.07" Top="265.83" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox47" Left="506.93" Top="289.96" Width="97.95" Height="18.9" CanGrow="true" Text="[ReportSource.Measurement][ReportSource.MeasurementUnit]"/>
+      <TextObject Name="textbox65" Left="677.29" Top="289.96" Width="91.95" Height="18.9" CanGrow="true" Text="0"/>
+      <TextObject Name="textbox55" Left="347.1" Top="289.96" Width="116.6" Height="18.9" CanGrow="true" Text="CBM  " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox61" Left="617.04" Top="289.96" Width="35.6" Height="18.9" CanGrow="true" Text="CFT" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox107" Left="655.63" Top="289.96" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="textbox104" Left="466.07" Top="289.96" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox48" Left="507.93" Top="316.76" Width="97.95" Height="18.9" CanGrow="true" Text="[ReportSource.Quanity][ReportSource.QuanityUnit]"/>
+      <TextObject Name="textbox56" Left="347.1" Top="316.76" Width="116.6" Height="18.9" CanGrow="true" Text="NO. OF PKGS " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox60" Left="616.49" Top="316.76" Width="39.38" Height="18.9" CanGrow="true" Text="UNIT" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox64" Left="678.29" Top="316.76" Width="76.83" Height="18.9" CanGrow="true" Text="[ReportSource.QuanityUnit]"/>
+      <TextObject Name="textbox103" Left="466.07" Top="316.76" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox106" Left="655.63" Top="316.76" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="textbox67" Left="376.76" Top="357.89" Width="237.95" Height="16.9" CanGrow="true" Text="Deliver by Cut-Off Date and Time." Font="Arial, 8pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox71" Left="1.45" Top="379.12" Width="57.6" Height="18.9" CanGrow="true" Text="TO " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox49" Left="120.7" Top="379.12" Width="214.95" Height="96.9" CanGrow="true"/>
+      <TextObject Name="textbox115" Left="91.85" Top="379.12" Width="20.6" Height="18.35" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox68" Left="510.76" Top="378.33" Width="243.69" Height="18.9" CanGrow="true" Text="[ReportSource.ClosingDate]"/>
+      <TextObject Name="textbox72" Left="350.34" Top="378.33" Width="112.6" Height="18.9" CanGrow="true" Text="PORT/RAIL " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox112" Left="470.85" Top="378.33" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox69" Left="510.76" Top="402.89" Width="257.95" Height="18.9" CanGrow="true"/>
+      <TextObject Name="textbox73" Left="348.34" Top="402.89" Width="112.6" Height="18.9" CanGrow="true" Text="WHSE " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox111" Left="470.85" Top="402.89" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox74" Left="349.34" Top="425.43" Width="112.6" Height="18.9" CanGrow="true" Text="SED Doc. " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox110" Left="470.85" Top="425.43" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox70" Left="510.76" Top="425.43" Width="257.95" Height="18.9" CanGrow="true"/>
+      <TextObject Name="textbox75" Left="349.34" Top="449.91" Width="112.6" Height="18.9" CanGrow="true" Text="MOVE TYPE" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox109" Left="470.85" Top="449.91" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox66" Left="510.76" Top="449.91" Width="257.95" Height="18.9" CanGrow="true" Text="[ReportSource.TransportClause]"/>
+      <TextObject Name="textbox80" Left="561.54" Top="495.92" Width="297.23" Height="18.9" CanGrow="true"/>
+      <TextObject Name="textbox57" Left="455.34" Top="495.92" Width="102.6" Height="18.9" CanGrow="true" Text="TEL. NO.      :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox50" Left="131.71" Top="495.92" Width="309.95" Height="65.9" CanGrow="true" Text="[ReportSource.PickupLocation]"/>
+      <TextObject Name="textbox59" Left="9.01" Top="495.92" Width="85.6" Height="18.9" CanGrow="true" Text="LOCATION " Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox116" Left="99.41" Top="495.92" Width="20.6" Height="18.9" CanGrow="true" Text="  :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox79" Left="561.54" Top="521.48" Width="297.23" Height="18.9" CanGrow="true"/>
+      <TextObject Name="textbox36" Left="455.34" Top="521.48" Width="102.6" Height="18.9" CanGrow="true" Text="FAX. NO.      :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox78" Left="561.54" Top="545.93" Width="297.23" Height="18.9" CanGrow="true" Text="[ReportSource.ContainerSize]"/>
+      <TextObject Name="textbox37" Left="455.34" Top="545.93" Width="102.6" Height="18.9" CanGrow="true" Text="Cntr. Size    :" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox8" Top="574.03" Width="756" Height="18" Border.Lines="Top" CanGrow="true" Text="THIS SHIPMENT WAS NOT PRE-QUOTED. PLEASE NOTE THE REMARK" Font="Arial, 9pt, style=Bold" TextFill.Color="DarkGreen"/>
+      <TextObject Name="textbox10" Left="3.36" Top="823.34" Width="756" Height="24" CanGrow="true" Text="Thank You for using our service !" HorzAlign="Center" Font="Arial, 12pt, style=Bold" TextFill.Color="DarkGreen"/>
+    </ColumnHeaderBand>
+  </ReportPage>
+</Report>

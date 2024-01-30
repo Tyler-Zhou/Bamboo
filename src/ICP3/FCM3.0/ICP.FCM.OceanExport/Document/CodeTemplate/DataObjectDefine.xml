@@ -1,0 +1,1689 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.FCM.OceanExport">
+  <classes>
+    <class name="OceanBookingPOList" description="PO列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OwnerID" type="Guid" description="所属ID">
+      </field>
+      <field name="POID" type="Guid?" description="PO ID"/>
+      <field name="No" type="string" description="订单号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="订单号必须填写" />
+      </field>
+      <field name="PODescription" type="string" description="订单描述">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="VendorID" type="Guid?" description="卖主ID" />
+      <field name="VendorName" type="string" description="卖主">
+        <validation type="stringlength" length="200" />
+      </field>
+      <field name="BuyerID" type="Guid?" description="买主ID" />
+      <field name="BuyerName" type="string" description="买主">
+        <validation type="stringlength" length="200" />
+      </field>
+      <field name="FinalDestination" type="string" description="最终目的地">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="InWarehouseDate" type="DateTime?" description="入仓时间" />
+      <field name="OrderDate" type="DateTime?" description="处理时间" />
+      <field name="State" type="POState" description="状态">
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人ID">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立日期">
+      </field>
+      <field name="Items" type="List&lt;OceanPOItemList&gt;" description="Item列表" />
+    </class>
+    <class name="OceanBookingPOInfo" baseclass="OceanBookingPOList" description="PO信息" />
+
+    <class name="OceanPOItemList" description="Item列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="POID" type="Guid" description="订单ID">
+      </field>
+      <field name="No" type="string" description="产品编号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="产品编号必须填写" />
+      </field>
+      <field name="Description" type="string" description="产品名称">
+        <validation type="stringlength" length="200" />
+      </field>
+      <field name="Color" type="string" description="颜色">
+        <validation type="stringlength" length="50" />
+      </field>
+      <field name="Size" type="string" description="大小">
+        <validation type="stringlength" length="50" />
+      </field>
+      <field name="Volume" type="decimal" description="体积">
+      </field>
+      <field name="Weight" type="decimal" description="重量">
+      </field>
+      <field name="Cartons" type="int" description="装箱数量">
+      </field>
+      <field name="Units" type="int" description="件数">
+      </field>
+      <field name="HTSCode" type="string" description="海关编码">
+        <validation type="stringlength" length="20" />
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人ID">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立日期">
+      </field>
+    </class>
+    <class name="OceanPOItemInfo" baseclass="OceanPOItemList" description="Item信息" />
+
+    <class name="OceanBookingFeeList" description="费用列表">
+      <field name="ID" type="Guid" description="ID" isid="true">
+      </field>
+      <field name="BookingFeeID" type="Guid" description="费用ID">
+      </field>
+      <field name="OceanBookingID" type="Guid" description="订舱ID">
+      </field>
+
+      <field name="CustomerID" type="Guid" description="客户">
+        <validation type="guidrequired" errmsg="客户必须填写" />
+      </field>
+      <field name="CustomerName" type="string" description="客户名">
+      </field>
+      <field name="ChargingCodeID" type="Guid" description="费用代码">
+        <validation type="guidrequired" errmsg="费用代码必须填写" />
+      </field>
+      <field name="ChargingCodeName" type="string" description="费用代码">
+      </field>
+      <field name="CurrencyID" type="Guid" description="币种ID">
+        <validation type="guidrequired" errmsg="币种必须填写" />
+      </field>
+      <field name="Currency" type="string" description="币种">
+      </field>
+      <field name="Quantity" type="decimal" description="数量">
+        <validation type="decimalrequired" errmsg="数量必须填写" />
+      </field>
+      <field name="UnitPrice" type="decimal" description="单价">
+        <validation type="decimalrequired" errmsg="单价必须填写" />
+      </field>
+      <field name="Way" type="FeeWay" description="方向">
+      </field>
+
+      <field name="Amount" type="decimal" description="金额">
+        <validation type="decimalrequired" errmsg="金额必须填写" />
+      </field>
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="200" />
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人ID">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立日期">
+      </field>
+    </class>
+
+    <class name="OceanOrderList" description="出口订单列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true"/>
+      <field name="No" type="string" description="业务号"/>
+      <field name="CustomerName" type="string" description="客户"/>
+      <field name="ShipperName" type="string" description="发货人"/>
+      <field name="ConsigneeName" type="string" description="收货人"/>
+      <field name="PlaceOfReceiptName" type="string" description="收货地" />
+      <field name="POLName" type="string" description="装货港名称">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="ETD" type="DateTime?" description="离港日"/>
+      <field name="PODName" type="string" description="卸货港名称">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="ETA" type="DateTime?" description="到港日"/>
+      <field name="PlaceOfDeliveryName" type="string" description="交货地名称">
+        <validation type="stringlength" length="100" />
+        <validation type="required" errmsg="交货地必须填写" />
+      </field>
+      <field name="Type" type="BookingType" description="业务类型"/>
+      <field name="ExpectedShipDate" type="DateTime?" description="期望出运日"/>
+      <field name="SalesName" type="string" description="业务员"/>
+
+      <field name="CreateDate" type="DateTime" description="创建时间"/>
+      <field name="ClosingDate" type="DateTime?" description="截关日" />
+      <field name="State" type="OrderState" description="状态（0待定、1已确认、2已接受、3已打回、4已取消、5已完成）"/>
+    </class>
+
+    <class name="OceanOrderInfo" baseclass="OceanOrderList" description="出口订单详细信息" >
+      <field name="BookingDate" type="DateTime" description="接收委托单时间">
+        <validation type="required" errmsg="接收委托单时间必须填写" />
+      </field>
+      <field name="BookingMode" type="BookingMode" description="订舱方式（0电话、1邮件、2电子订舱）">
+        <validation type="required" errmsg="订舱方式必须填写" />
+      </field>
+      <field name="TradeTermID" type="Guid" description="贸易条款ID">
+        <validation type="guidrequired" errmsg="贸易条款必须填写" />
+      </field>
+      <field name="TradeTermName" type="string" description="贸易条款" />
+      <field name="CompanyID" type="Guid" description="公司ID">
+        <validation type="guidrequired" errmsg="公司必须填写" />
+      </field>
+      <field name="CompanyName" type="string" description="公司" />
+      <field name="SalesID" type="Guid?" description="业务员ID" />
+      <field name="SalesDepartmentID" type="Guid" description="业务所属部门ID">
+        <validation type="guidrequired" errmsg="业务所属部门必须填写" />
+      </field>
+      <field name="SalesDepartmentName" type="string" description="业务所属部门" />
+      <field name="OperatorID" type="Guid?" description="操作ID" />
+      <field name="OperatorName" type="string" description="操作" />
+      <field name="CustomerID" type="Guid" description="客户ID">
+        <validation type="guidrequired" errmsg="客户必须填写" />
+      </field>
+      <field name="BookingCustomerID" type="Guid" description="订舱客户ID">
+        <validation type="guidrequired" errmsg="订舱客户必须填写" />
+      </field>
+      <field name="BookingCustomerDescription" type="CustomerDescription" description="订舱客户详细信息" />
+      <field name="BookingCustomerName" type="string" description="订舱客户"/>
+      <field name="ShipperID" type="Guid" description="发货人ID">
+        <validation type="guidrequired" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人详细信息" />
+      <field name="ConsigneeID" type="Guid?" description="收货人ID" />
+      <field name="ConsigneeDescription" type="CustomerDescription" description="收货人详细信息" />
+      <field name="PlaceOfReceiptID" type="Guid" description="收货地ID">
+        <validation type="guidrequired" errmsg="收货地必须填写" />
+      </field>
+      <field name="POLID" type="Guid" description="装货港ID">
+        <validation type="guidrequired" errmsg="装货港必须填写" />
+      </field>
+      <field name="TranshipmentPortName" type="string" description="中转港" />
+      <field name="PODID" type="Guid" description="卸货港ID">
+        <validation type="guidrequired" errmsg="卸货港必须填写" />
+      </field>
+      <field name="PlaceOfDeliveryID" type="Guid" description="交货地ID"/>
+
+      <field name="CarrierID" type="Guid?" description="船东ID" />
+      <field name="CarrierName" type="string" description="船东" />
+      
+      <field name="EstimatedDeliveryDate" type="DateTime?" description="估计客户交货时间" />
+      <field name="ExpectedArriveDate" type="DateTime?" description="期望到达时间" />
+      <field name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" />
+      </field>
+      <field name="TransportClauseName" type="string" description="运输条款" />
+      <field name="PaymentTermID" type="Guid" description="付款方式ID">
+        <validation type="guidrequired" errmsg="付款方式必须填写" />
+      </field>
+      <field name="PaymentTermName" type="string" description="付款方式" />
+      <field name="Commodity" type="string" description="品名">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Quantity" type="int" description="包装数量">
+        <validation type="required" errmsg="包装数量必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid?" description="包装单位ID" />
+      <field name="QuantityUnitName" type="string" description="包装单位" />
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid?" description="重量单位ID" />
+      <field name="WeightUnitName" type="string" description="重量单位" />
+      <field name="Measurement" type="decimal" description="体积">
+      </field>
+      <field name="MeasurementUnitID" type="Guid?" description="体积单位ID" />
+      <field name="MeasurementUnitName" type="string" description="体积单位" />
+      <field name="CargoType" type="CargoType?" description="货物类型" />
+      <field name="CargoDescription" type="CargoDescription" description="货物描述" />
+      <field name="ContainerDescription" type="ContainerDescription" description="集装箱描述" />
+      <field name="IsTruck" type="bool" description="是否拖车" />
+      <field name="IsCustoms" type="bool" description="是否报关" />
+      <field name="IsCommodityInspection" type="bool" description="是否商检" />
+      <field name="IsQuarantineInspection" type="bool" description="是否动植检" />
+
+      <field name="IsWarehouse" type="bool" description="是否仓储" />
+      <field name="IsOnlyMBL" type="bool" description="是否只出MBL" />
+      <field name="MBLPaymentTermID" type="Guid?" description="Master B/L付费条款" />
+      <field name="MBLPaymentTermName" type="string" description="Master B/L付费条款" />
+      <field name="MBLReleaseType" type="ReleaseType?" description="Master B/L放单方式（0正本，1电放）" />
+      <field name="MBLRequirements" type="string" description="Master B/L出单要求">
+        <validation type="stringlength" length="1000" />
+      </field>
+      <field name="HBLPaymentTermID" type="Guid?" description="House B/L付费条款" />
+      <field name="HBLPaymentTermName" type="string" description="付费条款" />
+      <field name="HBLReleaseType" type="ReleaseType?" description="House B/L放单方式（0正本，1电放）" />
+      <field name="HBLRequirements" type="string" description="House B/L出单要求">
+        <validation type="stringlength" length="1000" />
+      </field>
+      <field name="SalesTypeID" type="Guid" description="揽货方式">
+        <validation type="guidrequired" errmsg="揽货方式必须填写" />
+      </field>
+      <field name="SalesTypeName" type="string" description="揽货方式" />
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="1000" />
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateByID" type="Guid" description="建立人ID">
+      </field>
+
+      <field name="CustomerRefNo" type="string" description="客户参考号">
+        <validation type="stringlength" length="20" />
+      </field>
+    </class>
+
+    <class name="OceanBookingList" description="出口订舱列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true"/>
+      <field name="OceanShippingOrderID" type="Guid?" description="装货单ID" />
+      <field name="State" type="OrderState" description="状态（0待定、1已确认、2已接受、3已打回、4已取消、5已完成）"/>
+      <field name="No" type="string" description="业务号"/>
+      <field name="MBLNo" type="string" description="MBL号"/>
+      <field name="HBLNo" type="string" description="HBL号"/>
+      <field name="ShippingOrderNo" type="string" description="订舱号"/>
+      <field name="CustomerName" type="string" description="客户"/>
+      <field name="BookingCustomerName" type="string" description="订舱客户"/>
+      <field name="CarrierName" type="string" description="船东"/>
+      <field name="AgentOfCarrierName" type="string" description="承运人" />
+      <field name="VesselVoyage" type="string" description="船名航次"/>
+      <field name="PlaceOfReceiptName" type="string" description="收货地" />
+      <field name="POLName" type="string" description="装货港"/>
+      <field name="PODName" type="string" description="卸货港"/>
+      <field name="PlaceOfDeliveryName" type="string" description="交货地"/>
+      <field name="RETD" type="DateTime?" description="收货日"/>
+      <field name="ETD" type="DateTime?" description="离港日"/>
+      <field name="ShipperName" type="string" description="发货人"/>
+      <field name="ConsigneeName" type="string" description="收货人"/>
+      <field name="AgentName" type="string" description="代理人"/>
+      <field name="Type" type="BookingType" description="业务类型"/>
+      <field name="CustomerService" type="string" description="文件"/>
+      <field name="OperatorName" type="string" description="订舱"/>
+      <field name="SalesName" type="string" description="业务员"/>
+      <field name="Paid" type="bool" description="已付"/>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="创建时间"/>
+      <field name="OceanMBLs" type="List&lt;KeyValueData&gt;" description="主提单列表" />
+      <field name="OceanHBLs" type="List&lt;KeyValueData&gt;" description="分提单列表" />
+    </class>
+
+    <class name="OceanBookingInfo" baseclass="OceanBookingList" description="订舱单信息" >
+      <field name="BookingDate" type="DateTime" description="接收委托单时间">
+        <validation type="required" errmsg="接收委托单时间必须填写" />
+      </field>
+      <field name="BookingMode" type="BookingMode" description="订舱方式（0电话、1邮件、2电子订舱）">
+        <validation type="required" errmsg="订舱方式必须填写" />
+      </field>
+      <field name="ReleaseType" type="ReleaseType" description="放单类型"/>
+      <field name="TradeTermID" type="Guid" description="贸易条款ID">
+        <validation type="guidrequired" errmsg="贸易条款必须填写" />
+      </field>
+      <field name="TradeTermName" type="string" description="贸易条款" />
+      <field name="CompanyID" type="Guid" description="公司ID">
+        <validation type="guidrequired" errmsg="公司必须填写" />
+      </field>
+      <field name="CompanyName" type="string" description="公司" />
+      <field name="SalesID" type="Guid?" description="业务员ID" />
+      <field name="SalesDepartmentID" type="Guid" description="业务所属部门ID">
+        <validation type="guidrequired" errmsg="业务所属部门必须填写" />
+      </field>
+      <field name="SalesDepartmentName" type="string" description="业务所属部门" />
+      <field name="OperatorID" type="Guid?" description="操作ID" />
+      <field name="CustomerID" type="Guid" description="客户ID">
+        <validation type="guidrequired" errmsg="客户必须填写" />
+      </field>
+      <field name="BookingCustomerID" type="Guid" description="订舱客户ID">
+        <validation type="guidrequired" errmsg="订舱客户必须填写" />
+      </field>
+      <field name="BookingCustomerDescription" type="CustomerDescription" description="订舱客户详细信息" />
+
+      <field name="ShipperID" type="Guid" description="发货人ID">
+        <validation type="guidrequired" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人详细信息" />
+      <field name="ConsigneeID" type="Guid?" description="收货人ID" />
+      <field name="ConsigneeDescription" type="CustomerDescription" description="收货人详细信息" />
+      <field name="PlaceOfReceiptID" type="Guid" description="收货地ID">
+        <validation type="guidrequired" errmsg="收货地必须填写" />
+      </field>
+      <field name="PreVoyageName" type="string" description="头程航次" />
+      <field name="PreVoyageID" type="Guid?" description="头程航次ID" />
+      <field name="POLID" type="Guid" description="装货港ID">
+        <validation type="guidrequired" errmsg="装货港必须填写" />
+      </field>
+      <field name="ETA" type="DateTime?" description="预计到港日" />
+      <field name="VoyageID" type="Guid?" description="二程航次ID" />
+      <field name="VoyageName" type="string" description="二程航次名" />
+      <field name="PODID" type="Guid" description="卸货港ID">
+        <validation type="guidrequired" errmsg="卸货港必须填写" />
+      </field>
+      <field name="TranshipmentPortName" type="string" description="中转港" />
+
+      <field name="PlaceOfDeliveryID" type="Guid" description="交货地ID">
+        <validation type="guidrequired" errmsg="交货地必须填写" />
+      </field>
+      <field name="DOCClosingDate" type="DateTime?" description="截文件日" />
+      <field name="ClosingDate" type="DateTime?" description="截关日" />
+      <field name="CYClosingDate" type="DateTime?" description="截柜日" />
+      <field name="EstimatedDeliveryDate" type="DateTime?" description="估计客户交货时间" />
+      <field name="DeliveryDate" type="DateTime?" description="客户实际交货日期" />
+      <field name="ExpectedShipDate" type="DateTime?" description="期望出运时间" />
+      <field name="ExpectedArriveDate" type="DateTime?" description="期望到达时间" />
+      <field name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" />
+      </field>
+      <field name="TransportClauseName" type="string" description="运输条款" />
+      <field name="PaymentTermID" type="Guid" description="付款方式ID">
+        <validation type="guidrequired" errmsg="付款方式必须填写" />
+      </field>
+      <field name="PaymentTermName" type="string" description="付款方式" />
+      <field name="Commodity" type="string" description="品名">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Quantity" type="int" description="包装数量">
+        <validation type="required" errmsg="包装数量必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid?" description="包装单位ID" />
+      <field name="QuantityUnitName" type="string" description="包装单位" />
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid?" description="重量单位ID" />
+      <field name="WeightUnitName" type="string" description="重量单位" />
+      <field name="Measurement" type="decimal" description="体积">
+      </field>
+      <field name="MeasurementUnitID" type="Guid?" description="体积单位ID" />
+      <field name="MeasurementUnitName" type="string" description="体积单位" />
+      <field name="CargoType" type="CargoType?" description="货物类型" />
+      <field name="CargoDescription" type="CargoDescription" description="货物描述" />
+      <field name="ContainerDescription" type="ContainerDescription" description="集装箱描述" />
+      <field name="IsTruck" type="bool" description="是否拖车" />
+      <field name="IsWareHouse" type="bool" description="是否仓储" />
+      <field name="IsCustoms" type="bool" description="是否报关" />
+      <field name="IsCommodityInspection" type="bool" description="是否商检" />
+      <field name="IsQuarantineInspection" type="bool" description="是否动植检" />
+      <field name="IsOnlyMBL" type="bool" description="是否只出MBL" />
+      <field name="MBLPaymentTermID" type="Guid?" description="Master B/L付费条款" />
+      <field name="MBLPaymentTermName" type="string" description="Master B/L付费条款" />
+      <field name="MBLReleaseType" type="ReleaseType?" description="Master B/L放单方式（0正本，1电放）" />
+      <field name="MBLRequirements" type="string" description="Master B/L出单要求">
+        <validation type="stringlength" length="1000" />
+      </field>
+      <field name="HBLPaymentTermID" type="Guid?" description="House B/L付费条款" />
+      <field name="HBLPaymentTermName" type="string" description="付费条款" />
+      <field name="HBLReleaseType" type="ReleaseType?" description="House B/L放单方式（0正本，1电放）" />
+      <field name="HBLRequirements" type="string" description="House B/L出单要求">
+        <validation type="stringlength" length="1000" />
+      </field>
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="1000" />
+      </field>
+
+      <field name="CustomerServiceID" type="Guid?" description="客服ID" />
+      <field name="CustomerServiceName" type="string" description="客服" />
+
+      <field name="SalesTypeID" type="Guid" description="揽货方式">
+        <validation type="guidrequired" errmsg="揽货方式必须填写" />
+      </field>
+      <field name="SalesTypeName" type="string" description="揽货方式" />
+      <field name="CustomerRefNo" type="string" description="客户参考号">
+        <validation type="stringlength" length="20" />
+      </field>
+
+      <field name="OceanShippingOrderNo" type="string" description="装货单号" />
+      <field name="OceanShippingOrderDataVersion" type="byte[]" description="装货单数据版本" />
+      <field name="CarrierID" type="Guid" description="船东ID" >
+        <validation type="guidrequired" errmsg="船东必须填写" />
+      </field>
+      <field name="AgentOfCarrierID" type="Guid" description="承运人ID">
+        <validation type="guidrequired" errmsg="承运人必须填写" />
+      </field>
+      <field name="AgentID" type="Guid?" description="代理ID" />
+      <field name="AgentDescription" type="CustomerDescription" description="代理详细信息" />
+      <field name="ShippingLineID" type="Guid?" description="航线ID" >
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="ShippingLineName" type="string" description="航线名" />
+      <field name="IsContract" type="bool" description="是否有合约"/>
+      <field name="ContractNo" type="string" description="合约号"/>
+      <field name="ContractID" type="Guid?" description="合约号ID"/>
+      <field name="ConfirmedDate" type="DateTime?" description="确认时间" />
+    </class>
+
+    <class name="OceanBLList" description="提单列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true"/>
+      <field name="OceanShippingOrderID" type="Guid" description="装货单ID">
+      </field>
+      <field name="MBLID" type="Guid" description="MBLID"/>
+      <field name="RefNo" type="string" description="业务号"/>
+      <field name="No" type="string" description="提单号"/>
+      <field name="CheckerName" type="string" description="对单人"/>
+      <field name="ShipperName" type="string" description="发货人" />
+      <field name="ConsigneeName" type="string" description="收货人" />
+      <field name="AgentName" type="string" description="代理" />
+      <field name="CarrierName" type="string" description="船东" />
+      <field name="AgentOfCarrierName" type="string" description="程运人" />
+      <field name="PreVesselVoyage" type="string" description="头程船名航次" />
+      <field name="PrePOLName" type="string" description="头程装货港" />
+      <field name="PreETD" type="DateTime?" description="头程离港日" />
+      <field name="VesselVoyage" type="string" description="船名航次" />
+      <field name="POLName" type="string" description="装货港" />
+      <field name="ETD" type="DateTime?" description="离港日" />
+      <field name="PODName" type="string" description="卸货港" />
+      <field name="ETA" type="DateTime?" description="到港日" />
+      <field name="PlaceOfDeliveryName" type="string" description="交货地" />
+      <field name="FinalDestinationName" type="string" description="最终目的地" />
+      <field name="State" type="BLState" description="提单状态" />
+      <field name="ReleaseType" type="ReleaseType" description="电放类型"/>
+      <field name="CreateByName" type="string" description="操作" />
+      <field name="CreateDate" type="DateTime" description="建立时间"/>
+      <field name="BLType" type="BLType" description="提单状态" />
+      <field name="ExistFees" type="bool" description="是否挂有费用" />
+      <field name="ExistContainers" type="bool" description="是否挂有箱" />
+    </class>
+
+    <class name="OceanHBLInfo" baseclass="OceanBLList" description="HBL信息" >
+      <field name="OceanBookingID" type="Guid" description="业务ID">
+        <validation type="guidrequired" errmsg="业务必须填写" />
+      </field>
+      <field name="MBLNo" type="string" description="主提单号"/>
+      <field name="SONO" type="string" description="订舱号"/>
+      <field name="NumberOfOriginal" type="short?" description="复制份数" />
+      <field name="CheckerID" type="Guid?" description="提单审核人ID（关联客户信息）" />
+      <field name="ShipperID" type="Guid" description="发货人ID">
+        <validation type="guidrequired" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人详细信息" />
+      <field name="ConsigneeID" type="Guid?" description="收货人ID" />
+      <field name="ConsigneeDescription" type="CustomerDescription" description="收货人详细信息" />
+      <field name="NotifyPartyID" type="Guid?" description="通知人ID" />
+      <field name="NotifyPartyName" type="string" description="通知人" />
+      <field name="NotifyPartyDescription" type="CustomerDescription" description="通知人详细信息" />
+      <field name="AgentID" type="Guid?" description="代理ID" />
+      <field name="AgentDescription" type="CustomerDescription" description="代理详细信息" />
+      <field name="PrePOLCode" type="string" description="头程航次名" />
+      <field name="PlaceOfReceiptID" type="Guid?" description="收货地ID" />
+      <field name="PlaceOfReceiptCode" type="string" description="收货地代码" />
+      <field name="PlaceOfReceiptName" type="string" description="收货地名称">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="PrePODName" type="string" description="前程卸货港名称">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="PrePODCode" type="string" description="前程卸货港代码" />
+      <field name="PreVoyageID" type="Guid?" description="头程航次ID" />
+      <field name="VoyageID" type="Guid?" description="二程航次ID" />
+      <field name="POLCode" type="string" description="装货港代码" />
+      <field name="TranshipmentPortName" type="string" description="中转港" />
+      <field name="PODCode" type="string" description="卸货港代码" />
+      <field name="PlaceOfDeliveryID" type="Guid?" description="交货地ID">
+        <validation type="guidrequired" errmsg="交货地必须填写" />
+      </field>
+      <field name="PlaceOfDeliveryCode" type="string" description="交货地代码" />
+      <field name="FinalDestinationID" type="Guid?" description="最终目的地ID" />
+      <field name="FinalDestinationCode" type="string" description="最终目的地代码" />
+      <field name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" />
+      </field>
+      <field name="TransportClauseName" type="string" description="运输条款" />
+      <field name="PaymentTermID" type="Guid" description="付款方式ID">
+        <validation type="guidrequired" errmsg="付款方式必须填写" />
+      </field>
+      <field name="PaymentTermName" type="string" description="付款方式" />
+      <field name="FreightDescription" type="string" description="运费描述">
+        <validation type="stringlength" length="500" />
+      </field>
+
+      <field name="ReleaseDate" type="DateTime?" description="放单日期" />
+      <field name="VoyageShowType" type="VoyageShowType" description="航次显示类型（1驳船、2大船、3全部）">
+      </field>
+      <field name="Quantity" type="int" description="包装数量">
+        <validation type="required" errmsg="包装数量必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="QuantityUnitName" type="string" description="包装单位" />
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid?" description="重量单位ID" />
+      <field name="WeightUnitName" type="string" description="重量单位" />
+      <field name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" />
+      </field>
+      <field name="MeasurementUnitID" type="Guid?" description="体积单位ID" />
+      <field name="MeasurementUnitName" type="string" description="体积单位" />
+      <field name="Marks" type="string" description="唛头">
+      </field>
+      <field name="GoodsDescription" type="string" description="货物描述">
+      </field>
+      <field name="IsWoodPacking" type="bool" description="是否木质包装">
+        <validation type="required" errmsg="是否木质包装必须填写" />
+      </field>
+      <field name="ContainerDescription" type="string" description="集装箱详细信息">
+        <validation type="required" errmsg="集装箱详细信息必须填写" />
+      </field>
+      <field name="IssuePlaceID" type="Guid" description="签发地ID">
+        <validation type="guidrequired" errmsg="签发地必须填写" />
+      </field>
+      <field name="IssuePlaceName" type="string" description="签发地" />
+      <field name="IssueByID" type="Guid?" description="签发人ID" />
+      <field name="IssueByName" type="string" description="签发人" />
+      <field name="IssueDate" type="DateTime?" description="签发时间" />
+
+      <field name="AMSNo" type="string" description="AMS（AUTOMATED MANIFEST SYSTEM自动舱单系统）号码">
+        <validation type="stringlength" length="20" />
+      </field>
+      <field name="AMSShipperName" type="string" description="AMS发货人" />
+      <field name="AMSShipperDescription" type="CustomerDescription" description="AMS发货人详细信息" />
+      <field name="AMSConsigneeName" type="string" description="AMS收货人" />
+      <field name="AMSConsigneeDescription" type="CustomerDescription" description="AMS收货人详细信息" />
+      <field name="AMSNotifyPartyName" type="string" description="AMS通知人" />
+      <field name="AMSNotifyPartyDescription" type="CustomerDescription" description="AMS通知人详细信息" />
+      <field name="ISFNo" type="string" description="ISF（IMPORTER SECURITY FILING进口安全申报）号码">
+        <validation type="stringlength" length="20" />
+      </field>
+      <field name="ACIEntryType" type="ACIEntryType?" description="24=Imported Goods 23=Intransit Goods to US 26=FROB" />
+      <field name="CreateByID" type="Guid" description="建立人"/>
+    </class>
+
+    <class name="OceanMBLInfo" baseclass="OceanBLList" description="MBL单信息" >
+      <field name="SONO" type="string" description="订舱号"/>
+      <field name="NumberOfOriginal" type="short?" description="复制份数" />
+      <field name="CheckerID" type="Guid?" description="对单人ID（关联客户信息）" />
+      <field name="ShipperID" type="Guid" description="发货人ID" >
+        <validation type="guidrequired" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人详细信息" />
+      <field name="ConsigneeID" type="Guid?" description="收货人ID" />
+      <field name="ConsigneeDescription" type="CustomerDescription" description="收货人详细信息" />
+      <field name="NotifyPartyID" type="Guid?" description="通知人ID" />
+      <field name="NotifyPartyDescription" type="CustomerDescription" description="通知人详细信息" />
+      <field name="NotifyPartyName" type="string" description="通知人" />
+      <field name="AgentID" type="Guid?" description="代理ID" />
+      <field name="AgentDescription" type="CustomerDescription" description="代理详细信息" />
+      <field name="PlaceOfReceiptName" type="string" description="收货地名称">
+      </field>
+      <field name="PlaceOfReceiptCode" type="string" description="收货地代码">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="PlaceOfReceiptID" type="Guid?" description="收货地ID" />
+      <field name="PreVoyageID" type="Guid?" description="头程航次ID" />
+      <field name="VoyageID" type="Guid?" description="二程航次ID" />
+      <field name="PrePOLCode" type="string" description="前程装货港代码"/>
+      <field name="PrePODName" type="string" description="前程卸货港名称">
+        <validation type="stringlength" length="100" />
+      </field>
+      <field name="PrePODCode" type="string" description="前程卸货港代码"/>
+      <field name="POLCode" type="string" description="装货港代码"/>
+      <field name="TranshipmentPortName" type="string" description="中转港" />
+      <field name="PODCode" type="string" description="卸货港代码"/>
+      <field name="PlaceOfDeliveryID" type="Guid?" description="交货地ID">
+        <validation type="guidrequired" errmsg="交货地必须填写" />
+      </field>
+      <field name="PlaceOfDeliveryCode" type="string" description="交货地代码"/>
+      <field name="FinalDestinationID" type="Guid?" description="最终目的地ID" />
+      <field name="FinalDestinationCode" type="string" description="最终目的地代码"/>
+      <field name="TransportClauseID" type="Guid" description="运输条款ID">
+        <validation type="guidrequired" errmsg="运输条款必须填写" />
+      </field>
+      <field name="TransportClauseName" type="string" description="运输条款" />
+      <field name="PaymentTermID" type="Guid" description="付费条款ID">
+        <validation type="guidrequired" errmsg="付费条款必须填写" />
+      </field>
+      <field name="PaymentTermName" type="string" description="付费条款" />
+      <field name="FreightDescription" type="string" description="运费描述">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="VoyageShowType" type="VoyageShowType" description="航次显示类型（1驳船、2大船、3全部）">
+      </field>
+      <field name="ReleaseDate" type="DateTime?" description="放单日期" />
+      <field name="Quantity" type="int" description="包装数量">
+        <validation type="required" errmsg="包装数量必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="QuantityUnitName" type="string" description="包装单位" />
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid" description="重量单位ID">
+        <validation type="guidrequired" errmsg="重量单位必须填写" />
+      </field>
+      <field name="WeightUnitName" type="string" description="重量单位" />
+      <field name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" />
+      </field>
+      <field name="MeasurementUnitID" type="Guid" description="体积单位ID">
+        <validation type="guidrequired" errmsg="体积单位必须填写" />
+      </field>
+      <field name="MeasurementUnitName" type="string" description="体积单位" />
+      <field name="Marks" type="string" description="唛头">
+      </field>
+      <field name="GoodsDescription" type="string" description="货物描述">
+      </field>
+      <field name="IsWoodPacking" type="bool" description="是否木质包装">
+        <validation type="required" errmsg="是否木质包装必须填写" />
+      </field>
+      <field name="ContainerDescription" type="string" description="集装箱详细信息">
+        <validation type="required" errmsg="集装箱详细信息必须填写" />
+      </field>
+      <field name="IssuePlaceID" type="Guid" description="签发地">
+        <validation type="guidrequired" errmsg="签发地必须填写" />
+      </field>
+      <field name="IssuePlaceName" type="string" description="签发地" />
+      <field name="IssueByID" type="Guid?" description="签发人ID" />
+      <field name="IssueByName" type="string" description="签发人" />
+      <field name="IssueDate" type="DateTime?" description="签发时间" />
+      <field name="ConfirmOnBoardType" type="ConfirmOnBoardType" description="确认装船类型（0不确定，1前程确定，2确定）">
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="OceanBookings" type="List&lt;KeyValueData&gt;" description="业务列表" />
+      <field name="OceanHBLs" type="List&lt;KeyValueData&gt;" description="分提单列表" />
+    </class>
+
+    <class name="OceanContainerList" description="箱列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="ContainerID" type="Guid" description="箱ID"/>
+      <field name="ShippingOrderID" type="Guid" description="装货单ID" />
+      <field name="ShippingOrderNo" type="string" description="装货单号（有些船公司是每个柜提供一个号的）"/>
+      <field name="OwnerID" type="Guid" description="所属单的ID">
+      </field>
+      <field name="No" type="string" description="箱号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="箱号必须填写" />
+      </field>
+      <field name="TypeID" type="Guid" description="箱型ID">
+        <validation type="guidrequired" errmsg="箱型必须填写" />
+      </field>
+      <field name="TypeName" type="string" description="箱型" >
+      </field>
+      <field name="SealNo" type="string" description="铅封号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="铅封号必须填写" />
+      </field>
+      <field name="IsSOC" type="bool" description="是否客户自有箱">
+        <validation type="required" errmsg="是否客户自有箱必须填写" />
+      </field>
+      <field name="IsPartOf" type="bool" description="是否一个柜子出两套或两套以上的提单（这里仅仅只整箱情况）">
+        <validation type="required" errmsg="是否一个柜子出两套或两套以上的提单（这里仅仅只整箱情况）必须填写" />
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanBLContainerList" description="提单箱列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="ContainerID" type="Guid" description="箱ID"/>
+      <field name="ShippingOrderID" type="Guid" description="装货单ID" />
+      <field name="ShippingOrderNo" type="string" description="装货单号（有些船公司是每个柜提供一个号的）"/>
+      <field name="OwnerID" type="Guid" description="所属单的ID">
+      </field>
+      <field name="No" type="string" description="箱号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="箱号必须填写" />
+      </field>
+      <field name="TypeID" type="Guid" description="箱型ID">
+        <validation type="guidrequired" errmsg="箱型必须填写" />
+      </field>
+      <field name="TypeName" type="string" description="箱型" >
+      </field>
+      <field name="SealNo" type="string" description="铅封号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="铅封号必须填写" />
+      </field>
+      <field name="IsSOC" type="bool" description="是否客户自有箱">
+        <validation type="required" errmsg="是否客户自有箱必须填写" />
+      </field>
+      <field name="IsPartOf" type="bool" description="是否一个柜子出两套或两套以上的提单（这里仅仅只整箱情况）">
+        <validation type="required" errmsg="IsPartOf必须填写" />
+      </field>
+      <field name="Marks" type="string" description="唛头">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Commodity" type="string" description="品名">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Quantity" type="int" description="件数">
+        <validation type="required" errmsg="件数必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="QuantityUnitName" type="string" description="包装单位">
+      </field>
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid" description="重量单位ID">
+        <validation type="guidrequired" errmsg="重量单位必须填写" />
+      </field>
+      <field name="WeightUnitName" type="string" description="重量单位">
+      </field>
+      <field name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" />
+      </field>
+      <field name="MeasurementUnitID" type="Guid" description="体积单位ID">
+        <validation type="guidrequired" errmsg="体积单位必须填写" />
+      </field>
+      <field name="MeasurementUnitName" type="string" description="体积单位">
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanWarehouseList" description="入仓单列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanBookingID" type="Guid" description="托运单ID">
+        <validation type="guidrequired" errmsg="托运单必须填写" />
+      </field>
+      <field name="WarehouseNo" type="string" description="仓单号">
+        <validation type="stringlength" length="20" />
+        <validation type="required" errmsg="仓单号必须填写" />
+      </field>
+      <field name="Type" type="WarehouseServiceType" description="类型（0入库，1出库）">
+        <validation type="required" errmsg="类型必须填写" />
+      </field>
+      <field name="WarehouseName" type="string" description="仓库" />
+      <field name="ShipperName" type="string" description="发货人" />
+      <field name="WarehouseTime" type="DateTime" description="入仓时间">
+        <validation type="required" errmsg="入仓时间必须填写" />
+      </field>
+    </class>
+    <class name="OceanWarehouseInfo" baseclass="OceanWarehouseList" description="入仓单信息" >
+      <field name="ShippingOrderNo" type="string" description="订舱号" />
+      <field name="BookingTime" type="DateTime?" description="订舱时间" />
+      <field name="WarehouseID" type="Guid?" description="仓库ID" errmsg="仓库必须填写" />
+      <field name="WarehouseDescription" type="CustomerDescription" description="仓库描述" />
+      <field name="ShipperID" type="Guid?" description="发货人ID" errmsg="发货人必须填写" />
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人描述" />
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="WarehouseCargos" type="List&lt;OceanWarehouseCargoList&gt;" description="货物描述列表" />
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanWarehouseCargoList" description="-????">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanWarehouseServiceID" type="Guid" description="托运单ID">
+      </field>
+      <field name="Marks" type="string" description="唛头">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Commodity" type="string" description="品名">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Quantity" type="int" description="件数">
+        <validation type="required" errmsg="件数必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid" description="重量单位ID">
+        <validation type="guidrequired" errmsg="重量单位必须填写" />
+      </field>
+      <field name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" />
+      </field>
+      <field name="MeasurementUnitID" type="Guid" description="体积单位ID">
+        <validation type="guidrequired" errmsg="体积单位必须填写" />
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanContainerCargoList" description="箱装货物列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanContainerID" type="Guid" description="箱ID">
+      </field>
+      <field name="Marks" type="string" description="唛头">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Commodity" type="string" description="品名">
+        <validation type="stringlength" length="400" />
+      </field>
+      <field name="Quantity" type="int" description="件数">
+        <validation type="required" errmsg="件数必须填写" />
+      </field>
+      <field name="QuantityUnitID" type="Guid" description="包装单位ID">
+        <validation type="guidrequired" errmsg="包装单位必须填写" />
+      </field>
+      <field name="QuantityUnitName" type="string" description="包装单位">
+      </field>
+      <field name="Weight" type="decimal" description="重量">
+        <validation type="required" errmsg="重量必须填写" />
+      </field>
+      <field name="WeightUnitID" type="Guid" description="重量单位ID">
+        <validation type="guidrequired" errmsg="重量单位必须填写" />
+      </field>
+      <field name="WeightUnitName" type="string" description="重量单位">
+      </field>
+      <field name="Measurement" type="decimal" description="体积">
+        <validation type="required" errmsg="体积必须填写" />
+      </field>
+      <field name="MeasurementUnitID" type="Guid" description="体积单位ID">
+        <validation type="guidrequired" errmsg="体积单位必须填写" />
+      </field>
+      <field name="MeasurementUnitName" type="string" description="体积单位">
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanTruckInfo" description="派车单信息" >
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanShippingOrderID" type="Guid" description="装货单ID">
+      </field>
+      <field name="ShippingOrderNo" type="string" description="订舱号" />
+      <field name="BookingTime" type="DateTime?" description="订舱时间" />
+      <field name="VesselVoyage" type="string" description="船名航次" />
+      <field name="Carrier" type="string" description="船公司" />
+      <field name="TruckerID" type="Guid" description="拖车公司ID" >
+        <validation type="guidrequired" errmsg="拖车公司必须填写" />
+      </field>
+      <field name="TruckerName" type="string" description="拖车公司" />
+      <field name="TruckerDescription" type="CustomerDescription" description="拖车公司描述" />
+      <field name="PickUpAtID" type="Guid" description="提柜地点ID（关联客户）" />
+      <field name="PickUpAtName" type="string" description="提柜地点名称（关联客户）" />
+      <field name="PickUpAtDescription" type="CustomerDescription" description="提柜地点描述" />
+      <field name="PickUpTime" type="DateTime?" description="提柜时间" />
+      <field name="ShipperID" type="Guid" description="发货人ID" >
+        <validation type="guidrequired" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperName" type="string" description="发货人" />
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人描述" />
+      <field name="LoadingTime" type="DateTime" description="装货时间" >
+        <validation type="required" errmsg="装货时间必须填写" />
+      </field>
+      <field name="DeliveryAtID" type="Guid?" description="还柜地点ID（关联客户）" />
+      <field name="DeliveryAtName" type="string" description="还柜地点名称（关联客户）" />
+      <field name="DeliveryAtDescription" type="CustomerDescription" description="还柜地点描述" />
+      <field name="DeliveryTime" type="DateTime?" description="还柜时间" />
+      <field name="IsDrivingLicence" type="bool" description="是否需要司机本">
+        <validation type="required" errmsg="是否需要司机本必须填写" />
+      </field>
+      <field name="CustomsBrokerID" type="Guid?" description="报关公司ID" />
+      <field name="CustomsBrokerName" type="string" description="报关公司名称（关联客户）" />
+      <field name="CustomsBrokerDescription" type="CustomerDescription" description="报关公司描述" />
+      <field name="FreigtDescription" type="string" description="运费描述">
+        <validation type="required" errmsg="运费描述必须填写" />
+      </field>
+      <field name="Containers" type="List&lt;OceanContainerList&gt;" description="箱列表" />
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanCustomsInfo" description="报关单信息">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanShippingOrderID" type="Guid" description="装货单ID">
+        <validation type="required" errmsg="装货单必须填写" />
+      </field>
+      <field name="ShippingOrderNo" type="string" description="订舱号" />
+      <field name="BookingTime" type="DateTime?" description="订舱时间" />
+      <field name="CustomsBrokerID" type="Guid" description="报关公司ID">
+        <validation type="required" errmsg="报关公司必须填写" />
+      </field>
+
+      <field name="CustomsBrokerName" type="string" description="报关公司" />
+      <field name="CustomsBrokerDescription" type="CustomerDescription" description="报关公司描述" />
+      <field name="ShipperID" type="Guid" description="发货人ID">
+        <validation type="required" errmsg="发货人必须填写" />
+      </field>
+      <field name="ShipperName" type="string" description="发货人" />
+      <field name="ShipperDescription" type="CustomerDescription" description="发货人描述" />
+      <field name="VerificationCertificateNo" type="string" description="核销单号">
+        <validation type="stringlength" length="20" />
+      </field>
+      <field name="CustomsType" type="CustomsType" description="报关类型" >
+        <validation type="required" errmsg="报关类型必须填写" />
+      </field>
+      <field name="FreigtDescription" type="string" description="运费描述">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="Remark" type="string" description="备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="CustomsDeclarationNo" type="string" description="报关单号">
+        <validation type="stringlength" length="20" />
+      </field>
+      <field name="DeclarationDate" type="DateTime?" description="申报日期" />
+      <field name="ReleaseDate" type="DateTime?" description="放行日期" />
+      <field name="ShutOutsDeclarationDate" type="DateTime?" description="报退日期" />
+      <field name="ShutOutsDate" type="DateTime?" description="退关日期" />
+      <field name="Containers" type="List&lt;OceanContainerList&gt;" description="箱列表" />
+      <field name="CreateByID" type="Guid" description="建立人">
+      </field>
+      <field name="CreateByName" type="string" description="建立人" />
+      <field name="CreateDate" type="DateTime" description="建立时间">
+      </field>
+      <field name="IsChanged" type="bool" description="是否有改变"/>
+    </class>
+
+    <class name="OceanAgentRequestList" description="代理申请信息">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanShippingOrderID" type="Guid" description="装货单ID">
+      </field>
+      <field name="SenderName" type="string" description="申请人" />
+      <field name="SenderDate" type="DateTime" description="申请时间">
+        <validation type="required" errmsg="申请时间必须填写" />
+      </field>
+
+      <field name="Type" type="AgentType" description="要求代理类型(0:普通,1:第三方代理,2:需要对收款有特殊要求的代理)">
+        <validation type="required" errmsg="代理类型必须填写" />
+      </field>
+      <field name="SolverName" type="string" description="审批人" />
+      <field name="SolveDate" type="DateTime?" description="审批日期" />
+    </class>
+    <class name="OceanAgentRequestInfo" baseclass="OceanAgentRequestList" description="代理申请信息">
+      <field name="SenderID" type="Guid" description="申请人">
+        <validation type="guidrequired" errmsg="申请人必须填写" />
+      </field>
+      <field name="SenderRemark" type="string" description="申请备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="SolverID" type="Guid?" description="审批人ID" />
+      <field name="SolverRemark" type="string" description="审批备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="AgentID" type="Guid?" description="代理ID" />
+      <field name="AgentName" type="string" description="代理" />
+    </class>
+
+    <class name="OceanFreightRateRequestList" description="海运运价申请列表">
+      <field name="ID" type="Guid" description="唯一键" isid="true">
+      </field>
+      <field name="OceanShippingOrderID" type="Guid" description="装货单ID">
+      </field>
+      <field name="SenderName" type="string" description="申请人" />
+      <field name="SenderDate" type="DateTime" description="申请时间">
+        <validation type="required" errmsg="申请时间必须填写" />
+      </field>
+      <field name="SolverName" type="string" description="审批人" />
+      <field name="SolveDate" type="DateTime?" description="审批日期" />
+    </class>
+    <class name="OceanFreightRateRequestInfo" baseclass="OceanFreightRateRequestList" description="海运运价申请信息">
+      <field name="SolverID" type="Guid?" description="审批人ID" />
+      <field name="SenderID" type="Guid" description="申请人" />
+      <field name="SenderRemark" type="string" description="申请备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="SolverRemark" type="string" description="审批备注">
+        <validation type="stringlength" length="500" />
+      </field>
+      <field name="FreightRateID" type="Guid?" description="运价ID（关联运价明细信息）" />
+      <field name="FreightRateName" type="string" description="运价名" />
+    </class>
+  </classes>
+  <datauis>
+    <dataui type="ILayoutUIProxy" multiple="false" name="OceanOrderLayout" title="OceanOrder:海运订单">
+      <gridcolumns />
+      <childuis>
+        <childui name="oceanorderlistmanage" dock="Fill" height="-1" width="-1" type="OceanOrderListManage" ismainpart="true" />
+      </childuis>
+      <relations />
+      <actions />
+      <methods />
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="OceanOrderListManage" title=" " searchpart="ICP.FCM.OceanExport.UI.Order.OrderSeachPart " simplesearchpart="ICP.FCM.OceanExport.UI.Order.OrderFastSeachPart " entityname="OceanOrderList">
+      <gridcolumns>
+        <column dataproperty="State" width="40" datatype="string" editable="false" headertext="State:状态">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="No" width="140" headertext="" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CustomerName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShipperName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ConsigneeName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Type" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="SalesName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="Add" index="0" text="&amp;Add" ctext="新增(&amp;A)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddData">
+          <steps />
+        </action>
+        <action name="Copy" index="1" text="&amp;Copy" ctext="复制(&amp;C)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="Edit" index="2" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click DblClickItem" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+        <action name="Disuse" index="3" text="&amp;Disuse" ctext="作废(&amp;D)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DisuseData">
+          <steps />
+        </action>
+        <action name="SendEmail" index="4" text="&amp;SendEmail" ctext="发送邮件(&amp;S)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="SendEmail">
+          <steps />
+        </action>
+        <action name="Print" index="5" text="&amp;Print" ctext="打印(&amp;P)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Print">
+          <steps />
+        </action>
+        <action name="Docment" index="6" text="D&amp;ocment" ctext="单证(&amp;O)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Docment">
+          <steps />
+        </action>
+        <action name="FaxEmail" index="7" text="&amp;FaxEmail" ctext="邮件传真(&amp;F)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="FaxEmail">
+          <steps />
+        </action>
+        <action name="Memo" index="8" text="&amp;Memo" ctext="备注(&amp;M)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Memo">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddData">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+        <method name="DisuseData">
+          <steps />
+        </method>
+        <method name="SendEmail">
+          <steps />
+        </method>
+        <method name="Print">
+          <steps />
+        </method>
+        <method name="Docment">
+          <steps />
+        </method>
+        <method name="FaxEmail">
+          <steps />
+        </method>
+        <method name="Memo">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+
+    <dataui type="ILayoutUIProxy" multiple="false" name="OceanBookingLayout" title="Booking:订舱">
+      <gridcolumns />
+      <childuis>
+        <childui name="oceanbookinglistmanage" dock="Fill" height="-1" width="-1" type="OceanBookingListManage" ismainpart="true" />
+      </childuis>
+      <relations />
+      <actions />
+      <methods />
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="OceanBookingListManage" title=" " searchpart="ICP.FCM.OceanExport.UI.Booking.BookingSearchPart " simplesearchpart="ICP.FCM.OceanExport.UI.Booking.BookingFastSearchPart " entityname="OceanBookingList">
+      <gridcolumns>
+        <column dataproperty="No" width="140" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="MBLNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="HBLNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShippingOrderNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CustomerName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentOfCarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="VesselVoyage" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PlaceOfDeliveryName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShipperName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ConsigneeName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Type" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="OperatorName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="SalesName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="Add" index="0" text="&amp;Add" ctext="新增(&amp;A)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddData">
+          <steps />
+        </action>
+        <action name="Copy" index="1" text="&amp;Copy" ctext="复制(&amp;C)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="Edit" index="2" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click DblClickItem" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+        <action name="Disuse" index="3" text="&amp;Disuse" ctext="作废(&amp;D)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DisuseData">
+          <steps />
+        </action>
+        <action name="Print" index="4" text="&amp;Print" ctext="打印(&amp;P)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Print">
+          <steps />
+        </action>
+        <action name="Warehouse" index="5" text="&amp;Warehouse" ctext="仓储(&amp;W)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Warehouse">
+          <steps />
+        </action>
+        <action name="Truck" index="6" text="&amp;Truck" ctext="派车(&amp;T)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Truck">
+          <steps />
+        </action>
+        <action name="Customs" index="7" text="C&amp;ustoms" ctext="报关(&amp;U)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Customs">
+          <steps />
+        </action>
+        <action name="ReplyPrice" index="8" text="ReplyP&amp;rice" ctext="申请运价(&amp;R)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="ReplyPrice">
+          <steps />
+        </action>
+        <action name="ReplyAgent" index="9" text="ReplyA&amp;gent" ctext="申请代理(&amp;G)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="ReplyAgent">
+          <steps />
+        </action>
+        <action name="E_Booking" index="10" text="E-Booking" ctext="电子订舱" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="E_Booking">
+          <steps />
+        </action>
+        <action name="BL" index="11" text="B&amp;L" ctext="提单(&amp;L)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="BL">
+          <steps />
+        </action>
+        <action name="Fee" index="12" text="&amp;Fee" ctext="费用(&amp;F)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Fee">
+          <steps />
+        </action>
+        <action name="Bill" index="13" text="&amp;Bill" ctext="帐单(&amp;B)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Bill">
+          <steps />
+        </action>
+        <action name="Docment" index="14" text="D&amp;ocment" ctext="单证(&amp;O)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Docment">
+          <steps />
+        </action>
+        <action name="FaxEmail" index="15" text="&amp;FaxEmail" ctext="邮件传真(&amp;F)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="FaxEmail">
+          <steps />
+        </action>
+        <action name="Memo" index="16" text="&amp;Memo" ctext="备注(&amp;M)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Memo">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddData">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+        <method name="DisuseData">
+          <steps />
+        </method>
+        <method name="Print">
+          <steps />
+        </method>
+        <method name="Warehouse">
+          <steps />
+        </method>
+        <method name="Truck">
+          <steps />
+        </method>
+        <method name="Customs">
+          <steps />
+        </method>
+        <method name="ReplyPrice">
+          <steps />
+        </method>
+        <method name="ReplyAgent">
+          <steps />
+        </method>
+        <method name="E_Booking">
+          <steps />
+        </method>
+        <method name="BL">
+          <steps />
+        </method>
+        <method name="Fee">
+          <steps />
+        </method>
+        <method name="Bill">
+          <steps />
+        </method>
+        <method name="Docment">
+          <steps />
+        </method>
+        <method name="FaxEmail">
+          <steps />
+        </method>
+        <method name="Memo">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="OceanBookingDataFinder" title="SelectBooking:选择订舱" searchpart="ICP.FCM.OceanExport.UI.Booking.BookingSearchPart" entityname="OceanBookingList">
+      <gridcolumns>
+        <column dataproperty="No" width="140" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="MBLNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="HBLNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShippingOrderNo" width="120" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ReleaseType" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+
+        <column dataproperty="CarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentOfCarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="VesselVoyage" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PlaceOfDeliveryName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShipperName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ConsigneeName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="Type" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CheckerName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="SalesName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="Add" index="0" text="&amp;Add" ctext="新增(&amp;A)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddData">
+          <steps />
+        </action>
+        <action name="Copy" index="1" text="&amp;Copy" ctext="复制(&amp;C)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="Edit" index="2" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddData">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+
+    <dataui type="ILayoutUIProxy" multiple="false" name="OEMBLLayout" title="MBL">
+      <gridcolumns />
+      <childuis>
+        <childui name="oembllistmanage" dock="Fill" height="-1" width="-1" type="OEMBLListManage" ismainpart="true" />
+      </childuis>
+      <relations />
+      <actions />
+      <methods />
+      <VirtualMethods />
+    </dataui>
+    <dataui type="ITreeManageUIProxy" multiple="false" name="OEMBLListManage" title=" " searchpart="ICP.FCM.OceanExport.UI.BL.BLSearchPart" simplesearchpart="ICP.FCM.OceanExport.UI.BL.BLFastSearchPart " entityname="OceanBLList" parentfieldname="MBLID">
+      <gridcolumns>
+        <column dataproperty="RefNo" width="140" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="No" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ReleaseType" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShipperName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ConsigneeName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="VesselVoyage" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PlaceOfDeliveryName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETA" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="AddMBL" index="0" text="Add&amp;MBL" ctext="新增MBL(&amp;M)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddMBL">
+          <steps />
+        </action>
+        <action name="Copy" index="1" text="&amp;Copy" ctext="复制(&amp;C)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="Edit" index="2" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click DblClickItem" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+        <action name="Delete" index="3" text="&amp;Delete" ctext="删除(&amp;D)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="DeleteData">
+          <steps />
+        </action>
+
+        <action name="PrintBL" index="4" text="&amp;Print" ctext="打印(&amp;P)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Print">
+          <steps />
+        </action>
+        <action name="PrintLoadCtn" index="4" text="Print LoadC&amp;tn" ctext="打印装箱单(&amp;T)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="PrintLoadCtn">
+          <steps />
+        </action>
+        <action name="PrintLoadGoods" index="4" text="Print LoadG&amp;oods" ctext="打印装货单(&amp;T)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="PrintLoadGoods">
+          <steps />
+        </action>
+
+        <action name="LoadContainer" index="5" text="&amp;LoadContainer" ctext="装箱(&amp;L)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="LoadContainer">
+          <steps />
+        </action>
+        <action name="ReplyAgent" index="6" text="ReplyA&amp;gent" ctext="申请代理(&amp;G)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="ReplyAgent">
+          <steps />
+        </action>
+        <action name="Check" index="7" text="Chec&amp;k" ctext="完成对单(&amp;K)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Check">
+          <steps />
+        </action>
+        <action name="LoadShip" index="8" text="LoadS&amp;hip" ctext="确认装船(&amp;H)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="LoadShip">
+          <steps />
+        </action>
+        <action name="E_MBL" index="9" text="E-MBL" ctext="电子补料" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="E_MBL">
+          <steps />
+        </action>
+        <action name="ISF" index="10" text="ISF" ctext="ISF" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="ISF">
+          <steps />
+        </action>
+        <action name="Fee" index="11" text="&amp;Fee" ctext="费用(&amp;F)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Fee">
+          <steps />
+        </action>
+        <action name="Bill" index="12" text="&amp;Bill" ctext="帐单(&amp;B)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Bill">
+          <steps />
+        </action>
+        <action name="Docment" index="13" text="D&amp;ocment" ctext="单证(&amp;O)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Docment">
+          <steps />
+        </action>
+        <action name="FaxEmail" index="14" text="&amp;FaxEmail" ctext="邮件传真(&amp;F)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="FaxEmail">
+          <steps />
+        </action>
+        <action name="Memo" index="15" text="&amp;Memo" ctext="备注(&amp;M)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="Memo">
+          <steps />
+        </action>
+        <action name="AddHBL" index="0" text="Add&amp;HBL" ctext="新增HBL(&amp;H)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddHBL">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddMBL">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+        <method name="DeleteData">
+          <steps />
+        </method>
+        <method name="Print">
+          <steps />
+        </method>
+        <method name="PrintLoadCtn">
+          <steps />
+        </method>
+        <method name="PrintLoadGoods">
+          <steps />
+        </method>
+        <method name="LoadContainer">
+          <steps />
+        </method>
+        <method name="ReplyAgent">
+          <steps />
+        </method>
+        <method name="Check">
+          <steps />
+        </method>
+        <method name="E_MBL">
+          <steps />
+        </method>
+        <method name="ISF">
+          <steps />
+        </method>
+        <method name="Fee">
+          <steps />
+        </method>
+        <method name="Bill">
+          <steps />
+        </method>
+        <method name="Docment">
+          <steps />
+        </method>
+        <method name="FaxEmail">
+          <steps />
+        </method>
+        <method name="Memo">
+          <steps />
+        </method>
+        <method name="LoadShip">
+          <steps />
+        </method>
+        <method name="AddHBL">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+    <dataui type="IListManageUIProxy" multiple="false" name="OEMBLDataFinder" title="Select MBL:选择MBL" searchpart="ICP.FCM.OceanExport.UI.BL.MBLSearchPart" entityname="OceanBLList">
+      <gridcolumns>
+        <column dataproperty="RefNo" width="140" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="BLNo" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ReleaseType" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ContainerInfo" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShipperName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ConsigneeName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="AgentName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CarrierName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="VesselVoyage" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="POLName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PODName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="PlaceOfDeliveryName" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ShippingOrderNo" width="100" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETD" width="6" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="ETA" width="0" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="BookingType" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="OperatorName" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+        <column dataproperty="CreateDate" width="60" datatype="string" editable="false">
+          <datafinder allowinput="false" />
+        </column>
+      </gridcolumns>
+      <childuis />
+      <relations />
+      <actions>
+        <action name="AddMBL" index="0" text="Add&amp;MBL" ctext="新增MBL(&amp;M)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="AddMBL">
+          <steps />
+        </action>
+        <action name="Copy" index="1" text="&amp;Copy" ctext="复制(&amp;C)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="CopyData">
+          <steps />
+        </action>
+        <action name="Edit" index="2" text="&amp;Edit" ctext="编辑(&amp;E)" icon="None" shortkey="None" appearstyle="ToolBar" actiontime="Click" datatype="Current" invokemethod="EditData">
+          <steps />
+        </action>
+      </actions>
+      <methods>
+        <method name="AddMBL">
+          <steps />
+        </method>
+        <method name="CopyData">
+          <steps />
+        </method>
+        <method name="EditData">
+          <steps />
+        </method>
+      </methods>
+      <VirtualMethods />
+    </dataui>
+
+  </datauis>
+  <services />
+</root>

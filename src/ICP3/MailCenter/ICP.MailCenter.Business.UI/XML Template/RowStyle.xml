@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+TemplateCode  树节点的Code
+RowStyle   判断是行改变颜色还是单元格改变颜色(Bool)行改变为true  单元格为false
+JudgeConditions  判断条件 (必须是Bool)
+TrueColor  条件为真时颜色
+FalseColor  条件为假时颜色
+Field  需要背景色改变的字段名称
+ToolTipCn   提示信息中文
+ToolTipEn   提示信息英文
+Font        表示是字体还是背景色
+-->
+<Items>
+
+  <!--行颜色改变-->
+  <Item TemplateCode="TaskCenter_OceanImport_Urgent,TaskCenter_OceanImport_PendingNotify,TaskCenter_OceanImport_Released,TaskCenter_OceanImport_Notified,TaskCenter_OceanImport_PendingRCTermALL,TaskCenter_OceanImport_PendingRCTermUrgent,TaskCenter_OceanImport_PendingRCTermETA"
+        RowStyle="true" JudgeConditions="ARC" TrueColor="LightGray" Field="" FalseColor="Empty" ToolTipCn="" ToolTipEn="" Font="false"></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment"
+        RowStyle="true" JudgeConditions="RC" TrueColor="LightGray" Field="" FalseColor="Empty" ToolTipCn="" ToolTipEn="" Font="false"></Item>
+  <!--单元格颜色改变-->
+  <Item TemplateCode="TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlIsMonthKnot"  TrueColor="Empty"  FalseColor="LightSteelBlue"  Field="Customer" Font="true"
+        ToolTipCn="蓝色代表买单客户,白色代表月结客户"
+        ToolTipEn="The cell in Blue is non-term customer,The cell in white is term customer"></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_PendingAD"
+        RowStyle="false" JudgeConditions="SqlIsMonthKnot"    TrueColor="Empty"    FalseColor="LightSteelBlue"  Field="ARC"  Font="false"
+        ToolTipCn="蓝色代表买单客户,白色代表月结客户"
+        ToolTipEn="The cell in Blue is non-term customer,The cell in white is term customer"></Item>
+
+  
+  
+  
+  
+  
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="APCCfm" TrueColor="Empty" FalseColor="LightCoral"   Field="APCCfm"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlRO" TrueColor="Empty" FalseColor="LightCoral"   Field="IsReleaseOrderRequired"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlRbld" TrueColor="Empty" FalseColor="LightCoral"   Field="RBLD"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlRbld" TrueColor="Empty" FalseColor="LightCoral"   Field="IsOBLRcved"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlRbld" TrueColor="Empty" FalseColor="LightCoral"   Field="TelxNo"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlArc" TrueColor="Empty" FalseColor="LightCoral"   Field="RCReceiveed"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingPayment,TaskCenter_OceanImport_NoPayment,TaskCenter_OceanImport_PendingRBLDToDay,TaskCenter_OceanImport_Paid,TaskCenter_OceanImport_QuestionablePaidNoRC,TaskCenter_OceanImport_QuestionableRCNoPay,TaskCenter_OceanImport_PendingRC,TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_PendingAD,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago"
+        RowStyle="false" JudgeConditions="SqlRO" TrueColor="Empty" FalseColor="LightCoral"   Field="RoRcvd"  Font="false"
+        ToolTipCn="红色代表未满足放货条件，白色代表已满足放货条件"
+        ToolTipEn="The color in white means the shipment is ready to release,The color in red means the shipment might not ready to release."></Item>
+
+  
+  
+  
+  
+  
+  
+  
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingAgentDocS,TaskCenter_OceanImport_PendingAgentDocH,TaskCenter_OceanImport_PendingUrgentDOC,TaskCenter_OceanImport_PendingANSC,TaskCenter_OceanImport_PendingAPCCfm,TaskCenter_OceanImport_FillALL,TaskCenter_OceanImport_FileETAdaysago"
+        RowStyle="false" JudgeConditions="ANRC" TrueColor="Empty" FalseColor="LightCoral"   Field="ANRC"  Font="false"
+        ToolTipCn="红色代表未满足条件，白色代表已满足条件"
+        ToolTipEn="The red representative did not meet the conditions, the white representative has met the conditions"></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingAgentDocS,TaskCenter_OceanImport_PendingAgentDocH,TaskCenter_OceanImport_PendingUrgentDOC,TaskCenter_OceanImport_PendingANSC,TaskCenter_OceanImport_PendingAPCCfm,TaskCenter_OceanImport_FillALL,TaskCenter_OceanImport_FileETAdaysago"
+        RowStyle="false" JudgeConditions="APCCfm" TrueColor="Empty" FalseColor="LightCoral"   Field="APCCfm"  Font="false"
+        ToolTipCn="红色代表未满足条件，白色代表已满足条件"
+        ToolTipEn="The red representative did not meet the conditions, the white representative has met the conditions"></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_PendingAgentDocS,TaskCenter_OceanImport_PendingAgentDocH,TaskCenter_OceanImport_PendingUrgentDOC,TaskCenter_OceanImport_PendingANSC,TaskCenter_OceanImport_PendingAPCCfm,TaskCenter_OceanImport_FillALL,TaskCenter_OceanImport_FileETAdaysago"
+        RowStyle="false" JudgeConditions="ANSC" TrueColor="Empty" FalseColor="LightCoral"   Field="ANSC"  Font="false"
+        ToolTipCn="红色代表未满足条件，白色代表已满足条件"
+        ToolTipEn="The red representative did not meet the conditions, the white representative has met the conditions"></Item>
+
+
+
+
+  <Item TemplateCode="TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_NewRBL,TaskCenter_OceanImport_PendingRBLRcvd,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago,TaskCenter_US_OceanImport_TodayRC"
+        RowStyle="false" JudgeConditions="FRC" TrueColor="LightSeaGreen" FalseColor="Empty"   Field="NO"  Font="true"
+        ToolTipCn="黑色代表RC没有完成，黄色代表RC完成/ FRC没有完成，绿色代表FRC完成"
+        ToolTipEn="Black represents RC not completed,Yellow represents RC complete/FRC not completed,Green represents FRC complete"></Item>
+  
+  <Item TemplateCode="TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_NewRBL,TaskCenter_OceanImport_PendingRBLRcvd,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago,TaskCenter_US_OceanImport_TodayRC"
+        RowStyle="false" JudgeConditions="RC" TrueColor="Empty" FalseColor="Black"   Field="NO"  Font="true"
+        ToolTipCn=""
+        ToolTipEn=""></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_UrgentPendingRC,TaskCenter_OceanImport_UrgentPendingPickUp,TaskCenter_OceanImport_UrgentPendingDelivery,TaskCenter_OceanImport_UrgentPendingECR,TaskCenter_OceanImport_PendingRCRcvd,TaskCenter_OceanImport_PendingCC,TaskCenter_OceanImport_PendingRBLD,TaskCenter_OceanImport_PendingRORcvd,TaskCenter_OceanImport_PendingDO,TaskCenter_OceanImport_PendingPickUp,TaskCenter_OceanImport_PendingDelivery,TaskCenter_OceanImport_PendingECR,TaskCenter_US_OceanImport_ALL,TaskCenter_OceanImport_NewRBL,TaskCenter_OceanImport_PendingRBLRcvd,TaskCenter_OceanImport_PendingFRC,TaskCenter_OceanImport_CustomerETAdaysago,TaskCenter_US_OceanImport_TodayRC"
+        RowStyle="false" JudgeConditions="SqlRCFRC" TrueColor="Empty" FalseColor="LightYellow"   Field="NO"  Font="true"
+        ToolTipCn=""
+        ToolTipEn=""></Item>
+
+  <Item TemplateCode="TaskCenter_OceanImport_Notified,TaskCenter_OceanImport_Urgent,TaskCenter_OceanImport_PendingNotify"
+        RowStyle="true" JudgeConditions="ETATimeOut1" TrueColor="Red" Field="" FalseColor="Empty" ToolTipCn="" ToolTipEn="" Font="false"></Item>
+  <Item TemplateCode="TaskCenter_OceanImport_Released"
+      RowStyle="false" JudgeConditions="ETATimeOut2" TrueColor="Red" Field="" FalseColor="Empty" ToolTipCn="" ToolTipEn="" Font="true"></Item>
+</Items>
+

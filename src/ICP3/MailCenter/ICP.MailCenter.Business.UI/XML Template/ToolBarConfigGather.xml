@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--任务中心按钮集合-->
+<Columns>
+  <Item Id="Refresh" Name="Command_Refresh"  RegisterSite="" Type="Button" ImageName="Refresh_161.png" BeginGroup="true" Tag="" >
+    <Text zhcn="刷新(&amp;R)" enus="Refresh(&amp;R)"></Text>
+  </Item>
+
+  <Item Id="ForSo_" Name="Command_Submit"  RegisterSite="" Type="Button" ImageName="Save.png" BeginGroup="true" Tag="" >
+    <Text zhcn="保存(&amp;S)" enus="Submit(&amp;S)"></Text>
+  </Item>
+
+  <Item Id="ForSo_Add" Name="Command_ForSoAdd" RegisterSite="" Type="Button" ImageName="Add.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增(&amp;N)" enus="Add(&amp;N)"></Text>
+  </Item>
+
+  <Item Id="ForSo_Cancel" Name="Command_ForSoCancel"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消" enus="Cancel"></Text>
+  </Item>
+
+  <Item Id="ForSo_Edit" Name="Command_ForSoEdit"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;E)" enus="Edit(&amp;E)"></Text>
+  </Item>
+
+  <Item Id="ForSo_Copy" Name="Command_ForSoCopy"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)"></Text>
+  </Item>
+
+  <Item Id="CopyBusiness" Name="Command_OceanExport_CopyBusiness"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制业务(&amp;O)" enus="Copy Shipment(&amp;O)" />
+  </Item>
+
+  <Item Id="FasterAdd" Name="Command_ForFasterAdd"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="快速订舱" enus="Faster Booking)" />
+  </Item>
+
+  <Item Id="ForSo_ApplySO" Name="Command_ForSoApplySO"   RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="申请订舱" enus="Apply SO"></Text>
+  </Item>
+
+  <Item Id="ForSo_ApplyAgent" Name="Command_ForSoApplyAgent" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="申请代理" enus="Apply Agent"></Text>
+  </Item>
+
+  <Item Id="ForSo_AccInfo" Name="Command_CommunicationAccInfo" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;A)" enus="Acc Info(&amp;A)"></Text>
+  </Item>
+
+  <Item Id="ForBatchAddAccInfo" Name="Command_CommunicationBatchAddAccInfo" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单批量(&amp;A)" enus="Batch Acc Info(&amp;A)"></Text>
+  </Item>
+
+  <Item Id="ForSo_LoadContainer" Name="Command_LoadContainer" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="装箱(&amp;K)" enus="Load Container(&amp;K)"></Text>
+  </Item>
+
+  <Item Id="Communication_InquireRates" Name="Command_CommunicationInquireRates" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="询 价(&amp;I)" enus="Inquire Rates(&amp;I)"></Text>
+  </Item>
+
+
+  <Item Id="Communication_AskProfitPromise" Name=""  RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="利润承诺" enus="Ask Profit Promise"></Text>
+  </Item>
+  <Item Id="Communication_AskProfitPromiseCHS" Name="Command_CommunicationAskProfitPromiseCHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="利润承诺(中文版)" enus="Ask Profit Promise(CHS)"/>
+  </Item>
+  <Item Id="Communication_AskProfitPromiseENG" Name="Command_CommunicationAskProfitPromiseENG" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="利润承诺(英文版)" enus="Ask Profit Promise(ENG)"/>
+  </Item>
+
+
+
+
+  <Item Id="Communication_MailSoCopyToCustomer" Name="" RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="通知订舱成功..." enus="Mail SO To..."></Text>
+  </Item>
+  <Item Id="Communication_MailSoCopyToCustomerCHS" Name="Command_CommunicationMailSOCopyToCustomerCHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户ADJ SO Copy(中文版)" enus="Mail ADJ SO Copy To Customer (CHS)"/>
+  </Item>
+  <Item Id="Communication_MailSoCopyToCustomerENG" Name="Command_CommunicationMailSOCopyToCustomerENG" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户ADJ SO Copy(英文版)" enus="Mail ADJ SO Copy To Customer (ENG)"/>
+  </Item>
+  <Item Id="Communication_MailSoConfirmationToCustomerCHS" Name="Command_MailSoConfirmationToCustomerCHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户订舱确认书(中文版)" enus="Mail So Confirmation To Customer (CHS)"/>
+  </Item>
+  <Item Id="Communication_MailSoConfirmationToCustomerENG" Name="Command_MailSoConfirmationToCustomerENG" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户订舱确认书(英文版)" enus="Mail So Confirmation To Customer (ENG)"/>
+  </Item>
+  <Item Id="Communication_MailSoConfirmationToAgent" Name="Command_MailSoConfirmationToAgent" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知代理订舱确认书" enus="Mail So Confirmation To Agent"/>
+  </Item>
+
+
+  <Item Id="All_Prints" Name="" RegisterSite="" Type="SubButton" ImageName="Print_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="打印" enus="Print"></Text>
+  </Item>
+  <Item Id="All_Print" Name="Command_ForSoPrint"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="打印订舱确认书" enus="Print"/>
+  </Item>
+  <Item Id="All_PrintOrder" Name="Command_ForSoPrintOrder" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="打印业务联单" enus="Print Order"/>
+  </Item>
+  <Item Id="All_PrintBookingConfirmation4NB" Name="Command_OceanExport_Print_BookingConfirmation4NB" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="打印订舱确认书(宁波)" enus="Print Booking Confirmation(NB)"/>
+  </Item>
+  <Item Id="Communication_OrderTruck" Name="Command_CommunicationOrderTruck" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="派车(&amp;T)" enus="Order Truck(&amp;T)"/>
+  </Item>
+
+  <Item Id="Communication_OrderCustoms" Name="Command_CommunicationOrderCustoms" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="报关(&amp;C)" enus="Order Customs(&amp;C)"/>
+  </Item>
+
+  <Item Id="Communication_AccInfo" Name="Command_CommunicationAccInfo" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;A)" enus="Acc Info(&amp;A)"></Text>
+  </Item>
+
+  <Item Id="ForSo_AgentDocs" Name="Command_CommunicationAgentDocs" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="分发文档" enus="Dispatch Documents"></Text>
+  </Item>
+
+  <Item Id="ForSo_OnBoard" Name="Command_ForSoOnBoard" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="装船" enus="On Board"></Text>
+  </Item>
+
+  <Item Id="ForSo_CfmAP" Name="Command_CfmAP"  RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag=""  >
+    <Text zhcn="Cfm AP" enus="Cfm AP"></Text>
+  </Item>
+  <Item Id="ForSo_CfmAR" Name="Command_CfmAR" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag=""  >
+    <Text zhcn="Cfm AR" enus="Cfm AR"></Text>
+  </Item>
+
+  <Item Id="ForSo_AcptRev" Name="Command_CommunicationAcptRev"  RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag=""  >
+    <Text zhcn="Acpt Rev D/C " enus="Acpt Rev D/C"></Text>
+  </Item>
+
+
+  <Item Id="Command_BLNO" Name=""  RegisterSite="" Type="SubButton" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增提单" enus="Add BL"></Text>
+  </Item>
+  <Item Id="Command_EmailCenterAddMBL" Name="Command_EmailCenterAddMBL" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="MBL" enus="Add MBL"/>
+  </Item>
+  <Item Id="Command_EmailCenterAddHBL" Name="Command_EmailCenterAddHBL" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="HBL" enus="Add HBL"/>
+  </Item>
+
+
+
+
+
+  <Item Id="Communication_AskCustomerForSI" Name="" RegisterSite=""  Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="通知客户补料" enus="Ask Customer For SI"></Text>
+  </Item>
+  <Item Id="Communication_AskCustomerForSICHS" ClickOperation="MBLHBL" Name="Command_CommunicationAskCustomerForSICHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户补料(中文版)" enus="Ask Customer For SI (CHS)"/>
+  </Item>
+  <Item Id="Communication_AskCustomerForSIENG" ClickOperation="MBLHBL" Name="Command_CommunicationAskCustomerForSIENG"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="通知客户补料(英文版)" enus="Ask Customer For SI (ENG)"/>
+  </Item>
+
+  <Item Id="ForSo_OnlineBkg" Name="Command_CommunicationOnlineBkg"   RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="电子订舱(&amp;B)" enus="Online Bkg(&amp;B)"></Text>
+  </Item>
+
+  <Item Id="ForSo_OnlineBkgConfirm" Name="Command_CommunicationOnlineConfirm"   RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="电子订舱确认(&amp;B)" enus="Online Bkg(&amp;B)"></Text>
+  </Item>
+
+  <Item Id="Command_CommunicationMailBooking" Name="Command_CommunicationMailBooking"   RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="邮件订舱(&amp;B)" enus="Mail Bkg(&amp;B)"></Text>
+  </Item>
+
+
+  <Item Id="Command_BookingFailure" Name=""   RegisterSite="" Type="SubButton" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="订舱失败" enus="Booking Failure"></Text>
+  </Item>
+  <Item Id="Command_FailureBlastingWarehouse" Name="Command_FailureBlastingWarehouse" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="爆仓" enus="Blasting Warehouse"/>
+  </Item>
+  <Item Id="Command_FailureCubicleType" Name="Command_FailureCubicleType" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="柜型" enus="Cubicle Type"/>
+  </Item>
+  <Item Id="Command_FailureShippingDate" Name="Command_FailureShippingDate" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="船期" enus="Shipping Date"/>
+  </Item>
+  <Item Id="Command_FailureOther" Name="Command_FailureOther" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="其他" enus="Other"/>
+  </Item>
+
+
+
+
+
+  <Item Id="Command_CancelBooking" Name=""   RegisterSite="" Type="SubButton" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消订舱" enus="Cancel Booking"></Text>
+  </Item>
+  <Item Id="Command_CancelSourcing" Name="Command_CancelSourcing" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="货源" enus="Sourcing"/>
+  </Item>
+  <Item Id="Command_CancelPrice" Name="Command_CancelPrice" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="价格" enus="Price"/>
+  </Item>
+  <Item Id="Command_CancelTrade" Name="Command_CancelTrade" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="贸易" enus="Trade"/>
+  </Item>
+  <Item Id="Command_CancelOther" Name="Command_CancelOther" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="其他" enus="Other"/>
+  </Item>
+
+  <Item Id="Command_RestoreBooking" Name="Command_RestoreBooking" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="恢复订舱" enus="Restore Booking"/>
+  </Item>
+
+  <Item Id="Command_ClerkRestoreBooking" Name="Command_ClerkRestoreBooking" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="恢复订舱" enus="Restore Booking"/>
+  </Item>
+  <!--海进按钮集合******************************************************************************************************************************-->
+  <Item Id="OceanImportDownload" Name="OceanImport_Download"  RegisterSite="" Type="Button" ImageName="Down_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="业务下载" enus="DownLoad" />
+  </Item>
+
+  <Item Id="OceanImportEdit" Name="OceanImport_Edit"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;E)" enus="Edit(&amp;E)" />
+  </Item>
+
+  <Item Id="OceanImportCancel" Name="OceanImport_Cancel"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消" enus="Cancel" />
+  </Item>
+
+  <Item Id="OceanImportTransfer" Name="OceanImport_Transfer"  RegisterSite="" Type="Button" ImageName="return_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="业务转移" enus="Transfer" />
+  </Item>
+
+
+
+  <Item Id="OceanImportPrints" Name="" RegisterSite="" Type="SubButton" ImageName="Print_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="打印(&amp;P)" enus="Print(&amp;P)"></Text>
+  </Item>
+  <Item Id="OceanImportPrintArrivalNotice" Name="OceanImport_PrintArrivalNotice"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="到港通知书" enus="Arrival Notice"/>
+  </Item>
+  <Item Id="OceanImportReleaseOrder" Name="OceanImport_ReleaseOrder"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="放货通知书" enus="Release Order"/>
+  </Item>
+  <Item Id="OceanImportPrintProfit" Name="OceanImport_PrintProfit"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="利润表" enus="Profit"/>
+  </Item>
+  <Item Id="OceanImportPrintWorkSheet" Name="OceanImport_PrintWorkSheet"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="工作表" enus="Work Sheet"/>
+  </Item>
+  <Item Id="OceanImportPrintForwardingBill" Name="OceanImport_PrintForwardingBill"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="货代提单" enus="Forwarding Bill"/>
+  </Item>
+  <Item Id="OceanImportPrintExportBusinessInfo" Name="OceanImport_PrintExportBusinessInfo"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="出口业务信息报表" enus="Export Business Info"/>
+  </Item>
+
+  <Item Id="OceanImportBill" Name="OceanImport_Bill"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;A)" enus="Acc Info(&amp;A)" />
+  </Item>
+
+  <Item Id="OceanImportCargoBook" Name="OceanImport_CargoBook"  RegisterSite="" Type="Button" ImageName="systemMemo.png" BeginGroup="true" Tag="" >
+    <Text zhcn="提货通知书" enus="Pick Up" />
+  </Item>
+
+
+
+  <!--<Item Id="OceanImportReleaseCargo" Name="" RegisterSite="" Type="SubButton" ImageName="Check_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="放货管理" enus="Release Cargo"></Text>
+  </Item>-->
+  <!--<Item Id="OceanImportReleaseBL" Name="OceanImport_ReleaseBL"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="放单" enus="ReleaseBL"/>
+  </Item>
+  <Item Id="OceanImportCancelReleaseBL" Name="OceanImport_CancelReleaseBL"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="取消放单" enus="Cancel ReleaseBL"/>
+  </Item>-->
+  <Item Id="OceanImportReceiveRN" Name="OceanImport_ReceiveRN"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="签收放单" enus="Receive RBL"/>
+  </Item>
+  <Item Id="OceanImportApplyReleaseCargo" Name="OceanImport_ApplyReleaseCargo"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="申请放货" enus="Apply Release Cargo"/>
+  </Item>
+  <Item Id="OceanImportAgreeRC" Name="OceanImport_AgreeRC"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="同意放货" enus="Agree RC"/>
+  </Item>
+  <Item Id="OceanImportDelivery" Name="OceanImport_Delivery"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="放货" enus="Release Cargo"/>
+  </Item>
+  <Item Id="OceanImportExceptionReleaseRC" Name="OceanImport_ExceptionReleaseRC"  RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="异常放货申请" enus="Exception Release RC"/>
+  </Item>
+  <Item Id="OceanImportCancelApplyRC" Name="OceanImport_CancelApplyRC"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="取消申请放货" enus="Cancel ApplyRC"/>
+  </Item>
+  <Item Id="OceanImportCancelAgreeRC" Name="OceanImport_CancelAgreeRC"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="取消同意放货" enus="Cancel Agree RC"/>
+  </Item>
+  <Item Id="OceanImportCancelDelivery" Name="OceanImport_CancelDelivery"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="取消放货" enus="Cancel Delivery"/>
+  </Item>
+
+  <Item Id="Communication_MailANTo" Name="" RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="发送到港通知..." enus="Mail A/N To..."></Text>
+  </Item>
+  <Item Id="Communication_MailANToCustomerCHS" Name="OceanImport_MailANToCustomerCHS" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="发送到港通知书 (中文版)" enus="ARRIVAL NOTICE (CHS)"/>
+  </Item>
+  <Item Id="Communication_MailANToCustomerENG" Name="OceanImport_MailANToCustomerENG" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="发送到港通知书 (英文版)" enus="ARRIVAL NOTICE (ENG)"/>
+  </Item>
+
+
+  <Item Id="Communication_MailPickUpToCustomer" Name="" RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="发送提货通知..." enus="Mail Pick/Up To..."></Text>
+  </Item>
+  <Item Id="Communication_MailPickUpToCustomerCHS" Name="OceanImport_MailPickUpToCustomerCHS" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="发送提货通知书 (中文版)" enus="DELIVERY ORDER (CHS)"/>
+  </Item>
+  <Item Id="Communication_MailPickUpToCustomerENG" Name="OceanImport_MailPickUpToCustomerENG" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="发送提货通知书 (英文版)" enus="DELIVERY ORDER (ENG)"/>
+  </Item>
+
+
+  <Item Id="OceanImportAddOrder" Name="OceanImport_AddOrder"  RegisterSite="" Type="Button" ImageName="Add.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增" enus="Add" />
+  </Item>
+
+  <Item Id="OceanImportCopyOiBusiness" Name="OceanImport_CopyOiBusiness"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)"></Text>
+  </Item>
+
+
+  <Item Id="OceanImportOiPayment" Name="OceanImport_OiPayment"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="付款" enus="Payment"></Text>
+  </Item>
+
+  <Item Id="OceanImportMailPayNt" Name="OceanImport_MailPayNt"  RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="催款和正本提单(ENG)" enus="PAYMENT REQUEST &amp; OBL REQUEST (ENG)"></Text>
+  </Item>
+
+  <Item Id="OceanImportNoticeRelease" Name="OceanImport_NoticeRelease"  RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="催代理放单" enus="RBLD REQUEST(ENG)"></Text>
+  </Item>
+
+
+
+  <Item Id="Communication_MailCHS" Name="" RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="Mail(CHS)" enus="Mail(CHS)"></Text>
+  </Item>
+  <Item Id="Communication_MailENG" Name="" RegisterSite="" Type="SubButton" ImageName="airmail.png" BeginGroup="true" Tag="" >
+    <Text zhcn="Mail(ENG)" enus="Mail(ENG)"></Text>
+  </Item>
+
+  <Item Id="Communication_MailOverseaAgentCHS" Name="OceanImport_MailOverseaAgentCHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="催代理文件 (中文版)" enus="DOCUMENTION REQUEST (CHS)"/>
+  </Item>
+  <Item Id="Communication_MailOverseaAgentENG" Name="OceanImport_MailOverseaAgentENG" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="催代理文件 (英文版)" enus="DOCUMENTION REQUEST (ENG)"/>
+  </Item>
+
+
+
+  <Item Id="Communication_MailCustomrequest" Name="OceanImport_MailCustomrequest" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="催清关文件(英文版)" enus="CUSTOM DOCUMENTATION REQUEST(ENG)"/>
+  </Item>
+
+
+  <Item Id="Communication_MailEtachange" Name="OceanImport_MailEtachange" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="ETA 变更通知(英文版)" enus="ETA CHANGE NOTICE(ENG)"/>
+  </Item>
+
+  <Item Id="Communication_MailContaineravailableforpickup" Name="OceanImport_MailContaineravailableforpickup" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="可以提柜通知(英文版)" enus="CONTAINER AVAILABLE FOR PICK UP(ENG)"/>
+  </Item>
+
+  <Item Id="Communication_MailLfdnotice" Name="OceanImport_MailLfdnotice" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="LFD 通知(英文版)" enus="LFD NOTICE(ENG)"/>
+  </Item>
+
+  <Item Id="Communication_MailContainerpickupreminder" Name="OceanImport_MailContainerpickupreminder" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="提柜提醒(英文版)" enus="CONTAINER PICK UP REMINDER(ENG)"/>
+  </Item>
+
+  <Item Id="Communication_MailEmptyreturnnotice" Name="OceanImport_MailEmptyreturnnotice" RegisterSite="" Type="Button" ImageName="airmail.png" BeginGroup="false" Tag="">
+    <Text zhcn="还空提醒(英文版)" enus="EMPTY RETURN REMINDER(ENG)"/>
+  </Item>
+
+
+  <!--空运出口的按钮******************************************************************************************************************************-->
+
+
+  <Item Id="AirExportAddData" Name="AirExport_AddData"  RegisterSite="" Type="Button" ImageName="Add.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增(&amp;A)" enus="Add(&amp;A)" />
+  </Item>
+
+  <Item Id="AirExportCopyData" Name="AirExport_CopyData"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)" />
+  </Item>
+
+  <Item Id="AirExportEditData" Name="AirExport_EditData"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;O)" enus="Edit(&amp;O)" />
+  </Item>
+
+  <Item Id="AirExportCancelData" Name="AirExport_CancelData"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消(&amp;D)" enus="Cancel(&amp;D)"></Text>
+  </Item>
+
+  <Item Id="AirExportReplyAgent" Name="AirExport_ReplyAgent" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="申请代理" enus="Apply Agent"></Text>
+  </Item>
+
+  <Item Id="AirExportOpenBl" Name="AirExport_OpenBl" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="提单" enus="Open BL"></Text>
+  </Item>
+
+  <Item Id="AirExportOpenBill" Name="AirExport_OpenBill" RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单" enus="Acc Info"></Text>
+  </Item>
+
+  <Item Id="AirExportPrints" Name="" RegisterSite="" Type="SubButton" ImageName="Print_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="打印(&amp;P)" enus="Print(&amp;P)"></Text>
+  </Item>
+  <Item Id="AirExportPrintOrder" Name="AirExport_PrintOrder"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="业务联单" enus="Print Order"/>
+  </Item>
+
+  <!--空运进口的按钮******************************************************************************************************************************-->
+  <Item Id="AirImportAddBooking" Name="AirImport_AddBooking"  RegisterSite="" Type="Button" ImageName="Add.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增(&amp;A)" enus="Add(&amp;A)" />
+  </Item>
+
+  <Item Id="AirExportCopyBooking" Name="AirExport_CopyBooking"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)" />
+  </Item>
+
+  <Item Id="AirImportAiDownLoad" Name="AirImport_AiDownLoad"  RegisterSite="" Type="Button" ImageName="Down_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="业务下载" enus="DownLoad" />
+  </Item>
+
+  <Item Id="AirImportEditBooking" Name="AirImport_EditBooking"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;E)" enus="Edit(&amp;E)" />
+  </Item>
+
+  <Item Id="AirImportCancelBooking" Name="AirImport_CancelBooking"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消" enus="Cancel" />
+  </Item>
+
+  <Item Id="AirImportBusinessTransfer" Name="AirImport_BusinessTransfer"  RegisterSite="" Type="Button" ImageName="return_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="业务转移" enus="Transfer" />
+  </Item>
+
+  <Item Id="AirImportPrints" Name="" RegisterSite="" Type="SubButton" ImageName="Print_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="打印" enus="Print"></Text>
+  </Item>
+  <Item Id="AirImportPrintArrivalNotice" Name="AirImport_PrintArrivalNotice"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="到港通知书" enus="Arrival Notice"/>
+  </Item>
+  <Item Id="AirImportPrintReleaseOrder" Name="AirImport_PrintReleaseOrder"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="放货通知书" enus="Release Order"/>
+  </Item>
+  <Item Id="AirImportPrintProfit" Name="AirImport_PrintProfit"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="利润表" enus="Profit"/>
+  </Item>
+
+  <Item Id="AirImportPrintAuthority" Name="AirImport_PrintAuthority"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="Authority To Make Entry" enus="Authority To Make Entry"/>
+  </Item>
+
+  <Item Id="AirImportOpenBill" Name="AirImport_OpenBill"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;B)" enus="Acc Info(&amp;B)" />
+  </Item>
+
+  <Item Id="AirImportOpenCargoBook" Name="AirImport_OpenCargoBook"  RegisterSite="" Type="Button" ImageName="systemMemo.png" BeginGroup="true" Tag="" >
+    <Text zhcn="提货通知书" enus="Pick Up" />
+  </Item>
+
+  <Item Id="AirImportAiDelivery" Name="AirImport_AiDelivery"  RegisterSite="" Type="Button" ImageName="Check_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="放货" enus="Release Cargo"/>
+  </Item>
+
+  <Item Id="AirImportCancelDelivery" Name="AirImport_CancelDelivery"  RegisterSite="" Type="Button" ImageName="return_16.png" BeginGroup="false" Tag="">
+    <Text zhcn="取消放货" enus="Cancel Delivery"/>
+  </Item>
+
+  <!--询价的按钮******************************************************************************************************************************-->
+  <Item Id="Confirm" Name="Command_ConfirmInquirePriceToShipment"  RegisterSite="" Type="Button" ImageName="Transfer_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="确认(&amp;C)" enus="Confirm(&amp;C)"></Text>
+  </Item>
+  <Item Id="Un-Confirm" Name="Command_Un_ConfirmInquirePriceToShipment"  RegisterSite="" Type="Button" ImageName="return_16.png" BeginGroup="true" Tag="" Visible="false" >
+    <Text zhcn="取消确认(&amp;U)" enus="Un-Confirm(&amp;U)"></Text>
+  </Item>
+  <Item Id="NewInquirePrice" Name="Command_NewInquirePrice"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新询价(&amp;N)" enus="NewInquirePrice(&amp;N)"></Text>
+  </Item>
+
+  <!--邮件中心的按钮******************************************************************************************************************************-->
+  <Item Id="AddNew" Name=""   Type="SubButton" ImageName="" BeginGroup="true" Tag="" Width="34" >
+    <Text zhcn="新增(&amp;N)" enus="New"/>
+    <ToolTip zhcn="新增业务" enus="New Business" />
+  </Item>
+  <Item Id="AddOE" Name="Command_MailLink4in1_EmailAddSoForOE"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="海出订舱" enus="Ocean Export"/>
+  </Item>
+  <Item Id="AddOI" Name="Command_MailLink4in1_EmailAddAI"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="海进业务" enus="Ocean Import"/>
+  </Item>
+  <Item Id="AddAE" Name="Command_MailLink4in1_EmailAddAE"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="空运出口" enus="Air Export"/>
+  </Item>
+  <Item Id="AddAI" Name="Command_CustomerEmailAddAI"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="空运进口" enus="Air Import"/>
+  </Item>
+  <Item Id="AddOther" Name="Command_MailLink4in1_EmailAddOther"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="其它" enus="Other"/>
+  </Item>
+  <Item Id="Associate" Name="Command_MailLink4in1_OpenAssistantPartWithNormal"  RegisterSite="" Type="Button" ImageName="" BeginGroup="true" Tag="" Width="34">
+    <Text zhcn="关联(&amp;A)" enus="Associate"/>
+    <ToolTip zhcn="关联选中的业务" enus="Associate" />
+  </Item>
+  <Item Id="AssociateNormal" Name=""  RegisterSite="" Type="SubButton" ImageName="down.jpg" BeginGroup="false" Tag="" Width="10">
+    <Text zhcn="" enus=""/>
+  </Item>
+  <Item Id="AssociateSO" Name="Command_MailLink4in1_OpenAssistantPartWithStageSO"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="关联并设为SO阶段" enus="Associate and set as stage SO"/>
+  </Item>
+  <Item Id="AssociateSI" Name="Command_MailLink4in1_OpenAssistantPartWithStageSI"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="关联并设为SI阶段" enus="Associate and set as stage SI"/>
+  </Item>
+  <Item Id="Scope" Name="Command_MailLink4in1_EmailSelectScope"  RegisterSite="" Type="ComboBox" ImageName="" BeginGroup="false" Tag="FillScope" Width="70">
+    <Text zhcn="范围:" enus="Scope:"/>
+    <ToolTip zhcn="选择操作范围" enus="Choose the Scope" />
+  </Item>
+
+  <Item Id="txtQuery" Name="Command_MailLink4in1_EmailQuery"  RegisterSite="" Type="TextBox" ImageName="" BeginGroup="false" Tag="Query" Width="120">
+    <Text zhcn="搜索单号或客户" enus="Search NO or Customer"/>
+    <ToolTip zhcn="搜索单号或客户" enus="Search NO or Customer" />
+  </Item>
+  <Item Id="btnAdvanceQuery" Name="Command_MailLink4in1_EmailAdvanceQuery"   RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="" Width="15">
+    <Text zhcn="..." enus="..."/>
+    <ToolTip zhcn="高级搜索" enus="Advance Search" />
+  </Item>
+
+  <Item Id="AllocateSO" Name="Command_EmailCenter_AllocateSO"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="分配SO" enus="Allocate SO"/>
+  </Item>
+  <Item Id="UploadMBL" Name="Command_EmailCenter_UploadMBL"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="上传MBL" enus="Upload MBL"/>
+  </Item>
+  <Item Id="UploadAP" Name="Command_EmailCenter_UploadAP"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="上传A/P" enus="Upload A/P"/>
+  </Item>
+
+  <Item Id="UploadAN" Name="Command_EmailCenter_UploadAN"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="上传A/N" enus="Upload A/N"/>
+  </Item>
+
+  <Item Id="Operation" Name=""  Type="SubButton" ImageName="" BeginGroup="true" Tag="">
+    <Text zhcn="操作" enus="Operation"/>
+    <ToolTip zhcn="操作业务" enus="Operation business" />
+  </Item>
+  <Item Id="AllocateSO" Name="Command_EmailCenter_AllocateSO"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="分配SO" enus="Allocate SO"/>
+  </Item>
+  <Item Id="UploadMBL" Name="Command_EmailCenter_UploadMBL"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="上传MBL" enus="Upload MBL"/>
+  </Item>
+  <Item Id="UploadAP" Name="Command_EmailCenter_UploadAP" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="上传A/P" enus="Upload A/P"/>
+  </Item>
+  <Item Id="btnSubmit" Name="Command_CarrierSO_EmailSubmit"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="保存" enus="Save"/>
+    <ToolTip zhcn="保存更改的业务" enus="Save the update business" />
+  </Item>
+  <Item Id="Company" Name="Command_CarrierSO_EmailSelectCompany" RegisterSite="" Type="ComboBox" ImageName="" BeginGroup="false" Tag="FillCompany">
+    <Text zhcn="操作口岸:" enus="Branch:"/>
+    <ToolTip zhcn="选择操作口岸" enus="check the Companies" />
+  </Item>
+  <Item Id="Setting" Name="" RegisterSite=""  Type="SubButton" ImageName="" BeginGroup="true" Tag="MailLink4CarrierSO">
+    <Text zhcn="设置" enus="Setting"/>
+    <ToolTip zhcn="设置" enus="Setting" />
+  </Item>
+  <Item Id="AutoAllocateSO" Name="Command_CarrierSO_EmailAutoFillSO"  RegisterSite="" Type="CheckBox" ImageName="" BeginGroup="false" Tag="MailLink4CarrierSO">
+    <Text zhcn="自动分配SO号" enus="Auto-Fill SO Number"/>
+  </Item>
+  <Item Id="NotifyCS" Name="Command_CarrierSO_EmailNotifyCS"  RegisterSite="" Type="CheckBox" ImageName="" BeginGroup="false" Tag="MailLink4CarrierSO">
+    <Text zhcn="通知客服" enus="Notify C/S"/>
+  </Item>
+
+  <Item Id="AccountInfo" Name="Command_CarrierAP_CommunicationAccInfo"  RegisterSite="" Type="SubButton" ImageName="" BeginGroup="true" Tag="MailLink4CarrierAP">
+    <Text zhcn="账单" enus="Account Info."/>
+    <ToolTip zhcn="查看账单" enus="Open bill" />
+  </Item>
+  <Item Id="btnOpenSO" Name="Command_NewBooking_OpenSO"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="打开" enus="Open"/>
+    <ToolTip zhcn="打开订舱单" enus="Open SO" />
+  </Item>
+
+  <Item Id="btnSave" Name="Command_SaveInquireRate" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="" >
+    <Text zhcn="保存" enus="Save" />
+    <ToolTip zhcn="保存询价" enus="Save InquireRate" />
+  </Item>
+  <Item Id="btnOperaionNO" Name=""  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="" >
+    <Text zhcn="业务号" enus="OperationNO" />
+  </Item>
+
+  <Item Id="btnSave" Name="Command_SaveFeeList"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="" >
+    <Text zhcn="保存" enus="Save" />
+    <ToolTip zhcn="保存费用" enus="Save Fee" />
+  </Item>
+  <Item Id="btnOpenOrder" Name="Command_OpenOrder"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="" >
+    <Text zhcn="打开" enus="Open" />
+    <ToolTip zhcn="打开订舱单" enus="Open Order" />
+  </Item>
+  <!--其他业务******************************************************************************************************************************-->
+  <Item Id="OtherBusinessAddData" Name="OtherBusiness_AddData"  RegisterSite="" Type="Button" ImageName="Add.png" BeginGroup="true" Tag="" >
+    <Text zhcn="新增(&amp;A)" enus="Add(&amp;A)" />
+  </Item>
+
+  <Item Id="OtherBusinessCopyData" Name="OtherBusiness_CopyData"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)" />
+  </Item>
+
+  <Item Id="OtherBusinessEditData" Name="OtherBusiness_EditData"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;E)" enus="Edit(&amp;E)" />
+  </Item>
+
+  <Item Id="OtherBusinessCancelData" Name="OtherBusiness_CancelData"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消" enus="Cancel" />
+  </Item>
+
+  <Item Id="OtherBusinessBill" Name="OtherBusiness_Bill"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;B)" enus="Acc Info(&amp;B)" />
+  </Item>
+
+  <Item Id="OtherBusinessVerifiSheet" Name="OtherBusiness_VerifiSheet"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="核销单" enus="VerifiSheet" />
+  </Item>
+
+  <Item Id="OtherBusinessPickUp" Name="OtherBusiness_PickUp"  RegisterSite="" Type="Button" ImageName="" BeginGroup="true" Tag="" >
+    <Text zhcn="拖车服务" enus="PickUp" />
+  </Item>
+
+  <Item Id="OtherBusinessPrints" Name="" RegisterSite="" Type="SubButton" ImageName="Print_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="打印(&amp;P)" enus="Print(&amp;P)"></Text>
+  </Item>
+  <Item Id="OtherBusinessPrintOrder" Name="OtherBusiness_PrintOrder"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="业务联系单" enus="Print Order"/>
+  </Item>
+  <Item Id="OtherBusinessProfit" Name="OtherBusiness_Profit"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="利润表" enus="Profit"/>
+  </Item>
+
+
+  <Item Id="Communication_MailCustomerAskForConfirmSICHS" ClickOperation="MBLHBL" Name="Command_Communication_MailCustomerAskForConfirmSICHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="向客户确认补料(中文版)" enus="Mail BL Copy To Cusotmer(CHS)"/>
+  </Item>
+  <Item Id="Communication_MailCustomerAskForConfirmSIENG" ClickOperation="MBLHBL" Name="Command_Communication_MailCustomerAskForConfirmSIENG"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="向客户确认补料(英文版)" enus="Mail BL Copy To Cusotmer(ENG)"/>
+  </Item>
+  <Item Id="BLCommand_MailAllBLCopyToAgentCHS" Name="Command_BLCommand_MailAllBLCopyToAgentCHS" RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="向代理确认提单(中文版)" enus="Mail All BL Copy To Agent(CHS)"/>
+  </Item>
+  <Item Id="BLCommand_MailAllBLCopyToAgentENG" Name="Command_BLCommand_MailAllBLCopyToAgentENG"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="向代理确认提单(英文版)" enus="Mail All BL Copy To Agent(ENG)"/>
+  </Item>
+  <Item Id="MailCustomerAskForSiCHS" Name="Command_MailCustomerAskForSiCHS"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="提醒客户补料(中文版)" enus="Ask Customer For SI (CHS)"/>
+  </Item>
+  <Item Id="MailCustomerAskForSiENG" Name="Command_MailCustomerAskForSiENG"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="提醒客户补料(英文版)" enus="Ask Customer For SI (CHS)"/>
+  </Item>
+  <Item Id="MailSalesForConfirmDebitFeesCHS" Name="Command_MailSalesForConfirmDebitFeesCHS"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="确认费用(中文版)" enus="Confirm Debit Fees(CHS)"/>
+  </Item>
+  <Item Id="MailSalesForConfirmDebitFeesENG" Name="Command_MailSalesForConfirmDebitFeesENG"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="确认费用(英文版)" enus="Confirm Debit Fees(ENG)"/>
+  </Item>
+
+  <!--其他业务-电商业务******************************************************************************************************************************-->
+  <Item Id="OBECADD" Name="Command_Other_ECommerce_AddData"  RegisterSite="" Type="Button" ImageName="" BeginGroup="false" Tag="">
+    <Text zhcn="新增(&amp;A)" enus="Add(&amp;A)"/>
+  </Item>
+  <Item Id="OBECCOPY" Name="Command_Other_ECommerce_CopyData"  RegisterSite="" Type="Button" ImageName="Copy_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="复制(&amp;O)" enus="Copy(&amp;O)" />
+  </Item>
+
+  <Item Id="OBECEDIT" Name="Command_Other_ECommerce_EditData"  RegisterSite="" Type="Button" ImageName="Edit_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="编辑(&amp;E)" enus="Edit(&amp;E)" />
+  </Item>
+
+  <Item Id="OBECCANCEL" Name="Command_Other_ECommerce_CancelData"  RegisterSite="" Type="Button" ImageName="Cancel_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="取消" enus="Cancel" />
+  </Item>
+
+  <Item Id="OBECBILL" Name="Command_Other_ECommerce_Bill"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="账单(&amp;B)" enus="Acc Info(&amp;B)" />
+  </Item>
+
+  <Item Id="OBECVERIFISHEET" Name="Command_Other_ECommerce_VerifiSheet"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="核销单" enus="VerifiSheet" />
+  </Item>
+
+  <Item Id="CSPBookingDownload" Name="Command_Common_CSPBooking_Download"  RegisterSite="" Type="Button" ImageName="center_16.png" BeginGroup="true" Tag="" >
+    <Text zhcn="下载CSP订舱单" enus="Download CSP Booking" />
+  </Item>
+  
+</Columns>

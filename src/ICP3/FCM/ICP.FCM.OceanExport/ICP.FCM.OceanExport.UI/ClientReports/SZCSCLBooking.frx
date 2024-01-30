@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="08/15/2013 17:07:17" ReportInfo.Modified="08/29/2013 14:43:18" ReportInfo.CreatorVersion="2013.1.8.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  { 
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="Notify" DataType="System.String"/>
+      <Column Name="SONO" DataType="System.String"/>
+      <Column Name="ContractNO" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="PaymentSettledAtCN" DataType="System.Boolean"/>
+      <Column Name="PaymentSettledAtHK" DataType="System.Boolean"/>
+      <Column Name="CYCY" DataType="System.Boolean"/>
+      <Column Name="CYDR" DataType="System.Boolean"/>
+      <Column Name="DRDR" DataType="System.Boolean"/>
+      <Column Name="BreakBulk" DataType="System.Boolean"/>
+      <Column Name="Palletized" DataType="System.Boolean"/>
+      <Column Name="OriginalBL" DataType="System.Boolean"/>
+      <Column Name="SeaWayBill" DataType="System.Boolean"/>
+      <Column Name="TelexRelease" DataType="System.Boolean"/>
+      <Column Name="ShippingMarks" DataType="System.String"/>
+      <Column Name="NumberOfGoods" DataType="System.String"/>
+      <Column Name="Package" DataType="System.String"/>
+      <Column Name="DescriptionOfGoods" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.String"/>
+      <Column Name="Measurements" DataType="System.String"/>
+      <Column Name="GP20" DataType="System.String"/>
+      <Column Name="GP40" DataType="System.String"/>
+      <Column Name="HQ40" DataType="System.String"/>
+      <Column Name="HQ45" DataType="System.String"/>
+      <Column Name="Anothers" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="260">
+    <DataBand Name="Data1" Width="907.2" Height="699.3">
+      <TableObject Name="Table1" Top="47.25" Width="907.2" Height="614.25">
+        <TableColumn Name="Column1" Width="94.5"/>
+        <TableColumn Name="Column2" Width="122.85"/>
+        <TableColumn Name="Column3" Width="75.6"/>
+        <TableColumn Name="Column4" Width="103.95"/>
+        <TableColumn Name="Column5" Width="85.05"/>
+        <TableColumn Name="Column6" Width="85.05"/>
+        <TableColumn Name="Column7" Width="85.05"/>
+        <TableColumn Name="Column8" Width="94.5"/>
+        <TableColumn Name="Column9" Width="160.65"/>
+        <TableRow Name="Row1">
+          <TableCell Name="Cell1" Border.Lines="Left, Top" Text="Shipper:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Border.Lines="Right, Top, Bottom" Text="CITYOCEAN LOGISTICS CO. LTD" ColSpan="3" RowSpan="3"/>
+          <TableCell Name="Cell3" Border.Lines="All"/>
+          <TableCell Name="Cell4" Border.Lines="All"/>
+          <TableCell Name="Cell5" Border.Lines="Top" Text="Export Licence No." Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell26" Border.Lines="Left, Top" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell31" Border.Lines="Right, Top" ColSpan="3"/>
+          <TableCell Name="Cell36" Border.Lines="Right, Top"/>
+          <TableCell Name="Cell41" Border.Lines="Right, Top"/>
+        </TableRow>
+        <TableRow Name="Row2">
+          <TableCell Name="Cell6" Border.Lines="Left" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Border.Lines="All"/>
+          <TableCell Name="Cell8" Border.Lines="All"/>
+          <TableCell Name="Cell9" Border.Lines="All"/>
+          <TableCell Name="Cell10" Text="S/O No." Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell27" Border.Lines="Left" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell32" Border.Lines="Right" ColSpan="3"/>
+          <TableCell Name="Cell37" Border.Lines="Right"/>
+          <TableCell Name="Cell42" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row3">
+          <TableCell Name="Cell11" Border.Lines="Left, Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="All"/>
+          <TableCell Name="Cell13" Border.Lines="All"/>
+          <TableCell Name="Cell14" Border.Lines="All"/>
+          <TableCell Name="Cell15" Border.Lines="Bottom" Text="Service Contract No.:" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell28" Border.Lines="Left, Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell33" Border.Lines="Right, Bottom" Text="[ReportSource.ContractNO]" ColSpan="3"/>
+          <TableCell Name="Cell38" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell43" Border.Lines="Right, Bottom"/>
+        </TableRow>
+        <TableRow Name="Row4">
+          <TableCell Name="Cell16" Border.Lines="Left, Top" Text="Consignee:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Border.Lines="Right, Top, Bottom" Text="To Order" ColSpan="3" RowSpan="3"/>
+          <TableCell Name="Cell18"/>
+          <TableCell Name="Cell19"/>
+          <TableCell Name="Cell160" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell29" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell34" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell39" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell44" Border.Lines="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row5">
+          <TableCell Name="Cell21" Border.Lines="Left" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell22"/>
+          <TableCell Name="Cell23"/>
+          <TableCell Name="Cell24"/>
+          <TableCell Name="Cell161" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold">
+            <PictureObject Name="Picture1" Left="9.45" Width="47.25" Height="37.8" Border.Lines="Left, Right" Image="iVBORw0KGgoAAAANSUhEUgAAACoAAAAgCAYAAABkWOo9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAScSURBVFhH7ZZ7TFtVHMcxJm7GF2zzMXV/LTHOJTr1Hx9RExPjH/vDP2ZmjH8AAoOColLdZA/nFipMNiqFAS2vDcgKLQIymKB0wDqerQyBbQXLawgdz/FogdLC198pbe3jLnRbSSDZTT6599x7zvl97rnnnPvzoQPrBB9sCvhpzXJf1Nt4TdQvIBa+gXHwDYijcqzL8+Uye8bqOD/zjDsSXQ50gpPHA+PhG3YaL0bn4N3jOXj/2Bk771B55/50+O4T4eGgX6juz5x9sJflisvwSNSPBBlbwkR4+gsxJ89EpOK1wzkQ1WmhNcxh0DBvp0s/B6GyC68fysLWiGSqn+bWfkt4KvyCE6yx3IVXFGUNHws8he38dOwVVyBSeglfn6txIyJHAV7G75A1/4P5pSUsAXZY+XL3TcQUK8E/p+BsH3q2Ch/Gy7EtMoVG/KSb7IqiT9BnYvCkSrROmzC8YMaYlREHtDNG5LfcwG8qDYwk5nrMLi5hzOTcxpGbCyYoh2ewJ6UMj36eYJlKjh4rijKe8j+OmDIlxingAmEmTISB0FsZmDND3jaI0tuIzhHTxBQH7D7rY5CaRUoVli9416ICqygLaKDR0QyNoFrTiz+u96GSkP/dg5N/tqG4udNNdJHKrX0DKG5qRUH9Xxby61sga7yCivZOqG7ocGVgGMp/RxGYUe490QmjCcKiKuw+KsHbhzPwFvFmtAS7BbmQNnVhzkXUZF5EoaIOUcIs8OLSLITGSRARnwFBdhHyqpqQd1ENcW0HPjpVaJmjXhEdml9AVPZ5bAtLwMbgRGwIFuGRICF2fZ+JM809mHERNVNZN6WHRjeOjqFxtBPsfI24Tmh0E7hGqIf1CM2+QGsi/t5FZ4kB4wK+pA6f5CXhgZBU+OwT48GQFOyIPot0VT8mSGye6tlgc3mGYHPxFjFhPdvmJnt5xhjxXX4lxWQ/jxNODnclOkii32Sdx7OhCdgQlIiHgpOwkTbyF/hiHC1VobqzH3WdvS704bILDdp+aEfGMEsv5ijK4rk63LGopUMSjS2owHsHkvEKPwUv81Oxi38aHxyR4AfaJ6W1rSisabYjq1EhUVaJIxI5DqYVWDiUlo+YTBku1KlocS6ujqieOlbRaMgb2pBX345cIq++Db+qrqKxV4fusSn0jt6y0zM6iUtXu1FEK12uVNspqVejpbtvdUaU7aNsD2VnNr/Y3LPBykaCPXfFNk9vV5/1d0+iywlDHHh5F9ExbcQUvb2eYCubXU86wMps8bgebA8wuNS11Wd9Mdi1etyAT1NL7UmKo8fKotZ//Y4DWfgkpRShmeUI4yA8owzHZAo00D/dREEdDzYHZY0d+DanHBGZZZztWb97RMXYHiWxxFtOF//3WFGUYUnvHBv6u7PZX4BX90sgbuqFjv7pk7TJ2+ifN+EraS2eCxdhM0s2ONpbYLHo67FEyB7LikeinrKVl4g3BIXYm1yCz5KK7HycVIKXDuZiU4iQM4XzBK+KLmf51gTYYaSc7nO08wSviq4m90W9jZPo82HxaxYn0R8rqtcsTqJiNSWva5T1KbpO4Ly5xvDBf6ARLFI1tLeeAAAAAElFTkSuQmCC"/>
+          </TableCell>
+          <TableCell Name="Cell30" Border.Lines="Right" Text="中 海 集 裝 箱 運 輸(香港) 有 限 公 司深圳办事处" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell35" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell40" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell45" Border.Lines="Right" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row6">
+          <TableCell Name="Cell46" Border.Lines="Left, Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell47"/>
+          <TableCell Name="Cell48"/>
+          <TableCell Name="Cell49"/>
+          <TableCell Name="Cell159" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell51" Border.Lines="Right" Text="China Shipping Container Lines (HK) Co., Ltd shenzhen office" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="4"/>
+          <TableCell Name="Cell52" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell53" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell54" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row7">
+          <TableCell Name="Cell55" Border.Lines="Left, Top" Text="Norify Party:" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell56" Border.Lines="Right, Top, Bottom" Text="To Order" ColSpan="3" RowSpan="3"/>
+          <TableCell Name="Cell57"/>
+          <TableCell Name="Cell58"/>
+          <TableCell Name="Cell156" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell60" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell61" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell62" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell63" Border.Lines="Right" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row8">
+          <TableCell Name="Cell64" Border.Lines="Left" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell65"/>
+          <TableCell Name="Cell66"/>
+          <TableCell Name="Cell67"/>
+          <TableCell Name="Cell157" Border.Lines="Right" Text="hk office Tel:(852) 28153800       Fax: (852)28541928" Font="Arial, 10pt, style=Bold" ColSpan="5"/>
+          <TableCell Name="Cell69" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell70" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell71" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell72" Border.Lines="Right" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row9">
+          <TableCell Name="Cell73" Border.Lines="Left, Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell74"/>
+          <TableCell Name="Cell75"/>
+          <TableCell Name="Cell76"/>
+          <TableCell Name="Cell155" Border.Lines="Right, Bottom" Text="sz office Tel:(755)88269392/9390    Fax:(755)88269801/02/03/08" Font="Arial, 10pt, style=Bold" ColSpan="5"/>
+          <TableCell Name="Cell78" Border.Lines="Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell79" Border.Lines="Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell80" Border.Lines="Bottom" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell81" Border.Lines="Right, Bottom" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row10">
+          <TableCell Name="Cell82" Border.Lines="Left, Right" Text="Freight Payable" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell83" Border.Lines="Right" Text="Orig B/L issed at" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell84" Text="Vessel/Voyage" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell85" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell86" Border.Lines="Left" Fill.Color="255, 255, 192" Text="付款地               " HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2">
+            <CheckBoxObject Name="CheckBox1" Left="151.2" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.PaymentSettledAtHK"/>
+          </TableCell>
+          <TableCell Name="Cell87" Border.Lines="Left, Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell88" Fill.Color="255, 255, 192" Text="Hong Kong" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell89" Fill.Color="255, 255, 192" Font="Arial, 10pt, style=Bold">
+            <CheckBoxObject Name="CheckBox2" Left="75.6" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.PaymentSettledAtCN"/>
+          </TableCell>
+          <TableCell Name="Cell90" Fill.Color="255, 255, 192" Text="China" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row11">
+          <TableCell Name="Cell91" Border.Lines="Left, Right, Bottom"/>
+          <TableCell Name="Cell92" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell93" Border.Lines="Bottom" Text="[ReportSource.VesselVoyage]" ColSpan="2"/>
+          <TableCell Name="Cell94" Border.Lines="Bottom"/>
+          <TableCell Name="Cell95" Border.Lines="Left, Right, Bottom" Fill.Color="255, 255, 192" Text="*** VAT will be charged if payment in China Mainland " Font="Arial, 10pt, style=Bold" ColSpan="5"/>
+          <TableCell Name="Cell96" Border.Lines="Left, Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell97" Border.Lines="Left, Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell98" Border.Lines="Left, Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell99" Border.Lines="Left, Right" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row12">
+          <TableCell Name="Cell100" Border.Lines="Left, Right, Top" Text="Place of Receipt" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell101" Border.Lines="All" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell102" Text="Port of Loading" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell103" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell104" Border.Lines="Left, Right">
+            <CheckBoxObject Name="CheckBox3" Left="37.8" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.CYCY"/>
+          </TableCell>
+          <TableCell Name="Cell105" Border.Lines="Right">
+            <CheckBoxObject Name="CheckBox4" Left="37.8" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.CYDR"/>
+          </TableCell>
+          <TableCell Name="Cell106" Border.Lines="Right">
+            <CheckBoxObject Name="CheckBox5" Left="37.8" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.DRDR"/>
+          </TableCell>
+          <TableCell Name="Cell107" Border.Lines="Right" Text="BREAK BULK" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell108" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row13">
+          <TableCell Name="Cell109" Border.Lines="Left, Right, Bottom" Text="[ReportSource.PlaceOfReceipt]" ColSpan="2"/>
+          <TableCell Name="Cell110" Border.Lines="All"/>
+          <TableCell Name="Cell111" Border.Lines="Bottom" Text="[ReportSource.POL]" ColSpan="2"/>
+          <TableCell Name="Cell112"/>
+          <TableCell Name="Cell113" Border.Lines="Left, Right" Text="CY-CY" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell114" Border.Lines="Right" Text="CY-DR" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell115" Border.Lines="Right" Text="DR-DR" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell116" Border.Lines="Right" Text="PALLETIZED" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell117" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row14">
+          <TableCell Name="Cell118" Border.Lines="Left, Right" Text="Port of Discharge" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell119" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell120" Text="Final Destination" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell121" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell122" Border.Lines="Left, Right, Top" ColSpan="2">
+            <CheckBoxObject Name="CheckBox8" Left="75.6" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.OriginalBL"/>
+          </TableCell>
+          <TableCell Name="Cell123" Border.Lines="Right, Top"/>
+          <TableCell Name="Cell124" Border.Lines="Right, Top" ColSpan="2">
+            <CheckBoxObject Name="CheckBox10" Left="75.6" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.SeaWayBill"/>
+          </TableCell>
+          <TableCell Name="Cell125" Border.Lines="Right, Top"/>
+          <TableCell Name="Cell126" Border.Lines="Right, Top">
+            <CheckBoxObject Name="CheckBox11" Left="47.25" Width="18.9" Height="18.9" CheckColor="Red" DataColumn="ReportSource.TelexRelease"/>
+          </TableCell>
+        </TableRow>
+        <TableRow Name="Row15">
+          <TableCell Name="Cell127" Border.Lines="Left, Right" Text="[ReportSource.POD]" ColSpan="2"/>
+          <TableCell Name="Cell128" Border.Lines="Right"/>
+          <TableCell Name="Cell129" Text="[ReportSource.FinalDestination]" ColSpan="2"/>
+          <TableCell Name="Cell130"/>
+          <TableCell Name="Cell131" Border.Lines="Left, Right" Text="正本提单 (Original B/L）" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell132" Border.Lines="Left, Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell133" Border.Lines="Right" Text="(海运提单）Sea Way Bill" HorzAlign="Center" Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell134" Border.Lines="Right" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell135" Border.Lines="Right" Text="电放(Telex Release)" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row16">
+          <TableCell Name="Cell136" Border.Lines="Left, Right, Top" Text="Marks and Numbder of Container or Package" Font="Arial, 10pt, style=Bold" ColSpan="3"/>
+          <TableCell Name="Cell137" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell138" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell139" Border.Lines="Right, Top" Text="Kind of packages: Description of goods" Font="Arial, 10pt, style=Bold" ColSpan="3"/>
+          <TableCell Name="Cell140" Border.Lines="Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell141" Border.Lines="Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell142" Border.Lines="Right, Top" Text="Gross weight Kgs." Font="Arial, 10pt, style=Bold" ColSpan="2"/>
+          <TableCell Name="Cell143" Border.Lines="Right" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell144" Border.Lines="Right, Top" Text="Measurements   CBM" Font="Arial, 10pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row17" Height="198.45">
+          <TableCell Name="Cell145" Border.Lines="Left, Right, Bottom" Text="[ReportSource.ShippingMarks]" ColSpan="3" RowSpan="7"/>
+          <TableCell Name="Cell146" Border.Lines="Right"/>
+          <TableCell Name="Cell147" Border.Lines="Right"/>
+          <TableCell Name="Cell148" Border.Lines="Right" Text="[ReportSource.DescriptionOfGoods]" ColSpan="3"/>
+          <TableCell Name="Cell149" Border.Lines="Right"/>
+          <TableCell Name="Cell150" Border.Lines="Right"/>
+          <TableCell Name="Cell151" Border.Lines="Right, Bottom" Text="[ReportSource.GrossWeight]" ColSpan="2" RowSpan="7">
+            <PictureObject Name="Picture2" Left="18.9" Top="207.9" Width="160.65" Height="94.5" Border.Lines="Bottom" Image="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"/>
+          </TableCell>
+          <TableCell Name="Cell152" Border.Lines="Right"/>
+          <TableCell Name="Cell153" Border.Lines="Right, Bottom" Text="[ReportSource.Measurements]" RowSpan="7"/>
+        </TableRow>
+        <TableRow Name="Row18">
+          <TableCell Name="Cell162" Border.Lines="Left"/>
+          <TableCell Name="Cell163"/>
+          <TableCell Name="Cell164" Border.Lines="Right"/>
+          <TableCell Name="Cell165" Border.Lines="Bottom" RowSpan="6"/>
+          <TableCell Name="Cell166" Border.Lines="Left, Top" Text="CNTR SIZE" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell167" Border.Lines="Right, Top" Text="CNTR QTY" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell168" Border.Lines="Right"/>
+          <TableCell Name="Cell169" Border.Lines="Right"/>
+          <TableCell Name="Cell170" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row19">
+          <TableCell Name="Cell171" Border.Lines="Left"/>
+          <TableCell Name="Cell172"/>
+          <TableCell Name="Cell173" Border.Lines="Right"/>
+          <TableCell Name="Cell174"/>
+          <TableCell Name="Cell175" Border.Lines="Left" Text="20GP" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell176" Border.Lines="Right" Text="[ReportSource.GP20]"/>
+          <TableCell Name="Cell177" Border.Lines="Right"/>
+          <TableCell Name="Cell178" Border.Lines="Right"/>
+          <TableCell Name="Cell179" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row20">
+          <TableCell Name="Cell180" Border.Lines="Left"/>
+          <TableCell Name="Cell181"/>
+          <TableCell Name="Cell182" Border.Lines="Right"/>
+          <TableCell Name="Cell183"/>
+          <TableCell Name="Cell184" Border.Lines="Left" Text="40GP" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell185" Border.Lines="Right" Text="[ReportSource.GP40]"/>
+          <TableCell Name="Cell186" Border.Lines="Right"/>
+          <TableCell Name="Cell187" Border.Lines="Right"/>
+          <TableCell Name="Cell188" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row21">
+          <TableCell Name="Cell189" Border.Lines="Left"/>
+          <TableCell Name="Cell190"/>
+          <TableCell Name="Cell191" Border.Lines="Right"/>
+          <TableCell Name="Cell192"/>
+          <TableCell Name="Cell193" Border.Lines="Left" Text="40HQ" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell194" Border.Lines="Right" Text="[ReportSource.HQ40]"/>
+          <TableCell Name="Cell195" Border.Lines="Right"/>
+          <TableCell Name="Cell196" Border.Lines="Right"/>
+          <TableCell Name="Cell197" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row22">
+          <TableCell Name="Cell198" Border.Lines="Left"/>
+          <TableCell Name="Cell199"/>
+          <TableCell Name="Cell200" Border.Lines="Right"/>
+          <TableCell Name="Cell201"/>
+          <TableCell Name="Cell202" Border.Lines="Left" Text="45HQ" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell203" Border.Lines="Right" Text="[ReportSource.HQ45]"/>
+          <TableCell Name="Cell204" Border.Lines="Right"/>
+          <TableCell Name="Cell205" Border.Lines="Right"/>
+          <TableCell Name="Cell206" Border.Lines="Right"/>
+        </TableRow>
+        <TableRow Name="Row23">
+          <TableCell Name="Cell207" Border.Lines="Left, Bottom"/>
+          <TableCell Name="Cell208" Border.Lines="Bottom"/>
+          <TableCell Name="Cell209" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell210" Border.Lines="Bottom"/>
+          <TableCell Name="Cell211" Border.Lines="Left, Bottom" Text="anothers" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell212" Border.Lines="Right, Bottom" Text="[ReportSource.Anothers]"/>
+          <TableCell Name="Cell213" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell214" Border.Lines="Right, Bottom"/>
+          <TableCell Name="Cell215" Border.Lines="Right, Bottom"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="283.5" Width="340.2" Height="28.35" Text="CSCL SHIPPING ORDER" Font="Arial, 20pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F95A3170-688A-4128-B43A-309EF2F45431}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.MailCenter.UI</RootNamespace>
+    <AssemblyName>ICP.MailCenter.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.MailCenter.UI.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.MailCenter.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Email, Version=2.9.0.0, Culture=neutral, PublicKeyToken=ad504e9f0d34714a, processorArchitecture=MSIL" />
+    <Reference Include="Aspose.Pdf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b44de83eed7e98a7, processorArchitecture=MSIL" />
+    <Reference Include="AxInterop.Microsoft.Office.Interop.OutlookViewCtl, Version=12.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Business.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenterFramework.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.MailCenterFramework.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenterFramework.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.MailCenterFramework.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Operation.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="office, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientService\ClientProperties.cs" />
+    <Compile Include="ClientService\ClientUtility.cs" />
+    <Compile Include="ClientService\EmailActionArgHandler.cs" />
+    <Compile Include="ClientService\FolderWrapper.cs" />
+    <Compile Include="ClientService\IAPPArgHandler.cs" />
+    <Compile Include="ClientService\MailCenterTemplateService.cs" />
+    <Compile Include="ClientService\MailConverter.cs" />
+    <Compile Include="ClientService\MailListPresenter.cs" />
+    <Compile Include="ClientService\MenuService.cs" />
+    <Compile Include="ClientService\SystemFileIcon.cs" />
+    <Compile Include="ClientService\TreeNodeComparer.cs" />
+    <Compile Include="ClientService\TreeViewDataAccess.cs" />
+    <Compile Include="ClientService\TreeViewPresenter.cs" />
+    <Compile Include="MailCenterMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailCenterMainWorkspace.Designer.cs">
+      <DependentUpon>MailCenterMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\AddressControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MailGallery\FolderLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MailGallery\FolderLink.designer.cs">
+      <DependentUpon>FolderLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\FrmEmailArchiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\FrmEmailArchiving.Designer.cs">
+      <DependentUpon>FrmEmailArchiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\frmReminder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmReminder.designer.cs">
+      <DependentUpon>frmReminder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\FrmSynchronAddressBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\FrmSynchronAddressBook.Designer.cs">
+      <DependentUpon>FrmSynchronAddressBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\GrowTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MailGallery\GrowTextBox.Designer.cs">
+      <DependentUpon>GrowTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\EmailDetailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\EmailDetailPart.designer.cs">
+      <DependentUpon>EmailDetailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailWorkItem.cs" />
+    <Compile Include="EmailModuleInit.cs" />
+    <Compile Include="MailGallery\frmOutlookProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmOutlookProperties.Designer.cs">
+      <DependentUpon>frmOutlookProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\frmSelectFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmSelectFolder.Designer.cs">
+      <DependentUpon>frmSelectFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\frmSetTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmSetTime.Designer.cs">
+      <DependentUpon>frmSetTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\frmShowProgressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmShowProgressBar.designer.cs">
+      <DependentUpon>frmShowProgressBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\AttachmentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\AttachmentsControl.Designer.cs">
+      <DependentUpon>AttachmentsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService\OutlookService.cs" />
+    <Compile Include="MailGallery\EmailListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\EmailListPart.Designer.cs">
+      <DependentUpon>EmailListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\EmailToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\EmailToolBarPart.Designer.cs">
+      <DependentUpon>EmailToolBarPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\frmCreateFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MailGallery\frmCreateFolder.Designer.cs">
+      <DependentUpon>frmCreateFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailGallery\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MailGallery\SearchFolderPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\SearchFolderPart.Designer.cs">
+      <DependentUpon>SearchFolderPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService\OutlookAdvancedSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MailCenterMainWorkspace.resx">
+      <DependentUpon>MailCenterMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\EmailDetailPart.resx">
+      <DependentUpon>EmailDetailPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\AttachmentsControl.resx">
+      <DependentUpon>AttachmentsControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\EmailFolderPart.resx">
+      <DependentUpon>EmailFolderPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\EmailListPart.resx">
+      <DependentUpon>EmailListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\EmailToolBarPart.resx">
+      <DependentUpon>EmailToolBarPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\FolderLink.resx">
+      <DependentUpon>FolderLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmCreateFolder.resx">
+      <DependentUpon>frmCreateFolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\FrmEmailArchiving.resx">
+      <DependentUpon>FrmEmailArchiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmOutlookProperties.resx">
+      <DependentUpon>frmOutlookProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmReminder.resx">
+      <DependentUpon>frmReminder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmSelectFolder.resx">
+      <DependentUpon>frmSelectFolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmSetTime.resx">
+      <DependentUpon>frmSetTime.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\frmShowProgressBar.resx">
+      <DependentUpon>frmShowProgressBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\FrmSynchronAddressBook.resx">
+      <DependentUpon>FrmSynchronAddressBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailGallery\SearchFolderPart.resx">
+      <DependentUpon>SearchFolderPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMailSearch.resx">
+      <DependentUpon>UCMailSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MailGallery\EmailFolderPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailGallery\EmailFolderPart.Designer.cs">
+      <DependentUpon>EmailFolderPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CommonDataService.cs" />
+    <Compile Include="UCMailSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMailSearch.Designer.cs">
+      <DependentUpon>UCMailSearch.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\attachment.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.DataCache.BusinessOperation\ICP.DataCache.BusinessOperation.csproj">
+      <Project>{1284e71d-f850-4792-8ea2-caa8d3eb958e}</Project>
+      <Name>ICP.DataCache.BusinessOperation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.DataCache.Business\ICP.DataCache.LocalOperation.csproj">
+      <Project>{70abc478-e6fd-4c2e-a8ac-aa926792baca}</Project>
+      <Name>ICP.DataCache.LocalOperation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.DataCache.ServiceInterface\ICP.DataCache.ServiceInterface.csproj">
+      <Project>{0a18d5a6-bbc9-4d1b-a095-ae862fd07746}</Project>
+      <Name>ICP.DataCache.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.MailCenter.ServiceInterface\ICP.MailCenter.ServiceInterface.csproj">
+      <Project>{69b3181f-ff6e-4391-81f7-4b2e28dcfc7b}</Project>
+      <Name>ICP.MailCenter.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unknown.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClientTemplate\DefaultViewXml_CH.xml" />
+    <Content Include="ClientTemplate\DefaultViewXml_EN.xml" />
+    <Content Include="ClientTemplate\CustomViewXml_CH.xml" />
+    <Content Include="ClientTemplate\CustomViewXml_EN.xml" />
+    <None Include="Resources\cal-allday.gif" />
+    <None Include="Resources\cal-recur.gif" />
+    <None Include="Resources\contact-dl.png" />
+    <Content Include="Resources\goto.jpg" />
+    <None Include="Resources\olProperties.jpg" />
+    <Content Include="Resources\loading.gif" />
+    <Content Include="Resources\loading1.gif" />
+    <None Include="Resources\loading2.gif" />
+    <Content Include="Resources\Outlook2007.ico" />
+    <Content Include="Resources\refresh_16.png" />
+    <None Include="Resources\toolRules.Image.png" />
+    <None Include="Resources\toolSetting.Image.png" />
+    <None Include="Resources\toolSendAndReceive.Image.png" />
+    <None Include="Resources\toolSearch.Image.png" />
+    <None Include="Resources\toolSBSearch.Image.png" />
+    <None Include="Resources\toolReplyAll.Image.png" />
+    <None Include="Resources\toolReply.Image.png" />
+    <None Include="Resources\toolReminder.Image.png" />
+    <None Include="Resources\toolRefershBar.Image.png" />
+    <None Include="Resources\toolPrintPreview.Image.png" />
+    <None Include="Resources\toolNewMail.Image.png" />
+    <None Include="Resources\toolForward.Image.png" />
+    <None Include="Resources\toolDeleteMail.Image.png" />
+    <None Include="Resources\toolClose.Image.png" />
+    <None Include="Resources\toolAddress.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitTest\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

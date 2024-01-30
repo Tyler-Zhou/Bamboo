@@ -1,0 +1,4747 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.FCM.AirImport.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.FCMBLType">
+            <summary>
+            提单类型（0:HBL，1:MBL）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FCMBLType.HBL">
+            <summary>
+            HBL
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FCMBLType.MBL">
+            <summary>
+            MBL
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType">
+            <summary>
+            进口业务单号查询
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType.Operation">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType.BL">
+            <summary>
+            提单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType.ITNo">
+            <summary>
+            转关号
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType">
+            <summary>
+            进口业务客户查询
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.AirCompany">
+            <summary>
+            航空公司
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.AgentOfCarrier">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.Shipper">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <!-- 对于成员“F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.Consignee”忽略有格式错误的 XML 注释 -->
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.NotifyPart">
+            <summary>
+            通知人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.Agent">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.WareHouse">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType.CustomsBroker">
+            <summary>
+            报关行
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType">
+            <summary>
+            进口业务港口查询
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType.Departure">
+            <summary>
+            起运港
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType.Detination">
+            <summary>
+            目的港
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType.PlaceOfDelivery">
+            <summary>
+            交货地
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType">
+            <summary>
+            进口业务管理日期搜索类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.All">
+            <summary>
+            全部
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.CreateDate">
+            <summary>
+            创建日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.ETD">
+            <summary>
+            起航日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.ETA">
+            <summary>
+            到达日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.DETA">
+            <summary>
+            交货地日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType.ReleaseDate">
+            <summary>
+            放货日
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateValueSearchType">
+            <summary>
+            进口业务时间内容查询
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateValueSearchType.UnKnow">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateValueSearchType.LastWeek">
+            <summary>
+            一周肉
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateValueSearchType.ThisMonth">
+            <summary>
+            一月内
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OIBusinessDateValueSearchType.LastYear">
+            <summary>
+            一年内
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.DownLoadState">
+            <summary>
+            下载出口提单状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DownLoadState.Unknown">
+            <summary>
+            不确定
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DownLoadState.Pending">
+            <summary>
+            未下载
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DownLoadState.Downloading">
+            <summary>
+            下载中
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DownLoadState.Downloaded">
+            <summary>
+            已下载
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DateType.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.DateType.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessList">
+            <summary>
+            业务列表的所有字段
+            作者：罗丹
+            创建时间：2011-12-14 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.No">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.StateDescription">
+            <summary>
+            状态描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.MBLID">
+            <summary>
+            MBLID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.MBLNo">
+            <summary>
+            MBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.SubNo">
+            <summary>
+            SubNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.AgentName">
+            <summary>
+            代理名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CustomerID">
+            <summary>
+            客户ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CustomerName">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.Paid">
+            <summary>
+            是否已付款
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.IsTelex">
+            <summary>
+            是否电放
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.OBLRcved">
+            <summary>
+            是否已收到正本提单
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.POLID">
+            <summary>
+            装货港ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.POLName">
+            <summary>
+            装货港名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.PODID">
+            <summary>
+            卸货港ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.PODName">
+            <summary>
+            卸货港名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.PlaceOfDeliveryID">
+            <summary>
+            交货地ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.PlaceOfDeliveryName">
+            <summary>
+            交货地名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.DETA">
+            <summary>
+            D.ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ReleaseType">
+            <summary>
+            放单类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ReleaseTypeDescription">
+            <summary>
+            放货类型描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.FilerId">
+            <summary>
+            文件ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.FilerName">
+            <summary>
+            文件名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CustomerService">
+            <summary>
+            客服ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CustomerServiceName">
+            <summary>
+            客服名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.POLFilerID">
+            <summary>
+            港前客服
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.POLFilerName">
+            <summary>
+            港前客服
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ITNO">
+            <summary>
+            ITNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ShipperID">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ShipperName">
+            <summary>
+            发货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ConsigneeID">
+            <summary>
+            收货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ConsigneeName">
+            <summary>
+            收货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.QuantityUnitID">
+            <summary>
+            数量单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.QuantityUnitName">
+            <summary>
+             数量单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.QuantityUnit">
+            <summary>
+            数量+数量单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.WeightUnitID">
+            <summary>
+            重量单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.WeightUnitName">
+            <summary>
+            重量单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.WeightUnit">
+            <summary>
+            重量+重量单位 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.Measurement">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.MeasurementUnitID">
+            <summary>
+            体积单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.MeasurementUnitName">
+            <summary>
+            体积单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.MeasurementUnit">
+            <summary>
+            体积+体积单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.GetBookingDate">
+            <summary>
+            收单日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.SalesID">
+            <summary>
+            揽货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.SalesName">
+            <summary>
+            揽货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CustomerNo">
+            <summary>
+            客户参考单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.ReleaseDate">
+            <summary>
+            放货日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.IsSentAN">
+            <summary>
+            是否已经发送到港通知书
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.SentANDate">
+            <summary>
+            发送到港通知书的时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo">
+            <summary>
+            业务编辑界面用的所有字段
+            作者:周任平
+            时间:2011-05-17 12:00
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.MBLInfo">
+            <summary>
+            MBL信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.HBLList">
+            <summary>
+            HBL List信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.FeeList">
+            <summary>
+            费用 List信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.HBLID">
+            <summary>
+            HBLID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.TradeTermID">
+            <summary>
+            贸易条款ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.TradeTermName">
+            <summary>
+            贸易条款名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CompanyID">
+            <summary>
+            操作口岸ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CompanyName">
+            <summary>
+            操作口岸名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.SalesTypeID">
+            <summary>
+            揽货类型ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.SalesTypeName">
+            <summary>
+            揽货类型名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.SalesDepartmentID">
+            <summary>
+            揽货人部门ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.SalesDepartmentName">
+            <summary>
+            揽货人部门名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.BookingMode">
+            <summary>
+            委托方式/订舱方式
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.BookingDate">
+            <summary>
+            委托日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.PaymentTermID">
+            <summary>
+            付款方式ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.PaymentTermName">
+            <summary>
+            付款方式名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.TransportClauseID">
+            <summary>
+            运输条款ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.TransportClauseName">
+            <summary>
+            运输条款名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.AgentNo">
+            <summary>
+            代理参考号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.ShipperDescription">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.ConsigneeDescription">
+            <summary>
+            收货人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.NotifyPartyID">
+             <summary>
+            通知人ID
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.NotifyPartyName">
+            <summary>
+            通知人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.NotifyPartyDescription">
+            <summary>
+            通知人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CustomerDescription">
+            <summary>
+            客户描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.AgentDescription">
+            <summary>
+            代理描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.DOCPickupDate">
+            <summary>
+            取文件时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.DOCPickupBy">
+            <summary>
+            取文件By
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.StorageStartDate">
+            <summary>
+            堆存开始时间(偶尔客人不付钱，要计录货物堆存的天数)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.WarehouseArrivedON">
+            <summary>
+            监管仓时间(空运货的飞机到了后，货物要先下到他们的仓库)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CargoType">
+            <summary>
+            货物类型
+            </summary>       
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CargoDescription">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsWareHouse">
+            <summary>
+            是否仓库
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsTruck">
+            <summary>
+            是否拖车
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsCustoms">
+            <summary>
+            是否报关
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsCommodityInspection">
+            <summary>
+            是否需要商检
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsQuarantineInspection">
+            <summary>
+            是否需要质检
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsReleaseNotify">
+            <summary>
+            是否需要放货通知书
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsTransport">
+            <summary>
+            是否转运
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.WareHouseID">
+            <summary>
+            仓库ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.WareHouseName">
+            <summary>
+            仓库名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.WareHouseDate">
+            <summary>
+            仓储时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.WareHouseDescription">
+            <summary>
+            仓库描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CustomsID">
+            <summary>
+            报关行ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CustomsName">
+            <summary>
+            报关行名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CustomsDescription">
+            <summary>
+            报关行描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.IsClearance">
+            <summary>
+            是否清关
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.ClearanceDate">
+            <summary>
+            清关时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CreateID">
+            <summary>
+            创建人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.CreateByName">
+            <summary>
+            创建人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessInfo.ClearanceNo">
+            <summary>
+            清关号
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList">
+            <summary>
+            业务下载列表界面用的所有字段
+            作者:罗丹
+            时间:2011-12-16
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.RefNo">
+            <summary>
+            单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.IsCheck">
+            <summary>
+            是否勾选
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.DownLoadState">
+            <summary>
+            下载状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.DownLoadStateDescription">
+            <summary>
+            下载状态描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.HBLState">
+            <summary>
+            提单状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.HBLStateDescription">
+            <summary>
+            提单状态描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.MBLNo">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.HBLNo">
+            <summary>
+            分提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.HBLIDs">
+            <summary>
+            MBL ID list
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.POLName">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.PODName">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.PlaceOfDeliveryNames">
+            <summary>
+            交货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.PlaceofdeliveryDates">
+            <summary>
+            到交货地日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.ConsigneeID">
+            <summary>
+            收货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.ConsigneeName">
+            <summary>
+            收货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.POLFilerName">
+            <summary>
+            港前客服名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.AgentName">
+            <summary>
+            代理公司 (港前)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.CompanyID">
+            <summary>
+            (港前)操作口岸ID -- 获取汇率用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.CreateID">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.PODRefNo">
+            <summary>
+            港后业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessDownLoadList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList">
+            <summary>
+            HBL信息列表
+            作者:周任平 
+            时间:2011-05-18 12:30
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.OIBookingID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.HBLNo">
+            <summary>
+            提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.ShipperID">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.ShipperName">
+            <summary>
+            发货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.ShipperDescription">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.ReceiveOBLDate">
+            <summary>
+            收到正本时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.CreateID">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.CreateDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessHBLInfo">
+            <summary>
+            HBL详细信息
+            作者：周任平
+            时间：2011-05-18 12：30
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList">
+            <summary>
+            MBL列表信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.MBLNo">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.SubNo">
+            <summary>
+            子提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AirCompanyID">
+            <summary>
+            航空公司
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AirCompanyName">
+            <summary>
+            航空公司名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AirCompanyDescription">
+            <summary>
+            航空公司描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AgentOfCarrierID">
+            <summary>
+            承运人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AgentOfCarrierName">
+            <summary>
+            承运人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.AgentOfCarrierDescription">
+            <summary>
+            承运人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FlightID">
+            <summary>
+            航班ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FlightFlag">
+            <summary>
+            FlightFlag
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FlightCountry">
+            <summary>
+            FlightCountry
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ManifestNO">
+            <summary>
+            Manifest NO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.GODate">
+            <summary>
+            G.O. Date
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FinalWareHouseID">
+            <summary>
+            提货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FinalWareHouseName">
+            <summary>
+            提货地名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.FinalWareHouseDescription">
+            <summary>
+            提货地描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ITNO">
+            <summary>
+            转关号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ITDate">
+            <summary>
+            转关时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ITPalce">
+            <summary>
+            转关地点
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ReleaseType">
+            <summary>
+            放货类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.ReleaseTypeDescription">
+            <summary>
+            放货类型描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.MBLTransportClauseID">
+            <summary>
+            MBL运输方式ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.MBLTransportClauseName">
+            <summary>
+            MBL运输方式名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.SaveByID">
+            <summary>
+            保存人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirBusinessMBLList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList">
+            <summary>
+            提货通知书列表
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.NO">
+            <summary>
+            派车单号 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.OIBookingID">
+            <summary>
+            分提单ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.TruckerName">
+            <summary>
+            拖车公司ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.PickUpAtName">
+            <summary>
+            提货地点名称（关联客户）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.PickUpDate">
+            <summary>
+            提货时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.DeliveryAtName">
+            <summary>
+            交货地点ID（关联客户）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.DeliveryDate">
+            <summary>
+            交货时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckList.CreateDate">
+            <summary>
+            建立时间
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo">
+            <summary>
+            提货通知书详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.TruckerID">
+            <summary>
+            拖车公司ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.PickUpAtID">
+            <summary>
+            提货地点ID（关联客户）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.DeliveryAtID">
+            <summary>
+            交货地点ID（关联客户）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.IsDrivingLicence">
+            <summary>
+            是否需要司机本
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.BillToID">
+            <summary>
+            账单寄送ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.BillToName">
+            <summary>
+            帐单寄送名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.PickUpSendDate">
+            <summary>
+            发送提货单日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.PickUpRefNo">
+            <summary>
+            提货参考号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.PickUpContact">
+            <summary>
+            提货联系人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.DeliveryNo">
+            <summary>
+            送货参考号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.DeliveryContact">
+            <summary>
+            送货联系人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.CreateBy">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.UpdateBy">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportTruckInfo.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirOrderList">
+            <summary>
+            进口订单查询列表用到的字段
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.AirOrderList._ContactName">
+             <summary>
+            业务联系人
+             </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.AirOrderList._ContactID">
+            <summary>
+            业务联系人ID
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.AirOrderList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.EditMode">
+            <summary>
+            从订单列表到编辑界面时
+            是新增、编辑还是复制的模式
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.StateDescription">
+            <summary>
+            状态描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.RefNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CustomerName">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.AirCompanyName">
+            <summary>
+            航空公司名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ShipperName">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.POLName">
+            <summary>
+            装货港名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.PODName">
+            <summary>
+            卸货港名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.PlaceOfDeliveryName">
+            <summary>
+            交货地名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ConsigneeName">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.SalesName">
+            <summary>
+            揽货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CreateDate">
+            <summary>
+            创建日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ArriveDate">
+            <summary>
+            到交货地日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.DeliveryOfGoodsDate">
+            <summary>
+            放货日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CustomerContactID">
+            <summary>
+            客服ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CustomerContactName">
+            <summary>
+            客服(名称)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.Reason">
+            <summary>
+            打回原因
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderList.CreateByID">
+            <summary>
+            建立人ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo">
+            <summary>
+            订单编辑用到的所有字段（继承列表中已出现的字段）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.CompanyID">
+            <summary>
+            操作口岸ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.CompanyName">
+            <summary>
+            操作口岸名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.CustomerID">
+            <summary>
+            客户ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.TradeTermID">
+            <summary>
+            贸易条款ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.TradeTermName">
+            <summary>
+            贸易条款名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.SalesTypeID">
+            <summary>
+            揽货类型ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.SalesTypeName">
+            <summary>
+            揽货类型名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.SalesID">
+            <summary>
+            揽货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.SalesDepartmentID">
+            <summary>
+            揽货部门ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.SalesDepartmentName">
+            <summary>
+            揽货部门名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.TransportClauseID">
+            <summary>
+            运输条款ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.TransportClauseName">
+            <summary>
+            运输条款名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.PaymentTermID">
+            <summary>
+            付款方式ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.PaymentTermName">
+            <summary>
+            付款方式名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.BookingMode">
+            <summary>
+            委托方式/订舱方式（0电话、1邮件、2电子订舱）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.BookingDate">
+            <summary>
+            委托日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ShipperID">
+            <summary>
+            发货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ShipperDescription">
+            <summary>
+            发货人详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ConsigneeID">
+            <summary>
+            收货人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ConsigneeDescription">
+            <summary>
+            收货人详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.POLID">
+            <summary>
+            装货港ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.PODID">
+            <summary>
+            卸货港ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.PlaceOfDeliveryID">
+            <summary>
+            交货地ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.QuantityUnitID">
+            <summary>
+            数量单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.QuantityUnitName">
+            <summary>
+            数量单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.WeightUnitID">
+            <summary>
+            重量单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.WeightUnitName">
+            <summary>
+            重量单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.Measurement">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.MeasurementUnitID">
+            <summary>
+            体积单位ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.MeasurementUnitName">
+            <summary>
+            体积单位名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.CargoType">
+            <summary>
+            货物类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.CargoDescription">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.AgentDescription">
+            <summary>
+            代理详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.AirCompanyID">
+            <summary>
+            航空公司ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ExpectedShipDate">
+            <summary>
+            期望出运日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.ExpectedArriveDate">
+            <summary>
+            期望到达时间
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.IsWarehouse">
+            <summary>
+            是否仓储
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.IsTruck">
+            <summary>
+            是否拖车
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.IsCustoms">
+            <summary>
+            是否报关
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.IsCommodityInspection">
+            <summary>
+            是否商检
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.IsQuarantineInspection">
+            <summary>
+            质检(是否动植检)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirOrderInfo.HBLReleaseType">
+            <summary>
+            House B/L放货类型（0正本，1电放）
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList">
+            <summary>
+            AirBookingFeeList
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.GetHashCode">
+            <summary>
+            GetHashCode
+            </summary>
+            <returns>HashCode</returns>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.IsNew">
+            <summary>
+            IsNew
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.BookingFeeID">
+            <summary>
+            费用ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.OIBookingID">
+            <summary>
+            订舱ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CustomerID">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CustomerName">
+            <summary>
+            客户名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.ChargingCodeID">
+            <summary>
+            费用代码
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.ChargingCodeName">
+            <summary>
+            费用名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CurrencyID">
+            <summary>
+            币种ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.Currency">
+            <summary>
+            币种
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.UnitPrice">
+            <summary>
+            单价
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.Way">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CreateByID">
+            <summary>
+            建立人ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CreateByName">
+            <summary>
+            建立人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.CreateDate">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AirImportFeeList.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ArrivalNotice2ReportData">
+            <summary>
+            ContainerInfoReportData详细对象
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeReportData">
+            <summary>
+            ContainerInfoReportData详细对象
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData">
+            <summary>
+            ContainerInfoReportData详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Title">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Show">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ShowNoRows">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ShowFeeAttachement">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.SeeAttachementFee">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.InvoiceNo">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.SumAmount">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.IsEnghish">
+            <summary>
+            参数,不需要数据库提供
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ShipperDescription">
+            <summary>
+            ShipperDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ConsigneeDescription">
+            <summary>
+            ConsigneeDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.NotifyPartyDescription">
+            <summary>
+            NotifyPartyDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.CustomerBrokerDescription">
+            <summary>
+            CustomerBrokerDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.CustomerRefNo">
+            <summary>
+            CustomerRefNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.MasterBLNo">
+            <summary>
+            MasterBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.SubBLNo">
+            <summary>
+            SubBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.AMSHouseBLNo">
+            <summary>
+            AMSHouseBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.HouseBLNo">
+            <summary>
+            HouseBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ReferenceNO">
+            <summary>
+            ReferenceNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.LoadPortName">
+            <summary>
+            LoadPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.DiscPortName">
+            <summary>
+            DiscPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.PlaceOfDeliveryName">
+            <summary>
+            PlaceOfDeliveryName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.PETA">
+            <summary>
+            PETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.DestinationPortName">
+            <summary>
+            DestinationPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.FETA">
+            <summary>
+            FETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.FlightNo">
+            <summary>
+            FlightNo 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.LastFreeDate">
+            <summary>
+            LastFreeDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.GODate">
+            <summary>
+            GODate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.CNTRReturnName">
+            <summary>
+            CNTRReturnName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ITNo">
+            <summary>
+            ITNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ITDate">
+            <summary>
+            ITDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ITPlace">
+            <summary>
+            ITPlace
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Marks">
+            <summary>
+            Marks
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.NoOfPackages">
+            <summary>
+            NoOfPackages
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.GoodsDescription">
+            <summary>
+            GoodsDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.GrossWeight">
+            <summary>
+            GrossWeight
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Measurement">
+            <summary>
+            Measurement
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.DeliveryTermName">
+            <summary>
+            DeliveryTermName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Remark">
+            <summary>
+            Remark
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.CYLocationDescription">
+            <summary>
+            CYLocationDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.PreparedName">
+            <summary>
+            PreparedName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.Prepared">
+            <summary>
+            Prepared
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.PreparedEmail">
+            <summary>
+            PreparedEmail
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.LeadSealing">
+            <summary>
+            LeadSealing
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.POInfo">
+            <summary>
+            Other Info(可能不需要)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ExpressRelease">
+            <summary>
+            ExpressRelease
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ReleaseType">
+            <summary>
+            是否电放
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.OBLReceived">
+            <summary>
+            是否提单已收
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ContainerInfo">
+            <summary>
+            ContainerInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ScheduledFlight">
+            <summary>
+            ScheduledFlight
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeData.ReleaseOrderRequired">
+            <summary>
+            ReleaseOrderRequired
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee">
+            <summary>
+            ArrivalNoticeFee详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee.ChargeItemDescription">
+            <summary>
+            费用描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee.PAmount">
+            <summary>
+            应付
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee.BillNo">
+            <summary>
+            BillNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee.CAmount">
+            <summary>
+            应收
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFee.EName">
+            <summary>
+            币种
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount">
+            <summary>
+            ArrivalNoticeFee详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount.LabelText">
+            <summary>
+            LabelText
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount.Amount">
+            <summary>
+            Amount
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount.PAmount">
+            <summary>
+            应付
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount.CAmount">
+            <summary>
+            应收
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ArrivalNoticeFeeAmount.EName">
+            <summary>
+            EName
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.AIArrivalNoticeReportData">
+            <summary>
+            AIArrivalNoticeReportData
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AIArrivalNoticeData.FreightlocName">
+            <summary>
+            提货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AIArrivalNoticeData.CustomsName">
+            <summary>
+            报关行
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.AIArrivalNoticeData.FIRMCODE">
+            <summary>
+            提货地的FIRMCODE
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData">
+            <summary>
+            业务提单报表数据对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Company">
+            <summary>
+            公司
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.OperationType">
+            <summary>
+            业务类型（整箱，拼箱，散货
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Customer">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.TransportClause">
+            <summary>
+            运输条款
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.PaymentTerm">
+            <summary>
+            付款条约
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.TradeTerm">
+            <summary>
+            贸易条款
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Sales">
+            <summary>
+            揽货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.SalesDep">
+            <summary>
+            揽货人部门
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.SalesType">
+            <summary>
+            揽货方式
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.BookingMode">
+            <summary>
+            订舱类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.BookingDate">
+            <summary>
+            订舱日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.CustomerService">
+            <summary>
+            海外客服
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Filer">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.PlaceOfReceipt">
+            <summary>
+            收货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.POL">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.POD">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.PlaceOfDelivery">
+            <summary>
+            交货地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.FinalDestination">
+            <summary>
+            最终目的地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.AgentOfCarrier">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Carrier">
+            <summary>
+            船公司
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.PreVoyage">
+            <summary>
+            驳船
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.Voyage">
+            <summary>
+            大船
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.DETA">
+            <summary>
+            DETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.FETA">
+            <summary>
+            FETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.ShippingLine">
+            <summary>
+            航线
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.OIBusinessReportData.blListReportDatas">
+            <summary>
+            提单列表
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData">
+            <summary>
+            业务提单报表数据对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.BLNO">
+            <summary>
+            提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.MBLNO">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.Shipper">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.Consignee">
+            <summary>
+            收货人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.NotifyParty">
+            <summary>
+            通知人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.DataObjects.BLListReportData.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData">
+            <summary>
+            订单报表数据对象
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.OrderNo">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.CustomerName">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.CustomerDescription">
+            <summary>
+            客户详细信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.AirCompanyName">
+            <summary>
+            航空公司
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.AgentOfCarrierName">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ShipperName">
+            <summary>
+            发货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ShipperDescription">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.AgentName">
+            <summary>
+            代理
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.AgentDescription">
+            <summary>
+            代理描述
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ConsigneeName">
+            <summary>
+            收货人名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ConsigneeDescription">
+            <summary>
+            收货人描述信息
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.POLName">
+            <summary>
+            装货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.PODName">
+            <summary>
+            卸货港
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.PlaceOfDelivery">
+            <summary>
+            目的地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.FlightNo">
+            <summary>
+            航班号
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ETD">
+            <summary>
+            预计离港日
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.TransportClause">
+            <summary>
+            运输条款
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.IsCustoms">
+            <summary>
+            报关
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.IsWarehouse">
+            <summary>
+            仓储
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.IsTruck">
+            <summary>
+            派车
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.IsQuarantineInspection">
+            <summary>
+            质检
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.IsCommodityInspection">
+            <summary>
+            商检
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.TradeTerm">
+            <summary>
+            贸易条款
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ReleaseType">
+            <summary>
+            放货类型
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.SalesName">
+            <summary>
+            业务员
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.OperatorName">
+            <summary>
+            操作
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.CompanyName">
+            <summary>
+            操作口岸
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.GoodsMarks">
+            <summary>
+            货物名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.GoodsQty">
+            <summary>
+            货物数量和单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.GoodsWeight">
+            <summary>
+            货物重量和单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.GoodsMeasurement">
+            <summary>
+            货物体积和单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.ContainerRequest">
+            <summary>
+            箱需求
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderReportData.Fees">
+            <summary>
+            订单费用
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData">
+            <summary>
+            报表订单费用
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.Way">
+            <summary>
+            方向
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.FeeName">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.CustomerName">
+            <summary>
+            客户
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.Currency">
+            <summary>
+            币种
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.OIOrderFeeReportData.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData">
+             <summary>
+            派车国外报表数据对象(短格式)
+             </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CompanyName">
+            <summary>
+            CompanyName(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CompanyAddress">
+            <summary>
+            CompanyAddress(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CreateTime">
+            <summary>
+            CreateTime
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.ReferenceNO">
+            <summary>
+            ReferenceNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.Carrier">
+            <summary>
+            Carrier
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CYLocation">
+            <summary>
+            CYLocation
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.Destination">
+            <summary>
+            Destination
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.BookingNO">
+            <summary>
+            BookingNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.LastFreeDate">
+            <summary>
+            LastFreeDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.ContainerNOs">
+            <summary>
+            ContainerNOs
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.HBLNO">
+            <summary>
+            HBLNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CustomerRefNo">
+            <summary>
+            CustomerRefNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.DeliveryToInfo">
+            <summary>
+            DeliveryToInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.PKGS">
+            <summary>
+            PKGS
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.GoodsDescription">
+            <summary>
+            GoodsDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.Weigh">
+            <summary>
+            Weigh
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.Measurement">
+            <summary>
+            Measurement
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.PaymentTypeName">
+            <summary>
+            PaymentTypeName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENShortReportData.CurrentUserName">
+            <summary>
+            CurrentUserName(客户端构建)
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.PickupENReportData">
+            <summary>
+            派车国外报表数据对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CompanyName">
+            <summary>
+            CompanyName(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CompanyAddress">
+            <summary>
+            CompanyAddress(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CompanyTelFax">
+            <summary>
+            CompanyTelFax(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.TruckerInfo">
+            <summary>
+            TruckerInfo(拖车公司描述)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CreateTime">
+            <summary>
+            CreateTime
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CurrentUserName">
+            <summary>
+            CurrentUserName(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.Commodity">
+            <summary>
+            Commodity(2.0拖车中有个Commodity的维护框
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.TotalPKGS">
+            <summary>
+            TotalPKGS(2.0拖车中有个TotalPKGS的维护框
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.PickupAtInfo">
+            <summary>
+            PickupAtInfo(提柜地
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.CustomerRefNo">
+            <summary>
+            CustomerRefNo(2.0拖车中有个Trucker RefNo的维护框
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.PickupContact">
+            <summary>
+            PickupContact(2.0拖车中有个维护框
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.PickupDate">
+            <summary>
+            PickupDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.DeliveryToInfo">
+            <summary>
+            DeliveryToInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.DeliveryRefrenceNo">
+            <summary>
+            DeliveryRefrenceNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.DeliveryContact">
+            <summary>
+            DeliveryContact
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.DeliveryDate">
+            <summary>
+            DeliveryDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.LastFreeDate">
+            <summary>
+            LastFreeDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.BillToInfo">
+            <summary>
+            BillToInfo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.BillToRefNO">
+            <summary>
+            BillToRefNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.Carrier">
+            <summary>
+            Carrier
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.BookingNO">
+            <summary>
+            BookingNO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.VesselName">
+            <summary>
+            VesselName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.ContainerNOs">
+            <summary>
+            ContainerNOs(CCLU6970035 / 40HQ 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.HBLNo">
+            <summary>
+            HBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.PortofReceipt">
+            <summary>
+            PortofReceipt
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.POL">
+            <summary>
+            POL
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.Marks">
+            <summary>
+            Marks
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.GoodsDescription">
+            <summary>
+            GoodsDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.PKGS">
+            <summary>
+            PKGS
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.Weight">
+            <summary>
+            Weight
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupENReportData.Measurement">
+            <summary>
+            Measurement
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData">
+            <summary>
+            派车国内报表数据对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.Title">
+            <summary>
+            Title
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.To">
+            <summary>
+            To
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.ToATTN">
+            <summary>
+            ToATTN
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.ToTel">
+            <summary>
+            ToTel
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.ToFax">
+            <summary>
+            ToFax
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.From">
+            <summary>
+            From(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.FromMail">
+            <summary>
+            FromMail(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.FromTel">
+            <summary>
+            FromTel(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.FromFax">
+            <summary>
+            FromFax(客户端构建)
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.SONO">
+            <summary>
+            SONO
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.FlightNo">
+            <summary>
+            FlightNo 
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.Airline">
+            <summary>
+            Airline
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.LoadDate">
+            <summary>
+            LoadDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.LoadAddress">
+            <summary>
+            LoadAddress
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.Charges">
+            <summary>
+            Charges
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.NeedBook">
+            <summary>
+            NeedBook
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.PickupCNReportData.Remark">
+            <summary>
+            Remark
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ProfitReportData">
+            <summary>
+            ProfitReportData详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.HouseBLNo">
+            <summary>
+            HouseBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.MasterBLNo">
+            <summary>
+            MasterBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.LoadPortName">
+            <summary>
+            LoadPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.DiscPortName">
+            <summary>
+            DiscPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.FlightNo">
+            <summary>
+            VoyageName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.ReferenceNo">
+            <summary>
+            ReferenceNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.AgentName">
+            <summary>
+            AgentName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportData.Fees">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData">
+            <summary>
+            HBLFEEReportData详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.ConsignId">
+            <summary>
+            HBLID
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.InvNo">
+            <summary>
+            InvNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.PostDate">
+            <summary>
+            PostDate
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.ChargeItemDescription">
+            <summary>
+            ChargeItemDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.pmt">
+            <summary>
+            pmt
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.Revenue">
+            <summary>
+            Revenue
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.Cost">
+            <summary>
+            Cost
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.agent">
+            <summary>
+            agent
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.company">
+            <summary>
+            company
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ProfitReportFeeData.currency">
+            <summary>
+            currency
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderReportData">
+            <summary>
+            ReleaseOrderReportData详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderReportData.ReleaseOrderData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData">
+            <summary>
+            ReleaseOrderData详细对象
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.FinalWareHouseDescription">
+            <summary>
+            提货地描述（包括名称，地址，电话，传真）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.ConsigneeDescription">
+            <summary>
+            收货人描述（包括名称，地址，电话，传真）
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.CustomerRefNo">
+            <summary>
+            CustomerRefNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.MasterBLNo">
+            <summary>
+            MasterBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.SubBLNo">
+            <summary>
+            SubBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.AMSHouseBLNo">
+            <summary>
+            AMSHouseBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.ITNo">
+            <summary>
+            ITNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.NoOfPackages">
+            <summary>
+            包装件数和单位
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.GoodsDescription">
+            <summary>
+            GoodsDescription
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.LoadPortName">
+            <summary>
+            LoadPortName
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.HouseBLNo">
+            <summary>
+            HouseBLNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.HouseBLId">
+            <summary>
+            HouseBLId
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.FlightNo">
+            <summary>
+            FlightNo
+            </summary>
+        </member>
+        <member name="P:ICP.FCM.AirImport.ServiceInterface.ReleaseOrderData.Remark">
+            <summary>
+            Remark
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService">
+            <summary>
+            空运进口业务服务类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetBusinessListByIds(System.Guid[])">
+            <summary>
+            获得业务数据列表 --列表上的刷新用到
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetBusinessListByFastSearch(System.Guid[],ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Nullable{System.Guid},System.Int32)">
+            <summary>
+            获得业务数据列表--列表上的快速查询使用
+            </summary>
+            <param name="companyIDs">公司集合ID</param>
+            <param name="noSearchType">单号搜索类型(0:全部、1:业务号、2:MBLNo、3:HBLNo、4:箱号、5:转关号)</param>
+            <param name="no">单号</param>
+            <param name="customerSearchType">客户搜索类型(0:全部、1:客户、2:代理、3:发货人、4:收货人、5:通知人、6:船公司、7:仓库、8:报关行)</param>
+            <param name="customerName">客户名称</param>
+            <param name="portSearchType">地点搜索类型(0:全部、1:装货港、2:卸货港、3:交货地、4:最终目的地、5:提货地、6:还柜地)</param>
+            <param name="portName">地点</param>
+            <param name="dateSearchType">时间搜索类型(0:全部、1:创建日、2:F.ETA 、3:离港日、4:到港日、5:收单日期、6:放单日期)</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="maxRecords">返回最大行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetBusinessList(System.Guid[],System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState},System.Nullable{System.Boolean},System.Int32,ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+             获得业务列表--左边的查询使用
+            </summary>
+            <param name="companyIDs">公司ID集合</param>
+            <param name="no">业务号</param>
+            <param name="blNo">提单号</param>
+            <param name="containerNo">箱号</param>
+            <param name="customerName">客户名称</param>
+            <param name="agent">代理</param>
+            <param name="consignee">收货人</param>
+            <param name="shipper">发货人</param>
+            <param name="notifyPart">通知人</param>
+            <param name="pol">装货港</param>
+            <param name="pod">卸货港</param>
+            <param name="placeOfDelivery">交货地</param>
+            <param name="vesselName">船名</param>
+            <param name="voyageNo">航次</param>
+            <param name="salesID">揽货人</param>
+            <param name="state">状态</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">返回最大行数</param>
+            <param name="dateSearchType">时间搜索类型(0:全部、1:创建日、2:F.ETA 、3:离港日、4:到港日、5:收单日期、6:放单日期)</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetBusinessInfo(System.Guid)">
+            <summary>
+            获得业务详细信息--编辑界面使用
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetBusinessInfoByEdit(System.Guid)">
+            <summary>
+            获得业务详细信息(包含MBL、HBL、集装箱、费用、PO)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAirExportList(System.String,System.String,System.Nullable{ICP.FCM.AirImport.ServiceInterface.DateType},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.String,System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.AIBLState},System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            获得下载清单列表
+            </summary>
+            <param name="bLNo">提单号</param>
+            <param name="vesselName">船名</param>
+            <param name="eta">离港日</param>
+            <param name="etd">到港日</param>
+            <param name="polName">装货港</param>
+            <param name="podName">卸货港</param>
+            <param name="placeOfDeliveryName">交货地</param>
+            <param name="consigneeName">收货人</param>
+            <param name="podCompanyID">代理公司</param>
+            <param name="companyID">操作公司</param>
+            <param name="state">状态</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">返回最大行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.DownLoadBusiness(System.Guid[],System.Guid[],System.Nullable{System.DateTime}[],System.String[],System.Guid)">
+            <summary>
+            下载业务单
+            </summary>
+            <param name="mblIDs">MBLID集合</param>
+            <param name="consigneeIDs">收货人集合</param>
+            <param name="hblIDs">HBLID集合</param>
+            <param name="saveByID">保存人</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.CancelAirBusiness(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            取消业务单
+            </summary>
+            <param name="businessID">业务单ID</param>
+            <param name="isCancel">是否取消(True为取消;Flase为激活)</param>
+            <param name="changeByID">更改人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.TransferBusiness(System.Guid,System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            业务转移
+            </summary>
+            <param name="BusinessID">业务ID</param>
+            <param name="newCompanyID">新公司</param>
+            <param name="changeByID">操作人</param>
+            <param name="updateDate">更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAirTruckServiceList(System.Guid)">
+            <summary>
+            获取派车信息
+            </summary>
+            <param name="businessID">业务单ID</param>
+            <returns>返回派车信息</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAirTruckServiceInfo(ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest)">
+            <summary>
+            保存派车信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.RemoveAirTruckServiceInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除派车信息
+            </summary>
+            <param name="id">ID</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetRecentlyAITruckInfoList(System.Guid,System.Guid)">
+            <summary>
+            获取指定客户的最近提货通知书下的拖车行和交货地
+            </summary>
+            <param name="companyID"></param>
+            <param name="customerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAIBusinessInfo(ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest)">
+            <summary>
+            保存业务信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAIBookingHBLList(System.Guid)">
+            <summary>
+            获取HBL信息
+            </summary>
+            <param name="oiBookingID">业务单ID</param>
+            <returns>返回派车信息</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAIBookingHBLInfo(ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest)">
+            <summary>
+            保存HBL信息
+            </summary>
+            <param name="saveRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.RemoveAIBookingHBLInfo(System.Guid,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            删除HBL信息
+            </summary>
+            <param name="ids">删除ID的集合</param>
+            <param name="removeByID">删除人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAIMBLList">
+            <summary>
+            获得MBL信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAIMBLInfo(System.Guid)">
+            <summary>
+            获得MBL信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAIMBLInfo(ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest)">
+            <summary>
+            保存MBL信息
+            </summary>
+            <param name="saveRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SetAIReleaseData(System.Guid,ICP.FCM.Common.ServiceInterface.DataObjects.FCMReleaseType,System.DateTime,System.Nullable{System.DateTime},System.Guid)">
+            <summary>
+            确认放单
+            </summary>
+            <param name="oiBookingID"></param>
+            <param name="releaseDate"></param>
+            <param name="updateTime"></param>
+            <param name="saveByID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.GetAirExportFeeList(System.Guid)">
+            <summary>
+            获取订单费用列表
+            </summary>
+            <param name="orderID">订单ID</param>
+            <returns>返回订单费用列表</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAIBusinessWithTrans(ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest,ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest,System.Collections.Generic.List{ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest},System.Collections.Generic.List{ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest})">
+            <summary>
+            以事务的方式保存业务、HBL、集装箱、费用、PO信息
+            </summary>
+            <param name="businessSaveRequest">业务数据</param>
+            <param name="mblSaveRequest">MBL信息</param>
+            <param name="hblList">HBL List</param>
+            <param name="containerList">集装箱 List</param>
+            <param name="feeList">费用 List</param>
+            <param name="poList">PO List</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportBusinessService.SaveAIOrderWithTrans(System.Guid,ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest)">
+            <summary>
+            以事务的方式保存派车、集装箱列表、关联信息
+            </summary>
+            <param name="truckSave">派车信息</param>
+            <param name="boxList">集装箱列表</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.IAirImportFeeService">
+            <summary>
+            空运进口费用服务类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportFeeService.GetAIOrderFeeList(System.Guid)">
+            <summary>
+            获取订单费用列表
+            </summary>
+            <param name="orderID">订单ID</param>
+            <returns>返回订单费用列表</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportFeeService.SaveAIOrderFeeList(ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest)">
+            <summary>
+            保存费用信息
+            </summary>
+            <param name="orderID">订单ID</param>
+            <param name="ids">ID集合</param>
+            <param name="customerIDs">客户ID集合</param>
+            <param name="chargingCodeIDs">费用代码集合</param>
+            <param name="currencyIDs">币种列表</param>
+            <param name="quantities">数量列表</param>
+            <param name="unitPrices">单价列表</param>
+            <param name="ways">方向列表(DR-0-应收 ,CR-1-应付</param>
+            <param name="amounts">金额列表</param>
+            <param name="remarks">备注列表</param>
+            <param name="saveByID">保存人</param>
+            <param name="updateDates">更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportFeeService.RemoveAIOrderFeeList(System.Guid[],System.Guid,System.Nullable{System.DateTime}[])">
+            <summary>
+            删除订单费用
+            </summary>
+            <param name="ids">ID 列表</param>
+            <param name="removeByID">删除人 </param>
+            <param name="updateDates">更新时间-做数据版本用</param>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService">
+            <summary>
+            空运进口订单服务类
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.SaveAIOrderWithTrans(ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest,System.Collections.Generic.List{ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest})">
+            <summary>
+            以事务方式保存订单、费用和PO
+            </summary>
+            <param name="orderSaveRequest"></param>
+            <param name="feeList"></param>
+            <param name="poList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIOrderListByIds(System.Guid[])">
+            <summary>
+            获得订单列表--根据ID集合
+            </summary>
+            <param name="orderIds">订单ID集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIOrderListByFastSearch(System.Guid[],System.Guid,ICP.FCM.AirImport.ServiceInterface.OIBusinessNoSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessCustomerSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessPortSearchType,System.String,ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            获得订单列表--从快速查询
+            </summary>
+            <param name="companyIDs">公司ID集合</param>
+            <param name="noSearchType">单号查询类型(0:全部、1:业务号)</param>
+            <param name="no">单号</param>
+            <param name="customerSearchType">客户搜索类型(0:全部、1:客户、2:船公司、3:承运人、4:发货人、5:收货人、6:通知人、7:对单人、8代理:)</param>
+            <param name="customerName">客户名称</param>
+            <param name="portSearchType">地点搜索类型(0:全部、1:收货地、2:装货港、3:中转港、4:卸货港、5:交货地、6:最终目的地)</param>
+            <param name="portName">地点名称</param>
+            <param name="dateSearchType">时间搜索类型(0:全部、1:创建日、2:放单日、3:离港日、4:、到港日)</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="maxRecords">返回最大行数</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIOrderList(System.Guid[],System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Guid},System.Nullable{ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState},System.Nullable{System.Boolean},ICP.FCM.AirImport.ServiceInterface.OIBusinessDateSearchType,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            获得订单列表
+            </summary>
+            <param name="companyIDs">公司ID集合</param>
+            <param name="no">业务号</param>
+            <param name="agentName">代理名称</param>
+            <param name="customerName">客户名称</param>
+            <param name="carrierName">船公司</param>
+            <param name="pol">装货港</param>
+            <param name="pod">卸货港</param>
+            <param name="placeOfDelivery">交货地</param>
+            <param name="salesID">揽货人</param>
+            <param name="state">状态搜索类型(1:新订单、2:已打回、3:已审核、4:已取消、5: 已订舱、6:已装船、7:已发送到港通知、8:已放货、9:已关单)</param>
+            <param name="isValid">是否有效</param>
+            <param name="maxRecords">返回最大行数</param>
+            <param name="dateSearchType">时间搜索类型(0:全部、1:创建日、2:放单日、3:离港日、4:、到港日)</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIOrderInfo(System.Guid)">
+            <summary>
+            获得订单详细信息
+            </summary>
+            <param name="id">订单ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.CancelAIOrder(System.Guid,System.Boolean,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            取消订单
+            </summary>
+            <param name="orderID">订单ID</param>
+            <param name="isCancel">是否取消(True为取消;Flase为激活)</param>
+            <param name="changeByID">更改人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.SaveAIOrderInfo(ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest)">
+            <summary>
+            保存订单信息
+            </summary>
+            <param name="id">订单ID</param>
+            <param name="no">业务号</param>
+            <param name="companyid">操作口岸</param>
+            <param name="oIOperationType">业务类型</param>
+            <param name="customerID">客户ID</param>
+            <param name="customerDesciption">客户描述</param>
+            <param name="tradetermID">贸易条款</param>
+            <param name="salestypeID">揽货类型</param>
+            <param name="salesID">揽货人</param>
+            <param name="sealsDepartmentID">揽货部门</param>
+            <param name="transportclauseID">运输条款</param>
+            <param name="paymenttermID">付款方式</param>
+            <param name="overSeasFilerId">海外部客服</param>
+            <param name="customerServiceID">客服</param>
+            <param name="bookingmode">委托方式</param>
+            <param name="bookingdate">委托日期</param>
+            <param name="agentid">代理</param>
+            <param name="agentDescription">代理描述</param>
+            <param name="carrierID">船公司</param>
+            <param name="carrierDescription">船公司描述</param>
+            <param name="shipperID">发货人</param>
+            <param name="shipperDescription">发货人描述</param>
+            <param name="consigneeID">收货人</param>
+            <param name="consigneeDescription">收货描述</param>
+            <param name="placeOfReceiptID">收货地</param>
+            <param name="polID">装货港</param>
+            <param name="podID">卸货港</param>
+            <param name="placeOfDeliveryID">交货地</param>
+            <param name="finalDestinationID">最终目的地</param>
+            <param name="expectedshipDate">期望出运</param>
+            <param name="expectedArriveDate">期望到达</param>
+            <param name="hblreleasetype">放货类型</param>
+            <param name="isWareHouse">是否仓储</param>
+            <param name="isCustoms">是否报关</param>
+            <param name="isTruck">是否拖车</param>
+            <param name="isCommodityInspection">是否商检</param>
+            <param name="isQuarantineInspection">是否质检</param>
+            <param name="commodity">品名</param>
+            <param name="quantity">数量</param>
+            <param name="quantityunitID">数量单位</param>
+            <param name="weight">重量</param>
+            <param name="weightUnitID">重量单位</param>
+            <param name="measurement">体积</param>
+            <param name="measurementUnitID">体积单位</param>
+            <param name="cargoType">货物类型</param>
+            <param name="cargodescription">货物描述</param>
+            <param name="containerDescription">集装箱信息</param>
+            <param name="remark">备注</param>
+            <param name="saveByID">保存人</param>
+            <param name="updateDate">更新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.ChangeAIOrderState(System.Guid,ICP.FCM.Common.ServiceInterface.DataObjects.AIOrderState,System.String,System.Guid,System.Nullable{System.DateTime})">
+            <summary>
+            改变订单状态        
+            </summary>
+            <param name="orderID">委托ID</param>
+            <param name="state">状态类型(1:新订单、2:已打回、3:已审核、4:已取消、5: 已订舱、6:已装船、7:已发送到港通知、8:已放货、9:已关单)</param>
+            <param name="memoContent">备注内容</param>
+            <param name="changeByID">改变人</param>
+            <param name="updateDate">更新时间-做数据版本用</param>
+            <returns>返回SingleResult</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIOverseasFilersList(System.Nullable{System.Guid},System.Nullable{System.Guid},System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+             <summary>
+             获取当前客户最近的海外部客服列表
+             如果当前客户为空，就返回揽货人最近业务所对应的海外部客服的列表。
+             </summary>
+             <param name="customerId">客户ID</param>
+             <param name="salesId">揽货人ID</param>
+            <param name="beginTime">开始时间</param>
+            <param name="endTime">结束时间</param>
+            <param name="maxRecords">最大行数</param>
+             <returns>用户列表</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.IsCustomerAndCompanySameCountry(System.Guid,System.Guid)">
+            <summary>
+            判断客户和公司是否在同一个国家
+            </summary>
+            <param name="customerId">客户ID( 用cusomterId获得客户的国家ID)</param>
+            <param name="companyId">口岸公司ID(compnyId用于在获取配置里对应的客户的国家ID)</param>
+            <returns>是否在同一个国家</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetSalesType(System.Guid,System.Guid)">
+            <summary>
+            根据销售客户和口岸公司获取揽货方式
+            </summary>
+            <param name="customerID">客户ID</param>
+            <param name="companyId">口岸公司</param>
+            <returns>返回揽货方式</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAirImportOrderService.GetAIRecentlyOrderList(System.Guid,System.Guid,System.Guid,System.Int32)">
+            <summary>
+            根据口岸公司和客户获取最近该客户的业务数据列表
+            </summary>
+            <param name="companyID">口岸公司</param>
+            <param name="customerID">客户ID</param>
+            <param name="maxRecords">最大记录</param>
+            <returns>返回最近该客户的业务数据列表</returns>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.IAirImportService">
+            <summary>
+            空运进口服务
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService">
+            <summary>
+            空运进口报表数据获取服务
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetAIOrderReportData(System.Guid)">
+            <summary>
+            获取订单报表数据
+            </summary>
+            <param name="orderID">订单ID</param>
+            <returns>OIOrderReportData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetArrivalNoticeReportData(System.Guid)">
+            <summary>
+            获取到港通知书数据
+            </summary>
+            <param name="businessID">业务ID</param>
+            <returns>ArrivalNoticeReportData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetReleaseOrderInfoByBusinessID(System.Guid)">
+            <summary>
+            获取放货通知书数据
+            </summary>
+            <param name="businessID">业务ID</param>
+            <returns>ReleaseOrderReportData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.ArrivalNoticeSent(System.Guid,System.Guid)">
+            <summary>
+            此方法的动作是把该业务的IsSentAN = true和记录发送时间
+            </summary>
+            <param name="businessID">业务ID</param>
+            <param name="saveByID">saveByID</param>
+            <returns>SingleResultData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetAIBusinessReportData(System.Guid)">
+            <summary>
+            获取海进业务提单列表报表数据对象
+            </summary>
+            <param name="operationID">业务ID</param>
+            <returns>OIBusinessReportData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetProfitReportData(System.Guid)">
+            <summary>
+            获取利润表数据
+            </summary>
+            <param name="businessID">业务ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetAuthorityToMakeEntry(System.Guid)">
+            <summary>
+            获取Authority To Make Entry数据
+            </summary>
+            <param name="hblId">HBL ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IAIReportDataService.GetPickupCNReportData(System.Guid)">
+            <summary>
+            获取派车国内报表数据对象
+            </summary>
+            <param name="truckID">拖车ID</param>
+            <returns>PickupCNReportData</returns>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.AddBooking(System.Collections.Generic.IDictionary{System.String,System.Object},ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            新增
+            </summary>
+            <param name="values"></param>
+            <param name="editPartSaved"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.CopyBooking(ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria,System.Collections.Generic.IDictionary{System.String,System.Object},ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            复制
+            </summary>
+            <param name="showCriteria"></param>
+            <param name="values"></param>
+            <param name="editPartSaved"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.EditBooking(ICP.FCM.Common.ServiceInterface.DataObjects.EditPartShowCriteria,System.Collections.Generic.IDictionary{System.String,System.Object},ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            编辑
+            </summary>
+            <param name="showCriteria"></param>
+            <param name="values"></param>
+            <param name="editPartSaved"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.OpenBill(System.Guid)">
+            <summary>
+            打开账单
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.PrintArrivalNotice(System.Guid)">
+            <summary>
+            打印到港通知书
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.PrintReleaseOrder(System.Guid)">
+            <summary>
+            打印放货通知书
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.PrintProfit(System.Guid)">
+            <summary>
+             打印利润表
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.PrintAuthority(System.Guid)">
+            <summary>
+            打印Authority To Make Entry
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.CancelBooking(System.Guid,ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            取消
+            </summary>
+            <param name="bookingId"></param>
+            <param name="editPartSaved"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.OpenCargoBook(System.Guid,System.Collections.Generic.IDictionary{System.String,System.Object},ICP.Framework.ClientComponents.Controls.PartLoader.EditPartSaved)">
+            <summary>
+            提货通知书
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.AiDownLoad">
+            <summary>
+            下载
+            </summary>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.BusinessTransfer(System.Guid)">
+            <summary>
+            业务转移
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="M:ICP.FCM.AirImport.ServiceInterface.IClientAirImportService.AiDelivery(System.Guid)">
+            <summary>
+            放货和取消放货
+            </summary>
+            <param name="bookingId"></param>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.RuleAttribute.ContainerNoAttribute">
+            <summary>
+            箱号规则验证特性
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest">
+            <summary>
+            业务保存类
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.No">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CompanyID">
+            <summary>
+            操作公司ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomerID">
+            <summary>
+            客户ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomerDescription">
+            <summary>
+            客户描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomerNo">
+            <summary>
+            客户参考单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.TradeTermID">
+            <summary>
+            贸易条款ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.SalesTypeID">
+            <summary>
+            揽货类型ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.SalesID">
+            <summary>
+            揽货人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.SalesDepartmentID">
+            <summary>
+            揽货人部门ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.BookingMode">
+            <summary>
+            委托方式ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.BookingDate">
+            <summary>
+            委托日期
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.PaymentTermID">
+            <summary>
+            付款方式ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.TransportClauseID">
+            <summary>
+            运输条款ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.FilerId">
+            <summary>
+            文件
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomerServiceID">
+            <summary>
+            客服ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.POLFilerID">
+            <summary>
+            港前客服ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.POLFilerName">
+            <summary>
+            港前客服
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AgentDescription">
+            <summary>
+            代理详细信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AgentNo">
+            <summary>
+            代理参考号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ShipperID">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ShipperDescription">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ConsigneeID">
+            <summary>
+            收货人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ConsigneeDescription">
+            <summary>
+            收货人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.NotifyPartyID">
+             <summary>
+            通知人ID
+             </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.NotifyPartyDescription">
+            <summary>
+            通知人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.POLID">
+            <summary>
+            装货港ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.PODID">
+            <summary>
+            卸货港ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.PlaceOfDeliveryID">
+            <summary>
+            交货地ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ETD">
+            <summary>
+            ETD
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ETA">
+            <summary>
+            ETA
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.DETA">
+            <summary>
+            D.ETA
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.DOCPickupDate">
+            <summary>
+            取文件时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.DOCPickupBy">
+            <summary>
+            取文件By
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.StorageStartDate">
+            <summary>
+            堆存开始时间(偶尔客人不付钱，要计录货物堆存的天数)
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.WarehouseArrivedON">
+            <summary>
+            监管仓时间(空运货的飞机到了后，货物要先下到他们的仓库)
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.QuantityUnitID">
+            <summary>
+            数量单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.WeightUnitID">
+            <summary>
+            重量单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Measurement">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.MeasurementUnitID">
+            <summary>
+            体积单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CargoType">
+            <summary>
+            货物类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CargoDescription">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsWareHouse">
+            <summary>
+            是否仓库
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsTruck">
+            <summary>
+            是否拖车
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsCustoms">
+            <summary>
+            是否报关
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsCommodityInspection">
+            <summary>
+            是否需要商检
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsQuarantineInspection">
+            <summary>
+            是否需要质检
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsTelex">
+            <summary>
+            是否电放
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsReleaseNotify">
+            <summary>
+            是否需要放货通知书
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsTransport">
+            <summary>
+            是否转运
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.WareHouseID">
+            <summary>
+            仓库ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.WareHouseDate">
+            <summary>
+            仓储时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.WareHouseDescription">
+            <summary>
+            仓库描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomsID">
+            <summary>
+            报关行ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.CustomsDescription">
+            <summary>
+            报关行描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsClearance">
+            <summary>
+            是否清关
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ClearanceDate">
+            <summary>
+            清关时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ClearanceNo">
+            <summary>
+            清关号 
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.MBLNo">
+            <summary>
+            MBLNo
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.HBLNo">
+            <summary>
+            HBLNo
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AirCompanyID">
+            <summary>
+            航空公司
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AirCompanyDescription">
+            <summary>
+            航空公司描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AgentOfCarrierID">
+            <summary>
+            承运人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.AgentOfCarrierDescription">
+            <summary>
+            承运人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.FlightID">
+            <summary>
+            航班ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.FinalWareHouseID">
+            <summary>
+            提货地
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.FinalWareHouseDescription">
+            <summary>
+            提货地描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ITNO">
+            <summary>
+            转关号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ITDate">
+            <summary>
+            转关时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ITPalce">
+            <summary>
+            转关地点
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ReleaseType">
+            <summary>
+            放货类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.ReleaseDate">
+            <summary>
+            放货时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.MBLTransportClauseID">
+            <summary>
+            MBL运输方式ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.Updatedate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.saveByID">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.MBLID">
+            <summary>
+            MBLID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.BusinessSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境 
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest">
+            <summary>
+            用于保存费用的对象
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.orderID">
+            <summary>
+            订单
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.ids">
+            <summary>
+            ID列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.customerIDs">
+            <summary>
+            客户ID列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.chargingCodeIDs">
+            <summary>
+            费用代码
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.currencyIDs">
+            <summary>
+            币种列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.quantities">
+            <summary>
+            数量列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.unitPrices">
+            <summary>
+            单价列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.ways">
+            <summary>
+            方向列表(DR-0-应收 ,CR-1-应付
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.amounts">
+            <summary>
+            金额列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.remarks">
+            <summary>
+            备注列表
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.saveByID">
+            <summary>
+            保存人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.updateDates">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.FeeSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境 
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest">
+            <summary>
+            HBL信息保存实体
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.IDs">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.BLNos">
+            <summary>
+            提单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.OIBookingID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.ShipperIDs">
+            <summary>
+            发货人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.ShipperDescriptions">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.StrShipperDescriptions">
+            <summary>
+            发货人描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.ReceiveOBLDates">
+            <summary>
+            收到正本提单时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.SaveByID">
+            <summary>
+            保存人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.UpdateDates">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.HBLInfoSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境 
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.MBLNo">
+            <summary>
+            主提单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.SubNo">
+            <summary>
+            子提单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.AirCompanyID">
+            <summary>
+            航空公司
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.AgentOfCarrierID">
+            <summary>
+            承运人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.FlightFlag">
+            <summary>
+            FlightFlag
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.FlightCountry">
+            <summary>
+            FlightCountry
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ManifestNO">
+            <summary>
+            Manifest NO
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.GODate">
+            <summary>
+            G.O. Date
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.FlightID">
+            <summary>
+            航班ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.FinalWareHouseID">
+            <summary>
+            提货地ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ITNO">
+            <summary>
+            转关单号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ITDate">
+            <summary>
+            转关日期
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ITPalce">
+            <summary>
+            转关地点
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.ReleaseType">
+            <summary>
+            放单类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.MBLTransportClauseID">
+            <summary>
+            MBL运输条款
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.SaveByID">
+            <summary>
+            保存人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.UpdateDates">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.MBLInfoSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境 
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest">
+            <summary>
+            保存订单的时候传递的实体
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ID">
+            <summary>
+            唯一键
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.RefNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CustomerID">
+            <summary>
+            客户ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CustomerDescription">
+            <summary>
+            客户描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.TradeTermID">
+            <summary>
+            贸易条款ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.SalesTypeID">
+            <summary>
+            揽货类型ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.SalesID">
+            <summary>
+            业务员ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.SalesDepartmentID">
+            <summary>
+            揽货部门ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.TransportClauseID">
+            <summary>
+            运输条款ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.PaymentTermID">
+            <summary>
+            付款方式ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.BookingMode">
+            <summary>
+            委托方式/订舱方式（0电话、1邮件、2电子订舱）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.BookingDate">
+            <summary>
+            委托日期
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CreateDate">
+            <summary>
+            创建日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ArriveDate">
+            <summary>
+            到交货地日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.DeliveryOfGoodsDate">
+            <summary>
+            放货日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ETD">
+            <summary>
+            离港日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ETA">
+            <summary>
+            到港日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.FilerID">
+            <summary>
+            客服ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.UpdateDate">
+            <summary>
+            更新时间-做数据版本控制用
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CreateByID">
+            <summary>
+            建立人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CompanyID">
+            <summary>
+            操作口岸ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.AgentID">
+            <summary>
+            代理ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.AgentDescription">
+            <summary>
+            代理详细信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.AirCompanyID">
+            <summary>
+            航空公司ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ShipperID">
+            <summary>
+            发货人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ShipperDescription">
+            <summary>
+            发货人详细信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ConsigneeID">
+            <summary>
+            收货人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ConsigneeDescription">
+            <summary>
+            收货人详细信息
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.PlaceOfReceiptID">
+            <summary>
+            收货地ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.POLID">
+            <summary>
+            装货港ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.PODID">
+            <summary>
+            卸货港ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.PlaceOfDeliveryID">
+            <summary>
+            交货地ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ExpectedShipDate">
+            <summary>
+            期望出运日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.ExpectedArriveDate">
+            <summary>
+            期望到达时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.HBLReleaseType">
+            <summary>
+            House B/L放货类型（0正本，1电放）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsWarehouse">
+            <summary>
+            是否仓储
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsTruck">
+            <summary>
+            是否拖车
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsCustoms">
+            <summary>
+            是否报关
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsCommodityInspection">
+            <summary>
+            是否商检
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsQuarantineInspection">
+            <summary>
+            质检(是否动植检)
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.Quantity">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.QuantityUnitID">
+            <summary>
+            数量单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.Weight">
+            <summary>
+            重量
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.WeightUnitID">
+            <summary>
+            重量单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.Measurement">
+            <summary>
+            体积
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.MeasurementUnitID">
+            <summary>
+            体积单位ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CargoType">
+            <summary>
+            货物类型
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.CargoDescription">
+            <summary>
+            货物描述
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.SaveByID">
+            <summary>
+            保存人ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.OrderSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境
+            </summary>
+        </member>
+        <member name="T:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest">
+            <summary>
+            用于保存拖车
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.OIBookingID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.NO">
+            <summary>
+            派车单号 
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.TruckerID">
+            <summary>
+            拖车公司ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.PickUpAtID">
+            <summary>
+            提货地点ID（关联客户）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.PickUpDate">
+            <summary>
+            提货日期
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.DeliveryAtID">
+            <summary>
+            交货地点ID（关联客户）
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.DeliveryDate">
+            <summary>
+            交货时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.IsDrivingLicence">
+            <summary>
+            是否需要司机本
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.BillToID">
+            <summary>
+            账单寄送ID
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.Commodity">
+            <summary>
+            品名
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.PickUpSendDate">
+            <summary>
+            发送提货单日
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.PickUpRefNo">
+            <summary>
+            提货参考号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.PickUpContact">
+            <summary>
+            提货联系人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.DeliveryNo">
+            <summary>
+            送货参考号
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.DeliveryContact">
+            <summary>
+            送货联系人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.SaveByID">
+            <summary>
+            保存人
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="F:ICP.FCM.AirImport.ServiceInterface.TruckSaveRequest.IsEnglish">
+            <summary>
+            是否英文环境 
+            </summary>
+        </member>
+    </members>
+</doc>

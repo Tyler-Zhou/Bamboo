@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AD16E6F-37BD-41F0-BD06-8906B145A00B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.MailCenterFramework.UI</RootNamespace>
+    <AssemblyName>ICP.MailCenterFramework.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>C:\icpdlls\ICP.MailCenterFramework.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Business.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.OceanExport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.MailCenter.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.MailCenter.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenterFramework.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.MailCenterFramework.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Operation.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\icpdlls\Microsoft.Office.Interop.Outlook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\icpdlls\office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientService\CINIUtility.cs" />
+    <Compile Include="ClientService\OutlookAdvancedSearch.cs" />
+    <Compile Include="ClientService\OutlookOperateService.cs" />
+    <Compile Include="ClientService\OutlookUtility.cs" />
+    <Compile Include="Controls\ToolUtility.cs" />
+    <Compile Include="Forms\FrmAssociatedBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAssociatedBatch.Designer.cs">
+      <DependentUpon>FrmAssociatedBatch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAssociatedStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAssociatedStatistics.Designer.cs">
+      <DependentUpon>FrmAssociatedStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEmailArchiving.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmailArchiving.Designer.cs">
+      <DependentUpon>FrmEmailArchiving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmPickFolders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPickFolders.Designer.cs">
+      <DependentUpon>FrmPickFolders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSynchronAddressBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSynchronAddressBook.Designer.cs">
+      <DependentUpon>FrmSynchronAddressBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmEmailProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmEmailProperty.Designer.cs">
+      <DependentUpon>FrmEmailProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Assist.cs" />
+    <Compile Include="Helper\ClientConfig.cs" />
+    <Compile Include="Helper\ContextMenuTemplate.cs" />
+    <Compile Include="Helper\Enums.cs" />
+    <Compile Include="Helper\HelpMailStore.cs" />
+    <Compile Include="Helper\Logger.cs" />
+    <Compile Include="Helper\Parameter.cs" />
+    <Compile Include="Helper\Start.cs" />
+    <Compile Include="Command\MailCenterCommandConstants.cs" />
+    <Compile Include="Command\MailOperateCommandConstants.cs" />
+    <Compile Include="ClientService\OutlookPlugInManageService.cs" />
+    <Compile Include="MailCenterFrameworkModuleInit.cs" />
+    <Compile Include="MailCenterUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailCenterUI.Designer.cs">
+      <DependentUpon>MailCenterUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxFrom.Designer.cs">
+      <DependentUpon>MessageBoxFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperationMessage\GetQueryConditions.cs" />
+    <Compile Include="OperationMessage\OperationContactController.cs" />
+    <Compile Include="OperationMessage\OperationSaveController.cs" />
+    <Compile Include="OperationMessage\OperationMessageController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmAssociatedBatch.resx">
+      <DependentUpon>FrmAssociatedBatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAssociatedStatistics.resx">
+      <DependentUpon>FrmAssociatedStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmailArchiving.resx">
+      <DependentUpon>FrmEmailArchiving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmEmailProperty.resx">
+      <DependentUpon>FrmEmailProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPickFolders.resx">
+      <DependentUpon>FrmPickFolders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSynchronAddressBook.resx">
+      <DependentUpon>FrmSynchronAddressBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailCenterUI.resx">
+      <DependentUpon>MailCenterUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxFrom.resx">
+      <DependentUpon>MessageBoxFrom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

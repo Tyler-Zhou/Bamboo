@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14884E9F-ACF7-4AFF-8A39-7B69058E02F2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.MailCenter.Business.UI</RootNamespace>
+    <AssemblyName>ICP.MailCenter.Business.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDlls\ICP.MailCenter.Business.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.MailCenter.Business.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\DevExpress.XtraEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\DevExpress.XtraGrid.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.CommandHandler.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.Framework.ClientComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.TaskCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.TaskCenter.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.WF.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.WF.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advance Search\OceanExportBusinessQueryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advance Search\OceanExportBusinessQueryPart.Designer.cs">
+      <DependentUpon>OceanExportBusinessQueryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advance Search\OceanImportBusinessQueryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advance Search\OceanImportBusinessQueryPart.Designer.cs">
+      <DependentUpon>OceanImportBusinessQueryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advance Search\WorkFlowBusinessQueryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advance Search\WorkFlowBusinessQueryPart.Designer.cs">
+      <DependentUpon>WorkFlowBusinessQueryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessModuleInit.cs" />
+    <Compile Include="ConditionColumnGetter.cs" />
+    <Compile Include="Advance Search\InquireRatesBusinessQueryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Advance Search\InquireRatesBusinessQueryPart.Designer.cs">
+      <DependentUpon>InquireRatesBusinessQueryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailCenter Query\SpecifyRoleQueryController.cs" />
+    <Compile Include="MailCenter Query\ICommonQuery.cs" />
+    <Compile Include="MailCenter Query\CommonQueryController.cs" />
+    <Compile Include="MailCenter Query\QueryControllerFactory.cs" />
+    <Compile Include="MessageBusinessInfoExtractor.cs" />
+    <Compile Include="MessageBusinessQueryServiceGetter.cs" />
+    <Compile Include="MessageCustomColumnGetter.cs" />
+    <Compile Include="MessageDataBinder.cs" />
+    <Compile Include="MessagePostDataBindHandler.cs" />
+    <Compile Include="MessageQueryCriteriaGetter.cs" />
+    <Compile Include="MessageSpecialConditioner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.DataCache.ServiceInterface\ICP.DataCache.ServiceInterface.csproj">
+      <Project>{0a18d5a6-bbc9-4d1b-a095-ae862fd07746}</Project>
+      <Name>ICP.DataCache.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.MailCenter.Business\ICP.MailCenter.Business.ServiceInterface.csproj">
+      <Project>{245AF769-7EBF-4713-8FB9-E25A9A5CE924}</Project>
+      <Name>ICP.MailCenter.Business.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.MailCenter.ServiceInterface\ICP.MailCenter.ServiceInterface.csproj">
+      <Project>{69b3181f-ff6e-4391-81f7-4b2e28dcfc7b}</Project>
+      <Name>ICP.MailCenter.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Advance Search\OceanExportBusinessQueryPart.resx">
+      <DependentUpon>OceanExportBusinessQueryPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advance Search\OceanImportBusinessQueryPart.resx">
+      <DependentUpon>OceanImportBusinessQueryPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advance Search\WorkFlowBusinessQueryPart.resx">
+      <DependentUpon>WorkFlowBusinessQueryPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Advance Search\InquireRatesBusinessQueryPart.resx">
+      <DependentUpon>InquireRatesBusinessQueryPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\process2.gif" />
+    <Content Include="XML Template\BookingConfirmationConfig.xml" />
+    <Content Include="XML Template\BusinessContextMenuItemGenerator.xml" />
+    <Content Include="XML Template\BusinessInfoExtractConfig.xml" />
+    <Content Include="XML Template\BusinessQueryString.xml" />
+    <Content Include="XML Template\BusinessState.xml" />
+    <Content Include="XML Template\CargoTrackingConfig.xml" />
+    <Content Include="XML Template\ColumnTemplate.xml" />
+    <Content Include="XML Template\ColumnTemplateGather.xml" />
+    <Content Include="XML Template\ConditionNameToTemplateCodeConfig.xml" />
+    <Content Include="XML Template\ContextMenuTemplate.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Template\EnumConfig.xml" />
+    <Content Include="XML Template\MailBusinessPartTemplate.xml" />
+    <Content Include="XML Template\OutLookAddInCopyDll.xml" />
+    <Content Include="XML Template\QueryConditions.xml" />
+    <Content Include="XML Template\RowStyle.xml" />
+    <Content Include="XML Template\TabControlConfig.xml" />
+    <Content Include="XML Template\TemplateCodeConfig.xml" />
+    <Content Include="XML Template\ToolBarConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="XML Template\ToolBarConfigGather.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SubscriptionPublishService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

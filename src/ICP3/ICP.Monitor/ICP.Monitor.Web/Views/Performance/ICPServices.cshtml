@@ -1,0 +1,61 @@
+﻿@using ICP.Monitor.Model.ComputerManage
+@model EWindowsServiceInfo[]
+@{
+    ViewBag.Title = "ICPService";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>ICP Services</h2>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Start" name="Start" />
+    <input type="submit" value="Stop" name="Stop" />
+    <input type="submit" value="ReStart" name="ReStart" />
+    if (Model.Length > 0)
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.CheckBox("selectAll", true)</th>
+                    <th>Service Name</th>
+                    <th>Service State</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (EWindowsServiceInfo p in Model)
+                {
+                    <tr>
+                        <td>@Html.CheckBox(p.ServiceName, p.Choosed)</td>
+                        <td>@p.ServiceName</td>
+                        <td>@p.ServiceState</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <h2>No Servies data</h2>
+    }
+}
+@section Scripts
+{
+    <script type="text/javascript">
+        function selectorunselect() {
+            var isDefault = $("#selectAll").checked;
+            var inputs = document.getElementsByTagName('input');
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    if (isDefault == true) {
+                        inputs[i].checked = true;
+                    }
+                    else {
+                        inputs[i].checked = false;
+                    }
+                }
+            }
+        }
+        $("#selectAll").click(function () { selectorunselect(); });
+    </script>
+}

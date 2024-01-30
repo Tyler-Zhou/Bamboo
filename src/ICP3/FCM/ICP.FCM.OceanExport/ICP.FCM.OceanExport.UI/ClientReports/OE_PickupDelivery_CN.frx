@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="06/22/2011 10:43:52" ReportInfo.Modified="06/23/2011 18:44:34" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="To" DataType="System.String"/>
+      <Column Name="ToATTN" DataType="System.String"/>
+      <Column Name="ToTel" DataType="System.String"/>
+      <Column Name="ToFax" DataType="System.String"/>
+      <Column Name="From" DataType="System.String"/>
+      <Column Name="FromMail" DataType="System.String"/>
+      <Column Name="FromTel" DataType="System.String"/>
+      <Column Name="FromFax" DataType="System.String"/>
+      <Column Name="SONO" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="LoadDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="LoadAddress" DataType="System.String"/>
+      <Column Name="Charges" DataType="System.String"/>
+      <Column Name="NeedBook" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1393358009">
+    <PageHeaderBand Name="PageHeaderBand1393358009" Top="20" Width="718.2" Height="83.16">
+      <LineObject Name="line1" Left="18.9" Top="9.45"/>
+      <TextObject Name="textbox2" Top="28.35" Width="718.2" Height="22.68" CanGrow="true" Text="CITY OCEAN LOGISTICS CO.,LTD" HorzAlign="Center" Font="Impact, 16pt, style=Bold"/>
+      <PictureObject Name="Picture1" Left="94.5" Top="7.56" Width="75.6" Height="75.6" Image="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"/>
+      <TextObject Name="Text1" Top="51.03" Width="718.2" Height="30.24" CanGrow="true" Text="[ReportSource.Title]" HorzAlign="Center" Font="宋体, 18pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeader1" Top="123.16" Width="718.2" Height="859.95">
+      <TextObject Name="textbox62" Left="30.24" Top="774.9" Width="661.5" Height="37.8" CanGrow="true" Text="敬请注意:货柜车司机有责任检查货柜状态,如有问题，请立即联系委托人,否则责任由运输公司负责." HorzAlign="Center" Font="宋体, 14pt, style=Bold"/>
+      <TableObject Name="Table1" Left="3.78" Width="706.86" Height="105.84">
+        <TableColumn Name="Column1" Width="81.27"/>
+        <TableColumn Name="Column2" Width="281.61"/>
+        <TableColumn Name="Column4" Width="77.49"/>
+        <TableColumn Name="Column5" Width="266.49"/>
+        <TableRow Name="Row1" Height="26.46">
+          <TableCell Name="Cell1" Text="TO:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell2" Text="[ReportSource.To]" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell4" Text="TEL:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell5" Text="[ReportSource.ToTel]" Font="宋体, 14pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="26.46">
+          <TableCell Name="Cell6" Text="ATTN:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell7" Text="[ReportSource.ToATTN]" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell9" Text="FAX:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell10" Text="[ReportSource.ToFax]" Font="宋体, 14pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="26.46">
+          <TableCell Name="Cell11" Text="FROM:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell12" Text="[ReportSource.From]" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell14" Text="E-Mail:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell15" Text="[ReportSource.FromMail]" Font="宋体, 14pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="26.46">
+          <TableCell Name="Cell16" Text="TEL:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell17" Text="[ReportSource.FromTel]" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell19" Text="FAX:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell20" Text="[ReportSource.FromFax]" Font="宋体, 14pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table2" Left="3.78" Top="132.3" Width="706.86" Height="52.92">
+        <TableColumn Name="Column6" Width="103.95"/>
+        <TableColumn Name="Column7" Width="258.93"/>
+        <TableColumn Name="Column8" Width="115.29"/>
+        <TableColumn Name="Column9" Width="228.69"/>
+        <TableRow Name="Row5" Height="26.46">
+          <TableCell Name="Cell21" Border.Lines="All" Text="订舱单号:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell22" Border.Lines="All" Text="[ReportSource.SONO]" Font="宋体, 14pt"/>
+          <TableCell Name="Cell23" Border.Lines="All" Text="船名/航次:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell24" Border.Lines="All" Text="[ReportSource.VesselVoyage]" Font="宋体, 14pt"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="26.46">
+          <TableCell Name="Cell26" Border.Lines="All" Text="柜 量:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell27" Border.Lines="All" Text="[ReportSource.ContainerInfo]" Font="宋体, 14pt"/>
+          <TableCell Name="Cell28" Border.Lines="All" Text="船 公 司 :" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell29" Border.Lines="All" Text="[ReportSource.Carrier]" Font="宋体, 14pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table3" Left="3.78" Top="185.22" Width="706.86" Height="563.22">
+        <TableColumn Name="Column10" Width="77.49"/>
+        <TableColumn Name="Column11" Width="96.39"/>
+        <TableColumn Name="Column12" Width="311.85"/>
+        <TableColumn Name="Column13" Width="221.13"/>
+        <TableRow Name="Row7" Height="26.46">
+          <TableCell Name="Cell30" Border.Lines="All" Text="装　货" Font="宋体, 14pt, style=Bold" RowSpan="3"/>
+          <TableCell Name="Cell31" Border.Lines="All" Text="时间:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell32" Border.Lines="All" Text="[ReportSource.LoadDate]" Font="宋体, 14pt" ColSpan="2"/>
+          <TableCell Name="Cell33" Border.Lines="All" Font="宋体, 14pt"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="302.4">
+          <TableCell Name="Cell35" Border.Lines="All" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell36" Border.Lines="All" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell37" Border.Lines="All" Text="[ReportSource.LoadAddress]" Font="宋体, 14pt" ColSpan="2"/>
+          <TableCell Name="Cell38" Border.Lines="All" Font="宋体, 14pt"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="56.7">
+          <TableCell Name="Cell40" Border.Lines="All" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell41" Border.Lines="All" Text="拖车费：" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell42" Border.Lines="All" Text="[ReportSource.Charges]" Font="宋体, 14pt"/>
+          <TableCell Name="Cell43" Border.Lines="All" Text="[ReportSource.NeedBook]" Font="宋体, 14pt, style=Bold" TextFill.Color="Maroon"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="177.66">
+          <TableCell Name="Cell45" Border.Lines="All" Text="备 注:" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell46" Border.Lines="All" Text="[ReportSource.Remark]" Font="宋体, 14pt" ColSpan="3"/>
+          <TableCell Name="Cell47" Border.Lines="All" Font="宋体, 14pt, style=Bold"/>
+          <TableCell Name="Cell48" Border.Lines="All" Font="宋体, 14pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="textbox60" Left="18.9" Top="756" Width="687.96" Height="18.9" Text="**************************************************************************************************" Font="宋体, 10pt"/>
+      <TextObject Name="Text2" Left="18.9" Top="812.7" Width="687.96" Height="18.9" Text="**************************************************************************************************" Font="宋体, 10pt"/>
+    </ColumnHeaderBand>
+  </ReportPage>
+</Report>

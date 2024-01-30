@@ -1,0 +1,19 @@
+﻿@using ICP.Monitor.Model.ComputerManage
+@model EServerInfo
+@{
+    ViewBag.Title = "ServerInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ServerInfo</h2>
+<p>ServerName : @Model.ServerName</p>
+<p>CPU : @Model.CPU</p>
+<p>Memory : @Model.Memory</p>
+@foreach (EDriveInfo p in Model.Drives)
+{
+    <div>
+        
+        <p><h3>DriveName : @p.DriveName</h3> DriveType : @p.DriveType Capacity : @p.Capacity M FeeSpace : @p.FeeSpace M</p>
+    </div>
+}
+

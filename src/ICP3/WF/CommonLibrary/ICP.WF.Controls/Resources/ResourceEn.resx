@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChineseDescription" xml:space="preserve">
+    <value>Chinese environment, the show's title</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="CompanySourceTypeDescription" xml:space="preserve">
+    <value>All-&gt;All Company,Company-&gt;Current users of the company,Department-&gt;Current users of the departments</value>
+  </data>
+  <data name="ControlDataSourceProperties" xml:space="preserve">
+    <value>The control data sources inside the properties</value>
+  </data>
+  <data name="Controlevent" xml:space="preserve">
+    <value>Control event</value>
+  </data>
+  <data name="ControlProperty" xml:space="preserve">
+    <value>Control Property</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="DataBinding" xml:space="preserve">
+    <value>Data Binding</value>
+  </data>
+  <data name="DataProperty" xml:space="preserve">
+    <value>Data Property</value>
+  </data>
+  <data name="DataSource" xml:space="preserve">
+    <value>Data Source</value>
+  </data>
+  <data name="DisplayMember" xml:space="preserve">
+    <value>Display Member</value>
+  </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>English environment, the show's title</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="FullDisplayMember" xml:space="preserve">
+    <value>Full Display Member</value>
+  </data>
+  <data name="MustInput" xml:space="preserve">
+    <value>Must Input</value>
+  </data>
+  <data name="Nameofform" xml:space="preserve">
+    <value>Name of form</value>
+  </data>
+  <data name="NotSupportedDataSource" xml:space="preserve">
+    <value>Not supported by data sources, data sources must be DataTable, DataSet, DataView</value>
+  </data>
+  <data name="ParentMember" xml:space="preserve">
+    <value>Parent Member</value>
+  </data>
+  <data name="Pleasesetthedatasource" xml:space="preserve">
+    <value>Please set the data source</value>
+  </data>
+  <data name="TargetsControlName" xml:space="preserve">
+    <value>The name of target control </value>
+  </data>
+  <data name="TargetsControlProperty" xml:space="preserve">
+    <value>The property of target control</value>
+  </data>
+  <data name="Theformofassociation" xml:space="preserve">
+    <value>The form of association</value>
+  </data>
+  <data name="Thereisnodata" xml:space="preserve">
+    <value>There is no data</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserSourceTypeDescription" xml:space="preserve">
+    <value>All-&gt;The whole city ocean company,Company-&gt;Current users of the company's users,Department-&gt;Current users of the departments of all users</value>
+  </data>
+  <data name="ValueMember" xml:space="preserve">
+    <value>Value Member</value>
+  </data>
+  <data name="AllowNull" xml:space="preserve">
+    <value>Allow Null</value>
+  </data>
+  <data name="ColumnName" xml:space="preserve">
+    <value>Column Name</value>
+  </data>
+  <data name="MaxLength" xml:space="preserve">
+    <value>Max Length</value>
+  </data>
+  <data name="NumericType" xml:space="preserve">
+    <value>Numeric Type</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="SelectedText" xml:space="preserve">
+    <value>Selected Text</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="Post" xml:space="preserve">
+    <value>Post</value>
+  </data>
+  <data name="CDisplayMember" xml:space="preserve">
+    <value>Chinese Display Member</value>
+  </data>
+  <data name="CFullDisplayMember" xml:space="preserve">
+    <value>Chinese Full Display Member</value>
+  </data>
+  <data name="EDisplayMember" xml:space="preserve">
+    <value>English Display Member</value>
+  </data>
+  <data name="EFullDisplayMember" xml:space="preserve">
+    <value>English Full Display Member</value>
+  </data>
+  <data name="CTextRepeat" xml:space="preserve">
+    <value>[{0}]CText Property[{1}] repeat</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="ETextRepeat" xml:space="preserve">
+    <value>[{0}]EText Property[{1}] repeat</value>
+  </data>
+  <data name="NecessaryToProperty" xml:space="preserve">
+    <value>[{0}]Necessary to set up [{1}] property</value>
+  </data>
+  <data name="FindType" xml:space="preserve">
+    <value>Find Type</value>
+  </data>
+  <data name="SearchMember" xml:space="preserve">
+    <value>Search Member</value>
+  </data>
+  <data name="Data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="AutoGeneratorNumber" xml:space="preserve">
+    <value>Auto Generator No</value>
+  </data>
+  <data name="CheckBox" xml:space="preserve">
+    <value>CheckBox</value>
+  </data>
+  <data name="ComboBox" xml:space="preserve">
+    <value>ComboBox</value>
+  </data>
+  <data name="CompanyBindingSource" xml:space="preserve">
+    <value>Companys</value>
+  </data>
+  <data name="CurrencyBindingSource" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="DataGridView" xml:space="preserve">
+    <value>DataGridView</value>
+  </data>
+  <data name="DatePicker" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="NumericCalcEdit" xml:space="preserve">
+    <value>Numeric</value>
+  </data>
+  <data name="Radio" xml:space="preserve">
+    <value>RadioGroup</value>
+  </data>
+  <data name="Text" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="UserBindingSource" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="CheckBoxDesc" xml:space="preserve">
+    <value>Use a CheckBox to give the user an option, such as true/false or yes/no</value>
+  </data>
+  <data name="CheckBoxTitle" xml:space="preserve">
+    <value>CheckBox</value>
+  </data>
+  <data name="ComBoxDesc" xml:space="preserve">
+    <value>Provide a list of users select from a</value>
+  </data>
+  <data name="ComBoxTitle" xml:space="preserve">
+    <value>ComBox</value>
+  </data>
+  <data name="DataGridViewDesc" xml:space="preserve">
+    <value>Provides a customizable table for displaying data</value>
+  </data>
+  <data name="DataGridViewTitle" xml:space="preserve">
+    <value>DataGridView</value>
+  </data>
+  <data name="DatePickerDesc" xml:space="preserve">
+    <value>The DateTimePicker control is used to allow the user to select a date and time, and to display that date and time in the specified forma</value>
+  </data>
+  <data name="DatePickerTitle" xml:space="preserve">
+    <value>DatePicker</value>
+  </data>
+  <data name="LableDesc" xml:space="preserve">
+    <value>Are typically used to provide descriptive text for a control. For example</value>
+  </data>
+  <data name="LableTitle" xml:space="preserve">
+    <value>Lable</value>
+  </data>
+  <data name="NumericCalcEditDesc" xml:space="preserve">
+    <value>Digital controls with Calculator</value>
+  </data>
+  <data name="NumericCalcEditTitle" xml:space="preserve">
+    <value>NumericCalcEdit</value>
+  </data>
+  <data name="RadioGroup" xml:space="preserve">
+    <value>Radio Group</value>
+  </data>
+  <data name="TextBox" xml:space="preserve">
+    <value>TextBox</value>
+  </data>
+  <data name="CompanyBindingSourceDesc" xml:space="preserve">
+    <value>Company Data</value>
+  </data>
+  <data name="ComboBoxTreeViewDesc" xml:space="preserve">
+    <value>ComboBox TreeView</value>
+  </data>
+  <data name="JobBindingSourceTitle" xml:space="preserve">
+    <value>Job Data</value>
+  </data>
+  <data name="CurrencyBindingSourceTitle" xml:space="preserve">
+    <value>Currencies</value>
+  </data>
+  <data name="CompanyBindingSourceTitle" xml:space="preserve">
+    <value>Company Data</value>
+  </data>
+  <data name="JobBindingSourceDesc" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="DataScope" xml:space="preserve">
+    <value>Data Scope</value>
+  </data>
+  <data name="CText" xml:space="preserve">
+    <value>CText</value>
+  </data>
+  <data name="EText" xml:space="preserve">
+    <value>EText</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Font" xml:space="preserve">
+    <value>Font</value>
+  </data>
+  <data name="Bold" xml:space="preserve">
+    <value>Bold</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Base" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="DispAllowNull" xml:space="preserve">
+    <value>AllowNull</value>
+  </data>
+  <data name="DispFiledType" xml:space="preserve">
+    <value>FiledType</value>
+  </data>
+  <data name="DispForeColor" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="DispLength" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="ForeColor" xml:space="preserve">
+    <value>ForeColor</value>
+  </data>
+  <data name="Dock" xml:space="preserve">
+    <value>Dock</value>
+  </data>
+  <data name="EditValue" xml:space="preserve">
+    <value>EditValue</value>
+  </data>
+  <data name="DispText" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="DispTabIndex" xml:space="preserve">
+    <value>DispTabIndex</value>
+  </data>
+  <data name="AllowUserToAddRows" xml:space="preserve">
+    <value>AddRows</value>
+  </data>
+  <data name="Tag" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="AllowUserToDeleteRows" xml:space="preserve">
+    <value>DeleteRow</value>
+  </data>
+  <data name="AllowUserToOrderColumns" xml:space="preserve">
+    <value>OrderColumns</value>
+  </data>
+  <data name="Anchor" xml:space="preserve">
+    <value>Anchor</value>
+  </data>
+  <data name="MultiSelect" xml:space="preserve">
+    <value>MultiSelect</value>
+  </data>
+  <data name="ReadOnly" xml:space="preserve">
+    <value>ReadOnly</value>
+  </data>
+  <data name="DispValue" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="DataCustom" xml:space="preserve">
+    <value>Data Custom</value>
+  </data>
+  <data name="Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="ColumnSpan" xml:space="preserve">
+    <value>Column Span</value>
+  </data>
+  <data name="RowSpan" xml:space="preserve">
+    <value>Row Span</value>
+  </data>
+  <data name="SourceProperty" xml:space="preserve">
+    <value>SourceProperty</value>
+  </data>
+  <data name="EventType" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Style" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="RadioButton" xml:space="preserve">
+    <value>RadioButton</value>
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value>Default Value</value>
+  </data>
+  <data name="MultiTextBoxDesc" xml:space="preserve">
+    <value>Multi TextBox</value>
+  </data>
+  <data name="MultiTextBoxTitel" xml:space="preserve">
+    <value>MultiTextBox</value>
+  </data>
+  <data name="DescScrollBars" xml:space="preserve">
+    <value>ScrollBars</value>
+  </data>
+  <data name="DispScrollBars" xml:space="preserve">
+    <value>ScrollBars</value>
+  </data>
+  <data name="DescSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="DispSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="DescReadOnly" xml:space="preserve">
+    <value>Set Control is Readonly</value>
+  </data>
+  <data name="DispReadOnly" xml:space="preserve">
+    <value>ReadOnly</value>
+  </data>
+  <data name="DispBackColor" xml:space="preserve">
+    <value>Set Control BackColor</value>
+  </data>
+  <data name="DispGridColor" xml:space="preserve">
+    <value>GridColor</value>
+  </data>
+  <data name="DispColumns" xml:space="preserve">
+    <value>Set Columns</value>
+  </data>
+  <data name="DispHeaderText" xml:space="preserve">
+    <value>HeaderText</value>
+  </data>
+  <data name="HeaderText" xml:space="preserve">
+    <value>HeaderText</value>
+  </data>
+  <data name="ColumnsWidth" xml:space="preserve">
+    <value>ColumnsWidth</value>
+  </data>
+  <data name="DescColumnsWidth" xml:space="preserve">
+    <value>ColumnsWidth</value>
+  </data>
+  <data name="DispDataPropertyName" xml:space="preserve">
+    <value>DataPropertyName</value>
+  </data>
+  <data name="PanelDesc" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="PanelTitle" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="ColumnNameRepeat" xml:space="preserve">
+    <value>[{ 0 }]ColumnName Repeat [{ 1 }]</value>
+  </data>
+  <data name="FormNotColumn" xml:space="preserve">
+    <value>Form [{0}] Not Colum</value>
+  </data>
+  <data name="DispDataSourceProperties" xml:space="preserve">
+    <value>DataSourceProperties</value>
+  </data>
+  <data name="DispEventType" xml:space="preserve">
+    <value>DispEventType</value>
+  </data>
+  <data name="DispTargetControlName" xml:space="preserve">
+    <value>TargetControlName</value>
+  </data>
+  <data name="DispTargetControlProperty" xml:space="preserve">
+    <value>TargetControlProperty</value>
+  </data>
+  <data name="DispHideFileds" xml:space="preserve">
+    <value>HideFileds</value>
+  </data>
+  <data name="ReadOnlyDesc" xml:space="preserve">
+    <value>Set Control Is ReadOnly</value>
+  </data>
+  <data name="DutyChangeBindingSourceDesc" xml:space="preserve">
+    <value>DutyChange BindingSource</value>
+  </data>
+  <data name="DutyChangeBindingSourceTitle" xml:space="preserve">
+    <value>DutyChange</value>
+  </data>
+  <data name="PropertyBindingSourceDesc" xml:space="preserve">
+    <value>PropertyBindingSource</value>
+  </data>
+  <data name="PropertyBindingSourceTitle" xml:space="preserve">
+    <value>Property</value>
+  </data>
+  <data name="FindTextBox" xml:space="preserve">
+    <value>Find TextBox</value>
+  </data>
+  <data name="FindTextBoxDesc" xml:space="preserve">
+    <value>Find TextBox</value>
+  </data>
+  <data name="FindTextDisplayMember" xml:space="preserve">
+    <value>DisplayMember</value>
+  </data>
+  <data name="FindTextSearchMember" xml:space="preserve">
+    <value>SearchMember</value>
+  </data>
+  <data name="FindTextValueMember" xml:space="preserve">
+    <value>ValueMember</value>
+  </data>
+  <data name="FindTextFindTypeDesc" xml:space="preserve">
+    <value>FindType</value>
+  </data>
+  <data name="FindTextFindTypeSC" xml:space="preserve">
+    <value>FindType</value>
+  </data>
+  <data name="FindTextFindTypeSD" xml:space="preserve">
+    <value>FindType</value>
+  </data>
+  <data name="LWFindICPCRM" xml:space="preserve">
+    <value>CRM Find</value>
+  </data>
+  <data name="LWFindOperationNo" xml:space="preserve">
+    <value>OperationNo Find</value>
+  </data>
+  <data name="DegreeBindingSourceDesc" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="DegreeBindingSourceTitle" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="ICPFilePanelDesc" xml:space="preserve">
+    <value>File Panel</value>
+  </data>
+  <data name="ICPFilePanelTitle" xml:space="preserve">
+    <value>File Panel</value>
+  </data>
+  <data name="DataDictionariesSourceDesc" xml:space="preserve">
+    <value>Data Dictionaries Source</value>
+  </data>
+  <data name="DataDictionariesSourceTitle" xml:space="preserve">
+    <value>Data Dictionaries</value>
+  </data>
+  <data name="DataDictionaryTypeDescription" xml:space="preserve">
+    <value>Data Dictionary Type</value>
+  </data>
+</root>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/14/2011 11:31:12" ReportInfo.Modified="08/26/2011 16:19:30" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="bindingSource2" ReferenceName="bindingSource2" DataType="ICP.FAM.ServiceInterface.DataObjects.InvoiceInfo, ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Enabled="true">
+      <Column Name="SONo" DataType="System.String"/>
+      <Column Name="CtnTypeName" DataType="System.String"/>
+      <Column Name="CtnTypeID" DataType="System.Guid"/>
+      <Column Name="CompanyID" DataType="System.Guid"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="Bank1ID" DataType="System.Guid"/>
+      <Column Name="Bank1Name" DataType="System.String"/>
+      <Column Name="Bank2ID" DataType="System.Guid"/>
+      <Column Name="Bank2Name" DataType="System.String"/>
+      <Column Name="Tax" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="POLName" DataType="System.String"/>
+      <Column Name="PODName" DataType="System.String"/>
+      <Column Name="PlaceOfDeliveryName" DataType="System.String"/>
+      <Column Name="POLID" DataType="System.Guid"/>
+      <Column Name="PODID" DataType="System.Guid"/>
+      <Column Name="PlaceOfDeliveryID" DataType="System.Guid"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="VoyageID" DataType="System.Guid"/>
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="CustomerID" DataType="System.Guid"/>
+      <Column Name="TitleCName" DataType="System.String"/>
+      <Column Name="TitleEName" DataType="System.String"/>
+      <BusinessObjectDataSource Name="BillList1" Alias="BillList" Enabled="false" DataType="System.Collections.Generic.List`1[[ICP.FAM.ServiceInterface.DataObjects.BillList, ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" PropName="BillList" Enabled="false"/>
+      <BusinessObjectDataSource Name="Fees1" Alias="Fees" Enabled="false" DataType="System.Collections.Generic.List`1[[ICP.FAM.ServiceInterface.DataObjects.InvoiceFeeDate, ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]" PropName="Fees" Enabled="false"/>
+      <Column Name="IsNew" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="Selected" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="InvoiceNo" DataType="System.String"/>
+      <Column Name="InvoiceDate" DataType="System.DateTime"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="ExpressNo" DataType="System.String"/>
+      <Column Name="ExpressDate" DataType="System.DateTime"/>
+      <Column Name="CreateByID" DataType="System.Guid"/>
+      <Column Name="CreateByName" DataType="System.String"/>
+      <Column Name="CreateDate" DataType="System.DateTime"/>
+      <Column Name="UpdateDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="IsValid" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsDirty" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="Undoable" DataType="System.Boolean" BindableControl="CheckBox"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="718.2" Height="37.8"/>
+    <PageHeaderBand Name="PageHeader1" Top="77.8" Width="718.2" Height="28.35"/>
+    <DataBand Name="Data1" Top="126.15" Width="718.2" Height="75.6"/>
+    <PageFooterBand Name="PageFooter1" Top="221.75" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

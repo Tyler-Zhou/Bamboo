@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="03/03/2016 18:45:07" ReportInfo.Modified="04/18/2019 17:14:38" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="No" DataType="System.String"/>
+      <Column Name="TargetTypeName" DataType="System.String"/>
+      <Column Name="Customer" DataType="System.String"/>
+      <Column Name="StrCustomerDescription" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="PaymentTypeName" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="QuoteBy" DataType="System.String"/>
+      <Column Name="QuoteReferenceNumber" DataType="System.String"/>
+      <Column Name="QuoteTelephone" DataType="System.String"/>
+      <Column Name="QuoteFax" DataType="System.String"/>
+      <Column Name="QuoteEMail" DataType="System.String"/>
+      <Column Name="QuoteByDescription" DataType="System.String"/>
+      <Column Name="Terms" DataType="System.String"/>
+      <Column Name="EffectiveStartDate" DataType="System.DateTime"/>
+      <Column Name="ValidityDate" DataType="System.DateTime"/>
+      <Column Name="RequestDate" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="RatesListSource" ReferenceName="RatesListSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PlaceOfReceiptName" DataType="System.String"/>
+      <Column Name="POLName" DataType="System.String"/>
+      <Column Name="PODName" DataType="System.String"/>
+      <Column Name="PlaceOfDeliveryName" DataType="System.String"/>
+      <Column Name="TT" DataType="System.String"/>
+      <Column Name="Unit20" DataType="System.String"/>
+      <Column Name="Unit40" DataType="System.String"/>
+      <Column Name="Unit40HQ" DataType="System.String"/>
+      <Column Name="Unit45" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="SurChargesSource" ReferenceName="SurChargesSource" DataType="System.Int32" Enabled="true">
+      <Column Name="RateID" DataType="System.Guid"/>
+      <Column Name="ChargeName" DataType="System.String"/>
+      <Column Name="PerTypeName" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.Int32"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Price" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="PageMain" PaperWidth="260" StartPageEvent="Page1_StartPage">
+    <ReportTitleBand Name="ReportTitle1" Width="907.2" Height="75.6">
+      <PictureObject Name="Picture1" Top="9.45" Width="122.85" Height="56.7" ImageLocation="Reports\\LOGO\\CITYOCEAN.gif"/>
+      <TextObject Name="Text6" Left="699.3" Top="9.45" Width="217.35" Height="28.35" Text="Freight Quotation" HorzAlign="Center" Font="Arial, 16pt, style=Bold" TextFill.Color="0, 0, 140"/>
+    </ReportTitleBand>
+    <DataBand Name="DataMain1" Top="79.6" Width="907.2" Height="292.95" Guides="793.8,803.25,793.8,793.8">
+      <TableObject Name="TableRequestHeader2" Top="85.05" Width="907.2" Height="113.4">
+        <TableColumn Name="Column25" Width="226.8"/>
+        <TableColumn Name="Column26" Width="226.8"/>
+        <TableColumn Name="Column27" Width="226.8"/>
+        <TableColumn Name="Column28" Width="226.8"/>
+        <TableRow Name="Row11">
+          <TableCell Name="Cell84" Border.Lines="Right, Top" Text="[ReportSource.TargetTypeName]" Font="Arial, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell85" Border.Lines="Right, Top" Font="Arial, 9pt"/>
+          <TableCell Name="Cell86" Border.Lines="Right, Top" Text="Attention" Font="Arial, 9pt"/>
+          <TableCell Name="Cell87" Border.Lines="Top" Text="Your Reference Number" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row12">
+          <TableCell Name="labCustomerName" Border.Lines="Right, Bottom" Text="[ReportSource.StrCustomerDescription]" Font="Arial, 9pt" TextFill.Color="0, 0, 101" ColSpan="2" RowSpan="5"/>
+          <TableCell Name="Cell90" Border.Lines="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labAttention" Border.Lines="Right, Bottom" Text="[ReportSource.QuoteBy]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="labReferenceNumber" Border.Lines="Bottom" Text="[ReportSource.QuoteReferenceNumber]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+        </TableRow>
+        <TableRow Name="Row13">
+          <TableCell Name="labCustomerDescription" Border.Lines="Right, Bottom" Font="Arial, 9pt" ColSpan="2" RowSpan="4"/>
+          <TableCell Name="Cell95" Border.Lines="Right" Font="Arial, 9pt"/>
+          <TableCell Name="Cell96" Border.Lines="Right" Text="Telephone" Font="Arial, 9pt"/>
+          <TableCell Name="Cell97" Text="Fax" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row14">
+          <TableCell Name="Cell99" Font="Arial, 9pt"/>
+          <TableCell Name="Cell100" Border.Lines="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labTelephone" Border.Lines="Right, Bottom" Text="[ReportSource.QuoteTelephone]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="labFax" Border.Lines="Bottom" Text="[ReportSource.QuoteFax]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+        </TableRow>
+        <TableRow Name="Row15">
+          <TableCell Name="Cell104" Font="Arial, 9pt"/>
+          <TableCell Name="Cell105" Border.Lines="Right" Font="Arial, 9pt"/>
+          <TableCell Name="Cell106" Border.Lines="Right" Text="E-mail" Font="Arial, 9pt"/>
+          <TableCell Name="Cell107" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row16">
+          <TableCell Name="Cell109" Font="Arial, 9pt"/>
+          <TableCell Name="Cell110" Border.Lines="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labEMail" Border.Lines="Right, Bottom" Text="[ReportSource.QuoteEMail]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="Cell112" Border.Lines="Bottom" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="9.45" Top="198.45" Width="226.8" Height="18.9" Text="GENERAL CARGO DESCRIPTION" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TableObject Name="TableCargo" Top="236.25" Width="905.32" Height="37.8">
+        <TableColumn Name="Column29" Width="226.33"/>
+        <TableColumn Name="Column30" Width="226.33"/>
+        <TableColumn Name="Column31" Width="226.33"/>
+        <TableColumn Name="Column32" Width="226.33"/>
+        <TableRow Name="Row17">
+          <TableCell Name="Cell113" Border.Lines="Top" Text="DETAILS" Font="Arial, 9pt" ColSpan="2"/>
+          <TableCell Name="Cell114" Font="Arial, 9pt"/>
+          <TableCell Name="Cell115" Border.Lines="Top" Text="WEIGHT" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell116" Border.Lines="Top" Text="MEASURE" HorzAlign="Center" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row18">
+          <TableCell Name="Cell117" Font="Arial, 9pt"/>
+          <TableCell Name="Cell118" Font="Arial, 9pt"/>
+          <TableCell Name="Cell119" Font="Arial, 9pt"/>
+          <TableCell Name="Cell120" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text2" Left="236.25" Top="198.45" Width="217.35" Height="18.9" Text="[ReportSource.Commodity]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+      <TableObject Name="TableRequestHeader1" Top="9.45" Width="907.08" Height="56.7">
+        <TableColumn Name="Column53" Width="226.77"/>
+        <TableColumn Name="Column54" Width="226.77"/>
+        <TableColumn Name="Column55" Width="226.77"/>
+        <TableColumn Name="Column56" Width="226.77"/>
+        <TableRow Name="Row29">
+          <TableCell Name="Cell156" Text="Our Quote No." HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell157" Border.Lines="Right" Text="[ReportSource.No]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell158" Text="Request:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell159" Text="[ReportSource.RequestDate]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row32">
+          <TableCell Name="Cell172" Border.Lines="Top" Text="Payment Type:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell173" Border.Lines="Right, Top" Text="[ReportSource.PaymentTypeName]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell174" Border.Lines="Top" Text="Transport Clause:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell175" Border.Lines="Top" Text="[ReportSource.TransportClause]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+        <TableRow Name="Row30">
+          <TableCell Name="Cell161" Border.Lines="Top" Text="From:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell162" Border.Lines="Right, Top" Text="[ReportSource.EffectiveStartDate]" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell163" Border.Lines="Top" Text="To:" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+          <TableCell Name="Cell164" Border.Lines="Top" Text="[ReportSource.ValidityDate]" Font="Arial, 9pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text3" Left="453.6" Top="198.45" Width="226.8" Height="18.9" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text4" Left="680.4" Top="198.45" Width="226.8" Height="18.9" Font="Arial, 9pt"/>
+    </DataBand>
+    <DataBand Name="DataRates" Top="376.55" Width="907.2" Height="170.1" CanGrow="true" DataSource="RatesListSource" KeepDetail="true">
+      <TableObject Name="TablePortInfo" Width="907.16" Height="113.4">
+        <TableColumn Name="Column33" Width="226.79"/>
+        <TableColumn Name="Column34" Width="226.79"/>
+        <TableColumn Name="Column35" Width="226.79"/>
+        <TableColumn Name="Column36" Width="226.79"/>
+        <TableRow Name="Row19">
+          <TableCell Name="Cell121" Border.Lines="Top" Font="Arial, 9pt" ColSpan="4"/>
+          <TableCell Name="Cell122" Font="Arial, 9pt"/>
+          <TableCell Name="Cell123" Font="Arial, 9pt"/>
+          <TableCell Name="Cell124" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row20">
+          <TableCell Name="Cell126" Text="Origin:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labOrigin" Text="[RatesListSource.PlaceOfReceiptName]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="Cell128" Text="Port of Discharge:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labPODName" Text="[RatesListSource.PODName]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+        </TableRow>
+        <TableRow Name="Row21">
+          <TableCell Name="Cell131" Text="Port of Loading:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labPOLName" Text="[RatesListSource.POLName]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="Cell133" Text=" Final Destination:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labFinaDestination" Text="[RatesListSource.PlaceOfDeliveryName]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+        </TableRow>
+        <TableRow Name="Row22">
+          <TableCell Name="labCarrierTitle" Text="Carrier:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labCarrier" Text="[RatesListSource.Carrier]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="Cell138" Text="TT:" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labTT" Text="[RatesListSource.TT]" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+        </TableRow>
+        <TableRow Name="Row23">
+          <TableCell Name="Cell140" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="labSteamshipLine" Font="Arial, 9pt" TextFill.Color="0, 0, 101"/>
+          <TableCell Name="Cell142" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="Cell143" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row24">
+          <TableCell Name="Cell144" Font="Arial, 9pt"/>
+          <TableCell Name="Cell145" Font="Arial, 9pt"/>
+          <TableCell Name="Cell146" Font="Arial, 9pt"/>
+          <TableCell Name="Cell147" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="TableSurChargeTitle" Top="151.2" Width="905.2" Height="18.9" FixedColumns="1">
+        <TableColumn Name="Column41" Width="444.12"/>
+        <TableColumn Name="Column42" Width="122.82"/>
+        <TableColumn Name="Column43" Width="122.83"/>
+        <TableColumn Name="Column44" Width="94.47"/>
+        <TableColumn Name="Column57" Width="120.96"/>
+        <TableRow Name="Row26">
+          <TableCell Name="labFreightTitle" Border.Lines="Top, Bottom" Text="Freight" Font="Arial, 9pt"/>
+          <TableCell Name="labBasisTitle" Border.Lines="Top, Bottom" Text="Per" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="labRateTitle" Border.Lines="Top, Bottom" Text="Basis" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="labChargesTitle" Border.Lines="Top, Bottom" Text="Rate" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell165" Border.Lines="Top, Bottom" Text="Charges" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <DataBand Name="DataSurChargesSource" Top="550.65" Width="907.2" Height="18.9" DataSource="SurChargesSource" Filter="[SurChargesSource.RateID] == [RatesListSource.ID]" PrintIfDetailEmpty="true" PrintIfDatasourceEmpty="true">
+        <TableObject Name="Table3" Width="905.2" Height="18.9" FixedColumns="1">
+          <TableColumn Name="Column59" Width="444.12"/>
+          <TableColumn Name="Column60" Width="122.82"/>
+          <TableColumn Name="Column61" Width="122.83"/>
+          <TableColumn Name="Column62" Width="94.47"/>
+          <TableColumn Name="Column63" Width="120.96"/>
+          <TableRow Name="Row31">
+            <TableCell Name="Cell167" Text="[SurChargesSource.ChargeName]" Font="Arial, 9pt" TextFill.Color="0, 0, 107"/>
+            <TableCell Name="Cell168" Text="[SurChargesSource.PerTypeName]" HorzAlign="Center" Font="Arial, 9pt" TextFill.Color="0, 0, 107"/>
+            <TableCell Name="Cell169" Text="[SurChargesSource.Quantity]" HorzAlign="Center" Font="Arial, 9pt" TextFill.Color="0, 0, 107"/>
+            <TableCell Name="Cell170" Text="[SurChargesSource.UnitPrice]" HorzAlign="Center" Font="Arial, 9pt" TextFill.Color="0, 0, 107"/>
+            <TableCell Name="Cell171" Text="[SurChargesSource.Price]" Font="宋体, 9pt" TextFill.Color="0, 0, 107"/>
+          </TableRow>
+        </TableObject>
+        <Sort>
+          <Sort Expression="[SurChargesSource.ChargeName]"/>
+        </Sort>
+      </DataBand>
+    </DataBand>
+    <DataBand Name="DataMain2" Top="573.55" Width="907.2" Height="472.5">
+      <RichObject Name="Rich1" Top="56.7" Width="907.2" Height="160.65" CanGrow="true" Text="[ReportSource.Remark]" DataColumn="ReportSource.Remark"/>
+      <TextObject Name="labRemarksTitle" Top="37.8" Width="907.2" Height="18.9" Border.Lines="Top" Text="Remarks" Font="Arial, 9pt"/>
+      <RichObject Name="Rich2" Top="236.25" Width="907.2" Height="217.35" Text="{\rtf1\ansi\ansicpg936\deff0\nouicompat\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Arial;}}&#13;&#10;{\colortbl ;\red0\green0\blue0;\red255\green255\blue255;}&#13;&#10;{\*\generator Riched20 10.0.17134}\viewkind4\uc1 &#13;&#10;\pard\widctlpar\cf1\b\fs22 QUOTE VALIDITY TERMS: \b0 This NRA\~is an offer which may be withdrawn any time prior\~to its acceptance. To utilize the rates quoted, the shipper must accept the\~terms in writing by email or by making a booking pursuant to this NRA. . Unless otherwise specified, the rates quoted do not include marine insurance, customs clearance, duties, taxes, door delivery, or any customary charges at destination such as CSC, DDC, DTHC, or Port Charges. A charge may be assessed for collect freight. All charges not included in the rates but which are published in our Rules Tariff and in effect at the time of shipment\~shall apply to this arrangement. \highlight2 ALL QUOTATION WILL RESULT IN A NEGOTIATED RATE ARRANGEMENT (NRA) IF BOOKED AND SHIPPED, THE SHIPPER'S BOOKING OF CARGO AFTER RECEIVING THE TERMS OF THIS NRA OR AN NRA AMENDMENT CONSTITUTES ACCEPTANCE OF THE RATES AND TERMS OF THIS NRA OR NRA AMENDMENT.\highlight0\par&#13;&#10;\b Waiting Time/Detention/Demurrage/Charges for Change of Destination/Documents: \b0 Rates do not include truck waiting time or container detention or demurrage. Rates do not include destination change or documentation charges requested after the shipment has been received.\par&#13;&#10;\b Chassis Rental:\b0\~A chassis rental fee may be assessed by your trucker or by the steamship line through us if a chassis rental is required for the move. Chassis will be charged at cost to us.\par&#13;&#10;\cf0\fs24\par&#13;&#10;&#13;&#10;\pard\fs17\lang2052\par&#13;&#10;}&#13;&#10;"/>
+      <TextObject Name="Text13" Top="226.8" Width="907.2" Height="2.27" Border.Lines="Top, Bottom" Border.Style="Double" Border.Width="0.25" HorzAlign="Center"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/26/2011 10:36:45" ReportInfo.Modified="12/07/2012 16:45:23" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="WriteOffBillBaseReportData" ReferenceName="WriteOffBillBaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ReportTitle" DataType="System.String"/>
+      <Column Name="PrintDate" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="No" DataType="System.String"/>
+      <Column Name="ReceivedOrPayedDateLabel" DataType="System.String"/>
+      <Column Name="ReceivedOrPayedDate" DataType="System.String"/>
+      <Column Name="ActualReceivedOrPayedAmountLabel" DataType="System.String"/>
+      <Column Name="ActualReceivedOrPayedAmount" DataType="System.String"/>
+      <Column Name="Fee" Enabled="false" DataType="System.String"/>
+      <Column Name="Bank" DataType="System.String"/>
+      <Column Name="Customer" DataType="System.String"/>
+      <Column Name="AmountWrittenOff" DataType="System.String"/>
+      <Column Name="ExchangeGainsAndLosses" Enabled="false" DataType="System.String"/>
+      <Column Name="AmountAdvanceLabel" Enabled="false" DataType="System.String"/>
+      <Column Name="AmountAdvance" Enabled="false" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CreateBy" DataType="System.String"/>
+      <Column Name="UnReceivedOrPayAmountLabel" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="WriteOffBillDetailReportData" ReferenceName="WriteOffBillDetailReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ChargeName" DataType="System.String"/>
+      <Column Name="BillRefNo" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="UnReceivedOrPayAmount" DataType="System.String"/>
+      <Column Name="WriteOffAmount" DataType="System.String"/>
+      <Column Name="ExchangeRate" DataType="System.String"/>
+      <Column Name="FinalAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="WriteOffChargeReportData" ReferenceName="WriteOffChargeReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="GLDescription" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Amout" DataType="System.String"/>
+      <Column Name="ExchangeRate" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="TotalWriteOffFeeReportData" ReferenceName="TotalWriteOffFeeReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="TotalBillAmount" DataType="System.String"/>
+      <Column Name="TotalWriteOffAmount" DataType="System.String"/>
+      <Column Name="FinalAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="TotalChargeFeeReportData" ReferenceName="TotalChargeFeeReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="TotalBillAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="250" LeftMargin="8" FirstPageSource="4" OtherPagesSource="4">
+    <PageHeaderBand Name="ReportTitle1" Top="20" Width="876.96" Height="20.79">
+      <TextObject Name="Text15" Left="463.05" Width="47.25" Height="18.9" Text="当前页:" Font="Arial, 8pt"/>
+      <TextObject Name="Text65" Left="506.52" Width="22.68" Height="18.9" Text="[Page#]" Font="Arial, 8pt"/>
+      <TextObject Name="Text66" Left="525.42" Width="9.45" Height="18.9" Text="/" Font="Arial, 8pt"/>
+      <TextObject Name="Text67" Left="534.87" Width="47.25" Height="18.9" Text="总页数:" Font="Arial, 8pt"/>
+      <TextObject Name="Text68" Left="576.45" Width="47.25" Height="18.9" Text="[TotalPages#]" Font="Arial, 8pt"/>
+    </PageHeaderBand>
+    <DataBand Name="PageHeader1" Top="60.79" Width="876.96" Height="202.23">
+      <TextObject Name="Text3" Left="47.25" Top="56.7" Width="189" Height="18.9" Text="[WriteOffBillBaseReportData.No]" Font="宋体, 8pt"/>
+      <TextObject Name="Text4" Top="56.7" Width="56.7" Height="18.9" Text="单号:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text5" Left="236.25" Top="56.7" Width="56.7" Height="18.9" Text="银行:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text6" Left="274.05" Top="49.14" Width="349.65" Height="30.24" Text="[WriteOffBillBaseReportData.Bank]" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text7" Top="85.05" Width="75.6" Height="18.9" Text="[WriteOffBillBaseReportData.ReceivedOrPayedDateLabel]" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text8" Left="56.7" Top="85.05" Width="179.55" Height="23.81" Text="[WriteOffBillBaseReportData.ReceivedOrPayedDate]" Font="宋体, 8pt"/>
+      <TextObject Name="Text9" Left="236.25" Top="85.05" Width="56.7" Height="18.9" Text="客户:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text10" Left="274.05" Top="85.05" Width="349.65" Height="18.9" Text="[WriteOffBillBaseReportData.Customer]" Font="宋体, 8pt"/>
+      <TextObject Name="Text11" Top="113.4" Width="75.6" Height="18.9" Text="[WriteOffBillBaseReportData.ActualReceivedOrPayedAmountLabel]" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text12" Left="56.7" Top="113.4" Width="179.55" Height="23.81" Text="[WriteOffBillBaseReportData.ActualReceivedOrPayedAmount]" Font="宋体, 8pt"/>
+      <TextObject Name="Text13" Left="236.25" Top="113.4" Width="85.05" Height="18.9" Text="核销金额:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text14" Left="292.95" Top="113.4" Width="330.75" Height="18.9" Text="[WriteOffBillBaseReportData.AmountWrittenOff]" Font="宋体, 8pt"/>
+      <TextObject Name="Text21" Top="170.1" Width="151.2" Height="28.35" Fill.Color="WhiteSmoke" Text="账单号" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text22" Left="151.2" Top="170.1" Width="47.25" Height="28.35" Fill.Color="WhiteSmoke" Text="币种" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text23" Left="198.45" Top="170.1" Width="85.05" Height="28.35" Fill.Color="WhiteSmoke" Text="账单金额" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text24" Left="283.5" Top="170.1" Width="85.05" Height="28.35" Fill.Color="WhiteSmoke" Text="核销金额" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text25" Left="368.55" Top="170.1" Width="85.05" Height="28.35" Fill.Color="WhiteSmoke" Text="[WriteOffBillBaseReportData.UnReceivedOrPayAmountLabel]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text26" Left="453.6" Top="170.1" Width="103.95" Height="28.35" Fill.Color="WhiteSmoke" Text="折合金额" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text27" Left="557.55" Top="170.1" Width="66.15" Height="28.35" Fill.Color="WhiteSmoke" Text="汇率" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text58" Top="151.2" Width="75.6" Height="18.9" Text="账单:" Font="宋体, 10pt, style=Bold" TextFill.Color="IndianRed"/>
+      <LineObject Name="Line7" Top="198.45" Width="623.7" Border.Color="IndianRed" Border.Width="2"/>
+      <LineObject Name="Line8" Top="202.23" Width="623.7" Border.Color="IndianRed"/>
+      <LineObject Name="Line9" Top="168.21" Width="623.7" Border.Color="IndianRed"/>
+      <LineObject Name="Line10" Top="171.23" Width="623.7" Border.Color="IndianRed"/>
+      <TextObject Name="Text2" Top="18.9" Width="623.7" Height="30.24" Text="[WriteOffBillBaseReportData.ReportTitle]" HorzAlign="Center" Font="宋体, 17pt, style=Bold" TextFill.Color="IndianRed"/>
+      <TextObject Name="Text1" Width="623.7" Height="18.9" Text="[WriteOffBillBaseReportData.CompanyName]" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+    </DataBand>
+    <DataBand Name="Data1" Top="283.02" Width="876.96" Height="18.9" DataSource="WriteOffBillDetailReportData">
+      <TextObject Name="Text28" Width="151.2" Height="18.9" Text="[WriteOffBillDetailReportData.BillRefNo]" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text29" Left="151.2" Width="47.25" Height="18.9" Text="[WriteOffBillDetailReportData.Currency]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text30" Left="198.45" Width="85.05" Height="18.9" Text="[WriteOffBillDetailReportData.Amount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text31" Left="283.5" Width="85.05" Height="18.9" Text="[WriteOffBillDetailReportData.WriteOffAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text32" Left="368.55" Width="85.05" Height="18.9" Text="[WriteOffBillDetailReportData.UnReceivedOrPayAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text33" Left="453.6" Width="103.95" Height="18.9" Text="[WriteOffBillDetailReportData.FinalAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text34" Left="557.55" Width="66.15" Height="18.9" Text="[WriteOffBillDetailReportData.ExchangeRate]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="321.92" Width="876.96" Height="47.25">
+      <LineObject Name="Line1" Width="623.7" Border.Color="IndianRed"/>
+      <TextObject Name="Text35" Left="75.6" Top="5.67" Width="75.6" Height="18.9" Text="总计:" Font="宋体, 10pt, style=Bold"/>
+      <SubreportObject Name="Subreport1" Left="151.2" Top="1.89" Width="406.35" Height="18.9" ReportPage="Page2" PrintOnParent="true"/>
+    </DataBand>
+    <DataBand Name="Data7" Top="389.17" Width="876.96" Height="53.3">
+      <TextObject Name="Text40" Top="21.9" Width="160.65" Height="28.35" Fill.Color="WhiteSmoke" Text="客户" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text41" Left="160.65" Top="21.9" Width="94.5" Height="28.35" Fill.Color="WhiteSmoke" Text="账单号" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text42" Left="255.15" Top="21.9" Width="113.4" Height="28.35" Fill.Color="WhiteSmoke" Text="会计科目" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text44" Left="406.35" Top="21.9" Width="85.05" Height="28.35" Fill.Color="WhiteSmoke" Text="金额" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text45" Left="491.4" Top="21.9" Width="66.15" Height="28.35" Fill.Color="WhiteSmoke" Text="汇率" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text46" Left="557.55" Top="21.9" Width="66.15" Height="28.35" Fill.Color="WhiteSmoke" Text="备注" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text43" Left="368.55" Top="21.9" Width="37.8" Height="28.35" Fill.Color="WhiteSmoke" Text="币种" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text59" Top="0.5" Width="103.95" Height="18.9" Text="其它项目:" Font="宋体, 10pt, style=Bold" TextFill.Color="IndianRed"/>
+      <LineObject Name="Line3" Top="19.66" Width="623.7" Border.Color="IndianRed"/>
+      <LineObject Name="Line4" Top="23.44" Width="623.7" Border.Color="IndianRed"/>
+      <LineObject Name="Line5" Top="49.52" Width="623.7" Border.Color="IndianRed" Border.Width="2"/>
+      <LineObject Name="Line6" Top="53.3" Width="623.7" Border.Color="IndianRed"/>
+    </DataBand>
+    <DataBand Name="Data4" Top="462.47" Width="876.96" Height="18.9" DataSource="WriteOffChargeReportData">
+      <TextObject Name="Text47" Width="160.65" Height="18.9" Text="[WriteOffChargeReportData.CustomerName]" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text48" Left="160.65" Width="94.5" Height="18.9" Text="[WriteOffChargeReportData.BillNo]" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text49" Left="255.15" Width="113.4" Height="18.9" Text="[WriteOffChargeReportData.GLDescription]" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text50" Left="368.55" Width="37.8" Height="18.9" Text="[WriteOffChargeReportData.Currency]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text51" Left="406.35" Width="85.05" Height="18.9" Text="[WriteOffChargeReportData.Amout]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text52" Left="491.4" Width="66.15" Height="18.9" Text="[WriteOffChargeReportData.ExchangeRate]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text53" Left="557.55" Width="66.15" Height="18.9" Text="[WriteOffChargeReportData.Remark]" VertAlign="Center" Font="宋体, 8pt"/>
+    </DataBand>
+    <DataBand Name="Data5" Top="501.37" Width="876.96" Height="189">
+      <TextObject Name="Text54" Left="283.5" Top="5.67" Width="75.6" Height="18.9" Text="总计:" Font="宋体, 10pt, style=Bold"/>
+      <SubreportObject Name="Subreport2" Left="368.55" Top="1.89" Width="122.85" Height="18.9" ReportPage="Page3" PrintOnParent="true"/>
+      <LineObject Name="Line2" Width="623.7" Border.Color="IndianRed"/>
+      <TextObject Name="Text57" Top="47.25" Width="56.7" Height="18.9" Text="备注:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text60" Left="34.02" Top="47.25" Width="589.68" Height="18.9" Text="[WriteOffBillBaseReportData.Remark]" Font="宋体, 8pt"/>
+      <TextObject Name="Text61" Top="75.6" Width="66.15" Height="18.9" Text="创建人:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text62" Left="47.25" Top="75.6" Width="264.6" Height="18.9" Text="[WriteOffBillBaseReportData.CreateBy]" Font="宋体, 8pt"/>
+      <TextObject Name="Text63" Left="340.2" Top="75.6" Width="66.15" Height="18.9" Text="打印日期:" Font="宋体, 8pt, style=Bold"/>
+      <TextObject Name="Text64" Left="396.9" Top="75.6" Width="226.8" Height="18.9" Text="[Date]" Format="Date" Format.Format="d" Font="宋体, 8pt"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page2">
+    <DataBand Name="Data3" Top="20" Width="718.2" Height="18.9" DataSource="TotalWriteOffFeeReportData">
+      <TextObject Name="Text36" Width="47.25" Height="18.9" Text="[TotalWriteOffFeeReportData.Currency]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text37" Left="47.25" Width="85.05" Height="18.9" Text="[TotalWriteOffFeeReportData.TotalBillAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text38" Left="132.3" Width="85.05" Height="18.9" Text="[TotalWriteOffFeeReportData.TotalWriteOffAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text39" Left="302.4" Width="103.95" Height="18.9" Text="[TotalWriteOffFeeReportData.FinalAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page3">
+    <DataBand Name="Data6" Top="20" Width="718.2" Height="18.9" DataSource="TotalChargeFeeReportData">
+      <TextObject Name="Text55" Width="37.8" Height="18.9" Text="[TotalChargeFeeReportData.Currency]" HorzAlign="Center" VertAlign="Center" Font="宋体, 8pt"/>
+      <TextObject Name="Text56" Left="37.8" Width="85.05" Height="18.9" Text="[TotalChargeFeeReportData.TotalBillAmount]" HorzAlign="Right" VertAlign="Center" Font="宋体, 8pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

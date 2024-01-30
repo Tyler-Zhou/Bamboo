@@ -1,0 +1,50 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="CallbackServiceSection" type="ICP.Framework.CommonLibrary.Client.CallbackServiceConfigurationSection,ICP.Framework.CommonLibrary" />
+  </configSections>
+  <appSettings>
+    <add key="FileServerUrl" value="http://www.cityocean.com:11/ICPFiles.zip" />
+    <add key="WebSiteUrl" value="http://culture.cityocean.com:6688/index.aspx" />
+    <add key="EnableNls" value="true" />
+    <!--<add key="serviceBaseAddress" value="http://192.168.0.15:80/cityOceanService" />
+    <add key="tcpServiceBaseAddress" value="net.tcp://192.168.0.15:8087/cityOceanService" />-->
+    <add key="serviceBaseAddress" value="http://www.cityocean.com:80/cityOceanService" />
+    <add key="tcpServiceBaseAddress" value="net.tcp://www.cityocean.com:8087/cityOceanService" />
+    <!--<add key="serviceBaseAddress"  value="http://la.cityocean.com:8088/cityOceanService"/>
+    <add key="tcpServiceBaseAddress"  value="net.tcp://la.cityocean.com:8087/cityOceanService"/>-->
+    <add key="ApplicationName" value="ICPMailCenter.exe" />
+    <add key="UpdateApplicationName" value="ICPUpdate.exe" />
+    <add key="serviceNameSpace" value="www.cityocean.com" />
+    <add key="TcpServiceNameSpace" value="www.cityocean.com" />
+    <!-- 需要流式传输的服务类型名称，服务名以逗号隔开，区分大小写-->
+    <add key="streamedRequestServices" value="" />
+    <add key="sessionRequestServices" value="ISqlDataSynchronizationService" />
+    <!-- 压缩阈值，以KB为单位 为方便测试，测试时以B为单位-->
+    <add key="CompressionSize" value="500" />
+    <add key="InternalDomain" value="cityocean.com,topshipping.com.vn,harvest.com,longwin.net,harvest-logistic.com,cityocean.net,topshipping.cn,topshipping.com.my,mandarinlc.com" />
+    <add key="ICPHostServiceBaseAddress" value="net.pipe://localhost/LocalService" />
+    <add key="EmailCenterHostServiceBaseAddress" value="net.pipe://localhost/EmailCenterService" />
+    <add key="EmailCenterName" value="ICPMailCenter.exe" />
+    <add key="PropagateContext" value="true" />
+    <add key="TableNamesNeedUpdateData" value="OperationViewOECache" />
+    <add key="FilterModules" value="ICP.DataCache.FileSystem.dll,ICP.DataOperation.SqlCE.dll,ICP.DataCache.LocalOperation.dll,ICP.OA.UI.dll,ICP.Message.Client.dll,ICP.DataCache.BusinessOperation.dll,ICP.Common.UI.dll,ICP.Operation.Common.UI.dll,ICP.Common.CommandHandler.ServiceInterface.dll,ICP.MailCenter.UI.dll,ICP.MailCenter.Business.UI.dll" />
+    <add key="ClientSettingsProvider.ServiceUri" value="" />
+  </appSettings>
+  <CallbackServiceSection>
+    <Services>
+    </Services>
+  </CallbackServiceSection>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" />
+      </providers>
+    </membership>
+    <roleManager enabled="true" defaultProvider="ClientRoleProvider">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400" />
+      </providers>
+    </roleManager>
+  </system.web>
+</configuration>

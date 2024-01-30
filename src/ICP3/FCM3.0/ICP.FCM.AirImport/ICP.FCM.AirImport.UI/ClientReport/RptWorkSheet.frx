@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/07/2011 09:31:11" ReportInfo.Modified="07/07/2011 15:18:58" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Agent" DataType="System.String"/>
+      <Column Name="AgentName" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="Company" DataType="System.String"/>
+      <Column Name="Cost" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="DeliveryName" DataType="System.String"/>
+      <Column Name="DiscPortName" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.DateTime"/>
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="OperatorName" DataType="System.String"/>
+      <Column Name="PostDate" DataType="System.DateTime"/>
+      <Column Name="ReferenceNO" DataType="System.String"/>
+      <Column Name="Revenue" DataType="System.String"/>
+      <Column Name="Type" DataType="System.String"/>
+      <Column Name="VesselVoyageNo" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <Parameter Name="CurrentUser" DataType="System.String"/>
+    <Parameter Name="Currency" DataType="System.String"/>
+    <Parameter Name="PrintedOn" DataType="System.DateTime"/>
+  </Dictionary>
+  <ReportPage Name="Page624977778">
+    <PageHeaderBand Name="PageHeaderBand624977778" Top="20" Width="718.2" Height="113.4">
+      <TextObject Name="textbox1" Left="-141.75" Top="9.45" Width="945" Height="37.8" CanGrow="true" Text="Work Sheet" HorzAlign="Center" Font="Arial, 20.25pt, style=Bold"/>
+      <TextObject Name="textbox6" Left="585.9" Top="56.7" Width="103.95" Height="24" CanGrow="true" Text="[CurrentUser]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox7" Left="463.05" Top="56.7" Width="96" Height="24" CanGrow="true" Text="PRINTED BY:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox3" Left="151.2" Top="56.7" Width="96" Height="24" CanGrow="true" Text="[PrintedOn]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox2" Left="28.35" Top="56.7" Width="103.95" Height="24" CanGrow="true" Text="PRINTED  ON:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox4" Left="151.2" Top="85.05" Width="96" Height="18.9" CanGrow="true" Text="[Currency]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox5" Left="28.35" Top="85.05" Width="103.95" Height="18.9" CanGrow="true" Text="CURRENCY:" Font="宋体, 10pt"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand1395505706" Top="153.4" Width="718.2" Height="170.1">
+      <LineObject Name="line1" Width="718.2" Border.Color="SaddleBrown" Border.Width="3"/>
+      <TextObject Name="textbox18" Left="491.4" Top="18.9" Width="207.9" Height="24" CanGrow="true" Text="[ReportSource.VesselVoyageNo]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox19" Left="349.65" Top="18.9" Width="141.75" Height="24" CanGrow="true" Text="VSL/VOY NO(FLIGHT):" Font="宋体, 10pt"/>
+      <TextObject Name="textbox9" Left="113.4" Top="18.9" Width="236.25" Height="24" CanGrow="true" Text="[ReportSource.ReferenceNO]" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="textbox8" Top="18.9" Width="103.95" Height="24" CanGrow="true" Text="REFERENCE NO:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox35" Left="576.45" Top="47.25" Width="94.5" Height="24" CanGrow="true" Text="[ReportSource.ETD]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox33" Left="557.55" Top="47.25" Width="18.9" Height="24" CanGrow="true" Text="/" Font="宋体, 10pt"/>
+      <TextObject Name="textbox16" Left="444.15" Top="47.25" Width="113.4" Height="24" CanGrow="true" Text="[ReportSource.LoadPortName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox17" Left="349.65" Top="47.25" Width="85.05" Height="24" CanGrow="true" Text="P.O.L/ETD:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox10" Left="113.4" Top="47.25" Width="236.25" Height="24" CanGrow="true" Text="[ReportSource.MasterBLNo]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox11" Top="47.25" Width="113.4" Height="24" CanGrow="true" Text="MASTER B/L NO:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox36" Left="576.45" Top="75.6" Width="94.5" Height="24" CanGrow="true" Text="[ReportSource.ETA]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox34" Left="557.55" Top="75.6" Width="18.9" Height="24" CanGrow="true" Text="/" Font="宋体, 10pt"/>
+      <TextObject Name="textbox14" Left="444.15" Top="75.6" Width="113.4" Height="24" CanGrow="true" Text="[ReportSource.DiscPortName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox15" Left="349.65" Top="75.6" Width="85.05" Height="24" CanGrow="true" Text="P.O.D/ETA:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox12" Left="113.4" Top="75.6" Width="236.25" Height="24" CanGrow="true" Text="[ReportSource.AgentName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox13" Top="75.6" Width="103.95" Height="24" CanGrow="true" Text="AGENT NAME:" Font="宋体, 10pt"/>
+      <TextObject Name="textbox29" Left="444.15" Top="103.95" Width="226.8" Height="24" CanGrow="true" Text="[ReportSource.DeliveryName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox37" Left="349.65" Top="103.95" Width="85.05" Height="24" CanGrow="true" Text="Move Type:"/>
+      <TextObject Name="textbox38" Left="113.4" Top="103.95" Width="236.25" Height="24" CanGrow="true" Text="[ReportSource.OperatorName]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox39" Top="103.95" Width="103.95" Height="24" CanGrow="true" Text="Operater:"/>
+    </ColumnHeaderBand>
+    <DataBand Name="table2" Top="411.5" Width="718.2" Height="109.05" Guides="9.45" DataSource="ReportSource">
+      <TextObject Name="textbox24" Width="56.7" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.Type]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox25" Left="56.7" Width="66.15" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.HouseBLNo]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox26" Left="122.85" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.BillNo]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox52" Left="198.45" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.PostDate]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox56" Left="274.05" Width="132.3" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.Company]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox60" Left="406.35" Width="66.15" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.Revenue]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox64" Left="472.5" Width="85.05" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.Cost]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox68" Left="557.55" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="[ReportSource.Agent]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox72" Left="633.15" Width="75.6" Height="23.81" Border.Lines="All" CanGrow="true" Text="[ReportSource.Amount]" Font="宋体, 10pt"/>
+      <TextObject Name="textbox31" Left="453.6" Top="37.8" Width="56.7" Height="24" CanGrow="true" Text="TOTAL:" Font="宋体, 9.75pt, style=Bold" TextFill.Color="Red"/>
+      <TextObject Name="textbox32" Left="529.2" Top="37.8" Width="170.1" Height="24" CanGrow="true" Text="Sum(Fields!Amount.Value, &quot;ReportSource&quot;)" Font="宋体, 10pt"/>
+      <TextObject Name="textbox20" Left="-255.15" Top="75.6" Width="737.1" Height="24" CanGrow="true" Text="CITY Air INT'L INC" Font="宋体, 10pt"/>
+      <DataHeaderBand Top="343.5" Width="718.2" Height="48" Guides="9.45">
+        <TextObject Name="textbox30" Width="56.7" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox46" Left="56.7" Width="66.15" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox49" Left="122.85" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox50" Left="198.45" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox54" Left="274.05" Width="132.3" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox58" Left="406.35" Width="151.2" Height="24" Border.Lines="All" CanGrow="true" Text="LOCAL" HorzAlign="Center" Font="宋体, 10pt"/>
+        <TextObject Name="textbox66" Left="557.55" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox70" Left="633.15" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Font="宋体, 10pt"/>
+        <TextObject Name="textbox21" Top="24" Width="56.7" Height="24" Border.Lines="All" CanGrow="true" Text="Type" Font="宋体, 10pt"/>
+        <TextObject Name="textbox22" Left="56.7" Top="24" Width="66.15" Height="24" Border.Lines="All" CanGrow="true" Text="B/L NO" Font="宋体, 10pt"/>
+        <TextObject Name="textbox23" Left="122.85" Top="24" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="INV NO" Font="宋体, 10pt"/>
+        <TextObject Name="textbox51" Left="198.45" Top="24" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="POST DATE" Font="宋体, 10pt"/>
+        <TextObject Name="textbox55" Left="274.05" Top="24" Width="132.3" Height="24" Border.Lines="All" CanGrow="true" Text="COMPANY" Font="宋体, 10pt"/>
+        <TextObject Name="textbox59" Left="406.35" Top="24" Width="66.15" Height="24" Border.Lines="All" CanGrow="true" Text="REVENUE" Font="宋体, 10pt"/>
+        <TextObject Name="textbox63" Left="472.5" Top="24" Width="85.05" Height="24" Border.Lines="All" CanGrow="true" Text="COST" Font="宋体, 10pt"/>
+        <TextObject Name="textbox67" Left="557.55" Top="23.81" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="AGENT" Font="宋体, 10pt"/>
+        <TextObject Name="textbox71" Left="633.15" Top="23.81" Width="75.6" Height="24" Border.Lines="All" CanGrow="true" Text="Amount" Font="宋体, 10pt"/>
+        <LineObject Name="line2" Top="-18.9" Width="718.2"/>
+      </DataHeaderBand>
+    </DataBand>
+    <DataBand Name="Data828968" Top="801.9" Width="718.2" Height="10">
+      <DataHeaderBand Top="540.55" Width="718.2" Height="241.35"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooterBand18549987" Top="831.9" Width="718.2" Height="24"/>
+  </ReportPage>
+</Report>

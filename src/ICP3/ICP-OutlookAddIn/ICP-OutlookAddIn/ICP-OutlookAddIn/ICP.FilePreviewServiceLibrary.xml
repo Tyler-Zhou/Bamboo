@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.FilePreviewServiceLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.FilePreviewServiceLibrary.IFilePreviewService">
+            <summary>
+            文档预览服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFilePreviewService.Preview(System.String,System.Drawing.Point,System.Drawing.Size,System.Boolean)">
+            <summary>
+            预览文档
+            </summary>
+            <param name="filePath">文档的绝对路径</param>
+            <param name="location">预览窗口左上角位置</param>
+            <param name="size">预览窗口大小</param>
+            <param name="isAutoHide">预览窗口是否定时隐藏</param>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFilePreviewService.Hide">
+            <summary>
+            隐藏预览窗口
+            </summary>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFilePreviewService.Exit">
+            <summary>
+            退出预览程序
+            </summary>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFilePreviewService.Print">
+            <summary>
+            打印
+            </summary>
+        </member>
+        <member name="T:ICP.FilePreviewServiceLibrary.IOHelper">
+            <summary>
+            文件和文件夹辅助类
+            </summary>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IOHelper.CheckFileExists(System.String,System.Boolean)">
+            <summary>
+            检测文件是否存在
+            </summary>
+            <param name="path">文件路径</param>
+            <param name="throwExceptionIfNotExists">如果文件不存在，是否抛出异常</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IOHelper.ReadFileContentFromDisk(System.String)">
+            <summary>
+            读取文件获取字节流
+            </summary>
+            <param name="filePath">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IOHelper.WriteToDisk(System.String,System.Byte[])">
+            <summary>
+            将字节流写入指定文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IOHelper.EnsureDirectoryExists(System.String)">
+            <summary>
+            确保路径存在
+            </summary>
+            <param name="directoryName"></param>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IOHelper.CopyNewFile(System.String,System.String)">
+            <summary>
+            将文本文件写入另一文本文件中 
+            </summary>
+            <param name="data"></param>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.FilePreviewServiceLibrary.IFileConvertService">
+            <summary>
+            文件转换服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.MergePDFFiles(System.Collections.Generic.List{System.String})">
+            <summary>
+            合并多个PDF文件产生单个PDF文件
+            </summary>
+            <param name="fileList">PDF文件列表</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertImage2PDF(System.String)">
+            <summary>
+            将图片转换为PDF文件
+            </summary>
+            <param name="imageFilePath">图片文件路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertText2PDF(System.String)">
+            <summary>
+            将图片转换为PDF文件
+            </summary>
+            <param name="txtFilePath">文本文件路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertWord2PDF(System.String)">
+            <summary>
+            将Word文件转换为PDF
+            </summary>
+            <param name="wordFilePath">word文件路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertPPT2PDF(System.String)">
+            <summary>
+            将PPT转换为PDF文件
+            </summary>
+            <param name="pptFilePath">ppt文档所在路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertExcel2PDF(System.String)">
+            <summary>
+            将Excel文件转换为PDF文件
+            </summary>
+            <param name="excelFilePath">excel文件所在路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+        <member name="M:ICP.FilePreviewServiceLibrary.IFileConvertService.ConvertHtml2PDF(System.String)">
+            <summary>
+            将html文件转换为PDF文件
+            </summary>
+            <param name="htmlFilePath">html文件所在路径</param>
+            <returns>转换后产生的文件所在路径</returns>
+        </member>
+    </members>
+</doc>

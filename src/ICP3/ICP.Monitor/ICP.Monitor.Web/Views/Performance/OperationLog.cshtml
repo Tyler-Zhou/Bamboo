@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "OperationLog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="hh">
+    <div class="easyui-navpanel">
+        <div style="height:200px">
+            <input class="easyui-textbox" label="Code:" prompt="User Code" style="width:20px">
+        </div>
+        <div class="m-right">
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-search',plain:true" onclick="accept()"></a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-undo',plain:true" onclick="reject()"></a>
+        </div>
+    </div>
+</div>
+<table id="dg" data-options="header:'#hh',singleSelect:true,border:false,fit:true,fitColumns:true,scrollbarSize:0">
+    <thead>
+        <tr>
+            <th data-options="field:'OperationName',width:80">操作类型</th>
+            <th data-options="field:'OperationContent',width:100">动作</th>
+            <th data-options="field:'OperationTime',width:80">操作时间</th>
+            <th data-options="field:'OperationDuration',width:80">操作时间间隔</th>
+            <th data-options="field:'UserCode',width:80">用户代码</th>
+            <th data-options="field:'UserName',width:80">用户名</th>
+            <th data-options="field:'AssemblyNames',width:80">程序集</th>
+        </tr>
+    </thead>
+</table>
+<script>
+        $(function(){
+            $('#dg').datagrid({
+                url: "../Performance/GetOperationLogs",
+                collapsible: false,
+                singleSelect: true,
+                nowrap: true,
+                autoRowHeight: false,
+                striped: true,
+                border: true,
+                fitColumns: true
+            });
+        });
+</script>
+

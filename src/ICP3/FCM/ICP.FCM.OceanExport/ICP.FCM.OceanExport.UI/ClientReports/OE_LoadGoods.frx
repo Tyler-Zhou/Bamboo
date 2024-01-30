@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/08/2010 10:21:52" ReportInfo.Modified="03/05/2018 15:32:08" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ShipperName" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="ConsigneeName" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="NotifyPartyName" DataType="System.String"/>
+      <Column Name="NotifyPartyDescription" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ContainerQtyDescription" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.Int32"/>
+      <Column Name="QuantityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="948.33">
+      <TextObject Name="txtShipper" Left="18.69" Top="70.59" Width="318.72" Height="92.16" Text="[ReportSource.ShipperDescription]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtConsignee" Left="18.69" Top="180.99" Width="311.04" Height="95.04" Text="[ReportSource.ConsigneeDescription]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtNotify" Left="18.69" Top="272.19" Width="366.72" Height="69.12" Text="[ReportSource.NotifyPartyDescription]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtBLNo" Left="393.45" Top="68.82" Width="129.6" Height="21.12" Text="[ReportSource.BLNo]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtVessel" Left="19.65" Top="393.39" Width="131.88" Height="21.12" Text="[ReportSource.Vessel]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtVoyno" Left="148.8" Top="392.43" Width="82.56" Height="21.12" Text="[ReportSource.Voyage]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtPOL" Left="239.04" Top="391.47" Width="129.6" Height="21.12" Text="[ReportSource.POL]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtPOD" Left="19.61" Top="427.71" Width="129.6" Height="21.12" Text="[ReportSource.POD]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtDeliveryplace" Left="170.33" Top="426.75" Width="129.6" Height="21.12" Text="[ReportSource.PlaceOfDelivery]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtCtnNo" Left="2.52" Top="495.72" Width="77.76" Height="329.76" Text="[ReportSource.ContainerQtyDescription]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtMarks" Left="95.34" Top="495.72" Width="71.34" Height="175.68" Text="[ReportSource.Marks]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtQty" Left="175.32" Top="496.68" Width="56.64" Height="21.12" Text="[ReportSource.Quantity]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtQtyUnit" Left="175.32" Top="516.84" Width="64.32" Height="21.12" Text="[ReportSource.QuantityUnit]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtGoods" Left="245.4" Top="495.72" Width="253.44" Height="182.4" Text="[ReportSource.GoodsDescription]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtWeight" Left="509.4" Top="491.88" Width="85.44" Height="183.36" Text="[ReportSource.Weight][ReportSource.WeightUnit]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtMeausrement" Left="593.07" Top="490.92" Width="84.33" Height="181.44" Text="[ReportSource.Measurement][ReportSource.MeasurementUnit]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtCtnInfo" Left="155.61" Top="784.38" Width="408" Height="41.28" Text="[ReportSource.ContainerInfo]" Font="Arial, 9pt, style=Bold"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

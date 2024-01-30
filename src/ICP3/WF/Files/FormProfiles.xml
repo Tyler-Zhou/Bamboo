@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="FormProfilesList" description="表单配置器列表">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="CName" type="string" description="中文名称">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="中文名称" />
+      </field>
+      <field name="EName" type="string" description="英文名称">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="英文名称" />
+      </field>
+      <field name="FormData" type="XmlDocument" description="表单数据">
+        <validation type="required" errmsg="表单数据" />
+      </field>
+      <field name="DataScheme" type="XmlDocument" description="表单数据架构">
+        <validation type="required" errmsg="表单数据架构" />
+      </field>
+      <field name="Version" type="string" description="版本">
+        <validation type="stringlength" length="10" />
+        <validation type="required" errmsg="版本" />
+      </field>
+      <field name="CreateBy" type="Guid" description="建立人">
+        <validation type="required" errmsg="建立人" />
+      </field>
+      <field name="CreateDate" type="DateTime" description="建立时间">
+        <validation type="required" errmsg="建立时间" />
+      </field>
+      <field name="UpdateBy" type="Guid?" description="更新人" />
+      <field name="UpdateDate" type="DateTime?" description="更新时间" />
+    </class>
+    <class name="FormProfilesInfo" baseclass="FormProfilesList" description="表单配置器详细信息" />
+  </classes>
+</root>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/19/2011 14:40:03" ReportInfo.Modified="09/21/2011 16:04:25" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="AgentBillCheckingBaseReportData" ReferenceName="AgentBillCheckingBaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="PrintDate" DataType="System.String"/>
+      <Column Name="LaunchCompanyName" DataType="System.String"/>
+      <Column Name="LaunchUserName" DataType="System.String"/>
+      <Column Name="CheckCompanyName" DataType="System.String"/>
+      <Column Name="CheckUserName" DataType="System.String"/>
+      <Column Name="OperationTypes" DataType="System.String"/>
+      <Column Name="EndingETD" DataType="System.String"/>
+      <Column Name="TotalLaunchDebit" DataType="System.String"/>
+      <Column Name="TotalLaunchCredit" DataType="System.String"/>
+      <Column Name="TotalLaunchBalance" DataType="System.String"/>
+      <Column Name="TotalGap" DataType="System.String"/>
+      <Column Name="TotalCheckBalance" DataType="System.String"/>
+      <Column Name="TotalCheckDebit" DataType="System.String"/>
+      <Column Name="TotalCheckCredit" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="AgentBillCheckingDetailReportData" ReferenceName="AgentBillCheckingDetailReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="BLNO" DataType="System.String"/>
+      <Column Name="CurrencyName" DataType="System.String"/>
+      <Column Name="LaunchBillNOs" DataType="System.String"/>
+      <Column Name="LaunchDebit" DataType="System.String"/>
+      <Column Name="LaunchCredit" DataType="System.String"/>
+      <Column Name="LaunchBalance" DataType="System.String"/>
+      <Column Name="Gap" DataType="System.String"/>
+      <Column Name="CheckBillNOs" DataType="System.String"/>
+      <Column Name="CheckDebit" DataType="System.String"/>
+      <Column Name="CheckCredit" DataType="System.String"/>
+      <Column Name="CheckBalance" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="250">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="869.4" Height="94.5">
+      <TextObject Name="Text1" Top="18.9" Width="878.85" Height="37.8" Text="Agent BillChecking" HorzAlign="Center" Font="宋体, 20pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Left="661.5" Top="66.15" Width="75.6" Height="18.9" Text="Print Date:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text25" Left="737.1" Top="66.15" Width="141.75" Height="18.9" Text="[AgentBillCheckingBaseReportData.PrintDate]"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="134.5" Width="869.4" Height="94.5">
+      <TextObject Name="Text3" Width="141.75" Height="18.9" Text="Company launched:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Top="28.35" Width="94.5" Height="18.9" Text="sponsor:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text5" Left="255.15" Width="141.75" Height="18.9" Text="Company Checked:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="255.15" Top="28.35" Width="141.75" Height="18.9" Text="Checked man:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="510.3" Width="113.4" Height="18.9" Text="Business Type:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="510.3" Top="28.35" Width="113.4" Height="18.9" Text="ETD as of :" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Top="56.7" Width="236.25" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Base" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Top="75.6" Width="77.49" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="ETD"/>
+      <TextObject Name="Text14" Left="77.49" Top="75.6" Width="111.51" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="BL No."/>
+      <TextObject Name="Text15" Left="189" Top="75.6" Width="47.25" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Cur."/>
+      <TextObject Name="Text10" Left="236.25" Top="56.7" Width="283.5" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Initiating agent" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="236.25" Top="75.6" Width="124.74" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Bil lNo."/>
+      <TextObject Name="Text17" Left="360.99" Top="75.6" Width="51.03" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Debit"/>
+      <TextObject Name="Text18" Left="412.02" Top="75.6" Width="49.14" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="sort out"/>
+      <TextObject Name="Text19" Left="461.16" Top="75.6" Width="58.59" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Balance"/>
+      <TextObject Name="Text11" Left="519.75" Top="56.7" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise"/>
+      <TextObject Name="Text20" Left="519.75" Top="75.6" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Gap" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text12" Left="576.45" Top="56.7" Width="302.4" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Checked Agent &#13;&#10;" HorzAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text21" Left="576.45" Top="75.6" Width="58.59" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Balance"/>
+      <TextObject Name="Text22" Left="635.04" Top="75.6" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Debit"/>
+      <TextObject Name="Text23" Left="691.74" Top="75.6" Width="56.7" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="sort out"/>
+      <TextObject Name="Text24" Left="747.68" Top="75.6" Width="131.54" Height="18.9" Border.Lines="All" Fill.Color="PaleTurquoise" Text="Bil lNo."/>
+      <TextObject Name="Text26" Left="141.75" Width="113.4" Height="18.9" Text="[AgentBillCheckingBaseReportData.LaunchCompanyName]"/>
+      <TextObject Name="Text27" Left="396.9" Width="113.4" Height="18.9" Text="[AgentBillCheckingBaseReportData.CheckCompanyName]"/>
+      <TextObject Name="Text28" Left="141.75" Top="28.35" Width="113.4" Height="18.9" Text="[AgentBillCheckingBaseReportData.LaunchUserName]"/>
+      <TextObject Name="Text29" Left="396.9" Top="28.35" Width="113.4" Height="18.9" Text="[AgentBillCheckingBaseReportData.CheckUserName]"/>
+      <TextObject Name="Text30" Left="614.25" Width="264.6" Height="18.9" Text="[AgentBillCheckingBaseReportData.OperationTypes]" Font="宋体, 9pt"/>
+      <TextObject Name="Text31" Left="614.25" Top="28.35" Width="264.6" Height="18.9" Text="[AgentBillCheckingBaseReportData.EndingETD]"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="249" Width="869.4" Height="18.9" DataSource="AgentBillCheckingDetailReportData">
+      <TextObject Name="Text32" Width="77.49" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.ETD]" Font="宋体, 8pt"/>
+      <TextObject Name="Text33" Left="77.49" Width="111.51" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.BLNO]" Font="宋体, 9pt"/>
+      <TextObject Name="Text34" Left="189" Width="47.25" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CurrencyName]"/>
+      <TextObject Name="Text35" Left="236.25" Width="124.74" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchBillNOs]" Font="宋体, 9pt"/>
+      <TextObject Name="Text36" Left="360.99" Width="51.03" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchDebit]"/>
+      <TextObject Name="Text37" Left="412.02" Width="49.14" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchCredit]"/>
+      <TextObject Name="Text38" Left="461.16" Width="58.59" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.LaunchBalance]"/>
+      <TextObject Name="Text39" Left="519.75" Width="56.7" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.Gap]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text40" Left="576.45" Width="58.59" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckBalance]"/>
+      <TextObject Name="Text41" Left="635.04" Width="56.7" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckDebit]"/>
+      <TextObject Name="Text42" Left="691.74" Width="56.7" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckCredit]"/>
+      <TextObject Name="Text43" Left="747.68" Width="131.54" Height="18.9" Border.Lines="All" Text="[AgentBillCheckingDetailReportData.CheckBillNOs]" Font="宋体, 9pt"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="287.9" Width="869.4" Height="64.5">
+      <TextObject Name="Text44" Left="283.5" Top="9.45" Width="56.7" Height="18.9" Text="Total:" Font="宋体, 11pt, style=Bold"/>
+      <TextObject Name="Text45" Left="360.99" Top="9.45" Width="51.03" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalLaunchDebit]" Font="宋体, 9pt"/>
+      <TextObject Name="Text46" Left="412.02" Top="9.45" Width="49.14" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalLaunchCredit]" Font="宋体, 9pt"/>
+      <TextObject Name="Text47" Left="461.16" Top="9.45" Width="58.59" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalLaunchBalance]" Font="宋体, 9pt"/>
+      <TextObject Name="Text48" Left="519.75" Top="9.45" Width="56.7" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalGap]" Font="宋体, 9pt"/>
+      <TextObject Name="Text49" Left="576.45" Top="9.45" Width="58.59" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalCheckBalance]" Font="宋体, 9pt"/>
+      <TextObject Name="Text50" Left="635.04" Top="9.45" Width="56.7" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalCheckDebit]" Font="宋体, 9pt"/>
+      <TextObject Name="Text51" Left="691.74" Top="9.45" Width="56.7" Height="18.9" Text="[AgentBillCheckingBaseReportData.TotalCheckCredit]" Font="宋体, 9pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="372.4" Width="869.4" Height="47.25"/>
+  </ReportPage>
+</Report>

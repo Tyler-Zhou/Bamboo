@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.TaskCenter.UI</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.TaskCenterWorkitem">
+            <summary>
+            任务中心WorkItem
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenterWorkitem.OnRunStarted">
+            <summary>
+            重载OnRunStarted
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenterWorkitem.ShowMainWorkSpace">
+            <summary>
+             显示主页面
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenterCommandConstants">
+            <summary>
+            事件命令常量
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenterCommandConstants.SetReadOnly">
+            <summary>
+            设置TaskItemsWorkSpace控件只读
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenterCommandConstants.CancelReadOnly">
+            <summary>
+            取消TaskItemsWorkSpace控件只读
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenterCommandConstants.CommandDisableTaskCenter">
+            <summary>
+            页面置灰
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenterCommandConstants.CommandEnableTaskCenter">
+            <summary>
+            取消页面置灰
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenterWorkSapceConsts">
+            <summary>
+            工作区域常量
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.TaskTabSpace">
+            <summary>
+            Tab页控件ID的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.EventWorkSpace">
+            <summary>
+            事件列表的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.BLWorkSpace">
+            <summary>
+            BL列表的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.CommunicationWorkSapce">
+            <summary>
+            Fax/Mail/EDI沟通历史记录的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.DocumentListWorkSpace">
+            <summary>
+            文档列表的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.ContactWorkSpace">
+            <summary>
+            联系人的常量名称
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskTabSpace.ViewListWorkSpace">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.TaskItemFactory">
+            <summary>
+            操作视图工厂，主要通过操作视图的类型来加载那个类型视图
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem">
+            <summary>
+            任务中心主WorkItem
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem.viewListSmartPart">
+            <summary>
+            任务中心功能树视图列表用户控件
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem.baseTaskItemPart">
+            <summary>
+            订单项目工作区SmartPart
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem.ShowViewList(Microsoft.Practices.CompositeUI.SmartParts.IWorkspace,DevExpress.XtraEditors.SplitGroupPanel)">
+            <summary>
+            显示任务中心功能树视图列表ViewListSmartPart用户控件
+            </summary>
+            <param name="deckWorkspace">显示的地方IWorkspace</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem.ShowTaskItems(ICP.TaskCenter.ServiceInterface.NodeInfo)">
+            <summary>
+            显示订单项目工作区SmartPart用户控件
+            </summary>
+            <param name="deckWorkspace">显示的地方IWorkspace</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkWorkItem.ShowTaskItem(ICP.TaskCenter.ServiceInterface.NodeInfo)">
+            <summary>
+            显示订单工作区信息
+            </summary>
+            <param name="nodeInfo">当前操作视图信息</param>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.MainWork.MainWorkSpace">
+            <summary>
+            任务中心总面板定位SmartPart
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.#ctor">
+             <summary>
+            默认构成函数
+             </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.Command_SetReadOnly(System.Object,System.EventArgs)">
+            <summary>
+            页面取消隐藏
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.Command_CancelReadOnly(System.Object,System.EventArgs)">
+            <summary>
+            页面隐藏
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.CommandDisableTaskCenter(System.Object,System.EventArgs)">
+            <summary>
+            页面置灰
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.CommandEnableTaskCenter(System.Object,System.EventArgs)">
+            <summary>
+            页面取消置灰
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.MainWork.MainWorkSpace.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkSpace.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.MainWork.MainWorkSpace.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.BaseTaskItemPart">
+            <summary>
+            操作视图基类工作区SmartPart所以视图都该继承于此处并且名称规则
+            为视图操作类型缩写加上"TaskItemPart" 如海出子类为OETaskItemPart，
+            并且实现虚拟Init方法
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.BaseTaskItemPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.BaseTaskItemPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.BaseTaskItemPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.BaseTaskItemPart.Init(ICP.TaskCenter.ServiceInterface.NodeInfo)">
+            <summary>
+            初始化工作,初始化化工具栏，订单数据表，数据表右键菜单。订单数据详情信息
+            </summary>
+            <param name="nodeInfo">操作视图对象</param>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.BaseTaskItemPart.RootWorkItem">
+            <summary>
+            工作项目WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenterModuleInit">
+            <summary>
+            任务中心模块初始化类
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenterModuleInit.Command_TaskCenter(System.Object,System.EventArgs)">
+            <summary>
+            添加任务中心模块
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenterModuleInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.ViewListSmartPart">
+            <summary>
+            任务中心功能树视图列表用户控件
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.CurrentID">
+            <summary>
+            当前节点ID
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart._parentNode">
+            <summary>
+            根节点
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.ViewNodeChangedEventHandler">
+            <summary>
+            当前视图节点改变事件
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.loadingNodes">
+            <summary>
+            异步读取中正在加载的节点集合
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.dicNodes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart._node">
+            <summary>
+            记录新增节点的信息
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.nodeinfoid">
+            <summary>
+            节点的ID
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.userId">
+            <summary>
+            节点所属人的
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.ViewListSmartPart.temp">
+            <summary>
+            节点实体对象
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.txtquery_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            回车执行查询
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.ProcessNode(ICP.TaskCenter.ServiceInterface.NodeInfo,DevExpress.XtraTreeList.Nodes.TreeListNode,DevExpress.XtraTreeList.TreeListHitInfo)">
+            <summary>
+            点击节点执行查询
+            </summary>
+            <param name="template">节点的实体</param>
+            <param name="node">节点集合</param>
+            <param name="hitInfo">选择的节点</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.InnerInit(ICP.TaskCenter.ServiceInterface.NodeInfo)">
+            <summary>
+            得到父节点的子节点数据
+            </summary>
+            <param name="template" type="NodeInfo">父节点</param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.ButAdvancedquery_Click(System.Object,System.EventArgs)">
+            <summary>
+            高级查询
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.AddTreeListNode(System.String)">
+            <summary>
+            增加节点信息
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.AddQueryConditions(System.String)">
+            <summary>
+            记录上次高级查询的条件
+            </summary>
+            <param name="stroriginal"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.UpdateQueryConditions(System.String)">
+            <summary>
+            修改用户已经存在的高级查询记录
+            </summary>
+            <param name="stroriginal"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.GetQueryConditions">
+            <summary>
+            查找当前用户是否存在高级查询的记录
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.toolTipTreeList_GetActiveObjectInfo(System.Object,DevExpress.Utils.ToolTipControllerGetActiveObjectInfoEventArgs)">
+            <summary>
+            树的ToolTip显示
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.ViewListSmartPart.Command_F5_Search(System.Object,System.EventArgs)">
+            <summary>
+            新增订舱单
+            </summary>
+            <param name="sender"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.TaskItem.TaskItemController">
+            <summary>
+            订单项目Controller
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.TaskItem.TaskItemController.taskItemWorkItem">
+            <summary>
+            订单项目工作区WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.TaskItem.TaskItemController.TaskItemWorkItem">
+            <summary>
+            订单项目工作区WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.MainWork.MainWorkController">
+            <summary>
+            订单工作区控制器
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.UI.MainWork.MainWorkController.mainWorkWorkItem">
+            <summary>
+            订单工作区的WorkItem项
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.UI.MainWork.MainWorkController.ShowTaskItems(ICP.TaskCenter.ServiceInterface.NodeInfo)">
+            <summary>
+            根据操作视图来时显示订单项目
+            </summary>
+            <param name="nodeInfo">当前操作视图信息</param>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.MainWork.MainWorkController.MainWorkWorkItem">
+            <summary>
+            订单工作区的WorkItem项
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.Properties.Resources">
+            <summary>
+              强类型资源类，用于查找本地化字符串等。
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.UI.Properties.Resources.Culture">
+            <summary>
+              为使用此强类型资源类的所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:ChildrenNodeDataFetchParameter">
+            <summary>
+            加载节点EventArgs
+            </summary>
+        </member>
+        <member name="P:ChildrenNodeDataFetchParameter.Parent">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:ChildrenNodeDataFetchParameter.Children">
+            <summary>
+            子节点集合
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.UI.TaskItem.TaskItemWorkItem">
+            <summary>
+            订单项目工作区WorkItem
+            </summary>
+        </member>
+    </members>
+</doc>

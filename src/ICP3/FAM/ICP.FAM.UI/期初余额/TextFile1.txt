@@ -1,0 +1,781 @@
+﻿<EVENT_INSTANCE>
+  <EventType>ALTER_PROCEDURE</EventType>
+  <PostTime>2014-03-06T15:12:04.123</PostTime>
+  <SPID>103</SPID>
+  <ServerName>CODATA</ServerName>
+  <LoginName>sa</LoginName>
+  <UserName>dbo</UserName>
+  <DatabaseName>ICP3</DatabaseName>
+  <SchemaName>fam</SchemaName>
+  <ObjectName>uspGetVoucherForExport</ObjectName>
+  <ObjectType>PROCEDURE</ObjectType>
+  <TSQLCommand>
+    <SetOptions ANSI_NULLS="ON" ANSI_NULL_DEFAULT="ON" ANSI_PADDING="ON" QUOTED_IDENTIFIER="ON" ENCRYPTED="FALSE" />
+    <CommandText>ALTER PROCEDURE [fam].[uspGetVoucherForExport]                                               
+ /***********************************************************                                                
+ * Procedure description:获取凭证数据                                                
+ * Date:   02/22/2012                                                
+ * Author: Liming                                                
+ ************************************************************/                                               
+ (                                              
+     @fromDate     DATETIME,                                              
+     @toDate       DATETIME,                                              
+     @CompanyID    VARCHAR(MAX),                                              
+     @VoucherType  TINYINT,                                              
+     @IsEnglish    BIT = 1                                              
+ )                                              
+ AS                                              
+ BEGIN                                              
+  SET NOCOUNT ON                                               
+  --exec FAM.uspGetVoucherForExport @fromDate='2014-02-01 00:00:00',@toDate='2014-03-30 23:59:59',@CompanyID=N'41d7d3fe-183a-41cd-a725-eb6f728541ec',@VoucherType=1,@IsEnglish=0                                      
+   --  exec FAM.uspGetVoucherForExport @fromDate='2012-06-01 00:00:00',@toDate='2012-06-30 23:59:59',@CompanyID=N'13c26e30-f2ad-4d94-b13d-5e337ea97936',@VoucherType=1,@IsEnglish=0                                           
+  DECLARE @ErrorNumber      INT,                                              
+          @ErrorMessage     NVARCHAR(2048) = '',                                              
+          @ErrorSeverity    INT = 16,                                              
+          @ErrorState       INT = 1,                                              
+          @ErrorProperty    NVARCHAR(500),                                              
+          @XMLErrorMessage  XML                                                
+                                                
+  SET @ErrorProperty = (CASE WHEN @IsEnglish = 1 THEN 'System' ELSE '系统' END)                                               
+                                                
+  --设置语言环境                                                
+  SET @IsEnglish = ISNULL(@IsEnglish, 1)                                                
+  IF @@LANGUAGE &lt;&gt; 'us_english'                                              
+     AND @IsEnglish = 1                                              
+      SET LANGUAGE us_english                                                
+                                                
+  BEGIN TRY                                              
+   SET @fromDate = CAST(CONVERT(VARCHAR(10), @fromDate, 126) AS DATETIME)                                                    
+   SET @toDate = CAST(CONVERT(VARCHAR(10), @toDate, 126) AS DATETIME) + 1                                               
+   CREATE TABLE #CompanyIDs (ID UNIQUEIDENTIFIER)                                              
+                                 
+                                
+   IF (CHARINDEX(',',@CompanyID)&gt;0)                                            
+   BEGIN                                            
+    --提取公司 #CompanyIDs                                                
+    INSERT INTO #CompanyIDs                                            
+    SELECT (CASE WHEN SplitVal = '' THEN NULL ELSE SplitVal END) AS ID                                               
+    FROM   SQL#.String_Split(@CompanyID, ',', 1)                                
+     --SELECT * FROM #CompanyIDs                                          
+   END                                             
+   ELSE                                             
+   BEGIN                                             
+    IF LEN(ISNULL(LTRIM(RTRIM(@CompanyID)),''))&gt;35                                            
+    BEGIN                                          
+     INSERT INTO #CompanyIDs            
+     SELECT A.ID                                            
+     FROM SM.Organizations A                                  
+     INNER JOIN SM.Organizations B ON A.HierarchyCode.IsDescendantOf(B.HierarchyCode) = 1                                            
+     WHERE B.ID=@CompanyID                                            
+    END                                            
+   END                                               
+   SELECT @CompanyID = SQL#.Agg_Join(ID)                                              
+   FROM   #CompanyIDs                                                
+    --SELECT * FROM #CompanyIDs                                             
+   SET @CompanyID = REPLACE(@CompanyID,',',''',''')                           
+   SELECT DISTINCT SolutionID,                                              
+          TYPE,                                              
+   DRGLCodeID,                                              
+          CRGLCodeID                                               
+          INTO #GLConfigs                                   
+   FROM   PUB.SolutionGLConfigs                                                
+                                                 
+                                                 
+  CREATE TABLE #tmp_Ledgers                                              
+   (                                              
+    [Id]           [uniqueidentifier] ROWGUIDCOL NOT NULL,                                              
+    [CustomerId]   [uniqueidentifier] NULL,                                              
+    [GLId]         [uniqueidentifier] NOT NULL,                                              
+    [Date]       [datetime] NOT NULL,                                              
+    [CRAmt]        [decimal](28, 2) NOT NULL,                                              
+    [DRAmt]        [decimal](28, 2) NOT NULL,                                              
+    [Remark]       [nvarchar](500) NOT NULL,                                              
+    [Type]         [tinyint] NOT NULL,                                              
+  [RefId]        [uniqueidentifier] NOT NULL,                                              
+    [RefNo]        [nvarchar](50) NOT NULL,                                              
+    [CompanyId]    [uniqueidentifier] NOT NULL,                                              
+    [OrgAmt]       [decimal](19, 2) NOT NULL,                                              
+    [Rate]         [decimal](18, 4) NOT NULL,                                              
+    [OperationNo]  [nvarchar](50) NULL,                                              
+   )                                                
+                                                 
+   DECLARE @SQL NVARCHAR(MAX)                                                
+                                                 
+   SET @SQL =                                               
+       '                                                 
+   SELECT ledger.[Id]                                                
+      ,[CustomerId]                                                
+      ,[GLId]                                                
+      ,[Date]                                                
+      ,[CRAmt]                                                
+      ,[DRAmt]                                                
+      ,[Remark]                                             
+      ,[Type]                                                
+      ,[RefId]                                                
+      ,[RefNo]                                                
+      ,[CompanyId]                                                
+      ,[OrgAmt]                                                
+      ,[Rate]                                                
+      ,[OperationNo]                                              
+   FROM   fam.Ledgers ledger            
+   WHERE  ledger.Date &gt;= '''+CONVERT(VARCHAR(10), @fromDate, 126)+'''                                                
+       AND ledger.Date &lt; '''+CONVERT(VARCHAR(10), @ToDate, 126)+'''   ' + CHAR(10) +                                              
+       CASE @VoucherType                                              
+            WHEN 1 THEN 'AND ledger.Type IN (4, 5, 6)'                               
+            WHEN 0 THEN 'AND ledger.Type IN (1,2,3)'                                              
+            ELSE 'AND ledger.Type&gt;= 6'                                              
+       END + CHAR(10) +                                           
+       'AND ledger.CompanyId  IN ('''+@CompanyID+''')                                                
+       AND (ledger.DRAmt &lt;&gt; 0 OR ledger.CRAmt &lt;&gt; 0) '                                              
+                                         
+   PRINT @sql       
+                                      
+   INSERT INTO #tmp_Ledgers                                              
+   EXEC sp_executesql @sql,                          
+        N'@FromDate DATETIME,                                                
+       @ToDate  DATETIME,                                                
+       @CompanyIDs VARCHAR(MAX)',                                              
+        @FromDate,                               
+        @ToDate,                                              
+        @CompanyID                                               
+   CREATE CLUSTERED INDEX [IX_TMP_Ledgers_ID] ON #tmp_Ledgers([Id] ASC)                                               
+   CREATE NONCLUSTERED INDEX [IX_TMP_Ledgers_RefID] ON #tmp_Ledgers([RefId] ASC)                                               
+   CREATE NONCLUSTERED INDEX [IX_TMP_Ledgers_CompanyId] ON #tmp_Ledgers([CompanyId] ASC)                                               
+   CREATE NONCLUSTERED INDEX [IX_TMP_Ledgers_CustomerId] ON #tmp_Ledgers([CustomerId] ASC)                                                 
+                                                 
+      --select * from #tmp_Ledgers  WHERE OperationNo='OEGZGS12060196'                                         
+                                             
+   IF (@VoucherType = 1)                                              
+   BEGIN                                              
+       --合并帐套的公司                                                
+       SELECT DISTINCT customer.ID,                                              
+              ParentCustomer.Id AS ParentCustomerID,                                              
+        ParentCustomer.CName,                                              
+              ParentCustomer.Code,                                              
+              ParentCustomer.CShortName,                                              
+              Company2012.ID AS CompanyID,                                              
+              Company2012.NAME AS CompanyName,                                              
+              ParentCompanyID = Company2012.ParentID                                               
+              INTO #MegerCompany                                              
+   FROM   fam.VMegerVoucherSeqNoForCompany2012 Company2012                                              
+              INNER JOIN pub.Configures configures                                              
+                   ON  configures.CompanyId = Company2012.ID                                              
+              INNER JOIN pub.VCustomers customer                                    
+                   ON  customer.Id = configures.CustomerId                                              
+              INNER JOIN pub.Configures ParentConfigure                                              
+                   ON  ParentConfigure.CompanyId = Company2012.ParentID                                              
+              INNER JOIN pub.VCustomers ParentCustomer                                              
+           ON  ParentCustomer.Id = ParentConfigure.CustomerId                                               
+       --实收付                                                    
+       SELECT Ledger.ID AS ID,                                              
+              Ledger.GLId,                                       
+              Ledger.CompanyID,                                              
+			  GLCode=(CASE  
+					  WHEN	ISNULL(gl.Code,'')=NULL THEN '会计科目错误'
+					  WHEN  (GL.IsBankAccount=1 AND len(gl.Code)=10) THEN LEFT(gl.Code,4)+RIGHT(gl.Code,4)--银行的科目，截掉中间的公司代码
+					  ELSE	 gl.Code END),                                                  
+              glType.Type AS GLConfigureType,                                              
+              ISNULL(gl.Description, '') AS GLDescription,                                              
+              CAST(CAST(Ledger.Date AS DATE) AS DATETIME) AS DATE,                                              
+              0.00 AS BeginBalance,                                              
+         CASE                                               
+            WHEN ISNULL(glType.Type, 0) NOT IN (5, 14) -- (gl.Description&lt;&gt;'汇兑损益' AND gl.Description&lt;&gt;'手续费')                                                  
+                        AND (Ledger.CRAmt - Ledger.DRAmt) &gt; 0 THEN Ledger.CRAmt                                               
+                        -                                               
+                        Ledger.DRAmt                                              
+         ELSE 0.00                                              
+              END AS CRAmt,                                              
+              CASE                                               
+           WHEN ISNULL(glType.Type, 0) IN (5, 14)--(gl.Description='汇兑损益' OR gl.Description='手续费')                                                  
+                        OR (Ledger.DRAmt - Ledger.CRAmt) &gt; 0 THEN Ledger.DRAmt                                               
+                        - Ledger.CRAmt                                              
+           ELSE 0.00                                              
+              END AS DRAmt,                                              
+              0.00 AS Balance,                                              
+              ABS(                                              
+                  CASE                                               
+                       WHEN Ledger.DRAmt &gt; 0 THEN Ledger.OrgAmt                                              
+                       ELSE -Ledger.OrgAmt                                              
+                  END                                              
+              ) AS OrgAmt,                                              
+            Ledger.Rate,                                              
+              CASE                                               
+                   WHEN glType.Type = 5 THEN '汇兑损益'                                              
+                   WHEN glType.Type = 14 THEN '财务手续费'                                              
+                   WHEN checkAmount.Amount = 0 THEN '应收应付对冲'                                              
+                   WHEN Ledger.[Type] = 4 AND (glType.Type = 13 OR  gl.Code LIKE '1133%' ) --内部往来 收款                                                
+                        AND Ledger.CRAmt &gt; Ledger.DRAmt THEN '代' + ISNULL(LTRIM(RTRIM(Customer.Code)), '')                                               
+                        +                                              
+                        '收' + ISNULL(                                              
+                            ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+                            Ledger.RefNo                                
+                        )                                              
+                   WHEN Ledger.[Type] = 4 AND (glType.Type = 13 OR  gl.Code LIKE '1133%') --内部往来 收款                                                
+            AND Ledger.CRAmt &lt; Ledger.DRAmt THEN ISNULL(LTRIM(RTRIM(Customer.Code)), '')                                               
+                        + '代收' +                                              
+                        ISNULL(                                              
+                            ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+     Ledger.RefNo                                                )                                              
+                   WHEN Ledger.[Type] = 4                                               
+          AND Ledger.RefNo = Ledger.OperationNo AND gl.Code LIKE '1133%' THEN               
+                 CASE WHEN LTRIM(RTRIM(Customer.Code)) ='' THEN Customer.CShortName ELSE LTRIM(RTRIM(Customer.Code)) END +'代收'                
+                  + ISNULL(                                              
+                          ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+                          ledger.RefNo                                              
+                   )                         
+                   WHEN Ledger.[Type] = 4                                               
+          AND Ledger.RefNo = Ledger.OperationNo THEN '收'                                              
+                   WHEN glType.Type = 11 --LIKE '应收帐款%'                                                
+                         THEN '收' + ISNULL(                                              
+                            Customer.CShortName,                                 
+                            ISNULL(Customer.EShortName, Customer.CODE)                                              
+                        ) + '/' + Ledger.OperationNo                                              
+                   WHEN (glTypeCR.Type = 11 AND glType.Type IS NULL) THEN                                               
+                        '付' + ISNULL(                   
+                            Customer.CShortName,                                              
+   ISNULL(Customer.EShortName, Customer.CODE)                                              
+                            + '/' + Ledger.OperationNo                                              
+                        ) + '/' + Ledger.OperationNo                                              
+                   WHEN Ledger.[Type] = 4 THEN '收' + ISNULL(                                     
+                            Customer.CShortName,                                              
+                            ISNULL(Customer.EShortName, Customer.CODE)                                              
+                        ) + '/' + Ledger.OperationNo                                              
+                   WHEN Ledger.[Type] = 5 AND (glType.Type = 13 OR  gl.Code LIKE '1133%')                                               
+                        AND Ledger.DRAmt &gt; Ledger.CRAmt THEN '代' + ISNULL(LTRIM(RTRIM(Customer.Code)), '')                                               
+                        + '付' + ISNULL(                                              
+                            ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+                            Ledger.RefNo                                              
+                        )                                              
+                   WHEN Ledger.[Type] = 5 AND ( glType.Type = 13 OR  gl.Code LIKE '1133%') AND                                               
+                        Ledger.DRAmt &lt; Ledger.CRAmt THEN ISNULL(LTRIM(RTRIM(Customer.Code)), '')                            
+                        + '代付' +                                              
+                        ISNULL(                                              
+                       ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+                            Ledger.RefNo                                     
+                        )                
+      WHEN Ledger.[Type] = 5                                               
+                        AND Ledger.RefNo = Ledger.OperationNo AND gl.Code LIKE '1133%' THEN               
+                       CASE WHEN LTRIM(RTRIM(Customer.Code)) ='' THEN Customer.CShortName ELSE LTRIM(RTRIM(Customer.Code)) END +'代付'                
+        + ISNULL(                                              
+          ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+          ledger.RefNo                                              
+     
+         )                                                                      
+                   WHEN Ledger.[Type] = 5 AND Ledger.RefNo = Ledger.OperationNo THEN                                               
+                        '付'                          
+                   WHEN Ledger.[Type] = 5 THEN '付' + ISNULL(ISNULL(                                              
+                            Customer.CShortName,                                              
+                            ISNULL(Customer.CShortName, Customer.EShortName)                                      
+                        ),ISNULL(ledger.[Remark],'')) + '/' + Ledger.OperationNo    ELSE 
+                        	CASE WHEN Ledger.OperationNo ='' THEN Ledger.Remark ELSE Ledger.OperationNo END                                              
+              END AS Remark,                                              
+              CAST(                                              
+                  CASE                                               
+                       WHEN Ledger.Type IN (1, 2, 3) THEN 1                                              
+                       WHEN Ledger.Type = 4 THEN 2                                              
+                       WHEN Ledger.Type = 5 THEN 2                                              
+                       WHEN Ledger.[Type] = 7 THEN 2                                              
+                       ELSE 2                                              
+                  END                                               
+                  AS TINYINT                                              
+              ) AS BillType--1:应收 2:应付 3:代理账单 4:实收 5:实付 6:JOURNAL 7:报销 GLConfigType 对应用友里面的类型                                                
+              ,                                              
+              Ledger.RefId AS CheckID,                                              
+              Ledger.OperationNo AS BillNo,                                              
+              CASE                                               
+                   WHEN companys.ID IS NULL THEN UPPER(                                              
+                            CASE                                               
+                          WHEN ISNULL(LTRIM(RTRIM(Customer.Code)), '')                                                                         = ''                                              
+                            AND ISNULL(Ledger.CustomerId, '00000000-0000-0000-0000-000000000000')                                               
+                                = '00000000-0000-0000-0000-000000000000'                                               
+                                THEN                                               
+                                ''                                               
+                           WHEN ISNULL(LTRIM(RTRIM(Customer.Code)), '')                                               
+                                = '' THEN                                               
+                                '财务代码为空'                                               
+                                ELSE LTRIM(RTRIM(Customer.Code)) END                                              
+                        )                                              
+                   ELSE ''           
+              END AS CustomerFinanceCode,                                              
+              Ledger.RefNo AS CheckNo,                                              
+              CASE                                               
+                   WHEN companys.ID IS NULL THEN                 
+                  --REPLACE(                                              
+                  --REPLACE(ISNULL(Customer.CName, Customer.EName), '''', ''),                                              
+                 --',',                                              
+                  --''                                              
+                  -- )                 
+                     ISNULL(Customer.CName, Customer.EName)                
+                   ELSE '' END AS CustomerName,                                              
+              --REPLACE(                                              
+              --    REPLACE(                          
+              --         ISNULL(                                              
+ --            ISNULL(checkCustomer.CName, checkCustomer.EName),                                              
+              --            ledger.RefNo                                              
+              --        ),                                              
+              --        '''',                                              
+              --        ''                                              
+              --    ),                                              
+              --    ',',                  
+              --    ''                                              
+              --)                 
+              ISNULL(                                              
+                          ISNULL(checkCustomer.CShortName, checkCustomer.EShortName),                                              
+                          ledger.RefNo                                              
+              ) AS CheckCustomerShortName,                                              
+              ISNULL(companys.CShortName, '') AS DepartmentName,                                              
+              '' AS EmployeeName,           
+              checkAmount.VoucherSeqNo AS VoucherSeqNo,                                              
+              CASE  WHEN companys.ID IS NULL  THEN ledger.CustomerID ELSE NULL END  AS  CustomerID                                              
+              INTO #TMPVOUCHER                                              
+       FROM   #tmp_Ledgers ledger                                              
+              INNER JOIN fam.Checks [check]                                              
+                   ON  [check].ID = ledger.RefId                                              
+     INNER JOIN (SELECT CheckID,SUM(Amount) AS Amount,MAX(VoucherSeqNo) VoucherSeqNo from fam.CheckAmounts GROUP BY CheckID) checkAmount                                              
+                   ON  checkAmount.CheckID = [check].ID                                              
+              INNER JOIN pub.SolutionGLCodes gl                                              
+                   ON  gl.ID = ledger.GLId                                              
+              LEFT JOIN pub.VCustomers Customer                                              
+                   ON  Customer.ID = ledger.CustomerId                                              
+              LEFT JOIN PUB.Configures CF                                 
+                   ON  CF.CompanyID = ledger.CompanyId                                          
+              LEFT JOIN #GLConfigs glType                                              
+                   ON  glType.SolutionID = cf.SolutionID                                              
+                   AND glType.DRGLCodeID = ledger.GLId                                              
+              LEFT JOIN #GLConfigs glTypeCR                                              
+   ON  glTypeCR.SolutionID = cf.SolutionID                                              
+                AND glTypeCR.CRGLCodeID = ledger.GLId                                              
+              LEFT JOIN pub.VCustomers checkCustomer                                              
+                   ON  checkCustomer.ID = [check].CustomerID                                              
+              LEFT JOIN pub.SolutionGLConfigs sglc                                              
+                   ON  sglc.[Type] IN (14, 5) --手续费/汇兑损益                                        
+                   AND sglc.DRGLCodeID = ledger.GLId                                              
+                   AND sglc.SolutionID = cf.SolutionID                                              
+                   AND SGLC.AccountType = 2 --按部门核算的                                              
+                   AND SGLC.CompanyId = ledger.CompanyId                                              
+              LEFT JOIN sm.Organizations companys                                              
+                   ON  companys.ID = sglc.CompanyId                                                  
+         --select * from #TMPVOUCHER                                      
+       SELECT ID = NEWID(),                                              
+              GLID,                                              
+              GLCode,                                              
+              GLDescription,                                              
+              DATE,                                              
+              BeginBalance = SUM(BeginBalance),                                              
+              CRAmt = SUM(CRAmt),                                              
+              DRAmt = SUM(DRAmt),                                              
+              Balance = SUM(Balance),                                              
+              OrgAmt = ABS(SUM(CASE WHEN DRAmt &gt; 0 THEN OrgAmt ELSE -OrgAmt END)),                                              
+              Rate = MAX(Rate),                                              
+              DepartmentName,                                              
+              EmployeeName,                                              
+              VoucherSeqNo = CASE                                               
+                                  WHEN ISNULL(RIGHT(A.VoucherSeqNo, 4), '')                                               
+                                       = '' THEN MAX(A.CheckNo)                                              
+                              ELSE RIGHT(A.VoucherSeqNo, 4)                                              
+                             END,                                              
+              CustomerShortName =                 
+              --REPLACE(                                              
+              --    (                                       
+              --        CASE                                               
+              --             WHEN tmpCompany.CShortName IS NOT NULL THEN                                               
+              --                  tmpCompany.CShortName                                              
+              --     ELSE SQL#.Agg_Join(DISTINCT A.CheckCustomerShortName)                                         
+              --        END                                              
+              --    ),                                              
+              --    ',',                                              
+              --    '/'                                              
+              --)                
+              CASE                                               
+                           WHEN tmpCompany.CShortName IS NOT NULL THEN                                               
+                                tmpCompany.CShortName                                              
+                   ELSE SQL#.Agg_Join(DISTINCT A.CheckCustomerShortName)                                              
+                      END   ,                       
+              CustomerName =                 
+              --REPLACE(                                              
+              -- (                               
+              --        CASE                                               
+              --             WHEN tmpCompany.CName IS NOT NULL THEN                                               
+              --                  tmpCompany.CName                                              
+              --             ELSE SQL#.Agg_Join(DISTINCT A.CustomerName)                                              
+              --        END                                            
+              --    ),                                             
+              --    ',',                                              
+              --    '/'                                              
+              --)                
+              CASE                                               
+                           WHEN tmpCompany.CName IS NOT NULL THEN                                               
+                                tmpCompany.CName                                              
+                           ELSE SQL#.Agg_Join(DISTINCT A.CustomerName)                                              
+                      END                 
+              ,                           
+              OperationNo = REPLACE(                                              
+                  (                                              
+                      --CASE                                              
+                      --     WHEN tmpCompany.Id IS NOT NULL THEN ''                                              
+                      --     ELSE SQL#.Agg_Join(DISTINCT A.CheckNo)                                              
+                      --END                                                
+                      SQL#.Agg_Join(DISTINCT A.CheckNo)                                              
+                  ),                                              
+           ',',                                              
+                  '/'                                              
+              ),                                              
+              CustomerFinanceCode = CASE                                               
+                                         WHEN tmpCompany.Code IS NOT                                               
+                                              NULL THEN tmpCompany.Code                                              
+                                         ELSE A.CustomerFinanceCode                                              
+                                    END,                                              
+              BillNo = REPLACE(                                              
+                  (                      
+                      --CASE                                              
+                      --     WHEN tmpCompany.Id IS NOT NULL THEN ''                                              
+                      --     ELSE  SQL#.Agg_Join(DISTINCT A.BILLNO)                                              
+                      --END                                                
+                      SQL#.Agg_Join(DISTINCT A.BILLNO)                                              
+                  ),                                              
+                  ',',                                              
+                   '/'                                              
+              ),                                          
+              BillType = CAST(BillType AS TINYINT),                                              
+              Remark = LEFT(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(                                 
+               CASE                                               
+                            WHEN tmpCompany.Id IS NOT NULL THEN '内部往来'                                              
+                            WHEN A.Remark IN ('应收应付对冲', '付', '收') THEN                                               
+                                 CASE WHEN LEN( A.Remark                                               
+                                 +                                              
+                                 SQL#.Agg_Join(DISTINCT A.CheckCustomerShortName)                                               
+                                 + '/' +                                              
+                                 SQL#.Agg_Join(DISTINCT RIGHT(CASE WHEN A.Remark='应收应付对冲' THEN A.BillNo ELSE  A.CheckNo END,6)) )&gt;36 THEN         
+                                A.Remark + RIGHT(                                        
+               SQL#.Agg_Join(DISTINCT A.CheckCustomerShortName)                                               
+                                 + '/' +                                              
+                                 SQL#.Agg_Join(DISTINCT RIGHT(A.CheckNo,6))  ,30)        
+                                         
+                                  ELSE         
+                                 A.Remark                                               
+                                 +                                              
+                                 SQL#.Agg_Join(DISTINCT A.CheckCustomerShortName)                                               
+                                 + '/' +                                              
+                                 SQL#.Agg_Join(DISTINCT RIGHT(CASE WHEN A.Remark='应收应付对冲' THEN A.BillNo ELSE  A.CheckNo END,6))          
+                                 END                                            
+                   ELSE A.Remark                                              
+                       END,                                              
+                   ',',                                              
+                   '/'                                    
+                   ),'"',''),'''',''),CHAR(10),''),CHAR(13),''),36),                                              
+              BillId = CAST(MAX(CAST(A.CHECKID AS VARCHAR(50))) AS UNIQUEIDENTIFIER)                                               
+              --CASE                                              
+              --    WHEN tmpCompany.Id IS NOT NULL THEN                                              
+              --      '00000000-0000-0000-0000-000000000000'                                              
+              --    ELSE MAX(CAST(A.CHECKID AS VARCHAR(50)))                                              
+              --  END                                                
+              INTO #MEGERVOUCHER                      
+       FROM   #TMPVOUCHER A                                              
+              LEFT JOIN #MegerCompany tmpCompany                                              
+                   ON  tmpCompany.ID = A.CustomerID AND A.CompanyID = tmpCompany.CompanyID                                                 
+                   AND EXISTS(                                           
+                           SELECT 1                                              
+                           FROM   fam.VMegerVoucherSeqNoForCompany2012 X                                              
+                           WHERE  X.ID = A.CompanyID                                              
+                                  AND X.ParentID = tmpCompany.ParentCompanyID                                              
+                       )                                              
+                   AND A.GLConfigureType = 13           
+                   AND 1=2  --内部往来 暂时停止 合并 公司的代码          
+       GROUP BY                                              
+              GLID,                                              
+              GLCode,                                           
+              GLDescription,                                              
+              DATE,              
+              CASE WHEN DRAmt =0 THEN 0 ELSE 1 END ,  --防止借贷方都有金额的科目。                        
+              BillType,         
+              A.Remark,                                     
+              CASE WHEN A.Remark='应收应付对冲' THEN A.BillNo else A.Remark END  ,                                              
+              tmpCompany.Id,                                              
+              tmpCompany.Code,                                    
+              A.CustomerFinanceCode,                                              
+              tmpCompany.CName,                                              
+              tmpCompany.CShortName,                                              
+              DepartmentName,                                              
+              EmployeeName,                                              
+              A.VoucherSeqNo                                              
+       HAVING SUM(CRAmt) &lt;&gt; SUM(DRAmt)                                              
+       ORDER BY                                              
+              10                                                 
+       --SELECT * FROM #TMPVOUCHER   WHERE VoucherSeqNo='12060036'                             
+       --SELECT * FROM #MEGERVOUCHER               WHERE VoucherSeqNo='0036'                      
+                      
+       --UPDATE #MEGERVOUCHER                      
+       --SET DRAmt=DRAmt-CRAMT ,CRAmt=0                      
+       --FROM #MEGERVOUCHER                      
+       --WHERE CRAmt&lt;&gt;0                      
+       --AND DRAmt&lt;&gt;0                      
+                             
+           --SELECT * FROM #MEGERVOUCHER               WHERE VoucherSeqNo='0036'                                 
+       SELECT VoucherSeqNo,                                              
+              MAX(DATE) AS MAKEDATE                           
+              INTO #GROUPVOUCHER                                              
+       FROM   #MEGERVOUCHER                  
+ --WHERE VoucherSeqNo='2118'                                                      
+       GROUP BY                                              
+              VoucherSeqNo                                                  
+            --DROP TABLE TMP_VOUCHER                                         
+       SELECT Y.*,                                              
+              X.MakeDate                                              
+       --INTO TMP_VOUCHER                    
+       FROM   #MEGERVOUCHER Y                       
+              INNER JOIN #GROUPVOUCHER X                                              
+                   ON  Y.VoucherSeqNo = X.VoucherSeqNo                                              
+       ORDER BY                                           
+              Y.VoucherSeqNo,                               
+              X.MakeDate,                                  
+              Y.GLCode,                
+              Y.OperationNo,                                              
+              Y.CustomerFinanceCode,                                             
+              DATE                                               
+                                                     
+        --SELECT *from #MEGERVOUCHER where   VoucherSeqNo='2118'                                   
+       DROP TABLE #MEGERVOUCHER                                               
+       DROP TABLE #GROUPVOUCHER                                               
+       DROP TABLE #TMPVOUCHER                                               
+       DROP TABLE #tmp_Ledgers                                              
+   END                                              
+   ELSE                                              
+   BEGIN                                              
+       SELECT Id = NEWID(),                                              
+              GLId,                                              
+              GLCode=(CASE  
+					  WHEN	ISNULL(gl.Code,'')=NULL THEN '会计科目错误'
+					  WHEN  (GL.IsBankAccount=1 AND len(gl.Code)=10) THEN LEFT(gl.Code,4)+RIGHT(gl.Code,4)--银行的科目，截掉中间的公司代码
+					  ELSE	 gl.Code END),                                              
+              GLDescription = ISNULL(gl.Description, ''),                          
+              Date = MAX(Ledger.date),                                              
+              MakeDate = MAX(Ledger.date),                                              
+              SUM(Ledger.DRAmt -Ledger.CRAmt) AS BeginBalance,                                              
+              SUM(CrAmt) AS CrAmt,                                              
+              SUM(DrAmt) AS DrAmt,                                              
+              SUM(Ledger.DRAmt -Ledger.CRAmt) AS Balance,                                          
+              CASE WHEN  
+                gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939')   
+              THEN SUM(Ledger.DRAmt -Ledger.CRAmt) ELSE SUM(OrgAmt) END AS OrgAmt,                                              
+              MIN(Rate) AS Rate,        
+              Remark = CASE                                               
+                            WHEN Ledger.[Type] = 7 --报销                                                
+                                  THEN REPLACE(CAST(Ledger.Remark AS VARCHAR(60)), ',', ';') +' '+OperationNo                                             
+                   ELSE OperationNo                                              
+                       END,                                              
+              BillType = CAST(                                              
+                  CASE                                               
+                       WHEN Ledger.Type IN (1, 2, 3) THEN 1                                              
+                       WHEN Ledger.Type = 4 THEN 2                                              
+                       WHEN Ledger.Type = 5 THEN 2                                  
+                       WHEN Ledger.[Type] = 7 THEN 2                                 
+                       ELSE 2                    
+                  END                                               
+                  AS TINYINT                                             
+              ) --1:应收 2:应付 3:代理账单 4:实收 5:实付 6:JOURNAL 7:报销 GLConfigType                                              
+                --对应用友里面的类型                                                
+ ,                                              
+              BillId = NEWID(),                                              
+              BillNo = MAX(                                              
+                  CASE                                               
+                       WHEN Ledger.[Type] &gt; 3 THEN OperationNo                                              
+                       ELSE Ledger.RefNo                                              
+                  END                                              
+              ),                                              
+              CustomerFinanceCode = UPPER(                                              
+                  CASE                       
+                       WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939')  --收入科目                                                    
+                     THEN ''                                               
+                     WHEN ISNULL(LTRIM(RTRIM(Customer.Code)), '') = ''                                               
+THEN (                                              
+              CASE                                               
+                              WHEN Ledger.[Type] = 7 THEN ''                                              
+                              ELSE '财务代码为空'                                              
+                         END                                              
+                     )                                               
+                     ELSE LTRIM(RTRIM(Customer.Code)) END                                              
+              ),                                              
+              OperationNo = CASE Ledger.[Type]                                              
+                                 WHEN 7 THEN Ledger.RefNo                                              
+                             ELSE OperationNo                                              
+                            END,                                              
+              CustomerName = CASE                                 
+                                  WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939') --收入科目                                                    
+                                  THEN ''                                              
+                                  ELSE ISNULL(ISNULL(Customer.CNAME, Customer.ENAME), '')                
+                            
+              END,                                     
+              CustomerShortName = CASE                                               
+                                       WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939') --收入科目                                                    
+                                             THEN ''                                              
+                                       ELSE                 
+                                        ISNULL(                                              
+                                                        ISNULL(                                              
+                                                            Customer.CNAME,                                              
+                                                            ISNULL(Customer.CNAME, Customer.CShortName)                                              
+                                                  ),                                              
+                                                        '' )  
+                                              
+                          END,                                              
+              DepartmentName = CASE                                               
+                                    WHEN Ledger.[Type] = 7 THEN ISNULL(Organization.CShortName, '')                                              
+     ELSE ''                                              
+                               END,                                              
+              EmployeeName = CASE                                               
+                                  WHEN Ledger.[Type] = 7 THEN ISNULL(us.CName, '')                                              
+                                  ELSE ''                                              
+                             END,                                              
+              VoucherSeqNo = CASE Ledger.[Type]                                              
+                                  WHEN 7 THEN Ledger.RefNo                         
+            ELSE OperationNo                                              
+                             END                                 
+       FROM   #tmp_Ledgers Ledger                                              
+              INNER JOIN pub.SolutionGLCodes gl                                              
+                   ON  gl.ID = ledger.GLId                                              
+              LEFT JOIN pub.VCustomers Customer                                              
+                   ON  Customer.ID = ledger.CustomerId                                               
+         --有一种凭证的客户对应的是用户                                                
+                      
+              LEFT JOIN sm.User2OrganizationJobs user2OrganizationJob                                              
+                   ON  user2OrganizationJob.UserID = Ledger.CustomerId                                              
+                   AND user2OrganizationJob.IsDefault = 1                                              
+              LEFT JOIN sm.Organization2Jobs Organization2Job                                              
+                   ON  Organization2Job.ID = user2OrganizationJob.OrganizationJobID                                              
+              LEFT JOIN sm.Organizations Organization                                              
+            ON  Organization.ID = Organization2Job.OrganizationID                                              
+              LEFT JOIN SM.Users us                                              
+                   ON  us.ID = ledger.CustomerId                                              
+       GROUP BY                                              
+              CASE Ledger.[Type]                                              
+                   WHEN 7 THEN Ledger.RefNo                  
+                   ELSE OperationNo                                        
+              END,                        
+                            (CASE  
+					  WHEN	ISNULL(gl.Code,'')=NULL THEN '会计科目错误'
+					  WHEN  (GL.IsBankAccount=1 AND len(gl.Code)=10) THEN LEFT(gl.Code,4)+RIGHT(gl.Code,4)--银行的科目，截掉中间的公司代码
+					  ELSE	 gl.Code END),--GLCODE     
+			  gl.IsBankAccount,                                
+              gl.GroupID,                                                                                   
+              CASE                                               
+                   WHEN Ledger.Type  =7 --报销                                                
+                         THEN REPLACE(CAST(Ledger.Remark AS VARCHAR(60)), ',', ';') +' '+ OperationNo                                            
+                   ELSE OperationNo                                              
+              END,                                              
+              CAST(                                              
+                  CASE                                               
+                       WHEN Ledger.Type IN (1, 2, 3) THEN 1                                              
+                       WHEN Ledger.Type = 4 THEN 2                                              
+                       WHEN Ledger.Type = 5 THEN 2                                              
+              WHEN Ledger.[Type] = 7 THEN 2                                              
+                       ELSE 2                                              
+                  END AS TINYINT                                              
+              ),                                              
+              GLId,                                              
+              UPPER(                                              
+                  CASE                                               
+                       WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939') --收入科目                                                    
+                THEN ''  WHEN ISNULL(LTRIM(RTRIM(Customer.Code)), '') = ''                                               
+                     THEN (                                              
+                         CASE                                               
+                              WHEN Ledger.[Type] = 7 THEN ''                                              
+                              ELSE '财务代码为空'         
+                         END                                              
+                     )                                               
+                     ELSE LTRIM(RTRIM(Customer.Code)) END                                              
+              ),                                              
+              CASE                                               
+                   WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939') --收入科目                                                    
+                         THEN ''                                              
+                   ELSE                 
+                     ISNULL(ISNULL(Customer.CNAME, Customer.ENAME), '')                
+                   --REPLACE(                                              
+                   --         REPLACE(                                              
+                   --             ISNULL(ISNULL(Customer.CNAME, Customer.ENAME), ''),                               
+                   --             '''',                                              
+                   --             ''                  
+                   --         ),                                              
+                   --         ',',                                              
+                   --         ''                                              
+                   --  )                                              
+              END,                                              
+              CASE                             
+ WHEN gl.GROUPID IN( '17DBF3C1-463F-4903-8CE7-5A617DAC1BB4'      
+                ,'DF5F9130-ABEF-4DE3-8BCD-0AA19B134D7C'      
+                ,'CFAB2CF9-F4A0-4E69-8516-187CA16AE939') --收入科目                                                    
+                         THEN ''                                              
+                   ELSE                 
+                    ISNULL(                       
+                                    ISNULL(                                              
+                                        Customer.CNAME,                                              
+                                        ISNULL(Customer.CNAME, Customer.CShortName)                                              
+                                    ),                                              
+                                    ''                                              
+                                )                
+                    --REPLACE(                                              
+                    --      REPLACE(                                              
+                    --            ISNULL(                                              
+                    --                ISNULL(                                              
+                    --                    Customer.CNAME,                                              
+                    --                    ISNULL(Customer.CNAME, Customer.CShortName)                                              
+                    --                ),                                              
+                    --                ''                                              
+                    --            ),                                              
+                    --       '''',                                              
+                    --            ''                                              
+                    --        ),                                     
+                    --        ',',                                              
+                    --        ''                                              
+                    --    )                                              
+              END,                                              
+              ISNULL(gl.Description, ''),                                           
+   CASE                                               
+                   WHEN Ledger.[Type] = 7 THEN ISNULL(Organization.CShortName, '')                                              
+                   ELSE ''                                              
+              END,                                              
+              CASE                                               
+                   WHEN Ledger.[Type] = 7 THEN ISNULL(us.CName, '')                                      
+   ELSE ''                                              
+              END                                              
+       ORDER BY                                              
+              VoucherSeqNo,                                              
+              OperationNo,                                              
+              CustomerFinanceCode,                                              
+              GLCode                      
+   END                                              
+  END TRY                        
+  BEGIN CATCH                                              
+   SELECT @ErrorNumber = ERROR_NUMBER(),                             
+          @ErrorMessage = ERROR_MESSAGE(),                                              
+          @ErrorSeverity = ERROR_SEVERITY(),                                              
+          @ErrorState = ERROR_STATE()                                                
+                            
+   IF XACT_STATE() = -1                                              
+       ROLLBACK TRANSACTION                                                
+                                                 
+   SET @XMLErrorMessage = sm.ufnBuildXMLErrorMessage(                                              
+           @ErrorNumber,                                              
+     @ErrorMessage,                                              
+           @ErrorProperty,                                              
+           @XMLErrorMessage                                              
+       )                                                
+                                                 
+   SET @ErrorMessage = CAST(@XMLErrorMessage AS NVARCHAR(2048))                                               
+   RAISERROR(@ErrorMessage, @ErrorSeverity, @ErrorState)                                              
+  END CATCH                                               
+                                                
+  RETURN 0                                              
+ END</CommandText>
+  </TSQLCommand>
+</EVENT_INSTANCE>

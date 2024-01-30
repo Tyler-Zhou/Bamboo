@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/01/2012 16:29:39" ReportInfo.Modified="06/24/2015 16:01:57" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportData" ReferenceName="ReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="CompanyTelFax" DataType="System.String"/>
+      <Column Name="CurrentDate" DataType="System.String"/>
+      <Column Name="TruckerDescription" DataType="System.String"/>
+      <Column Name="PickUpAtDescription" DataType="System.String"/>
+      <Column Name="DeliveryAtDescription" DataType="System.String"/>
+      <Column Name="BillToDescription" DataType="System.String"/>
+      <Column Name="TotalPkgs" DataType="System.String"/>
+      <Column Name="SoNO" DataType="System.String"/>
+      <Column Name="CutOffDate" DataType="System.String"/>
+      <Column Name="CurrentUserEmail" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="CntrRetrun" DataType="System.String"/>
+      <Column Name="PickupRefrenceNo" DataType="System.String"/>
+      <Column Name="DeliveryRefrenceNo" DataType="System.String"/>
+      <Column Name="PickupDate" DataType="System.String"/>
+      <Column Name="DeliveryDate" DataType="System.String"/>
+      <Column Name="BillingReferenceNo" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="VesselVoyageNo" DataType="System.String"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="AMSHouseBLNo" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="DETA" DataType="System.String"/>
+      <Column Name="ITNo" DataType="System.String"/>
+      <Column Name="ContainerNOs" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="PKGS" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="POR" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Final" DataType="System.String"/>
+      <Column Name="FreigtDescription" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CtnrDes" DataType="System.String"/>
+      <Column Name="TruckingCharge" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="103.95">
+      <TextObject Name="Text1" Width="718.2" Height="28.35" Text="[ReportData.CompanyName]" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+      <TextObject Name="Text2" Top="28.35" Width="718.2" Height="18.9" Text="[ReportData.CompanyAddress]" HorzAlign="Center"/>
+      <TextObject Name="Text3" Top="47.25" Width="718.2" Height="18.9" Text="[ReportData.CompanyTelFax]" HorzAlign="Center"/>
+      <TextObject Name="Text4" Top="66.15" Width="718.2" Height="37.8" Text="EXPORT DELIVERY ORDER" HorzAlign="Center" Font="Arial, 20pt, style=Bold" TextFill.Color="Maroon"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="107.56" Width="718.2" Height="841.3">
+      <TextObject Name="Text5" Top="1.89" Width="122.85" Height="18.9" Text="To Trucking Co.:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Top="18.9" Width="341.85" Height="86" Text="[ReportData.TruckerDescription]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line1" Left="340.2" Height="555.66" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line2" Top="103.95" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text7" Top="103.95" Width="189" Height="18.9" Text="Full Container Return Loc:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text8" Top="226.8" Width="340.2" Height="78.25" Text="[ReportData.PickUpAtDescription]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line3" Top="207.9" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text9" Top="207.9" Width="255.15" Height="18.9" Text="Loading Location :" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <LineObject Name="Line4" Top="311.85" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text11" Top="311.85" Width="264.6" Height="18.9" Text="Bill To:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text12" Top="330.75" Width="340.2" Height="92" Text="[ReportData.BillToDescription]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line5" Top="425.25" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text13" Top="425.25" Width="189" Height="18.9" Text="P/U Empty  CNTR Loc.:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text15" Top="444.15" Width="340.2" Height="107" Text="[ReportData.CntrRetrun]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text17" Left="340.2" Width="66.15" Height="18.9" Text="Date:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text18" Left="340.2" Top="18.9" Width="190.85" Height="23.81" Text="[ReportData.CurrentDate]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line6" Left="529.2" Height="209.79" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line7" Left="340.2" Top="47.25" Width="374.22" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text19" Left="529.2" Width="94.5" Height="18.9" Text="By:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text20" Left="529.2" Top="18.9" Width="189" Height="33.26" Text="[ReportData.CurrentUserEmail]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text21" Left="340.2" Top="47.25" Width="170.1" Height="18.9" Text="Commodity:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text22" Left="340.2" Top="66.15" Width="189" Height="37.8" Text="[ReportData.Commodity]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text23" Left="340.2" Top="103.95" Width="189" Height="18.9" Text="Customer Ref. No:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <LineObject Name="Line8" Left="529.2" Top="207.9" Height="310.72" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text29" Left="340.2" Top="154.98" Width="160.65" Height="18.9" Text="Pick-Up Date/Time" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text30" Left="340.2" Top="179.55" Width="189" Height="28.35" Text="[ReportData.PickupDate]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text33" Left="340.2" Top="311.85" Width="189" Height="18.9" Text="Billing Reference No.:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text34" Left="340.2" Top="340.2" Width="189" Height="18.9" Text="[ReportData.BillingReferenceNo]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text35" Left="529.2" Top="311.85" Width="94.5" Height="18.9" Text="Carrier:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text36" Left="529.2" Top="340.2" Width="189" Height="18.9" Text="[ReportData.Carrier]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line10" Left="340.2" Top="368.55" Width="374.22" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text37" Left="340.2" Top="368.55" Width="151.2" Height="18.9" Text="Booking Nos:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text38" Left="340.2" Top="387.45" Width="189" Height="37.8" Text="[ReportData.SoNO]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text39" Left="529.2" Top="368.55" Width="160.65" Height="18.9" Text="Vessel/Voyage No:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text40" Left="529.2" Top="387.45" Width="189" Height="37.8" Text="[ReportData.VesselVoyageNo]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line12" Left="340.2" Top="491.4" Width="374.22" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text63" Top="689.85" Width="113.4" Height="66.15" Border.Lines="Left, Top, Bottom" Border.Color="Maroon" Border.Width="2" Text="SPECIAL INSTRUCTION:" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text64" Left="113.4" Top="689.85" Width="604.04" Height="66.15" Border.Lines="Right, Top, Bottom" Border.Color="Maroon" Border.Width="2" Text="CITY OCEAN REQUIRES ALL DELIVERIES TO BE LIVE-UNLOAD BASIS. IT IS TRUCKER'S RESPONSIBILITY TO RETURN THE EMPTY EQUIPMENTS PROMPTLY AFTER DELIVERY. CITY OCEAN WILL NOT BE RESPONSIBLE FOR ANY DRIVER DETENTION OR PER-DIEM WITHOUT PRIOR NOTIFICATION AND AUTHORIZATION." Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text65" Top="756" Width="718.2" Height="56.7" Text="You are requested to inform us immediately of any occurrence.&#13;&#10;Thank You for your service !" HorzAlign="Center" VertAlign="Center" Font="Arial, 11pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text66" Left="529.2" Top="47.25" Width="141.75" Height="18.9" Text="Ctn Description:" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text67" Left="529.2" Top="66.15" Width="190.85" Height="37.8" Text="[ReportData.CtnrDes]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line13" Left="340.2" Top="154.98" Width="374.22" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text68" Left="529.2" Top="103.95" Width="189" Height="18.9" Text="Pick - Up Contact :" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <LineObject Name="Line14" Left="529.2" Top="510.3" Height="45.36" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text72" Left="340.2" Top="434.7" Width="160.65" Height="18.9" Text="POR:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text73" Left="340.2" Top="500.85" Width="160.65" Height="18.9" Text="Final Destination" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text70" Left="340.2" Top="217.35" Width="160.65" Height="18.9" Text="Cut Off Date :" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text71" Left="340.2" Top="236.25" Width="189" Height="28.35" Text="[ReportData.CutOffDate]" Font="Arial, 9pt, style=Bold"/>
+      <LineObject Name="Line15" Top="557.55" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line16" Top="604.8" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <LineObject Name="Line17" Top="642.6" Width="714.42" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text74" Left="9.45" Top="567" Width="103.95" Height="18.9" Text="Trucking Charge:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text75" Left="9.45" Top="614.25" Width="103.95" Height="18.9" Text="Remark:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text76" Left="340.2" Top="453.6" Width="160.65" Height="28.35" Text="[ReportData.POR]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text77" Left="538.65" Top="434.7" Width="160.65" Height="18.9" Text="POD:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text78" Left="529.2" Top="453.6" Width="170.1" Height="37.8" Text="[ReportData.POD]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text79" Left="340.2" Top="519.75" Width="160.65" Height="28.35" Text="[ReportData.Final]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text80" Left="122.85" Top="567" Width="519.75" Height="28.35" Text="[ReportData.TruckingCharge]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text81" Left="122.85" Top="614.25" Width="519.75" Height="28.35" Text="[ReportData.Remark]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text10" Top="122.85" Width="340.2" Height="82.93" Text="[ReportData.DeliveryAtDescription]" Font="Arial, 9pt, style=Bold"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

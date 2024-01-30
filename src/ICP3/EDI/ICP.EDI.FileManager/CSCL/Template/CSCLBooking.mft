@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexText>
+	<Commands>
+		<Project FileName="CSCLTemplate" ByteOrderMark="0">
+			<Version/>
+			<RootName Value="Root"/>
+			<Connections>
+				<Connection>
+					<Switch>
+						<Version/>
+						<Name Value="Sections"/>
+						<Conditions>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="HEAD%20RECORD"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SAGE%20TYPE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FILE%20DESCRIPTION"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FILE%20FUNCTION"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SENDER%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECEIVER%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FILE%20CREATE%20TIME"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SENDER%20PORT%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECEIVER%20PORT%20CODE"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="73" Item1="76" Item2="125" Item3="50" Item4="50" Item5="0" Item6="0" Item7="0" Item8="0"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="369" TextHeight="125"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="VESSEL"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="VESSEL%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="VESSEL"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="VOYAGE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPING%20LINE%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPING%20LINE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="TRADE%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="TRADE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="REQUESTED%20SHIPMENT%20DATE"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="73" Item1="89" Item2="50" Item3="50" Item4="50" Item5="50" Item6="80" Item7="50" Item8="171"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="708" FullHeight="4294967295" TextHeight="110"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="PRE.VESSEL"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PRE.VESSEL%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PRE.VESSEL"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PRE.VOYAGE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PLACE%20OF%20RECEIPT%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PLACE%20OF%20RECEIPT"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="398" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="PORTS"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="LOAD%20PORT%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="LOAD%20PORT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DISCHARGE%20PORT%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DISCHARGE%20PORT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DELIVERY%20PORT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PLACE%20OF%20DELIVERY"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FINAL%20DESTINATION%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FINAL%20DESTINATION"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="POL%20DESCRIPTION"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="POD%20DESCRIPTION"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DEL%20DESCRIPTION"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50" Item6="129" Item7="164" Item8="129" Item9="115" Item10="115" Item11="115"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="794" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="BOOKING%20NO"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="ISSUE%20PARTY%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SLOT%20CHARTER%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="BOOKING%20NO.ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="BOOKING%20NO."/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="APPLICANT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="BOKKING%20PARTY"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FOB%20BK%20PARTY"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DELIVERY%20TERM"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PREPAID%20OR%20COLLECT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="QUOTATION%20NO."/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="S/C%20NO."/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="QUARANTINE%20CODING"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CHARGE%20TYPE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SCAC%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="H%20B/L"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="73" Item6="101" Item7="94" Item8="101" Item9="136" Item10="101" Item11="0" Item12="0" Item13="0" Item14="0" Item15="0"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="790" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="SHIPPER"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPER%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPER"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECORD%20ID2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPER%20CODE2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SHIPPER2"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="371" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="CONSIGNE"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CONSIGNEE%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CONSIGNEE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECORD%20ID2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CONSIGNEE%20CODE2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CONSIGNEE2"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="344" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="NOTIFY%20PARTY"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NOTIFY%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NOTIFY"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECORD%20ID2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NOTIFY%20CODE2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NOTIFY2"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="339" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="CONTAINER%20OF%20BOOKING"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CTN.SIZE&amp;TYPE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CTN.NUMBERS"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CTN.STATUS"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CTN.NO.1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="VANNING%20DEPOT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="COUNTAINER%20SOC."/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50" Item6="115"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="449" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="CARGO%20OF%20BOOKING"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD-ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20SEQUENCE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NUMBERS%20OF%20PKGS-1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CODE%20OF%20PKGS-1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PACKAGES%20DES-1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20GROSS%20WT-1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20MEASUREMENT-1"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NUMBERS%20OF%20PACKAGES-2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CODE%20OF%20PKGS-2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PACKAGES%20DES-2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20GROSS%20WT-2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20MEASUREMENT-2"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20NET%20WEIGHT"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50" Item6="108" Item7="122" Item8="143" Item9="157" Item10="0" Item11="0" Item12="0" Item13="0" Item14="0"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="787" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="DANGEROUS%EF%BC%8CREEFER&amp;OOG"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORDE%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DANGEROUS"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CLASS"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PAGE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="UNDG%20NO."/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="LABEL"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FLASH%20POINT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="REEFER"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="TEMPERATURE%20SETTING"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50" Item6="87" Item7="52" Item8="143"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="629" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="MARKS&amp;NOS."/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20DESCRIPTION(1-5)"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="284" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="CARGO%20DESCRIPTION"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="CARGO%20DESCRIPTION"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="FREIGHT%20CLAUSE"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FR.CLAUSE.CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="FREIGHT%20CLAUSE-I%EF%BC%881-2%EF%BC%89"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="Freight"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PayPlace"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="REMARKS"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="REMARKS"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="B/L"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="TYPE%20OF%20B/L%20FORM"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="TYPE%20OF%20B/L%20ISSUE%20CODE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="DATE%20OF%20ISSUE"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="NUMBERS%20OF%20ORIGINAL%20B/L"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="PREPAID%20AT"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="AYABLE%20AT"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50" Item2="50" Item3="50" Item4="50" Item5="50" Item6="73"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="438" FullHeight="4294967295" TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="BookingDes"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="SeaDesc"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition>
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<CSV>
+											<Version/>
+											<RecordSeparator Value="&apos;%0D%0A"/>
+											<FieldSeparator Value=":"/>
+											<RecordName Value="TRAILER%20RECORD"/>
+											<Fields>
+												<Field Type="string">
+													<Name Value="RECORD%20ID"/>
+													<Version/>
+												</Field>
+												<Field Type="string">
+													<Name Value="RECORD%20TOTAL%20OF%20FILE"/>
+													<Version/>
+												</Field>
+											</Fields>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<FieldWidths Item="50" Item1="50"/>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension TextHeight="140"/>
+											</XData>
+										</CSV>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+							<Condition Mode="Default">
+								<Version/>
+								<Value/>
+								<Connections>
+									<Connection>
+										<Ignore>
+											<Connections>
+												<Connection/>
+											</Connections>
+											<XData>
+												<OpenState Property="1" Preview="1" Connector="1"/>
+												<Dimension FullWidth="364" FullHeight="4294966722" TextHeight="115"/>
+											</XData>
+										</Ignore>
+									</Connection>
+								</Connections>
+								<XData>
+									<OpenState Property="1" Preview="1" Connector="1"/>
+									<Dimension/>
+								</XData>
+							</Condition>
+						</Conditions>
+						<Connections>
+							<Connection/>
+						</Connections>
+						<XData>
+							<OpenState Property="1" Preview="1" Connector="1"/>
+							<Dimension TextHeight="140"/>
+						</XData>
+					</Switch>
+				</Connection>
+			</Connections>
+			<XData>
+				<OpenState Property="1" Preview="1" Connector="1"/>
+				<Dimension/>
+			</XData>
+		</Project>
+		<Functions/>
+	</Commands>
+</FlexText>

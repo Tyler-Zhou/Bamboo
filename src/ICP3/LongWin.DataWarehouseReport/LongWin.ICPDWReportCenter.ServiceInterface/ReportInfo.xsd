@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportInfo" targetNamespace="LongWin.DataWarehouseReport.ServiceInterface" xmlns:mstns="LongWin.DataWarehouseReport.ServiceInterface" xmlns="LongWin.DataWarehouseReport.ServiceInterface" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ReportInfo" msprop:Generator_DataSetName="ReportInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TitleInfo" msprop:Generator_UserTableName="TitleInfo" msprop:Generator_RowDeletedName="TitleInfoRowDeleted" msprop:Generator_RowChangedName="TitleInfoRowChanged" msprop:Generator_RowClassName="TitleInfoRow" msprop:Generator_RowChangingName="TitleInfoRowChanging" msprop:Generator_RowEvArgName="TitleInfoRowChangeEvent" msprop:Generator_RowEvHandlerName="TitleInfoRowChangeEventHandler" msprop:Generator_TableClassName="TitleInfoDataTable" msprop:Generator_TableVarName="tableTitleInfo" msprop:Generator_RowDeletingName="TitleInfoRowDeleting" msprop:Generator_TablePropName="TitleInfo">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompanyCName" msprop:Generator_UserColumnName="CompanyCName" msprop:Generator_ColumnVarNameInTable="columnCompanyCName" msprop:Generator_ColumnPropNameInRow="CompanyCName" msprop:Generator_ColumnPropNameInTable="CompanyCNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyCAddress" msprop:Generator_UserColumnName="CompanyCAddress" msprop:Generator_ColumnVarNameInTable="columnCompanyCAddress" msprop:Generator_ColumnPropNameInRow="CompanyCAddress" msprop:Generator_ColumnPropNameInTable="CompanyCAddressColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TelOrFax" msprop:Generator_UserColumnName="TelOrFax" msprop:Generator_ColumnVarNameInTable="columnTelOrFax" msprop:Generator_ColumnPropNameInRow="TelOrFax" msprop:Generator_ColumnPropNameInTable="TelOrFaxColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyEName" msprop:Generator_UserColumnName="CompanyEName" msprop:Generator_ColumnVarNameInTable="columnCompanyEName" msprop:Generator_ColumnPropNameInRow="CompanyEName" msprop:Generator_ColumnPropNameInTable="CompanyENameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="CompanyEAddress" msprop:Generator_UserColumnName="CompanyEAddress" msprop:Generator_ColumnVarNameInTable="columnCompanyEAddress" msprop:Generator_ColumnPropNameInRow="CompanyEAddress" msprop:Generator_ColumnPropNameInTable="CompanyEAddressColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

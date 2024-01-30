@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="07/05/2011 11:10:05" ReportInfo.Modified="11/03/2015 16:30:06" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {        
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="AGTArrivalNotice_ArrivalNoticeFee" ReferenceName="AGTArrivalNotice_ArrivalNoticeFee" DataType="System.Int32" Enabled="true">
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="CAmount" DataType="System.String"/>
+      <Column Name="ChargeItemDescription" DataType="System.String"/>
+      <Column Name="EName" DataType="System.String"/>
+      <Column Name="PAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="AGTArrivalNotice_ArrivalNoticeFee3" ReferenceName="AGTArrivalNotice_ArrivalNoticeFee3" DataType="System.Int32" Enabled="true">
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="CAmount" DataType="System.String"/>
+      <Column Name="ChargeItemDescription" DataType="System.String"/>
+      <Column Name="EName" DataType="System.String"/>
+      <Column Name="PAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData" ReferenceName="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="GODate" DataType="System.String"/>
+      <Column Name="LastFreeDate" DataType="System.String"/>
+      <Column Name="PickupNo" DataType="System.String"/>
+      <Column Name="SealNo" DataType="System.String"/>
+      <Column Name="Size" DataType="System.String"/>
+      <Column Name="Type" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="AGTArrivalNotice_ArrivalNoticeFeeAmount" ReferenceName="AGTArrivalNotice_ArrivalNoticeFeeAmount" DataType="System.Int32" Enabled="true">
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="EName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="AGTArrivalNotice_ArrivalNotice" ReferenceName="AGTArrivalNotice_ArrivalNotice" DataType="System.Int32" Enabled="true">
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="CurrentDate" DataType="System.String"/>
+      <Column Name="Show" DataType="System.String"/>
+      <Column Name="ShowNoRows" DataType="System.String"/>
+      <Column Name="ShowFeeAttachement" DataType="System.String"/>
+      <Column Name="SeeAttachementFee" DataType="System.String"/>
+      <Column Name="InvoiceNo" DataType="System.String"/>
+      <Column Name="SumAmount" DataType="System.String"/>
+      <Column Name="IsEnghish" DataType="System.String"/>
+      <Column Name="companyAddress" DataType="System.String"/>
+      <Column Name="companyName" DataType="System.String"/>
+      <Column Name="CompanyTelFax" DataType="System.String"/>
+      <Column Name="PRemark" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="NotifyPartyDescription" DataType="System.String"/>
+      <Column Name="CustomerBrokerDescription" DataType="System.String"/>
+      <Column Name="CustomerRefNo" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="SubBLNo" DataType="System.String"/>
+      <Column Name="AMSHouseBLNo" DataType="System.String"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="ReferenceNO" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="DiscPortName" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="PlaceOfDeliveryName" DataType="System.String"/>
+      <Column Name="PETA" DataType="System.String"/>
+      <Column Name="DestinationPortName" DataType="System.String"/>
+      <Column Name="FETA" DataType="System.String"/>
+      <Column Name="VesselVoyageNo" DataType="System.String"/>
+      <Column Name="LastFreeDate" DataType="System.String"/>
+      <Column Name="GODate" DataType="System.String"/>
+      <Column Name="CNTRReturnName" DataType="System.String"/>
+      <Column Name="ITNo" DataType="System.String"/>
+      <Column Name="ITDate" DataType="System.String"/>
+      <Column Name="ITPlace" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="NoOfPackages" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="DeliveryTermName" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CYLocationDescription" DataType="System.String"/>
+      <Column Name="PreparedName" DataType="System.String"/>
+      <Column Name="LeadSealing" DataType="System.String"/>
+      <Column Name="POInfo" DataType="System.String"/>
+      <Column Name="ExpressRelease" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ScheduledFlight" DataType="System.String"/>
+      <Column Name="ReleaseOrderRequired" DataType="System.String"/>
+      <Column Name="ReceiptPlaceName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page78754282" PaperWidth="216" PaperHeight="279" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeaderBand78754282" Width="740.88" Height="92.61">
+      <TextObject Name="textbox1" Top="58.59" Width="716.31" Height="34.02" CanGrow="true" Text="[AGTArrivalNotice_ArrivalNotice.Title]" HorzAlign="Center" Font="Arial, 20pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text40" Left="359.1" Top="9.45" Height="18.9"/>
+      <TextObject Name="Text41" Width="718.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.companyName]" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text42" Top="18.9" Width="718.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.companyAddress]" HorzAlign="Center"/>
+      <TextObject Name="Text43" Top="37.8" Width="718.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.CompanyTelFax]" HorzAlign="Center"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand849282210" Top="96.61" Width="740.88" Height="878.85">
+      <LineObject Name="Line1" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line2" Left="368.55" Height="340.2" Border.Color="Maroon"/>
+      <LineObject Name="Line3" Left="368.55" Top="37.8" Width="349.65" Border.Color="Maroon"/>
+      <LineObject Name="Line8" Top="151.2" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line10" Left="368.55" Top="113.4" Width="349.65" Border.Color="Maroon"/>
+      <TextObject Name="Text1" Width="94.5" Height="18.9" Text="SHIPPER" TextFill.Color="Maroon"/>
+      <LineObject Name="Line4" Top="75.6" Width="718.2" Border.Color="Maroon"/>
+      <TextObject Name="Text2" Top="75.6" Width="94.5" Height="18.9" Text="CONSIGNEE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text3" Left="368.55" Width="141.75" Height="18.9" Text="REFERENCE NO" TextFill.Color="Maroon"/>
+      <LineObject Name="Line5" Left="557.55" Height="151.2" Border.Color="Maroon"/>
+      <TextObject Name="Text4" Left="557.55" Width="94.5" Height="18.9" Text="DATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text5" Left="368.55" Top="37.8" Width="141.75" Height="18.9" Text="MASTER B/L NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Left="557.55" Top="37.8" Width="132.3" Height="18.9" Text="PREPARED BY" TextFill.Color="Maroon"/>
+      <TextObject Name="Text7" Left="368.55" Top="75.6" Width="141.75" Height="18.9" Text="HOUSE B/L NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text8" Left="557.55" Top="75.6" Width="94.5" Height="18.9" Text="ISF NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text9" Left="368.55" Top="113.4" Width="132.3" Height="18.9" Text="AMS B/L NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text10" Left="557.55" Top="113.4" Width="151.2" Height="18.9" Text="CUSTOMER REF NO" TextFill.Color="Maroon"/>
+      <TextObject Name="Text11" Top="151.2" Width="122.85" Height="18.9" Text="NOTIFY PARTY" TextFill.Color="Maroon"/>
+      <LineObject Name="Line11" Left="368.55" Top="217.35" Width="349.65" Border.Color="Maroon"/>
+      <LineObject Name="Line12" Left="368.55" Top="245.7" Width="349.65" Border.Color="Maroon"/>
+      <TextObject Name="Text12" Left="368.55" Top="151.2" Width="189" Height="18.9" Text="VESSEL &amp; VOY NO" TextFill.Color="Maroon"/>
+      <LineObject Name="Line13" Left="557.55" Top="141.75" Height="217.35" Border.Color="Maroon"/>
+      <TextObject Name="Text13" Left="368.55" Top="217.35" Width="151.2" Height="18.9" Text="PORT OF LOADING" TextFill.Color="Maroon"/>
+      <TextObject Name="Text14" Left="557.55" Top="217.35" Width="66.15" Height="18.9" Text="ETD" TextFill.Color="Maroon"/>
+      <TextObject Name="Text15" Left="368.55" Top="245.7" Width="160.65" Height="18.9" Text="PORT OF DISCHARGE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text16" Left="557.55" Top="245.7" Width="94.5" Height="18.9" Text="ETA" TextFill.Color="Maroon"/>
+      <LineObject Name="Line14" Top="274.05" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line15" Left="368.55" Top="311.85" Width="349.65" Border.Color="Maroon"/>
+      <TextObject Name="Text17" Left="368.55" Top="274.05" Width="160.65" Height="18.9" Text="PLACE OF DELIVERY" TextFill.Color="Maroon"/>
+      <TextObject Name="Text18" Left="557.55" Top="274.05" Width="94.5" Height="18.9" Text="ETA" TextFill.Color="Maroon"/>
+      <TextObject Name="Text19" Left="368.55" Top="311.85" Width="151.2" Height="18.9" Text="FINAL DESTINATION" TextFill.Color="Maroon"/>
+      <TextObject Name="Text20" Left="557.55" Top="311.85" Width="94.5" Height="18.9" Text="ETA" TextFill.Color="Maroon"/>
+      <LineObject Name="Line16" Top="340.2" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line17" Top="359.1" Width="718.2" Border.Color="Maroon"/>
+      <TextObject Name="Text21" Top="340.2" Width="151.2" Height="18.9" Text="FREIGHT LOCATION" TextFill.Color="Maroon"/>
+      <TextObject Name="Text22" Left="567" Top="340.2" Width="132.3" Height="18.9" Text="AVAILABLE DATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text23" Top="359.1" Width="255.15" Height="18.9" Text="CONTAINER RETURN LOCATION" TextFill.Color="Maroon"/>
+      <TextObject Name="Text24" Left="434.7" Top="359.1" Width="141.75" Height="18.9" Text="LAST FREE DATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text25" Left="585.9" Top="359.1" Width="122.85" Height="18.9" Text="G.O.DATE" TextFill.Color="Maroon"/>
+      <LineObject Name="Line18" Top="415.8" Width="718.2" Border.Color="Maroon"/>
+      <TextObject Name="Text26" Top="396.9" Width="66.15" Height="18.9" Text="I.T.NO." TextFill.Color="Maroon"/>
+      <TextObject Name="Text27" Left="255.15" Top="396.9" Width="66.15" Height="18.9" Text="DATE:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text28" Left="463.05" Top="396.9" Width="94.5" Height="18.9" Text="PLACE:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text29" Top="444.15" Width="132.3" Height="28.35" Text="MARKS &amp; NOS" TextFill.Color="Maroon"/>
+      <TextObject Name="Text30" Left="132.3" Top="444.15" Width="103.95" Height="28.35" Text="NO.OF PKGA.     NO.OF CONT." TextFill.Color="Maroon"/>
+      <TextObject Name="Text31" Left="255.15" Top="444.15" Width="207.9" Height="28.35" Text="DESCRIPTION OF PACKAGES &amp; GOODS" TextFill.Color="Maroon"/>
+      <TextObject Name="Text32" Left="453.6" Top="444.15" Width="264.6" Height="18.9" Text="GROSS WEIGHT         MEASUREMENT" HorzAlign="Right" TextFill.Color="Maroon"/>
+      <TextObject Name="Text44" Top="17.01" Width="368.55" Height="56.7" Text="[AGTArrivalNotice_ArrivalNotice.ShipperDescription]"/>
+      <TextObject Name="Text45" Left="368.55" Top="13.23" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ReferenceNO]"/>
+      <TextObject Name="Text46" Left="368.55" Top="51.03" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.MasterBLNo]"/>
+      <TextObject Name="Text47" Left="559.06" Top="51.03" Width="160.65" Height="28.35" Text="[AGTArrivalNotice_ArrivalNotice.PreparedName]" Font="Arial, 8pt"/>
+      <TextObject Name="Text48" Left="368.55" Top="88.83" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.HouseBLNo]"/>
+      <TextObject Name="Text49" Left="557.55" Top="88.83" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.SubBLNo]"/>
+      <TextObject Name="Text50" Left="368.55" Top="126.63" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.AMSHouseBLNo]"/>
+      <TextObject Name="Text51" Left="557.55" Top="126.63" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.CustomerRefNo]"/>
+      <TextObject Name="Text52" Top="88.83" Width="368.55" Height="56.7" Text="[AGTArrivalNotice_ArrivalNotice.ConsigneeDescription]"/>
+      <TextObject Name="Text53" Top="164.43" Width="368.55" Height="103.95" Text="[AGTArrivalNotice_ArrivalNotice.NotifyPartyDescription]"/>
+      <TextObject Name="Text54" Top="274.05" Width="94.5" Height="18.9" Text="BROKER" TextFill.Color="Maroon"/>
+      <TextObject Name="Text55" Top="285.39" Width="368.55" Height="47.25" Text="[AGTArrivalNotice_ArrivalNotice.CustomerBrokerDescription]"/>
+      <TextObject Name="Text56" Left="368.55" Top="164.43" Width="340.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.VesselVoyageNo]"/>
+      <TextObject Name="Text57" Left="368.55" Top="228.69" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.LoadPortName]"/>
+      <TextObject Name="Text58" Left="557.55" Top="228.69" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ETD]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text59" Left="557.55" Top="257.04" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ETA]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text60" Left="557.55" Top="291.06" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.PETA]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text61" Left="557.55" Top="323.19" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.FETA]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text62" Left="368.55" Top="257.04" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.DiscPortName]"/>
+      <TextObject Name="Text63" Left="368.55" Top="291.06" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.PlaceOfDeliveryName]"/>
+      <TextObject Name="Text64" Left="368.55" Top="323.19" Width="151.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.DestinationPortName]"/>
+      <TextObject Name="Text65" Left="141.75" Top="340.2" Width="415.8" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.CYLocationDescription]"/>
+      <TextObject Name="Text66" Top="378" Width="425.25" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.CNTRReturnName]"/>
+      <TextObject Name="Text67" Left="434.7" Top="378" Width="141.75" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.LastFreeDate]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text68" Left="585.9" Top="378" Width="132.3" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.GODate]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text69" Left="47.25" Top="396.9" Width="207.9" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ITNo]"/>
+      <TextObject Name="Text72" Top="481.95" Width="141.75" Height="103.95" Text="[AGTArrivalNotice_ArrivalNotice.Marks]"/>
+      <SubreportObject Name="Subreport2" Top="604.8" Width="718.2" Height="255.15" ReportPage="Page2"/>
+      <TextObject Name="Text90" Left="302.4" Top="396.9" Width="132.3" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ITDate]" Format="Date" Format.Format="d"/>
+      <TextObject Name="Text91" Left="519.75" Top="396.9" Width="189" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ITPlace]"/>
+      <TextObject Name="Text70" Left="141.75" Top="481.95" Width="113.4" Height="103.95" Text="[AGTArrivalNotice_ArrivalNotice.NoOfPackages]" HorzAlign="Center"/>
+      <TextObject Name="Text71" Left="255.15" Top="481.95" Width="207.9" Height="103.95" Text="[AGTArrivalNotice_ArrivalNotice.GoodsDescription]" HorzAlign="Center"/>
+      <TextObject Name="Text92" Left="463.05" Top="481.95" Width="122.85" Height="47.25" Text="[AGTArrivalNotice_ArrivalNotice.GrossWeight]" HorzAlign="Center"/>
+      <TextObject Name="Text93" Left="585.9" Top="481.95" Width="132.3" Height="47.25" Text="[AGTArrivalNotice_ArrivalNotice.Measurement]" HorzAlign="Center"/>
+      <TextObject Name="Text94" Left="481.95" Top="529.2" Width="226.8" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ExpressRelease]" HorzAlign="Center" TextFill.Color="Red"/>
+      <TextObject Name="Text95" Left="481.95" Top="548.1" Width="236.25" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ReleaseOrderRequired]" HorzAlign="Center"/>
+      <TextObject Name="Text96" Left="463.05" Top="567" Width="245.7" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.DeliveryTermName]" HorzAlign="Center"/>
+      <TextObject Name="Text35" Left="557.55" Top="13.23" Width="151.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.CurrentDate]"/>
+      <TextObject Name="Text34" Top="419.58" Width="718.2" Height="18.9" Text="PARTICULARS FURNISHED BY SHIPPER" HorzAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <LineObject Name="Line6" Top="396.9" Width="718.2" Border.Color="Maroon"/>
+      <LineObject Name="Line7" Top="440.37" Width="718.2" Border.Color="Maroon"/>
+      <TextObject Name="Text33" Top="585.9" Width="718.2" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.POInfo]"/>
+      <LineObject Name="Line19" Left="368.55" Top="189" Width="349.65" Border.Color="Maroon"/>
+      <TextObject Name="Text97" Left="368.55" Top="189" Width="151.2" Height="18.9" Text="PLACE OF RECEOPT" TextFill.Color="Maroon"/>
+      <TextObject Name="Text98" Left="368.55" Top="200.34" Width="179.55" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.ReceiptPlaceName]"/>
+      <TextObject Name="Text99" Left="557.55" Top="189" Width="103.95" Height="18.9" Text="GATE IN DATE" TextFill.Color="Maroon"/>
+      <TextObject Name="Text100" Left="557.55" Top="202.23" Width="160.65" Height="18.9" Text="[AGTArrivalNotice_ArrivalNotice.GateInDate]" Format="Date" Format.Format="d"/>
+    </ColumnHeaderBand>
+  </ReportPage>
+  <ReportPage Name="Page2">
+    <ColumnHeaderBand Name="ColumnHeaderBand1695448279" Top="20" Width="718.2"/>
+    <DataBand Name="table1" Top="78.9" Width="718.2" Height="18.9" DataSource="LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData">
+      <TextObject Name="textbox4" Width="264.6" Height="18.9" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.ContainerNo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="PickupNo" Left="264.6" Width="236.25" Height="18.9" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.PickupNo]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="LastFreeDate" Left="500.85" Width="122.85" Height="18.9" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.LastFreeDate]" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="GODate" Left="623.7" Width="122.85" Height="18.9" CanGrow="true" Text="[LongWin_Forwarding_ServiceInterface_OceanImport_ContainerInfoReportData.GODate]" Font="Arial, 10pt, style=Bold"/>
+      <DataHeaderBand Top="40" Width="718.2" Height="18.9">
+        <TextObject Name="textbox1" Width="264.6" Height="18.9" Border.Lines="Left, Top, Bottom" Border.Color="Maroon" CanGrow="true" Text="ContainerNo" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox3" Left="264.6" Width="236.25" Height="18.9" Border.Lines="Top, Bottom" Border.Color="Maroon" CanGrow="true" Text="Pickup No" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox7" Left="500.85" Width="122.85" Height="18.9" Border.Lines="Top, Bottom" Border.Color="Maroon" CanGrow="true" Text="Last Free Date" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+        <TextObject Name="textbox9" Left="623.7" Width="122.85" Height="18.9" Border.Lines="Right, Top, Bottom" Border.Color="Maroon" CanGrow="true" Text="GODate" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      </DataHeaderBand>
+    </DataBand>
+  </ReportPage>
+</Report>

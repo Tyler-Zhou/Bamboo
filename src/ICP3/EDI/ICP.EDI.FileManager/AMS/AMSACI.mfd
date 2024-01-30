@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="17">
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties SelectedLanguage="cs"/>
+		<structure>
+			<children>
+				<component name="ReplaceXMLSpecialCharacters" library="user" blackbox="0" uid="383" kind="19" visible="0">
+					<view ltx="616" lty="561" rbx="738" rby="578"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="TEXT" inpkey="88" componentid="367"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="83" componentid="366"/>
+						</root>
+					</data>
+				</component>
+				<component name="round" library="core" uid="412" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="44"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="85"/>
+					</targets>
+					<view ltx="475" lty="431" rbx="557" rby="468"/>
+				</component>
+				<component name="constant" library="core" uid="413" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="81"/>
+					</targets>
+					<view ltx="379" lty="594" rbx="429" rby="610"/>
+					<data>
+						<constant value="180" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="left" library="lang" uid="414" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="50"/>
+						<datapoint pos="1" key="82"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="87"/>
+					</targets>
+					<view ltx="481" lty="558" rbx="569" rby="610"/>
+				</component>
+				<component name="constant" library="core" uid="416" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="648" lty="355" rbx="704" rby="371"/>
+					<data>
+						<constant value="UN" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="417" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="10"/>
+						<datapoint pos="1" key="58"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="59"/>
+					</targets>
+					<view ltx="542" lty="-16" rbx="630" rby="38"/>
+				</component>
+				<component name="GetCustumerForAMSByXml" library="user" blackbox="0" uid="411" kind="19" visible="0">
+					<view ltx="432" lty="53" rbx="589" rby="138"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="XML" inpkey="54" componentid="336"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Name" outkey="61" componentid="337"/>
+							<entry name="Address1" outkey="63" componentid="327"/>
+							<entry name="Address2" outkey="65" componentid="328"/>
+							<entry name="CityStateZip" outkey="67" componentid="329"/>
+							<entry name="Country" outkey="69" componentid="338"/>
+						</root>
+					</data>
+				</component>
+				<component name="GetCustumerForAMSByXml" library="user" blackbox="0" uid="415" kind="19" visible="0">
+					<view ltx="635" lty="63" rbx="792" rby="148"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="XML" inpkey="56" componentid="336"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Name" outkey="75" componentid="337"/>
+							<entry name="Address1" outkey="79" componentid="327"/>
+							<entry name="Address2" outkey="77" componentid="328"/>
+							<entry name="CityStateZip" outkey="71" componentid="329"/>
+							<entry name="Country" outkey="73" componentid="338"/>
+						</root>
+					</data>
+				</component>
+				<component name="document" library="xml" uid="419" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="881" lty="-96" rbx="1113" rby="731"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="Manifest" expanded="1">
+										<entry name="BillOfLading" inpkey="52" expanded="1">
+											<entry name="BookingDate" inpkey="8"/>
+											<entry name="HouseBillNumber" inpkey="60"/>
+											<entry name="AmendmentFlag" inpkey="12"/>
+											<entry name="MasterBillNumber" inpkey="14"/>
+											<entry name="OceanBillNumber" inpkey="97"/>
+											<entry name="ShipperPartyInfo">
+												<entry name="Name" inpkey="62"/>
+												<entry name="StreetAddress1" inpkey="64"/>
+												<entry name="StreetAddress2" inpkey="66"/>
+												<entry name="CityStateZip" inpkey="68"/>
+												<entry name="Country" inpkey="70"/>
+											</entry>
+											<entry name="ConsigneePartyInfo">
+												<entry name="Name" inpkey="76"/>
+												<entry name="StreetAddress1" inpkey="80"/>
+												<entry name="StreetAddress2" inpkey="78"/>
+												<entry name="CityStateZip" inpkey="72"/>
+												<entry name="Country" inpkey="74"/>
+											</entry>
+											<entry name="IMO" inpkey="16"/>
+											<entry name="VesselName" inpkey="18"/>
+											<entry name="SCAC_Carrier" inpkey="20"/>
+											<entry name="VesselFlag" inpkey="22"/>
+											<entry name="VoyageNumber" inpkey="24"/>
+											<entry name="CarrierCode" inpkey="158"/>
+											<entry name="CustomsEntryType" inpkey="26"/>
+											<entry name="ACIEntryType" inpkey="98"/>
+											<entry name="PlaceOfReceipt" expanded="1">
+												<entry name="PortCode" inpkey="28"/>
+												<entry name="Qualifier" inpkey="4"/>
+											</entry>
+											<entry name="PortOfLoad" expanded="1">
+												<entry name="PortCode" inpkey="30"/>
+												<entry name="Qualifier" inpkey="5"/>
+												<entry name="Date" inpkey="92"/>
+											</entry>
+											<entry name="LastForeignPort" expanded="1">
+												<entry name="PortCode" inpkey="32"/>
+												<entry name="Qualifier" inpkey="2"/>
+											</entry>
+											<entry name="FirstUSAPort" expanded="1">
+												<entry name="PortCode" inpkey="34"/>
+												<entry name="Qualifier" inpkey="3"/>
+												<entry name="Date" inpkey="188"/>
+											</entry>
+											<entry name="PortOfDischarge" expanded="1">
+												<entry name="PortCode" inpkey="36"/>
+												<entry name="Qualifier" inpkey="6"/>
+												<entry name="Date" inpkey="90"/>
+											</entry>
+											<entry name="PlaceOfDelivery" expanded="1">
+												<entry name="PortCode" inpkey="101"/>
+												<entry name="Qualifier" inpkey="102"/>
+											</entry>
+											<entry name="Container" inpkey="38" expanded="1">
+												<entry name="ContainerNumber" inpkey="40"/>
+												<entry name="Seal" inpkey="42"/>
+												<entry name="ContainerContent" expanded="1">
+													<entry name="Kilos" inpkey="86"/>
+													<entry name="Quantity" inpkey="46"/>
+													<entry name="UnitOfMeasure" inpkey="48"/>
+													<entry name="FreeFormDescription" inpkey="84"/>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="AMSACIISF.xsd" outputinstance="AMSACIISF.xml" instanceroot="{}Manifest"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="425" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="194"/>
+					</targets>
+					<view ltx="491" lty="280" rbx="559" rby="296"/>
+					<data>
+						<constant value="CHNJ" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="423" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="198"/>
+						<datapoint pos="1" key="199"/>
+						<datapoint pos="2" key="200"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="201"/>
+					</targets>
+					<view ltx="721" lty="189" rbx="839" rby="259"/>
+				</component>
+				<component name="constant" library="core" uid="428" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="204"/>
+					</targets>
+					<view ltx="416" lty="331" rbx="454" rby="347"/>
+					<data>
+						<constant value="5" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring" library="core" uid="427" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="205"/>
+						<datapoint pos="1" key="206"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="207"/>
+					</targets>
+					<view ltx="489" lty="310" rbx="577" rby="377"/>
+				</component>
+				<component name="equal" library="core" uid="424" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="195"/>
+						<datapoint pos="1" key="196"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="197"/>
+					</targets>
+					<view ltx="612" lty="259" rbx="670" rby="311"/>
+				</component>
+				<component name="document" library="xml" uid="418" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="72" lty="-70" rbx="373" rby="696"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://tempuri.org/AMSDataSource.xsd"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="AMSDataSource" expanded="1">
+										<entry name="HBL" outkey="51" expanded="1">
+											<entry name="BookingDate" outkey="7"/>
+											<entry name="Mark" outkey="57"/>
+											<entry name="HouseBillNumber" outkey="9"/>
+											<entry name="AmendmentFlag" outkey="11"/>
+											<entry name="MasterBillNumber" outkey="13"/>
+											<entry name="ShipperPartyInfo" outkey="53"/>
+											<entry name="ConsigneePartyInfo" outkey="55"/>
+											<entry name="IMO" outkey="15"/>
+											<entry name="VesselName" outkey="17"/>
+											<entry name="SCAC_Carrier" outkey="19"/>
+											<entry name="VesselFlag" outkey="21"/>
+											<entry name="VoyageNumber" outkey="23"/>
+											<entry name="CarrierCode" outkey="157"/>
+											<entry name="CustomsEntryType" outkey="25"/>
+											<entry name="ACIEntryType" outkey="99"/>
+											<entry name="PlaceOfReceiptPortCode" outkey="27"/>
+											<entry name="PortOfLoadPortCode" outkey="29"/>
+											<entry name="PortOfLoadPortDate" outkey="91"/>
+											<entry name="LastForeignPortPortCode" outkey="31"/>
+											<entry name="FirstUSAPortPortCode" outkey="33"/>
+											<entry name="FirstUSAPortPortDate" outkey="187"/>
+											<entry name="PortOfDischargePortCode" outkey="35"/>
+											<entry name="PortOfDischargeDate" outkey="89"/>
+											<entry name="PlaceOfDeliveryPortCode" outkey="100"/>
+											<entry name="Container" outkey="37" expanded="1">
+												<entry name="ContainerNumber" outkey="39"/>
+												<entry name="Seal" outkey="41"/>
+												<entry name="Kilos" outkey="43"/>
+												<entry name="Quantity" outkey="45"/>
+												<entry name="UnitOfMeasure" outkey="47"/>
+												<entry name="FreeFormDescription" outkey="49"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="AMSDataSource.xsd" outputinstance="AMSDataSource.xml" instanceroot="{http://tempuri.org/AMSDataSource.xsd}AMSDataSource"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="421" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="190"/>
+					</targets>
+					<view ltx="405" lty="264" rbx="443" rby="280"/>
+					<data>
+						<constant value="4" datatype="decimal"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="uppercase" library="lang" uid="426" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="202"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="203"/>
+					</targets>
+					<view ltx="580" lty="207" rbx="668" rby="244"/>
+				</component>
+				<component name="left" library="lang" uid="429" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="219"/>
+						<datapoint pos="1" key="220"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="221"/>
+					</targets>
+					<view ltx="466" lty="202" rbx="554" rby="254"/>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="2" edgekey="103"/>
+							<edge vertexkey="3" edgekey="104"/>
+							<edge vertexkey="4" edgekey="105"/>
+							<edge vertexkey="5" edgekey="106"/>
+							<edge vertexkey="6" edgekey="107"/>
+							<edge vertexkey="102" edgekey="108"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="8" edgekey="109"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="10" edgekey="110"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="12" edgekey="111"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="13">
+						<edges>
+							<edge vertexkey="14" edgekey="112"/>
+							<edge vertexkey="200" edgekey="209"/>
+							<edge vertexkey="205" edgekey="210"/>
+							<edge vertexkey="219" edgekey="222"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="15">
+						<edges>
+							<edge vertexkey="16" edgekey="114"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="18" edgekey="115"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="19">
+						<edges>
+							<edge vertexkey="20" edgekey="116"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="21">
+						<edges>
+							<edge vertexkey="22" edgekey="117"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="23">
+						<edges>
+							<edge vertexkey="24" edgekey="118"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="25">
+						<edges>
+							<edge vertexkey="26" edgekey="119"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="27">
+						<edges>
+							<edge vertexkey="28" edgekey="120"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="29">
+						<edges>
+							<edge vertexkey="30" edgekey="121"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="31">
+						<edges>
+							<edge vertexkey="32" edgekey="122"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="33">
+						<edges>
+							<edge vertexkey="34" edgekey="123"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="35">
+						<edges>
+							<edge vertexkey="36" edgekey="124"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="37">
+						<edges>
+							<edge vertexkey="38" edgekey="125"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="39">
+						<edges>
+							<edge vertexkey="40" edgekey="126"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="41">
+						<edges>
+							<edge vertexkey="42" edgekey="127"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="44" edgekey="128"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="45">
+						<edges>
+							<edge vertexkey="46" edgekey="129"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="48" edgekey="130"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="50" edgekey="131"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="52" edgekey="132"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="53">
+						<edges>
+							<edge vertexkey="54" edgekey="133"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="55">
+						<edges>
+							<edge vertexkey="56" edgekey="134"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="58" edgekey="135"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="60" edgekey="136"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="62" edgekey="137"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="63">
+						<edges>
+							<edge vertexkey="64" edgekey="138"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="66" edgekey="139"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="68" edgekey="140"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="70" edgekey="141"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="71">
+						<edges>
+							<edge vertexkey="72" edgekey="142"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="73">
+						<edges>
+							<edge vertexkey="74" edgekey="143"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="75">
+						<edges>
+							<edge vertexkey="76" edgekey="144"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="77">
+						<edges>
+							<edge vertexkey="78" edgekey="145"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="79">
+						<edges>
+							<edge vertexkey="80" edgekey="146"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="81">
+						<edges>
+							<edge vertexkey="82" edgekey="147"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="83">
+						<edges>
+							<edge vertexkey="84" edgekey="148"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="85">
+						<edges>
+							<edge vertexkey="86" edgekey="149"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="87">
+						<edges>
+							<edge vertexkey="88" edgekey="150"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="89">
+						<edges>
+							<edge vertexkey="90" edgekey="151"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="91">
+						<edges>
+							<edge vertexkey="92" edgekey="152"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="99">
+						<edges>
+							<edge vertexkey="98" edgekey="155"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="100">
+						<edges>
+							<edge vertexkey="101" edgekey="156"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="157">
+						<edges>
+							<edge vertexkey="158" edgekey="159"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="187">
+						<edges>
+							<edge vertexkey="188" edgekey="189"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="190">
+						<edges>
+							<edge vertexkey="220" edgekey="223"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="194">
+						<edges>
+							<edge vertexkey="196" edgekey="213"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="197">
+						<edges>
+							<edge vertexkey="198" edgekey="214"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="201">
+						<edges>
+							<edge vertexkey="97" edgekey="215"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="203">
+						<edges>
+							<edge vertexkey="195" edgekey="216"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="204">
+						<edges>
+							<edge vertexkey="206" edgekey="217"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="207">
+						<edges>
+							<edge vertexkey="199" edgekey="218"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="221">
+						<edges>
+							<edge vertexkey="202" edgekey="224"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A0E9B29-FF0F-4526-823F-0B684E6177CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.OA.UI</RootNamespace>
+    <AssemblyName>ICP.OA.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>http://localhost/ICP.OA.UI/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FilePreviewServiceLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.ClientComponents.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICP.MailCenter.CommonUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.ReportCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.ReportCenter.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ICP.System.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.System.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="MailBee.NET, Version=7.2.2.366, Culture=neutral, PublicKeyToken=cd85b70fb26f9fc1, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bulletin\BulletinEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bulletin\BulletinEditPart.Designer.cs">
+      <DependentUpon>BulletinEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin\BulletinListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bulletin\BulletinListPart.Designer.cs">
+      <DependentUpon>BulletinListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin\BulletinMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bulletin\BulletinMainWorkspace.Designer.cs">
+      <DependentUpon>BulletinMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin\BulletinSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bulletin\BulletinSearchPart.Designer.cs">
+      <DependentUpon>BulletinSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin\BulletinToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Bulletin\BulletinToolBar.Designer.cs">
+      <DependentUpon>BulletinToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bulletin\BulletinWorkitem.cs" />
+    <Compile Include="Bulletin\frmBulletinList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bulletin\frmBulletinList.designer.cs">
+      <DependentUpon>frmBulletinList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Constants.cs" />
+    <Compile Include="Comm\FaxClientUtility.cs" />
+    <Compile Include="Comm\Utility.cs" />
+    <Compile Include="Contact\ContactMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\ContactMainWorkSpace.Designer.cs">
+      <DependentUpon>ContactMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\ContactSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\ContactSearchPart.Designer.cs">
+      <DependentUpon>ContactSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\ContactWorkItem.cs" />
+    <Compile Include="Document\Other\FormUpgradeCloud.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\Other\FormUpgradeCloud.Designer.cs">
+      <DependentUpon>FormUpgradeCloud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\Parts\DocMainViewPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\Parts\DocMainViewPart.Designer.cs">
+      <DependentUpon>DocMainViewPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\DocMainWorkspce.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\DocMainWorkspce.Designer.cs">
+      <DependentUpon>DocMainWorkspce.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\DocumentWorkitem.cs" />
+    <Compile Include="Document\Parts\DocOrgJobListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\Parts\DocOrgJobListPart.Designer.cs">
+      <DependentUpon>DocOrgJobListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\Parts\DocUserListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\Parts\DocUserListPart.Designer.cs">
+      <DependentUpon>DocUserListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\Other\UploadFileForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\Other\UploadFileForm.Designer.cs">
+      <DependentUpon>UploadFileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\EMailWorkitem.cs" />
+    <Compile Include="FaxManage\MailFolder\frmAddFolder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaxManage\MailFolder\frmAddFolder.Designer.cs">
+      <DependentUpon>frmAddFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\ContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaxManage\ContactForm.Designer.cs">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\FaxOpearation\frmSendFax.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaxManage\FaxOpearation\frmSendFax.Designer.cs">
+      <DependentUpon>frmSendFax.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\FaxOpearation\frmFaxPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaxManage\FaxOpearation\frmFaxPreview.Designer.cs">
+      <DependentUpon>frmFaxPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxClientService.cs" />
+    <Compile Include="FaxManage\MailFolder\ReNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FaxManage\MailFolder\ReNameForm.Designer.cs">
+      <DependentUpon>ReNameForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\UCFaxList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaxManage\UCFaxList.Designer.cs">
+      <DependentUpon>UCFaxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxManage\UCFaxQuery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaxManage\UCFaxQuery.Designer.cs">
+      <DependentUpon>UCFaxQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailCenterOperationMemo\MailCenterMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailCenterOperationMemo\MailCenterMainWorkSpace.Designer.cs">
+      <DependentUpon>MailCenterMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailCenterOperationMemo\MailCenterSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MailCenterOperationMemo\MailCenterSearchPart.Designer.cs">
+      <DependentUpon>MailCenterSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MailCenterOperationMemo\MailCenterOperationWorkItem.cs" />
+    <Compile Include="OAModuleInit.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BulletinNotifyService.cs" />
+    <Compile Include="Service\DocumentClient.cs" />
+    <Compile Include="BusinessFile\BusinessDocumentWorkitem.cs" />
+    <Compile Include="BusinessFile\Parts\BDocMainViewPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessFile\Parts\BDocMainViewPart.Designer.cs">
+      <DependentUpon>BDocMainViewPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCDocumentListControlTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDocumentListControlTest.Designer.cs">
+      <DependentUpon>UCDocumentListControlTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInformation\UserInfoMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInformation\UserInfoMainWorkSpace.Designer.cs">
+      <DependentUpon>UserInfoMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInformation\UserInfoWorkItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bulletin\BulletinEditPart.resx">
+      <DependentUpon>BulletinEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bulletin\BulletinListPart.resx">
+      <DependentUpon>BulletinListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bulletin\BulletinMainWorkspace.resx">
+      <DependentUpon>BulletinMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bulletin\BulletinSearchPart.resx">
+      <DependentUpon>BulletinSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bulletin\BulletinToolBar.resx">
+      <DependentUpon>BulletinToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bulletin\frmBulletinList.resx">
+      <DependentUpon>frmBulletinList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\LocalReports\ContactReportDetail.rdlc" />
+    <EmbeddedResource Include="Contact\ContactMainWorkSpace.resx">
+      <DependentUpon>ContactMainWorkSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\ContactSearchPart.resx">
+      <DependentUpon>ContactSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\Other\FormUpgradeCloud.resx">
+      <DependentUpon>FormUpgradeCloud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\Parts\DocMainViewPart.resx">
+      <DependentUpon>DocMainViewPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\DocMainWorkspce.resx">
+      <DependentUpon>DocMainWorkspce.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\Other\UploadFileForm.resx">
+      <DependentUpon>UploadFileForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\Parts\DocOrgJobListPart.resx">
+      <DependentUpon>DocOrgJobListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\Parts\DocUserListPart.resx">
+      <DependentUpon>DocUserListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\MailFolder\frmAddFolder.resx">
+      <DependentUpon>frmAddFolder.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\ContactForm.resx">
+      <DependentUpon>ContactForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\FaxOpearation\frmFaxPreview.resx">
+      <DependentUpon>frmFaxPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\FaxOpearation\frmSendFax.resx">
+      <DependentUpon>frmSendFax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\MailFolder\ReNameForm.resx">
+      <DependentUpon>ReNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\UCFaxList.resx">
+      <DependentUpon>UCFaxList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxManage\UCFaxQuery.resx">
+      <DependentUpon>UCFaxQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailCenterOperationMemo\MailCenterMainWorkSpace.resx">
+      <DependentUpon>MailCenterMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailCenterOperationMemo\MailCenterSearchPart.resx">
+      <DependentUpon>MailCenterSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessFile\Parts\BDocMainViewPart.resx">
+      <DependentUpon>BDocMainViewPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDocumentListControlTest.resx">
+      <DependentUpon>UCDocumentListControlTest.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInformation\UserInfoMainWorkSpace.resx">
+      <DependentUpon>UserInfoMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ICP.OA.ServiceInterface.DataObjects.MailFolderList.datasource" />
+    <None Include="Properties\ICP.OA.ServiceInterface.DataObjects.MailMessageList.datasource" />
+    <None Include="Resources\20071126201302634.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ICP.Sys.ServiceInterface.DataObjects.MailAccount.datasource" />
+    <None Include="Properties\ICP.OA.ServiceInterface.DataObjects.MailMessagesInfo.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\High.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\打印机1_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\文件夹32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R_All.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SendMail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\编辑16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\保存32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\保存_蓝16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Font_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveFolder_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddFolder_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fold_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Attachment_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenFile_S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\设置32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\刷新32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReNameFolder_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_File_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.DocumentFileInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.DocumentFolderInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.DocumentFolderList.datasource" />
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.DocumentPermissionList.datasource" />
+    <None Include="Resources\Search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.DocumentFolderFileList.datasource" />
+    <None Include="Resources\Add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UP_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Comm\LocalReports\Report_CRM_GetSalesActityTotal.rdl" />
+    <None Include="Properties\DataSources\ICP.OA.ServiceInterface.DataObjects.UserDetailInfo.datasource" />
+    <None Include="Resources\fax.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fax.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.OA.ServiceInterface\ICP.OA.ServiceInterface.csproj">
+      <Project>{C7252A64-7FDE-4EFE-A694-127CCD9AE374}</Project>
+      <Name>ICP.OA.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-5.png" />
+    <Content Include="Resources\back-top.png" />
+    <Content Include="Resources\fail.png" />
+    <Content Include="Resources\fastSearch.png" />
+    <Content Include="Resources\sucessed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

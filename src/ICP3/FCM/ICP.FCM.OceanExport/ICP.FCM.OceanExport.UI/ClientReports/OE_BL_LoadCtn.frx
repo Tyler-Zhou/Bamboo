@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/23/2010 11:13:22" ReportInfo.Modified="07/03/2012 18:07:31" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ContainerType" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ContainerQtyDescription" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.Int32"/>
+      <Column Name="QuantityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="210.01" LeftMargin="0" TopMargin="0" RightMargin="0" BottomMargin="0" FirstPageSource="4" OtherPagesSource="4">
+    <PageHeaderBand Name="PageHeader1" Width="793.84" Height="974.4">
+      <TextObject Name="txtContainer" Left="504.96" Top="88.32" Width="105.6" Height="38.4" Font="Arial, 10pt"/>
+      <TextObject Name="txtSealno" Left="504.96" Top="141.12" Width="116.16" Height="33.6" Font="Arial, 10pt"/>
+      <TextObject Name="txtTypeofcontainer" Left="641.28" Top="141.12" Width="116.16" Height="33.6" Text="[ReportSource.ContainerType]" Font="Arial, 10pt"/>
+      <TextObject Name="txtDiscportName" Left="586.56" Top="179.52" Width="144" Height="15.36" Text="[ReportSource.POD]" Font="Arial, 10pt"/>
+      <TextObject Name="txtVoyage" Left="82.86" Top="210.24" Width="143.7" Height="27.84" Text="[ReportSource.Vessel]" Font="Arial, 10pt"/>
+      <TextObject Name="txtVoyage" Left="225.6" Top="210.24" Width="114.24" Height="27.84" Text="[ReportSource.Voyage]" Font="Arial, 10pt"/>
+      <TextObject Name="txtLoadPortName" Left="344.64" Top="210.24" Width="180.48" Height="15.36" Text="[ReportSource.POL]" Font="Arial, 10pt"/>
+      <TextObject Name="txtDestination" Left="602.88" Top="210.24" Width="140.16" Height="16.32" Text="[ReportSource.PlaceOfDelivery]"/>
+      <TextObject Name="txtTips2" Left="335.13" Top="271.83" Width="324.03" Height="33.26" Text="毛重如有不符请更改(                          KGS)" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="txtBlcode" Left="54.21" Top="325.95" Width="148.56" Height="384.96" Text="[ReportSource.BLNo]" HorzAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="txtMarkNo" Left="205.95" Top="325.95" Width="79.17" Height="384.8" Text="N/M" Font="Arial, 10pt"/>
+      <TextObject Name="txtQuantity" Left="288" Top="325.84" Width="80.64" Height="384.8" Text="[ReportSource.QuantityUnit]" Font="Arial, 10pt"/>
+      <TextObject Name="txtGoodsDescription" Left="370.56" Top="325.84" Width="129.6" Height="384.8" Text="[ReportSource.GoodsDescription]" Font="Arial, 10pt"/>
+      <TextObject Name="txtRemark" Left="696.66" Top="325.84" Width="68.16" Height="384.8" Text="[ReportSource.Remark]" Font="Arial, 10pt"/>
+      <TextObject Name="txtDrivesignin" Left="12.48" Top="739.2" Width="241.92" Height="51.84"/>
+      <TextObject Name="txtLoadsigin" Left="258.24" Top="739.2" Width="171.84" Height="51.84"/>
+      <TextObject Name="txtTips3" Left="21.93" Top="821.76" Width="454.08" Height="48.96" Text="请如实填写并核对进港货物的毛重,保证与实际装箱毛&#13;&#10;重相符,否则引起的一切相关费用及后果由客户无条件&#13;&#10;自行承担,特此声明" Font="Arial, 10pt"/>
+      <TextObject Name="txtLoaderinfo" Left="12.48" Top="866.88" Width="454.08" Height="61.44"/>
+      <TextObject Name="txtTel" Left="334.08" Top="942.72" Width="137.28" Height="15.36"/>
+      <TextObject Name="txtFax" Left="334.08" Top="960" Width="137.28" Height="14.4"/>
+      <TextObject Name="Text1" Left="500.85" Top="325.84" Width="94.5" Height="384.8" Text="[ReportSource.WeightUnit]" Font="Arial, 10pt"/>
+      <TextObject Name="Text2" Left="595.35" Top="325.84" Width="94.5" Height="384.8" Text="[ReportSource.MeasurementUnit]" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

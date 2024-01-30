@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9C8B736-C3A7-4E6B-9D1E-BEF1138AEB1F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.Business.Common.UI</RootNamespace>
+    <AssemblyName>ICP.Business.Common.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.Business.Common.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>C:\ICPDlls\ICP.Business.Common.UI.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>ICP.Business.Common.UI.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Pdf, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b44de83eed7e98a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Aspose.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.BonusSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.Data.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.Design.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.OfficeSkins.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.RichEdit.v10.1.Core.DLL</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.Utils.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.XtraEditors.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\DevExpress.XtraEditors.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraLayout.v10.1.DLL</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraLayout.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\DevExpress.XtraNavBar.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraNavBar.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\DevExpress.XtraRichEdit.v10.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraRichEdit.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraTreeList.v10.1.DLL</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraTreeList.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="EO.Pdf, Version=18.1.91.0, Culture=neutral, PublicKeyToken=e92353a6bf73fffc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\EO.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\FastReport.DLL</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=1.2.47.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=1.2.47.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\FastReport.Editor.DLL</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Install, Version=1.2.47.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\FastReport.Install.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.CommandHandler.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Crawler.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Crawler.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Crawler.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Crawler.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.EDI.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.AirExport.ServiceInterface.DLL</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.FCM.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OtherBusiness.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.OtherBusiness.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FilePreviewServiceLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.Framework.ClientComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.MailCenter.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenter.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.MailCenter.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.MailCenterFramework.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.MailCenterFramework.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Message.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905" />
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.6.35, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=4.3.0.20040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Wintellect.Threading, Version=4.2.3323.23897, Culture=neutral, PublicKeyToken=167f00fdf109b063, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BL UserControl\BLListPresenter.cs" />
+    <Compile Include="BL UserControl\IBaseBLPart.cs" />
+    <Compile Include="BL UserControl\DeclareBLListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BL UserControl\DeclareBLListPart.designer.cs">
+      <DependentUpon>DeclareBLListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL UserControl\UCBLTreePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BL UserControl\UCBLTreePart.designer.cs">
+      <DependentUpon>UCBLTreePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BL UserControl\UCBLListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BL UserControl\UCBLListPart.designer.cs">
+      <DependentUpon>UCBLListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessCommonModuleInit.cs" />
+    <Compile Include="CancelBooking\OEBkgFailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelBooking\OEBkgFailed.Designer.cs">
+      <DependentUpon>OEBkgFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargoTracking\BaseTracking.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CargoTracking\ShowWeb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CargoTracking\ShowWeb.Designer.cs">
+      <DependentUpon>ShowWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargoTracking\UCOECargoTracking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CargoTracking\UCOECargoTracking.Designer.cs">
+      <DependentUpon>UCOECargoTracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargoTracking\UCOICargoTracking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CargoTracking\UCOICargoTracking.Designer.cs">
+      <DependentUpon>UCOICargoTracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\ComboBusinessContactDetailInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\ComboBusinessContactDetailInfoControl.Designer.cs">
+      <DependentUpon>ComboBusinessContactDetailInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\ComboBusinessContactPopupContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\CustomerBusinessContactControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\CustomerBusinessContactControl.Designer.cs">
+      <DependentUpon>CustomerBusinessContactControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\OICustomerBusinessContactControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\OICustomerBusinessContactControl.Designer.cs">
+      <DependentUpon>OICustomerBusinessContactControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\OIRecentShipmentPopupContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComboCustomerDescription\RecentShipmentPopupContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\CommonUIUtility.cs" />
+    <Compile Include="CommonPart\UCContactAndDocumentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonPart\UCContactAndDocumentPart.Designer.cs">
+      <DependentUpon>UCContactAndDocumentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\AmsConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Communication History\AmsConfirm.Designer.cs">
+      <DependentUpon>AmsConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\CommunicationHistoryListPresenter.cs" />
+    <Compile Include="Communication History\CommunicationHistoryStage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Communication History\CommunicationHistoryStage.designer.cs">
+      <DependentUpon>CommunicationHistoryStage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\EdiLogList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Communication History\EdiLogList.Designer.cs">
+      <DependentUpon>EdiLogList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\ICommunicationHistoryList.cs" />
+    <Compile Include="Communication History\UCCommunicationHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Communication History\UCCommunicationHistory.designer.cs">
+      <DependentUpon>UCCommunicationHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\UCCommunicationHistoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Communication History\UCCommunicationHistoryList.designer.cs">
+      <DependentUpon>UCCommunicationHistoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Communication History\UCCommunicationHistoryOperationBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Communication History\UCCommunicationHistoryOperationBar.designer.cs">
+      <DependentUpon>UCCommunicationHistoryOperationBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Contact\CustomSplitterControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListEditPart.Designer.cs">
+      <DependentUpon>UCContactListEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCContactListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListPart.Designer.cs">
+      <DependentUpon>UCContactListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCContactListPartFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListPartFrom.Designer.cs">
+      <DependentUpon>UCContactListPartFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCContactListWithToolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListWithToolbar.Designer.cs">
+      <DependentUpon>UCContactListWithToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCContactListWithToolbarFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactListWithToolbarFrom.Designer.cs">
+      <DependentUpon>UCContactListWithToolbarFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCContactStaffListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCContactStaffListPart.Designer.cs">
+      <DependentUpon>UCContactStaffListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCCustomerToolbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCCustomerToolbar.designer.cs">
+      <DependentUpon>UCCustomerToolbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCCustomerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCCustomerList.designer.cs">
+      <DependentUpon>UCCustomerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contact\UCSelectedContactListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contact\UCSelectedContactListPart.Designer.cs">
+      <DependentUpon>UCSelectedContactListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSPBooking\CSPBKUIAdapter.cs" />
+    <Compile Include="CSPBooking\CSPBKWorkItem.cs" />
+    <Compile Include="CSPBooking\PartFastSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CSPBooking\PartFastSearch.Designer.cs">
+      <DependentUpon>PartFastSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSPBooking\PartSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CSPBooking\PartSearch.Designer.cs">
+      <DependentUpon>PartSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSPBooking\PartToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CSPBooking\PartToolBar.Designer.cs">
+      <DependentUpon>PartToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSPBooking\PartList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CSPBooking\PartList.Designer.cs">
+      <DependentUpon>PartList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSPBooking\CSPBKConstants.cs" />
+    <Compile Include="CSPBooking\PartMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CSPBooking\PartMainWorkspace.Designer.cs">
+      <DependentUpon>PartMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDescription\BusinessContactDetailInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerDescription\BusinessContactDetailInfoControl.Designer.cs">
+      <DependentUpon>BusinessContactDetailInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDescription\BusinessContactPopupContainerEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerDescription\CustomerContactFinderBridge.cs" />
+    <Compile Include="Document\DocumentListPresenter.cs" />
+    <Compile Include="Document\Enum\CustomEnumInfo.cs" />
+    <Compile Include="Document\Enum\Enum.cs" />
+    <Compile Include="Document\Enum\EnumGetter.cs" />
+    <Compile Include="Document\frmUploadSIAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\frmUploadSIAttachment.designer.cs">
+      <DependentUpon>frmUploadSIAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\IDocumentInfoDataSource.cs" />
+    <Compile Include="Document\PostInfo.cs" />
+    <Compile Include="Document\UCBusinessDocumentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\UCBusinessDocumentList.designer.cs">
+      <DependentUpon>UCBusinessDocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\UCDocumentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\UCDocumentList.designer.cs">
+      <DependentUpon>UCDocumentList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\UCDocumentListGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\UCDocumentListGrid.designer.cs">
+      <DependentUpon>UCDocumentListGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\ECommerceCommandConstants.cs" />
+    <Compile Include="ECommerce\ECommerceEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\ECommerceEditPart.Designer.cs">
+      <DependentUpon>ECommerceEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\ECommerceListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECommerce\ECommerceListPart.designer.cs">
+      <DependentUpon>ECommerceListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECommerce\ECommercePresenter.cs" />
+    <Compile Include="EmailQuery\OEEmailQueryPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailQuery\OEEmailQueryPart.Designer.cs">
+      <DependentUpon>OEEmailQueryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventList\EventEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventList\EventEditPart.Designer.cs">
+      <DependentUpon>EventEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventList\EventListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EventList\EventListPart.designer.cs">
+      <DependentUpon>EventListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventList\EventPartPresenter.cs" />
+    <Compile Include="CargoTracking\ImageEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CargoTracking\ImageEditPart.Designer.cs">
+      <DependentUpon>ImageEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\Communication\QuotedPriceCommunicationPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\Communication\QuotedPriceCommunicationPart.Designer.cs">
+      <DependentUpon>QuotedPriceCommunicationPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\Helper\Constants.cs" />
+    <Compile Include="QuotedPrice\Helper\Helper.cs" />
+    <Compile Include="QuotedPrice\Helper\QuotedPriceUIAdapter.cs" />
+    <Compile Include="QuotedPrice\Helper\QuotedPriceWorkItem.cs" />
+    <Compile Include="QuotedPrice\QuotedPriceEdit.Designer.cs">
+      <DependentUpon>QuotedPriceEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceListPart.Designer.cs">
+      <DependentUpon>QuotedPriceListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceMainWorkspace.Designer.cs">
+      <DependentUpon>QuotedPriceMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceRatesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceRatesPart.Designer.cs">
+      <DependentUpon>QuotedPriceRatesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceToolBar.Designer.cs">
+      <DependentUpon>QuotedPriceToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\QuotedPriceView.Designer.cs">
+      <DependentUpon>QuotedPriceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\Recent\QuotedPriceOrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\Recent\QuotedPriceOrderControl.Designer.cs">
+      <DependentUpon>QuotedPriceOrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\Recent\RecentQuotedPricePopupContainerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\SearchPart\QuotedPriceFastSearchPart..cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\SearchPart\QuotedPriceFastSearchPart..Designer.cs">
+      <DependentUpon>QuotedPriceFastSearchPart..cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\SearchPart\QuotedPriceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\SearchPart\QuotedPriceSearchPart.Designer.cs">
+      <DependentUpon>QuotedPriceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuotedPrice\SelectQuotedPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="QuotedPrice\SelectQuotedPrice.Designer.cs">
+      <DependentUpon>SelectQuotedPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateETA\UpdateETA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UpdateETA\UpdateETA.Designer.cs">
+      <DependentUpon>UpdateETA.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.Business.Common.ServiceInterface\ICP.Business.Common.ServiceInterface.csproj">
+      <Project>{98B85A48-973C-4A59-9080-A321B8813AA7}</Project>
+      <Name>ICP.Business.Common.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BL UserControl\DeclareBLListPart.resx">
+      <DependentUpon>DeclareBLListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BL UserControl\UCBLTreePart.resx">
+      <DependentUpon>UCBLTreePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BL UserControl\UCBLListPart.resx">
+      <DependentUpon>UCBLListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelBooking\OEBkgFailed.resx">
+      <DependentUpon>OEBkgFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoTracking\ImageEditPart.resx">
+      <DependentUpon>ImageEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoTracking\ShowWeb.resx">
+      <DependentUpon>ShowWeb.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoTracking\UCOECargoTracking.resx">
+      <DependentUpon>UCOECargoTracking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoTracking\UCOICargoTracking.resx">
+      <DependentUpon>UCOICargoTracking.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCustomerDescription\ComboBusinessContactDetailInfoControl.resx">
+      <DependentUpon>ComboBusinessContactDetailInfoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCustomerDescription\CustomerBusinessContactControl.resx">
+      <DependentUpon>CustomerBusinessContactControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCustomerDescription\OICustomerBusinessContactControl.resx">
+      <DependentUpon>OICustomerBusinessContactControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCustomerDescription\OIRecentShipmentPopupContainerControl.resx">
+      <DependentUpon>OIRecentShipmentPopupContainerControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComboCustomerDescription\RecentShipmentPopupContainerControl.resx">
+      <DependentUpon>RecentShipmentPopupContainerControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonPart\UCContactAndDocumentPart.resx">
+      <DependentUpon>UCContactAndDocumentPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\AmsConfirm.resx">
+      <DependentUpon>AmsConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\CommunicationHistoryStage.resx">
+      <DependentUpon>CommunicationHistoryStage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\EdiLogList.resx">
+      <DependentUpon>EdiLogList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\UCCommunicationHistory.resx">
+      <DependentUpon>UCCommunicationHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\UCCommunicationHistoryList.resx">
+      <DependentUpon>UCCommunicationHistoryList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Communication History\UCCommunicationHistoryOperationBar.resx">
+      <DependentUpon>UCCommunicationHistoryOperationBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactListEditPart.resx">
+      <DependentUpon>UCContactListEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactListPart.resx">
+      <DependentUpon>UCContactListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactListPartFrom.resx">
+      <DependentUpon>UCContactListPartFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactListWithToolbar.resx">
+      <DependentUpon>UCContactListWithToolbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactListWithToolbarFrom.resx">
+      <DependentUpon>UCContactListWithToolbarFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCContactStaffListPart.resx">
+      <DependentUpon>UCContactStaffListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCCustomerToolbar.resx">
+      <DependentUpon>UCCustomerToolbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCCustomerList.resx">
+      <DependentUpon>UCCustomerList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contact\UCSelectedContactListPart.resx">
+      <DependentUpon>UCSelectedContactListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSPBooking\PartFastSearch.resx">
+      <DependentUpon>PartFastSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSPBooking\PartSearch.resx">
+      <DependentUpon>PartSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSPBooking\PartToolBar.resx">
+      <DependentUpon>PartToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSPBooking\PartList.resx">
+      <DependentUpon>PartList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSPBooking\PartMainWorkspace.resx">
+      <DependentUpon>PartMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerDescription\BusinessContactDetailInfoControl.resx">
+      <DependentUpon>BusinessContactDetailInfoControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\frmUploadSIAttachment.resx">
+      <DependentUpon>frmUploadSIAttachment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\UCBusinessDocumentList.resx">
+      <DependentUpon>UCBusinessDocumentList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\UCDocumentList.resx">
+      <DependentUpon>UCDocumentList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\UCDocumentListGrid.resx">
+      <DependentUpon>UCDocumentListGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\ECommerceEditPart.resx">
+      <DependentUpon>ECommerceEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECommerce\ECommerceListPart.resx">
+      <DependentUpon>ECommerceListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailQuery\OEEmailQueryPart.resx">
+      <DependentUpon>OEEmailQueryPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventList\EventEditPart.resx">
+      <DependentUpon>EventEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EventList\EventListPart.resx">
+      <DependentUpon>EventListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\Communication\QuotedPriceCommunicationPart.resx">
+      <DependentUpon>QuotedPriceCommunicationPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceEditPart.resx">
+      <DependentUpon>QuotedPriceEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceListPart.resx">
+      <DependentUpon>QuotedPriceListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceMainWorkspace.resx">
+      <DependentUpon>QuotedPriceMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceRatesPart.resx">
+      <DependentUpon>QuotedPriceRatesPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceToolBar.resx">
+      <DependentUpon>QuotedPriceToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\QuotedPriceView.resx">
+      <DependentUpon>QuotedPriceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\Recent\QuotedPriceOrderControl.resx">
+      <DependentUpon>QuotedPriceOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\Recent\RecentQuotedPricePopupContainerControl.resx">
+      <DependentUpon>RecentQuotedPricePopupContainerControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\SearchPart\QuotedPriceFastSearchPart..resx">
+      <DependentUpon>QuotedPriceFastSearchPart..cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\SearchPart\QuotedPriceSearchPart.resx">
+      <DependentUpon>QuotedPriceSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotedPrice\SelectQuotedPrice.resx">
+      <DependentUpon>SelectQuotedPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateETA\UpdateETA.resx">
+      <DependentUpon>UpdateETA.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientReports\QP_Order.frx">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\ICP.Business.Common.ServiceInterface.DataObjects.QuotedPriceInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Business.Common.ServiceInterface.DataObjects.QuotedPriceList.datasource" />
+    <None Include="Properties\DataSources\ICP.Business.Common.ServiceInterface.DataObjects.QuotedPricePartInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.Business.Common.ServiceInterface.DataObjects.QuotedPriceRatesList.datasource" />
+    <None Include="Properties\DataSources\ICP.DataCache.ServiceInterface.NRASDocumentInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.EDI.ServiceInterface.DataObjects.LogData.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.BillOfLadingList.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.DataObjects.CSPBookingInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.DataObjects.QPSurcharge.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.ECommerceList.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OceanExport.ServiceInterface.DataObjects.EDIShowValue.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OceanExport.ServiceInterface.DataObjects.OceanBLList.datasource" />
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\airmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contacts-alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fax.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left_D_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mail3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Memo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Return_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_Blue_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Transfer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UP_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.DataCache.ServiceInterface.DocumentInfo.datasource" />
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loding1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolReply.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolReplyAll.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toolForward.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

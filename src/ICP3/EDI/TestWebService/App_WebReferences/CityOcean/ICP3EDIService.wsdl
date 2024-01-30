@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.CityOcean.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.CityOcean.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.CityOcean.com/">
+      <s:element name="ICP3ParseStringToXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowLength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="style" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseStringToXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseStringToXmlResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ICP3ParseStringToXmlNew">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowLength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="style" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseStringToXmlNewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseStringToXmlNewResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseStringToString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="valString" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="length" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseStringToStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseStringToStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParsePortString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParsePortStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParsePortStringResult" type="tns:PortInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PortInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="PortCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Qualifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActualDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActualTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ICP3ParseCustomerToCustomerInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToCustomerInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseCustomerToCustomerInfoResult" type="tns:CustomerDescription" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerDescription">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ParseToAMSCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseToAMSCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParseToAMSCustomerResult" type="tns:AMSCustomer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AMSCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ICP3ParseCustomerToString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseCustomerToStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowLength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="style" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseCustomerToListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToCSCL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowLength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="style" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3ParseCustomerToCSCLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3ParseCustomerToCSCLResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3GetGoodsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ICP3GetGoodsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ICP3GetGoodsInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SplitString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="val" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="rowLength" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxRow" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SplitStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SplitStringResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ICP3ParseStringToXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToXml" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseStringToXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseStringToXmlNewSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToXmlNew" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseStringToXmlNewSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToXmlNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseStringToStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToString" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseStringToStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseStringToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParsePortStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParsePortString" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParsePortStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParsePortStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToCustomerInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToCustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToCustomerInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToCustomerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParseToAMSCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:ParseToAMSCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ParseToAMSCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:ParseToAMSCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToStringSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToString" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToStringSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToListSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToList" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToListSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToCSCLSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToCSCL" />
+  </wsdl:message>
+  <wsdl:message name="ICP3ParseCustomerToCSCLSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3ParseCustomerToCSCLResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICP3GetGoodsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ICP3GetGoodsInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICP3GetGoodsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ICP3GetGoodsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SplitStringSoapIn">
+    <wsdl:part name="parameters" element="tns:SplitString" />
+  </wsdl:message>
+  <wsdl:message name="SplitStringSoapOut">
+    <wsdl:part name="parameters" element="tns:SplitStringResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICP3EDIServiceSoap">
+    <wsdl:operation name="ICP3ParseStringToXml">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解析字符串到XML格式</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseStringToXmlSoapIn" />
+      <wsdl:output message="tns:ICP3ParseStringToXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToXmlNew">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">解析字符串到XML格式不去空行</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseStringToXmlNewSoapIn" />
+      <wsdl:output message="tns:ICP3ParseStringToXmlNewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">截取字符串</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseStringToStringSoapIn" />
+      <wsdl:output message="tns:ICP3ParseStringToStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParsePortString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">把传入的港口信息数据转化成对象,</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParsePortStringSoapIn" />
+      <wsdl:output message="tns:ICP3ParsePortStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCustomerInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">把传入的客户信息数据转化成对象,</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseCustomerToCustomerInfoSoapIn" />
+      <wsdl:output message="tns:ICP3ParseCustomerToCustomerInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseToAMSCustomer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">转换为ams所需要的格式</wsdl:documentation>
+      <wsdl:input message="tns:ParseToAMSCustomerSoapIn" />
+      <wsdl:output message="tns:ParseToAMSCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">把传入的客户信息数据转化成字符串</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseCustomerToStringSoapIn" />
+      <wsdl:output message="tns:ICP3ParseCustomerToStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">把传入的客户信息数据转化成字符串数组</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseCustomerToListSoapIn" />
+      <wsdl:output message="tns:ICP3ParseCustomerToListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCSCL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">转换中海客户字符串</wsdl:documentation>
+      <wsdl:input message="tns:ICP3ParseCustomerToCSCLSoapIn" />
+      <wsdl:output message="tns:ICP3ParseCustomerToCSCLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ICP3GetGoodsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">切取货物有用的信息,</wsdl:documentation>
+      <wsdl:input message="tns:ICP3GetGoodsInfoSoapIn" />
+      <wsdl:output message="tns:ICP3GetGoodsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SplitString">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">字条串转换为数组</wsdl:documentation>
+      <wsdl:input message="tns:SplitStringSoapIn" />
+      <wsdl:output message="tns:SplitStringSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ICP3EDIServiceSoap" type="tns:ICP3EDIServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ICP3ParseStringToXml">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToXmlNew">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToXmlNew" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToString">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParsePortString">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParsePortString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCustomerInfo">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseToAMSCustomer">
+      <soap:operation soapAction="http://www.CityOcean.com/ParseToAMSCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToString">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToList">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCSCL">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToCSCL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3GetGoodsInfo">
+      <soap:operation soapAction="http://www.CityOcean.com/ICP3GetGoodsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitString">
+      <soap:operation soapAction="http://www.CityOcean.com/SplitString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ICP3EDIServiceSoap12" type="tns:ICP3EDIServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ICP3ParseStringToXml">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToXmlNew">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToXmlNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseStringToString">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseStringToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParsePortString">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParsePortString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCustomerInfo">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToCustomerInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseToAMSCustomer">
+      <soap12:operation soapAction="http://www.CityOcean.com/ParseToAMSCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToString">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToList">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3ParseCustomerToCSCL">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3ParseCustomerToCSCL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ICP3GetGoodsInfo">
+      <soap12:operation soapAction="http://www.CityOcean.com/ICP3GetGoodsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SplitString">
+      <soap12:operation soapAction="http://www.CityOcean.com/SplitString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ICP3EDIService">
+    <wsdl:port name="ICP3EDIServiceSoap" binding="tns:ICP3EDIServiceSoap">
+      <soap:address location="http://www.cityocean.com:83/ICP3EDIService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ICP3EDIServiceSoap12" binding="tns:ICP3EDIServiceSoap12">
+      <soap12:address location="http://www.cityocean.com:83/ICP3EDIService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

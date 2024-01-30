@@ -1,0 +1,46 @@
+﻿<ToolboxConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Group CTitle="标准" ETitle="Window" Type="Workflow">
+    <Item Type="System.Workflow.Activities.DelayActivity" Assembly="System.Workflow.Activities" />
+    <Item Type="System.Workflow.ComponentModel.TerminateActivity" Assembly="System.Workflow.ComponentModel" />
+  </Group>
+  <Group CTitle="自定义" ETitle="ICP" Type="Workflow">
+    <Item Type="ICP.WF.Activities.LWIfElseActivity" Assembly="ICP.WF.Activities" />
+    <Item Type="ICP.WF.Activities.ApproveActivity" Assembly="ICP.WF.Activities" />
+    <Item Type="ICP.WF.Activities.ApplicationActivity" Assembly="ICP.WF.Activities" />
+    <Item Type="ICP.WF.Activities.SendMessageActivity" Assembly="ICP.WF.Activities" />
+    <Item Type="ICP.WF.Activities.SendEMailActivity" Assembly="ICP.WF.Activities" />
+    <Item Type="ICP.WF.Activities.LWCallExternalMethodActivity" Assembly="ICP.WF.Activities" />
+  </Group>
+  <Group CTitle="界面控件" ETitle="Window" Type="Form">
+    <Item Type="ICP.WF.Controls.LWTableLayoutPanel" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWSplitter" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWLable" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWPanel" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.ICPFilePanel" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWTextBox" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWFindTextBox" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWMultiTextBox" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWDataGridView" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWNumericCalcEdit" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWDatePicker" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWComBox" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWComboBoxTreeView" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWCheckBox" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWRadioGroup" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWRadioButton" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWFindICPCRM" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWFindOperationNo" Assembly="ICP.WF.Controls.dll" />
+  </Group>
+  <Group CTitle="数据控件" ETitle="Data" Type="Form">
+    <Item Type="ICP.WF.Controls.LWCompanys" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWUsers" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWJobs" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWCurrencys" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWDutyChangeTypes" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWPropertys" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.LWBanks" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.ICPDegree" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.ICPGLCode" Assembly="ICP.WF.Controls.dll" />
+    <Item Type="ICP.WF.Controls.ICPDataDictionaries" Assembly="ICP.WF.Controls.dll" />
+  </Group>
+</ToolboxConfig>

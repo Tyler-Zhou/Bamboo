@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1117F9F3-11DB-4F63-A96E-2D5E12407E0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.OceanExport.ServiceInterface</RootNamespace>
+    <AssemblyName>ICP.FCM.OceanExport.ServiceInterface</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.FCM.OceanExport.ServiceInterface.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>C:\ICPDlls\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface.1.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\ICP.DataCache.ServiceInterface.1.0.0.0.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompositeObjects\BLSaveRequest.cs" />
+    <Compile Include="CompositeObjects\BookIngListQuery.cs" />
+    <Compile Include="Comm\FinderConstants.cs" />
+    <Compile Include="Comm\IListDataSet.cs" />
+    <Compile Include="CompositeObjects\BookingSaveRequest.cs" />
+    <Compile Include="CompositeObjects\CargoSaveRequest.cs" />
+    <Compile Include="CompositeObjects\ContainerPOSaveRequest.cs" />
+    <Compile Include="CompositeObjects\ContainerSaveRequest.cs" />
+    <Compile Include="CompositeObjects\ContainerServiceReturnObjects.cs" />
+    <Compile Include="CompositeObjects\CSCLBookingSaveRequest.cs" />
+    <Compile Include="CompositeObjects\FeeSaveRequest.cs" />
+    <Compile Include="CompositeObjects\OrderSaveRequest.cs" />
+    <Compile Include="CompositeObjects\PoItemContainersRelationSaveRequest.cs" />
+    <Compile Include="CompositeObjects\POSaveRequest.cs" />
+    <Compile Include="CompositeObjects\TruckSaveRequest.cs" />
+    <Compile Include="DataObjects\BLDataObjects.cs" />
+    <Compile Include="DataObjects\BLExtensionMethods.cs.cs" />
+    <Compile Include="DataObjects\BookingDataObjects.cs" />
+    <Compile Include="DataObjects\CompositeObjects.cs" />
+    <Compile Include="DataObjects\ContainerDataObjects.cs" />
+    <Compile Include="DataObjects\ControlClass.cs" />
+    <Compile Include="DataObjects\CustomsDataObjects.cs" />
+    <Compile Include="DataObjects\Enum.cs" />
+    <Compile Include="DataObjects\FreightInfo.cs" />
+    <Compile Include="DataObjects\InquirePricePartInfo.cs" />
+    <Compile Include="DataObjects\MailInformation.cs" />
+    <Compile Include="DataObjects\OceanHBL2AmsAciIsf.cs" />
+    <Compile Include="DataObjects\OrderDataObjects.cs" />
+    <Compile Include="DataObjects\OtherDataObjects.cs" />
+    <Compile Include="DataObjects\POContainerRelation.cs" />
+    <Compile Include="DataObjects\ReportObjects\BLReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\BookingConfirmationReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\BookingConfirmation4NBReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\ContainerPackingReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\CustomsReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\EmailBookingData.cs" />
+    <Compile Include="DataObjects\ReportObjects\OEOrderReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\PickupDeliveryReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\ProfitReportData.cs" />
+    <Compile Include="DataObjects\ReportObjects\ShippingOrderReportData.cs" />
+    <Compile Include="DataObjects\TruckDataObjects.cs" />
+    <Compile Include="Interface\IAcceptBillReviseService.cs" />
+    <Compile Include="IClientOceanExportService.cs" />
+    <Compile Include="Interface\IOceanExportBLService.cs" />
+    <Compile Include="Interface\IOceanExportBookingService.cs" />
+    <Compile Include="Interface\IOceanExportContainerService.cs" />
+    <Compile Include="Interface\IOceanExportFeeService.cs" />
+    <Compile Include="Interface\IOceanExportOrderService.cs" />
+    <Compile Include="Interface\IOceanExportOtherService.cs" />
+    <Compile Include="Interface\IOceanExportPOService.cs" />
+    <Compile Include="Interface\IOceanHBL2AmsAciIsfService.cs" />
+    <Compile Include="Interface\IOEFreightService.cs" />
+    <Compile Include="Interface\IOceanExportCustomsService.cs" />
+    <Compile Include="IOceanExportService.cs" />
+    <Compile Include="Interface\IOceanExportTruckService.cs" />
+    <Compile Include="IOEReportDataService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

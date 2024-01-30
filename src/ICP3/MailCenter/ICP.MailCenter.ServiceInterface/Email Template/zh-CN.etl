@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Name="zh-CHS" Author="">
+  <Common>
+    <DocumentDispatch  Subject="收款清单号#{0}" Body="
+      Hi :&#xD;&#xA;
+          请注意查收收款清单号: {1}&#xD;&#xA;&#xD;&#xA;
+          Thanks,{2}
+     " />
+    <ConfirmDebitFees Subject=" 请提供客户{0}从{1}到{2},CA的报价" Body="
+             Hi :&#xD;&#xA;
+             客户{3}已下达Booking，从{4}到{5},CA，2 X 40GP。请提供该业务的应收报价。&#xD;&#xA;&#xD;&#xA;
+             Thanks,{4}
+      "/>
+   
+    <!--
+    回复收到新派车单 邮件模版
+     {0} SO号
+     {1} 收件人
+     {2} 当前用户
+    -->
+    <ConfirNewSendList Subject="已收到：新派车单通知 (SO#:{0}) " Body="
+Hi {1}:&#xD;&#xA;&#xD;&#xA;
+已收到：新派车单通知 (SO#:{0}). &#xD;&#xA;&#xD;&#xA;
+Thanks,{2}"/>
+
+    <!--
+    通知客服提柜信息  邮件模版
+    {0} SO号
+    {1} 收件人
+    {2} 当前用户
+    -->
+    <ConfirMentionArk Subject="已提柜：(SO#:{0})" Body="
+Hi {1}:&#xD;&#xA;
+已提柜：派车单 (SO#:{0}). &#xD;&#xA;&#xD;&#xA;
+Thanks,{2}"/>
+
+    <!--
+     通知客户提柜信息 邮件模版
+     {0} SO号
+     {1} 收件人
+     {2} SO号+车牌号+箱号+封号(多个重复)
+     {3} 当前用户
+    -->
+    <ConfirCustomerMentionArk Subject="SO#{0}，今天到厂装柜的司机资料" Body="
+Hi {1}:&#xD;&#xA;
+以下是今天到厂装柜的司机资料： &#xD;&#xA;&#xD;&#xA;
+{2} &#xD;&#xA;&#xD;&#xA;
+Thanks,{3}"/>
+
+    <!--
+     回复收到新报关委托单 邮件模版
+     {0} 箱号
+     {1} 收件人
+     {2} 当前用户
+    -->
+    <ConfirCustomsOrders Subject="已收到：新报关委托单通知 ({0})" Body="
+Hi {1}:&#xD;&#xA;
+已收到：新报关委托单通知 ({0}) . &#xD;&#xA;&#xD;&#xA;
+Thanks,{3}"/>
+
+    <!--
+    通知客服报关单Copy 邮件模版
+    {0} 箱号
+    {1} 箱型
+    {2} 收件人
+    {3} 当前用户
+    {4} 费用列表
+    -->
+    <ConfirCustomsCopy Subject="{0}/{1}，报关单Copy" Body="
+Hi {2}:&#xD;&#xA;
+{0}/{1}，报关单Copy. &#xD;&#xA;&#xD;&#xA;
+费用：&#xD;&#xA;&#xD;&#xA;
+{4}&#xD;&#xA;&#xD;&#xA;
+Thanks,{3}"/>
+
+
+    <!--
+     账单已被代理修订 邮件模版
+     {0} 收件人： 放单管理.代理联系人配置列表
+     {1} 抄送：分文件用户.邮箱
+     {2} 发件人： ICP
+     {3} 主题：警告：没有签收代理分发的文件，HBL：JKKS80028/KSW800992。
+     
+    -->
+    <ConfirApplyBillRevise Subject="@%OE.NO@%的代理账单已被代理修订,请及时在ICP上签收. "
+Body="Hi All&#xD;&#xA;&#xD;&#xA;代理: @%OE.AgentName@%,@%OE.UpdateByName@% 于[@%OE.UpdateDate%@] 发起了账单修订,请及时签收！&#xD;&#xA;&#xD;&#xA;Thanks，&#xD;&#xA;&#xD;&#xA;ICP"
+   />
+
+
+    <Cancel Subject="取消" Body=""/>
+    <Close Subject="关闭" Body=""/>
+    <MoreOptions Subject="更多选项" Body=""/>
+    <LessOptions Subject="普通选项" Body=""/>
+    <Actions Subject="动作" Body=""/>
+    <Previous Subject="&lt;上一个" Body=""/>
+    <Next Subject="下一个&gt;" Body=""/>
+    <Finish Subject="完成" Body=""/>
+    <Advanced Subject="高级..." Body=""/>
+  </Common>
+  <OceanExport>
+    <AccessingData Subject="读取数据..." Body=""/>
+    <CantFindObject Subject="没有找到对象" Body=""/>
+    <CantLoadReport Subject="加载报表{0}失败" Body=""/>
+    <ClassError Subject="没有找到报表脚本主类" Body=""/>
+    <Confirmation Subject="确定"/>
+    <DataNotInitialized Subject="数据源没有初始化" Body=""/>
+    <DecompressError Subject="解压文件失败" Body=""/>
+    <DecryptError Subject="解密失败:错误的密码" Body=""/>
+    <DelegateError Subject="{0}方法必须包含两个参数:'sender' 和 'e'" Body=""/>
+    <DeleteAncestor Subject="不能删除{0}, 因为它是父报表中的对象" Body=""/>
+    <DuplicateName Subject="名称为{0}的对象已经存在" Body=""/>
+    <DuplicateStyle Subject="该样式名称已经存在" Body=""/>
+    <Error Subject="错误"/>
+    <EventError Subject="由于代码中有错误,不能创建事件处理程序" Body=""/>
+    <ExportingPage Subject="正在输出第{0}页,共{1}页" Body=""/>
+    <GeneratingPage Subject="正在生成页{0}" Body=""/>
+    <GeneratingPageFirstPass Subject="第一步:正在生成页{0}" Body=""/>
+    <Information Subject="消息" Body=""/>
+    <MatrixError Subject="{0}:矩阵对象至少要一行和一列,并且有一个单元格" Body=""/>
+    <MatrixValueError Subject="值数量与矩阵数据单元个数量不同(必须是{0}个)" Body=""/>
+    <ParentError Subject="{0}类型的对象不能包含{1}类型的对象" Body=""/>
+    <ParentError1 Subject="{0}类型的对象不能包含对象" Body=""/>
+    <Performance Subject="耗时{0}ms" Body=""/>
+    <PreparingData Subject="准备数据..." Body=""/>
+    <PrintingPage Subject="正在打印第{0}页" Body=""/>
+    <RenameAncestor Subject="不能重命名{0},它是父 报表对象" Body=""/>
+    <SaveChanges Subject="是否保存{0}?" Body=""/>
+    <SaveChangesToPreviewPage Subject="是否保存到上一页?" Body=""/>
+    <TableIsNull Subject="表格没有和数据关联,使用Report.RegisterData方法注册数据" Body=""/>
+    <TableManualBuildError Subject="在手工构建过程中,你只能使用TableObject.PrintRow, PrintColumn方法" Body=""/>
+    <Warning Subject="警告" Body=""/>
+    <WrongFileFormat Subject="不能加载文件,未知的文件格式" Body=""/>
+  </OceanExport>
+
+</Language>

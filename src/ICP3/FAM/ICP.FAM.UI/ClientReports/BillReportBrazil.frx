@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/19/2012 16:08:26" ReportInfo.Modified="04/01/2013 15:28:49" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void Page1_StartPage(object sender, EventArgs e)
+    {
+       Picture1.Image = System.Drawing.Bitmap.FromFile(((String)Report.GetColumnValue(&quot;ReportSource.LogoPathForBrazil&quot;)) ); 
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="CompanyDsc" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="DueDate" DataType="System.DateTime"/>
+      <Column Name="Trem" DataType="System.Int32"/>
+      <Column Name="BillToCustomerDsc" DataType="System.String"/>
+      <Column Name="BillToCustomerAdd" DataType="System.String"/>
+      <Column Name="BillToCustomerName" DataType="System.String"/>
+      <Column Name="BillToCustomerCity" DataType="System.String"/>
+      <Column Name="BillToCustomerPostCode" DataType="System.String"/>
+      <Column Name="LogoPathForBrazil" DataType="System.String"/>
+      <Column Name="CreateDate" DataType="System.DateTime"/>
+      <Column Name="PostDate" DataType="System.DateTime"/>
+      <Column Name="ShipperTo" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BillDate" DataType="System.DateTime"/>
+      <Column Name="MBLNo" DataType="System.String"/>
+      <Column Name="HBLNo" DataType="System.String"/>
+      <Column Name="OperationNo" DataType="System.String"/>
+      <Column Name="AgentRefNo" DataType="System.String"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="Notify" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="ContainerNo" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="FETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="Destination" DataType="System.String"/>
+      <Column Name="Commodity" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="DRTotalAmount" DataType="System.String"/>
+      <Column Name="CRTotalAmount" DataType="System.String"/>
+      <Column Name="CrAmount" DataType="System.String"/>
+      <Column Name="APAmount" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="PaidAmount" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.String"/>
+      <Column Name="FinAmount" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="Memo" DataType="System.String"/>
+      <Column Name="PaymentMode" DataType="System.String"/>
+      <Column Name="CurrentUser" DataType="System.String"/>
+      <Column Name="MainCurrency" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="Fees" ReferenceName="Fees" DataType="System.Int32" Enabled="true">
+      <Column Name="Way" DataType="System.Int32"/>
+      <Column Name="Qty" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="UnitPrice" DataType="System.Decimal"/>
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="ChargeName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" StartPageEvent="Page1_StartPage">
+    <DataBand Name="Data1" Width="718.2" Height="449.82">
+      <PictureObject Name="Picture1" Top="18.9" Width="160.65" Height="66.15"/>
+      <TextObject Name="Text1" Top="160.65" Width="718.2" Height="24.57" Border.Lines="Top, Bottom" Border.Width="2" Text="DADOS DO CLIENTE" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Top="187.11" Width="103.95" Height="18.9" Text="RAZÃO SOCIAL:" Font="Arial, 9pt"/>
+      <TextObject Name="Text3" Top="206.01" Width="94.5" Height="18.9" Text="ENDEREÇO:" Font="Arial, 9pt"/>
+      <TextObject Name="Text4" Top="224.91" Width="94.5" Height="18.9" Text="MUNICÍPIO:" Font="Arial, 9pt"/>
+      <TextObject Name="Text5" Top="243.81" Width="56.7" Height="18.9" Text="CNPJ:" Font="Arial, 9pt"/>
+      <TextObject Name="Text6" Top="262.71" Width="179.55" Height="18.9" Text="PRAÇA DE PAGAMENTO:" Font="Arial, 9pt"/>
+      <TextObject Name="Text7" Left="387.45" Top="224.91" Width="37.8" Height="18.9" Text="UF:" Font="Arial, 9pt"/>
+      <TextObject Name="Text8" Left="387.45" Top="243.81" Width="37.8" Height="18.9" Text="I.E.:" Font="Arial, 9pt"/>
+      <TextObject Name="Text9" Left="538.65" Top="224.91" Width="47.25" Height="18.9" Text="CEP:" Font="Arial, 9pt"/>
+      <TextObject Name="Text10" Left="538.65" Top="243.81" Width="47.25" Height="18.9" Text="I.M.:" Font="Arial, 9pt"/>
+      <TextObject Name="Text11" Top="292.95" Width="718.2" Height="24.57" Border.Lines="Top, Bottom" Border.Width="2" Text="DADOS DA IMPORTAÇÃO" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text12" Left="9.45" Top="321.3" Width="94.5" Height="18.9" Text="MBL" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text13" Left="103.95" Top="321.3" Width="94.5" Height="18.9" Text="HBL" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text14" Left="198.45" Top="321.3" Width="113.4" Height="18.9" Text="DESTINO" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text15" Left="311.85" Top="321.3" Width="113.4" Height="18.9" Text="ORIGEM" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="425.25" Top="321.3" Width="132.3" Height="18.9" Text="VIAGEM" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="557.55" Top="321.3" Width="85.05" Height="18.9" Text="VOLUME" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text18" Left="623.7" Top="321.3" Width="85.05" Height="18.9" Text="CHEGADA" HorzAlign="Right" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text27" Left="453.6" Top="85.05" Width="94.5" Height="18.9" Text="EMISSÃO:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text28" Left="453.6" Top="113.4" Width="113.4" Height="18.9" Text="NAT. SERVIÇO:" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text29" Left="453.6" Top="56.7" Width="75.6" Height="18.9" Text="OUR REF." Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text30" Left="529.2" Top="56.7" Width="179.55" Height="18.9" Text="[ReportSource.OperationNo]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text31" Left="160.65" Top="18.9" Width="283.5" Height="113.4" Text="[ReportSource.CompanyDsc]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text32" Top="340.2" Width="103.95" Height="37.8" Text="[ReportSource.MBLNo]" Font="Arial, 8pt"/>
+      <TextObject Name="Text19" Top="387.45" Width="718.2" Height="24.57" Border.Lines="Top, Bottom" Border.Width="2" Text="DEMONSTRATIVO DE REEMBOLSO DE DESPESAS" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 10pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text20" Top="415.8" Width="283.5" Height="24.57" Border.Lines="Bottom" Border.Width="2" Text="CÓDIGO DE DISCRIMINAÇÃO DE DESPESAS" VertAlign="Bottom" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text21" Left="274.05" Top="415.8" Width="132.3" Height="24.57" Border.Lines="Bottom" Border.Width="2" Text="VALOR ORIGINAL" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text22" Left="406.35" Top="415.8" Width="75.6" Height="24.57" Border.Lines="Bottom" Border.Width="2" Text="MOEDA" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text23" Left="481.95" Top="415.8" Width="94.5" Height="24.57" Border.Lines="Bottom" Border.Width="2" Text="CÂMBIO" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text24" Left="576.45" Top="415.8" Width="141.75" Height="24.57" Border.Lines="Bottom" Border.Width="2" Text="VALOR" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 9pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="Text33" Left="103.95" Top="340.2" Width="94.5" Height="37.8" Text="[ReportSource.HBLNo]" Font="Arial, 8pt"/>
+      <TextObject Name="Text34" Left="198.45" Top="340.2" Width="122.85" Height="37.8" Text="[ReportSource.POD]" Font="Arial, 8pt"/>
+      <TextObject Name="Text35" Left="311.85" Top="340.2" Width="122.85" Height="37.8" Text="[ReportSource.POL]" Font="Arial, 8pt"/>
+      <TextObject Name="Text36" Left="425.25" Top="340.2" Width="141.75" Height="37.8" Text="[ReportSource.VesselVoyage]" Font="Arial, 8pt"/>
+      <TextObject Name="Text37" Left="557.55" Top="340.2" Width="85.05" Height="37.8" Text="[ReportSource.Measurement]" Font="Arial, 8pt"/>
+      <TextObject Name="Text38" Left="642.6" Top="340.2" Width="75.6" Height="37.8" Text="[ReportSource.ETA]" Font="Arial, 8pt"/>
+      <TextObject Name="Text46" Left="94.5" Top="187.11" Width="623.7" Height="18.9" Text="[ReportSource.BillToCustomerName]" Font="Arial, 9pt"/>
+      <TextObject Name="Text47" Left="75.6" Top="206.01" Width="642.6" Height="18.9" Text="[ReportSource.BillToCustomerAdd]" Font="Arial, 9pt"/>
+      <TextObject Name="Text48" Left="94.5" Top="224.91" Width="264.6" Height="18.9" Text="[ReportSource.BillToCustomerCity]" Font="Arial, 9pt"/>
+      <TextObject Name="Text49" Left="585.9" Top="224.91" Width="132.3" Height="18.9" Text="[ReportSource.BillToCustomerPostCode]" Font="Arial, 9pt"/>
+      <DataBand Name="Data2" Top="453.82" Width="718.2" Height="23.81" DataSource="Fees">
+        <TextObject Name="Text40" Width="283.5" Height="23.81" Text="[Fees.ChargeName]" Font="Arial, 9pt"/>
+        <TextObject Name="Text41" Left="283.5" Width="122.85" Height="23.81" Text="[Fees.UnitPrice]" HorzAlign="Right" Font="Arial, 9pt"/>
+        <TextObject Name="Text42" Left="406.35" Width="75.6" Height="23.81" Text="[Fees.Currency]" HorzAlign="Center" Font="Arial, 9pt"/>
+        <TextObject Name="Text43" Left="481.95" Width="94.5" Height="23.81" Text="[Fees.Qty]" HorzAlign="Right" Font="Arial, 9pt"/>
+        <TextObject Name="Text44" Left="576.45" Width="141.75" Height="23.81" Text="[Fees.Amount]" HorzAlign="Right" Font="Arial, 9pt"/>
+      </DataBand>
+      <DataBand Name="Data3" Top="481.63" Width="718.2" Height="226.8">
+        <LineObject Name="Line1" Left="453.6" Width="264.6" Border.Width="2"/>
+        <LineObject Name="Line2" Left="453.6" Top="37.8" Width="264.6" Border.Width="2"/>
+        <TextObject Name="Text25" Left="453.6" Top="9.45" Width="94.5" Height="28.35" Text="TOTAL:" VertAlign="Bottom" Font="Arial, 11pt, style=Bold"/>
+        <LineObject Name="Line3" Top="66.15" Width="718.2" Border.Width="2"/>
+        <TextObject Name="Text26" Top="85.05" Width="207.9" Height="18.9" Text="Dados para pagamento:" Font="Arial, 10pt, style=Bold, Underline"/>
+        <TextObject Name="Text39" Top="113.4" Width="510.3" Height="113.4" Text="COSAS SERVICOS LOGISTICOS DO BRASIL LTDA.&#13;&#10;Agency - 3165-8&#13;&#10;Account number - 7779-8&#13;&#10;Swift number - BBDEBRSPSPO&#13;&#10;CNPJ - 16.525.441/0001-47&#13;&#10;" Font="Arial, 9pt, style=Bold"/>
+        <TextObject Name="Text45" Left="576.45" Top="9.45" Width="141.75" Height="28.35" Text="[ReportSource.CrAmount]" HorzAlign="Right" VertAlign="Bottom" Font="Arial, 9pt, style=Bold"/>
+      </DataBand>
+    </DataBand>
+  </ReportPage>
+</Report>

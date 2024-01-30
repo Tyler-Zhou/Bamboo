@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="10/13/2011 17:08:18" ReportInfo.Modified="10/20/2011 17:54:12" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="VietnamInvoiceReportData" ReferenceName="VietnamInvoiceReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="InvoiceDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="Tel" DataType="System.String"/>
+      <Column Name="Address" DataType="System.String"/>
+      <Column Name="Fax" DataType="System.String"/>
+      <Column Name="CreateBy" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerAddress" DataType="System.String"/>
+      <Column Name="TaxCode" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Type" DataType="System.String"/>
+      <Column Name="TotalInvoice" DataType="System.String"/>
+      <Column Name="GrandTotal" DataType="System.String"/>
+      <Column Name="No" DataType="System.String"/>
+      <Column Name="BankAccountNo" DataType="System.String"/>
+      <Column Name="BLText" DataType="System.String"/>
+      <Column Name="GrandWords" DataType="System.String"/>
+      <Column Name="TaxNO" DataType="System.String"/>
+      <Column Name="Rate" DataType="System.Int32"/>
+      <Column Name="Amount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="VietnamInvoiceReportFeeData" ReferenceName="VietnamInvoiceReportFeeData" DataType="System.Int32" Enabled="true">
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="FeeItemName" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="unitPrice" DataType="System.Decimal"/>
+      <Column Name="Rate" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="359.1">
+      <TextObject Name="Text1" Left="122.85" Top="9.45" Width="406.35" Height="18.9" Text="CÔNG TY TNHH LIÊN DOANH MANDARIN LOGISTICS" Font="宋体, 11.25pt, style=Bold"/>
+      <TextObject Name="Text2" Left="113.4" Top="37.8" Width="472.5" Height="18.9" Text="MANDARIN LOGISTICS JOINT VENTURE COMPANY LTD." Font="宋体, 11.25pt, style=Bold"/>
+      <TextObject Name="Text3" Left="47.25" Top="66.15" Width="567" Height="47.25" Text="22F.,A BLDG.,AEROSPACE SKYSCRAPER,NO.4019 SHENNAN ROAD,FUTIAN DISTRICT,SHENZHEN,CHINA" HorzAlign="Center" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text4" Left="18.9" Top="103.95" Width="47.25" Height="18.9" Text="Tel:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text5" Left="226.8" Top="103.95" Width="47.25" Height="18.9" Text="Fax:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text6" Left="434.7" Top="103.95" Width="66.15" Height="18.9" Text="Mã số thuế:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text7" Left="47.25" Top="132.3" Width="141.75" Height="18.9" Text="HÓA ĐƠN (GTGT)" Font="宋体, 11.25pt, style=Bold"/>
+      <TextObject Name="Text8" Left="387.45" Top="132.3" Width="207.9" Height="18.9" Text="Mãu số: 01 GTKT-3LL-01" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text9" Left="387.45" Top="160.65" Width="151.2" Height="18.9" Text="Ký hiệu (Serial):" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text10" Left="47.25" Top="160.65" Width="132.3" Height="18.9" Text="INVOICE (VAT)" Font="宋体, 11.25pt, style=Bold"/>
+      <TextObject Name="Text11" Left="47.25" Top="189" Width="75.6" Height="18.9" Text="Liên 1:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text12" Left="387.45" Top="189" Width="103.95" Height="18.9" Text="Số hóa đơn:" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text13" Left="378" Top="217.35" Width="113.4" Height="18.9" Text="(Invoice No.)" Font="宋体, 11.25pt"/>
+      <TextObject Name="Text14" Left="18.9" Top="217.35" Width="189" Height="18.9" Text="Ngày hóa đơn:(Invoice date):"/>
+      <TextObject Name="Text15" Left="18.9" Top="245.7" Width="245.7" Height="18.9" Text="Họ tên khách hàng(Customer’s name):"/>
+      <TextObject Name="Text16" Left="18.9" Top="274.05" Width="141.75" Height="18.9" Text="Địa chỉ(Address):"/>
+      <TextObject Name="Text17" Left="18.9" Top="311.85" Width="160.65" Height="18.9" Text="Mã số thuế(Tax code):"/>
+      <TextObject Name="Text18" Left="378" Top="340.2" Width="85.05" Height="18.9" Text="Đơn vị tính:"/>
+      <TextObject Name="Text19" Left="378" Top="311.85" Width="151.2" Height="18.9" Text="Hình thức thanh tóan:"/>
+      <TextObject Name="Text33" Left="500.85" Top="189" Width="189" Height="18.9" Text="[VietnamInvoiceReportData.No]"/>
+      <TextObject Name="Text34" Left="207.9" Top="217.35" Width="113.4" Height="18.9" Text="[VietnamInvoiceReportData.InvoiceDate]"/>
+      <TextObject Name="Text35" Left="274.05" Top="245.7" Width="425.25" Height="18.9" Text="[VietnamInvoiceReportData.CustomerName]"/>
+      <TextObject Name="Text37" Left="283.5" Top="103.95" Width="113.4" Height="18.9" Text="[VietnamInvoiceReportData.Fax]"/>
+      <TextObject Name="Text38" Left="75.6" Top="103.95" Width="122.85" Height="18.9" Text="[VietnamInvoiceReportData.Tel]"/>
+      <TextObject Name="Text36" Left="170.1" Top="274.05" Width="538.65" Height="28.35" Text="[VietnamInvoiceReportData.CustomerAddress]"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="362.3" Width="718.2" Height="33.13">
+      <TableObject Name="Table1" Left="9.45" Width="680.4" Height="33.13">
+        <TableColumn Name="Column16" Width="173.09"/>
+        <TableColumn Name="Column17" Width="201.99"/>
+        <TableColumn Name="Column18" Width="105.29"/>
+        <TableColumn Name="Column19" Width="96.39"/>
+        <TableColumn Name="Column20" Width="103.64"/>
+        <TableRow Name="Row16" Height="5.67">
+          <TableCell Name="Cell76" Border.Lines="All" Text="STT&#13;&#10;(No.)" RowSpan="5"/>
+          <TableCell Name="Cell77" Border.Lines="All" Text="Diễn giải&#13;&#10;(Description)" RowSpan="5"/>
+          <TableCell Name="Cell78" Border.Lines="All" Text="Số lượng&#13;&#10;(Quantity)" RowSpan="5"/>
+          <TableCell Name="Cell79" Border.Lines="All" Text="Đơn giá&#13;&#10;(Unit price)" RowSpan="5"/>
+          <TableCell Name="Cell80" Border.Lines="All" Text="thành tiền&#13;&#10;(Amount)" RowSpan="5"/>
+        </TableRow>
+        <TableRow Name="Row17" Height="5.67">
+          <TableCell Name="Cell81" Border.Lines="All"/>
+          <TableCell Name="Cell82" Border.Lines="All"/>
+          <TableCell Name="Cell83" Border.Lines="All"/>
+          <TableCell Name="Cell84" Border.Lines="All"/>
+          <TableCell Name="Cell85" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row18" Height="5.67">
+          <TableCell Name="Cell86" Border.Lines="All"/>
+          <TableCell Name="Cell87" Border.Lines="All"/>
+          <TableCell Name="Cell88" Border.Lines="All"/>
+          <TableCell Name="Cell89" Border.Lines="All"/>
+          <TableCell Name="Cell90" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row19" Height="10.45">
+          <TableCell Name="Cell91" Border.Lines="All"/>
+          <TableCell Name="Cell92" Border.Lines="All"/>
+          <TableCell Name="Cell93" Border.Lines="All"/>
+          <TableCell Name="Cell94" Border.Lines="All"/>
+          <TableCell Name="Cell95" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row20" Height="5.67">
+          <TableCell Name="Cell96" Border.Lines="All"/>
+          <TableCell Name="Cell97" Border.Lines="All"/>
+          <TableCell Name="Cell98" Border.Lines="All"/>
+          <TableCell Name="Cell99" Border.Lines="All"/>
+          <TableCell Name="Cell100" Border.Lines="All"/>
+        </TableRow>
+      </TableObject>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="398.63" Width="718.2" Height="15.56" DataSource="VietnamInvoiceReportFeeData" KeepTogether="true">
+      <TableObject Name="Table3" Left="9.45" Width="680.4" Height="15.56">
+        <TableColumn Name="Column11" Width="173.09"/>
+        <TableColumn Name="Column12" Width="201.99"/>
+        <TableColumn Name="Column13" Width="105.29"/>
+        <TableColumn Name="Column14" Width="96.39"/>
+        <TableColumn Name="Column15" Width="103.64"/>
+        <TableRow Name="Row11" Height="7.56">
+          <TableCell Name="Cell51" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.Remark]" Font="宋体, 9pt" RowSpan="5"/>
+          <TableCell Name="Cell52" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.FeeItemName]" Font="宋体, 9pt" RowSpan="5"/>
+          <TableCell Name="Cell53" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.Quantity]" Font="宋体, 9pt" RowSpan="5"/>
+          <TableCell Name="Cell54" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.unitPrice]" Font="宋体, 9pt" RowSpan="5"/>
+          <TableCell Name="Cell55" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.TotalAmount]" Font="宋体, 9pt" RowSpan="5"/>
+        </TableRow>
+        <TableRow Name="Row12" Height="0">
+          <TableCell Name="Cell56" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell57" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell58" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell59" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell60" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row13" Height="0">
+          <TableCell Name="Cell61" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell62" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell63" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell64" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell65" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row14" Height="0.44">
+          <TableCell Name="Cell66" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell67" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell68" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell69" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell70" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="7.56">
+          <TableCell Name="Cell71" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell72" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell73" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell74" Border.Lines="All" Font="宋体, 9pt"/>
+          <TableCell Name="Cell75" Border.Lines="All" Font="宋体, 9pt"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <DataBand Name="Data2" Top="417.39" Width="718.2" Height="141.75" Guides="0" KeepTogether="true" KeepDetail="true">
+      <TableObject Name="Table2" Left="9.45" Width="680.4" Height="141.75">
+        <TableColumn Name="Column6" Width="145.53"/>
+        <TableColumn Name="Column7" Width="183.33"/>
+        <TableColumn Name="Column8" Width="145.53"/>
+        <TableColumn Name="Column9" Width="164.43"/>
+        <TableColumn Name="Column10" Width="41.58"/>
+        <TableRow Name="Row6" Height="28.35">
+          <TableCell Name="Cell26" Border.Lines="All" ColSpan="2" RowSpan="5">
+            <TextObject Name="Text21" Top="75.6" Width="302.4" Height="18.9" Text="Please pay cash or TT to our bank A/C No.:"/>
+            <TextObject Name="Text20" Top="9.45" Width="330.75" Height="28.35" Text="Xin vui lòng thanh tóan bằng tiền mặt hoặcchuyển vào tài khoản Công Ty số:"/>
+            <TextObject Name="Text39" Left="113.4" Top="47.25" Width="198.45" Height="18.9" Text="[VietnamInvoiceReportData.BankAccountNo]"/>
+          </TableCell>
+          <TableCell Name="Cell27" Border.Lines="All"/>
+          <TableCell Name="Cell28" Border.Lines="All" ColSpan="3" RowSpan="5">
+            <TextObject Name="Text23" Top="47.25" Width="160.65" Height="18.9" Text="Thuế suất:     %/ Thuế"/>
+            <TextObject Name="Text25" Top="75.6" Width="207.9" Height="18.9" Text="VAT rate      %/(VAT amount)"/>
+            <TextObject Name="Text26" Top="103.95" Width="179.55" Height="37.8" Text="Tổng cộng tiền thanh toán:&#13;&#10;(Grand total)"/>
+            <TextObject Name="Text22" Width="103.95" Height="37.8" Text="Cộng:&#13;&#10;(Total invoice)"/>
+            <TextObject Name="Text40" Left="274.05" Top="103.95" Width="75.6" Height="18.9" Text="[VietnamInvoiceReportData.GrandTotal]"/>
+          </TableCell>
+          <TableCell Name="Cell29" Border.Lines="All"/>
+          <TableCell Name="Cell30" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="28.35">
+          <TableCell Name="Cell31" Border.Lines="All"/>
+          <TableCell Name="Cell32" Border.Lines="All"/>
+          <TableCell Name="Cell33" Border.Lines="All"/>
+          <TableCell Name="Cell34" Border.Lines="All"/>
+          <TableCell Name="Cell35" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row8" Height="28.35">
+          <TableCell Name="Cell36" Border.Lines="All"/>
+          <TableCell Name="Cell37" Border.Lines="All"/>
+          <TableCell Name="Cell38" Border.Lines="All"/>
+          <TableCell Name="Cell39" Border.Lines="All"/>
+          <TableCell Name="Cell40" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row9" Height="28.35">
+          <TableCell Name="Cell41" Border.Lines="All"/>
+          <TableCell Name="Cell42" Border.Lines="All"/>
+          <TableCell Name="Cell43" Border.Lines="All"/>
+          <TableCell Name="Cell44" Border.Lines="All"/>
+          <TableCell Name="Cell45" Border.Lines="All"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="28.35">
+          <TableCell Name="Cell46" Border.Lines="All"/>
+          <TableCell Name="Cell47" Border.Lines="All"/>
+          <TableCell Name="Cell48" Border.Lines="All"/>
+          <TableCell Name="Cell49" Border.Lines="All"/>
+          <TableCell Name="Cell50" Border.Lines="All"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <DataBand Name="Data3" Top="562.34" Width="718.2" Height="122.85" DataSource="VietnamInvoiceReportData">
+      <TextObject Name="Text24" Left="9.45" Top="9.45" Width="151.2" Height="37.8" Text="Tổng số tiền bằng chữ:&#13;&#10;(Grand total in words):"/>
+      <TextObject Name="Text27" Left="85.05" Top="47.25" Width="94.5" Height="18.9" Text="Khách hàng"/>
+      <TextObject Name="Text28" Left="453.6" Top="47.25" Width="122.85" Height="18.9" Text="TỔNG GIÁM ĐỐC"/>
+      <TextObject Name="Text29" Left="255.15" Top="66.15" Width="151.2" Height="18.9" Text="Người lập hóa đơn"/>
+      <TextObject Name="Text32" Left="453.6" Top="66.15" Width="151.2" Height="18.9" Text="(General director)"/>
+      <TextObject Name="Text30" Left="18.9" Top="94.5" Width="236.25" Height="18.9" Text="(Customer’s signature &amp; Full name)"/>
+      <TextObject Name="Text31" Left="292.95" Top="94.5" Width="113.4" Height="18.9" Text="(Invoice maker)"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="688.39" Width="718.2" Height="9.45"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="10/11/2012 11:09:36" ReportInfo.Modified="11/13/2012 10:40:11" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="PrintDate" DataType="System.String"/>
+      <Column Name="DefaultCurrency" DataType="System.String"/>
+      <Column Name="AgentName" DataType="System.String"/>
+      <Column Name="DiscPortName" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="LoadPortName" DataType="System.String"/>
+      <Column Name="MasterBLNo" DataType="System.String"/>
+      <Column Name="HouseBLNo" DataType="System.String"/>
+      <Column Name="ReferenceNO" DataType="System.String"/>
+      <Column Name="VesselVoyageNo" DataType="System.String"/>
+      <Column Name="TotalRevenue" DataType="System.String"/>
+      <Column Name="TotalCost" DataType="System.String"/>
+      <Column Name="TotalAgent" DataType="System.String"/>
+      <Column Name="Profit" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="FeeListReportSource" ReferenceName="FeeListReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="InvNo" DataType="System.String"/>
+      <Column Name="Revenue" DataType="System.String"/>
+      <Column Name="ChargeItemDescription" DataType="System.String"/>
+      <Column Name="PostDate" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="Company" DataType="System.String"/>
+      <Column Name="Cost" DataType="System.String"/>
+      <Column Name="agent" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Landscape="true" PaperWidth="297" PaperHeight="210" FirstPageSource="4" OtherPagesSource="4">
+    <DataBand Name="Data1" Top="20" Width="1047.06" Height="292.95">
+      <TextObject Name="textbox22" Top="245.7" Width="113.4" Height="45.36" CanGrow="true" Text="INV.NO" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox51" Left="113.4" Top="245.7" Width="85.05" Height="45.36" Border.Lines="Left" Border.Color="Maroon" CanGrow="true" Text="POST DATE" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox55" Left="198.45" Top="245.7" Width="311.85" Height="45.36" Border.Lines="Left" Border.Color="Maroon" CanGrow="true" Text="COMPANY" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox59" Left="680.4" Top="268.38" Width="103.95" Height="22.68" Border.Lines="Left, Top" Border.Color="Maroon" CanGrow="true" Text="REVENUE" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text6" Left="510.3" Top="245.7" Width="170.1" Height="45.36" Border.Lines="Left" Border.Color="Maroon" Text="CHARGE DESCRIPTION" VertAlign="Center" TextFill.Color="Maroon"/>
+      <TextObject Name="Text7" Left="680.4" Top="245.7" Width="160.65" Height="22.68" Border.Lines="Left" Border.Color="Maroon" Text="LOCAL" HorzAlign="Center" VertAlign="Center" TextFill.Color="Maroon"/>
+      <LineObject Name="Line1" Top="245.7" Width="1030.05" Border.Color="Maroon" Border.Width="4"/>
+      <TextObject Name="textbox5" Left="9.45" Top="85.05" Width="103.95" Height="18.9" CanGrow="true" Text="CURRENCY:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text4" Left="113.4" Top="85.05" Width="94.5" Height="18.9" Text="[ReportSource.DefaultCurrency]"/>
+      <TextObject Name="textbox2" Left="9.45" Top="56.7" Width="103.95" Height="24" CanGrow="true" Text="PRINTED  ON:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text2" Left="113.4" Top="56.7" Width="94.5" Height="18.9" Text="[ReportSource.PrintDate]"/>
+      <TextObject Name="textbox1" Top="9.45" Width="1001.7" Height="37.8" CanGrow="true" Text="PROFIT" HorzAlign="Center" Font="Arial, 20.25pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox12" Left="122.85" Top="207.9" Width="472.5" Height="33.45" CanGrow="true" Text="[ReportSource.AgentName]" Font="Arial, 9pt"/>
+      <TextObject Name="textbox13" Left="9.45" Top="207.9" Width="103.95" Height="24" CanGrow="true" Text="AGENT NAME:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox16" Left="567" Top="151.2" Width="463.05" Height="24" CanGrow="true" Text="[ReportSource.LoadPortName]  /  [ReportSource.ETD]" Font="Arial, 9pt"/>
+      <TextObject Name="textbox17" Left="472.5" Top="151.2" Width="85.05" Height="24" CanGrow="true" Text="P.O.L/ETD:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox10" Left="122.85" Top="151.2" Width="340.2" Height="24" CanGrow="true" Text="[ReportSource.MasterBLNo]" Font="Arial, 9pt"/>
+      <TextObject Name="textbox11" Left="9.45" Top="151.2" Width="113.4" Height="24" CanGrow="true" Text="MASTER B/L NO:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox14" Left="567" Top="179.55" Width="463.05" Height="24" CanGrow="true" Text="[ReportSource.DiscPortName]  /  [ReportSource.ETA]" Font="Arial, 9pt"/>
+      <TextObject Name="textbox15" Left="472.5" Top="179.55" Width="85.05" Height="24" CanGrow="true" Text="P.O.D/ETA:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="Text3" Left="9.45" Top="179.55" Width="113.4" Height="23.81" Text="HOUSE B/L NO:" TextFill.Color="Maroon"/>
+      <TextObject Name="Text5" Left="122.85" Top="179.55" Width="340.2" Height="23.81" Text="[ReportSource.HouseBLNo]"/>
+      <TextObject Name="textbox8" Left="9.45" Top="122.85" Width="113.4" Height="24" CanGrow="true" Text="REFERENCE NO:" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox18" Left="614.25" Top="122.85" Width="415.8" Height="24" CanGrow="true" Text="[ReportSource.VesselVoyageNo]" Font="Arial, 9pt"/>
+      <TextObject Name="textbox19" Left="472.5" Top="122.85" Width="141.75" Height="24" CanGrow="true" Text="VSL/VOY NO(FLIGHT):" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox9" Left="122.85" Top="122.85" Width="340.2" Height="24" CanGrow="true" Text="[ReportSource.ReferenceNO]" Font="Arial, 9pt"/>
+      <LineObject Name="line1" Top="113.4" Width="1030.05" Border.Color="Maroon" Border.Width="4"/>
+      <LineObject Name="Line2" Top="292.95" Width="1030.05" Border.Color="Maroon" Border.Width="4"/>
+      <TextObject Name="textbox63" Left="784.35" Top="268.38" Width="94.5" Height="22.68" Border.Lines="Left, Top" Border.Color="Maroon" CanGrow="true" Text="COST" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox67" Left="878.85" Top="245.7" Width="94.5" Height="45.36" Border.Lines="Left" Border.Color="Maroon" CanGrow="true" Text="AGENT" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox71" Left="973.35" Top="245.7" Width="56.7" Height="45.36" Border.Lines="Left" Border.Color="Maroon" CanGrow="true" Text="PMT" VertAlign="Center" Font="Arial, 9pt" TextFill.Color="Maroon"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="332.95" Width="1047.06" Height="28.35" Guides="0,0" DataSource="FeeListReportSource">
+      <TextObject Name="Text12" Left="198.45" Width="311.85" Height="28.35" Text="[FeeListReportSource.Company]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text13" Left="510.3" Width="170.1" Height="28.35" Text="[FeeListReportSource.ChargeItemDescription]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text14" Left="680.4" Width="103.95" Height="28.35" Text="[FeeListReportSource.Revenue]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text15" Left="784.35" Width="94.5" Height="28.35" Text="[FeeListReportSource.Cost]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text16" Left="878.85" Width="94.5" Height="28.35" Text="[FeeListReportSource.agent]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text17" Left="973.35" Width="56.7" Height="28.35" Text="N" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text11" Left="113.4" Width="85.05" Height="28.35" Text="[FeeListReportSource.PostDate]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text10" Width="113.4" Height="28.35" Text="[FeeListReportSource.InvNo]" VertAlign="Center" Font="Arial, 9pt"/>
+    </DataBand>
+    <DataBand Name="Data3" Top="381.3" Width="1047.06" Height="122.85" Guides="0,0">
+      <TextObject Name="textbox31" Left="614.25" Width="56.7" Height="24" CanGrow="true" Text="Total" VertAlign="Center" Font="Arial, 9.75pt, style=Bold" TextFill.Color="Maroon"/>
+      <TextObject Name="textbox32" Left="878.85" Width="94.5" Height="24" CanGrow="true" Text="[ReportSource.TotalAgent]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <LineObject Name="Line3" Width="1030.05" Border.Color="Maroon"/>
+      <TextObject Name="Text1" Left="680.4" Width="103.95" Height="18.9" Text="[ReportSource.TotalRevenue]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text8" Left="784.35" Width="94.5" Height="18.9" Text="[ReportSource.TotalCost]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+      <LineObject Name="Line4" Top="56.7" Width="1030.05" Border.Color="Maroon" Border.Width="4"/>
+      <LineObject Name="Line5" Left="680.4" Top="28.35" Width="349.65" Border.Color="Maroon"/>
+      <TextObject Name="Text9" Left="604.8" Top="28.35" Width="75.6" Height="18.9" Text="PROFIT" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="Red"/>
+      <TextObject Name="Text18" Left="680.4" Top="28.35" Width="103.95" Height="18.9" Text="[ReportSource.Profit]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

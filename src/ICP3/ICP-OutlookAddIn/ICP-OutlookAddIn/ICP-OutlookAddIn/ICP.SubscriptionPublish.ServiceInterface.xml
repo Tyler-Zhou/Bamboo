@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.SubscriptionPublish.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishNotifyService">
+            <summary>
+            契约指定回调方法
+            </summary>
+        </member>
+        <member name="M:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishNotifyService.ChangeState(ICP.Message.ServiceInterface.Message[],ICP.Message.ServiceInterface.MessageType)">
+            <summary>
+            消息状态更改回调
+            </summary>
+            <param name="messages"></param>
+            <param name="type"></param>
+        </member>
+        <member name="M:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishNotifyService.Notify(ICP.OA.ServiceInterface.DataObjects.BulletinData)">
+            <summary>
+            通知公告发布
+            <param name="data">公共信息</param>
+            </summary>
+        </member>
+        <member name="M:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishNotifyService.Upload(ICP.DataCache.ServiceInterface.NotifyType,System.Object,System.Object)">
+            <summary>
+            文档上传状态更改服务
+            </summary>
+            <param name="type"></param>
+            <param name="data"></param>
+            <param name="generateIds"></param>
+        </member>
+        <member name="M:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishNotifyService.SendMessage(System.Guid[],ICP.Framework.CommonLibrary.Common.OperationType[])">
+            <summary>
+            消息发送后回调刷新用户界面
+            </summary>
+            <param name="operationId"></param>
+            <param name="operationType"></param>
+        </member>
+        <member name="T:ICP.SubscriptionPublish.ServiceInterface.IICPSubscriptionService">
+            <summary>
+            ICP回调服务订阅接口 
+            </summary>
+        </member>
+        <member name="T:ICP.SubscriptionPublish.ServiceInterface.ISubscriptionPublishService">
+            <summary>
+            订阅接口 声明通信契约
+            </summary>
+        </member>
+    </members>
+</doc>

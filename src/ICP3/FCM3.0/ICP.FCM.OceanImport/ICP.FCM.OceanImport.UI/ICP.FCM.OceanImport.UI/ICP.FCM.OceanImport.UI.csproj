@@ -1,0 +1,619 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09296C5B-79CB-4FAF-BFE2-2F66DE2BBB78}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.OceanImport.UI</RootNamespace>
+    <AssemblyName>ICP.FCM.OceanImport.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.CommonUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.OA.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.ReportCenter.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessInfoProvider\OIBusinessInfoProvider.cs" />
+    <Compile Include="Business\OIBusinessReceived.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessReceived.Designer.cs">
+      <DependentUpon>OIBusinessReceived.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessRelease.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessRelease.Designer.cs">
+      <DependentUpon>OIBusinessRelease.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessTruckEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessTruckEdit.Designer.cs">
+      <DependentUpon>OIBusinessTruckEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessTracking.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessTracking.Designer.cs">
+      <DependentUpon>OIBusinessTracking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\ReturnOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\ReturnOrder.Designer.cs">
+      <DependentUpon>ReturnOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\UCBusinessBLList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\UCBusinessBLList.Designer.cs">
+      <DependentUpon>UCBusinessBLList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\UCBusinessBoxList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\UCBusinessBoxList.Designer.cs">
+      <DependentUpon>UCBusinessBoxList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\UCHBL2CtnList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\UCHBL2CtnList.Designer.cs">
+      <DependentUpon>UCHBL2CtnList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ClientService.cs" />
+    <Compile Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\OceanImportPrintHelper.cs" />
+    <Compile Include="Controls\BaseControls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CargoDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CargoDescriptionPart.Designer.cs">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ContainerDemandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ContainerDemandControl.Designer.cs">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FeePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FeePart.designer.cs">
+      <DependentUpon>FeePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UnClosePopupContainerEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownloadList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownloadList.Designer.cs">
+      <DependentUpon>OIBusinessDownloadList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownLoadSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownLoadSearch.Designer.cs">
+      <DependentUpon>OIBusinessDownLoadSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownloadTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownloadTool.Designer.cs">
+      <DependentUpon>OIBusinessDownloadTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownLoadWorkitem.cs" />
+    <Compile Include="Business\DownLoad\OIBusinessDownloadMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\DownLoad\OIBusinessDownloadMain.Designer.cs">
+      <DependentUpon>OIBusinessDownloadMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessEdit.Designer.cs">
+      <DependentUpon>OIBusinessEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessFastSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessFastSearch.Designer.cs">
+      <DependentUpon>OIBusinessFastSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessList.Designer.cs">
+      <DependentUpon>OIBusinessList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessMainWorkspace.Designer.cs">
+      <DependentUpon>OIBusinessMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessTransfer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessTransfer.Designer.cs">
+      <DependentUpon>OIBusinessTransfer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessWorkitem.cs" />
+    <Compile Include="Business\OIBusinessSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessSearch.Designer.cs">
+      <DependentUpon>OIBusinessSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Business\OIBusinessTool.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Business\OIBusinessTool.Designer.cs">
+      <DependentUpon>OIBusinessTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\UIProxys.cs">
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="OceanImportModuleInit.cs" />
+    <Compile Include="Order\ConfirmBookingForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\ConfirmBookingForm.Designer.cs">
+      <DependentUpon>ConfirmBookingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderBaseEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderBaseEdit.Designer.cs">
+      <DependentUpon>OIOrderBaseEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderFeeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderFeeEdit.Designer.cs">
+      <DependentUpon>OIOrderFeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderPOItemEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\EditPart\OIOrderPOItemEdit.designer.cs">
+      <DependentUpon>OIOrderPOItemEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\FaxMailListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\FaxMailListPart.Designer.cs">
+      <DependentUpon>FaxMailListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\MemoListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\MemoListPart.Designer.cs">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OIOrderListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OIOrderListPart.Designer.cs">
+      <DependentUpon>OIOrderListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OIOrderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OIOrderToolBar.Designer.cs">
+      <DependentUpon>OIOrderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OIOrderMainWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\OIOrderMainWorkSpace.Designer.cs">
+      <DependentUpon>OIOrderMainWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\OIOrderWorkItem.cs" />
+    <Compile Include="Order\SearchPart\OrderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\SearchPart\OrderSearchPart.Designer.cs">
+      <DependentUpon>OrderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\SearchPart\OrderFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BL\OIArrivalNotice2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\BL\OIArrivalNotice2.Designer.cs">
+      <DependentUpon>OIArrivalNotice2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BL\OIBLPrintPart2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\BL\OIBLPrintPart2.Designer.cs">
+      <DependentUpon>OIBLPrintPart2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BL\OIReleaseOrder2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\BL\OIReleaseOrder2.Designer.cs">
+      <DependentUpon>OIReleaseOrder2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BL\USPickUpReport2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\BL\USPickUpReport2.Designer.cs">
+      <DependentUpon>USPickUpReport2.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ICP.FCM.Common\ICP.FCM.Common.ServiceInterface\ICP.FCM.Common.ServiceInterface.csproj">
+      <Project>{E3263870-19C7-4986-BD8C-E7C1E4DE615A}</Project>
+      <Name>ICP.FCM.Common.ServiceInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ICP.FCM.OceanImport.ServiceInterface\ICP.FCM.OceanImport.ServiceInterface\ICP.FCM.OceanImport.ServiceInterface.csproj">
+      <Project>{B4ECBC86-40E3-40C4-BD8C-B78F3C7D3ACC}</Project>
+      <Name>ICP.FCM.OceanImport.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Business\OIBusinessReceived.resx">
+      <DependentUpon>OIBusinessReceived.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessRelease.resx">
+      <DependentUpon>OIBusinessRelease.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessTruckEdit.resx">
+      <DependentUpon>OIBusinessTruckEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessTracking.resx">
+      <DependentUpon>OIBusinessTracking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\ReturnOrder.resx">
+      <DependentUpon>ReturnOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\UCBusinessBLList.resx">
+      <DependentUpon>UCBusinessBLList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\UCBusinessBoxList.resx">
+      <DependentUpon>UCBusinessBoxList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\UCHBL2CtnList.resx">
+      <DependentUpon>UCHBL2CtnList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.resx">
+      <DependentUpon>AwkwardDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.resx">
+      <DependentUpon>DangerousDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.resx">
+      <DependentUpon>DryDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.resx">
+      <DependentUpon>ReeferDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CargoDescriptionPart.resx">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ContainerDemandControl.resx">
+      <DependentUpon>ContainerDemandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FeePart.resx">
+      <DependentUpon>FeePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\DownLoad\OIBusinessDownloadList.resx">
+      <DependentUpon>OIBusinessDownloadList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\DownLoad\OIBusinessDownLoadSearch.resx">
+      <DependentUpon>OIBusinessDownLoadSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\DownLoad\OIBusinessDownloadTool.resx">
+      <DependentUpon>OIBusinessDownloadTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\DownLoad\OIBusinessDownloadMain.resx">
+      <DependentUpon>OIBusinessDownloadMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessEdit.resx">
+      <DependentUpon>OIBusinessEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessFastSearch.resx">
+      <DependentUpon>OIBusinessFastSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessList.resx">
+      <DependentUpon>OIBusinessList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessMainWorkspace.resx">
+      <DependentUpon>OIBusinessMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessSearch.resx">
+      <DependentUpon>OIBusinessSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessTool.resx">
+      <DependentUpon>OIBusinessTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Business\OIBusinessTransfer.resx">
+      <DependentUpon>OIBusinessTransfer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\ConfirmBookingForm.resx">
+      <DependentUpon>ConfirmBookingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\EditPart\OIOrderBaseEdit.resx">
+      <DependentUpon>OIOrderBaseEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\EditPart\OIOrderFeeEdit.resx">
+      <DependentUpon>OIOrderFeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\EditPart\OIOrderPOItemEdit.resx">
+      <DependentUpon>OIOrderPOItemEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\FaxMailListPart.resx">
+      <DependentUpon>FaxMailListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\MemoListPart.resx">
+      <DependentUpon>MemoListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\OIOrderListPart.resx">
+      <DependentUpon>OIOrderListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\OIOrderToolBar.resx">
+      <DependentUpon>OIOrderToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\OIOrderToolBar.zh-CHS.resx">
+      <DependentUpon>OIOrderToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\OIOrderMainWorkSpace.resx">
+      <DependentUpon>OIOrderMainWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\SearchPart\OrderSearchPart.resx">
+      <DependentUpon>OrderSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\SearchPart\OrderFastSearchPart.resx">
+      <DependentUpon>OrderFastSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BL\OIArrivalNotice2.resx">
+      <DependentUpon>OIArrivalNotice2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BL\OIBLPrintPart2.resx">
+      <DependentUpon>OIBLPrintPart2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BL\OIReleaseOrder2.resx">
+      <DependentUpon>OIReleaseOrder2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BL\USPickUpReport2.resx">
+      <DependentUpon>USPickUpReport2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FCM.OceanImport.ServiceInterface.DataObjects.OIMBLInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OceanImport.ServiceInterface.DataObjects.OITruckServiceInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OceanImport.UI.Common.DataObjectExtend.OIExtendMBLInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.OceanImport.UI.Common.OIExtendContainerList.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disuse_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_d_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_blue_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemMemo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClientReport\OI_BL_Annex_Report.frx" />
+    <None Include="ClientReport\OI_BL_ChinaShip_Report.frx" />
+    <None Include="ClientReport\OI_BL_CopyLa_Report.frx" />
+    <None Include="ClientReport\OI_BL_DLfcm_Report.frx" />
+    <None Include="ClientReport\OI_BL_Original_Report.frx" />
+    <None Include="ClientReport\OI_BL_TR_Report.frx" />
+    <None Include="ClientReport\OI_BusinessInfo.frx" />
+    <None Include="ClientReport\OI_BusinessInfo_CN.frx" />
+    <None Include="ClientReport\OI_BusinessInfo_EN.frx" />
+    <None Include="ClientReport\OI_OrderInfo_CN.frx" />
+    <None Include="ClientReport\OI_OrderInfo_EN.frx" />
+    <None Include="ClientReport\RptOIArrivalNotice.frx" />
+    <None Include="ClientReport\RptOIArrivalNotice_2th.frx" />
+    <None Include="ClientReport\RptOIReleaseOrder.frx" />
+    <None Include="ClientReport\RptProfit.frx" />
+    <None Include="ClientReport\RptWorkSheet.frx" />
+    <None Include="Resources\Transfer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Report\Fee\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

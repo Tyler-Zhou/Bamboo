@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="08/02/2010 16:02:23" ReportInfo.Modified="09/07/2011 11:51:14" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Data;
+    using FastReport;
+    using FastReport.Data;
+    using FastReport.Dialog;
+    using FastReport.Barcode;
+    using FastReport.Table;
+    using FastReport.Utils;   
+
+namespace FastReport
+{
+  public class ReportScript
+  {                               
+    Report _currentReport =null;
+    private void _StartReport(object sender, EventArgs e)
+    {
+      _currentReport = sender as  Report;   
+    }
+    private void CellBLNo_Click(object sender, EventArgs e)
+    {
+        _currentReport.SendMessage(((FastReport.Table.TableCell)(sender)).Bookmark);
+    }
+  }
+}
+  </ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="OIBusinessReportData" ReferenceName="OIBusinessReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="OperationNo" DataType="System.String"/>
+      <Column Name="State" DataType="System.String"/>
+      <Column Name="Company" DataType="System.String"/>
+      <Column Name="OperationType" DataType="System.String"/>
+      <Column Name="Customer" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="PaymentTerm" DataType="System.String"/>
+      <Column Name="TradeTerm" DataType="System.String"/>
+      <Column Name="Sales" DataType="System.String"/>
+      <Column Name="SalesDep" DataType="System.String"/>
+      <Column Name="SalesType" DataType="System.String"/>
+      <Column Name="BookingMode" DataType="System.String"/>
+      <Column Name="BookingDate" DataType="System.String"/>
+      <Column Name="CustomerService" DataType="System.String"/>
+      <Column Name="Filer" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="AgentOfCarrier" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PreVoyage" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.String"/>
+      <Column Name="ETA" DataType="System.String"/>
+      <Column Name="DETA" DataType="System.String"/>
+      <Column Name="FETA" DataType="System.String"/>
+      <Column Name="ShippingLine" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BLListReportData" ReferenceName="BLListReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="BLNO" DataType="System.String"/>
+      <Column Name="MBLNO" DataType="System.String"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="ID" DataType="System.Guid"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1161167087" LeftMargin="5" TopMargin="5" RightMargin="5" BottomMargin="5" FirstPageSource="4" OtherPagesSource="4" Guides="374.22">
+    <ColumnHeaderBand Name="ColumnHeaderBand1161167087" Top="20" Width="756" Height="502.74">
+      <TableObject Name="Table1" Left="11.34" Top="45.36" Width="725.76" Height="453.6" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+        <TableColumn Name="Column1" Width="120.96"/>
+        <TableColumn Name="Column2" Width="241.92"/>
+        <TableColumn Name="Column3" Width="120.96"/>
+        <TableColumn Name="Column4" Width="241.92"/>
+        <TableRow Name="Row27" Height="22.68">
+          <TableCell Name="Cell183" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="基本信息" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White" ColSpan="4"/>
+          <TableCell Name="Cell184" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell185" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell186" Border.Lines="All" Border.Color="Teal" Fill.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row1" Height="22.68">
+          <TableCell Name="Cell178" Border.Lines="All" Border.Color="Teal" Text="业务号" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.OperationNo]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell3" Border.Lines="All" Border.Color="Teal" Text="状态" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.State]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="22.68">
+          <TableCell Name="Cell6" Border.Lines="All" Border.Color="Teal" Text="操作口岸" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Company]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell8" Border.Lines="All" Border.Color="Teal" Text="业务类型" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell9" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.OperationType]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Border.Lines="All" Border.Color="Teal" Text="客户" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Customer]" VertAlign="Center" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell13" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell14" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="22.68">
+          <TableCell Name="Cell69" Border.Lines="All" Border.Color="Teal" Text="运输条款" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell70" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.TransportClause]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell71" Border.Lines="All" Border.Color="Teal" Text="付款方式" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell72" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.PaymentTerm]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="22.68">
+          <TableCell Name="Cell16" Border.Lines="All" Border.Color="Teal" Text="贸易条款" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.TradeTerm]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell18" Border.Lines="All" Border.Color="Teal" Text="揽货类型" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.SalesType]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="22.68">
+          <TableCell Name="Cell21" Border.Lines="All" Border.Color="Teal" Text="揽货人" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell22" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Sales]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell23" Border.Lines="All" Border.Color="Teal" Text="揽货部门" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.SalesDep]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row35" Height="22.68">
+          <TableCell Name="Cell215" Border.Lines="All" Border.Color="Teal" Text="委托方式" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell216" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.BookingMode]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell217" Border.Lines="All" Border.Color="Teal" Text="委托日期" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell218" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.BookingDate]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="22.68">
+          <TableCell Name="Cell41" Border.Lines="All" Border.Color="Teal" Text="客服" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell42" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.CustomerService]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell43" Border.Lines="All" Border.Color="Teal" Text="文件" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell44" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Filer]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row29" Height="22.68">
+          <TableCell Name="Cell191" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="委托信息" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White" ColSpan="4"/>
+          <TableCell Name="Cell192" Fill.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell193" Fill.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell194" Fill.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row19" Height="22.68">
+          <TableCell Name="Cell111" Border.Lines="All" Border.Color="Teal" Text="收货地&#13;&#10;" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell112" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.PlaceOfReceipt]" VertAlign="Center" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell139" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell140" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row21" Height="22.68">
+          <TableCell Name="Cell119" Border.Lines="All" Border.Color="Teal" Text="装货港" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell120" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.POL]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell141" Border.Lines="All" Border.Color="Teal" Text="ETD" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell142" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.ETD]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row22" Height="22.68">
+          <TableCell Name="Cell123" Border.Lines="All" Border.Color="Teal" Text="卸货港" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell124" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.POD]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell143" Border.Lines="All" Border.Color="Teal" Text="ETA" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell144" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.ETA]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row20" Height="22.68">
+          <TableCell Name="Cell115" Border.Lines="All" Border.Color="Teal" Text="交货地" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell116" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.PlaceOfDelivery]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell145" Border.Lines="All" Border.Color="Teal" Text="DETA" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell146" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.DETA]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row23" Height="22.68">
+          <TableCell Name="Cell127" Border.Lines="All" Border.Color="Teal" Text="最终目的地" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell128" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.FinalDestination]" VertAlign="Center" Font="宋体, 10pt"/>
+          <TableCell Name="Cell147" Border.Lines="All" Border.Color="Teal" Text="FETA" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell148" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.FETA]" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row25" Height="22.68">
+          <TableCell Name="Cell135" Border.Lines="All" Border.Color="Teal" Text="承运人" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell136" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.AgentOfCarrier]" VertAlign="Center" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell151" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell152" Border.Lines="All" Border.Color="Teal" VertAlign="Center" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row30" Height="22.68">
+          <TableCell Name="Cell195" Border.Lines="All" Border.Color="Teal" Text="船公司" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell196" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Carrier]" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell197" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell198" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row31" Height="22.68">
+          <TableCell Name="Cell199" Border.Lines="All" Border.Color="Teal" Text="驳船" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell200" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.PreVoyage]" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell201" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell202" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row32" Height="22.68">
+          <TableCell Name="Cell203" Border.Lines="All" Border.Color="Teal" Text="大船" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell204" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.Voyage]" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell205" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell206" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+        <TableRow Name="Row34" Height="22.68">
+          <TableCell Name="Cell211" Border.Lines="All" Border.Color="Teal" Text="航线" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell212" Border.Lines="All" Border.Color="Teal" Text="[OIBusinessReportData.ShippingLine]" Font="宋体, 10pt" ColSpan="3"/>
+          <TableCell Name="Cell213" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+          <TableCell Name="Cell214" Border.Lines="All" Border.Color="Teal" Font="宋体, 10pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="11.34" Top="7.56" Width="725.76" Height="34.02" Text="业务信息表" HorzAlign="Center" VertAlign="Center" Font="黑体, 20pt, style=Bold"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="608.1" Width="756" Height="22.68" CanGrow="true" AfterLayoutEvent="Data1_AfterLayout" DataSource="BLListReportData">
+      <TableObject Name="Table3" Left="11.34" Width="729.03" Height="22.68" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+        <TableColumn Name="Column10" Width="131.69"/>
+        <TableColumn Name="Column11" Width="122.89"/>
+        <TableColumn Name="Column12" Width="158.15"/>
+        <TableColumn Name="Column13" Width="158.15"/>
+        <TableColumn Name="Column14" Width="158.15"/>
+        <TableRow Name="Row36" MinHeight="22.68" Height="22.68" AutoSize="true">
+          <TableCell Name="CellBLNo" Border.Lines="All" Border.Color="Teal" Cursor="Hand" Bookmark="[BLListReportData.ID]+&quot;;&quot;+[BLListReportData.MBLNO]" ClickEvent="CellBLNo_Click" Text="[BLListReportData.BLNO]" VertAlign="Center" Font="宋体, 10pt, style=Bold, Underline" TextFill.Color="Blue"/>
+          <TableCell Name="Cell221" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.MBLNO]" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell222" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.Shipper]" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell223" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.Consignee]" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+          <TableCell Name="Cell224" Border.Lines="All" Border.Color="Teal" Text="[BLListReportData.NotifyParty]" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Name="DataHeader1" Top="542.74" Width="756" Height="45.36">
+        <TableObject Name="Table2" Left="11.34" Top="22.68" Width="729.03" Height="22.68" Border.Lines="All" Border.Color="Teal" Border.Width="2">
+          <TableColumn Name="Column5" Width="131.69"/>
+          <TableColumn Name="Column9" Width="122.89"/>
+          <TableColumn Name="Column6" Width="158.15"/>
+          <TableColumn Name="Column7" Width="158.15"/>
+          <TableColumn Name="Column8" Width="158.15"/>
+          <TableRow Name="Row17" Height="22.68">
+            <TableCell Name="Cell103" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="提单号" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell219" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="主提单号" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell104" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="发货人" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell105" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="收货人" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White"/>
+            <TableCell Name="Cell106" Border.Lines="All" Border.Color="Teal" Fill="Glass" Fill.Color="Teal" Fill.Blend="0.2" Fill.Hatch="true" Text="通知人" VertAlign="Center" Font="宋体, 10pt, style=Bold" TextFill.Color="White"/>
+          </TableRow>
+        </TableObject>
+        <TextObject Name="Text2" Left="11.34" Width="725.76" Height="18.9" Text="点击提单号以链接到提单详细报表&#13;&#10;" Font="宋体, 8pt"/>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="650.78" Width="756" Height="37.8"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{524121C1-4173-4FEB-81FC-952ED787D0FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.WF.Controls</RootNamespace>
+    <AssemblyName>ICP.WF.Controls</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>ICP.WF.Controls.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.OA.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.OA.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.OA.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.TMS.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IFileService.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWCostItemColumn.cs" />
+    <Compile Include="Controls\ICPFilePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ICPFilePanel.Designer.cs">
+      <DependentUpon>ICPFilePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LWFindTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWFindICPCRM.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWFindOperation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWFindTextColumn.cs">
+    </Compile>
+    <Compile Include="DataBindingSource\Banks.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\Companys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\Currencys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\DataDictionaries.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\LWDutyChangeTypes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\LWDutyChangeTypes.Designer.cs">
+      <DependentUpon>LWDutyChangeTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataBindingSource\LWPropertys.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\Users.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\Jobs.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\ChineseToPY.cs" />
+    <Compile Include="Common\DataColumn.cs" />
+    <Compile Include="Common\DataItemEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\DataItemEditor.designer.cs">
+      <DependentUpon>DataItemEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Enum.cs" />
+    <Compile Include="Common\EventDataEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\EventDataEditor.designer.cs">
+      <DependentUpon>EventDataEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\FormBuildService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\IBindingService.cs" />
+    <Compile Include="Common\IBindingSourceTypeService.cs" />
+    <Compile Include="Common\IColumn.cs" />
+    <Compile Include="Common\IContainerService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\IDataSourceService.cs" />
+    <Compile Include="Common\IEventService.cs" />
+    <Compile Include="Common\IInitiDataService.cs" />
+    <Compile Include="Common\ITiltle.cs" />
+    <Compile Include="Common\IValidateService.cs" />
+    <Compile Include="Common\SRCategoryAttribute.cs" />
+    <Compile Include="Common\SRDescriptionAttribute.cs" />
+    <Compile Include="Common\ToolboxItemExtend.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\DataGridViewComBoxCell.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\DataGridViewComBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\DataGridViewTreeViewCell.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\DataGridViewTreeViewEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWChargeCodeColumn.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWComboxColumn.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWCurrencyColumn.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWDateTimeColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWNumericColumn.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWStringColumn.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWVehicleHeadColumn.cs" />
+    <Compile Include="Controls\DataGridView\EditGridColumns.cs" />
+    <Compile Include="Controls\DataGridView\GridAddColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\GridAddColumn.Designer.cs">
+      <DependentUpon>GridAddColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridView\GridColumnsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\GridColumnsEditForm.Designer.cs">
+      <DependentUpon>GridColumnsEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LWComboBoxTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\DataTableConverter.cs" />
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWGridColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWMultiTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWSplitter.Designer.cs">
+      <DependentUpon>LWSplitter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LWTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWTableLayoutPanel.Designer.cs">
+      <DependentUpon>LWTableLayoutPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\RadioButton\LWRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RadioButton\LWRadioGroup.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WFForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WFForm.Designer.cs">
+      <DependentUpon>WFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DataBindingConvert.cs" />
+    <Compile Include="Controls\LWComBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DataGridView\LWDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWLable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWNumericCalcEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LWPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\ICPDegree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataBindingSource\GLCode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\ColumnDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\ColumnDesignerBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\DesignGridControls.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\ElementSelector.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\FormatCondition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\frmDesigner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\GroupSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\Layouts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\LevelsSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\LevelStyle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\LevelTree.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\LevelViewNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\PersistentRepositoryGridEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\PrintAppearancesDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\SchemeDesigner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\Scroller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\ViewsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\Designer\XtraPGFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\FeatureBrowser\FeatureBrowserGridForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\FeatureBrowser\FeatureBrowserGridSampleSetup.cs" />
+    <Compile Include="Designer\FeatureBrowser\FeatureBrowserMainFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\GridControlDesigner.cs" />
+    <Compile Include="Designer\GridSerializers.cs" />
+    <Compile Include="Designer\GridUtils.cs" />
+    <Compile Include="Designer\TaskSolutionCenter\mainForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Designer\TypeConverters.cs" />
+    <Compile Include="Finder\Commission\CommissionOperactionFinder.cs" />
+    <Compile Include="Finder\Commission\WFBusinessListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessListPart.Designer.cs">
+      <DependentUpon>WFBusinessListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessMainWorkspace.Designer.cs">
+      <DependentUpon>WFBusinessMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessSearchPart.Designer.cs">
+      <DependentUpon>WFBusinessSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessToolBar.Designer.cs">
+      <DependentUpon>WFBusinessToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\Commission\WFBusinessWorkitem.cs" />
+    <Compile Include="Finder\Commission\WFCommissionLogListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFCommissionLogListPart.Designer.cs">
+      <DependentUpon>WFCommissionLogListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\Commission\WFSelectBusinessListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\Commission\WFSelectBusinessListPart.Designer.cs">
+      <DependentUpon>WFSelectBusinessListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\CustomerExpenseFinder.cs" />
+    <Compile Include="Finder\CustomerExpense\WFCRMCustomerListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCRMCustomerListPart.Designer.cs">
+      <DependentUpon>WFCRMCustomerListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseMainWorkspace.Designer.cs">
+      <DependentUpon>WFCustomerExpenseMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseSearchPart.Designer.cs">
+      <DependentUpon>WFCustomerExpenseSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseToolBar.Designer.cs">
+      <DependentUpon>WFCustomerExpenseToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseLogListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseLogListPart.Designer.cs">
+      <DependentUpon>WFCustomerExpenseLogListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseTouchLogListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\CustomerExpense\WFCustomerExpenseTouchLogListPart.Designer.cs">
+      <DependentUpon>WFCustomerExpenseTouchLogListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWDeptColumn.cs">
+    </Compile>
+    <Compile Include="Controls\DataGridView\DataGridViewColumn\LWGLCodeColumn.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceCN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceCN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ResourceEn.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceEn.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ICP.WF.ServiceInterface\ICP.WF.ServiceInterface.csproj">
+      <Project>{8F4C95D7-84CD-466E-BCA9-317171A75D7B}</Project>
+      <Name>ICP.WF.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ListBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ListView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ComboBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DataGridView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DateTimePicker.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Label.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TextBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TreeView.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DepartMent.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CheckBox.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\DataItemEditor.resx">
+      <DependentUpon>DataItemEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\DataItemEditor.zh-CHS.resx">
+      <DependentUpon>DataItemEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EventDataEditor.resx">
+      <DependentUpon>EventDataEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\EventDataEditor.zh-CHS.resx">
+      <DependentUpon>EventDataEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WFForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceCN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceCN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceEn.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceEn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\RadioButton.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\DataColumnItem.datasource" />
+    <None Include="Properties\DataSources\MappingRelationItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\DataGridView\GridAddColumn.resx">
+      <DependentUpon>GridAddColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\GridAddColumn.zh-CHS.resx">
+      <DependentUpon>GridAddColumn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\GridColumnsEditForm.resx">
+      <DependentUpon>GridColumnsEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\GridColumnsEditForm.zh-CHS.resx">
+      <DependentUpon>GridColumnsEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DataGridView\LWDataGridView.resx">
+      <DependentUpon>LWDataGridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ICPFilePanel.resx">
+      <DependentUpon>ICPFilePanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\ColumnDesigner.resx">
+      <DependentUpon>ColumnDesigner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\ColumnDesignerBase.resx">
+      <DependentUpon>ColumnDesignerBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\frmDesigner.resx">
+      <DependentUpon>frmDesigner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\GroupSummary.resx">
+      <DependentUpon>GroupSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\LevelsSelector.resx">
+      <DependentUpon>LevelsSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\LevelStyle.resx">
+      <DependentUpon>LevelStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\LevelViewNameForm.resx">
+      <DependentUpon>LevelViewNameForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\PersistentRepositoryGridEditor.resx">
+      <DependentUpon>PersistentRepositoryGridEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\PrintAppearancesDesigner.resx">
+      <DependentUpon>PrintAppearancesDesigner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\SchemeDesigner.resx">
+      <DependentUpon>SchemeDesigner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\Scroller.resx">
+      <DependentUpon>Scroller.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\ViewsEditor.resx">
+      <DependentUpon>ViewsEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\Designer\XtraPGFrame.resx">
+      <DependentUpon>XtraPGFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer\FeatureBrowser\FeatureBrowserGridForm.resx">
+      <DependentUpon>FeatureBrowserGridForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFBusinessListPart.resx">
+      <DependentUpon>WFBusinessListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFBusinessMainWorkspace.resx">
+      <DependentUpon>WFBusinessMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFBusinessSearchPart.resx">
+      <DependentUpon>WFBusinessSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFBusinessToolBar.resx">
+      <DependentUpon>WFBusinessToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFCommissionLogListPart.resx">
+      <DependentUpon>WFCommissionLogListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\Commission\WFSelectBusinessListPart.resx">
+      <DependentUpon>WFSelectBusinessListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCRMCustomerListPart.resx">
+      <DependentUpon>WFCRMCustomerListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCustomerExpenseMainWorkspace.resx">
+      <DependentUpon>WFCustomerExpenseMainWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCustomerExpenseSearchPart.resx">
+      <DependentUpon>WFCustomerExpenseSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCustomerExpenseToolBar.resx">
+      <DependentUpon>WFCustomerExpenseToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCustomerExpenseLogListPart.resx">
+      <DependentUpon>WFCustomerExpenseLogListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\CustomerExpense\WFCustomerExpenseTouchLogListPart.resx">
+      <DependentUpon>WFCustomerExpenseTouchLogListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CalcEdit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Designer\Designer\cards.bmp" />
+    <Content Include="Designer\Designer\ViewIcons.bmp" />
+    <Content Include="Designer\Designer\ViewRepositoryIcons.bmp" />
+    <Content Include="Designer\FeatureBrowser\AdvBandedGridView.xml" />
+    <Content Include="Designer\FeatureBrowser\BandedGridView.xml" />
+    <Content Include="Designer\FeatureBrowser\CardView.xml" />
+    <Content Include="Designer\FeatureBrowser\GridControl.xml" />
+    <Content Include="Designer\FeatureBrowser\GridView.xml" />
+    <Content Include="Designer\FeatureBrowser\LayoutView.xml" />
+    <Content Include="Designer\TaskSolutionCenter\Events.xml" />
+    <Content Include="Designer\TaskSolutionCenter\Steps.xml" />
+    <Content Include="Designer\TaskSolutionCenter\Tasks.xml" />
+    <None Include="Resources\Down_16.png" />
+    <None Include="Resources\Empty.png" />
+    <None Include="Resources\Delete_16.png" />
+    <None Include="Resources\Check_16.png" />
+    <None Include="Resources\Add_File_16.png" />
+    <None Include="Resources\Transfer_16.png" />
+    <None Include="Resources\Search_16.png" />
+    <None Include="Resources\Save_Blue_16.png" />
+    <None Include="Resources\Refresh_16.png" />
+    <None Include="Resources\Left_D_16.png" />
+    <None Include="Resources\Edit_16.png" />
+    <None Include="Resources\database.bmp" />
+    <None Include="Resources\New.ico" />
+    <None Include="Resources\comboxType.png" />
+    <None Include="Resources\users.ico" />
+    <None Include="Resources\moveUpHover.png" />
+    <None Include="Resources\moveDownPress.png" />
+    <None Include="Resources\Splitter.bmp" />
+    <None Include="Resources\MemoEdit.bmp" />
+    <None Include="Resources\RadPanel.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\ProperyGrid\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

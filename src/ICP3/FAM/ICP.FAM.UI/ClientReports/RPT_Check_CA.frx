@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="05/16/2012 15:44:32" ReportInfo.Modified="09/06/2012 11:46:30" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="BaseReportData" ReferenceName="BaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="CheckDate" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="Total" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerEAddress" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CheckNO" DataType="System.String"/>
+      <Column Name="CustomerRefNO1" DataType="System.String"/>
+      <Column Name="Description1" DataType="System.String"/>
+      <Column Name="Amount1" DataType="System.String"/>
+      <Column Name="CustomerRefNO2" DataType="System.String"/>
+      <Column Name="Description2" DataType="System.String"/>
+      <Column Name="Amount2" DataType="System.String"/>
+      <Column Name="CurrencyName" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" BottomMargin="5">
+    <PageHeaderBand Name="PageHeader1" Top="20" Width="740.5" Height="1039.5">
+      <TextObject Name="Text1" Left="557.55" Top="9.45" Width="171.6" Height="24" Text="[BaseReportData.CheckNO]" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text2" Left="557.55" Top="37.8" Width="152.7" Height="24" Text="[BaseReportData.CheckDate]" Font="Arial, 9pt"/>
+      <TextObject Name="Text3" Left="568.45" Top="95.5" Width="122.85" Height="24" Text="[BaseReportData.Amount]" HorzAlign="Right" Font="Arial, 9pt"/>
+      <TextObject Name="Text4" Left="56.7" Top="103.95" Width="453.6" Height="42.9" Text="[BaseReportData.CustomerName]" Font="Arial, 9pt"/>
+      <TextObject Name="Text5" Left="56.7" Top="151.65" Width="500.85" Height="24" Text="[BaseReportData.Total]" Font="Arial, 9pt"/>
+      <TextObject Name="Text6" Left="9.45" Top="304.95" Width="56.7" Height="24" Text="PAY TO" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text7" Left="64.93" Top="294.83" Width="247.59" Height="33.26" Text="[BaseReportData.CustomerName]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text8" Left="307.63" Top="305.95" Width="90.72" Height="24" Text="Total Amount" HorzAlign="Right" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text9" Left="396.9" Top="304.95" Width="73.71" Height="24" Text="[BaseReportData.Amount]" Font="Arial, 9pt, style=Underline"/>
+      <TextObject Name="Text10" Left="472.5" Top="304.95" Width="47.25" Height="23.81" Text="DATE" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text11" Left="519.75" Top="307.95" Width="94.5" Height="33.26" Text="[BaseReportData.CheckDate]" Font="Arial, 9pt, style=Underline"/>
+      <TextObject Name="Text12" Left="614.25" Top="304.95" Width="37.8" Height="23.81" Text="[BaseReportData.CurrencyName]" Font="Arial, 9pt"/>
+      <TextObject Name="Text13" Left="648.27" Top="306.4" Width="102.06" Height="33.26" Text="[BaseReportData.CheckNO]" Font="Arial, 9pt"/>
+      <TextObject Name="Text14" Left="9.45" Top="339.75" Width="113.4" Height="28.35" Border.Lines="All" Border.Color="Teal" Text="Customer &#13;&#10;Reference NO" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text15" Left="122.85" Top="339.75" Width="151.2" Height="28.35" Border.Lines="Left, Top" Border.Color="Teal" Text="Description" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text16" Left="274.05" Top="339.75" Width="85.05" Height="28.35" Border.Lines="Left, Top" Border.Color="Teal" Text="Amount" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text17" Left="359.1" Top="339.75" Width="132.3" Height="28.35" Border.Lines="Left, Top" Border.Color="Teal" Text="Customer &#13;&#10;Reference NO" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text18" Left="472.5" Top="339.75" Width="151.2" Height="28.35" Border.Lines="Left, Top" Border.Color="Teal" Text="Description" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text19" Left="623.7" Top="339.75" Width="94.5" Height="28.35" Border.Lines="All" Border.Color="Teal" Text="Amount" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text20" Left="9.45" Top="368.1" Width="113.4" Height="245.7" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.CustomerRefNO1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text21" Left="122.85" Top="368.1" Width="151.2" Height="245.7" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Description1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text22" Left="274.05" Top="368.1" Width="85.05" Height="245.7" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Amount1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text23" Left="359.1" Top="368.1" Width="113.4" Height="245.7" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.CustomerRefNO2]" Font="Arial, 9pt"/>
+      <TextObject Name="Text24" Left="472.5" Top="368.1" Width="151.2" Height="245.7" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Description2]" Font="Arial, 9pt"/>
+      <TextObject Name="Text25" Left="623.7" Top="368.1" Width="94.5" Height="245.7" Border.Lines="All" Border.Color="Teal" Text="[BaseReportData.Amount2]" Font="Arial, 9pt"/>
+      <TextObject Name="Text26" Left="9.45" Top="649.95" Width="56.7" Height="24" Text="PAY TO" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text27" Left="66.48" Top="644.28" Width="238.14" Height="33.26" Text="[BaseReportData.CustomerName]" VertAlign="Center" Font="Arial, 9pt" Wysiwyg="true"/>
+      <TextObject Name="Text28" Left="306.18" Top="649.95" Width="94.5" Height="24" Text="Total Amount" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text29" Left="396.9" Top="649.95" Width="73.71" Height="24" Text="[BaseReportData.Amount]" Font="Arial, 9pt, style=Underline"/>
+      <TextObject Name="Text30" Left="472.5" Top="649.95" Width="47.25" Height="23.81" Text="DATE" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text31" Left="519.75" Top="640.5" Width="94.5" Height="33.26" Text="[BaseReportData.CheckDate]" Font="Arial, 9pt, style=Underline"/>
+      <TextObject Name="Text32" Left="614.25" Top="649.95" Width="37.8" Height="23.81" Text="[BaseReportData.CurrencyName]" Font="Arial, 9pt"/>
+      <TextObject Name="Text33" Left="648.27" Top="649.95" Width="83.16" Height="33.26" Text="[BaseReportData.CheckNO]" Font="Arial, 9pt"/>
+      <TextObject Name="Text34" Left="9.45" Top="684.75" Width="113.4" Height="37.8" Border.Lines="All" Border.Color="Teal" Text="Customer &#13;&#10;Reference NO" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text35" Left="122.85" Top="684.75" Width="151.2" Height="37.8" Border.Lines="Left, Top" Border.Color="Teal" Text="Description" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text36" Left="274.05" Top="684.75" Width="85.05" Height="37.8" Border.Lines="Left, Top" Border.Color="Teal" Text="Amount" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text37" Left="359.1" Top="684.75" Width="113.4" Height="37.8" Border.Lines="Left, Top" Border.Color="Teal" Text="Customer Reference NO" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text38" Left="472.5" Top="684.75" Width="151.2" Height="37.8" Border.Lines="Left, Top" Border.Color="Teal" Text="Description" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text39" Left="623.7" Top="684.75" Width="94.5" Height="37.8" Border.Lines="Left, Right, Top" Border.Color="Teal" Text="Amount" VertAlign="Center" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text40" Left="9.45" Top="722.55" Width="113.4" Height="236.25" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.CustomerRefNO1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text41" Left="122.85" Top="722.55" Width="151.2" Height="236.25" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Description1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text42" Left="274.05" Top="722.55" Width="85.05" Height="236.25" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Amount1]" Font="Arial, 9pt"/>
+      <TextObject Name="Text43" Left="359.1" Top="722.55" Width="113.4" Height="236.25" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.CustomerRefNO2]" Font="Arial, 9pt"/>
+      <TextObject Name="Text44" Left="472.5" Top="722.55" Width="151.2" Height="236.25" Border.Lines="Left, Top, Bottom" Border.Color="Teal" Text="[BaseReportData.Description2]" Font="Arial, 9pt"/>
+      <TextObject Name="Text45" Left="623.7" Top="722.55" Width="94.5" Height="236.25" Border.Lines="All" Border.Color="Teal" Text="[BaseReportData.Amount2]" Font="Arial, 9pt"/>
+    </PageHeaderBand>
+  </ReportPage>
+</Report>

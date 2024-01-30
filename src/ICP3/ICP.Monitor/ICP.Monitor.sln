@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.BLL", "ICP.Monitor.BLL\ICP.Monitor.BLL.csproj", "{1DBB5A83-40A6-4F54-8FAD-B98558C109A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.DAL", "ICP.Monitor.DAL\ICP.Monitor.DAL.csproj", "{8E3853C2-FAEB-4B4D-ACC8-BFF0585597D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.Model", "ICP.Monitor.Model\ICP.Monitor.Model.csproj", "{74C8012D-FE57-4FBF-80E0-05B5B4359075}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.Web", "ICP.Monitor.Web\ICP.Monitor.Web.csproj", "{A34BE258-79DC-48E9-AAFC-BE95125085ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.Interface", "ICP.Monitor.ServiceInterface\ICP.Monitor.Interface.csproj", "{0078D634-0798-4FA5-85DC-91D9F883F548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICP.Monitor.Common", "ICP.Monitor.CommonLibrary\ICP.Monitor.Common.csproj", "{11A2F206-F4EA-42E2-A767-C8E54AA1ECCD}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://192.168.0.1:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ICP.Monitor.BLL\\ICP.Monitor.BLL.csproj
+		SccProjectName1 = ICP.Monitor.BLL
+		SccLocalPath1 = ICP.Monitor.BLL
+		SccProjectUniqueName2 = ICP.Monitor.DAL\\ICP.Monitor.DAL.csproj
+		SccProjectName2 = ICP.Monitor.DAL
+		SccLocalPath2 = ICP.Monitor.DAL
+		SccProjectUniqueName3 = ICP.Monitor.Model\\ICP.Monitor.Model.csproj
+		SccProjectName3 = ICP.Monitor.Model
+		SccLocalPath3 = ICP.Monitor.Model
+		SccProjectUniqueName4 = ICP.Monitor.Web\\ICP.Monitor.Web.csproj
+		SccProjectName4 = ICP.Monitor.Web
+		SccLocalPath4 = ICP.Monitor.Web
+		SccProjectUniqueName5 = ICP.Monitor.ServiceInterface\\ICP.Monitor.Interface.csproj
+		SccProjectName5 = ICP.Monitor.ServiceInterface
+		SccLocalPath5 = ICP.Monitor.ServiceInterface
+		SccProjectUniqueName6 = ICP.Monitor.CommonLibrary\\ICP.Monitor.Common.csproj
+		SccProjectName6 = ICP.Monitor.CommonLibrary
+		SccLocalPath6 = ICP.Monitor.CommonLibrary
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DBB5A83-40A6-4F54-8FAD-B98558C109A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DBB5A83-40A6-4F54-8FAD-B98558C109A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DBB5A83-40A6-4F54-8FAD-B98558C109A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DBB5A83-40A6-4F54-8FAD-B98558C109A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3853C2-FAEB-4B4D-ACC8-BFF0585597D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3853C2-FAEB-4B4D-ACC8-BFF0585597D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3853C2-FAEB-4B4D-ACC8-BFF0585597D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3853C2-FAEB-4B4D-ACC8-BFF0585597D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74C8012D-FE57-4FBF-80E0-05B5B4359075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74C8012D-FE57-4FBF-80E0-05B5B4359075}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74C8012D-FE57-4FBF-80E0-05B5B4359075}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74C8012D-FE57-4FBF-80E0-05B5B4359075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34BE258-79DC-48E9-AAFC-BE95125085ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34BE258-79DC-48E9-AAFC-BE95125085ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34BE258-79DC-48E9-AAFC-BE95125085ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34BE258-79DC-48E9-AAFC-BE95125085ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0078D634-0798-4FA5-85DC-91D9F883F548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0078D634-0798-4FA5-85DC-91D9F883F548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0078D634-0798-4FA5-85DC-91D9F883F548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0078D634-0798-4FA5-85DC-91D9F883F548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A2F206-F4EA-42E2-A767-C8E54AA1ECCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A2F206-F4EA-42E2-A767-C8E54AA1ECCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A2F206-F4EA-42E2-A767-C8E54AA1ECCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A2F206-F4EA-42E2-A767-C8E54AA1ECCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

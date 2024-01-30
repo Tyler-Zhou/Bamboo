@@ -1,0 +1,247 @@
+﻿<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generate a CAB WorkItem." Debug="True" ResponseEncoding="UTF-8" NoWarn="0108,0618,1572,1573,1574,0162,2002"%>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Collections.Generic" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="CodeBuilder" %>
+<%@ Assembly Name="CodeBuilder" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Collections" %>
+<%@ Import Namespace="System.Text" %>
+
+<script runat="template">
+
+    Builder b  = new Builder() ; 
+
+    string _descriptionFile= @"C:\Documents and Settings\Administrator\桌面\xmlfile1.xml" ;    
+    [Editor(typeof(System.Windows.Forms.Design.FileNameEditor), typeof(System.Drawing.Design.UITypeEditor))] 
+	[CodeTemplateProperty(CodeTemplatePropertyOption.Required)]
+	[Category("Generation")]
+	[Description("描述文件地址")]
+	[DefaultValue("")]
+	public string DescriptionFile 
+	{ 
+		get
+		{			
+				return _descriptionFile;			
+		}
+		set
+		{
+			if (value.EndsWith("\\")) value = value.Substring(0, value.Length - 1);
+			_descriptionFile = value;
+		} 
+	}
+    
+    void Init(){
+        b.Load(DescriptionFile);
+    }
+    
+    string GetControlType(BaseControl c){
+        switch(c.GetType().Name.ToLower()){
+            case "textbox":
+                return "DevExpress.XtraEditors.TextEdit";
+                break;
+            case "memoedit":
+                return "DevExpress.XtraEditors.MemoEdit" ; 
+            case "dropdownlist":
+                return "DevExpress.XtraEditors.ComboBoxEdit";
+            default:
+                return "DevExpress.XtraEditors.TextEdit" ;
+                break;
+        
+        }
+    }
+    
+</script>
+    <%Init();%>
+
+    <% foreach(DataEditPart c in b.EditParts) {%>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms; 
+using ICP.Framework ;
+using ICP.Framework.Client ;
+using Microsoft.Practices.ObjectBuilder;
+using Microsoft.Practices.CompositeUI;
+using Microsoft.Practices.CompositeUI.WinForms;
+using System.ComponentModel;
+using ICP.Controls ; 
+using <%=b.Namespace%>.WinUI ;
+using <%=b.Namespace%>.ServiceInterface ;
+using <%=b.Namespace%>.ServiceInterface.DataObjects ;
+
+namespace <%=b.Namespace%>.WinUI
+{
+    public partial class <%=c.Name%> : BasePart ,Agilelabs.Framework.Client.IEditPart 
+    {
+        [ServiceDependency]
+        public LongWin.Framework.Client.IDataFindClientService dfcService { get; set; }
+
+        public <%=c.Name%>()
+        {
+            InitializeComponent();            
+        }
+        
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            
+            if(DesignMode == false){
+                <%foreach(BaseControl ctl in c.Controls){ %>
+                <%=ctl.ID%>Label.Text = <%=ctl.CultureLabel%>;
+                <%if(ctl is SearchTextBox){%>
+                
+                dfcService.Register(<%=ctl.ID%>, "<%=((SearchTextBox)ctl).SearcherName%>", <%=((SearchTextBox)ctl).SearchField%>, <%=((SearchTextBox)ctl).TextField%>, "<%=((SearchTextBox)ctl).ValueField%>","<%=((SearchTextBox)ctl).IsDialog ? "" : "MainWorkspace"%>" );
+                <%}%>                
+                <%if(ctl is DropDownList && ((DropDownList)ctl).Items !=null && ((DropDownList)ctl).Items.Count>0){%>
+                
+                <%foreach(string item in ((DropDownList)ctl).Items){%>
+                <%=ctl.ID%>.Properties.Items.Add(<%=item%>);
+                <%}}%>
+                <%}%>
+
+            }
+        }        
+        protected override string Title { get{ return <%=c.Title%> ; }}
+        
+        protected override bool SaveData()
+        {
+            return false;
+        }
+    }
+}
+    
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms; 
+using ICP.Framework ;
+using ICP.Framework.Client ;
+using Microsoft.Practices.ObjectBuilder;
+using Microsoft.Practices.CompositeUI;
+using Microsoft.Practices.CompositeUI.WinForms;
+using System.ComponentModel;
+using <%=b.Namespace%>.WinUI ;
+using <%=b.Namespace%>.ServiceInterface ;
+using <%=b.Namespace%>.ServiceInterface.DataObjects ;
+
+namespace <%=b.Namespace%>.WinUI
+{
+    public partial class <%=c.Name%>   
+    {     
+        private System.ComponentModel.IContainer components = null;
+        System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        <%foreach(BaseControl ctl in c.Controls){ %>  
+        private DevExpress.XtraEditors.LabelControl <%=ctl.ID%>Label ;
+        private <%=GetControlType(ctl)%> <%=ctl.ID%> ;     
+        <%}%>
+        public void InitializeComponent(){
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            // begin 创建控件
+        <%foreach(BaseControl ctl in c.Controls){ %>     
+            this.<%=ctl.ID%>Label = new DevExpress.XtraEditors.LabelControl();
+            this.<%=ctl.ID%> = new <%=GetControlType(ctl)%>();
+        <%}%>  
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+
+            <%foreach(BaseControl ctl in c.Controls){ %>     
+            ((System.ComponentModel.ISupportInitialize)(this.<%=ctl.ID%>.Properties)).BeginInit();
+            <%}%>  
+
+            // end 创建控件
+            this.SuspendLayout();
+            
+            //this.bindingSource1.DataSource = typeof(<%=c.DataType%>);
+
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 21);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(436, 318);
+            this.tableLayoutPanel1.TabIndex = 0;   
+            //begin 初始化表格
+            this.tableLayoutPanel1.ColumnCount = <%=c.Columns.Count *2%>;
+            <%foreach(Column col in c.Columns){ %>
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute , <%=col.LabelWidth%>));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.<%=col.SizeType.ToString()%>, <%=col.Width%>));
+            <%}%>
+            
+            this.tableLayoutPanel1.RowCount = <%=c.Rows.Count%>;
+            <%foreach(Row row in c.Rows){ %>
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.<%=row.SizeType.ToString()%>, <%=row.Height%>));
+            <%}%>
+            
+            <%foreach(BaseControl ctl in c.Controls){ %>     
+            this.tableLayoutPanel1.Controls.Add(this.<%=ctl.ID%>Label , <%=ctl.Column==0?ctl.Column:ctl.Column*2%>, <%=ctl.Row%>);
+            this.tableLayoutPanel1.Controls.Add(this.<%=ctl.ID%> , <%=ctl.Column==0?ctl.Column+1:ctl.Column*2+1%>, <%=ctl.Row%>);
+            <%}%>  
+            //end 初始化表格
+            
+            //begin 初始化控件
+            <% int i=0; foreach(BaseControl ctl in c.Controls){ %>
+            this.<%=ctl.ID%>Label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.<%=ctl.ID%>Label.Location = new System.Drawing.Point(107, 3);
+            this.<%=ctl.ID%>Label.Name = "<%=ctl.ID%>Label";
+            this.<%=ctl.ID%>Label.Size = new System.Drawing.Size(91, 14);
+            this.<%=ctl.ID%>Label.TabIndex = 0;
+            this.<%=ctl.ID%>Label.Text = "<%=ctl.Label%>";
+            
+            this.<%=ctl.ID%>.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.<%=ctl.ID%>.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSource1, "<%=ctl.DataProperty%>", true));
+            this.<%=ctl.ID%>.Location = new System.Drawing.Point(121, 37);
+            this.<%=ctl.ID%>.Name = "<%=ctl.ID%>";
+            this.<%=ctl.ID%>.Size = new System.Drawing.Size(427, 21);
+            this.<%=ctl.ID%>.TabIndex = <%=i%>;
+            <% i++ ;%>
+            <%if(ctl.ColSpan >1){%>
+            this.tableLayoutPanel1.SetColumnSpan(<%=ctl.ID%>, <%=ctl.ColSpan%>);
+            <%}%>
+            <%if(ctl.RowSpan >1){%>
+            this.tableLayoutPanel1.SetRowSpan(<%=ctl.ID%>, <%=ctl.RowSpan%>);
+            <%}%>         
+            <%}%>
+            //end 初始化控件
+            
+            // 
+            // XtraUserControl1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Name = "XtraUserControl1";
+            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Size = new System.Drawing.Size(<%=c.Width%>, <%=c.Height%>);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            <%foreach(BaseControl ctl in c.Controls){ %>     
+            ((System.ComponentModel.ISupportInitialize)(this.<%=ctl.ID%>.Properties)).EndInit();
+            <%}%>  
+
+            this.ResumeLayout(false);
+        }
+          /// <summary> 
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }          
+}
+<%}%>

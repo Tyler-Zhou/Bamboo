@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file contains job definitions in schema version 2.0 format -->
+<!--cron-expression:[秒] [分] [小时] [日] [月] [周] [年]
+      序号    说明     是否必填     允许填写的值           允许的通配符    
+        1     秒      是          0-59                  , - * /    
+        2     分      是          0-59                  , - * /    
+        3    小时     是          0-23                  , - * /    
+        4     日      是          1-31                  , - * ? / L W    
+        5     月      是          1-12 or JAN-DEC       , - * /    
+        6     周      是          1-7 or SUN-SAT        , - * ? / L #    
+        7     年      否          empty 或 1970-2099     , - * /  
+        每个元素可以是一个值(如6),一个连续区间(9-12),一个间隔时间(8-18/4)(/表示每隔4小时),一个列表(1,3,5)
+        通配符（'*'）可以被用来表示域中“每个”可能的值
+        '/'字符用来表示值的增量，例如, 如果分钟域中放入'0/15'，它表示“每隔15分钟，从0开始”，如果在份中域中使用'3/20'，则表示“小时中每隔20分钟，从第3分钟开始”或者另外相同的形式就是'3,23,43'
+        ?'字符可以用在day-of-month及day-of-week域中，它用来表示“没有指定值”。这对于需要指定一个或者两个域的值而不需要对其他域进行设置来说相当有用。
+        'L'字符可以在day-of-month及day-of-week中使用，这个字符是"last"的简写，但是在两个域中的意义不同。例如，在day-of-month域中的"L"表示这个月的最后一天，即，一月的31日，非闰年的二月的28日。如果它用在day-of-week中，则表示"7"或者"SAT"。但是如果在day-of-week域中，这个字符跟在别的值后面，则表示"当月的最后的周XXX"。例如："6L" 或者 "FRIL"都表示本月的最后一个周五。当使用'L'选项时，最重要的是不要指定列表或者值范围，否则会导致混乱。
+        'W' 字符用来指定距离给定日最接近的周几（在day-of-week域中指定）。例如：如果你为day-of-month域指定为"15W",则表示“距离月中15号最近的周几”。
+        '#'表示表示月中的第几个周几。例如：day-of-week域中的"6#3" 或者 "FRI#3"表示“月中第三个周五”。
+        MON TUE WED THU FRI SAT SUN
+    -->
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData"
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule>
+
+    <job>
+      <name>CrawlCargoTracking</name>
+      <group>CargoTracking</group>
+      <description>货物箱动态网页数据抓取</description>
+      <job-type>Cityocean.Crawl.JobSchedule.JobCargoTracking,Cityocean.Crawl.JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <job>
+      <name>AnalysisCargoTracking</name>
+      <group>AnalysisData</group>
+      <description>货物箱动态网页数据解析</description>
+      <job-type>Cityocean.Crawl.JobSchedule.JobAnalysisCargoTracking,Cityocean.Crawl.JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+
+    <job>
+      <name>CrawlTerminalVesselSchedule</name>
+      <group>Terminal</group>
+      <description>码头船期网页数据</description>
+      <job-type>Cityocean.Crawl.JobSchedule.JobTerminalVesselSchedule,Cityocean.Crawl.JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <job>
+      <name>AnalysisTerminalVesselSchedule</name>
+      <group>AnalysisData</group>
+      <description>码头船期网页数据解析</description>
+      <job-type>Cityocean.Crawl.JobSchedule.JobAnalysisTerminalVesselSchedule,Cityocean.Crawl.JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <job>
+      <name>CrawlTerminalContainerStatus</name>
+      <group>Terminal</group>
+      <description>码头箱状态网页数据抓取</description>
+      <job-type>Cityocean.Crawl.JobSchedule.JobTerminalContainerStatus,Cityocean.Crawl.JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>TriggerCargoTracking</name>
+        <group>CargoTrackingTriggerGroup</group>
+        <job-name>CrawlCargoTracking</job-name>
+        <job-group>CargoTracking</job-group>
+        <cron-expression>0 0/1 0-22 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>TriggerAnalysisCargoTracking</name>
+        <group>AnalysisCargoTrackingTriggerGroup</group>
+        <job-name>AnalysisCargoTracking</job-name>
+        <job-group>AnalysisData</job-group>
+        <cron-expression>5 0/5 0-22 * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+    <trigger>
+      <cron>
+        <name>TriggerTerminalVesselSchedule</name>
+        <group>TerminalVesselScheduleTriggerGroup</group>
+        <job-name>CrawlTerminalVesselSchedule</job-name>
+        <job-group>Terminal</job-group>
+        <cron-expression>30 0/5 9-22 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>TriggerAnalysisTerminalVesselSchedule</name>
+        <group>AnalysisTerminalVesselScheduleTriggerGroup</group>
+        <job-name>AnalysisTerminalVesselSchedule</job-name>
+        <job-group>AnalysisData</job-group>
+        <cron-expression>35 0/5 9-22 * * ?</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>TriggerTerminalContainerStatus</name>
+        <group>TerminalContainerStatusTriggerGroup</group>
+        <job-name>CrawlTerminalContainerStatus</job-name>
+        <job-group>Terminal</job-group>
+        <cron-expression>40 0/10 9-22 * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/15/2011 15:45:40" ReportInfo.Modified="09/30/2011 17:52:12" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="JournalBaseReportData" ReferenceName="JournalBaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="No" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="PostDate" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="JournalDetailReportData" ReferenceName="JournalDetailReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="GLDescription" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="DRAmount" DataType="System.String"/>
+      <Column Name="CRAmount" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="TotalFeeReportData" ReferenceName="TotalFeeReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="TotalDRAmount" DataType="System.String"/>
+      <Column Name="TotalCRAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <ReportTitleBand Name="ReportTitle1" Top="20" Width="718.2" Height="56.7">
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="37.8" Text="JournalReport" HorzAlign="Center" Font="宋体, 20pt, style=Bold" TextFill.Color="Maroon"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="96.7" Width="718.2" Height="109.62">
+      <TextObject Name="Text2" Width="37.8" Height="18.9" Text="No:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text3" Left="160.65" Width="141.75" Height="18.9" Text="CompanyName:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="481.95" Width="94.5" Height="18.9" Text="PostDate:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text5" Top="28.35" Width="75.6" Height="18.9" Text="Remark:" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text6" Top="85.05" Width="283.5" Height="18.9" Text="GLDescription" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text7" Left="283.5" Top="85.05" Width="75.6" Height="18.9" Text="Cur" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text8" Left="359.1" Top="85.05" Width="103.95" Height="18.9" Text="DRAmt" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text9" Left="463.05" Top="85.05" Width="103.95" Height="18.9" Text="CRAmt" Font="宋体, 12pt, style=Bold"/>
+      <TextObject Name="Text10" Left="567" Top="85.05" Width="151.2" Height="18.9" Text="Remark" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line1" Top="109.62" Width="718.2" Border.Color="Maroon" Border.Width="2"/>
+      <TextObject Name="Text11" Left="37.8" Width="132.3" Height="18.9" Text="[JournalBaseReportData.No]" VertAlign="Center"/>
+      <TextObject Name="Text12" Left="292.95" Width="189" Height="18.9" Text="[JournalBaseReportData.CompanyName]" VertAlign="Center"/>
+      <TextObject Name="Text13" Left="567" Width="151.2" Height="18.9" Text="[JournalBaseReportData.PostDate]" VertAlign="Center"/>
+      <TextObject Name="Text14" Left="75.6" Top="28.35" Width="642.6" Height="56.7" Text="[JournalBaseReportData.Remark]"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="226.32" Width="718.2" Height="32.13" DataSource="JournalDetailReportData">
+      <TextObject Name="Text15" Top="3.78" Width="283.5" Height="18.9" Text="[JournalDetailReportData.GLDescription]"/>
+      <TextObject Name="Text16" Left="283.5" Top="3.78" Width="75.6" Height="18.9" Text="[JournalDetailReportData.Currency]"/>
+      <TextObject Name="Text17" Left="359.1" Top="3.78" Width="103.95" Height="18.9" Text="[JournalDetailReportData.DRAmount]"/>
+      <TextObject Name="Text18" Left="463.05" Top="3.78" Width="103.95" Height="18.9" Text="[JournalDetailReportData.CRAmount]"/>
+      <TextObject Name="Text19" Left="567" Top="3.78" Width="151.2" Height="18.9" Text="[JournalDetailReportData.Remark]"/>
+    </DataBand>
+    <DataBand Name="Data2" Top="278.45" Width="718.2" Height="160.65">
+      <TextObject Name="Text20" Left="207.9" Top="3.78" Width="75.6" Height="18.9" Text="Total:" Font="宋体, 12pt, style=Bold"/>
+      <LineObject Name="Line2" Width="718.2" Border.Color="Maroon" Border.Width="2"/>
+      <SubreportObject Name="Subreport1" Left="283.5" Top="3.78" Width="283.5" Height="18.9" ReportPage="Page2" PrintOnParent="true"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="459.1" Width="718.2" Height="37.8"/>
+  </ReportPage>
+  <ReportPage Name="Page2">
+    <DataBand Name="Data3" Top="20" Width="718.2" Height="21.9" DataSource="TotalFeeReportData">
+      <TextObject Name="Text21" Width="75.6" Height="18.9" Text="[TotalFeeReportData.Currency]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text22" Left="75.6" Width="103.95" Height="18.9" Text="[TotalFeeReportData.TotalDRAmount]" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text23" Left="179.55" Width="103.95" Height="18.9" Text="[TotalFeeReportData.TotalCRAmount]" Font="宋体, 10pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

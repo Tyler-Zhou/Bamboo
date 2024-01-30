@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/22/2010 16:09:59" ReportInfo.Modified="07/30/2013 14:13:32" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+    private void Data1_AfterData(object sender, EventArgs e)
+    {
+      if(String.IsNullOrEmpty(((String)Report.GetColumnValue(&quot;ReportSource.Header&quot;)))==false)
+      {
+        txtHand.Text =   ((String)Report.GetColumnValue(&quot;ReportSource.Header&quot;));
+      }    
+      
+      
+      if((String)Report.GetColumnValue(&quot;ReportSource.PaymentTerm&quot;)==&quot;CC&quot;)
+        txtPP.Text  = String.Empty;
+      else
+        txtCC.Text  = String.Empty;
+      
+      if((String)Report.GetColumnValue(&quot;ReportSource.ReportStyle&quot;)==&quot;Copy&quot;)
+        txtStyle.Visible =false;
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="Header" DataType="System.String"/>
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="CompanyLogo" DataType="System.String"/>
+      <Column Name="CompanyFax" DataType="System.String"/>
+      <Column Name="CompanyTel" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="NumberOfOriginal" DataType="System.Int32"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="ShipperOrderNo" DataType="System.String"/>
+      <Column Name="BLType" DataType="System.Int32"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="Agent" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PreCarriage" DataType="System.String"/>
+      <Column Name="FreightPayable" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="PreVesselVoyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="PortOfLoading" DataType="System.String"/>
+      <Column Name="PortOfDischarge" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="DescriptionOfGoods" DataType="System.String"/>
+      <Column Name="DescriptionOfContainer" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="FreightAndCharges" DataType="System.String"/>
+      <Column Name="PaymentTerm" DataType="System.String"/>
+      <Column Name="PlaceOfIssue" DataType="System.String"/>
+      <Column Name="IssueBy" DataType="System.String"/>
+      <Column Name="IssueDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ReportStyle" DataType="System.String"/>
+      <Column Name="AMSNO" DataType="System.String"/>
+      <Column Name="ISFNO" DataType="System.String"/>
+      <Column Name="RefNO" DataType="System.String"/>
+      <Column Name="ETDString" DataType="System.String"/>
+      <Column Name="IssueDateString" DataType="System.String"/>
+      <Column Name="NumberOfOriginalString" DataType="System.String"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="AMSNO" Enabled="false" DataType="System.String"/>
+      <Column Name="ISFNO" Enabled="false" DataType="System.String"/>
+      <Column Name="AgentText" DataType="System.String"/>
+      <Column Name="MBLNo" DataType="System.String"/>
+      <Column Name="CtnQtyInfo" DataType="System.String"/>
+      <Column Name="IsShowMBLNo" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <DataBand Name="Data1" Width="718.2" Height="1007.37" AfterDataEvent="Data1_AfterData">
+      <TextObject Name="Text55" Left="11.34" Top="567" Width="525.42" Height="215.46" Text="[ReportSource.DescriptionOfContainer]" Font="Arial, 9pt"/>
+      <TextObject Name="txtHand" Width="718.2" Height="30.24" Text="BILL OF LADING" HorzAlign="Center" VertAlign="Center" Font="Arial, 20pt, style=Bold"/>
+      <TextObject Name="Text2" Top="30.24" Width="718.2" Height="18.9" Text="FOR COMBINED TRANSPORT OR PORT TO PORTSHIPMENT" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="Text13" Left="11.34" Top="49.14" Width="347.76" Height="15.12" Border.Lines="Right, Top" Text="Shipper" Font="Arial, 9pt"/>
+      <TextObject Name="Text14" Left="11.34" Top="60.48" Width="347.76" Height="80.51" Border.Lines="Right" Text="[ReportSource.Shipper]" Font="Arial, 9pt"/>
+      <TextObject Name="Text9" Left="11.34" Top="141.75" Width="347.76" Height="24.57" Border.Lines="Right, Top" Text="Consignee" Font="Arial, 9pt"/>
+      <TextObject Name="Text10" Left="11.34" Top="154.98" Width="347.76" Height="92.61" Border.Lines="Right" Text="[ReportSource.Consignee]" Font="Arial, 9pt"/>
+      <TextObject Name="Text11" Left="11.34" Top="245.7" Width="347.76" Height="24.57" Border.Lines="Right, Top" Text="Notify Party(carrier not to be responsible for failure to notify)" Font="Arial, 9pt"/>
+      <TextObject Name="Text12" Left="11.34" Top="260.82" Width="347.76" Height="83.16" Border.Lines="Right" Text="[ReportSource.NotifyParty]" Font="Arial, 9pt"/>
+      <TextObject Name="Text26" Left="11.34" Top="343.98" Width="173.88" Height="15.12" Border.Lines="Right, Top" Text="Place of Receipt" Font="Arial, 9pt"/>
+      <TextObject Name="Text27" Left="11.34" Top="359.1" Width="173.88" Height="30.24" Border.Lines="Right" Text="[ReportSource.PlaceOfReceipt]" Font="Arial, 9pt"/>
+      <TextObject Name="Text15" Left="11.34" Top="389.34" Width="173.88" Height="15.12" Border.Lines="Right, Top" Text="Vessel &amp; Voyage" Font="Arial, 9pt"/>
+      <TextObject Name="Text16" Left="11.34" Top="404.46" Width="173.88" Height="30.24" Border.Lines="Right" Text="[ReportSource.VesselVoyage]" Font="Arial, 9pt"/>
+      <TextObject Name="Text17" Left="185.22" Top="343.98" Width="173.88" Height="15.12" Border.Lines="Left, Top" Text="Port of Loading" Font="Arial, 9pt"/>
+      <TextObject Name="Text18" Left="185.22" Top="359.1" Width="173.88" Height="30.24" Border.Lines="Left" Text="[ReportSource.PortOfLoading]" Font="Arial, 9pt"/>
+      <TextObject Name="Text19" Left="185.22" Top="389.34" Width="173.88" Height="15.12" Border.Lines="Left, Right, Top" Text="Port of Discharge" Font="Arial, 9pt"/>
+      <TextObject Name="Text20" Left="185.22" Top="404.46" Width="173.88" Height="30.24" Border.Lines="Right" Text="[ReportSource.PortOfDischarge]" Font="Arial, 9pt"/>
+      <TextObject Name="Text22" Left="11.34" Top="434.7" Width="136.08" Height="15.12" Border.Lines="Right, Top" Text="Marks and Numbers" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text24" Left="359.1" Top="343.98" Width="347.76" Height="15.12" Border.Lines="Left, Top" Text="PreCarriage" Font="Arial, 9pt"/>
+      <TextObject Name="Text25" Left="359.1" Top="359.1" Width="347.76" Height="30.24" Border.Lines="Left" Text="[ReportSource.PreCarriage]" Font="Arial, 9pt"/>
+      <TextObject Name="Text3" Left="359.1" Top="49.14" Width="173.88" Height="18.9" Border.Lines="Right, Top" Text="BL/NO." VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text28" Left="359.1" Top="68.04" Width="173.88" Height="18.9" Border.Lines="Right, Bottom" Text="[ReportSource.BLNo]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text29" Left="532.98" Top="49.14" Width="173.88" Height="18.9" Border.Lines="Top" Text="Number of Originals" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text30" Left="532.98" Top="68.04" Width="173.88" Height="18.9" Border.Lines="Bottom" Text="[ReportSource.NumberOfOriginalString]" VertAlign="Center"/>
+      <TextObject Name="Text31" Left="359.1" Top="86.94" Width="86.94" Height="18.9" Text="Shipper's Ref." VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text32" Left="446.04" Top="86.94" Width="260.82" Height="18.9" Text="[ReportSource.RefNO]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text34" Left="359.1" Top="226.8" Width="347.76" Height="18.9" Border.Lines="Top" Text="For Cargo Delivery,Please Apply To:" Font="Arial, 9pt"/>
+      <TextObject Name="Text35" Left="359.1" Top="245.7" Width="347.76" Height="98.28" Text="[ReportSource.Agent]" Font="Arial, 9pt"/>
+      <TextObject Name="Text36" Left="359.1" Top="389.34" Width="173.88" Height="15.12" Border.Lines="Right, Top" Text="Place of Delivery" Font="Arial, 9pt"/>
+      <TextObject Name="Text37" Left="359.1" Top="404.46" Width="173.88" Height="30.24" Border.Lines="Right" Text="[ReportSource.PlaceOfDelivery]" Font="Arial, 9pt"/>
+      <TextObject Name="Text38" Left="532.98" Top="389.34" Width="173.88" Height="15.12" Border.Lines="Left, Top" Text="Freight Payable" Font="Arial, 9pt"/>
+      <TextObject Name="Text39" Left="532.98" Top="404.46" Width="173.88" Height="30.24" Border.Lines="Left" Font="Arial, 9pt"/>
+      <TextObject Name="Text40" Left="147.42" Top="434.7" Width="98.28" Height="15.12" Border.Lines="Right, Top" Text="Quantity" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text41" Left="245.7" Top="434.7" Width="234.36" Height="15.12" Border.Lines="Right, Top" Text="Description of Goods" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text42" Left="593.46" Top="434.7" Width="113.4" Height="15.12" Border.Lines="Top" Text="Measurement" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text43" Left="480.06" Top="434.7" Width="113.4" Height="15.12" Border.Lines="Right, Top" Text="Gross Weight" HorzAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text44" Left="11.34" Top="449.82" Width="136.08" Height="323.19" Text="[ReportSource.Marks]" Font="Arial, 9pt"/>
+      <TextObject Name="Text45" Left="147.42" Top="449.82" Width="98.28" Height="115.29" Text="[ReportSource.Quantity]" Font="Arial, 9pt"/>
+      <TextObject Name="Text46" Left="245.7" Top="449.82" Width="234.36" Height="332.64" Text="[ReportSource.DescriptionOfGoods]" Font="Arial, 9pt"/>
+      <TextObject Name="Text47" Left="480.06" Top="449.82" Width="113.4" Height="323.19" Text="[ReportSource.GrossWeight]" Font="Arial, 9pt"/>
+      <TextObject Name="Text48" Left="593.46" Top="449.82" Width="113.4" Height="332.64" Text="[ReportSource.Measurement]" Font="Arial, 9pt"/>
+      <TextObject Name="Text6" Left="260.82" Top="729.54" Width="446.04" Height="45.36" Text="[ReportSource.CtnQtyInfo]" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text50" Left="548.1" Top="672.84" Width="158.76" Height="15.12" Text="SHIPPED ON BOARD" Font="Arial, 9pt"/>
+      <TextObject Name="Text52" Left="548.1" Top="703.08" Width="158.76" Height="15.12" Text="[ReportSource.ETDString]" Font="Arial, 9pt"/>
+      <TextObject Name="Text53" Left="11.34" Top="782.46" Width="200.34" Height="18.9" Border.Lines="All" Text="Freight and Charges" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text23" Left="211.68" Top="782.46" Width="75.6" Height="18.9" Border.Lines="All" Text="Prepaid" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text54" Left="287.28" Top="782.46" Width="79.38" Height="18.9" Border.Lines="All" Text="Collect" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text56" Left="11.34" Top="801.36" Width="200.34" Height="64.26" Border.Lines="All" Font="Arial, 9pt"/>
+      <TextObject Name="txtPP" Left="211.68" Top="801.36" Width="75.6" Height="64.26" Border.Lines="All" Text="PP" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="txtCC" Left="287.28" Top="801.36" Width="79.38" Height="64.26" Border.Lines="All" Text="CC" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text7" Left="366.66" Top="782.46" Width="347.76" Height="196.56" Text="RECEIVED by the Carrier the Goods as specified above in apparent good&#13;&#10;order and condition,unless otherwise stated,to be transported to such&#13;&#10;place as agreed,authorised or permitted herein and subject to all the terms&#13;&#10;and conditions apearing on the front and reverse of this Bill of Lading to&#13;&#10;which the merchant agrees by accepting this Bill of Lading,any local privlegs&#13;&#10;and customs notwithstanding.&#13;&#10;&#13;&#10;The particulars given above as stated by the shipper and the weight,&#13;&#10;measure,puantity,condition,contents and value of the Goods are unknown&#13;&#10;to the carrier.&#13;&#10;&#13;&#10;in WITNESS where of one(1) original Bill of Lading has been signed if not&#13;&#10;otherwise stated above,the same being accomplished the other(s),if any,&#13;&#10;to be void.if required by the Carrier one(1) orgininal Bill of Loading must be&#13;&#10;surrendered duly endorsed in exchange for the Goods or delivery order.&#13;&#10;&#13;&#10;Place and date of issue&#13;&#10;Signed on behalf of the Carrier&#13;&#10;&#13;&#10;" Font="Arial, 7pt"/>
+      <TextObject Name="Text8" Left="366.66" Top="979.02" Width="105.84" Height="15.12" Text="[ReportSource.PlaceOfIssue]" Font="Arial, 7pt"/>
+      <TextObject Name="Text60" Left="472.5" Top="979.02" Width="241.92" Height="15.12" Text="[ReportSource.ETDString]" Font="Arial, 7pt"/>
+      <TextObject Name="txtStyle" Left="368.55" Top="733.32" Width="347.76" Height="45.36" Text="[ReportSource.ReportStyle]" HorzAlign="Right" Font="Tahoma, 25pt" TextFill.Color="DimGray"/>
+      <TextObject Name="Text1" Left="11.34" Top="816.48" Width="355.32" Height="30.24" Text="[ReportSource.AMSNO]" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text21" Left="11.34" Top="842.94" Width="355.32" Height="26.46" Text="[ReportSource.ISFNO]" Font="Arial, 11pt, style=Bold"/>
+      <TextObject Name="Text33" Left="359.1" Top="107.35" Width="347.76" Height="32.13" Text="[ReportSource.MBLNo]" HorzAlign="Center" VertAlign="Center" Font="Arial, 12pt, style=Bold"/>
+      <TextObject Name="Text4" Left="359.1" Top="138.73" Width="347.76" Height="86.94" Border.Lines="Top" Text="[ReportSource.CompanyName]" Font="Arial, 16pt, style=Bold"/>
+      <TextObject Name="Text5" Left="10.58" Top="803.25" Width="198.45" Height="18.9" Text="[ReportSource.FreightPayable]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+      <TextObject Name="Text61" Left="9.45" Top="869.4" Width="360.99" Height="90.72" Text="Notwithstanding any provision to the contrary, the Merchant agrees that if this Bill of Lading provides for delivery of the Goods at a port in Brazil, discharge of the Goods to any port authority at such port shall constitute due delivery hereunder and all liability of the TOP SHIPPING LOGISTICS  CO.,LTD whatsoever in connection with the Goods (including without limitation for misdelivery) shall cease at that time. TOP SHIPPING LOGISTICS  CO.,LTD shall not be responsible for delivery of cargo without the presentation of the Original Bill of Lading, as Brazilian Customs Regulations" Font="Arial, 7pt"/>
+      <TextObject Name="Text62" Left="9.45" Top="954.45" Width="360.99" Height="43.47" Text="The contract evidenced by or contained in this Bill of Lading &#13;&#10;is governed by the law of honpKonq and any clairn of dispute &#13;&#10;arisinq herunder of in connection herewith shall be determinde&#13;&#10;by the courts is HongKong and no other court.&#13;&#10;" Font="Arial, 7pt"/>
+    </DataBand>
+  </ReportPage>
+</Report>

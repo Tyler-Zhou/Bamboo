@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Item>
+  <!--
+  Name               事件代码名称
+  Methods            方法名
+  ModifyValue        修改值
+  OriginalValue      原值
+  SqlType            数据库字段类型
+  Cancel             是否可以取消
+  Repeat             是否可以重复产生事件
+  OperationType      业务类型
+  CaptionCn          提示信息中文
+  CaptionEn          提示信息英文
+  AssociatedEvent    关联的事件
+  Permissions        操作权限
+  -->
+  <Items Name="SOA" Methods="Command_ForSoApplySO" ModifyValue="" OriginalValue="" SqlType="bit" OperationType="1"         Permissions="客服,订舱"></Items>
+  <Items Name="SOB" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"  OperationType="1"                          Permissions="订舱"></Items>
+  <Items Name="SOS" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"  OperationType="1" AssociatedEvent="SOPV"   Permissions="客服"></Items>
+  <Items Name="SOPV" Methods="Command_OceanTrackings" ModifyValue="1" OriginalValue="0" SqlType="bit" OperationType="1" CaptionCn="您确定标识[SOPV]吗？" CaptionEn="Do you want to mark [SOPV]?"                                          Permissions="客服"></Items>
+  <Items Name="SINC" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"  OperationType="1"                         Permissions="客服,文件"></Items>
+  <Items Name="SIR" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"  OperationType="1"                      Permissions="客服,文件"></Items>
+  <Items Name="BLCfm" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"  OperationType="1"                    Permissions="客服,文件"></Items>
+  <Items Name="MBLD" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint" OperationType="1"                      Permissions="客服,文件"></Items>
+  <Items Name="AMS" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"   OperationType="1"                     Permissions="客服,文件"></Items>
+  <Items Name="ISF" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"   OperationType="1"                     Permissions="客服,文件"></Items>
+  <Items Name="TrkA" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="1" AssociatedEvent="SOPV" Permissions="客服"></Items>
+  <Items Name="TrkD" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="1"                        Permissions="客服"></Items>
+  <Items Name="CFA" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="1"                         Permissions="客服"></Items>
+  <Items Name="CFD" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="1"                         Permissions="客服"></Items>
+  <Items Name="ARCfm" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"   OperationType="1"                   Permissions="客服"></Items>
+  <Items Name="ARA" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint"   OperationType="1"                     Permissions="客服"></Items>
+  <Items Name="SOD" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="1"                         Permissions="客服,订舱"></Items>
+  <Items Name="MBLR" Methods="" ModifyValue="3" OriginalValue="1" SqlType="tinyint" OperationType="1"                      Permissions="客服,文件"></Items>
+  <!--海进事件-->
+  <Items Name="ANRC" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                        Permissions="文件"></Items>
+  <Items Name="ANSC" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                        Permissions="文件"></Items>
+  <Items Name="APCCfm" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                      Permissions="文件"></Items>
+  <Items Name="DOS" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                         Permissions="客服"></Items>
+  <Items Name="RBLNt" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                       Permissions="客服"></Items>
+  <Items Name="PayNt" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"                       Permissions="客服,计费"></Items>
+  <Items Name="IsMailDMBL" Methods="OceanImport_MAILDMBL" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"   Permissions="计费"></Items>
+  <Items Name="IsOMBLRcved" Methods="OceanImport_OiomblRcved" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"   Permissions="客服,文件,计费"></Items>
+  <Items Name="IsOBLRcved" Methods="OceanImport_OioblRcved" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"   Permissions="客服,文件,计费"></Items>
+  <Items Name="ACCLOS" Methods="OceanImport_State_ACCLOS" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"   Permissions="计费"></Items>
+  <Items Name="IsReleaseOrderRequired" Methods="OceanImport_UpdateIsReleaseOrderRequired" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"   Permissions="客服"></Items>
+  <!--2015-05-22 新加事件-->
+  <Items Name="HD"   Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"    Permissions="客服"></Items>
+  <Items Name="FRC"  Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"    Permissions="客服"></Items>
+  <Items Name="CCR"  Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"    Permissions="客服"></Items>
+  <Items Name="CCS"  Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"    Permissions="客服"></Items>
+  <Items Name="CCF"  Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"    Permissions="客服"></Items>
+  <Items Name="AD"  Methods=""   ModifyValue="1"    OriginalValue="0"    SqlType="bit"    OperationType="2"     Permissions="计费"></Items>
+  <!--审核放货-->
+  <Items Name="RCA" Methods="OceanImport_ApplyReleaseCargo" ModifyValue="" OriginalValue="" SqlType="bit"   OperationType="2"     Permissions="客服"></Items>
+  <Items Name="ARC" Methods="OceanImport_AgreeRC" ModifyValue="" OriginalValue="" SqlType="bit"   OperationType="2"               Permissions="客服,计费"></Items>
+  <Items Name="RC" Methods="OceanImport_Delivery" ModifyValue="" OriginalValue="" SqlType="bit"   OperationType="2"               Permissions="计费"></Items>
+  <Items Name="RBLRcv" Methods="OceanImport_ReceiveRN" ModifyValue="" OriginalValue="" SqlType="bit"   OperationType="2"          Permissions="客服"></Items>
+  <Items Name="RoRcvd" Methods="" ModifyValue="1" OriginalValue="0" SqlType="bit"   OperationType="2"               Permissions="客服,计费"></Items>
+</Item>
+
+

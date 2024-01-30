@@ -1,0 +1,2102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Textbox Name="textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= " STATEMENT:"+Globals!ExecutionTime.ToShortDateString()</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>3.07011cm</Top>
+        <Left>8.57805cm</Left>
+        <Height>0.5cm</Height>
+        <Width>10.25661cm</Width>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= Parameters!CompanyEAddress.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.50529cm</Top>
+        <Left>0.10582cm</Left>
+        <Height>0.42791cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!CompanyEName.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.5291cm</Top>
+        <Left>0.15873cm</Left>
+        <Height>0.44709cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!CompanyName.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>11pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>0.02646cm</Top>
+        <Left>0.15873cm</Left>
+        <Height>0.44709cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= Parameters!CompanyAddress.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.0291cm</Top>
+        <Left>0.15873cm</Left>
+        <Height>0.42791cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= Parameters!TelOrFax.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontSize>9pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1.97884cm</Top>
+        <Left>0.15873cm</Left>
+        <Height>0.40146cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox68">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>AGENT STATEMENT TOTAL</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>2.42593cm</Top>
+        <Left>0.15873cm</Left>
+        <Height>0.5cm</Height>
+        <Width>19.07407cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style />
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>ETD:</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox4</rd:DefaultName>
+        <Top>3.20238cm</Top>
+        <Height>0.50002cm</Height>
+        <Width>1.03836cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>= Parameters!ConditionRemark.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>3.70238cm</Top>
+        <Left>8.57805cm</Left>
+        <Height>0.50003cm</Height>
+        <Width>10.56481cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox8">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!JobPlace.Value</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox8</rd:DefaultName>
+        <Top>3.75529cm</Top>
+        <Height>0.50003cm</Height>
+        <Width>7.75cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ETD_Beginning_Date.Value.ToShortDateString()+ " --"+Parameters!ETD_Ending_Date.Value.ToShortDateString()</Value>
+                <Style>
+                  <FontFamily>宋体</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>3.20238cm</Top>
+        <Left>1.27646cm</Left>
+        <Height>0.5cm</Height>
+        <Width>6.5cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style />
+      </Textbox>
+      <Tablix Name="table1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>5.5cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.1164cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.08995cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.24868cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.08995cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.08995cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.08995cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.63492cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Shipper</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <ZIndex>39</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>="CUR"</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <ZIndex>38</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Debit</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <ZIndex>37</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Received</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox19</rd:DefaultName>
+                      <ZIndex>36</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox22">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>UnReceived</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox22</rd:DefaultName>
+                      <ZIndex>35</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Credit</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox25</rd:DefaultName>
+                      <ZIndex>34</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox31">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Payed</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox31</rd:DefaultName>
+                      <ZIndex>33</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox28">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>UnPay</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox28</rd:DefaultName>
+                      <ZIndex>32</ZIndex>
+                      <Style>
+                        <BottomBorder>
+                          <Color>DarkGreen</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.43cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>= Fields!ShipperName.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox13</rd:DefaultName>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>RPT_DebitnoteForAgent_Detail</ReportName>
+                              <Parameters>
+                                <Parameter Name="StructType">
+                                  <Value>= Parameters!StructType.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ETD_Beginning_Date">
+                                  <Value>= Parameters!ETD_Beginning_Date.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ETD_Ending_Date">
+                                  <Value>= Parameters!ETD_Ending_Date.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ShipperSet">
+                                  <Value>="'"+Fields!SubId.Value.ToString()+"'"</Value>
+                                </Parameter>
+                                <Parameter Name="VerifyFlag">
+                                  <Value>= Parameters!VerifyFlag.Value</Value>
+                                </Parameter>
+                                <Parameter Name="SalesSet">
+                                  <Value />
+                                </Parameter>
+                                <Parameter Name="JobType">
+                                  <Value>= Parameters!JobType.Value</Value>
+                                </Parameter>
+                                <Parameter Name="CurrencyType">
+                                  <Value>0</Value>
+                                </Parameter>
+                                <Parameter Name="CompanyName">
+                                  <Value>= Parameters!CompanyName.Value</Value>
+                                </Parameter>
+                                <Parameter Name="CompanyEName">
+                                  <Value>=Parameters!CompanyEName.Value</Value>
+                                </Parameter>
+                                <Parameter Name="TelOrFax">
+                                  <Value>= Parameters!TelOrFax.Value</Value>
+                                </Parameter>
+                                <Parameter Name="CompanyAddress">
+                                  <Value>= Parameters!CompanyAddress.Value</Value>
+                                </Parameter>
+                                <Parameter Name="StructNodeId">
+                                  <Value>=Parameters!StructNodeId.Value</Value>
+                                </Parameter>
+                                <Parameter Name="CompanyEAddress">
+                                  <Value>=Parameters!CompanyEAddress.Value</Value>
+                                </Parameter>
+                                <Parameter Name="IsEnglish">
+                                  <Value>=Parameters!IsEnglish.Value</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Currency.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox14</rd:DefaultName>
+                      <ZIndex>6</ZIndex>
+                      <Style />
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!AmountByDR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox15</rd:DefaultName>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox20">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>= Fields!RecoupAmountByDR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!AmountByDR.Value- Fields!RecoupAmountByDR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!AmountByCR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox32">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!RecoupAmountByCR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox32</rd:DefaultName>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox29">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!AmountByCR.Value- Fields!RecoupAmountByCR.Value</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <Format>N</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.5cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox16">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>TOTAL:</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>USD</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox17</rd:DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox44">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDAmountDR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox44</rd:DefaultName>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox21</rd:DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox24">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDAmountDR.Value))- sum(System.Convert.ToDouble(Fields!USDVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox27">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox27</rd:DefaultName>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox33">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox33</rd:DefaultName>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!USDAmountCR.Value))-sum(System.Convert.ToDouble( Fields!USDVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <TopBorder>
+                          <Color>Maroon</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.5cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox42">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox42</rd:DefaultName>
+                      <ZIndex>23</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox43">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>HKD</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox43</rd:DefaultName>
+                      <ZIndex>22</ZIndex>
+                      <Style />
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox50">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDAmountDR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox50</rd:DefaultName>
+                      <ZIndex>21</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox45">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox45</rd:DefaultName>
+                      <ZIndex>20</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox37">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDAmountDR.Value))- sum(System.Convert.ToDouble(Fields!HKDVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox38">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox39">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox30">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!HKDAmountCR.Value))- sum(System.Convert.ToDouble(Fields!HKDVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.5cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox34">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox34</rd:DefaultName>
+                      <ZIndex>31</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox35">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>RMB</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox35</rd:DefaultName>
+                      <ZIndex>30</ZIndex>
+                      <Style />
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox36">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBAmountDR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>textbox36</rd:DefaultName>
+                      <ZIndex>29</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox18">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>28</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox46">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBAmountDR.Value))-sum(System.Convert.ToDouble( Fields!RMBVerifyAmount.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>27</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox47">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>26</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox48">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>25</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox49">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=sum(System.Convert.ToDouble(Fields!RMBAmountCR.Value))- sum(System.Convert.ToDouble(Fields!RMBVerifyAmountCR.Value))</Value>
+                              <Style>
+                                <FontFamily>宋体</FontFamily>
+                                <FontSize>9pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>N</Format>
+                                <Color>Maroon</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>24</ZIndex>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="table1_Details_Group">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!SubId.Value</GroupExpression>
+                </GroupExpressions>
+                <DataElementName>Detail</DataElementName>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=Fields!ShipperName.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <DataElementName>Detail_Collection</DataElementName>
+              <DataElementOutput>Output</DataElementOutput>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <KeepWithGroup>Before</KeepWithGroup>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>GetDebitnoteForAgent_TotalNew</DataSetName>
+        <Top>4.38955cm</Top>
+        <Height>2.56492cm</Height>
+        <Width>19.22488cm</Width>
+        <ZIndex>11</ZIndex>
+        <DataElementOutput>Output</DataElementOutput>
+        <Style>
+          <FontFamily>宋体</FontFamily>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>6.95447cm</Height>
+    <Style />
+  </Body>
+  <Width>19.32805cm</Width>
+  <Page>
+    <PageFooter>
+      <Height>0.30105in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox90">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber.ToString()+"/"+ Globals!TotalPages.ToString()</Value>
+                  <Style>
+                    <FontFamily>宋体</FontFamily>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0.20899cm</Top>
+          <Height>0.4762cm</Height>
+          <Width>19.17989cm</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="line2">
+          <Top>0.09127cm</Top>
+          <Height>-0.02646cm</Height>
+          <Width>19.28571cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Color>DarkGreen</Color>
+              <Style>Solid</Style>
+              <Width>1.5pt</Width>
+            </Border>
+            <FontFamily>宋体</FontFamily>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style />
+    </PageFooter>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <InteractiveHeight>11in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>0.5cm</BottomMargin>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSourceReportDW">
+      <DataSourceReference>DataSourceReportDW</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>7c92fd43-d946-4273-95bb-0ea3855001c1</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="GetDebitnoteForAgent_TotalNew">
+      <Query>
+        <DataSourceName>DataSourceReportDW</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@StructType">
+            <Value>=Parameters!StructType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@StructNodeId">
+            <Value>=Parameters!StructNodeId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ETD_Beginning_Date">
+            <Value>=Parameters!ETD_Beginning_Date.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ETD_Ending_Date">
+            <Value>=Parameters!ETD_Ending_Date.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ShipperSet">
+            <Value>=Parameters!ShipperSet.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@JobType">
+            <Value>=Parameters!JobType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@VerifyFlag">
+            <Value>=Parameters!VerifyFlag.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@IsEnglish">
+            <Value>=Parameters!IsEnglish.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@IsDisplayPrePay">
+            <Value>=Parameters!IsDisplayPrePay.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>SPR_REPDW_GetDebitnoteForAgent_Total</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="SubId">
+          <DataField>SubId</DataField>
+          <rd:TypeName>System.Guid</rd:TypeName>
+        </Field>
+        <Field Name="ShipperName">
+          <DataField>ShipperName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Currency">
+          <DataField>Currency</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AmountByDR">
+          <DataField>AmountByDR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RecoupAmountByDR">
+          <DataField>RecoupAmountByDR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="AmountByCR">
+          <DataField>AmountByCR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RecoupAmountByCR">
+          <DataField>RecoupAmountByCR</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="USDAmountDR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="USD", Fields!AmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="HKDAmountDR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="HKD", Fields!AmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="RMBAmountDR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="RMB", Fields!AmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="USDVerifyAmount">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="USD", Fields!RecoupAmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="HKDVerifyAmount">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="HKD", Fields!RecoupAmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="RMBVerifyAmount">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="RMB", Fields!RecoupAmountByDR.Value ,0)</Value>
+        </Field>
+        <Field Name="USDVerifyAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="USD", Fields!RecoupAmountByCR.Value ,0)</Value>
+        </Field>
+        <Field Name="HKDVerifyAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="HKD", Fields!RecoupAmountByCR.Value ,0)</Value>
+        </Field>
+        <Field Name="RMBVerifyAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="RMB", Fields!RecoupAmountByCR.Value ,0)</Value>
+        </Field>
+        <Field Name="HKDAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="HKD", Fields!AmountByCR.Value ,0)</Value>
+        </Field>
+        <Field Name="USDAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="USD", Fields!AmountByCR.Value ,0)</Value>
+        </Field>
+        <Field Name="RMBAmountCR">
+          <Value>=iif( Fields!Currency.Value.ToUpper()="RMB", Fields!AmountByCR.Value ,0)</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="StructType">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StructType</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="StructNodeId">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>41d7d3fe-183a-41cd-a725-eb6f728541ec</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>StructNodeId</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ETD_Beginning_Date">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2008-01-01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ETD_Beginning_Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ETD_Ending_Date">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>2008-02-01</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ETD_Ending_Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShipperSet">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ShipperSet</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="JobType">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>JobType</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VerifyFlag">
+      <DataType>Integer</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>0</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>VerifyFlag</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompanyName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CompanyName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompanyAddress">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CompanyAddress</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TelOrFax">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>TelOrFax</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="JobPlace">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>JobPlace</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ConditionRemark">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ConditionRemark</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompanyEName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CompanyEName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CompanyEAddress">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value />
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>CompanyEAddress</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IsEnglish">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>IsEnglish</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="IsDisplayPrePay">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>2</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Is Display Pre Pay</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="city_ico">
+      <MIMEType>image/gif</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <Language>zh-CN</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataElementStyle>Element</DataElementStyle>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>fbbca3e6-0384-46b1-a958-0d87502b08fc</rd:ReportID>
+</Report>

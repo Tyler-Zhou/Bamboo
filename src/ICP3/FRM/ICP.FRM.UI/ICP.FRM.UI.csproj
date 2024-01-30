@@ -1,0 +1,1130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68B9890F-3BC6-4A42-AB3F-52C88FF0C497}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FRM.UI</RootNamespace>
+    <AssemblyName>ICP.FRM.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DocumentationFile>C:\ICPDlls\ICP.FRM.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CABDevExpress.ExtensionKit, Version=0.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.OfficeSkins.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1.Extensions, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Business.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.OceanExport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.MailCenter.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.MailCenter.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Operation.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Operation.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.System.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\icpdlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ICPDlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ICPDlls\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookingReport\BookingReportWoritem.cs" />
+    <Compile Include="BookingReport\BookingReportMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportMainWorkspace.Designer.cs">
+      <DependentUpon>BookingReportMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportListPart.Designer.cs">
+      <DependentUpon>BookingReportListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportSearchPart.Designer.cs">
+      <DependentUpon>BookingReportSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportToolPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookingReport\BookingReportToolPart.Designer.cs">
+      <DependentUpon>BookingReportToolPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService\ClientInquireRateService.cs" />
+    <Compile Include="ClientService\InquireRateEmailService.cs" />
+    <Compile Include="ClientService\OceanPriceFileClientService.cs" />
+    <Compile Include="Comm\Controls\CheckBoxComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CheckBoxComboBox.designer.cs">
+      <DependentUpon>CheckBoxComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\ControlValidator.cs" />
+    <Compile Include="Comm\FRMOceanFinderWorkItem.cs" />
+    <Compile Include="Comm\FRMOceanFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\FRMOceanFinderWorkspace.Designer.cs">
+      <DependentUpon>FRMOceanFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService\InquireRateClientService.cs" />
+    <Compile Include="InquireRates\Air\InquireAirRatesDiscussingPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesDiscussingPart.Designer.cs">
+      <DependentUpon>InquireAirRatesDiscussingPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesGeneralInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesGeneralInfoPart.Designer.cs">
+      <DependentUpon>InquireAirRatesGeneralInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesListPart.Designer.cs">
+      <DependentUpon>InquireAirRatesListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesMainWorkspace.Designer.cs">
+      <DependentUpon>InquireAirRatesMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Air\InquireAirRatesWorkitem.cs" />
+    <Compile Include="InquireRates\Air\NewInquireAirRatePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Air\NewInquireAirRatePart.Designer.cs">
+      <DependentUpon>NewInquireAirRatePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Common\InquireRatesEmailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\InquireRatesEmailPart.Designer.cs">
+      <DependentUpon>InquireRatesEmailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Common\InquireRatesShipmentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\InquireRatesShipmentPart.Designer.cs">
+      <DependentUpon>InquireRatesShipmentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Common\IRSearchCommPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\IRSearchCommPart.Designer.cs">
+      <DependentUpon>IRSearchCommPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Helper\ClientDataObjects.cs" />
+    <Compile Include="InquireRates\Helper\InquireRatesHelper.cs" />
+    <Compile Include="InquireRates\Helper\InquireRatesUIAdapter.cs" />
+    <Compile Include="InquireRates\InquirePricesBusinessInfoExtractor.cs" />
+    <Compile Include="InquireRates\InquirePricesQueryCriteriaGetter.cs.cs" />
+    <Compile Include="InquireRates\InquirePricesQueryServiceGetter.cs" />
+    <Compile Include="InquireRates\InquireRatesWorkitem.cs" />
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesDiscussingPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesDiscussingPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesDiscussingPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesEmailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesEmailPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesEmailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesListPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesMainWorkspace.Designer.cs">
+      <DependentUpon>InquireRatesMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesSearchPart.Designer.cs">
+      <DependentUpon>InquireRatesSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesToolBar.Designer.cs">
+      <DependentUpon>InquireRatesToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesMainWorkspace.Designer.cs">
+      <DependentUpon>InquireOceanRatesMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesShipmentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesShipmentPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesShipmentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesWorkitem.cs" />
+    <Compile Include="InquireRates\Common\DiscussingPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\DiscussingPart.Designer.cs">
+      <DependentUpon>DiscussingPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesGeneralInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesGeneralInfoPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesGeneralInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\NewInquireOceanRatePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\NewInquireOceanRatePart.Designer.cs">
+      <DependentUpon>NewInquireOceanRatePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Common\RateUnitPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\RateUnitPart.Designer.cs">
+      <DependentUpon>RateUnitPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Common\TransitPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Common\TransitPart.Designer.cs">
+      <DependentUpon>TransitPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesHistoryListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Ocean\InquireOceanRatesHistoryListPart.Designer.cs">
+      <DependentUpon>InquireOceanRatesHistoryListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckFUEL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckFUEL.Designer.cs">
+      <DependentUpon>InquireTruckFUEL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesDiscussingPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesDiscussingPart.Designer.cs">
+      <DependentUpon>InquireTruckingRatesDiscussingPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesEmailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesEmailPart.Designer.cs">
+      <DependentUpon>InquireTruckingRatesEmailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesGeneralInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesGeneralInfoPart.Designer.cs">
+      <DependentUpon>InquireTruckingRatesGeneralInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesHistoryListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesHistoryListPart.Designer.cs">
+      <DependentUpon>InquireTruckingRatesHistoryListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesListPart.Designer.cs">
+      <DependentUpon>InquireTruckingRatesListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesMainWorkspace.Designer.cs">
+      <DependentUpon>InquireTruckingRatesMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\InquireTruckingRatesWorkitem.cs" />
+    <Compile Include="InquireRates\Trucking\NewInquireTruckingRatePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\Trucking\NewInquireTruckingRatePart.Designer.cs">
+      <DependentUpon>NewInquireTruckingRatePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesHistoryToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\InquireRatesHistoryToolBar.Designer.cs">
+      <DependentUpon>InquireRatesHistoryToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\AdditionalFee\AssociateBasicRatesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\AdditionalFee\AssociateBasicRatesPart.Designer.cs">
+      <DependentUpon>AssociateBasicRatesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\AdditionalFee\OPAdditionalFeePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\AdditionalFee\OPAdditionalFeePart.Designer.cs">
+      <DependentUpon>OPAdditionalFeePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPAssociatedRatesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPAssociatedRatesPart.Designer.cs">
+      <DependentUpon>OPAssociatedRatesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryBatchItemPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryBatchItemPart.Designer.cs">
+      <DependentUpon>OPArbitraryBatchItemPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPSearchCommPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPSearchCommPart.Designer.cs">
+      <DependentUpon>OPSearchCommPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\EditRemarkPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\EditRemarkPart.Designer.cs">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Helper\ClientDataObjects.cs" />
+    <Compile Include="OceanPrice\Comparision\ComparisionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Comparision\ComparisionList.Designer.cs">
+      <DependentUpon>ComparisionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Helper\Constants.cs" />
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryFilterPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryFilterPart.Designer.cs">
+      <DependentUpon>OPArbitraryFilterPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPContractListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPContractListPart.Designer.cs">
+      <DependentUpon>OPContractListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPMainWorkspace.Designer.cs">
+      <DependentUpon>OPMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPSearchPart.Designer.cs">
+      <DependentUpon>OPSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPToolBar.Designer.cs">
+      <DependentUpon>OPToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Helper\OceanPriceHelper.cs" />
+    <Compile Include="OceanPrice\Helper\OceanPriceUIAdapter.cs" />
+    <Compile Include="OceanPrice\Helper\OceanPriceWoritem.cs" />
+    <Compile Include="OceanPrice\BasePort\OPBasePortRatesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPBasePortRatesPart.Designer.cs">
+      <DependentUpon>OPBasePortRatesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPBasePortFilterPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPBasePortFilterPart.Designer.cs">
+      <DependentUpon>OPBasePortFilterPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPBasePortBatchItemPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\BasePort\OPBasePortBatchItemPart.Designer.cs">
+      <DependentUpon>OPBasePortBatchItemPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPFileEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPFileEditPart.Designer.cs">
+      <DependentUpon>OPFileEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPUploadFilePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPUploadFilePart.Designer.cs">
+      <DependentUpon>OPUploadFilePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryRatesPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Arbitrary\OPArbitraryRatesPart.Designer.cs">
+      <DependentUpon>OPArbitraryRatesPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPAttachmentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Attachment\OPAttachmentPart.Designer.cs">
+      <DependentUpon>OPAttachmentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPContractEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OPContractEditPart.Designer.cs">
+      <DependentUpon>OPContractEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OceanRateExportToExcel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\ListParts\OceanRateExportToExcel.Designer.cs">
+      <DependentUpon>OceanRateExportToExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanPrice\Permissions\OPPermissionsPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OceanPrice\Permissions\OPPermissionsPart.Designer.cs">
+      <DependentUpon>OPPermissionsPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\BusinessClosePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\BusinessClosePart.Designer.cs">
+      <DependentUpon>BusinessClosePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PREditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PREditPart.Designer.cs">
+      <DependentUpon>PREditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PRFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PRFastSearchPart.Designer.cs">
+      <DependentUpon>PRFastSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PRListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PRListPart.Designer.cs">
+      <DependentUpon>PRListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PRMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PRMainWorkspace.Designer.cs">
+      <DependentUpon>PRMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PRToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PRToolBar.Designer.cs">
+      <DependentUpon>PRToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfitRatios\PRWorkitem.cs" />
+    <Compile Include="ProfitRatios\ProfitRatiosConstants.cs" />
+    <Compile Include="ProfitRatios\PRSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProfitRatios\PRSearchPart.Designer.cs">
+      <DependentUpon>PRSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrototypeHelper.cs" />
+    <Compile Include="Resources\CNResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CNResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Constants.cs" />
+    <Compile Include="Comm\Utility.cs" />
+    <Compile Include="FRMModuleInit.cs" />
+    <Compile Include="Comm\UIProxys.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirListPart.Designer.cs">
+      <DependentUpon>SearchAirListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirMainWorkspace.Designer.cs">
+      <DependentUpon>SearchAirMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirRateInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirRateInfoPart.Designer.cs">
+      <DependentUpon>SearchAirRateInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirSearchPart.Designer.cs">
+      <DependentUpon>SearchAirSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirToolPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirToolPart.Designer.cs">
+      <DependentUpon>SearchAirToolPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Air\SearchAirWorkitem.cs" />
+    <Compile Include="SearchRate\Comm\SearchRateSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Comm\SearchRateSearchPart.Designer.cs">
+      <DependentUpon>SearchRateSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\OceanRateFeeDetailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\OceanRateFeeDetailPart.Designer.cs">
+      <DependentUpon>OceanRateFeeDetailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanBaseInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanBaseInfoPart.Designer.cs">
+      <DependentUpon>SearchOceanBaseInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOceanClientObjects.cs" />
+    <Compile Include="SearchRate\SearchOcean\SearchOceanContractInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanContractInfoPart.Designer.cs">
+      <DependentUpon>SearchOceanContractInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanListPart.Designer.cs">
+      <DependentUpon>SearchOceanListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanMainWorkspace.Designer.cs">
+      <DependentUpon>SearchOceanMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanRemark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanRemark.Designer.cs">
+      <DependentUpon>SearchOceanRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanSearchPart.Designer.cs">
+      <DependentUpon>SearchOceanSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanToolPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanToolPart.Designer.cs">
+      <DependentUpon>SearchOceanToolPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\SearchOceanWorkitem.cs" />
+    <Compile Include="SearchRate\SearchOcean\UCContainerRateListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchOcean\UCContainerRateListPart.Designer.cs">
+      <DependentUpon>UCContainerRateListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchRateMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\SearchRateMainWorkspace.Designer.cs">
+      <DependentUpon>SearchRateMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\SearchRateWoritem.cs" />
+    <Compile Include="SearchRate\Truck\SearchTruckListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckListPart.Designer.cs">
+      <DependentUpon>SearchTruckListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckMainWorkspace.Designer.cs">
+      <DependentUpon>SearchTruckMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckRateInfoPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckRateInfoPart.Designer.cs">
+      <DependentUpon>SearchTruckRateInfoPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckSearchPart.Designer.cs">
+      <DependentUpon>SearchTruckSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckToolPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckToolPart.Designer.cs">
+      <DependentUpon>SearchTruckToolPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchRate\Truck\SearchTruckWorkitem.cs" />
+    <Compile Include="InquireRates\TaskCenterInquireRateWorkSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InquireRates\TaskCenterInquireRateWorkSpace.Designer.cs">
+      <DependentUpon>TaskCenterInquireRateWorkSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\BusinessWeeklyReportWoritem.cs" />
+    <Compile Include="WeeklyReport\EditMangerCommentsPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\EditMangerCommentsPart.Designer.cs">
+      <DependentUpon>EditMangerCommentsPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\UCWeeklyReportRemark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\UCWeeklyReportRemark.Designer.cs">
+      <DependentUpon>UCWeeklyReportRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportDataList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportDataList.Designer.cs">
+      <DependentUpon>WeeklyReportDataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportMainWorkspace.Designer.cs">
+      <DependentUpon>WeeklyReportMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportPart.Designer.cs">
+      <DependentUpon>WeeklyReportPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyReport\WeeklyReportEdit.Designer.cs">
+      <DependentUpon>WeeklyReportEdit.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BookingReport\BookingReportMainWorkspace.resx">
+      <DependentUpon>BookingReportMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingReport\BookingReportListPart.resx">
+      <DependentUpon>BookingReportListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingReport\BookingReportSearchPart.resx">
+      <DependentUpon>BookingReportSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookingReport\BookingReportToolPart.resx">
+      <DependentUpon>BookingReportToolPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\CheckBoxComboBox.resx">
+      <DependentUpon>CheckBoxComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\FRMOceanFinderWorkspace.resx">
+      <DependentUpon>FRMOceanFinderWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Air\InquireAirRatesDiscussingPart.resx">
+      <DependentUpon>InquireAirRatesDiscussingPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Air\InquireAirRatesGeneralInfoPart.resx">
+      <DependentUpon>InquireAirRatesGeneralInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Air\InquireAirRatesListPart.resx">
+      <DependentUpon>InquireAirRatesListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Air\InquireAirRatesMainWorkspace.resx">
+      <DependentUpon>InquireAirRatesMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Air\NewInquireAirRatePart.resx">
+      <DependentUpon>NewInquireAirRatePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Common\InquireRatesEmailPart.resx">
+      <DependentUpon>InquireRatesEmailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Common\IRSearchCommPart.resx">
+      <DependentUpon>IRSearchCommPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\InquireRatesMainWorkspace.resx">
+      <DependentUpon>InquireRatesMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\InquireRatesSearchPart.resx">
+      <DependentUpon>InquireRatesSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\InquireRatesToolBar.resx">
+      <DependentUpon>InquireRatesToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesDiscussingPart.resx">
+      <DependentUpon>InquireOceanRatesDiscussingPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesEmailPart.resx">
+      <DependentUpon>InquireOceanRatesEmailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesListPart.resx">
+      <DependentUpon>InquireOceanRatesListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesMainWorkspace.resx">
+      <DependentUpon>InquireOceanRatesMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Common\DiscussingPart.resx">
+      <DependentUpon>DiscussingPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesGeneralInfoPart.resx">
+      <DependentUpon>InquireOceanRatesGeneralInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesShipmentPart.resx">
+      <DependentUpon>InquireOceanRatesShipmentPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\NewInquireOceanRatePart.resx">
+      <DependentUpon>NewInquireOceanRatePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Common\RateUnitPart.resx">
+      <DependentUpon>RateUnitPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Common\TransitPart.resx">
+      <DependentUpon>TransitPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Ocean\InquireOceanRatesHistoryListPart.resx">
+      <DependentUpon>InquireOceanRatesHistoryListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\TaskCenterInquireRateWorkSpace.resx">
+      <DependentUpon>TaskCenterInquireRateWorkSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckFUEL.resx">
+      <DependentUpon>InquireTruckFUEL.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesDiscussingPart.resx">
+      <DependentUpon>InquireTruckingRatesDiscussingPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesEmailPart.resx">
+      <DependentUpon>InquireTruckingRatesEmailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesGeneralInfoPart.resx">
+      <DependentUpon>InquireTruckingRatesGeneralInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesHistoryListPart.resx">
+      <DependentUpon>InquireTruckingRatesHistoryListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesListPart.resx">
+      <DependentUpon>InquireTruckingRatesListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\InquireTruckingRatesMainWorkspace.resx">
+      <DependentUpon>InquireTruckingRatesMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\Trucking\NewInquireTruckingRatePart.resx">
+      <DependentUpon>NewInquireTruckingRatePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InquireRates\InquireRatesHistoryToolBar.resx">
+      <DependentUpon>InquireRatesHistoryToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\AdditionalFee\AssociateBasicRatesPart.resx">
+      <DependentUpon>AssociateBasicRatesPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\AdditionalFee\OPAdditionalFeePart.resx">
+      <DependentUpon>OPAdditionalFeePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\BasePort\OPAssociatedRatesPart.resx">
+      <DependentUpon>OPAssociatedRatesPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Arbitrary\OPArbitraryBatchItemPart.resx">
+      <DependentUpon>OPArbitraryBatchItemPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Arbitrary\OPArbitraryFilterPart.resx">
+      <DependentUpon>OPArbitraryFilterPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\BasePort\OPSearchCommPart.resx">
+      <DependentUpon>OPSearchCommPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Comparision\ComparisionList.resx">
+      <DependentUpon>ComparisionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\EditRemarkPart.resx">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OceanRateExportToExcel.resx">
+      <DependentUpon>OceanRateExportToExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OPContractListPart.resx">
+      <DependentUpon>OPContractListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OPMainWorkspace.resx">
+      <DependentUpon>OPMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OPSearchPart.resx">
+      <DependentUpon>OPSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OPToolBar.resx">
+      <DependentUpon>OPToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\BasePort\OPBasePortRatesPart.resx">
+      <DependentUpon>OPBasePortRatesPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\BasePort\OPBasePortFilterPart.resx">
+      <DependentUpon>OPBasePortFilterPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\BasePort\OPBasePortBatchItemPart.resx">
+      <DependentUpon>OPBasePortBatchItemPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Attachment\OPFileEditPart.resx">
+      <DependentUpon>OPFileEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Attachment\OPUploadFilePart.resx">
+      <DependentUpon>OPUploadFilePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Arbitrary\OPArbitraryRatesPart.resx">
+      <DependentUpon>OPArbitraryRatesPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Attachment\OPAttachmentPart.resx">
+      <DependentUpon>OPAttachmentPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\ListParts\OPContractEditPart.resx">
+      <DependentUpon>OPContractEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OceanPrice\Permissions\OPPermissionsPart.resx">
+      <DependentUpon>OPPermissionsPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\BusinessClosePart.resx">
+      <DependentUpon>BusinessClosePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PREditPart.resx">
+      <DependentUpon>PREditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PRFastSearchPart.resx">
+      <DependentUpon>PRFastSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PRListPart.resx">
+      <DependentUpon>PRListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PRMainWorkspace.resx">
+      <DependentUpon>PRMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PRToolBar.resx">
+      <DependentUpon>PRToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfitRatios\PRSearchPart.resx">
+      <DependentUpon>PRSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CNResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CNResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Air\SearchAirListPart.resx">
+      <DependentUpon>SearchAirListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Air\SearchAirMainWorkspace.resx">
+      <DependentUpon>SearchAirMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Air\SearchAirRateInfoPart.resx">
+      <DependentUpon>SearchAirRateInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Air\SearchAirSearchPart.resx">
+      <DependentUpon>SearchAirSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Air\SearchAirToolPart.resx">
+      <DependentUpon>SearchAirToolPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Comm\SearchRateSearchPart.resx">
+      <DependentUpon>SearchRateSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\OceanRateFeeDetailPart.resx">
+      <DependentUpon>OceanRateFeeDetailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanBaseInfoPart.resx">
+      <DependentUpon>SearchOceanBaseInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanContractInfoPart.resx">
+      <DependentUpon>SearchOceanContractInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanListPart.resx">
+      <DependentUpon>SearchOceanListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanMainWorkspace.resx">
+      <DependentUpon>SearchOceanMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanRemark.resx">
+      <DependentUpon>SearchOceanRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanSearchPart.resx">
+      <DependentUpon>SearchOceanSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\SearchOceanToolPart.resx">
+      <DependentUpon>SearchOceanToolPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchOcean\UCContainerRateListPart.resx">
+      <DependentUpon>UCContainerRateListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\SearchRateMainWorkspace.resx">
+      <DependentUpon>SearchRateMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Truck\SearchTruckListPart.resx">
+      <DependentUpon>SearchTruckListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Truck\SearchTruckMainWorkspace.resx">
+      <DependentUpon>SearchTruckMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Truck\SearchTruckRateInfoPart.resx">
+      <DependentUpon>SearchTruckRateInfoPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Truck\SearchTruckSearchPart.resx">
+      <DependentUpon>SearchTruckSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchRate\Truck\SearchTruckToolPart.resx">
+      <DependentUpon>SearchTruckToolPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\EditMangerCommentsPart.resx">
+      <DependentUpon>EditMangerCommentsPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\UCWeeklyReportRemark.resx">
+      <DependentUpon>UCWeeklyReportRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\WeeklyReportDataList.resx">
+      <DependentUpon>WeeklyReportDataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\WeeklyReportMainWorkspace.resx">
+      <DependentUpon>WeeklyReportMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\WeeklyReportPart.resx">
+      <DependentUpon>WeeklyReportPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyReport\WeeklyReportEdit.resx">
+      <DependentUpon>WeeklyReportEdit.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.ProfitRatiosAdjustment.datasource" />
+    <None Include="Resources\Add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanList.datasource" />
+    <None Include="Resources\Search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanInfo1.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanItemList.datasource" />
+    <None Include="Resources\Save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Input_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueFile_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanAdditionalFeeList.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanFileList1.datasource" />
+    <None Include="Resources\Assign_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpLoad_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.OceanUnitList.datasource" />
+    <None Include="Resources\Batch_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.BusinessWeeklyReportList.datasource" />
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EXPIRED.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EFFECTIVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WILL BE EFFECTIVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.AdditionalFeeList.datasource" />
+    <None Include="Resources\newred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FRM.ServiceInterface.DataObjects.InquirePriceInquireBys.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.UI.InquireRates.ClientInquierAirRate.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.UI.InquireRates.ClientInquierOceanRate.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.UI.InquireRates.ClientInquierTruckingRate.datasource" />
+    <None Include="Properties\DataSources\ICP.FRM.UI.InquireRates.InquireOceanRatesGeneralInfoPart.datasource" />
+    <None Include="Resources\Down_16.png" />
+    <Content Include="Resources\unRead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.FRM.ServiceInterface\ICP.FRM.ServiceInterface.csproj">
+      <Project>{5D63F11A-6761-4334-8FD5-3CD8D293F2D0}</Project>
+      <Name>ICP.FRM.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

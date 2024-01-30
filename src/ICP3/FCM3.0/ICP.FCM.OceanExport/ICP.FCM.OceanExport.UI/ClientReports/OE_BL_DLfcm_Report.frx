@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="07/22/2010 16:09:59" ReportInfo.Modified="09/14/2010 15:21:37" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="null" Enabled="true">
+      <Column Name="Header" DataType="System.String"/>
+      <Column Name="Title" DataType="System.String"/>
+      <Column Name="CompanyLogo" DataType="System.String"/>
+      <Column Name="CompanyFax" DataType="System.String"/>
+      <Column Name="CompanyTel" DataType="System.String"/>
+      <Column Name="CompanyAddress" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="NumberOfOriginal" DataType="System.Int32"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="ShipperOrderNo" DataType="System.String"/>
+      <Column Name="BLType" DataType="null"/>
+      <Column Name="Shipper" DataType="System.String"/>
+      <Column Name="Consignee" DataType="System.String"/>
+      <Column Name="NotifyParty" DataType="System.String"/>
+      <Column Name="Agent" DataType="System.String"/>
+      <Column Name="Carrier" DataType="System.String"/>
+      <Column Name="PreCarriage" DataType="System.String"/>
+      <Column Name="FreightPayable" DataType="System.String"/>
+      <Column Name="VesselVoyage" DataType="System.String"/>
+      <Column Name="PreVesselVoyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="PortOfLoading" DataType="System.String"/>
+      <Column Name="PortOfDischarge" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.String"/>
+      <Column Name="DescriptionOfGoods" DataType="System.String"/>
+      <Column Name="DescriptionOfContainer" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.DateTime"/>
+      <Column Name="FreightAndCharges" DataType="System.String"/>
+      <Column Name="PaymentTerm" DataType="System.String"/>
+      <Column Name="PlaceOfIssue" DataType="System.String"/>
+      <Column Name="IssueBy" DataType="System.String"/>
+      <Column Name="IssueDate" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ReportStyle" DataType="System.String"/>
+      <Column Name="AMSNO" DataType="System.String"/>
+      <Column Name="ISFNO" DataType="System.String"/>
+      <Column Name="ETDString" DataType="System.String"/>
+      <Column Name="IssueDateString" DataType="System.String"/>
+      <Column Name="NumberOfOriginalString" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <DataBand Name="Data1" Top="20" Width="718.2" Height="963.9">
+      <PictureObject Name="Picture1" Left="-22.68" Top="-3.78" Width="748.44" Height="967.68" GrowToBottom="true" ImageLocation="E:\ICP2\Client\dlloadnote副本.jpg"/>
+      <TextObject Name="Text1" Left="60.48" Top="37.8" Width="298.62" Height="71.82" Text="[ReportSource.Shipper]"/>
+      <TextObject Name="Text2" Left="60.48" Top="117.18" Width="298.62" Height="64.26" Text="[ReportSource.Consignee]"/>
+      <TextObject Name="Text3" Left="60.48" Top="204.12" Width="298.62" Height="37.8" Text="[ReportSource.NotifyParty]"/>
+      <TextObject Name="Text4" Left="56.7" Top="264.6" Width="151.2" Height="15.12" Text="[ReportSource.PreVesselVoyage]"/>
+      <TextObject Name="Text5" Left="207.9" Top="264.6" Width="151.2" Height="15.12" Text="[ReportSource.PlaceOfReceipt]"/>
+      <TextObject Name="Text6" Left="56.7" Top="291.06" Width="151.2" Height="15.12" Text="[ReportSource.VesselVoyage]"/>
+      <TextObject Name="Text7" Left="207.9" Top="291.06" Width="151.2" Height="15.12" Text="[ReportSource.PortOfLoading]"/>
+      <TextObject Name="Text8" Left="56.7" Top="317.52" Width="151.2" Height="22.68" Text="[ReportSource.PortOfDischarge]"/>
+      <TextObject Name="Text9" Left="207.9" Top="317.52" Width="283.5" Height="22.68" Text="[ReportSource.PlaceOfDelivery]"/>
+      <TextObject Name="Text10" Left="548.1" Top="321.3" Width="124.74" Height="18.9"/>
+      <TextObject Name="Text11" Left="41.58" Top="374.22" Width="60.48" Height="196.56" Text="[ReportSource.DescriptionOfContainer]"/>
+      <TextObject Name="Text12" Left="105.84" Top="374.22" Width="86.94" Height="196.56" Text="[ReportSource.Marks]"/>
+      <TextObject Name="Text13" Left="192.78" Top="374.22" Width="60.48" Height="196.56" Text="[ReportSource.Quantity]"/>
+      <TextObject Name="Text14" Left="253.26" Top="374.22" Width="241.92" Height="196.56" Text="[ReportSource.DescriptionOfGoods]"/>
+      <TextObject Name="Text15" Left="495.18" Top="374.22" Width="75.6" Height="196.56" Text="[ReportSource.GrossWeight]"/>
+      <TextObject Name="Text16" Left="570.78" Top="374.22" Width="102.06" Height="196.56" Text="[ReportSource.Measurement]"/>
+      <TextObject Name="Text17" Left="366.66" Top="510.3" Width="306.18" Height="45.36"/>
+      <PictureObject Name="Picture2" Left="536.76" Top="434.7" Width="75.6" Height="75.6" ImageLocation="E:\ICP2\Client\dlload.jpg"/>
+    </DataBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ApplyTaskFailly" xml:space="preserve">
+    <value>申请任务失败!</value>
+  </data>
+  <data name="AssociatedForm" xml:space="preserve">
+    <value>关联的表单文件</value>
+  </data>
+  <data name="AssociatedInterface" xml:space="preserve">
+    <value>关联的接口</value>
+  </data>
+  <data name="ChineseDescription" xml:space="preserve">
+    <value>中文描述-对应后面表单显示的中文标题</value>
+  </data>
+  <data name="Condition" xml:space="preserve">
+    <value>条件</value>
+  </data>
+  <data name="ConditionalLessThanOneChildren" xml:space="preserve">
+    <value>子分支必须有一个以上.</value>
+  </data>
+  <data name="ConditionBranch" xml:space="preserve">
+    <value>条件分支</value>
+  </data>
+  <data name="Custom" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="EnglishDescription" xml:space="preserve">
+    <value>英文描述-对应后面表单显示的英文标题</value>
+  </data>
+  <data name="FlowChart" xml:space="preserve">
+    <value>流程图</value>
+  </data>
+  <data name="MessageContent" xml:space="preserve">
+    <value>消息内容</value>
+  </data>
+  <data name="MetodName" xml:space="preserve">
+    <value>方法名</value>
+  </data>
+  <data name="Receiver" xml:space="preserve">
+    <value>接收人</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>标准</value>
+  </data>
+  <data name="Subbranch" xml:space="preserve">
+    <value>子分支</value>
+  </data>
+  <data name="TaskHolders" xml:space="preserve">
+    <value>有权限签收当前任务的人</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>设置流程标题</value>
+  </data>
+  <data name="Applicantrules" xml:space="preserve">
+    <value>申请人满足的规则(只有申请人满足该规则,则流程会走该分支.)</value>
+  </data>
+  <data name="Savefailly" xml:space="preserve">
+    <value>保存失败!</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="NotThrough" xml:space="preserve">
+    <value>没通过</value>
+  </data>
+  <data name="InterfaceTypeNeedsExternalMetodExchangeInterfaceAttributegeAttribute" xml:space="preserve">
+    <value>接口上需要加[ExternalMetodExchangeInterfaceAttribute]特性.</value>
+  </data>
+  <data name="InterfaceTypeNotInterface" xml:space="preserve">
+    <value>不存在接口.</value>
+  </data>
+  <data name="ShowingExternalMetodExchangeService" xml:space="preserve">
+    <value>显示可以与工作流交互的接口</value>
+  </data>
+  <data name="MethodName" xml:space="preserve">
+    <value>方法名称</value>
+  </data>
+  <data name="Desc" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="BusinessInterface" xml:space="preserve">
+    <value>业务交互接口</value>
+  </data>
+  <data name="TypeNotMatch" xml:space="preserve">
+    <value>类型不匹配.</value>
+  </data>
+  <data name="ConditionsOfTheApplicant" xml:space="preserve">
+    <value>申请人条件</value>
+  </data>
+  <data name="SystemVariable" xml:space="preserve">
+    <value>系统变量</value>
+  </data>
+  <data name="CompleteEvent" xml:space="preserve">
+    <value>完成事件</value>
+  </data>
+  <data name="InitEvent" xml:space="preserve">
+    <value>初始化事件</value>
+  </data>
+  <data name="CNameRepeat" xml:space="preserve">
+    <value>[{0}]中文标题[{1}]存在重复</value>
+  </data>
+  <data name="ENameRepeat" xml:space="preserve">
+    <value>[{0}]英文标题[{1}]存在重复</value>
+  </data>
+  <data name="NecessaryToProperty" xml:space="preserve">
+    <value>[{0}]必须设置[{1}]属性.</value>
+  </data>
+  <data name="SubjectDesc" xml:space="preserve">
+    <value>邮件的主题</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>邮件</value>
+  </data>
+  <data name="DescLWIfElseActivity" xml:space="preserve">
+    <value>条件分支</value>
+  </data>
+  <data name="TitleLWIFElseActivity" xml:space="preserve">
+    <value>条件分支</value>
+  </data>
+  <data name="DescApproveActivity" xml:space="preserve">
+    <value>审核活动</value>
+  </data>
+  <data name="TitleApproveActivity" xml:space="preserve">
+    <value>审核活动</value>
+  </data>
+  <data name="DescApplicationActivity" xml:space="preserve">
+    <value>程序活动</value>
+  </data>
+  <data name="DescLWCallExternalMethodActivity" xml:space="preserve">
+    <value>调用外部活动</value>
+  </data>
+  <data name="DescSendMessageActivity" xml:space="preserve">
+    <value>发送系统消息</value>
+  </data>
+  <data name="TitleApplicationActivity" xml:space="preserve">
+    <value>程序活动</value>
+  </data>
+  <data name="TitleLWCallExternalMethodActivity" xml:space="preserve">
+    <value>调用外部活动</value>
+  </data>
+  <data name="TitleSendMessageActivity" xml:space="preserve">
+    <value>发送系统消息</value>
+  </data>
+  <data name="DescSendEMailActivity" xml:space="preserve">
+    <value>发送邮件</value>
+  </data>
+  <data name="TitleSendEMailActivity" xml:space="preserve">
+    <value>发送邮件</value>
+  </data>
+  <data name="MustDescription" xml:space="preserve">
+    <value>是否必须执行当前环节</value>
+  </data>
+  <data name="FormNotExists" xml:space="preserve">
+    <value>[{0}]关联的表单[{1}]不存在.</value>
+  </data>
+  <data name="FormFile" xml:space="preserve">
+    <value>关联表单</value>
+  </data>
+  <data name="DispDescription" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="DispName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="CName" xml:space="preserve">
+    <value>中文名称</value>
+  </data>
+  <data name="EName" xml:space="preserve">
+    <value>英文名称</value>
+  </data>
+  <data name="AppCompleteEvent" xml:space="preserve">
+    <value>完成事件</value>
+  </data>
+  <data name="AppInitEvent" xml:space="preserve">
+    <value>初始化事件</value>
+  </data>
+  <data name="DispMust" xml:space="preserve">
+    <value>必须执行</value>
+  </data>
+  <data name="AuditorCompleteEvent" xml:space="preserve">
+    <value>方法</value>
+  </data>
+  <data name="AuditorConditionName" xml:space="preserve">
+    <value>签收人</value>
+  </data>
+  <data name="DispSubject" xml:space="preserve">
+    <value>主题</value>
+  </data>
+  <data name="DispMail" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="MailContent" xml:space="preserve">
+    <value>邮件内容</value>
+  </data>
+  <data name="MailConditionName" xml:space="preserve">
+    <value>接收人</value>
+  </data>
+  <data name="MessageConditionName" xml:space="preserve">
+    <value>接收人</value>
+  </data>
+  <data name="ConditionName" xml:space="preserve">
+    <value>签收人</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>消息内容</value>
+  </data>
+  <data name="DispCompleteEvent" xml:space="preserve">
+    <value>完成事件</value>
+  </data>
+  <data name="NoNextAssigned" xml:space="preserve">
+    <value>没有下一步执行人，请确认部门信息无误</value>
+  </data>
+</root>

@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B71894C2-B22D-4BBA-9B45-65D82447318C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.Common.UI</RootNamespace>
+    <AssemblyName>ICP.FCM.Common.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.FCM.Common.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>C:\ICPDLLS\ICP.FCM.Common.UI.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDlls\ICP.Business.Common.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.DataCache.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.DataCache.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.AirImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.AirImport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FCM.OceanExport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.OceanImport.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FCM.OceanImport.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FileSystem.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\ICP.FileSystem.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.ReportCenter.UI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentRequest\AgentRequestListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestListPart.Designer.cs">
+      <DependentUpon>AgentRequestListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestSearchPart.Designer.cs">
+      <DependentUpon>AgentRequestSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestToolBar.Designer.cs">
+      <DependentUpon>AgentRequestToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestWorkitem.cs" />
+    <Compile Include="AgentRequest\AgentRequestWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequestWorkspace.Designer.cs">
+      <DependentUpon>AgentRequestWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequstPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AgentRequstPart.Designer.cs">
+      <DependentUpon>AgentRequstPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgentRequest\AssignAgentRequestPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AgentRequest\AssignAgentRequestPart.Designer.cs">
+      <DependentUpon>AssignAgentRequestPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillRevise\OEBillReviseBasePartNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillRevise\OEBillReviseBasePartNew.Designer.cs">
+      <DependentUpon>OEBillReviseBasePartNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillRevise\OEBillReviseBasePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillRevise\OEBillReviseBasePart.Designer.cs">
+      <DependentUpon>OEBillReviseBasePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillRevise\OEBillRevisePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillRevise\OEBillRevisePart.Designer.cs">
+      <DependentUpon>OEBillRevisePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BillRevise\OEBillRevisePartNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillRevise\OEBillRevisePartNew.Designer.cs">
+      <DependentUpon>OEBillRevisePartNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonModuleInit.cs" />
+    <Compile Include="CommonPart\PartPOItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonPart\PartPOItems.Designer.cs">
+      <DependentUpon>PartPOItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonPart\PartBookingForCSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonPart\PartBookingForCSP.Designer.cs">
+      <DependentUpon>PartBookingForCSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Parts\EditRemarkPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\EditRemarkPart.Designer.cs">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\UCBookingFailed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\UCBookingFailed.Designer.cs">
+      <DependentUpon>UCBookingFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentDispatchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentDispatchPart.Designer.cs">
+      <DependentUpon>UCDocumentDispatchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentDispatchPartNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentDispatchPartNew.Designer.cs">
+      <DependentUpon>UCDocumentDispatchPartNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentHistoryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentHistoryPart.Designer.cs">
+      <DependentUpon>UCDocumentHistoryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentHistoryPartNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\UCDocumentHistoryPartNew.Designer.cs">
+      <DependentUpon>UCDocumentHistoryPartNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\VerifiSheetEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\VerifiSheetEditPart.designer.cs">
+      <DependentUpon>VerifiSheetEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UIProxys.cs" />
+    <Compile Include="Common\UserOrganizationTreeCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\UserOrganizationTreeCheckBox.Designer.cs">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="DipatchLogForm\DispatchFileLogShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DipatchLogForm\DispatchFileLogShow.Designer.cs">
+      <DependentUpon>DispatchFileLogShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\HistoryOceanRecordPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\HistoryOceanRecordPart.designer.cs">
+      <DependentUpon>HistoryOceanRecordPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIAcceptHistoryBasePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIAcceptHistoryBasePart.Designer.cs">
+      <DependentUpon>OIAcceptHistoryBasePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIAcceptHistoryCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIAcceptHistoryCompare.Designer.cs">
+      <DependentUpon>OIAcceptHistoryCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIApplyRevise.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIApplyRevise.Designer.cs">
+      <DependentUpon>OIApplyRevise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompare.Designer.cs">
+      <DependentUpon>OIDispachCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePart.Designer.cs">
+      <DependentUpon>OIDispachCompareBasePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePartNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePartNew.Designer.cs">
+      <DependentUpon>OIDispachCompareBasePartNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareNew.Designer.cs">
+      <DependentUpon>OIDispachCompareNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\RefreshService.cs" />
+    <Compile Include="DispatchCompare\TestPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\TestPart.Designer.cs">
+      <DependentUpon>TestPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\RejectReasonPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\RejectReasonPart.Designer.cs">
+      <DependentUpon>RejectReasonPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePartAir.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DispatchCompare\OIDispachCompareBasePartAir.Designer.cs">
+      <DependentUpon>OIDispachCompareBasePartAir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\BillReviseHistoryPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\BillReviseHistoryPart.Designer.cs">
+      <DependentUpon>BillReviseHistoryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\BindCorrelation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\BindCorrelation.Designer.cs">
+      <DependentUpon>BindCorrelation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\DispatchDocumentCompare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\DispatchDocumentCompare.Designer.cs">
+      <DependentUpon>DispatchDocumentCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\DispatchDocumentCompareNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\DispatchDocumentCompareNew.Designer.cs">
+      <DependentUpon>DispatchDocumentCompareNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\DocumentListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\DocumentListPart.Designer.cs">
+      <DependentUpon>DocumentListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\EditDocumentPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\EditDocumentPart.Designer.cs">
+      <DependentUpon>EditDocumentPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\FrmSendAgentDocument.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\FrmSendAgentDocument.Designer.cs">
+      <DependentUpon>FrmSendAgentDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\BillReviseBasePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\BillReviseBasePart.Designer.cs">
+      <DependentUpon>BillReviseBasePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\FrmSendAgentDocumentNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\FrmSendAgentDocumentNew.Designer.cs">
+      <DependentUpon>FrmSendAgentDocumentNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Document\ProfitComparePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Document\ProfitComparePart.Designer.cs">
+      <DependentUpon>ProfitComparePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessSearchPart.designer.cs">
+      <DependentUpon>BusinessSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessListPart.designer.cs">
+      <DependentUpon>BusinessListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessFinder.cs" />
+    <Compile Include="Finder\BusinessFinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderToolBar.Designer.cs">
+      <DependentUpon>BusinessFinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Finder\BusinessFinderWorkspace.Designer.cs">
+      <DependentUpon>BusinessFinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UCBillList\BillListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\UCBillList\BillListPart.designer.cs">
+      <DependentUpon>BillListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\UCBillList\DebtListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\UCBillList\DebtListPart.designer.cs">
+      <DependentUpon>DebtListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service\FCMCommonClientService.cs" />
+    <Compile Include="Common\VoyageDateInfoHelper.cs" />
+    <Compile Include="Common\UCButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AgentRequest\AgentRequestListPart.resx">
+      <DependentUpon>AgentRequestListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestSearchPart.resx">
+      <DependentUpon>AgentRequestSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestToolBar.resx">
+      <DependentUpon>AgentRequestToolBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequestWorkspace.resx">
+      <DependentUpon>AgentRequestWorkspace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AgentRequstPart.resx">
+      <DependentUpon>AgentRequstPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgentRequest\AssignAgentRequestPart.resx">
+      <DependentUpon>AssignAgentRequestPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillRevise\OEBillReviseBasePartNew.resx">
+      <DependentUpon>OEBillReviseBasePartNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillRevise\OEBillReviseBasePart.resx">
+      <DependentUpon>OEBillReviseBasePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillRevise\OEBillRevisePart.resx">
+      <DependentUpon>OEBillRevisePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BillRevise\OEBillRevisePartNew.resx">
+      <DependentUpon>OEBillRevisePartNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonPart\PartPOItems.resx">
+      <DependentUpon>PartPOItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonPart\PartBookingForCSP.resx">
+      <DependentUpon>PartBookingForCSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\EditRemarkPart.resx">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\UCBookingFailed.resx">
+      <DependentUpon>UCBookingFailed.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\UCDocumentDispatchPart.resx">
+      <DependentUpon>UCDocumentDispatchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\UCDocumentDispatchPartNew.resx">
+      <DependentUpon>UCDocumentDispatchPartNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\UCDocumentHistoryPart.resx">
+      <DependentUpon>UCDocumentHistoryPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\UCDocumentHistoryPartNew.resx">
+      <DependentUpon>UCDocumentHistoryPartNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\VerifiSheetEditPart.resx">
+      <DependentUpon>VerifiSheetEditPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\UserOrganizationTreeCheckBox.resx">
+      <DependentUpon>UserOrganizationTreeCheckBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DipatchLogForm\DispatchFileLogShow.resx">
+      <DependentUpon>DispatchFileLogShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\HistoryOceanRecordPart.resx">
+      <DependentUpon>HistoryOceanRecordPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIAcceptHistoryBasePart.resx">
+      <DependentUpon>OIAcceptHistoryBasePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIAcceptHistoryCompare.resx">
+      <DependentUpon>OIAcceptHistoryCompare.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIApplyRevise.resx">
+      <DependentUpon>OIApplyRevise.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIDispachCompare.resx">
+      <DependentUpon>OIDispachCompare.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIDispachCompareBasePartNew.resx">
+      <DependentUpon>OIDispachCompareBasePartNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\OIDispachCompareNew.resx">
+      <DependentUpon>OIDispachCompareNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\TestPart.resx">
+      <DependentUpon>TestPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DispatchCompare\RejectReasonPart.resx">
+      <DependentUpon>RejectReasonPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\BindCorrelation.resx">
+      <DependentUpon>BindCorrelation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\DispatchDocumentCompare.resx">
+      <DependentUpon>DispatchDocumentCompare.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\DispatchDocumentCompareNew.resx">
+      <DependentUpon>DispatchDocumentCompareNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\DocumentListPart.resx">
+      <DependentUpon>DocumentListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\EditDocumentPart.resx">
+      <DependentUpon>EditDocumentPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\FrmSendAgentDocument.resx">
+      <DependentUpon>FrmSendAgentDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\BillReviseBasePart.resx">
+      <DependentUpon>BillReviseBasePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\FrmSendAgentDocumentNew.resx">
+      <DependentUpon>FrmSendAgentDocumentNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Document\ProfitComparePart.resx">
+      <DependentUpon>ProfitComparePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\BusinessSearchPart.resx">
+      <DependentUpon>BusinessSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finder\BusinessListPart.resx">
+      <DependentUpon>BusinessListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\UCBillList\BillListPart.resx">
+      <DependentUpon>BillListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\UCBillList\DebtListPart.resx">
+      <DependentUpon>DebtListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.FCM.Common.ServiceInterface\ICP.FCM.Common.ServiceInterface.csproj">
+      <Project>{E3263870-19C7-4986-BD8C-E7C1E4DE615A}</Project>
+      <Name>ICP.FCM.Common.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.DataCache.ServiceInterface.DocumentInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.DataObjects.Booking2Customer.datasource" />
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.DataObjects.PurchaseOrderItem.datasource" />
+    <None Include="Resources\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\center_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_2_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_d_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\memo_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_blue_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.FCM.Common.ServiceInterface.DataObjects.CustomerCarrierObjects.datasource" />
+    <None Include="Properties\DataSources\ICP.Sys.ServiceInterface.DataObjects.UserList.datasource" />
+    <None Include="Resources\transfer_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Controls\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

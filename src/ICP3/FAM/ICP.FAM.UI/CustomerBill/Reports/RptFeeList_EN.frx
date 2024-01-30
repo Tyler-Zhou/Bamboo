@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ReportInfo.Created="09/03/2011 09:19:42" ReportInfo.Modified="09/14/2011 10:16:50" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="FeeListReportData" ReferenceName="FeeListReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="SONo" DataType="System.Int32"/>
+      <Column Name="OperationNo" DataType="System.Int32"/>
+      <Column Name="BLNo" DataType="System.Int32"/>
+      <Column Name="VesselVoyage" DataType="System.Int32"/>
+      <Column Name="PreETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ETA" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ContainerType" DataType="System.Int32"/>
+      <Column Name="ContainerNo" DataType="System.Int32"/>
+      <Column Name="BillNo" DataType="System.Int32"/>
+      <Column Name="POL" DataType="System.Int32"/>
+      <Column Name="POD" DataType="System.Int32"/>
+      <Column Name="Destination" DataType="System.Int32"/>
+      <Column Name="Assessor" DataType="System.Int32"/>
+      <Column Name="Sales" DataType="System.Int32"/>
+      <Column Name="Filer" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="FeeListReportFee" ReferenceName="FeeListReportFee" DataType="System.Int32" Enabled="true">
+      <Column Name="ChargeCode" DataType="System.Int32"/>
+      <Column Name="WayDescription" DataType="System.Int32"/>
+      <Column Name="Currency" DataType="System.Int32"/>
+      <Column Name="Amount" DataType="System.Int32"/>
+      <Column Name="AmountOfUSD" DataType="System.Int32"/>
+      <Column Name="BillToName" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="FeeListReportCurrencyFee" ReferenceName="FeeListReportCurrencyFee" DataType="System.Int32" Enabled="true">
+      <Column Name="WayDescription" DataType="System.Int32"/>
+      <Column Name="USDAmount" DataType="System.Int32"/>
+      <Column Name="RMBAmount" DataType="System.Int32"/>
+      <Column Name="HKDAmount" DataType="System.Int32"/>
+      <Column Name="USDProfit" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1651288053">
+    <PageHeaderBand Name="PageHeaderBand1651288053" Top="20" Width="718.2" Height="26.46">
+      <TextObject Name="Text1" Left="3.78" Width="706.86" Height="26.46" Text="Fee List" HorzAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand1299916162" Top="66.46" Width="718.2" Height="178.48" CanGrow="true">
+      <TextObject Name="textbox30" Left="470.5" Top="6" Width="124.85" Height="19" CanGrow="true" Text="[FormatDateTime([Date],&quot;Short Date&quot;)]" VertAlign="Center"/>
+      <TextObject Name="textbox31" Left="385.45" Top="6" Width="85.05" Height="19" CanGrow="true" Text="Print Date:" HorzAlign="Right" VertAlign="Center"/>
+      <TableObject Name="Table3" Left="7.56" Top="30.24" Width="703.36" Height="148.24" GrowToBottom="true">
+        <TableColumn Name="Column1" Width="175.84"/>
+        <TableColumn Name="Column2" Width="175.84"/>
+        <TableColumn Name="Column3" Width="175.84"/>
+        <TableColumn Name="Column4" Width="175.84"/>
+        <TableRow Name="Row1" Height="21.18" AutoSize="true">
+          <TableCell Name="Cell1" Text="SoNo" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell2" Text="[FeeListReportData.SONo]"/>
+          <TableCell Name="Cell3" Text="Operation No" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell4" Text="[FeeListReportData.OperationNo]"/>
+        </TableRow>
+        <TableRow Name="Row2" Height="21.18" AutoSize="true">
+          <TableCell Name="Cell6" Text="Ves&amp;VoySecond" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell7" Text="[FeeListReportData.VesselVoyage]"/>
+          <TableCell Name="Cell8" Text="BL No" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell9" Text="[FeeListReportData.BLNo]"/>
+        </TableRow>
+        <TableRow Name="Row3" Height="21.18" AutoSize="true">
+          <TableCell Name="Cell11" Text="Ves&amp;VoyFirst" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell12" Text="[FeeListReportData.PreETD]"/>
+          <TableCell Name="Cell13" Text="POL" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell14" Text="[FeeListReportData.POL]"/>
+        </TableRow>
+        <TableRow Name="Row4" Height="21.18" AutoSize="true">
+          <TableCell Name="Cell16" Text="Cut-Off Sec" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell17" Text="[FeeListReportData.ETD]"/>
+          <TableCell Name="Cell18" Text="POD" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell19" Text="[FeeListReportData.POD]"/>
+        </TableRow>
+        <TableRow Name="Row5" Height="21.18" AutoSize="true">
+          <TableCell Name="Cell21" Text="ETA" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell22" Text="[FeeListReportData.ETA]"/>
+          <TableCell Name="Cell23" Text="Destination" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell24" Text="[FeeListReportData.Destination]"/>
+        </TableRow>
+        <TableRow Name="Row7" Height="21.17" AutoSize="true">
+          <TableCell Name="Cell29" Text="CNT" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell30" Text="[FeeListReportData.ContainerType]"/>
+          <TableCell Name="Cell31" Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell32"/>
+        </TableRow>
+        <TableRow Name="Row6" Height="21.17" AutoSize="true">
+          <TableCell Name="Cell25" Text="CNT No." Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell26" Text="[FeeListReportData.ContainerNo]"/>
+          <TableCell Name="Cell27" Text="Invoice No." Font="Arial, 10pt, style=Bold"/>
+          <TableCell Name="Cell28" Text="[FeeListReportData.BillNo]"/>
+        </TableRow>
+      </TableObject>
+    </ColumnHeaderBand>
+    <DataBand Name="table1" Top="307.62" Width="718.2" Height="22.68" CanGrow="true" DataSource="FeeListReportFee">
+      <TableObject Name="Table6" Left="3.78" Width="708.2" Height="22.68">
+        <TableColumn Name="Column23" Width="52.81"/>
+        <TableColumn Name="Column24" Width="143.53"/>
+        <TableColumn Name="Column25" Width="75.49"/>
+        <TableColumn Name="Column26" Width="75.49"/>
+        <TableColumn Name="Column27" Width="96.39"/>
+        <TableColumn Name="Column28" Width="264.49"/>
+        <TableRow Name="Row11" Height="22.68">
+          <TableCell Name="Cell71" Text="[FeeListReportFee.WayDescription]" VertAlign="Center"/>
+          <TableCell Name="Cell72" Text="[FeeListReportFee.ChargeCode]" VertAlign="Center"/>
+          <TableCell Name="Cell73" Text="[FeeListReportFee.Currency]" VertAlign="Center"/>
+          <TableCell Name="Cell74" Text="[FeeListReportFee.Amount]" VertAlign="Center"/>
+          <TableCell Name="Cell75" Text="[FeeListReportFee.AmountOfUSD]" VertAlign="Center"/>
+          <TableCell Name="Cell76" Text="[FeeListReportFee.BillToName]" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Top="264.94" Width="718.2" Height="22.68" CanGrow="true">
+        <TableObject Name="Table2" Left="3.78" Width="708.2" Height="22.68" Border.Lines="Bottom">
+          <TableColumn Name="Column5" Width="52.81"/>
+          <TableColumn Name="Column6" Width="143.53"/>
+          <TableColumn Name="Column7" Width="75.49"/>
+          <TableColumn Name="Column8" Width="79.27"/>
+          <TableColumn Name="Column10" Width="92.61"/>
+          <TableColumn Name="Column9" Width="264.49"/>
+          <TableRow Name="Row8" Height="22.68">
+            <TableCell Name="Cell33" VertAlign="Center"/>
+            <TableCell Name="Cell34" Text="Fee Name" VertAlign="Center"/>
+            <TableCell Name="Cell35" Text="Currency" VertAlign="Center"/>
+            <TableCell Name="Cell36" Text="Amount" VertAlign="Center"/>
+            <TableCell Name="Cell38" Text="Amt. To USD" VertAlign="Center"/>
+            <TableCell Name="Cell37" Text="BillToName" VertAlign="Center"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="350.3" Width="718.2" CanGrow="true">
+        <LineObject Name="Line1" Left="3.78" Width="706.86" Diagonal="true"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data500" Top="370.3" Width="718.2" Height="22.68" CanGrow="true" DataSource="FeeListReportCurrencyFee">
+      <TableObject Name="Table4" Left="3.78" Width="709.26" Height="22.68">
+        <TableColumn Name="Column29" Width="49.62"/>
+        <TableColumn Name="Column30" Width="121.44"/>
+        <TableColumn Name="Column31" Width="113.88"/>
+        <TableColumn Name="Column32" Width="136.56"/>
+        <TableColumn Name="Column33" Width="287.76"/>
+        <TableRow Name="Row12" Height="22.68">
+          <TableCell Name="Cell77" Text="[FeeListReportCurrencyFee.WayDescription]"/>
+          <TableCell Name="Cell78" Text="[FeeListReportCurrencyFee.USDAmount]"/>
+          <TableCell Name="Cell79" Text="[FeeListReportCurrencyFee.RMBAmount]"/>
+          <TableCell Name="Cell80" Text="[FeeListReportCurrencyFee.HKDAmount]"/>
+          <TableCell Name="Cell81" Text="[FeeListReportCurrencyFee.USDProfit]"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="412.98" Width="718.2" Height="34.02" CanGrow="true">
+      <TableObject Name="Table5" Left="52.92" Width="657.72" Height="22.68">
+        <TableColumn Name="Column17" Width="109.62"/>
+        <TableColumn Name="Column18" Width="109.62"/>
+        <TableColumn Name="Column19" Width="109.62"/>
+        <TableColumn Name="Column20" Width="109.62"/>
+        <TableColumn Name="Column21" Width="109.62"/>
+        <TableColumn Name="Column22" Width="109.62"/>
+        <TableRow Name="Row10" Height="22.68">
+          <TableCell Name="Cell45" Text="Assessor"/>
+          <TableCell Name="Cell46" Text="[FeeListReportData.Assessor]"/>
+          <TableCell Name="Cell47" Text="Sales"/>
+          <TableCell Name="Cell48" Text="[FeeListReportData.Sales]"/>
+          <TableCell Name="Cell49" Text="Filer"/>
+          <TableCell Name="Cell70" Text="[FeeListReportData.Filer]"/>
+        </TableRow>
+      </TableObject>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

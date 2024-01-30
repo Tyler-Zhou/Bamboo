@@ -1,0 +1,1128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E64762C1-DEE3-462B-B9B7-16D9D0A66793}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.ReportCenter.UI</RootNamespace>
+    <AssemblyName>ICP.ReportCenter.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLs\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="BusinessReports\18箱信息报表\ExportContainerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\18箱信息报表\ExportContainerList.Designer.cs">
+      <DependentUpon>ExportContainerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\18箱信息报表\ImportContainerList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\18箱信息报表\ImportContainerList.Designer.cs">
+      <DependentUpon>ImportContainerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\05利润组成分析\ProfitForComposeSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\05利润组成分析\ProfitForComposeSearchPart.Designer.cs">
+      <DependentUpon>ProfitForComposeSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\07利润趋势表\ProfitForDirectionSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\07利润趋势表\ProfitForDirectionSearchPart.Designer.cs">
+      <DependentUpon>ProfitForDirectionSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\06单箱利润分析\PorfitForTSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\06单箱利润分析\PorfitForTSearchPart.Designer.cs">
+      <DependentUpon>PorfitForTSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\02箱量利润详细表\PortfolioAndProfitDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\02箱量利润详细表\PortfolioAndProfitDetailSearchPart.Designer.cs">
+      <DependentUpon>PortfolioAndProfitDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\04商务箱量利润详细表\PortfolioAndProfitForGeneral_DetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\04商务箱量利润详细表\PortfolioAndProfitForGeneral_DetailSearchPart.Designer.cs">
+      <DependentUpon>PortfolioAndProfitForGeneral_DetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\03商务箱量统计表\PortfolioAndProfitForGeneral_TotalSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\03商务箱量统计表\PortfolioAndProfitForGeneral_TotalSearchPart.Designer.cs">
+      <DependentUpon>PortfolioAndProfitForGeneral_TotalSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\01箱量利润统计表\PortfolioAndProfitTotalSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\01箱量利润统计表\PortfolioAndProfitTotalSearchPart.Designer.cs">
+      <DependentUpon>PortfolioAndProfitTotalSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\08箱量趋势分析\DirectionForTEUSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\08箱量趋势分析\DirectionForTEUSearchPart.Designer.cs">
+      <DependentUpon>DirectionForTEUSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\09利润同期对比图\SameTermCompareForProfitSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\09利润同期对比图\SameTermCompareForProfitSearchPart.Designer.cs">
+      <DependentUpon>SameTermCompareForProfitSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\10箱量同期对比图\SameTermCompareForTSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\10箱量同期对比图\SameTermCompareForTSearchPart.Designer.cs">
+      <DependentUpon>SameTermCompareForTSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\11成本组成分析\CostFor_TotalSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\11成本组成分析\CostFor_TotalSearchPart.Designer.cs">
+      <DependentUpon>CostFor_TotalSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\12成本趋势分析图\CostForDirectionSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\12成本趋势分析图\CostForDirectionSearchPart.Designer.cs">
+      <DependentUpon>CostForDirectionSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\13成本同期比较分析图\CostForSameTermCompareSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\13成本同期比较分析图\CostForSameTermCompareSearchPart.Designer.cs">
+      <DependentUpon>CostForSameTermCompareSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\14经营状况分析表\AnalysisOfOperatingConditionsSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\14经营状况分析表\AnalysisOfOperatingConditionsSearchPart.Designer.cs">
+      <DependentUpon>AnalysisOfOperatingConditionsSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\15成本分析-个人帐单\CostDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\15成本分析-个人帐单\CostDetailSearchPart.Designer.cs">
+      <DependentUpon>CostDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\16业务员利润提成表\PortfolioAndProfitForSalesCustomer_Total.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\16业务员利润提成表\PortfolioAndProfitForSalesCustomer_Total.Designer.cs">
+      <DependentUpon>PortfolioAndProfitForSalesCustomer_Total.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\17航线箱量统计\ContainerVolumeTotalSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\17航线箱量统计\ContainerVolumeTotalSearchPart.Designer.cs">
+      <DependentUpon>ContainerVolumeTotalSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\19目的港返利表\DestinationReturnProfit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\19目的港返利表\DestinationReturnProfit.Designer.cs">
+      <DependentUpon>DestinationReturnProfit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\20配比余额报表\ProfitRatiosSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\20配比余额报表\ProfitRatiosSummary.Designer.cs">
+      <DependentUpon>ProfitRatiosSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessReports\21本地服务\LocalServiceDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessReports\21本地服务\LocalServiceDetail.Designer.cs">
+      <DependentUpon>LocalServiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\BusinessCompanyTreeSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\BusinessShipLineTreeCheckControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CompanyCheckBoxComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CompanyTreeCheckControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CostItemTreeSelectBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CRMCompanyComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CRMSalesButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CurrencyLWImageComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CustomerTypeLWImageComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\GroupByLWImageComboBoxEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\MutipleCustomerFinderButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateByWeekPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateByWeekPart.Designer.cs">
+      <DependentUpon>OperationDateByWeekPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\ShipLineCheckBoxComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\SingleCustomerFinderButtonEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationTypeCheckBoxComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\SelectUserListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\SelectUserListPart.Designer.cs">
+      <DependentUpon>SelectUserListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\UCBusinessOrganizationSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\UCBusinessOrganizationSelect.Designer.cs">
+      <DependentUpon>UCBusinessOrganizationSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\UCReportType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\UCReportType.Designer.cs">
+      <DependentUpon>UCReportType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Enum.cs" />
+    <Compile Include="Comm\guid.cs" />
+    <Compile Include="Comm\Parts\IClientMessageService.cs" />
+    <Compile Include="Comm\ReportTypeConvertHelper.cs" />
+    <Compile Include="CRMReports\2业务活动统计\SalesActivitySearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRMReports\2业务活动统计\SalesActivitySearchPart.Designer.cs">
+      <DependentUpon>SalesActivitySearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRMReports\3经理分析统计\CustomerAnalysisSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRMReports\3经理分析统计\CustomerAnalysisSearchPart.Designer.cs">
+      <DependentUpon>CustomerAnalysisSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRMReports\4合作状态统计\CustomerStateSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRMReports\4合作状态统计\CustomerStateSearchPart.Designer.cs">
+      <DependentUpon>CustomerStateSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRMReports\5业务阶段统计\CustomerPhaseSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRMReports\5业务阶段统计\CustomerPhaseSearchPart.Designer.cs">
+      <DependentUpon>CustomerPhaseSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCMReports\1操作工作量统计\WorkLoadForOperatorSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FCMReports\1操作工作量统计\WorkLoadForOperatorSearchPart.Designer.cs">
+      <DependentUpon>WorkLoadForOperatorSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCMReports\2操作指定货报表\AgentForOperatorSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FCMReports\2操作指定货报表\AgentForOperatorSearchPart.Designer.cs">
+      <DependentUpon>AgentForOperatorSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCMReports\3出口业务信息报表\OEBussinesInfoSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FCMReports\3出口业务信息报表\OEBussinesInfoSearchPart.Designer.cs">
+      <DependentUpon>OEBussinesInfoSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCMReports\4业务数据核对表\JobInfoForCargoTrackingSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FCMReports\4业务数据核对表\JobInfoForCargoTrackingSearchPart.Designer.cs">
+      <DependentUpon>JobInfoForCargoTrackingSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\4帐龄表\DcNoteForAgeDetailsSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\4帐龄表\DcNoteForAgeDetailsSearchPart.Designer.cs">
+      <DependentUpon>DcNoteForAgeDetailsSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\UCBackups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\UCBackups.Designer.cs">
+      <DependentUpon>UCBackups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\1帐龄表\AgingReportSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\1帐龄表\AgingReportSearchPart.Designer.cs">
+      <DependentUpon>AgingReportSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\2代理对帐\AgentStatementSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\2代理对帐\AgentStatementSearchPart.Designer.cs">
+      <DependentUpon>AgentStatementSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\3对帐表\LocalStatementSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\3对帐表\LocalStatementSearchPart.Designer.cs">
+      <DependentUpon>LocalStatementSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\4收支报表\CheckDepositSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\4收支报表\CheckDepositSearchPart.Designer.cs">
+      <DependentUpon>CheckDepositSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\6预收预付列表\PrepaidInAdvanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\6预收预付列表\PrepaidInAdvanceSearchPart.Designer.cs">
+      <DependentUpon>PrepaidInAdvanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOIReports\5收支报表CA\CheckDepositCASearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOIReports\5收支报表CA\CheckDepositCASearchPart.Designer.cs">
+      <DependentUpon>CheckDepositCASearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRMReports\1业务信息表\JobInformationSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CRMReports\1业务信息表\JobInformationSearchPart.Designer.cs">
+      <DependentUpon>JobInformationSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\ClientDataObjects.cs" />
+    <Compile Include="Comm\Controls\CheckBoxComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\CheckBoxComboBox.Designer.cs">
+      <DependentUpon>CheckBoxComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Constants.cs" />
+    <Compile Include="Comm\Controls\OperationDateByMonthPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateByMonthPart.Designer.cs">
+      <DependentUpon>OperationDateByMonthPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateByYearPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateByYearPart.Designer.cs">
+      <DependentUpon>OperationDateByYearPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateCustomMonthPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateCustomMonthPart.Designer.cs">
+      <DependentUpon>OperationDateCustomMonthPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateMultiMonthPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\OperationDateMultiMonthPart.Designer.cs">
+      <DependentUpon>OperationDateMultiMonthPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Parts\ReportBaseSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\ReportCenterHelper.cs" />
+    <Compile Include="Comm\Parts\ReportMainSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Parts\ReportMainSpace.Designer.cs">
+      <DependentUpon>ReportMainSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\Parts\ReportViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Parts\ReportViewBase.Designer.cs">
+      <DependentUpon>ReportViewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\ReportWorkitem.cs" />
+    <Compile Include="Comm\Utility.cs" />
+    <Compile Include="FinanceOEReports\1业务管理成本\CommisionSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\1业务管理成本\CommisionSearchPart.Designer.cs">
+      <DependentUpon>CommisionSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\2应收帐款表\DcNoteDRSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\2应收帐款表\DcNoteDRSearchPart.Designer.cs">
+      <DependentUpon>DcNoteDRSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\3应付帐款表\DcNoteCRSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\3应付帐款表\DcNoteCRSearchPart.Designer.cs">
+      <DependentUpon>DcNoteCRSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\4帐龄表\DcNoteForAgeSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\4帐龄表\DcNoteForAgeSearchPart.Designer.cs">
+      <DependentUpon>DcNoteForAgeSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\5代理对帐表\DcNoteForAgentSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\5代理对帐表\DcNoteForAgentSearchPart.Designer.cs">
+      <DependentUpon>DcNoteForAgentSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\6应收应付盈余表\DebitNoteForProfitSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\6应收应付盈余表\DebitNoteForProfitSearchPart.Designer.cs">
+      <DependentUpon>DebitNoteForProfitSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Comm\SpecialGLCodeSet.cs">
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Comm\SpecialGLCodeSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\UFServicePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\UFServicePart.Designer.cs">
+      <DependentUpon>UFServicePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\VoucherExport.cs" />
+    <Compile Include="FinanceOEReports\7凭证明细列表\VoucherInfoSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceOEReports\7凭证明细列表\VoucherInfoSearchPart.Designer.cs">
+      <DependentUpon>VoucherInfoSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\1科目余额表\GLSummarySearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\1科目余额表\GLSummarySearchPart.Designer.cs">
+      <DependentUpon>GLSummarySearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\2试算平衡表\TrialBalanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\2试算平衡表\TrialBalanceSearchPart.Designer.cs">
+      <DependentUpon>TrialBalanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\3资产负债表\BalanceSheetSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\3资产负债表\BalanceSheetSearchPart.Designer.cs">
+      <DependentUpon>BalanceSheetSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\4损益表\InComeStatementSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\4损益表\InComeStatementSearchPart.Designer.cs">
+      <DependentUpon>InComeStatementSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\5银行对帐表\BankstandingSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\5银行对帐表\BankstandingSearchPart.Designer.cs">
+      <DependentUpon>BankstandingSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceReports\6日记帐报表\Journal_ReportSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinanceReports\6日记帐报表\Journal_ReportSearchPart.Designer.cs">
+      <DependentUpon>Journal_ReportSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportCenterModuleInit.cs" />
+    <Compile Include="Comm\Controls\ReportOperationTypePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Comm\Controls\ReportOperationTypePart.Designer.cs">
+      <DependentUpon>ReportOperationTypePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\01科目余额表\GLBalanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\01科目余额表\GLBalanceSearchPart.Designer.cs">
+      <DependentUpon>GLBalanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\02科目明细表\GLDetailDataSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\02科目明细表\GLDetailDataSearchPart.Designer.cs">
+      <DependentUpon>GLDetailDataSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailForLASearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailForLASearchPart.Designer.cs">
+      <DependentUpon>CompanyBalanceSheetDetailForLASearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchAllPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchAllPart.Designer.cs">
+      <DependentUpon>CompanyBalanceSheetDetailSearchAllPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchPart.Designer.cs">
+      <DependentUpon>CompanyBalanceSheetDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\03客户余额表\CustomerGLBalanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\03客户余额表\CustomerGLBalanceSearchPart.Designer.cs">
+      <DependentUpon>CustomerGLBalanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\04客户三栏余额表%28无效%29\Customer3ColumnGLBalanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\04客户三栏余额表%28无效%29\Customer3ColumnGLBalanceSearchPart.Designer.cs">
+      <DependentUpon>Customer3ColumnGLBalanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\05客户明细帐\CustomerGLDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\05客户明细帐\CustomerGLDetailSearchPart.Designer.cs">
+      <DependentUpon>CustomerGLDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\06个人余额表\PersonalGLBalanceSarchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\06个人余额表\PersonalGLBalanceSarchPart.Designer.cs">
+      <DependentUpon>PersonalGLBalanceSarchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\07个人三栏余额表\Personal3ColumnGLBalanceSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\07个人三栏余额表\Personal3ColumnGLBalanceSearchPart.Designer.cs">
+      <DependentUpon>Personal3ColumnGLBalanceSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\08个人明细帐\PersonalGLDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\08个人明细帐\PersonalGLDetailSearchPart.Designer.cs">
+      <DependentUpon>PersonalGLDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\09费用分析表\ExpenseAnalysisSheetDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\09费用分析表\ExpenseAnalysisSheetDetailSearchPart.Designer.cs">
+      <DependentUpon>ExpenseAnalysisSheetDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\11利润表\ProfitDetailSearchPartAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\11利润表\ProfitDetailSearchPartAll.Designer.cs">
+      <DependentUpon>ProfitDetailSearchPartAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\11利润表\ProfitDetailSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\11利润表\ProfitDetailSearchPart.Designer.cs">
+      <DependentUpon>ProfitDetailSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\12利润分配表\ProfitAllocationDetailPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\12利润分配表\ProfitAllocationDetailPart.Designer.cs">
+      <DependentUpon>ProfitAllocationDetailPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UFReports\UFTestSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UFReports\UFTestSearchPart.Designer.cs">
+      <DependentUpon>UFTestSearchPart.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DataWindow, Version=2.0.4600.0, Culture=neutral, PublicKeyToken=cc0f66dd9541b3da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Sybase\DataWindow .NET 2.0\DataWindow.dll</HintPath>
+    </Reference>
+    <Reference Include="DataWindowInterop, Version=2.0.4600.0, Culture=neutral, PublicKeyToken=cc0f66dd9541b3da" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.FCM.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.FRM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Message.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.System.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BusinessReports\18箱信息报表\ExportContainerList.resx">
+      <DependentUpon>ExportContainerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\18箱信息报表\ImportContainerList.resx">
+      <DependentUpon>ImportContainerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\05利润组成分析\ProfitForComposeSearchPart.resx">
+      <DependentUpon>ProfitForComposeSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\07利润趋势表\ProfitForDirectionSearchPart.resx">
+      <DependentUpon>ProfitForDirectionSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\06单箱利润分析\PorfitForTSearchPart.resx">
+      <DependentUpon>PorfitForTSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\02箱量利润详细表\PortfolioAndProfitDetailSearchPart.resx">
+      <DependentUpon>PortfolioAndProfitDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\04商务箱量利润详细表\PortfolioAndProfitForGeneral_DetailSearchPart.resx">
+      <DependentUpon>PortfolioAndProfitForGeneral_DetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\03商务箱量统计表\PortfolioAndProfitForGeneral_TotalSearchPart.resx">
+      <DependentUpon>PortfolioAndProfitForGeneral_TotalSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\01箱量利润统计表\PortfolioAndProfitTotalSearchPart.resx">
+      <DependentUpon>PortfolioAndProfitTotalSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\08箱量趋势分析\DirectionForTEUSearchPart.resx">
+      <DependentUpon>DirectionForTEUSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\09利润同期对比图\SameTermCompareForProfitSearchPart.resx">
+      <DependentUpon>SameTermCompareForProfitSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\10箱量同期对比图\SameTermCompareForTSearchPart.resx">
+      <DependentUpon>SameTermCompareForTSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\11成本组成分析\CostFor_TotalSearchPart.resx">
+      <DependentUpon>CostFor_TotalSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\12成本趋势分析图\CostForDirectionSearchPart.resx">
+      <DependentUpon>CostForDirectionSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\13成本同期比较分析图\CostForSameTermCompareSearchPart.resx">
+      <DependentUpon>CostForSameTermCompareSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\14经营状况分析表\AnalysisOfOperatingConditionsSearchPart.resx">
+      <DependentUpon>AnalysisOfOperatingConditionsSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\15成本分析-个人帐单\CostDetailSearchPart.resx">
+      <DependentUpon>CostDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\16业务员利润提成表\PortfolioAndProfitForSalesCustomer_Total.resx">
+      <DependentUpon>PortfolioAndProfitForSalesCustomer_Total.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\17航线箱量统计\ContainerVolumeTotalSearchPart.resx">
+      <DependentUpon>ContainerVolumeTotalSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\19目的港返利表\DestinationReturnProfit.resx">
+      <DependentUpon>DestinationReturnProfit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\20配比余额报表\ProfitRatiosSummary.resx">
+      <DependentUpon>ProfitRatiosSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessReports\21本地服务\LocalServiceDetail.resx">
+      <DependentUpon>LocalServiceDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\OperationDateByWeekPart.resx">
+      <DependentUpon>OperationDateByWeekPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\SelectUserListPart.resx">
+      <DependentUpon>SelectUserListPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\UCBusinessOrganizationSelect.resx">
+      <DependentUpon>UCBusinessOrganizationSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\UCReportType.resx">
+      <DependentUpon>UCReportType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\LocalReports\AgentStatementDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\AgentStatementReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\AgingReport_Detail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\AgingReport_FeeDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerFCGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\ImportContainerList.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\InvoiceInfo.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementReportCopy.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\Rpt_DebitnoteAge_TotalDetial.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\Rpt_DebitnoteAge_TotalDetial1.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RPT_PrepaidInAdvanceCheckBalanceReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RPT_PrepaidInAdvanceReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\ShipperLineContainerVolumeReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\AgingReport_Total.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\AgingReport_Total_Detail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\ARAPAgingReport_DetailCA.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\ContactDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\MailCenterMemo.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementAttachReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementAttachReportForRelax.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementCheckShortDataReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RptLocalStatementTotalReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RPT_CheckDepositReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RPT_CheckDepositReportCA.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\RPT_CheckDepositReportDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCompanyBalanceSheetlReportAll.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFGLBalanceReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCustomerGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCustomer3ColumnGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerFCGLDetailReportCustomer.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerFCGLDetailReportGL.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerFCGLDetailReportGLCustomer.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCustomerGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFPersonalGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFPersonal3ColumnGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFPersonalGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFProfitAllocationDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFProfitAllocationTotalReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFProfitDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFProfitTotalReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFTestReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFFCGLBalanceReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFFCGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCustomerFCGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCustomerFCGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFPersonalFCGLBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFPersonalFCGLDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCompanyBalanceSheetlDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFCompanyBalanceSheetlReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFExpenseAnalysisDetailReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\UFExpenseAnalysisReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\PersonFinanceCodeList.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerGLDetailReportCustomer.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerGLDetailReportGL.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CustomerDetail\UFCustomerGLDetailReportGLCustomer.rdlc" />
+    <EmbeddedResource Include="CRMReports\2业务活动统计\SalesActivitySearchPart.resx">
+      <DependentUpon>SalesActivitySearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRMReports\3经理分析统计\CustomerAnalysisSearchPart.resx">
+      <DependentUpon>CustomerAnalysisSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRMReports\4合作状态统计\CustomerStateSearchPart.resx">
+      <DependentUpon>CustomerStateSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRMReports\5业务阶段统计\CustomerPhaseSearchPart.resx">
+      <DependentUpon>CustomerPhaseSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCMReports\1操作工作量统计\WorkLoadForOperatorSearchPart.resx">
+      <DependentUpon>WorkLoadForOperatorSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCMReports\2操作指定货报表\AgentForOperatorSearchPart.resx">
+      <DependentUpon>AgentForOperatorSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCMReports\3出口业务信息报表\OEBussinesInfoSearchPart.resx">
+      <DependentUpon>OEBussinesInfoSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCMReports\4业务数据核对表\JobInfoForCargoTrackingSearchPart.resx">
+      <DependentUpon>JobInfoForCargoTrackingSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\4帐龄表\DcNoteForAgeDetailsSearchPart.resx">
+      <DependentUpon>DcNoteForAgeDetailsSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\7凭证明细列表\UCBackups.resx">
+      <DependentUpon>UCBackups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\1帐龄表\AgingReportSearchPart.resx">
+      <DependentUpon>AgingReportSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\2代理对帐\AgentStatementSearchPart.resx">
+      <DependentUpon>AgentStatementSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\3对帐表\LocalStatementSearchPart.resx">
+      <DependentUpon>LocalStatementSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\4收支报表\CheckDepositSearchPart.resx">
+      <DependentUpon>CheckDepositSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\6预收预付列表\PrepaidInAdvanceSearchPart.resx">
+      <DependentUpon>PrepaidInAdvanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOIReports\5收支报表CA\CheckDepositCASearchPart.resx">
+      <DependentUpon>CheckDepositCASearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRMReports\1业务信息表\JobInformationSearchPart.resx">
+      <DependentUpon>JobInformationSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\CheckBoxComboBox.resx">
+      <DependentUpon>CheckBoxComboBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\OperationDateByMonthPart.resx">
+      <DependentUpon>OperationDateByMonthPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\OperationDateByYearPart.resx">
+      <DependentUpon>OperationDateByYearPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\OperationDateCustomMonthPart.resx">
+      <DependentUpon>OperationDateCustomMonthPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\OperationDateMultiMonthPart.resx">
+      <DependentUpon>OperationDateMultiMonthPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Controls\ReportOperationTypePart.resx">
+      <DependentUpon>ReportOperationTypePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\LocalReports\BandstandingDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\BankOutstandingTotal.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\BillReportForGLDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\CheckedReportForGLDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\DepositReportForGLDetail.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\DetailForGLSummary.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\DetailForTrialBalance.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\BalanceSheetReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\InComeStatement.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\MiscellaneousReport.rdlc" />
+    <EmbeddedResource Include="Comm\LocalReports\TrialBalanceReport.rdlc" />
+    <EmbeddedResource Include="Comm\Parts\ReportMainSpace.resx">
+      <DependentUpon>ReportMainSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\Parts\ReportViewBase.resx">
+      <DependentUpon>ReportViewBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\1业务管理成本\CommisionSearchPart.resx">
+      <DependentUpon>CommisionSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\2应收帐款表\DcNoteDRSearchPart.resx">
+      <DependentUpon>DcNoteDRSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\3应付帐款表\DcNoteCRSearchPart.resx">
+      <DependentUpon>DcNoteCRSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\4帐龄表\DcNoteForAgeSearchPart.resx">
+      <DependentUpon>DcNoteForAgeSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\5代理对帐表\DcNoteForAgentSearchPart.resx">
+      <DependentUpon>DcNoteForAgentSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\6应收应付盈余表\DebitNoteForProfitSearchPart.resx">
+      <DependentUpon>DebitNoteForProfitSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\LocalReports\CustomerFinanceCodeList.rdlc" />
+    <EmbeddedResource Include="FinanceOEReports\7凭证明细列表\UFServicePart.resx">
+      <DependentUpon>UFServicePart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceOEReports\7凭证明细列表\VoucherInfoSearchPart.resx">
+      <DependentUpon>VoucherInfoSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceReports\1科目余额表\GLSummarySearchPart.resx">
+      <DependentUpon>GLSummarySearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comm\LocalReports\GL_SummaryReport.rdlc" />
+    <EmbeddedResource Include="FinanceReports\2试算平衡表\TrialBalanceSearchPart.resx">
+      <DependentUpon>TrialBalanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceReports\3资产负债表\BalanceSheetSearchPart.resx">
+      <DependentUpon>BalanceSheetSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceReports\4损益表\InComeStatementSearchPart.resx">
+      <DependentUpon>InComeStatementSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceReports\5银行对帐表\BankstandingSearchPart.resx">
+      <DependentUpon>BankstandingSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceReports\6日记帐报表\Journal_ReportSearchPart.resx">
+      <DependentUpon>Journal_ReportSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\01科目余额表\GLBalanceSearchPart.resx">
+      <DependentUpon>GLBalanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\02科目明细表\GLDetailDataSearchPart.resx">
+      <DependentUpon>GLDetailDataSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\10资产负债表\CompanyBalanceSheetDetailForLASearchPart.resx">
+      <DependentUpon>CompanyBalanceSheetDetailForLASearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchAllPart.resx">
+      <DependentUpon>CompanyBalanceSheetDetailSearchAllPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\10资产负债表\CompanyBalanceSheetDetailSearchPart.resx">
+      <DependentUpon>CompanyBalanceSheetDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\03客户余额表\CustomerGLBalanceSearchPart.resx">
+      <DependentUpon>CustomerGLBalanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\04客户三栏余额表%28无效%29\Customer3ColumnGLBalanceSearchPart.resx">
+      <DependentUpon>Customer3ColumnGLBalanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\05客户明细帐\CustomerGLDetailSearchPart.resx">
+      <DependentUpon>CustomerGLDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\06个人余额表\PersonalGLBalanceSarchPart.resx">
+      <DependentUpon>PersonalGLBalanceSarchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\07个人三栏余额表\Personal3ColumnGLBalanceSearchPart.resx">
+      <DependentUpon>Personal3ColumnGLBalanceSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\08个人明细帐\PersonalGLDetailSearchPart.resx">
+      <DependentUpon>PersonalGLDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\09费用分析表\ExpenseAnalysisSheetDetailSearchPart.resx">
+      <DependentUpon>ExpenseAnalysisSheetDetailSearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\11利润表\ProfitDetailSearchPartAll.resx">
+      <DependentUpon>ProfitDetailSearchPartAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\11利润表\ProfitDetailSearchPart.resx">
+      <DependentUpon>ProfitDetailSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\12利润分配表\ProfitAllocationDetailPart.resx">
+      <DependentUpon>ProfitAllocationDetailPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UFReports\UFTestSearchPart.resx">
+      <DependentUpon>UFTestSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Comm\SpecialGLCodeSet.xsc">
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </None>
+    <None Include="Comm\SpecialGLCodeSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SpecialGLCodeSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Comm\SpecialGLCodeSet.xss">
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\ICP.ReportCenter.ServiceInterface.DataObjects.UserDetailInfo.datasource" />
+    <None Include="Properties\DataSources\ICP.ReportCenter.ServiceInterface.MailCenterOperationObjects.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FinanceReports\7业务信息表\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.ReportCenter.ServiceInterface\ICP.ReportCenter.ServiceInterface.csproj">
+      <Project>{31ca6ebb-d37b-4da0-88e7-97578f7ac128}</Project>
+      <Name>ICP.ReportCenter.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

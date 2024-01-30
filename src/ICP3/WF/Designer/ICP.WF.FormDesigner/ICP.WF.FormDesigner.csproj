@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9380C330-250B-4BC2-91E7-4D10A16F09E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.WF.FormDesigner</RootNamespace>
+    <AssemblyName>ICP.WF.FormDesigner</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/LongWin.WF.Designer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Design.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.XML, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Enum.cs" />
+    <Compile Include="Common\IBasePart.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="FormDesignerModuleInit.cs" />
+    <Compile Include="Service\DesignerOptionServiceExt.cs" />
+    <Compile Include="Service\DesignerSerializationServiceImpl.cs" />
+    <Compile Include="Service\DesignSurfaceExt.cs" />
+    <Compile Include="Service\IDesignSurfaceExt.cs" />
+    <Compile Include="Service\NameCreationServiceImp.cs" />
+    <Compile Include="Service\TabOrderHooker.cs" />
+    <Compile Include="Service\UndoEngineExt.cs" />
+    <Compile Include="Shell\ShellWorkItem.cs" />
+    <Compile Include="Host\HostControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Host\HostSurface.cs" />
+    <Compile Include="Host\HostSurfaceManager.cs" />
+    <Compile Include="Host\LWTypeDiscoveryService.cs" />
+    <Compile Include="Host\NameCreationService.cs" />
+    <Compile Include="Loader\XMLHostLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Host\HostControl.resx">
+      <DependentUpon>HostControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource_CN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_CN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Resource_EN.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_EN.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Code\ShellCodePart.resx">
+      <DependentUpon>ShellCodePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\DeployForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeployForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\DownForm.resx">
+      <DependentUpon>DownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Design\ShellFormDesignerPart.resx">
+      <DependentUpon>ShellFormDesignerPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Property\ShellPropertyPart.resx">
+      <DependentUpon>ShellPropertyPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Toolbar\ShellToolBarPart.resx">
+      <DependentUpon>ShellToolBarPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\NewForm.resx">
+      <DependentUpon>NewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\TemplateForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TemplateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Toolbox\ShellToolboxPart.resx">
+      <DependentUpon>ShellToolboxPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Toolbox\ShellToolboxPart.zh-CHS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShellToolboxPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Output\ShellOutputPart.resx">
+      <DependentUpon>ShellOutputPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\FileExplorer\ShellFileExplorerPart.resx">
+      <DependentUpon>ShellFileExplorerPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\FileExplorer\ShellFileExplorerPart.zh-CHS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ShellFileExplorerPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\Resource_CN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_CN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Resource_EN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_EN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Code\ICodePart.cs" />
+    <Compile Include="Shell\Code\ShellCodePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\Code\ShellCodePart.Designer.cs">
+      <DependentUpon>ShellCodePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\DeployForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\DeployForm.Designer.cs">
+      <DependentUpon>DeployForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Design\IDesign.cs" />
+    <Compile Include="Shell\DownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\DownForm.designer.cs">
+      <DependentUpon>DownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Design\ShellFormDesignerPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\Design\ShellFormDesignerPart.Designer.cs">
+      <DependentUpon>ShellFormDesignerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Property\IProperty.cs" />
+    <Compile Include="Shell\ShellMediator.cs" />
+    <Compile Include="Shell\Property\ShellPropertyPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\Property\ShellPropertyPart.Designer.cs">
+      <DependentUpon>ShellPropertyPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Toolbar\ShellToolBarPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\Toolbar\ShellToolBarPart.Designer.cs">
+      <DependentUpon>ShellToolBarPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\NewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\NewForm.designer.cs">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\TemplateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Shell\TemplateForm.Designer.cs">
+      <DependentUpon>TemplateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shell\Toolbox\IToolboxPart.cs" />
+    <Compile Include="Shell\Toolbox\ShellToolboxPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\Output\IOutputWindow.cs" />
+    <Compile Include="Shell\FileExplorer\IFileExplorer.cs" />
+    <Compile Include="Shell\Output\ShellOutputPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\FileExplorer\ShellFileExplorerPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Service\WorkFlowClientService.cs" />
+    <Compile Include="Shell\DeployFormPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\DeployFormPart.Designer.cs">
+      <DependentUpon>DeployFormPart.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\退出.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paster.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\保存.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\全选.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\删除.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\新建.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\LongWin.WF.FormDesigner.DataDesigner.DataItem.datasource" />
+    <None Include="Resources\查看.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\统计信息.ico" />
+    <None Include="Resources\申请修改信息.ico" />
+    <None Include="Resources\GoToParentFolderHS.png" />
+    <None Include="Resources\CutHS.png" />
+    <None Include="Resources\AlignObjectsLeftHS.png" />
+    <None Include="Resources\AlignObjectsCenteredHorizontalHS.png" />
+    <None Include="Resources\AlignObjectsRightHS.png" />
+    <None Include="Resources\AlignObjectsTopHS.png" />
+    <None Include="Resources\AlignObjectsBottomHS.png" />
+    <None Include="Resources\AlignObjectsCenteredVerticalHS.png" />
+    <None Include="Resources\复制24.png" />
+    <EmbeddedResource Include="Resources\Properties.png" />
+    <EmbeddedResource Include="Shell\NewForm.zh-CHS.resx">
+      <DependentUpon>NewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\Toolbar\ShellToolBarPart.zh-CHS.resx">
+      <DependentUpon>ShellToolBarPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shell\DeployFormPart.resx">
+      <DependentUpon>DeployFormPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Resources\文件夹打开状态.ico" />
+    <Content Include="ToolItemsConfig.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CommonLibrary\ICP.WF.Controls\ICP.WF.Controls.csproj">
+      <Project>{524121C1-4173-4FEB-81FC-952ED787D0FA}</Project>
+      <Name>ICP.WF.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\ICP.WF.ServiceInterface\ICP.WF.ServiceInterface.csproj">
+      <Project>{8F4C95D7-84CD-466E-BCA9-317171A75D7B}</Project>
+      <Name>ICP.WF.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

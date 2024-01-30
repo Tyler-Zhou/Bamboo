@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="09/27/2010 16:56:45" ReportInfo.Modified="07/26/2011 15:24:23" ReportInfo.CreatorVersion="1.2.47.0">
+  <ScriptText>
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Windows.Forms;
+    using System.Drawing;
+    using System.Data;
+    using FastReport;
+    using FastReport.Data;
+    using FastReport.Dialog;
+    using FastReport.Barcode;
+    using FastReport.Table;
+    using FastReport.Utils;
+
+    namespace FastReport
+    {
+    public class ReportScript
+    {
+
+
+    private void _StartReport(object sender, EventArgs e)
+    {
+
+    }
+    }
+    }
+  </ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="OrderNo" DataType="System.String"/>
+      <Column Name="PONo" DataType="System.String"/>
+      <Column Name="SONo" Enabled="false" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerDescription" DataType="System.String"/>
+      <Column Name="AgentOfCarrierName" DataType="System.String"/>
+      <Column Name="CarrierName" DataType="System.String"/>
+      <Column Name="ShipperName" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="AgentName" DataType="System.String"/>
+      <Column Name="AgentDescription" DataType="System.String"/>
+      <Column Name="BookingCustomerName" Enabled="false" DataType="System.String"/>
+      <Column Name="ConsigneeName" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="POLName" DataType="System.String"/>
+      <Column Name="PODName" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="VesselVoyageName" DataType="System.String"/>
+      <Column Name="ETD" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="ClosingDate" Enabled="false" DataType="System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]"/>
+      <Column Name="TransportClause" DataType="System.String"/>
+      <Column Name="OperationType" DataType="System.String"/>
+      <Column Name="IsCustoms" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsTruck" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsQuarantineInspection" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsCommodityInspection" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsOutHBL" Enabled="false" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="IsOutMBL" Enabled="false" DataType="System.Boolean" BindableControl="CheckBox"/>
+      <Column Name="TradeTerm" DataType="System.String"/>
+      <Column Name="ReleaseType" DataType="System.String"/>
+      <Column Name="MBLPaymentType" Enabled="false" DataType="System.String"/>
+      <Column Name="MBLRequest" Enabled="false" DataType="System.String"/>
+      <Column Name="HBLPaymentType" Enabled="false" DataType="System.String"/>
+      <Column Name="HBLRequest" Enabled="false" DataType="System.String"/>
+      <Column Name="SalesName" DataType="System.String"/>
+      <Column Name="OperatorName" DataType="System.String"/>
+      <Column Name="CompanyName" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="GoodsMarks" DataType="System.String"/>
+      <Column Name="GoodsQty" DataType="System.String"/>
+      <Column Name="GoodsWeight" DataType="System.String"/>
+      <Column Name="GoodsMeasurement" DataType="System.String"/>
+      <Column Name="ContainerRequest" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="OrderFee" ReferenceName="OrderFee" DataType="System.Int32" Enabled="true">
+      <Column Name="ID" DataType="System.Guid"/>
+      <Column Name="Way" DataType="System.String"/>
+      <Column Name="FeeName" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page471692680" LeftMargin="5" RightMargin="5" FirstPageSource="4" OtherPagesSource="4" Guides="3.78,752.22,378,102.06,196.56,283.5,468.72,102.06,3.78,75.6,559.44">
+    <ColumnHeaderBand Name="ColumnHeaderBand471692680" Top="20" Width="756" Height="727.65" Guides="105.84,105.84">
+      <TextObject Name="textbox1" Left="3.78" Width="748.44" Height="37.8" Text="操作联系单" HorzAlign="Center" Font="宋体, 18pt, style=Bold" TextFill.Color="Teal"/>
+      <TextObject Name="textbox86" Left="3.78" Top="41.58" Width="70.93" Height="22.59" Text="OrderNo:" Font="宋体, 10pt, style=Bold" TextFill.Color="Teal"/>
+      <TextObject Name="textbox147" Left="294.84" Top="41.58" Width="85.05" Height="22.59" Text="PO NO:" HorzAlign="Right" Font="宋体, 10pt, style=Bold" TextFill.Color="Teal"/>
+      <TextObject Name="textbox118" Left="378" Top="41.58" Width="136.08" Height="22.59" Text="[ReportSource.PONo]" Font="宋体, 10pt, style=Bold" TextFill.Color="Teal"/>
+      <TextObject Name="textbox80" Left="3.78" Top="79.38" Width="98.28" Height="26.46" Text="客户" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox81" Left="102.06" Top="79.38" Width="275.94" Height="26.46" Text="[ReportSource.CustomerName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox149" Left="378" Top="79.38" Width="90.72" Height="26.46" Text="代理" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox120" Left="468.72" Top="79.38" Width="283.5" Height="26.46" Text="[ReportSource.AgentName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox77" Left="3.78" Top="105.84" Width="374.22" Height="100.17" Text="[ReportSource.CustomerDescription]" Font="宋体, 9pt"/>
+      <TextObject Name="textbox150" Left="378" Top="105.84" Width="374.22" Height="100.17" Text="[ReportSource.AgentDescription]" Font="宋体, 9pt"/>
+      <TextObject Name="textbox74" Left="3.78" Top="207.9" Width="98.28" Height="22.59" Text="船公司" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox75" Left="102.06" Top="207.9" Width="275.94" Height="22.59" Text="[ReportSource.CarrierName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox151" Left="378" Top="207.9" Width="90.72" Height="22.59" Text="承运人" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox122" Left="487.62" Top="207.9" Width="264.6" Height="22.59" Text="[ReportSource.AgentOfCarrierName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox71" Left="3.78" Top="230.58" Width="98.28" Height="22.59" Text="发货人" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox72" Left="102.06" Top="230.58" Width="275.94" Height="22.59" Text="[ReportSource.ShipperName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox152" Left="378" Top="230.58" Width="90.72" Height="22.59" Text="收货人" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox123" Left="487.62" Top="230.58" Width="264.6" Height="22.59" Text="[ReportSource.ConsigneeName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox68" Left="3.78" Top="253.26" Width="374.22" Height="98.68" Text="[ReportSource.ShipperDescription]" Font="宋体, 9pt"/>
+      <TextObject Name="textbox153" Left="378" Top="253.26" Width="374.22" Height="98.68" Text="[ReportSource.ConsigneeDescription]" Font="宋体, 9pt"/>
+      <TextObject Name="textbox65" Left="3.78" Top="351.54" Width="98.28" Height="26.46" Text="装货港" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox66" Left="102.06" Top="351.54" Width="95.5" Height="26.46" Text="[ReportSource.POLName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox67" Left="196.56" Top="351.54" Width="86.94" Height="26.46" Text="卸货港" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox183" Left="283.5" Top="351.54" Width="94.5" Height="26.46" Text="[ReportSource.PODName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox154" Left="378" Top="351.54" Width="90.72" Height="26.46" Text="目的港" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox125" Left="468.72" Top="351.54" Width="90.72" Height="26.46" Text="[ReportSource.PlaceOfDelivery]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox96" Left="559.44" Top="351.54" Width="107.73" Height="26.46" Text="船名航次" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="VesselVoyage" Left="629.37" Top="351.54" Width="122.85" Height="26.46" Text="[ReportSource.VesselVoyageName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox62" Left="3.78" Top="381.78" Width="98.28" Height="22.59" Text="期望出运日" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox63" Left="101.06" Top="378" Width="95.5" Height="26.46" Text="[ReportSource.ETD]" Format="Date" Format.Format="d" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox155" Left="378" Top="378" Width="90.72" Height="26.46" Text="运输条款" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox126" Left="468.72" Top="378" Width="90.72" Height="26.46" Text="[ReportSource.TransportClause]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox97" Left="559.44" Top="378" Width="107.73" Height="26.46" Text="业务类型" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="GoodsType" Left="629.37" Top="378" Width="122.85" Height="26.46" Text="[ReportSource.OperationType]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox59" Left="3.78" Top="404.46" Width="98.28" Height="26.46" Text="报关" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox61" Left="196.56" Top="404.46" Width="86.94" Height="26.46" Text="拖车" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox127" Left="378" Top="404.46" Width="90.72" Height="26.46" Text="商检" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox185" Left="559.44" Top="404.46" Width="107.73" Height="26.46" Text="质检" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox157" Left="3.78" Top="430.92" Width="90.72" Height="26.46" Text="贸易条款" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox128" Left="105.84" Top="430.92" Width="90.72" Height="26.46" Text="[ReportSource.TradeTerm]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox99" Left="196.56" Top="430.92" Width="68.04" Height="26.46" Text="放货类型" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="BillReleaseType" Left="283.5" Top="430.92" Width="94.5" Height="26.46" Text="[ReportSource.ReleaseType]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox158" Left="378" Top="430.92" Width="90.72" Height="26.46" Text="业务员" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox129" Left="468.72" Top="429.03" Width="90.72" Height="26.46" Text="[ReportSource.SalesName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox100" Left="559.44" Top="430.92" Width="69.93" Height="26.46" Text="操作员" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox216" Left="629.37" Top="429.03" Width="122.85" Height="26.46" Text="[ReportSource.OperatorName]" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="textbox8" Left="378" Top="457.38" Width="90.72" Height="26.46" Text="操作口岸" VertAlign="Center" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox9" Left="468.72" Top="455.49" Width="283.5" Height="26.46" Text="[ReportSource.CompanyName]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox44" Left="3.78" Top="489.51" Width="98.28" Height="22.59" Text="备注" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="textbox41" Left="3.78" Top="512.19" Width="748.44" Height="126.63" Text="[ReportSource.Remark]" Font="宋体, 9pt"/>
+      <TextObject Name="textbox26" Left="3.78" Top="676.62" Width="126.63" Height="24" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="Goods Desc." HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="textbox28" Left="130.41" Top="676.62" Width="105.84" Height="24" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="CNTS" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="textbox29" Left="236.25" Top="676.62" Width="113.4" Height="24" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="Weight" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="textbox30" Left="349.65" Top="676.62" Width="109.62" Height="24" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="CBM" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="textbox31" Left="449.82" Top="676.62" Width="302.4" Height="24" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="CNTR Qty/Size" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="textbox13" Left="3.78" Top="699.3" Width="126.63" Height="27.78" Text="[ReportSource.GoodsMarks]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="textbox14" Left="130.41" Top="699.3" Width="105.84" Height="27.78" Text="[ReportSource.GoodsQty]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="textbox20" Left="236.25" Top="699.3" Width="113.4" Height="27.78" Text="[ReportSource.GoodsWeight]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="textbox21" Left="349.65" Top="699.3" Width="100.17" Height="27.78" Text="[ReportSource.GoodsMeasurement]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="textbox23" Left="449.82" Top="699.3" Width="302.4" Height="27.78" Text="[ReportSource.ContainerRequest]" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt"/>
+      <TextObject Name="Text1" Left="75.6" Top="41.58" Width="207.9" Height="22.59" Text="[ReportSource.OrderNo]" Font="宋体, 10pt, style=Bold" TextFill.Color="Teal"/>
+      <LineObject Name="Line1" Left="3.78" Top="79.38" Width="748.44" Border.Color="Teal" Border.Width="2"/>
+      <LineObject Name="Line2" Left="3.78" Top="105.84" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line3" Left="3.78" Top="207.9" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line4" Left="3.78" Top="230.58" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line5" Left="3.78" Top="253.26" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line6" Left="3.78" Top="351.54" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line7" Left="3.78" Top="378" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line8" Left="3.78" Top="404.46" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line9" Left="3.78" Top="430.92" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line10" Left="3.78" Top="457.38" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line12" Left="3.78" Top="481.95" Width="748.44" Border.Color="Teal"/>
+      <LineObject Name="Line16" Left="3.78" Top="79.38" Height="648.27" Border.Color="Teal" Border.Width="2"/>
+      <LineObject Name="Line17" Left="752.22" Top="79.38" Height="648.27" Border.Color="Teal" Border.Width="2"/>
+      <LineObject Name="Line24" Left="102.06" Top="351.54" Height="130.41" Border.Color="Teal"/>
+      <LineObject Name="Line25" Left="283.5" Top="351.54" Height="130.41" Border.Color="Teal"/>
+      <LineObject Name="Line26" Left="196.56" Top="351.54" Height="130.41" Border.Color="Teal"/>
+      <LineObject Name="Line27" Left="468.72" Top="351.54" Height="130.41" Border.Color="Teal"/>
+      <LineObject Name="Line28" Left="559.44" Top="351.54" Height="105.84" Border.Color="Teal"/>
+      <LineObject Name="Line30" Left="378" Top="207.9" Height="45.36" Border.Color="Teal"/>
+      <LineObject Name="Line23" Left="378" Top="79.38" Height="402.57" Border.Color="Teal"/>
+      <LineObject Name="Line29" Left="627.48" Top="351.54" Height="105.84" Border.Color="Teal"/>
+      <CheckBoxObject Name="CheckBox1" Left="136.08" Top="408.24" Width="18.9" Height="18.9" DataColumn="ReportSource.IsCustoms"/>
+      <CheckBoxObject Name="CheckBox2" Left="313.74" Top="408.24" Width="18.9" Height="18.9" DataColumn="ReportSource.IsTruck"/>
+      <CheckBoxObject Name="CheckBox5" Left="502.74" Top="408.24" Width="18.9" Height="18.9" DataColumn="ReportSource.IsCommodityInspection"/>
+      <CheckBoxObject Name="CheckBox6" Left="680.4" Top="408.24" Width="18.9" Height="18.9" DataColumn="ReportSource.IsQuarantineInspection"/>
+    </ColumnHeaderBand>
+    <DataBand Name="Data1" Top="811.28" Width="756" Height="22.68" DataSource="OrderFee">
+      <TextObject Name="FeeItemName" Left="58.59" Width="153.09" Height="22.68" Text="[OrderFee.FeeName]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox15" Left="3.78" Width="52.92" Height="22.68" Border.Lines="Left" Border.LeftLine.Color="Teal" Border.LeftLine.Width="2" Text="[OrderFee.Way]" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="CustomerName_1" Left="215.46" Width="253.26" Height="22.68" Text="[OrderFee.CustomerName]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox22" Left="468.72" Width="56.7" Height="22.68" Text="[OrderFee.Currency]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox4" Left="525.42" Width="92.61" Height="22.68" Text="[OrderFee.Amount]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <TextObject Name="textbox7" Left="618.03" Width="134.19" Height="22.68" Border.Lines="Right" Border.RightLine.Color="Teal" Border.RightLine.Width="2" Text="[OrderFee.Remark]" HorzAlign="Center" VertAlign="Center" Font="宋体, 9pt"/>
+      <DataHeaderBand Name="DataHeader1" Top="767.65" Width="756" Height="23.63">
+        <TextObject Name="textbox40" Left="149.31" Width="304.29" Height="23.63" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="往来单位" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        <TextObject Name="textbox38" Left="3.78" Width="71.82" Height="23.63" Border.Lines="Left, Top, Bottom" Border.LeftLine.Color="Teal" Border.LeftLine.Width="2" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Font="宋体, 10pt"/>
+        <TextObject Name="textbox39" Left="75.6" Width="98.28" Height="23.63" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="费用名称" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        <TextObject Name="textbox42" Left="453.6" Width="71.82" Height="23.63" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="币种" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        <TextObject Name="textbox43" Left="523.53" Width="92.61" Height="23.63" Border.Lines="Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="金额" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+        <TextObject Name="textbox46" Left="616.14" Width="136.08" Height="23.63" Border.Lines="Right, Top, Bottom" Border.TopLine.Color="Teal" Border.TopLine.Width="2" Border.RightLine.Color="Teal" Border.RightLine.Width="2" Border.BottomLine.Color="Teal" Border.BottomLine.Width="2" Fill.Color="LightSeaGreen" Text="备注" HorzAlign="Center" VertAlign="Center" Font="宋体, 10pt, style=Bold"/>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="853.96" Width="756" Height="15.12">
+      <LineObject Name="Line20" Left="3.78" Width="748.44" Border.Color="Teal" Border.Width="2"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

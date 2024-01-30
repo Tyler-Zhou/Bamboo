@@ -47,7 +47,7 @@ namespace Reader.Client.ViewModels
         {
             get
             {
-                if (Books != null && Books.Count > 0)
+                if (_CurrentBook ==  null && Books != null && Books.Count > 0)
                 {
                     _CurrentBook = Books.FirstOrDefault();
                 }

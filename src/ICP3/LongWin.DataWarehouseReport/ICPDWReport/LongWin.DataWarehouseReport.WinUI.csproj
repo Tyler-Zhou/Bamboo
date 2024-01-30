@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE5F60D0-CD83-478F-B033-8E1C11D365E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LongWin.DataWarehouseReport.WinUI</RootNamespace>
+    <AssemblyName>LongWin.DataWarehouseReport.WinUI</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\DLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Agilelabs.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Agilelabs.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Infragistics2.Shared.v6.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDock.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Infragistics2.Win.UltraWinDock.v6.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Infragistics2.Win.UltraWinEditors.v6.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinExplorerBar.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Infragistics2.Win.UltraWinExplorerBar.v6.1.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v6.1, Version=6.1.20061.28, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Infragistics2.Win.v6.1.dll</HintPath>
+    </Reference>
+    <Reference Include="LongWin.CommonData.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="LongWin.Framework.ClientComponents, Version=1.0.3014.21576, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\LongWin.Framework.ClientComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="LongWin.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\LongWin.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.reportviewer.common, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\microsoft.reportviewer.common.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.reportviewer.winforms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\dlls\microsoft.reportviewer.winforms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessPart\REPBusiness\AgentForOperatorWorkitem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\CommercePortfolioAndProfitTotallWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\GetJobInfoForCargoTracking_SearchWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\JobInformationWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\OEBussinesInfoWorkitem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\PortfolioAndProfitTotalWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\ProfitForComposeWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\ProfitForTWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\AgentForOperator_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\AgentForOperator_SearchPart.Designer.cs">
+      <DependentUpon>AgentForOperator_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\GetJobInfoForCargoTracking_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\GetJobInfoForCargoTracking_Search.Designer.cs">
+      <DependentUpon>GetJobInfoForCargoTracking_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DirectionForT_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DirectionForT_Search.Designer.cs">
+      <DependentUpon>DirectionForT_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.Designer.cs">
+      <DependentUpon>JobInformation_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\OEBussinesInfo_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\OEBussinesInfo_SearchPart.Designer.cs">
+      <DependentUpon>OEBussinesInfo_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\ProfitForJobType_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\ProfitForJobType_Search.Designer.cs">
+      <DependentUpon>ProfitForJobType_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\WorkLoadForOperator_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\WorkLoadForOperator_SearchPart.Designer.cs">
+      <DependentUpon>WorkLoadForOperator_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.Designer.cs">
+      <DependentUpon>DirectionForProFitTotal_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\ProfitForT_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\ProfitForT_Search.Designer.cs">
+      <DependentUpon>ProfitForT_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForPorfit_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForPorfit_Search.Designer.cs">
+      <DependentUpon>SameTermCompareForPorfit_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForT_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForT_Search.Designer.cs">
+      <DependentUpon>SameTermCompareForT_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\TotalForBox_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\TotalForBox_Search.Designer.cs">
+      <DependentUpon>TotalForBox_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DetailForBox_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\DetailForBox_Search.Designer.cs">
+      <DependentUpon>DetailForBox_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\CommerceDetailForBox_Search.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\SearchPart\CommerceDetailForBox_Search.Designer.cs">
+      <DependentUpon>CommerceDetailForBox_Search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessPart\REPBusiness\WorkLoadForOperatorWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\PortfolioAndProfitDetaillWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\TEUForDirectionWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\ProfitForDirectionWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\SameTermCompareForPorfitWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\SameTermCompareForTWorkItem.cs" />
+    <Compile Include="BusinessPart\REPBusiness\CommercePortfolioAndProfitDetaillWorkItem.cs" />
+    <Compile Include="FinancePart\CommisionWorkItem.cs" />
+    <Compile Include="FinancePart\DcNoteAgeForDRTotalWorkItem.cs" />
+    <Compile Include="FinancePart\DcNoteForCRWorkItem.cs" />
+    <Compile Include="FinancePart\DcNoteForDRWorkItem.cs" />
+    <Compile Include="FinancePart\DcNoteForProfitDetailWorkItem.cs" />
+    <Compile Include="FinancePart\DebitnoteForAgentWorkItem.cs" />
+    <Compile Include="FinancePart\SearchPart\Commision_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\Commision_SearchPart.Designer.cs">
+      <DependentUpon>Commision_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteAgeForDRTotal_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteAgeForDRTotal_SearchPart.Designer.cs">
+      <DependentUpon>DcNoteAgeForDRTotal_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteForDRCR_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteForDRCR_SearchPart.Designer.cs">
+      <DependentUpon>DcNoteForDRCR_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteForProfitDetail_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DcNoteForProfitDetail_SearchPart.designer.cs">
+      <DependentUpon>DcNoteForProfitDetail_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DebitnoteForAgent_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\DebitnoteForAgent_SearchPart.designer.cs">
+      <DependentUpon>DebitnoteForAgent_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\SpecialGLCodeSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\UFServerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\UFServerForm.Designer.cs">
+      <DependentUpon>UFServerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\ViewVoucher_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\ViewVoucher_SearchPart.designer.cs">
+      <DependentUpon>ViewVoucher_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinancePart\SearchPart\VoucherExport.cs" />
+    <Compile Include="FinancePart\ViewVoucherWorkItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\AgentForOperator_SearchPart.en.resx">
+      <DependentUpon>AgentForOperator_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\AgentForOperator_SearchPart.resx">
+      <DependentUpon>AgentForOperator_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\GetJobInfoForCargoTracking_Search.en.resx">
+      <DependentUpon>GetJobInfoForCargoTracking_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\GetJobInfoForCargoTracking_Search.resx">
+      <DependentUpon>GetJobInfoForCargoTracking_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\GetJobInfoForCargoTracking_Search.sma-NO.resx">
+      <DependentUpon>GetJobInfoForCargoTracking_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DetailForBox_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DetailForBox_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DirectionForProFitTotal_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DirectionForProFitTotal_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.zh-CHS.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DirectionForProFitTotal_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForT_Search.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DirectionForT_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForT_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DirectionForT_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForT_Search.resx">
+      <DependentUpon>DirectionForT_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>JobInformation_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>JobInformation_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.resx">
+      <DependentUpon>JobInformation_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\JobInformation_SearchPart.zh-CHS.resx">
+      <DependentUpon>JobInformation_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\OEBussinesInfo_SearchPart.en.resx">
+      <DependentUpon>OEBussinesInfo_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\OEBussinesInfo_SearchPart.resx">
+      <DependentUpon>OEBussinesInfo_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\ProfitForJobType_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProfitForJobType_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\ProfitForJobType_Search.resx">
+      <DependentUpon>ProfitForJobType_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\ProfitForT_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProfitForT_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForPorfit_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SameTermCompareForPorfit_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForT_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SameTermCompareForT_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\TotalForBox_Search.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TotalForBox_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\TotalForBox_Search.sma-NO.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TotalForBox_Search.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\WorkLoadForOperator_SearchPart.resx">
+      <DependentUpon>WorkLoadForOperator_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DirectionForProFitTotal_Search.resx">
+      <DependentUpon>DirectionForProFitTotal_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\ProfitForT_Search.resx">
+      <DependentUpon>ProfitForT_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForPorfit_Search.resx">
+      <DependentUpon>SameTermCompareForPorfit_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\SameTermCompareForT_Search.resx">
+      <DependentUpon>SameTermCompareForT_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\TotalForBox_Search.resx">
+      <DependentUpon>TotalForBox_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\DetailForBox_Search.resx">
+      <DependentUpon>DetailForBox_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\CommerceDetailForBox_Search.en.resx">
+      <DependentUpon>CommerceDetailForBox_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusinessPart\REPBusiness\SearchPart\CommerceDetailForBox_Search.resx">
+      <DependentUpon>CommerceDetailForBox_Search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\CustomerFinanceCodeList.rdlc" />
+    <EmbeddedResource Include="FinancePart\SearchPart\Commision_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Commision_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\Commision_SearchPart.resx">
+      <DependentUpon>Commision_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteAgeForDRTotal_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DcNoteAgeForDRTotal_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteAgeForDRTotal_SearchPart.resx">
+      <DependentUpon>DcNoteAgeForDRTotal_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteForDRCR_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DcNoteForDRCR_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteForDRCR_SearchPart.resx">
+      <DependentUpon>DcNoteForDRCR_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteForProfitDetail_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DcNoteForProfitDetail_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DcNoteForProfitDetail_SearchPart.resx">
+      <DependentUpon>DcNoteForProfitDetail_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DebitnoteForAgent_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DebitnoteForAgent_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\DebitnoteForAgent_SearchPart.resx">
+      <DependentUpon>DebitnoteForAgent_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\UFServerForm.resx">
+      <DependentUpon>UFServerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\ViewVoucher_SearchPart.en.resx">
+      <DependentUpon>ViewVoucher_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinancePart\SearchPart\ViewVoucher_SearchPart.resx">
+      <DependentUpon>ViewVoucher_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\ReportMainSpace.resx">
+      <DependentUpon>ReportMainSpace.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\ReportViewBase.resx">
+      <DependentUpon>ReportViewBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\TestService.resx">
+      <DependentUpon>TestService.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\CheckCombobox.resx">
+      <DependentUpon>CheckCombobox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\DateTimeCostCtl.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DateTimeCostCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\DateTimeCostCtl.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DateTimeCostCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\DateTimeCostCtl.resx">
+      <DependentUpon>DateTimeCostCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\DateTimeCtl.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DateTimeCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\DateTimeCtl.resx">
+      <DependentUpon>DateTimeCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SameTermCompareDateTimeCtl.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SameTermCompareDateTimeCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SameTermCompareDateTimeCtl.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SameTermCompareDateTimeCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectAccountCtl.resx">
+      <DependentUpon>SelectAccountCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectBussinessType.resx">
+      <DependentUpon>SelectBussinessType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectCompanyCtl.resx">
+      <DependentUpon>SelectCompanyCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectCostItemCtl.resx">
+      <DependentUpon>SelectCostItemCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectCRMSalesCtl.resx">
+      <DependentUpon>SelectCRMSalesCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectJobPlaceCtl.en-GB.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectJobPlaceCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectJobPlaceCtl.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectJobPlaceCtl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectJobPlaceCtl.resx">
+      <DependentUpon>SelectJobPlaceCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectSalesCtl.resx">
+      <DependentUpon>SelectSalesCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SelectShippingLineCtl.resx">
+      <DependentUpon>SelectShippingLineCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\utlMultiSelect.resx">
+      <DependentUpon>utlMultiSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SameTermCompareDateTimeCtl.resx">
+      <DependentUpon>SameTermCompareDateTimeCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPCommon\UserControls\SameTermCompareDateTimeCtl.zh-CHS.resx">
+      <DependentUpon>SameTermCompareDateTimeCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\Cost_Detail_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Cost_Detail_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\Cost_Detail_SearchPart.resx">
+      <DependentUpon>Cost_Detail_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalAnalysisOfOperatingConditions_SearchPart.zh-CHT.resx">
+      <DependentUpon>TotalAnalysisOfOperatingConditions_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalCostl_SearchPart.en.resx">
+      <DependentUpon>TotalCostl_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalCostl_SearchPart.resx">
+      <DependentUpon>TotalCostl_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalCostDirection_SearchPart.resx">
+      <DependentUpon>TotalCostDirection_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalCostSameTermCompare_SearchPart.en.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TotalCostSameTermCompare_SearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalCostSameTermCompare_SearchPart.resx">
+      <DependentUpon>TotalCostSameTermCompare_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalAnalysisOfOperatingConditions_SearchPart.en.resx">
+      <DependentUpon>TotalAnalysisOfOperatingConditions_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepCost\SearchPart\TotalAnalysisOfOperatingConditions_SearchPart.resx">
+      <DependentUpon>TotalAnalysisOfOperatingConditions_SearchPart.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\DWReportResources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DWReportResources.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>LongWin.DataWarehouseReport.WinUI</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="FinancePart\SearchPart\SpecialGLCodeSet.xsc">
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinancePart\SearchPart\SpecialGLCodeSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SpecialGLCodeSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinancePart\SearchPart\SpecialGLCodeSet.xss">
+      <DependentUpon>SpecialGLCodeSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\LongWin.DataWarehouseReport.ServiceInterface.LedgerData.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="REPCommon\CommonEnum.cs" />
+    <Compile Include="REPCommon\CommonEventHandler.cs" />
+    <Compile Include="REPCommon\DataGridViewSortHelp.cs" />
+    <Compile Include="REPCommon\RepConst.cs" />
+    <Compile Include="REPCommon\ReportMainSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\ReportMainSpace.Designer.cs">
+      <DependentUpon>ReportMainSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\ReportViewBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\ReportViewBase.Designer.cs">
+      <DependentUpon>ReportViewBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\Test.cs" />
+    <Compile Include="REPCommon\TestService.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\TestService.Designer.cs">
+      <DependentUpon>TestService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\CheckCombobox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\DateTimeCostCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\DateTimeCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectAccountCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectAccountCtl.Designer.cs">
+      <DependentUpon>SelectAccountCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectBussinessType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectBussinessType.Designer.cs">
+      <DependentUpon>SelectBussinessType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCompanyCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCompanyCtl.Designer.cs">
+      <DependentUpon>SelectCompanyCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCostItemCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCostItemCtl.Designer.cs">
+      <DependentUpon>SelectCostItemCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCRMSalesCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectCRMSalesCtl.Designer.cs">
+      <DependentUpon>SelectCRMSalesCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectJobPlaceCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectJobPlaceCtl.Designer.cs">
+      <DependentUpon>SelectJobPlaceCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectSalesCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectSalesCtl.Designer.cs">
+      <DependentUpon>SelectSalesCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectShippingLineCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SelectShippingLineCtl.Designer.cs">
+      <DependentUpon>SelectShippingLineCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\utlMultiSelect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\utlMultiSelect.Designer.cs">
+      <DependentUpon>utlMultiSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPCommon\UserControls\SameTermCompareDateTimeCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="REPCommon\Utility.cs" />
+    <Compile Include="RepCost\AnalysisOfOperatingConditions_WorkItem.cs" />
+    <Compile Include="RepCost\Cost_DetailWorkItem.cs" />
+    <Compile Include="RepCost\SearchPart\Cost_Detail_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\Cost_Detail_SearchPart.Designer.cs">
+      <DependentUpon>Cost_Detail_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostl_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostl_SearchPart.Designer.cs">
+      <DependentUpon>TotalCostl_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostDirection_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostDirection_SearchPart.Designer.cs">
+      <DependentUpon>TotalCostDirection_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostSameTermCompare_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalCostSameTermCompare_SearchPart.Designer.cs">
+      <DependentUpon>TotalCostSameTermCompare_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalAnalysisOfOperatingConditions_SearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RepCost\SearchPart\TotalAnalysisOfOperatingConditions_SearchPart.Designer.cs">
+      <DependentUpon>TotalAnalysisOfOperatingConditions_SearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RepCost\TotalCost_WorkItem.cs" />
+    <Compile Include="RepCost\TotalCostDirection_WorkItem.cs" />
+    <Compile Include="RepCost\TotalCostSameTermCompare_WorkItem.cs" />
+    <Compile Include="REPModuleInit.cs.cs" />
+    <Compile Include="REPWrokItem.cs" />
+    <Compile Include="Resources\DWReportResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DWReportResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\2.ico" />
+    <Content Include="Resources\aaa%282%29.ico" />
+    <Content Include="Resources\aaa.bmp" />
+    <Content Include="Resources\find.ico" />
+    <Content Include="Resources\ZOOM.ico" />
+    <Content Include="Resources\保存.ico" />
+    <Content Include="Resources\关闭.ico" />
+    <Content Include="Resources\删除.ico" />
+    <Content Include="Resources\删除箱信息.ico" />
+    <Content Include="Resources\刷新.ico" />
+    <Content Include="Resources\前一页.ico" />
+    <Content Include="Resources\后一页.ico" />
+    <Content Include="Resources\后退.ico" />
+    <Content Include="Resources\打印.ico" />
+    <Content Include="Resources\最前.ico" />
+    <Content Include="Resources\最后.ico" />
+    <Content Include="Resources\查询.ico" />
+    <Content Include="Resources\跳向页.ico" />
+    <Content Include="Resources\退出.ico" />
+    <Content Include="Resources\选择.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LongWin.ICPDWReportCenter.ServiceInterface\LongWin.DataWarehouseReport.ServiceInterface.csproj">
+      <Project>{B69A2D7D-314B-430C-B864-FB36A217B4EC}</Project>
+      <Name>LongWin.DataWarehouseReport.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

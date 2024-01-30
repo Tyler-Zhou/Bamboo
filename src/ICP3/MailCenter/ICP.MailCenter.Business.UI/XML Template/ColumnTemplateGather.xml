@@ -1,0 +1,778 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--XML类表表头所有字段-->
+<Columns>
+  <Column Name="Customer" FieldName="Customer" EditType="Memo" Editable="false" Width="200">
+    <Caption zhcn="客户" enus="Customer"/>
+  </Column>
+
+  <Column Name="ETA" FieldName="ETA" EditType="Memo" Editable="false" Convert="True" Width="100">
+    <Caption zhcn="到港日" enus="ETA"/>
+  </Column>
+
+  <Column Name="ETD" FieldName="ETD" EditType="Memo" Editable="false" Convert="True" Width="100">
+    <Caption zhcn="离港日" enus="ETD"/>
+  </Column>
+
+  <Column Name="POD" FieldName="POD" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="卸货港" enus="POD"/>
+  </Column>
+
+  <Column Name="POL" FieldName="POL" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="起运港" enus="POL"/>
+  </Column>
+
+  <Column Name="Commodity" FieldName="Commodity" EditType="Memo" Editable="false" Width="120">
+    <Caption zhcn="品名" enus="Commdity"/>
+  </Column>
+
+  <Column Name="Voyage" FieldName="Voyage" EditType="Memo" Editable="false" Width="180">
+    <Caption zhcn="船名航次" enus="Voyage"/>
+  </Column>
+
+  <Column Name="ContainerDesc" FieldName="ContainerDesc" EditType="Text" Editable="false">
+    <Caption zhcn="箱描述" enus="Container Description"/>
+  </Column>
+
+  <Column Name="Carrier" FieldName="Carrier" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="船公司" enus="Carrier"/>
+  </Column>
+
+  <Column Name="AdjSOCopy" FieldName="AdjSOCopy" EditType="Memo" Editable="false">
+    <Caption zhcn="ASO" enus="ASO"/>
+    <ToolTip zhcn="根据船公司提供的原始SO副本，修改调整后再发给客户(属于SO阶段的客户联系人)" enus="With the original SO Copy, we adjust and send it to the customer"/>
+  </Column>
+
+  <Column Name="SOCopy" FieldName="SOCopy" EditType="Memo" Editable="false">
+    <Caption zhcn="SO Copy" enus="SO Copy"/>
+    <ToolTip zhcn="船公司提供的原始SO副本" enus="Original SO Copy that the carrier provides"/>
+  </Column>
+
+  <Column Name="SONO" FieldName="SONO" EditType="Memo" Editable="false" >
+    <Caption zhcn="订舱号" enus="SO NO"/>
+  </Column>
+
+  <Column Name="SOPV" FieldName="SOPV" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOPV" enus="SOPV"/>
+    <ToolTip zhcn="已审批SO毛利" enus="SO profit is approved"/>
+  </Column>
+
+  <Column Name="SOPA" FieldName="SOPA" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOPA" enus="SOPA"/>
+    <ToolTip zhcn="客服要求业务员承诺此单可盈利" enus="Asked Sales to promise SO is profitable"/>
+  </Column>
+
+  <Column Name="SOCD" FieldName="SOCD" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOCD" enus="SOCD"/>
+    <ToolTip zhcn="已向业务员要求提供应收费用" enus="Asked Sales to provide debit fees"/>
+  </Column>
+
+  <Column Name="SOS" FieldName="SOS" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="SOS" enus="SOS"/>
+    <ToolTip zhcn="通知客户订舱成功" enus="Notified SO successfully with the customer"/>
+  </Column>
+
+  <Column Name="SOD" FieldName="SOD" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="SOD" enus="SOD"/>
+    <ToolTip zhcn="订舱成功" enus="SO is Done"/>
+  </Column>
+
+  <Column Name="SOA" FieldName="SOA" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="SOA" enus="SOA"/>
+    <ToolTip zhcn="申请订舱" enus="Applied SO"/>
+  </Column>
+
+  <Column Name="Operation NO" FieldName="NO" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="业务号" enus="No."/>
+  </Column>
+
+
+
+  <Column Name="ClosingDate" FieldName="ClosingDate" EditType="Text" Editable="false" Convert="True" Width="100">
+    <Caption zhcn="截关日" enus="CLS Closing Date"/>
+  </Column>
+
+  <Column Name="TrkLoadOn" FieldName="TrkLoadOn" EditType="Memo" Editable="false" Convert="True" Width="100">
+    <Caption zhcn="装柜日" enus="TrkLoadOn"/>
+  </Column>
+
+  <Column Name="ContainerNO" FieldName="ContainerNO" EditType="Memo" Editable="false" Width="120">
+    <Caption zhcn="箱号" enus="Container NO"/>
+  </Column>
+
+  <Column Name="CFD" FieldName="CFD" EditType="Checkbox" Editable="false" Width="65" >
+    <Caption zhcn="CFD" enus="CFD"/>
+    <ToolTip zhcn="报关公司已提供报关单" enus="The customs agent has sent the Customs Copy"/>
+  </Column>
+
+  <Column Name="CFA" FieldName="CFA" EditType="Checkbox" Editable="false" Width="65" >
+    <Caption zhcn="CFA" enus="CFA"/>
+    <ToolTip zhcn="已向报关公司下达委托单" enus="Applied Customs Order to the customs agent"/>
+  </Column>
+
+  <Column Name="TRKD" FieldName="TrkD" EditType="Checkbox" Editable="false" Width="65" >
+    <Caption zhcn="TRKD" enus="TRKD"/>
+    <ToolTip zhcn="拖车公司已通知提柜信息" enus="The Trucker has sent the Container NO"/>
+  </Column>
+
+  <Column Name="TRKA" FieldName="TrkA" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="TRKA" enus="TRKA"/>
+    <ToolTip zhcn="已向拖车公司下达委托单" enus="Applied Trucking Order to the Trucker"/>
+  </Column>
+
+  <Column Name="BLNO" FieldName="BLNO" EditType="Memo" Editable="false" Width="180">
+    <Caption zhcn="提单号" enus="BLNO"/>
+  </Column>
+
+  <Column Name="AgentOfCarrier" FieldName="AgentOfCarrier" EditType="Memo" Editable="false" Width="200">
+    <Caption zhcn="承运人" enus="Agent Of Carrier"/>
+  </Column>
+
+  <Column Name="BLRC" FieldName="BLRC" EditType="ItemCheckEdit" Editable="false" Width="50">
+    <Caption zhcn="RC" enus="RC"/>
+    <ToolTip zhcn="代理已收到放单通知" enus="CS/Agent has received the notice of the releasing BL"/>
+  </Column>
+
+  <Column Name="ARCfm" FieldName="ARCfm" EditType="ItemCheckEdit" Editable="false" Width="60">
+    <Caption zhcn="ARCfm" enus="ARCfm"/>
+    <ToolTip zhcn="已向客户确认应收账单" enus="Notified Debit Note to the customer for pay"/>
+  </Column>
+
+  <Column Name="RBLD" FieldName="RBLD" EditType="ItemCheckEdit" Editable="false"  Width="65">
+    <Caption zhcn="RBLD" enus="RBLD"/>
+    <ToolTip zhcn="已放单" enus="Has put a single"/>
+  </Column>
+
+  <Column Name="DocS" FieldName="DocS" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="DocS" enus="DocS"/>
+    <ToolTip zhcn="文件已分给港后代理" enus="The documents are sent to the agent"/>
+  </Column>
+
+
+  <Column Name="OnBoard" FieldName="OnBoard" EditType="ImageComboBox" Editable="false" Width="80">
+    <Caption zhcn="On Board" enus="On Board"/>
+    <ToolTip zhcn="是否已装船" enus="If shipment on"/>
+    <ItemsInfos ItemType="ICP.FCM.Common.ServiceInterface.DataObjects.OEApplication,ICP.FCM.Common.ServiceInterface">
+      <Item Value="1"  ImageName="">
+      </Item>
+      <Item Value="2" ImageName="">
+      </Item>
+      <Item Value="3" ImageName="">
+      </Item>
+    </ItemsInfos>
+  </Column>
+
+  <Column Name="MBLD" FieldName="MBLD" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="MBLD" enus="MBLD"/>
+    <ToolTip zhcn="已向承运人补料" enus="SI is sent to the carrier"/>
+  </Column>
+
+  <Column Name="SOB" FieldName="SOB" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="SOB" enus="SOB"/>
+    <ToolTip zhcn="已向承运人发送订舱请求" enus="SO is requested with the carrier"/>
+  </Column>
+
+  <Column Name="ISF" FieldName="ISF" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="ISF" enus="ISF"/>
+    <ToolTip zhcn="ISF已发送" enus="ISF is Sent"/>
+  </Column>
+
+  <Column Name="AMS" FieldName="AMS" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="AMS" enus="AMS"/>
+    <ToolTip zhcn="AMS已发送" enus="AMS is Sent"/>
+  </Column>
+
+  <Column Name="MBLR" FieldName="MBLR" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="MBLR" enus="MBLR"/>
+    <ToolTip zhcn="已收到MBL copy" enus="MBL Copy is received from the carrier"/>
+  </Column>
+
+  <Column Name="SICut" FieldName="SICut" EditType="Memo" Editable="false"  Width="80">
+    <Caption zhcn="截文件日" enus="SI Cut"/>
+  </Column>
+
+
+  <Column Name="BLCfm" FieldName="BLCfm" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="BLCFM" enus="BLCFM"/>
+    <ToolTip zhcn="已发BL COPY 让客户确认" enus="Customer has confirmed BL "/>
+  </Column>
+
+  <Column Name="SIR" FieldName="SIR" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="SIR" enus="SIR"/>
+    <ToolTip zhcn="已收到客户提供的补料" enus="SI is received from the customer"/>
+  </Column>
+
+  <Column Name="SINC" FieldName="SINC" EditType="Checkbox" Editable="false" Width="50">
+    <Caption zhcn="SINC" enus="SINC"/>
+    <ToolTip zhcn="已通知客户提供补料" enus="Notified the customer for providing SI"/>
+  </Column>
+
+  <Column Name="DCRcv" FieldName="DCRcv" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="DCRcv" enus="DCRcv"/>
+    <ToolTip zhcn="已签收了港后代理修订的代理账单" enus="The revised D/C invoices are accepted"/>
+  </Column>
+
+  <Column Name="DCRev" FieldName="DCRev" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="DCRev" enus="DCRev"/>
+    <ToolTip zhcn="港后代理已修订了代理账单" enus="The agent has revised the D/C invoices"/>
+  </Column>
+
+  <Column Name="DocH" FieldName="DocH" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="DocH" enus="DocH"/>
+    <ToolTip zhcn="港后代理已受理文件并分配" enus="The agent has accepted the documents"/>
+  </Column>
+
+  <Column Name="APR" FieldName="APR" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="APR" enus="APR"/>
+    <ToolTip zhcn="Credit Note is received from the carrier" enus="Credit Note is received from the carrier"/>
+  </Column>
+
+  <Column Name="ARA" FieldName="ARA" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="ARA" enus="ARA"/>
+    <ToolTip zhcn="已通知客户付款" enus="Have informed the customer payment"/>
+  </Column>
+
+  <Column Name="APInv" FieldName="APInv" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="APInv" enus="APInv"/>
+    <ToolTip zhcn="已通知承运人开分票" enus="Ask the carrier for invoices when the Credit Note is confirmed"/>
+  </Column>
+
+  <Column Name="APP" FieldName="APP" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="APP" enus="APP"/>
+    <ToolTip zhcn="已支付应付账单" enus="Have to pay bills"/>
+  </Column>
+
+  <Column Name="APA" FieldName="APA" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="APA" enus="APA"/>
+    <ToolTip zhcn="已申请运费付讫" enus="Applied Credit Note for pay"/>
+  </Column>
+
+  <Column Name="ARP" FieldName="ARP" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="ARP" enus="ARP"/>
+    <ToolTip zhcn="应收账单已核销(支付)" enus="Accounts receivable bills have cancel after verification (payment)"/>
+  </Column>
+
+  <Column Name="RBLH" FieldName="RBLH" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="RBLH" enus="RBLH"/>
+    <ToolTip zhcn="发生Hold货" enus="Release BL is holding"/>
+  </Column>
+
+  <Column Name="RBLA" FieldName="RBLA" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="RBLA" enus="RBLA"/>
+    <ToolTip zhcn="已申请放单" enus="Applied release BL"/>
+  </Column>
+
+  <Column Name="RefNO" FieldName="RefNO" EditType="Memo" Editable="false" Width="200">
+    <Caption zhcn="关联单号" enus="Ref NO"/>
+  </Column>
+
+  <Column Name="Description" FieldName="Description" EditType="Memo" Editable="false" Width="165">
+    <Caption zhcn="描述" enus="Description"/>
+  </Column>
+
+  <Column Name="Vessel" FieldName="Vessel" EditType="Text" Editable="false" Width="100">
+    <Caption zhcn="船名" enus="Vessel"/>
+  </Column>
+
+  <Column Name="MBLCopy" FieldName="MBLCopy" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="MBL Copy" enus="MBL Copy"/>
+  </Column>
+
+  <Column Name="APCopy" FieldName="APCopy" EditType="Memo" Editable="false" Dropable="true" DocumentType="AP" Width="120" >
+    <Caption zhcn="A/P Copy" enus="A/P Copy"/>
+  </Column>
+
+  <Column Name="OceanExportPlaceOfReceipt" FieldName="PlaceOfReceipt" EditType="Memo" Editable="false" Width="120" >
+    <Caption zhcn="收货地" enus="Place Of Receipt"/>
+  </Column>
+
+  <Column Name="OceanExportPlaceOfDelivery" FieldName="PlaceOfDelivery" EditType="Memo" Editable="false" Width="120" >
+    <Caption zhcn="交货地" enus="Place Of Delivery"/>
+  </Column>
+
+
+  <Column Name="RailCutOff" FieldName="RailCutOff" EditType="Memo" Editable="false" Width="120" Convert="True">
+    <Caption zhcn="截铁路日" enus="Rail Cut Off"/>
+  </Column>
+
+  <Column Name="CYClosingDate" FieldName="CYClosingDate" EditType="Memo" Editable="false" Width="120" Convert="True">
+    <Caption zhcn="截柜日" enus="CY Cut Off"/>
+  </Column>
+
+  <Column Name="TransportDescription" FieldName="TransportDescription" EditType="Memo" Editable="false" Width="120" >
+    <Caption zhcn="运输条款" enus="Transport Clause"/>
+  </Column>
+
+  <Column Name="RailCyCutOff" FieldName="RailCyCutOff" EditType="Memo" Editable="false" Width="120" Convert="True">
+    <Caption zhcn="Rail/Cy Cut Off" enus="Rail/Cy Cut Off"/>
+  </Column>
+
+  <Column Name="Selected" FieldName="Selected" EditType="Checkbox" Editable="True" ReadOnly="false" Width="65" >
+    <Caption zhcn="" enus=""/>
+  </Column>
+
+  <Column Name="CustomerService" FieldName="CustomerService" EditType="Text" Editable="false" Width="100" >
+    <Caption zhcn="客服" enus="Customer Service"/>
+  </Column>
+
+  <Column Name="DocBy" FieldName="DocBy" EditType="Text" Editable="false" Width="100" >
+    <Caption zhcn="文件" enus="File Member"/>
+  </Column>
+  <Column Name="BLCfmAgt" FieldName="BLCfmAgt" EditType="Checkbox" Editable="false" Width="55" >
+    <Caption zhcn="BLCfmAgt" enus="BLCfmAgt"/>
+    <ToolTip zhcn="已发BL COPY 让代理确认" enus="Agent has confirmed BL "/>
+  </Column>
+
+  <Column Name="SOC" FieldName="SOC" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOC" enus="SOC"/>
+    <ToolTip zhcn="取消订舱" enus="Cancel Booking"/>
+  </Column>
+
+  <Column Name="SOF" FieldName="SOF" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOF" enus="SOF"/>
+    <ToolTip zhcn="订舱失败" enus="Booking Failure"/>
+  </Column>
+
+  <Column Name="SOCCD" FieldName="SOCCD" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="SOCCD" enus="SOCCD"/>
+    <ToolTip zhcn="商务员已确认应付费用" enus="Rates are confirmed by the marketing specialist."/>
+  </Column>
+
+  <Column Name="Remark" FieldName="Remark" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="备注" enus="Remark"/>
+  </Column>
+
+  <Column Name="OEWeight" FieldName="Weight" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="重量" enus="Weight"/>
+  </Column>
+
+  <Column Name="FETA" FieldName="FETA" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="FETA" enus="FETA"/>
+  </Column>
+
+
+  <Column Name="Shipper" FieldName="Shipper" EditType="Memo" Editable="false" Width="200">
+    <Caption zhcn="发货人" enus="Shipper"/>
+  </Column>
+
+  <Column Name="Consignee" FieldName="Consignee" EditType="Memo" Editable="false" Width="200">
+    <Caption zhcn="收货人" enus="Consignee"/>
+  </Column>
+
+  <Column Name="SalesName" FieldName="SalesName" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="揽货人" enus="Sales Name"/>
+  </Column>
+
+
+
+
+
+  <!--海进列表集合********************************************************************************************************-->
+  <Column Name="ANRC" FieldName="ANRC" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="ANRC" enus="ANRC"/>
+    <ToolTip zhcn="已收到承运人到港通知书" enus=""/>
+  </Column>
+
+  <Column Name="APCCfm" FieldName="APCCfm" EditType="Checkbox" Editable="false" Width="75">
+    <Caption zhcn="APCCfm" enus="APCCfm"/>
+    <ToolTip zhcn="已确认应付承运人运费" enus=""/>
+  </Column>
+
+  <Column Name="ANSC" FieldName="ANSC" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="ANSC" enus="ANSC"/>
+    <ToolTip zhcn="已发送到港通知书给客户" enus=""/>
+  </Column>
+
+  <Column Name="ANCopy" FieldName="ANCopy" EditType="Memo" Editable="false" >
+    <Caption zhcn="A/N Copy" enus="A/N Copy"/>
+    <ToolTip zhcn="到港通知书" enus=""/>
+  </Column>
+
+  <Column Name="PlaceOfDelivery" FieldName="PlaceOfDelivery" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="交货地" enus="Delivery"/>
+  </Column>
+
+  <Column Name="FinalDestination" FieldName="FinalDestination" EditType="Memo" Editable="false" Width="100">
+    <Caption zhcn="最终目的地" enus="Final Dest"/>
+  </Column>
+
+  <Column Name="LastFreeDate" FieldName="LastFreeDate" EditType="Memo" Editable="false"  Width="120" Convert="True">
+    <Caption zhcn="免堆日" enus="Last Free Date"/>
+  </Column>
+
+  <Column Name="Release" FieldName="Release" EditType="Memo" Editable="false"  Width="90">
+    <Caption zhcn="HBL放货方式" enus="HBL Release"/>
+  </Column>
+
+
+  <Column Name="MBLRelease" FieldName="MBLRelease" EditType="Memo" Editable="false"  Width="90">
+    <Caption zhcn="MBL放货方式" enus="MBL Release"/>
+  </Column>
+
+
+  <Column Name="IsOBLRcved" FieldName="IsOBLRcved" EditType="Checkbox" Editable="false" Width="100">
+    <Caption zhcn="收到正本" enus="OHBL Rcved"/>
+  </Column>
+
+  <Column Name="IsOMBLRcved" FieldName="IsOMBLRcved" EditType="Checkbox" Editable="false" Width="100">
+    <Caption zhcn="收到MBL正本" enus="OMBL Rcved"/>
+  </Column>
+
+  <Column Name="ACCLOS" FieldName="ACCLOS" EditType="Checkbox" Editable="false" Width="70">
+    <Caption zhcn="关帐" enus="ACCLOS"/>
+    <ToolTip zhcn="已关帐" enus="Accounting Close"/>
+  </Column>
+
+  <Column Name="IsMailDMBL" FieldName="IsMailDMBL" EditType="Checkbox" Editable="false" Width="100">
+    <Caption zhcn="已发送MBL" enus="Mail MBL"/>
+  </Column>
+
+  <Column Name="TelxNo" FieldName="TelxNo" EditType="Memo" Editable="false"  Width="150">
+    <Caption zhcn="电放号" enus="TelexNo"/>
+  </Column>
+
+
+  <Column Name="ReleaseBLDate" FieldName="ReleaseBLDate" EditType="Memo" Editable="false"  Width="150">
+    <Caption zhcn="放单日期" enus="Release BL Date"/>
+  </Column>
+
+  <Column Name="DOS" FieldName="DOS" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="DOS" enus="DOS"/>
+    <ToolTip zhcn="已发送提货单给客户或拖车行" enus="Delivery Instruction is sent to the customer/terminal agent."/>
+  </Column>
+
+
+  <Column Name="TrkP" FieldName="TrkP" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="TRKP" enus="TRKP"/>
+    <ToolTip zhcn="集装箱到客户" enus="Container(s) are deliveried to the customer."/>
+  </Column>
+
+  <Column Name="OceanImportTrkD" FieldName="TrkD" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="TRKD" enus="TRKD"/>
+    <ToolTip zhcn="拖车行已送达到客户" enus="The Trucker has sent the Container NO"/>
+  </Column>
+
+  <Column Name="ECR" FieldName="ECR" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="ECR" enus="ECR"/>
+    <ToolTip zhcn="已还空柜" enus="Container(s) is returned to the terminal."/>
+  </Column>
+
+  <Column Name="CFC" FieldName="CFC" EditType="Checkbox" Editable="false" Width="65" >
+    <Caption zhcn="CFC" enus="CFC"/>
+    <ToolTip zhcn="已清关" enus="Customs Clearance is done."/>
+  </Column>
+
+  <Column Name="RBLNt" FieldName="RBLNt" EditType="Checkbox" Editable="false" Width="75">
+    <Caption zhcn="RBLNt" enus="RBLNt"/>
+    <ToolTip zhcn="已催港前处理放单" enus="Notified Agent for Release BL."/>
+  </Column>
+
+  <Column Name="RCA" FieldName="RCA" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="RCA" enus="RCA"/>
+    <ToolTip zhcn="已申请放货" enus="OP Applied Release Cargo"/>
+  </Column>
+
+  <Column Name="PayNt" FieldName="PayNt" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="PayNt" enus="PayNt"/>
+    <ToolTip zhcn="已催客户付款" enus="Notified Customer for payment."/>
+  </Column>
+
+  <Column Name="ARC" FieldName="ARC" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="ARC" enus="ARC"/>
+    <ToolTip zhcn="已同意放货" enus="Agree OP for Release Cargo"/>
+  </Column>
+
+  <Column Name="RC" FieldName="RC" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="RC" enus="RC"/>
+    <ToolTip zhcn="已放货" enus="Released Cargo"/>
+  </Column>
+
+  <Column Name="OceanImportAPP" FieldName="APP" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="APP" enus="APP"/>
+    <ToolTip zhcn="应付已销账" enus="Have to pay bills"/>
+  </Column>
+
+  <Column Name="OceanImportAPA" FieldName="APA" EditType="Checkbox" Editable="false" Width="55">
+    <Caption zhcn="APA" enus="APA"/>
+    <ToolTip zhcn="已申请运费付讫" enus="Applied Credit Note for pay"/>
+  </Column>
+
+  <Column Name="OceanImportARP" FieldName="ARP" EditType="ItemCheckEdit" Editable="false" Width="55">
+    <Caption zhcn="ARP" enus="ARP"/>
+    <ToolTip zhcn="应收已销账" enus="Accounts receivable bills have cancel after verification (payment)"/>
+  </Column>
+
+  <Column Name="RBLRcv" FieldName="RBLRcv" EditType="Checkbox" Editable="false" Width="75">
+    <Caption zhcn="RBLRcv" enus="RBLRcv"/>
+    <ToolTip zhcn="目的港代理已接收放单指令" enus="Received Release BL"/>
+  </Column>
+
+  <Column Name="OceanImportCFA" FieldName="CFA" EditType="Checkbox" Editable="false" Width="65" >
+    <Caption zhcn="CFA" enus="CFA"/>
+    <ToolTip zhcn="已向清关行下达委托单" enus="Applied Customs Order to the customs agent"/>
+  </Column>
+
+  <Column Name="AgentDocsState" FieldName="AgentDocsState" EditType="ImageComboBox" Editable="false" Width="80">
+    <Caption zhcn="分文件" enus="Agent Docs"/>
+    <ItemsInfos ItemType="ICP.DataCache.ServiceInterface.DocumentState,ICP.DataCache.ServiceInterface">
+      <Item Value="1"  ImageName="">
+      </Item>
+      <Item Value="2" ImageName="">
+      </Item>
+      <Item Value="3" ImageName="">
+      </Item>
+    </ItemsInfos>
+  </Column>
+
+  <Column Name="OiSalesName" FieldName="SalesName" EditType="Memo" Editable="false"  Width="80">
+    <Caption zhcn="揽货人" enus="Sales"/>
+  </Column>
+
+  <Column Name="Agent" FieldName="Agent" EditType="Memo" Editable="false"  Width="120">
+    <Caption zhcn="代理" enus="Agent Name"/>
+  </Column>
+
+  <Column Name="DETA" FieldName="DETA" EditType="Memo" Editable="false"  Width="120">
+    <Caption zhcn="到交货地日" enus="DETA"/>
+  </Column>
+
+  <Column Name="MBLNO" FieldName="MBLNO" EditType="Memo" Editable="false"  Width="100">
+    <Caption zhcn="主提单号" enus="MBL NO"/>
+  </Column>
+
+  <Column Name="HBLNO" FieldName="HBLNO" EditType="Memo" Editable="false"  Width="100">
+    <Caption zhcn="分提单号" enus="HBL NO"/>
+  </Column>
+
+
+  <Column Name="OceanImportPaid" FieldName="Paid" EditType="ItemCheckEdits" Editable="false" Width="55">
+    <Caption zhcn="付款" enus="Paid"/>
+  </Column>
+
+  <Column Name="OceanImportReceiveed" FieldName="Receiveed" EditType="ItemCheckEdits" Editable="false" Width="78">
+    <Caption zhcn="收款" enus="Received"/>
+  </Column>
+
+  <Column Name="RCReceiveed" FieldName="RCReceiveed" EditType="ItemCheckEdits" Editable="false" Width="78">
+    <Caption zhcn="放货收款" enus="RC Receiveed"/>
+  </Column>
+
+
+  <Column Name="IsReleaseOrderRequired" FieldName="IsReleaseOrderRequired" EditType="Checkbox" Editable="false" Width="100" >
+    <Caption zhcn="R.O. Required" enus="R.O. Required"/>
+    <ToolTip zhcn="放货指令" enus="R.O. Required"/>
+  </Column>
+
+
+  <Column Name="RoRcvd" FieldName="RoRcvd" EditType="Checkbox" Editable="false" Width="75" >
+    <Caption zhcn="R.O. Rcvd" enus="R.O. Rcvd"/>
+    <ToolTip zhcn="收到放货指令" enus="R.O. Rcvd"/>
+  </Column>
+
+
+
+  <Column Name="HD" FieldName="HD" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="HD" enus="HD"/>
+    <ToolTip zhcn="扣送货" enus="Hold Delivery/Pick-Up No."/>
+  </Column>
+
+  <Column Name="FRC" FieldName="FRC" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="FRC" enus="FRC"/>
+    <ToolTip zhcn="完全放货" enus="Full Release."/>
+  </Column>
+
+  <Column Name="FCP" FieldName="FCP" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="FCP" enus="FCP"/>
+    <ToolTip zhcn="已提货" enus="Have delivery."/>
+  </Column>
+
+  <Column Name="FCD" FieldName="FCD" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="FCD" enus="FCD"/>
+    <ToolTip zhcn="已送货给客户" enus="Delivered to customers."/>
+  </Column>
+
+  <Column Name="CCR" FieldName="CCR" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="CCR" enus="CCR"/>
+    <ToolTip zhcn="已收到清关文件" enus="Has received a clearance document."/>
+  </Column>
+
+
+  <Column Name="CCS" FieldName="CCS" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="CCS" enus="CCS"/>
+    <ToolTip zhcn="已发送清关文件给清关行" enus="Send documents to customs clearance for customs clearance."/>
+  </Column>
+
+  <Column Name="CCF" FieldName="CCF" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="CCF" enus="CCF"/>
+    <ToolTip zhcn="已清关" enus="Customs clearance."/>
+  </Column>
+
+
+  <Column Name="CCNt" FieldName="CCNt" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="CCNt" enus="CCNt"/>
+    <ToolTip zhcn="催清关文件" enus="CUSTOM DOCUMENTATION REQUEST."/>
+  </Column>
+
+  <Column Name="AD" FieldName="AD" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="AD" enus="AD"/>
+    <ToolTip zhcn="可以送货" enus="Available Delivery."/>
+  </Column>
+
+  <!--空运出口********************************************************************************************************-->
+
+  <Column Name="FlightNo" FieldName="FlightNo" EditType="Memo" Editable="false"  Width="100">
+    <Caption zhcn="航班号" enus="FlightNo"/>
+  </Column>
+
+  <Column Name="AirExportAirCompanyName" FieldName="AirCompanyName" EditType="Memo" Editable="false"  Width="120">
+    <Caption zhcn="航空公司" enus="AirCompanyName"/>
+  </Column>
+
+  <Column Name="AgentOfCarrierName" FieldName="AgentOfCarrierName" EditType="Memo" Editable="false"  Width="120">
+    <Caption zhcn="承运人" enus="AgentOfCarrierName"/>
+  </Column>
+
+  <Column Name="AgentName" FieldName="AgentName" EditType="Memo" Editable="false"  Width="100">
+    <Caption zhcn="代理" enus="AgentName"/>
+  </Column>
+
+  <Column Name="POLName" FieldName="POLName" EditType="Memo" Editable="false"  Width="80">
+    <Caption zhcn="起运港" enus="POL"/>
+  </Column>
+
+  <Column Name="PODName" FieldName="PODName" EditType="Memo" Editable="false"  Width="80">
+    <Caption zhcn="目的港" enus="POD"/>
+  </Column>
+
+  <Column Name="FinalDestinationName" FieldName="FinalDestinationName" EditType="Memo" Editable="false"  Width="80">
+    <Caption zhcn="交货地" enus="FinalDestination"/>
+  </Column>
+
+  <Column Name="ShipperName" FieldName="ShipperName" EditType="Memo" Editable="false"  Width="120" >
+    <Caption zhcn="发货人" enus="Shipper"/>
+  </Column>
+
+  <Column Name="ConsigneeName" FieldName="ConsigneeName" EditType="Memo" Editable="false"  Width="120" >
+    <Caption zhcn="收货人" enus="Consignee"/>
+  </Column>
+
+  <Column Name="AirExportSODATE" FieldName="SODATE" EditType="Memo" Editable="false"  Width="80" Convert="True">
+    <Caption zhcn="订舱日" enus="SO DATE"/>
+  </Column>
+
+  <Column Name="AirExportBookingerName" FieldName="BookingerName" EditType="Memo" Editable="false"  Width="80" >
+    <Caption zhcn="订舱员" enus="Bookinger"/>
+  </Column>
+
+  <Column Name="AirExportFilerName" FieldName="FilerName" EditType="Memo" Editable="false"  Width="80" >
+    <Caption zhcn="文件员" enus="Filer"/>
+  </Column>
+
+  <Column Name="AirExportBookingCustomerName" FieldName="BookingCustomerName" EditType="Memo" Editable="false"  Width="120" >
+    <Caption zhcn="订舱客户" enus="Booking Customer"/>
+  </Column>
+
+
+  <!--空运进口********************************************************************************************************-->
+  <Column Name="AirImportCustomerRefNo" FieldName="CustomerRefNo" EditType="Memo" Editable="false"  Width="140" >
+    <Caption zhcn="客户参考号" enus="Customer Ref No"/>
+  </Column>
+
+  <Column Name="AirImportDeliveryDate" FieldName="DeliveryDate" EditType="Memo" Editable="false"  Width="80" Convert="True" >
+    <Caption zhcn="交货地时间" enus="Delivery Date"/>
+  </Column>
+
+  <Column Name="AirImportReleaseType" FieldName="ReleaseType" EditType="ItemCheckEdit" Editable="false" Width="65">
+    <Caption zhcn="电放" enus="Release"/>
+  </Column>
+
+  <Column Name="AirImportPOLFilerName" FieldName="POLFilerName" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="港前客服" enus="POL FilerName"/>
+  </Column>
+
+  <Column Name="AirImportITNO" FieldName="ITNO" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="I.T.NO" enus="I.T.NO"/>
+  </Column>
+
+  <Column Name="AirImportQuantity" FieldName="Quantity" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="数量" enus="Quantity"/>
+  </Column>
+
+  <Column Name="AirImportWeight" FieldName="Weight" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="重量" enus="Weight"/>
+  </Column>
+
+  <Column Name="AirImportMeasurement" FieldName="Measurement" EditType="Memo" Editable="false" Width="80">
+    <Caption zhcn="体积" enus="Measurement"/>
+  </Column>
+  <!--询价-->
+  <Column Name="DurationFrom" FieldName="DurationFrom" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Duration From" enus="Duration From"/>
+  </Column>
+  <Column Name="DurationTo" FieldName="DurationTo" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Duration To" enus="Duration To"/>
+  </Column>
+  <Column Name="SurCharge" FieldName="SurCharge" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="SurCharge" enus="SurCharge"/>
+  </Column>
+  <Column Name="IsShare" FieldName="IsShare" EditType="Checkbox" Editable="false" Width="65">
+    <Caption zhcn="Shared" enus="Shared"/>
+  </Column>
+  <Column Name="Remark" FieldName="Remark" EditType="Memo" Editable="false" Width="120">
+    <Caption zhcn="Remark" enus="Remark"/>
+  </Column>
+  <Column Name="ShippingLine" FieldName="ShippingLine" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="ShippingLine" enus="ShippingLine"/>
+  </Column>
+  <Column Name="Currency" FieldName="Currency" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Currency" enus="Currency"/>
+  </Column>
+  <Column Name="Term" FieldName="Term" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Term" enus="Term"/>
+  </Column>
+  <Column Name="ZIPCode" FieldName="ZIPCode" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="ZIPCode" enus="ZIPCode"/>
+  </Column>
+  <Column Name="TruckingRate" FieldName="TruckingRate" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Rate" enus="Rate"/>
+  </Column>
+  <Column Name="FUEL" FieldName="FUEL" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="FUEL" enus="FUEL"/>
+  </Column>
+  <Column Name="Total" FieldName="Total" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Total" enus="Total"/>
+  </Column>
+  <Column Name="Schedule" FieldName="Schedule" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Schedule" enus="Schedule"/>
+  </Column>
+  <Column Name="Routing" FieldName="Routing" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Routing" enus="Routing"/>
+  </Column>
+  <Column Name="UpdateDate" FieldName="UpdateDate" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="Update Date" enus="Update Date"/>
+  </Column>
+  <!--其他业务-电商物流-->
+  <Column Name="OBCommodity" FieldName="Commodity" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="品名" enus="Commodity"/>
+  </Column>
+  <Column Name="OBQuantity" FieldName="Quantity" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="数量" enus="Quantity"/>
+  </Column>
+  <Column Name="OBWeight" FieldName="Weight" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="重量" enus="Weight"/>
+  </Column>
+  <Column Name="OBMeasurement" FieldName="Measurement" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="体积" enus="Measurement"/>
+  </Column>
+  <Column Name="OBECExpressNo" FieldName="ExpressNo" EditType="Text" Editable="false" Width="120">
+    <Caption zhcn="快递单号" enus="ExpressNo"/>
+  </Column>
+  <Column Name="OBECDeparture" FieldName="POLName" EditType="Memo" Editable="false" Width="180">
+    <Caption zhcn="起始地" enus="Departure"/>
+  </Column>
+  <Column Name="OBECDestination" FieldName="PODName" EditType="Memo" Editable="false" Width="180">
+    <Caption zhcn="目的地" enus="Destination"/>
+  </Column>
+  <Column Name="OBECBLNO" FieldName="BLNO" EditType="Memo" Editable="false" Width="180">
+    <Caption zhcn="单号信息" enus="NO Info"/>
+  </Column>
+</Columns>

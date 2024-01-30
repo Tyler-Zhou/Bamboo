@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report StartReportEvent="_StartReport" ReportInfo.Created="08/26/2011 16:26:00" ReportInfo.Modified="08/29/2011 09:33:08" ReportInfo.CreatorVersion="1.2.47.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="VietnamInvoiceReportData" ReferenceName="VietnamInvoiceReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="Address" DataType="System.Int32"/>
+      <Column Name="Tel" DataType="System.Int32"/>
+      <Column Name="Fax" DataType="System.Int32"/>
+      <Column Name="CreateBy" DataType="System.Int32"/>
+      <Column Name="InvoiceDate" DataType="System.Int32"/>
+      <Column Name="CustomerName" DataType="System.Int32"/>
+      <Column Name="CustomerAddress" DataType="System.Int32"/>
+      <Column Name="TaxCode" DataType="System.Int32"/>
+      <Column Name="Currency" DataType="System.Int32"/>
+      <Column Name="Type" DataType="System.Int32"/>
+      <Column Name="TotalInvoice" DataType="System.Int32"/>
+      <Column Name="VAT_rate" DataType="System.Int32"/>
+      <Column Name="VAT_amount" DataType="System.Int32"/>
+      <Column Name="GrandTotal" DataType="System.Int32"/>
+      <Column Name="No" DataType="System.Int32"/>
+      <Column Name="BankAccountNo" DataType="System.Int32"/>
+      <Column Name="BLText" DataType="System.Int32"/>
+      <Column Name="GrandWords" DataType="System.Int32"/>
+      <Column Name="TaxNO" DataType="System.Int32"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="VietnamInvoiceReportFeeData" ReferenceName="VietnamInvoiceReportFeeData" DataType="System.Int32" Enabled="true">
+      <Column Name="Amount" DataType="System.Decimal"/>
+      <Column Name="Currency" DataType="System.String"/>
+      <Column Name="FeeItemName" DataType="System.String"/>
+      <Column Name="InvoiceId" DataType="System.Guid"/>
+      <Column Name="Quantity" DataType="System.Decimal"/>
+      <Column Name="Rate" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="TotalAmount" DataType="System.Decimal"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page889019364" FirstPageSource="4" OtherPagesSource="4">
+    <PageHeaderBand Name="PageHeaderBand889019364" Top="20" Width="718.2" Height="145.53">
+      <TextObject Name="textbox1" Left="28.35" Top="9.45" Width="623.7" Height="24" CanGrow="true" Text="CÔNG TY TNHH LIÊN DOANH MANDARIN LOGISTICS" Font="Times New Roman, 12pt, style=Bold"/>
+      <TextObject Name="textbox2" Left="5.67" Top="68.04" Width="703.08" Height="24" CanGrow="true" Text="MANDARIN LOGISTICS JOINT VENTURE COMPANY LTD." HorzAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
+      <TextObject Name="textbox58" Left="62.37" Top="92.61" Width="623.7" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.Address]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox53" Left="51.03" Top="117.18" Width="185.22" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.Tel]" Font="Times New Roman, 11pt"/>
+      <TextObject Name="textbox54" Left="253.26" Top="117.18" Width="37.8" Height="24" CanGrow="true" Text="Fax:" Font="Times New Roman, 11pt"/>
+      <TextObject Name="textbox55" Left="291.06" Top="117.18" Width="160.65" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.Fax]" Font="Times New Roman, 11pt"/>
+      <TextObject Name="textbox56" Left="461.16" Top="117.18" Width="94.5" Height="24" CanGrow="true" Text="Mã số thuế:" Font="Times New Roman, 11pt"/>
+      <TextObject Name="textbox57" Left="555.66" Top="117.18" Width="143.64" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.TaxNO]" Font="Times New Roman, 11pt"/>
+      <TextObject Name="textbox3" Left="13.23" Top="117.18" Width="37.8" Height="24" CanGrow="true" Text="Tel:" Font="Times New Roman, 11pt"/>
+      <LineObject Name="line1" Left="708.75" Top="145.53" Width="-703.08"/>
+      <TextObject Name="Text1" Left="5.67" Top="41.58" Width="703.08" Height="24" CanGrow="true" Text="CÔNG TY TNHH LIÊN DOANH MANDARIN LOGISTICS" HorzAlign="Center" Font="Times New Roman, 12pt, style=Bold"/>
+    </PageHeaderBand>
+    <ColumnHeaderBand Name="ColumnHeaderBand1659547292" Top="185.53" Width="718.2" Height="226.8">
+      <TextObject Name="textbox4" Left="69.93" Top="9.45" Width="255.15" Height="24" CanGrow="true" Text="HÓA ĐƠN (GTGT)" Font="Times New Roman, 12pt, style=Bold"/>
+      <TextObject Name="textbox6" Left="398.79" Top="9.45" Width="309.96" Height="24" CanGrow="true" Text="Mãu số: 01 GTKT-3LL-01" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox5" Left="79.38" Top="37.8" Width="245.7" Height="24" CanGrow="true" Text="INVOICE (VAT)" Font="Times New Roman, 12pt, style=Bold"/>
+      <TextObject Name="textbox8" Left="398.79" Top="37.8" Width="162.54" Height="24" CanGrow="true" Text="Ký hiệu (Serial):" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox9" Left="561.33" Top="37.8" Width="147.42" Height="24" CanGrow="true" Text="AA/2008-T" Font="Times New Roman, 12pt, style=Bold"/>
+      <TextObject Name="textbox7" Left="398.79" Top="66.15" Width="102.06" Height="24" CanGrow="true" Text="Số hóa đơn:" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox10" Left="500.85" Top="66.15" Width="207.9" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.No]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox11" Left="88.83" Top="66.15" Width="75.6" Height="24" CanGrow="true" Text="Liên 1:" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox12" Left="164.43" Top="66.15" Width="198.45" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.CreateBy]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox17" Left="22.68" Top="94.5" Width="207.9" Height="24" CanGrow="true" Text="Ngày hóa đơn:(Invoice date)" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox18" Left="230.58" Top="94.5" Width="141.75" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.InvoiceDate]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox32" Left="398.79" Top="94.5" Width="102.06" Height="18.9" CanGrow="true" Text="(Invoice No.)" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox13" Left="13.23" Top="122.85" Width="274.05" Height="24" CanGrow="true" Text="Họ tên khách hàng(Customer’s name):" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox14" Left="287.28" Top="122.85" Width="421.47" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.CustomerName]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox15" Left="13.23" Top="151.2" Width="132.3" Height="24" CanGrow="true" Text="Địa chỉ(Address):" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox16" Left="145.53" Top="151.2" Width="565.11" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.CustomerAddress]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox19" Left="13.23" Top="179.55" Width="170.1" Height="24" CanGrow="true" Text="Mã số thuế(Tax code):" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox20" Left="190.89" Top="179.55" Width="257.04" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.TaxCode]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox37" Left="470.61" Top="179.55" Width="228.69" Height="24" CanGrow="true" Text="Hình thức thanh tóan:" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox36" Left="470.61" Top="207.9" Width="115.29" Height="18.9" CanGrow="true" Text="Đơn vị tính:" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox24" Left="585.9" Top="207.9" Width="113.4" Height="18.9" CanGrow="true" Text="[VietnamInvoiceReportData.Currency]" Font="Times New Roman, 10pt"/>
+    </ColumnHeaderBand>
+    <DataBand Name="table1" Top="490.13" Width="718.2" Height="22.68">
+      <TableObject Name="Table4" Left="7.56" Width="701.78" Height="22.68">
+        <TableColumn Name="Column11" Width="158.5"/>
+        <TableColumn Name="Column12" Width="181.18"/>
+        <TableColumn Name="Column13" Width="113.14"/>
+        <TableColumn Name="Column14" Width="101.8"/>
+        <TableColumn Name="Column15" Width="147.16"/>
+        <TableRow Name="Row3" Height="22.68">
+          <TableCell Name="Cell11" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.Remark]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell12" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.FeeItemName]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell13" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.Quantity]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell14" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.Amount]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell15" Border.Lines="All" Text="[VietnamInvoiceReportFeeData.TotalAmount]" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <DataHeaderBand Top="432.33" Width="718.2" Height="37.8">
+        <TableObject Name="Table2" Left="7.56" Width="701.78" Height="37.8">
+          <TableColumn Name="Column1" Width="158.5"/>
+          <TableColumn Name="Column2" Width="181.18"/>
+          <TableColumn Name="Column3" Width="113.14"/>
+          <TableColumn Name="Column4" Width="101.8"/>
+          <TableColumn Name="Column5" Width="147.16"/>
+          <TableRow Name="Row1" Height="37.8">
+            <TableCell Name="Cell1" Border.Lines="All" Text="STT&#13;&#10;(No.)" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell2" Border.Lines="All" Text="Diễn giải&#13;&#10;(Description)" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell3" Border.Lines="All" Text="Số lượng&#13;&#10;(Quantity)" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell4" Border.Lines="All" Text="Đơn giá&#13;&#10;(Unit price)" HorzAlign="Center" VertAlign="Center"/>
+            <TableCell Name="Cell5" Border.Lines="All" Text="thành tiền&#13;&#10;(Amount)" HorzAlign="Center" VertAlign="Center"/>
+          </TableRow>
+        </TableObject>
+      </DataHeaderBand>
+    </DataBand>
+    <ColumnFooterBand Name="ColumnFooter1" Top="532.81" Width="718.2" Height="249.48">
+      <TableObject Name="Table5" Left="7.56" Width="701.78" Height="113.4">
+        <TableColumn Name="Column16" Width="158.5"/>
+        <TableColumn Name="Column17" Width="181.18"/>
+        <TableColumn Name="Column18" Width="113.14"/>
+        <TableColumn Name="Column19" Width="101.8"/>
+        <TableColumn Name="Column20" Width="147.16"/>
+        <TableRow Name="Row4" Height="113.4">
+          <TableCell Name="Cell16" Border.Lines="All" HorzAlign="Center" VertAlign="Center" ColSpan="2">
+            <TextObject Name="Text4" Top="60.48" Width="325.08" Height="18.9" Text="Please pay cash or TT to our bank A/C No.:"/>
+            <TextObject Name="Text5" Left="151.2" Top="79.38" Width="173.88" Height="18.9" Text="[VietnamInvoiceReportData.BLText]"/>
+          </TableCell>
+          <TableCell Name="Cell17" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell18" Border.Lines="All" HorzAlign="Center" VertAlign="Center" ColSpan="3"/>
+          <TableCell Name="Cell19" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell20" Border.Lines="All" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="textbox28" Left="3.78" Top="204.12" Width="245.7" Height="18.9" CanGrow="true" Text="(Customer’s signature &amp; Full name)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox29" Left="302.4" Top="204.12" Width="151.2" Height="18.9" CanGrow="true" Text="(Invoice maker)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox31" Left="472.5" Top="204.12" Width="198.45" Height="18.9" CanGrow="true" Text="(General director)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox28" Left="3.78" Top="204.12" Width="245.7" Height="18.9" CanGrow="true" Text="(Customer’s signature &amp; Full name)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox29" Left="302.4" Top="204.12" Width="151.2" Height="18.9" CanGrow="true" Text="(Invoice maker)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox31" Left="472.5" Top="204.12" Width="198.45" Height="18.9" CanGrow="true" Text="(General director)" HorzAlign="Center" Font="Times New Roman, 10pt"/>
+      <TextObject Name="textbox50" Left="41.58" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="Khách hàng" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox51" Left="275.94" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="Người lập hóa đơn" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox52" Left="472.5" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="TỔNG GIÁM ĐỐC" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox50" Left="41.58" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="Khách hàng" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox51" Left="275.94" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="Người lập hóa đơn" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox52" Left="472.5" Top="173.88" Width="198.45" Height="28.35" CanGrow="true" Text="TỔNG GIÁM ĐỐC" HorzAlign="Center" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox48" Left="18.9" Top="117.18" Width="230.58" Height="35.91" CanGrow="true" Text="Tổng số tiền bằng chữ:&#13;&#10;(Grand total in words):" Font="Times New Roman, 12pt"/>
+      <TextObject Name="textbox49" Left="283.5" Top="117.18" Width="425.25" Height="24" CanGrow="true" Text="[VietnamInvoiceReportData.GrandWords]" Font="Times New Roman, 12pt"/>
+      <TextObject Name="Text2" Left="7.56" Width="325.08" Height="37.8" Text="Xin vui lòng thanh tóan bằng tiền mặt hoặcchuyển vào tài khoản Công Ty số:"/>
+      <TextObject Name="Text3" Left="158.76" Top="37.8" Width="173.88" Height="18.9" Text="[VietnamInvoiceReportData.BankAccountNo]"/>
+      <TextObject Name="Text6" Left="347.76" Width="56.7" Height="18.9" Text="Cộng:"/>
+      <TextObject Name="Text7" Left="404.46" Width="279.72" Height="18.9" Text="[VietnamInvoiceReportData.TotalInvoice]"/>
+      <TextObject Name="Text8" Left="347.76" Top="18.9" Width="117.18" Height="18.9" Text="(Total invoice)"/>
+      <TextObject Name="Text9" Left="347.76" Top="37.8" Width="75.6" Height="18.9" Text="Thuế suất:"/>
+      <TextObject Name="Text10" Left="517.86" Top="37.8" Width="64.26" Height="18.9" Text="%/ Thuế"/>
+      <TextObject Name="Text11" Left="423.36" Top="37.8" Width="94.5" Height="18.9" Text="[VietnamInvoiceReportData.VAT_rate]"/>
+      <TextObject Name="Text12" Left="582.12" Top="37.8" Width="102.06" Height="18.9" Text="[VietnamInvoiceReportData.VAT_amount]"/>
+      <TextObject Name="Text13" Left="347.76" Top="56.7" Width="336.42" Height="18.9" Text="(VAT rate         %)/(VAT amount)"/>
+      <TextObject Name="Text14" Left="347.76" Top="75.6" Width="177.66" Height="18.9" Text="Tổng cộng tiền thanh toán:"/>
+      <TextObject Name="Text15" Left="525.42" Top="75.6" Width="158.76" Height="18.9" Text="[VietnamInvoiceReportData.GrandTotal]"/>
+      <TextObject Name="Text16" Left="347.76" Top="94.5" Width="177.66" Height="18.9" Text="(Grand total)"/>
+    </ColumnFooterBand>
+  </ReportPage>
+</Report>

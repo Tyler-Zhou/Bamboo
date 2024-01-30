@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B73F5E87-F8E4-4CF4-8B66-9603CC668584}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.MailCenter.CommonUI</RootNamespace>
+    <AssemblyName>ICP.MailCenter.CommonUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDlls\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDlls\ICP.MailCenter.CommonUI.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.MailCenter.CommonUI.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Business.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FilePreviewServiceLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Wintellect.Threading, Version=4.2.3323.23897, Culture=neutral, PublicKeyToken=167f00fdf109b063, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FaxViewer\AttachmentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\AttachmentLabel.designer.cs">
+      <DependentUpon>AttachmentLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxViewer\AttachmentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\AttachmentPanel.designer.cs">
+      <DependentUpon>AttachmentPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxViewer\AutoHeightTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\ContractLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\ContractLabel.designer.cs">
+      <DependentUpon>ContractLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxViewer\ContractPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\ContractPanel.designer.cs">
+      <DependentUpon>ContractPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxViewer\EmailAddressTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\EventUtility.cs" />
+    <Compile Include="FaxViewer\UCFaxDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\UCFaxDetail.designer.cs">
+      <DependentUpon>UCFaxDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FaxViewer\UCFaxAttachment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FaxViewer\UCFaxAttachment.designer.cs">
+      <DependentUpon>UCFaxAttachment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFadeBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFadeBase.Designer.cs">
+      <DependentUpon>frmFadeBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryViewerFactory.cs" />
+    <Compile Include="IFilePreviewWindow.cs" />
+    <Compile Include="IHistoryViewer.cs" />
+    <Compile Include="IReadOnlyControl.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UCFaxPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFaxPreview.Designer.cs">
+      <DependentUpon>UCFaxPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCThumbImageListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCThumbImageListView.Designer.cs">
+      <DependentUpon>UCThumbImageListView.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.DataCache.ServiceInterface\ICP.DataCache.ServiceInterface.csproj">
+      <Project>{0A18D5A6-BBC9-4D1B-A095-AE862FD07746}</Project>
+      <Name>ICP.DataCache.ServiceInterface</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FaxViewer\AttachmentLabel.resx">
+      <DependentUpon>AttachmentLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxViewer\AttachmentPanel.resx">
+      <DependentUpon>AttachmentPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxViewer\ContractLabel.resx">
+      <DependentUpon>ContractLabel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxViewer\ContractPanel.resx">
+      <DependentUpon>ContractPanel.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxViewer\UCFaxDetail.resx">
+      <DependentUpon>UCFaxDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FaxViewer\UCFaxAttachment.resx">
+      <DependentUpon>UCFaxAttachment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFadeBase.resx">
+      <DependentUpon>frmFadeBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCFaxPreview.resx">
+      <DependentUpon>UCFaxPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCThumbImageListView.resx">
+      <DependentUpon>UCThumbImageListView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\CommunicationHistoryListPresenter.datasource" />
+    <None Include="Properties\DataSources\DocumentListPresenter.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ICP.DataCache.ServiceInterface.CargoTracking.datasource" />
+    <None Include="Properties\DataSources\ICP.DataCache.ServiceInterface.CargoTrackingContainer.datasource" />
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\Copy_16.png" />
+    <Content Include="Resources\Delete_16.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\preview.png" />
+    <None Include="Resources\open.png" />
+    <None Include="Resources\fax.gif" />
+    <None Include="Resources\upload.png" />
+    <None Include="Resources\find1.png" />
+    <None Include="Resources\Mail21.png" />
+    <None Include="Resources\Edit_16.png" />
+    <None Include="Resources\Transfer_16.png" />
+    <None Include="Resources\Print_16.png" />
+    <None Include="Resources\Refresh_161.png" />
+    <Content Include="Resources\mail3.png" />
+    <Content Include="Resources\UP_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClientService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

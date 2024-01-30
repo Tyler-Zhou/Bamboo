@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IFTMIN" targetNamespace="http://tempuri.org/IFTMIN.xsd" xmlns:mstns="http://tempuri.org/IFTMIN.xsd" xmlns="http://tempuri.org/IFTMIN.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IFTMIN" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="IFTMIN" msprop:Generator_UserDSName="IFTMIN">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="UN" msprop:Generator_TableClassName="UNDataTable" msprop:Generator_TableVarName="tableUN" msprop:Generator_RowChangedName="UNRowChanged" msprop:Generator_TablePropName="UN" msprop:Generator_RowDeletingName="UNRowDeleting" msprop:Generator_RowChangingName="UNRowChanging" msprop:Generator_RowEvHandlerName="UNRowChangeEventHandler" msprop:Generator_RowDeletedName="UNRowDeleted" msprop:Generator_RowClassName="UNRow" msprop:Generator_UserTableName="UN" msprop:Generator_RowEvArgName="UNRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HS001F0001" msprop:Generator_ColumnVarNameInTable="columnHS001F0001" msprop:Generator_ColumnPropNameInRow="HS001F0001" msprop:Generator_ColumnPropNameInTable="HS001F0001Column" msprop:Generator_UserColumnName="HS001F0001" type="xs:string" minOccurs="0" />
+              <xs:element name="HS001F0002" msprop:Generator_ColumnVarNameInTable="columnHS001F0002" msprop:Generator_ColumnPropNameInRow="HS001F0002" msprop:Generator_ColumnPropNameInTable="HS001F0002Column" msprop:Generator_UserColumnName="HS001F0002" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Group" msprop:Generator_TableClassName="GroupDataTable" msprop:Generator_TableVarName="tableGroup" msprop:Generator_RowChangedName="GroupRowChanged" msprop:Generator_TablePropName="Group" msprop:Generator_RowDeletingName="GroupRowDeleting" msprop:Generator_RowChangingName="GroupRowChanging" msprop:Generator_RowEvHandlerName="GroupRowChangeEventHandler" msprop:Generator_RowDeletedName="GroupRowDeleted" msprop:Generator_RowClassName="GroupRow" msprop:Generator_UserTableName="Group" msprop:Generator_RowEvArgName="GroupRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MUNHF0062" msprop:Generator_ColumnVarNameInTable="columnMUNHF0062" msprop:Generator_ColumnPropNameInRow="MUNHF0062" msprop:Generator_ColumnPropNameInTable="MUNHF0062Column" msprop:Generator_UserColumnName="MUNHF0062" type="xs:string" minOccurs="0" />
+              <xs:element name="BGMC106F1004" msprop:Generator_ColumnVarNameInTable="columnBGMC106F1004" msprop:Generator_ColumnPropNameInRow="BGMC106F1004" msprop:Generator_ColumnPropNameInTable="BGMC106F1004Column" msprop:Generator_UserColumnName="BGMC106F1004" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

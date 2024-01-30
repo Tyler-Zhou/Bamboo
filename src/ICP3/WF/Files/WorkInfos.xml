@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkInfosList" description="-">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="No" type="string" description="单号">
+        <validation type="stringlength" length="50" />
+        <validation type="required" errmsg="单号" />
+      </field>
+      <field name="Name" type="string" description="名称">
+        <validation type="stringlength" length="100" />
+        <validation type="required" errmsg="名称" />
+      </field>
+      <field name="ApplicantID" type="Guid" description="申请人ID">
+        <validation type="required" errmsg="申请人ID" />
+      </field>
+      <field name="ApplyDepartmentID" type="Guid" description="申请部门ID">
+        <validation type="required" errmsg="申请部门ID" />
+      </field>
+      <field name="StartDate" type="DateTime" description="开始时间">
+        <validation type="required" errmsg="开始时间" />
+      </field>
+      <field name="FinishDate" type="DateTime?" description="完成时间" />
+      <field name="State" type="byte" description="状态(ACTIVATED = 1,NOTPASS = 2, CANCEL = 3,COMPLETED = 4)">
+        <validation type="required" errmsg="状态(ACTIVATED = 1,NOTPASS = 2, CANCEL = 3,COMPLETED = 4)" />
+      </field>
+      <field name="WorkFlowConfigID" type="Guid" description="流程配置ID">
+        <validation type="required" errmsg="流程配置ID" />
+      </field>
+      <field name="MainWorkInfoID" type="Guid" description="主流程ID">
+        <validation type="required" errmsg="主流程ID" />
+      </field>
+    </class>
+    <class name="WorkInfosInfo" baseclass="WorkInfosList" description="-" />
+  </classes>
+</root>

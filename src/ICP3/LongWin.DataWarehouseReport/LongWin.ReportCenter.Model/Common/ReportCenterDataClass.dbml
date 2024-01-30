@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="ICP2005_NEW" EntityNamespace="LongWin.ReportCenter.Model" ContextNamespace="LongWin.ReportCenter.Model" Class="ReportCenterDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.0.4;Initial Catalog=ICP2005_NEW;User ID=sa" SettingsObjectName="LongWin.ReportCenter.Model.Properties.Settings" SettingsPropertyName="ICP2005_NEWConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_REP_CostFee" Member="CostFees">
+    <Type Name="CostFee">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HappenDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HappenPeriod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DeptID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="FeeProperty" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="no" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CostFee_CostFeeDetail" Member="CostFeeDetails" Storage="_T_REP_CostFeeDetails" OtherKey="CostFeeID" Type="CostFeeDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_REP_CostFeeDetail" Member="CostFeeDetails">
+    <Type Name="CostFeeDetail">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CostFeeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CostItemID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FeeProperty" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="FirstCostItemID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Remark" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Currency" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="CostFee_CostFeeDetail" Member="CostFee" Storage="_T_REP_CostFee" ThisKey="CostFeeID" Type="CostFee" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_REP_DeficitOperationWorkFlowLog" Member="DeficitOperationWorkFlowLogs">
+    <Type Name="DeficitOperationWorkFlowLog">
+      <Column Name="Id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OperationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="OperationType" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkFlowId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreateBy" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SPR_FIN_GetOperationIdForCommission" Method="SPR_FIN_GetOperationIdForCommission">
+    <Parameter Name="message" Type="System.Xml.Linq.XDocument" DbType="Xml" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/08/2010 10:21:52" ReportInfo.Modified="02/28/2018 17:44:42" ReportInfo.CreatorVersion="2013.2.5.0">
+  <Dictionary>
+    <BusinessObjectDataSource Name="ReportSource" ReferenceName="ReportSource" DataType="System.Int32" Enabled="true">
+      <Column Name="ShipperName" DataType="System.String"/>
+      <Column Name="ShipperDescription" DataType="System.String"/>
+      <Column Name="Marks" DataType="System.String"/>
+      <Column Name="ConsigneeName" DataType="System.String"/>
+      <Column Name="ConsigneeDescription" DataType="System.String"/>
+      <Column Name="NotifyPartyName" DataType="System.String"/>
+      <Column Name="NotifyPartyDescription" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="Vessel" DataType="System.String"/>
+      <Column Name="Voyage" DataType="System.String"/>
+      <Column Name="PlaceOfReceipt" DataType="System.String"/>
+      <Column Name="POL" DataType="System.String"/>
+      <Column Name="POD" DataType="System.String"/>
+      <Column Name="PlaceOfDelivery" DataType="System.String"/>
+      <Column Name="FinalDestination" DataType="System.String"/>
+      <Column Name="ContainerInfo" DataType="System.String"/>
+      <Column Name="ContainerQtyDescription" DataType="System.String"/>
+      <Column Name="GoodsDescription" DataType="System.String"/>
+      <Column Name="Quantity" DataType="System.Int32"/>
+      <Column Name="QuantityUnit" DataType="System.String"/>
+      <Column Name="Weight" DataType="System.String"/>
+      <Column Name="WeightUnit" DataType="System.String"/>
+      <Column Name="Measurement" DataType="System.String"/>
+      <Column Name="MeasurementUnit" DataType="System.String"/>
+      <Column Name="GrossWeight" DataType="System.Decimal"/>
+      <Column Name="Remark" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="1122.66">
+      <TextObject Name="txtVessel" Left="38.55" Top="198.39" Width="131.88" Height="30.57" Text="[ReportSource.Vessel]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtVoyno" Left="196.05" Top="197.43" Width="82.56" Height="30.57" Text="[ReportSource.Voyage]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtPOL" Left="295.74" Top="196.47" Width="129.6" Height="30.57" Text="[ReportSource.POL]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtPOD" Left="540.36" Top="182.01" Width="129.6" Height="21.12" Text="[ReportSource.POD]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtDeliveryplace" Left="539.88" Top="209.4" Width="129.6" Height="21.12" Text="[ReportSource.PlaceOfDelivery]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="txtCtnInfo" Left="533.61" Top="75.63" Width="115.05" Height="22.38" Text="[ReportSource.ContainerInfo]" Font="Arial, 9pt, style=Bold"/>
+      <SubreportObject Name="Subreport1" Top="302.4" Width="718.2" Height="28.35" ReportPage="Page2" PrintOnParent="true"/>
+      <TextObject Name="Text6" Left="302.4" Top="264.6" Width="302.4" Height="28.35" Text="毛重如有不符请更改(                KGS)		&#13;&#10;" Font="宋体, 9pt, style=Bold" FirstTabOffset="37.8"/>
+      <TextObject Name="Text7" Left="28.35" Top="708.75" Width="349.65" Height="66.15" Text="请如实填写并核对进港货物的毛重,保证与实际装箱毛&#10;重相符,否则引起的一切相关费用及后果由客户无条件&#10;自行承担,特此声明	&#13;&#10;		&#13;&#10;		&#13;&#10;		&#13;&#10;		&#13;&#10;" HorzAlign="Center" Font="宋体, 9.75pt, style=Bold"/>
+    </PageHeaderBand>
+  </ReportPage>
+  <ReportPage Name="Page2" RawPaperSize="9" LeftMargin="0" TopMargin="0" BottomMargin="0" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data1" Width="756" Height="415.8" DataSource="ReportSource">
+      <TextObject Name="Text1" Left="9.45" Top="9.45" Width="122.85" Height="330.75" Text="[ReportSource.BLNo]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text2" Left="151.2" Top="9.45" Width="94.5" Height="330.75" Text="[ReportSource.Marks]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text3" Left="463.05" Top="9.45" Width="94.5" Height="330.75" Text="[ReportSource.WeightUnit]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text4" Left="264.6" Top="9.45" Width="94.5" Height="330.75" Text="[ReportSource.QuantityUnit]" Font="Arial, 9pt, style=Bold"/>
+      <TextObject Name="Text5" Left="567" Top="9.45" Width="94.5" Height="330.75" Text="[ReportSource.MeasurementUnit]" Font="Arial, 9pt, style=Bold"/>
+    </DataBand>
+  </ReportPage>
+</Report>

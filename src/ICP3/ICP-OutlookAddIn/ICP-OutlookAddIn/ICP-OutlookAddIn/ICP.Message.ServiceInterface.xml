@@ -1,0 +1,1137 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.Message.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.Message.ServiceInterface.AttachmentContent">
+            <summary>
+            消息附件类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.AttachmentContent.ClientPath">
+            <summary>
+            保存到数据库映射客户端的路径（如果文件正在被预览，保存文件时就会出现”文件正在被使用“的错误）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.AttachmentContent.PreviewPath">
+            <summary>
+            预览文件映射客户端路径
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.AttachmentContent.OLAttachment">
+            <summary>
+            outlook附件对象，为了保存附件到本地
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageType">
+            <summary>
+            消息类型
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageState">
+            <summary>
+            消息状态
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageState.Sending">
+            <summary>
+            发送中
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageState.Success">
+            <summary>
+            发送成功
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageState.Failure">
+            <summary>
+            发送失败
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageState.Draft">
+            <summary>
+            草稿
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageState.Transmitted">
+            <summary>
+            已发送
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageWay">
+            <summary>
+            邮件方向
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageFlag">
+            <summary>
+            标记状态（1:未读,2:已读,3:答复,4:转发）
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageFlag.UnRead">
+            <summary>
+            未读
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageFlag.Read">
+            <summary>
+            已读
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageFlag.Reply">
+            <summary>
+            答复
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessageFlag.Transfer">
+            <summary>
+            转发
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessagePriority">
+            <summary>
+            重要性
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessagePriority.Normal">
+            <summary>
+            普通
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessagePriority.High">
+            <summary>
+            高
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.MessagePriority.Low">
+            <summary>
+            低
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MailAttachmentType">
+            <summary>
+            邮件附件类型
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.BodyFormat">
+            <summary>
+            邮件正本内容类型
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ReceiveFaxState.Received">
+            <summary>
+            接收
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ReceiveFaxState.Return">
+            <summary>
+            打回
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.FaxMessageObjects">
+            <summary>
+            传真实体类
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.Message">
+            <summary>
+            消息实体类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Id">
+            <summary>
+            主键ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Type">
+            <summary>
+            消息类型（传真，EDI，邮件）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.HasAttachment">
+            <summary>
+            是否包含附件
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.State">
+            <summary>
+            消息状态（草稿，已发送，发送成功，发送失败，发送成功，发送中）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Subject">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.SendTo">
+            <summary>
+            接收人
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.SendFrom">
+            <summary>
+            发件人
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Body">
+            <summary>
+            消息正文
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.FolderId">
+            <summary>
+            针对属于那个文件夹下的传真
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.BodyFormat">
+            <summary>
+            正文格式（html，PainText,Plain）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Attachments">
+            <summary>
+            附件内容
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.MessageId">
+            <summary>
+            针对邮件，查看本地outlook某一封邮件有个MessageID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.StateDescription">
+            <summary>
+            消息状态值
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Priority">
+            <summary>
+            重要性
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Flag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Way">
+            <summary>
+            消息方向（发送，接收）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.UserProperties">
+            <summary>
+            邮件自定义信息
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.ToName">
+            <summary>
+            接收人名称列表
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.CCName">
+            <summary>
+            CC人名称列表
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.EntryID">
+            <summary>
+            邮件的EntryID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.Sendtime">
+            <summary>
+            发送时间
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.ReceivingTime">
+            <summary>
+            接收时间
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.Message.IsMailItem">
+            <summary>
+            是邮件实体还是回执实体 只用在UI        
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.FaxMessageObjects.ReceiveFaxID">
+            <summary>
+            传真ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.FaxMessageObjects.FaxState">
+            <summary>
+            传真状态
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.FaxMessageObjects.FaxUpdateBy">
+            <summary>
+            更新人
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.FaxMessageObjects.FaxUpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.FaxMessageObjects.CompanyID">
+            <summary>
+            组织ID
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.GetMessageInfoByCompanyID(System.Guid)">
+            <summary>
+            根据选择公司来获取邮件信息
+            </summary>
+            <param name="companyID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.ChangeFaxState(System.Guid[],System.Nullable{System.Guid}[],ICP.Message.ServiceInterface.ReceiveFaxState[],System.Nullable{System.DateTime}[],System.Nullable{System.DateTime}[])">
+            <summary>
+            更改传真状态
+            </summary>
+            <param name="receiveFaxIDs"></param>
+            <param name="updateDates"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.ChangeFlag(System.Guid,ICP.Message.ServiceInterface.MessageFlag,System.Nullable{System.DateTime})">
+            <summary>
+            转发，回复后改变标志
+            </summary>
+            <param name="mailMessageID">日志ID</param>
+            <param name="flag">标志</param>
+            <param name="updateDate">数据版本</param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.ChangeState(System.Guid[],ICP.Message.ServiceInterface.MessageState[],System.Nullable{System.DateTime}[])">
+            <summary>
+            更改状态
+            </summary>
+            <param name="ids"></param>
+            <param name="states"></param>
+            <param name="updateDates"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.CustomerMailList(System.Guid,System.String)">
+            <summary>
+            返回当前业务的客户的邮件地址
+            </summary>
+            <param name="operationId">业务ID</param>
+            <param name="values">客户类型</param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.RuturnMailList(System.Guid,System.String,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            根据查询条件返回当前邮件集合
+            </summary>
+            <param name="userId">用户ID</param>
+            <param name="words">查找文字</param>
+            <param name="wordType">查找位置</param>
+            <param name="refNo">业务号</param>
+            <param name="refNoType">业务搜索范围</param>
+            <param name="customerName">客户名</param>
+            <param name="customerType">客户类型</param>
+            <param name="phase">邮件阶段</param>
+            <param name="mails">邮件地址</param>
+            <param name="mailType">邮件搜索范围</param>
+            <param name="dateType">时间查找范围</param>
+            <param name="fromDate">起始时间</param>
+            <param name="endDate">结束时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageService.GetMailInfo(System.String)">
+            <summary>
+            获取服务端邮件信息
+            </summary>
+            <param name="messageId">邮件的MessageID</param>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.IFaxMessageService">
+            <summary>
+            传真消息服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IFaxMessageService.SaveFaxMessage(ICP.Message.ServiceInterface.FaxMessageObjects)">
+            <summary>
+            保存传真实体
+            </summary>
+            <param name="entry"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.IMailBeeService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.IMessageEDILogRelationService">
+            <summary>
+            消息与EDI信息关联服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageEDILogRelationService.Get(System.Guid)">
+            <summary>
+            根据消息Id获取关联记录
+            </summary>
+            <param name="iMessageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IMessageEDILogRelationService.Save(ICP.Message.ServiceInterface.MessageEDILogRelation)">
+            <summary>
+            保存关联记录
+            </summary>
+            <param name="relation"></param>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.IClientMessageService">
+            <summary>
+            消息发送服务接口
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.ShowSendForm(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            显示发送界面
+            </summary>
+            <param name="entry"></param>
+            <returns>点击发送,返回True，取消发送返回False</returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.ShowReadForm(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            显示预览界面
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.SendAndSaveLog(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            发送并保存日志
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.ConvertMailToPDF(System.String)">
+            <summary>
+            将邮件文件转换为PDF文件
+            </summary>
+            <param name="mailFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.Open(System.String)">
+            <summary>
+            打开Msg文件
+            </summary>
+            <param name="MsgFilePath"></param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.Open(System.Guid)">
+            <summary>
+            通过传真或者邮件中心打开消息
+            </summary>
+            <param name="id">消息主键Id</param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.ConvertMessageToMsg(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            把Message转换为Msg文件，并在邮件客户端显示
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IClientMessageService.OpenMsgFile(System.String)">
+            <summary>
+            打开Msg文件
+            </summary>
+            <param name="messageId">邮件ID</param>
+        </member>
+        <member name="E:ICP.Message.ServiceInterface.IClientMessageService.MessageSent">
+            <summary>
+            邮件发送成功后事件
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageSendFinishEventArgs">
+            <summary>
+            传真发送完成事件参数类
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.MessageSendFinishEventArgs.#ctor(System.Guid,System.Guid)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="guid">email或传真发送成功后返回的日志Id</param>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageSendFinishEventArgs.OldMessageId">
+            <summary>
+            旧传真日志ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageSendFinishEventArgs.NewMessageId">
+            <summary>
+            保存后产生的日志Id
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.IOperationMessageRelationService">
+             <summary>
+            操作日志服务类接口
+             </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.SaveOperationMailMessage(ICP.Message.ServiceInterface.OperationMessageRelation[])">
+            <summary>
+            保存消息关联操作日志
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.Get(System.Guid)">
+             <summary>
+            根据消息Id获取操作关联日志
+             </summary>
+             <param name="messageId"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.GetByMessageId(System.String)">
+            <summary>
+            根据消息的MessageId属性获取关联日志
+            </summary>
+            <param name="imessageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.GetByMessageIdAndReference(System.String,System.String)">
+            <summary>
+            根据消息的MessageId和Reference属性获取邮件关联信息，以MessageId所找到的关联为主，Reference为辅
+            </summary>
+            <param name="messageId">消息的MessageId属性</param>
+            <param name="reference">消息的Reference属性，其值为祖先的MessageId通过空格拼接</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.ExistsRelation(System.String)">
+            <summary>
+            判断是否存在关联
+            </summary>
+            <param name="messageId">消息的MessageID特性</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.CheckRelationIsChanged(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            判断关联是否发送更改,如发送更改则返回关联,如果关联已被删除，则返回的关联中HasData为false，否则返回null
+            </summary>
+            <param name="messageId">消息的MessageID特性</param>
+            <param name="updateDate">消息的更改时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.SaveMessageRelations(System.Byte[])">
+            <summary>
+            批量保存邮件与邮件的关联信息和保存邮件所有外部联系人与业务的关联信息
+            </summary>
+            <param name="messageRelations"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.IOperationMessageRelationService.RemoveOperationMessagesByIDs(System.Guid[],System.Nullable{System.DateTime}[])">
+            <summary>
+            删除业务关联信息
+            </summary>
+            <param name="operationMessageIDs"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.Mail">
+            <summary>
+            邮件实体类
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MailAttachment">
+            <summary>
+            邮件附件类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MailAttachment.Type">
+            <summary>
+            附件类型，默认为ByValue
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageEDILogRelation">
+            <summary>
+            消息与EDI信息关联类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageEDILogRelation.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageEDILogRelation.IMessageId">
+            <summary>
+            消息Id
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageEDILogRelation.EDIConfigId">
+            <summary>
+            EDIConfig关联Id
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageEDILogRelation.Flag">
+            <summary>
+            EDI标记
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageEDILogRelation.Type">
+            <summary>
+            EDI类型
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageParameter">
+            <summary>
+            邮件中心回调参数
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageParameter.Message">
+            <summary>
+            邮件中心传递的消息参数
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageParameter.ActionType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.ActionType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.Send">
+            <summary>
+            发送
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.AutoSend">
+            <summary>
+            自动发送
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.Reply">
+            <summary>
+            回复
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.Resend">
+            <summary>
+            重发
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.Open">
+            <summary>
+            打开
+            </summary>
+        </member>
+        <member name="F:ICP.Message.ServiceInterface.ActionType.Forward">
+            <summary>
+            转发
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.MessageUserPropertiesObject">
+            <summary>
+            消息自定义属性类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.ContactStage">
+            <summary>
+            消息在业务处理过程中所处的阶段
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.OperationRelationID">
+            <summary>
+            消息与业务关联ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.Reference">
+            <summary>
+            邮件MailItem之间关联的Reference属性值
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.CustomerService">
+            <summary>
+            客服Email地址
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.Action">
+            <summary>
+            业务动作
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.MessageUserPropertiesObject.EventInfo">
+            <summary>
+            事件对象
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.OperationMessageRelation">
+            <summary>
+            操作日志实体类
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.ID">
+            <summary>
+            操作日志ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.OperationID">
+            <summary>
+            业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.FormID">
+            <summary>
+            表单ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.FormType">
+            <summary>
+            表单类型
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.IMessageId">
+            <summary>
+            传真或邮件日志ID
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.MessageId">
+            <summary>
+            邮件内部的MessageId
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.UpdateDate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.HasData">
+            <summary>
+            是否从数据库中获取了有效记录
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.ContactStage">
+            <summary>
+            邮件跟业务的沟通阶段
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.RelationType">
+            <summary>
+            自动关联或者手动关联
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.UpdateDataType">
+            <summary>
+            更改数据类型（累加，覆盖）
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.UploadServer">
+            <summary>
+            默认从服务端下载下来，即UploadServer=True,对应本地缓存数据库中OperationMessages表栏位(F4)
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.Contacts">
+            <summary>
+            邮件所有外部联系人地址 (F1)
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.XmlMessageInfo">
+            <summary>
+            将邮件Message对象序列化成Xml(F2)        
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.OperationMessageRelation.Body">
+            <summary>
+            独立存放邮件的HtmlBody（F3）
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.SerializableDictionary2`2">
+            <summary>
+            Implements a <see cref="T:System.Collections.Generic.Dictionary`2"/> that can be safely 
+            serialized to XML and deserialized back, preserving type information.
+            </summary>
+            <remarks>
+            The serialization format will attempt to write the minimal information possible. 
+            Typical format is as follows:
+            <code>
+            <dictionary>
+            <entry>
+            <key>foo</key>
+            <value>25</value>
+            </entry>
+            <entry>
+            <key>bar</key>
+            <value>30</value>
+            </entry>
+            </dictionary>
+            </code>
+            The type of the key and the value are the same as the ones for 
+            <typeparamref name="TKey"/> and <typeparamref name="TValue"/>. 
+            If the type of a value for either one is a derived type, the 
+            type information will be written in a <c>type</c> attribute, 
+            which will be used to deserialize the XML with the appropriate 
+            <see cref="T:System.Xml.Serialization.XmlSerializer"/>. The serialized type name does not 
+            include assembly version information, to make it more version-resilient.
+            </remarks>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.SerializableDictionary2`2.#ctor">
+            <summary>
+            Initializes an instance of the dictionary, setting the 
+            <see cref="P:ICP.Message.ServiceInterface.SerializableDictionary2`2.XmlRoot"/> namespace to an empty string.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.SerializableDictionary2`2.CanRead(System.Xml.XmlReader)">
+            <summary>
+            Tests whether an extensions dictionary can be read from the current
+            <see cref="T:System.Xml.XmlReader"/> position using the default empty XML namespace Uri.
+            </summary>
+            <remarks>
+            If the reader is in the <see cref="F:System.Xml.ReadState.Initial"/>, it's advanced 
+            to the content for the check.
+            </remarks>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.SerializableDictionary2`2.CanRead(System.Xml.XmlReader,System.Xml.Serialization.XmlRootAttribute)">
+            <summary>
+            Tests whether an extensions dictionary can be read from the current
+            <see cref="T:System.Xml.XmlReader"/> position using the given root element information.
+            </summary>
+            <remarks>
+            If the reader is in the <see cref="F:System.Xml.ReadState.Initial"/>, it's advanced 
+            to the content for the check.
+            </remarks>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.SerializableDictionary2`2.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Reads the dictionary using the default root element name and namespace.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.SerializableDictionary2`2.ReadXml(System.Xml.XmlReader,System.Xml.Serialization.XmlRootAttribute)">
+            <summary>
+            Reads the dictionary using the given root element override.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.SerializableDictionary2`2.XmlRoot">
+            <summary>
+            Allows overriding of the xml namespace used to serialize 
+            child elements.
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.XmlWrappingWriter">
+            <summary>
+            Base <see cref="T:System.Xml.XmlWriter"/> that can be use to create new writers by 
+            wrapping existing ones.
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.XmlWrappingReader">
+            <summary>
+            Base <see cref="T:System.Xml.XmlReader"/> that can be use to create new readers by 
+            wrapping existing ones.
+            </summary>
+            <remarks>
+            Supports <see cref="T:System.Xml.IXmlLineInfo"/> if the underlying reader supports it.
+            <para>Author: Daniel Cazzulino, <a href="http://clariusconsulting.net/kzu">blog</a>.</para>
+            </remarks>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.#ctor(System.Xml.XmlReader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:ICP.Message.ServiceInterface.XmlWrappingReader"/>.
+            </summary>
+            <param name="baseReader">The underlying reader this instance will wrap.</param>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.Dispose(System.Boolean)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.Dispose(System.Boolean)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.Read">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.Read"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.Close">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.Close"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.GetAttribute(System.Int32)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.GetAttribute(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.GetAttribute(System.String)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.GetAttribute(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.GetAttribute(System.String,System.String)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.GetAttribute(System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.LookupNamespace(System.String)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.LookupNamespace(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToAttribute(System.Int32)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToAttribute(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToAttribute(System.String)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToAttribute(System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToAttribute(System.String,System.String)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToAttribute(System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToElement">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToElement"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToFirstAttribute">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToFirstAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.MoveToNextAttribute">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.MoveToNextAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.ReadAttributeValue">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.ReadAttributeValue"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.ResolveEntity">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.ResolveEntity"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)">
+            <summary>
+            See <see cref="M:System.Xml.XmlReader.ReadValueChunk(System.Char[],System.Int32,System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.XmlWrappingReader.HasLineInfo">
+            <summary>
+            See <see cref="M:System.Xml.IXmlLineInfo.HasLineInfo"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.BaseReader">
+            <summary>
+            Gets or sets the underlying reader this instance is wrapping.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.CanReadBinaryContent">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.CanReadBinaryContent"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.CanReadValueChunk">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.CanReadValueChunk"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.CanResolveEntity">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.CanResolveEntity"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.AttributeCount">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.AttributeCount"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.BaseURI">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.BaseURI"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Depth">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Depth"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.EOF">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.EOF"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.HasValue">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.HasValue"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.IsDefault">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.IsDefault"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.IsEmptyElement">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.IsEmptyElement"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Item(System.Int32)">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Item(System.Int32)"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Item(System.String)">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Item(System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Item(System.String,System.String)">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Item(System.String,System.String)"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.LocalName">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.LocalName"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Name">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Name"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.NamespaceURI">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.NamespaceURI"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.NameTable">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.NameTable"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.NodeType">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.NodeType"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Prefix">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Prefix"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.QuoteChar">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.QuoteChar"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.ReadState">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.ReadState"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.Value">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.Value"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.XmlLang">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.XmlLang"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.XmlSpace">
+            <summary>
+            See <see cref="P:System.Xml.XmlReader.XmlSpace"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.LineNumber">
+            <summary>
+            See <see cref="P:System.Xml.IXmlLineInfo.LineNumber"/>.
+            </summary>
+        </member>
+        <member name="P:ICP.Message.ServiceInterface.XmlWrappingReader.LinePosition">
+            <summary>
+            See <see cref="P:System.Xml.IXmlLineInfo.LinePosition"/>.
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.EnumerableExtensions">
+            <summary>
+            Extensions to <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Iterates the <paramref name="source"/> and applies the <paramref name="action"/> 
+            to each item.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.EnumerableExtensions.TryDo``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Allows chaining actions on a set of items for later processing, filtering 
+            or projection (transformation), ignoring exceptions that might happen in the action.
+            </summary>
+            <returns>An enumeration with the same items as the source.</returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.EnumerableExtensions.Do``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Allows chaining actions on a set of items for later processing, filtering 
+            or projection (transformation).
+            </summary>
+            <returns>An enumeration with the same items as the source.</returns>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.EnumerableExtensions.EnumerateAll``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Enumerates all elements in the source, so that any intermediate 
+            action or side-effect from it is performed eagerly.
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.CovariantExtensions">
+            <summary>
+            Provides extensions to implement covariance of generic types.
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.CovariantExtensions.ToCovariant``2(System.Collections.Generic.ICollection{``0})">
+            <summary>
+            Allows for covariance of generic ICollections. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.CovariantExtensions.ToCovariant``2(System.Collections.Generic.IList{``0})">
+            <summary>
+            Allows for covariance of generic ILists. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.CovariantExtensions.ToCovariant``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Allows for covariance of generic IEnumerables. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.CovariantExtensions.CollectionInterfaceAdapter`2">
+            <summary>
+            Allows for covariance of generic ICollections. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.CovariantExtensions.EnumerableInterfaceAdapter`2">
+            <summary>
+            Allows for covariance of generic IEnumerables. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="T:ICP.Message.ServiceInterface.CovariantExtensions.ListInterfaceAdapter`2">
+            <summary>
+            Allows for covariance of generic ILists. Adapts a collection of type
+            <typeparam name="T" /> into a collection of type <typeparam name="U" />
+            </summary>
+        </member>
+        <member name="M:ICP.Message.ServiceInterface.MessageUtility.GetOperationMessageRelation(ICP.Message.ServiceInterface.Message)">
+            <summary>
+            只从当前的消息实体中的UserProperties属性获取消息与业务的关联信息
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

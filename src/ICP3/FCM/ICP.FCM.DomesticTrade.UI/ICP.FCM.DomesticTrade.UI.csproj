@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E45D4EF-C76F-480C-ACEA-A14B02F76A82}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ICP.FCM.DomesticTrade.UI</RootNamespace>
+    <AssemblyName>ICP.FCM.DomesticTrade.UI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ICPDLLS\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>C:\ICPDLLS\ICP.FCM.DomesticTrade.UI.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\icpdlls\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraBars.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraEditors.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraGrid.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v10.1, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v10.1.Design, Version=10.1.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\icpdlls\DevExpress.XtraNavBar.v10.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=1.2.47.0, Culture=neutral, PublicKeyToken=3625fb9e755cb262, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Business.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Common.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Common.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FAM.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.FCM.Common.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.Framework.CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.Framework.CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICP.Message.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ICP.System.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\ICP.System.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.9.0, Culture=neutral, PublicKeyToken=b32731d11ce58905">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.CompositeUI.WinForms, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.CompositeUI.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51205.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\ICPDLLS\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Booking\BaseEdit\BookingBaseEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\BaseEdit\BookingBaseEditPart.Designer.cs">
+      <DependentUpon>BookingBaseEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BaseEdit\BookingPOEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingListPart.Designer.cs">
+      <DependentUpon>BookingListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingMainWorkspace.Designer.cs">
+      <DependentUpon>BookingMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\BookingToolBar.Designer.cs">
+      <DependentUpon>BookingToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\BookingWorkitem.cs" />
+    <Compile Include="Booking\Finder\BookingFinderFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Finder\BookingS_FinderListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Finder\BookingS_FinderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Finder\BookingS_FinderToolBar.Designer.cs">
+      <DependentUpon>BookingS_FinderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Finder\BookingS_FinderWorkitem.cs" />
+    <Compile Include="Booking\Finder\BookingS_FinderWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\Finder\BookingS_FinderWorkspace.Designer.cs">
+      <DependentUpon>BookingS_FinderWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\Finder\OEBookingFinder.cs" />
+    <Compile Include="Booking\LocalService\DTTruckEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\LocalService\DTTruckEditPart.Designer.cs">
+      <DependentUpon>DTTruckEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\LocalService\DTTruckPrintPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\LocalService\DTTruckPrintPart.Designer.cs">
+      <DependentUpon>DTTruckPrintPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Booking\SearchPart\BookingFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\SearchPart\BookingSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Booking\SearchPart\BookingSearchPart.Designer.cs">
+      <DependentUpon>BookingSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessInfoProvider\DTBusinessInfoProvider.cs" />
+    <Compile Include="Common\ClientService.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\Controls\CargoDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionPart.Designer.cs">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\DateTimeEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Controls\DateTimeEdit.Designer.cs">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\DomesticTradeBussinessRule.cs" />
+    <Compile Include="Common\Parts\EditRemarkPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\EditRemarkPart.Designer.cs">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\FastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\FastSearchPart.Designer.cs">
+      <DependentUpon>FastSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\FeePart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\FeePart.Designer.cs">
+      <DependentUpon>FeePart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\POItemEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\POItemEditPart.designer.cs">
+      <DependentUpon>POItemEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Parts\POItemSelectPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Parts\POItemSelectPart.designer.cs">
+      <DependentUpon>POItemSelectPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Container\ContainerCargosList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Container\ContainerCargosList.Designer.cs">
+      <DependentUpon>ContainerCargosList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Container\ContainerListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Container\ContainerListPart.Designer.cs">
+      <DependentUpon>ContainerListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Container\LoadContainerPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Container\LoadContainerPart.Designer.cs">
+      <DependentUpon>LoadContainerPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DomesticTradeModuleInit.cs" />
+    <Compile Include="Order\BaseEdit\OrderBaseEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\BaseEdit\OrderBaseEditPart.Designer.cs">
+      <DependentUpon>OrderBaseEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\BaseEdit\OrderFeeEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\BaseEdit\OrderFeeEditPart.Designer.cs">
+      <DependentUpon>OrderFeeEditPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\BaseEdit\OrderPOEditPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\DTOrderListPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\DTOrderListPart.Designer.cs">
+      <DependentUpon>DTOrderListPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\DTOrderMainWorkspace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\DTOrderMainWorkspace.Designer.cs">
+      <DependentUpon>DTOrderMainWorkspace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\DTOrderToolBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\DTOrderToolBar.Designer.cs">
+      <DependentUpon>DTOrderToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order\DTOrderWorkitem.cs" />
+    <Compile Include="Order\SearchPart\OrderFastSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\SearchPart\OrderSearchPart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Order\SearchPart\OrderSearchPart.Designer.cs">
+      <DependentUpon>OrderSearchPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\FCM_CN_Resource.Designer.cs">
+      <DependentUpon>FCM_CN_Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\FCM_EN_Resource.Designer.cs">
+      <DependentUpon>FCM_EN_Resource.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ICP.FCM.Common\ICP.FCM.Common.UI\ICP.FCM.Common.UI.csproj">
+      <Project>{B71894C2-B22D-4BBA-9B45-65D82447318C}</Project>
+      <Name>ICP.FCM.Common.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ICP.FCM.DomesticTrade.ServerInterface\ICP.FCM.DomesticTrade.ServiceInterface.csproj">
+      <Project>{96F146B5-0296-4E8A-BADF-30E9920AEEFE}</Project>
+      <Name>ICP.FCM.DomesticTrade.ServiceInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Booking\BaseEdit\BookingBaseEditPart.resx">
+      <DependentUpon>BookingBaseEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BaseEdit\BookingPOEditPart.resx">
+      <DependentUpon>BookingPOEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingListPart.resx">
+      <DependentUpon>BookingListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingMainWorkspace.resx">
+      <DependentUpon>BookingMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\BookingToolBar.resx">
+      <DependentUpon>BookingToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Finder\BookingS_FinderToolBar.resx">
+      <DependentUpon>BookingS_FinderToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\Finder\BookingS_FinderWorkspace.resx">
+      <DependentUpon>BookingS_FinderWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\LocalService\DTTruckEditPart.resx">
+      <DependentUpon>DTTruckEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\LocalService\DTTruckPrintPart.resx">
+      <DependentUpon>DTTruckPrintPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\SearchPart\BookingFastSearchPart.resx">
+      <DependentUpon>BookingFastSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Booking\SearchPart\BookingSearchPart.resx">
+      <DependentUpon>BookingSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionPart.resx">
+      <DependentUpon>CargoDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\AwkwardDescriptionPart.resx">
+      <DependentUpon>AwkwardDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DangerousDescriptionPart.resx">
+      <DependentUpon>DangerousDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\DryDescriptionPart.resx">
+      <DependentUpon>DryDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\CargoDescriptionParts\ReeferDescriptionPart.resx">
+      <DependentUpon>ReeferDescriptionPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Controls\DateTimeEdit.resx">
+      <DependentUpon>DateTimeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\EditRemarkPart.resx">
+      <DependentUpon>EditRemarkPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\FastSearchPart.resx">
+      <DependentUpon>FastSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\FeePart.resx">
+      <DependentUpon>FeePart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\POItemEditPart.resx">
+      <DependentUpon>POItemEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Parts\POItemSelectPart.resx">
+      <DependentUpon>POItemSelectPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container\ContainerCargosList.resx">
+      <DependentUpon>ContainerCargosList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container\ContainerListPart.resx">
+      <DependentUpon>ContainerListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Container\LoadContainerPart.resx">
+      <DependentUpon>LoadContainerPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\BaseEdit\OrderBaseEditPart.resx">
+      <DependentUpon>OrderBaseEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\BaseEdit\OrderFeeEditPart.resx">
+      <DependentUpon>OrderFeeEditPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\DTOrderListPart.resx">
+      <DependentUpon>DTOrderListPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\DTOrderMainWorkspace.resx">
+      <DependentUpon>DTOrderMainWorkspace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\DTOrderToolBar.resx">
+      <DependentUpon>DTOrderToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\SearchPart\OrderFastSearchPart.resx">
+      <DependentUpon>OrderFastSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\SearchPart\OrderSearchPart.resx">
+      <DependentUpon>OrderSearchPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FCM_CN_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FCM_CN_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\FCM_EN_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FCM_EN_Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add_16.png" />
+    <Content Include="Resources\Cancel_16.png" />
+    <Content Include="Resources\Center_16.png" />
+    <Content Include="Resources\Check_16.png" />
+    <Content Include="Resources\Check_2_16.png" />
+    <Content Include="Resources\Copy_16.png" />
+    <Content Include="Resources\Delete_16.png" />
+    <Content Include="Resources\Edit_16.png" />
+    <Content Include="Resources\Left_D_16.png" />
+    <Content Include="Resources\Memo_16.png" />
+    <Content Include="Resources\Print_16.png" />
+    <Content Include="Resources\Refresh_16.png" />
+    <Content Include="Resources\Return_16.png" />
+    <Content Include="Resources\Save_16.png" />
+    <Content Include="Resources\Search_16.png" />
+    <Content Include="Resources\Transfer_16.png" />
+    <None Include="Properties\DataSources\ICP.FCM.DomesticTrade.ServiceInterface.DataObjects.DTContainerList.datasource" />
+    <None Include="Resources\TextFile1.txt" />
+    <None Include="Resources\Save_Blue_16.png" />
+    <None Include="Resources\Refresh_161.png" />
+    <None Include="Resources\ICP.ico" />
+    <None Include="Resources\App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Booking\Test\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

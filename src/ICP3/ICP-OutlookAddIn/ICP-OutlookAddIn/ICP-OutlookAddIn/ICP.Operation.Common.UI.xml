@@ -1,0 +1,1599 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.Operation.Common.UI</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.Operation.Common.UI.BaseBusinessPart">
+            <summary>
+            业务面板基类
+            包含逻辑:
+            1.构建工具栏
+            2.查询及绑定数据
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart._selectedCompanyIds">
+            <summary>
+            已选择的公司列表字符串
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.OnBusinessOperationCompleted(System.Object,ICP.Framework.CommonLibrary.Common.CommonEventArgs{ICP.Operation.Common.ServiceInterface.BusinessOperationParameter})">
+            <summary>
+            邮件中心回调
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart._DataBinder">
+            <summary>
+            数据绑定器
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart._SpecialConditioner">
+            <summary>
+            特殊条件控制器
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetToolbarCommands(System.String)">
+            <summary>
+            工具栏命令
+            </summary>
+            <param name="templateCode">模版CODE</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetToolbarUIExtensionSite">
+            <summary>
+            获取工具栏拓展点名称，必须在参数解析后才可调用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart._ToolBarImages">
+            <summary>
+            图片集合
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.RegisterExtensionSite">
+             <summary>
+            注册拓展点
+             </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.AfterDataSourceChanged">
+            <summary>
+            数据源变化后的处理
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.Init(System.Object)">
+            <summary>
+            初始化
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.BuildToobar(System.String)">
+            <summary>
+            建立工具栏信息
+            </summary>
+            <param name="commands"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.AddToolBarElement(ICP.Operation.Common.ServiceInterface.OperationToolbarCommand)">
+            <summary>
+            添加工具栏元素
+            </summary>
+            <param name="command"></param>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart.previousParameter">
+            <summary>
+            上一次解析的参数
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetInfo(System.Object)">
+            <summary>
+            参数解析
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetQueryCriteria(System.Boolean)">
+            <summary>
+            获取查询条件
+            </summary>
+            <param name="mergeAdvanceQueryString">查询时是否需要合并高级查询条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetQueryCriteria(System.Boolean,ICP.Operation.Common.ServiceInterface.BusinessOperationParameter)">
+            <summary>
+            得到查询条件
+            </summary>
+            <param name="megeAdvanceQueryString"></param>
+            <param name="businessOperationParameter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.QueryData(System.Boolean)">
+            <summary>
+            数据查询
+            </summary>
+            <param name="mergeAdvanceQueryString">查询时是否需要合并高级查询条件</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.InnerQueryData(ICP.Operation.Common.ServiceInterface.BusinessQueryCriteria)">
+            <summary>
+            执行查询数据
+            </summary>
+            <param name="criteria"></param>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart.Requerys">
+            <summary>
+            重新搜索的条件
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BaseBusinessPart.Temp">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.Requery">
+            <summary>
+            在任务中心输入搜索条件没找到数据时会重新检索
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.InnerBindData(System.Object,System.Object)">
+            <summary>
+            执行绑定
+            </summary>
+            <param name="result"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.InnerBindData2(System.Object,System.Object)">
+            <summary>
+            绑定数据
+            </summary>
+            <param name="result"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.PostHande(System.Object)">
+            <summary>
+            数据绑定后处理
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.GetInnerTable(System.Object)">
+            <summary>
+            判断对象是否为DataTable类型，如果是，则返回对象本身，否则查找对象是否包含DataTable类型的属性成员或者字段，如果有，则返回属性的值
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.BindData(System.Object)">
+            <summary>
+            查询并绑定数据
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.AddCustomColumn(System.Data.DataTable)">
+            <summary>
+            向数据库返回的表结构添加自定义列
+            </summary>
+            <param name="dt"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.SetBaseBindSource(System.Object)">
+            <summary>
+            设置绑定数据源
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.Refresh">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BaseBusinessPart.RefreshDetail">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.Parameter">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.AdvanceQueryString">
+            <summary>
+            高级查询面板传递过来的高级查询条件字符串
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.RootWorkItem">
+            <summary>
+            WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.BusinessInfoExtractorFactory">
+            <summary>
+            业务信息抽取
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.FCMCommonOperationService">
+            <summary>
+            FCM 通用接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.BusinessOperationHandleService">
+            <summary>
+            业务回调接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.DataBinder">
+            <summary>
+            数据绑定器
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SpecialConditioner">
+            <summary>
+            特殊条件控制器
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.PostHandler">
+            <summary>
+            数据绑定后处理
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.IsDataEdited">
+            <summary>
+            绑定后的数据是否被编辑
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.Criteria">
+            <summary>
+            业务信息实体类
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.ParameterFullName">
+            <summary>
+            参数全名
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.OperationContext">
+            <summary>
+            业务上下文
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.Updatetime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.OperationNo">
+            <summary>
+            业务号
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelectedCompanyIds">
+            <summary>
+            已选择的公司列表字符串
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelectedScope">
+            <summary>
+            选择的范围
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.OperationID">
+            <summary>
+            业务的ID
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelctedOperationIDs">
+            <summary>
+            选择记录的业务ID
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelectedOperationNos">
+            <summary>
+            选择记录的业务单号
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelectedOperationTypes">
+            <summary>
+            选择记录的业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SelectedUpdateDates">
+            <summary>
+            选择记录的修改时间
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.FormID">
+            <summary>
+            表单ID
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.TemplateCode">
+            <summary>
+            模板代码
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.SearchType">
+            <summary>
+            邮件中心搜索类型
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.NeedSearchInSQLServer">
+            <summary>
+            需要搜索SQLServer
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.ServerQueryString">
+            <summary>
+            服务器查询字符串
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.ToolBarImages">
+            <summary>
+            图片集合
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BaseBusinessPart.RegisterSiteNames">
+            <summary>
+            注册点名称
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.BindParameter">
+            <summary>
+            数据绑定参数类
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.Message">
+            <summary>
+            Message 对象
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.Parameter">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.Nos">
+            <summary>
+            NO
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.Dt">
+            <summary>
+            DataTable
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.NeedBindData">
+            <summary>
+            需要绑定数据
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.QueryCriteria">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BindParameter.QueryServiceGetter">
+            <summary>
+            查询服务
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BkgFailed.CreateMessageInfo(ICP.Message.ServiceInterface.MessageType,ICP.Message.ServiceInterface.MessageWay,System.String,System.String,ICP.Framework.CommonLibrary.Common.FormType,ICP.Framework.CommonLibrary.Common.OperationType,System.Guid,System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            返回消息实体类
+            </summary>
+            <param name="type">发送类型</param>
+            <param name="way">发送方向</param>
+            <param name="sendTo">接收人邮箱</param>
+            <param name="sendFrom">发送人邮箱</param>
+            <param name="formType">表单类型</param>
+            <param name="operationType">业务类型</param>
+            <param name="operationId">操作ID</param>
+            <param name="formId">表单ID</param>
+            <param name="body">发送内容</param>
+            <param name="subject">主题</param>
+            <param name="cc">邮件抄送地址</param>
+            <param name="action">操作动作</param>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.BkgFailed.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BkgFailed.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BkgFailed.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BkgFailed.MailCenter">
+            <summary>
+            邮件发送注入的服务
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.BkgFailed.CurrentBaseBusinessPart">
+            <summary>
+            当前的业务处理面板
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.BusinessOperationHandleService">
+            <summary>
+             FCM回调客户端功能实现类
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.BusinessOperationCallbackService">
+            <summary>
+            业务回调服务实现类
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.BusinessOperationCallbackService.HandleBusinessOperation(ICP.Operation.Common.ServiceInterface.BusinessOperationParameter)">
+            <summary>
+            转接给回调客户端实现类处理
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.CommonModuleInit">
+            <summary>
+            沟通公共模块入口类
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CommonModuleInit.AddServices">
+            <summary>
+            添加回调服务及回调客户端实现服务
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CommonModuleInit.Load">
+            <summary>
+            注册回调服务，挂载应用程序退出事件，退订回调服务
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CommonModuleInit.frmMain_ApplicationExit(System.Object,System.EventArgs)">
+            <summary>
+            退出时取消回调订阅
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.CommonModuleInit.RootWorkItem">
+            <summary>
+            根WorkItem
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.CustomGridMenu">
+            <summary>
+            列表自定义右键菜单
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.CustomGridMenu.deleteAttachmentUISiteName">
+             <summary>
+            删除菜单拓展点名称。
+            动态生成上下文菜单时，如果单击的时可拖入单元格，则需要动态生成删除文档菜单，删除菜单为二级结构，
+             即：删除+文档类型名称->具体文档名称
+             故需要动态添加删除具体文档菜单项的拓展点
+             </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.CustomGridMenu.contextMenuCommonItemList">
+            <summary>
+            业务公共上下文菜单项
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CustomGridMenu.#ctor(DevExpress.XtraGrid.Views.Grid.GridView)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="view"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CustomGridMenu.InitData(ICP.Operation.Common.UI.ListBaseBusinessPart,System.Data.DataRow,ICP.Operation.Common.ServiceInterface.BusinessColumnInfo,System.String)">
+            <summary>
+            初始化数据
+            </summary>
+            <param name="listPart"></param>
+            <param name="row"></param>
+            <param name="columnInfo"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CustomGridMenu.GetBusinessRelatedContextMenuItems(System.Data.DataRow,ICP.Operation.Common.ServiceInterface.BusinessColumnInfo)">
+             <summary>
+             1.根据点击所在的列，判断是否列为可拖入列，动态添加上传和删除附件菜单项
+            2.根据业务类型和当前数据行添加业务相关的菜单项
+             </summary>
+             <param name="row"></param>
+             <param name="columnInfo"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CustomGridMenu.GetContextMenuItems(System.Collections.Generic.List{ICP.Operation.Common.ServiceInterface.ContextMenuItemInfo})">
+            <summary>
+            构造带有子菜单项的右键菜单
+            </summary>
+            <param name="contextMenuItem">右键菜单集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.CustomGridMenu.InnerCreateItemInfo(System.String,System.String,System.String,System.String,System.String,System.String,ICP.Operation.Common.ServiceInterface.ContextMenuItemType,System.String)">
+            <summary>
+            构造菜单项
+            </summary>
+            <param name="id"></param>
+            <param name="text">显示信息</param>
+            <param name="name">控件的Name</param>
+            <param name="site">注册点</param>
+            <param name="registerSite">父级节点名称</param>
+            <param name="imageName">图片名称</param>
+            <param name="type">控件类型</param>
+            <param name="businessNo">关联的业务号(可以是SO,MBL NO,HBL No等)</param>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.InternalMailBaseBusinessPart">
+            <summary>
+            内部邮件沟通面板
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.btnDynamic">
+             <summary>
+            动态的工具栏Element
+             </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.synObj">
+            <summary>
+            防止线程冲突
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.IsCreateDynamicBarItem">
+            <summary>
+            标识是否已经构造了动态的工具栏Element
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.BuildSpecialDynamicToolBar">
+            <summary>
+            添加询价菜单栏和OperationNO菜单栏
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.TransferData">
+            <summary>
+            数据传输
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.ElementPart">
+            <summary>
+            具体内部邮件的用户控件
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.templateData">
+            <summary>
+            内部沟通面板模版配置数据
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.InternalMailBaseBusinessPart.BookingInfo">
+            <summary>
+            海运业务信息
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.ListBaseBusinessPart">
+            <summary>
+            带数据列表业务面板基类
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.SaveEditDataFieldName">
+            <summary>
+            业务面板中，只有SONO更改了才需要去保存业务数据。
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.selectedFieldName">
+            <summary>
+            勾选列名
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.previousFocusedRowHandle">
+            <summary>
+            记录当前面板数据列表中上次选择的行号
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.Order">
+            <summary>
+            排序的字段
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.Group">
+            <summary>
+            分组的条件
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.contextMenuStripUISiteName">
+            <summary>
+            上下文菜单拓展点名称后缀
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.currentUserCustomGridInfo">
+            <summary>
+            当前列表的用户自定义信息
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.isColumnSettingChanged">
+            <summary>
+            用户是否改变列设置，包含列宽度，列位置
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.isValid">
+            <summary>
+            是否有效
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.IsClearColumnsAndDataSource">
+            <summary>
+            标识是否清空Grid的列和数据源
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.Submiting">
+            <summary>
+            当前是否显示了正在提交的动画
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.HasGridViewColumns">
+            <summary>
+            GridView是否已经存在列
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._listDropableColumns">
+            <summary>
+            支持拖入操作的列列表
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._listEditableColumns">
+            <summary>
+            可编辑列列表
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._listDicAddedDocuments">
+            <summary>
+            维护业务和上传文档的列表字典
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.listAddedDocuments">
+            <summary>
+            新上传的文档实体列表
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._listDicDeletedDocuments">
+            <summary>
+            维护业务和删除文档的列表字典
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._listDicEditedCells">
+            <summary>
+            维护行号和值发生更改列的列表字典
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._operationIds">
+            <summary>
+            根据更新业务Id列表，去更新本地缓存
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.listColumnInfos">
+            <summary>
+            当前列表控件中的列信息
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.listCustomColumnInfos">
+            <summary>
+            功能自定义添加列集合信息
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._AssociatedSortInfo">
+            <summary>
+            邮件中心关联后，排序的列
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.OeOrder">
+            <summary>
+            返回当前的业务状态
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.emptyEditor">
+            <summary>
+            创建一个新的Dev项目
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Switch(System.String)">
+            <summary>
+            通过模板代码更改业务面板显示
+            </summary>
+            <param name="templateCode"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.RemoveBusinessToobarItems(System.String)">
+            <summary>
+            移除barManager 集合信息
+            </summary>
+            <param name="templateCode"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ClearStyle(System.String)">
+            <summary>
+            根据名称清除样式
+            </summary>
+            <param name="styleName"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddBusinessStyleFormationCondition(DevExpress.XtraGrid.StyleFormatCondition)">
+            <summary>
+            添加业务样式 如果表达式和先前添加的样式相同，则直接返回
+            </summary>
+            <param name="styleCondition"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.gridViewList_RowStyle(System.Object,DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs)">
+            <summary>
+            设置行的样式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetFocusedRowHandle(System.Int32)">
+            <summary>
+            设置列表获得焦点的行
+            </summary>
+            <param name="rowHandle"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetDataSource(System.Object)">
+            <summary>
+            设置数据源
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.BindData(System.Object)">
+            <summary>
+            数据加载绑定
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.BeforeBindData">
+            <summary>
+            数据绑定之前进行的操作
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.LimitInternalMailMinimize">
+            <summary>
+            限制邮件中心最小的大小
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AppendAdvanceStringToSQL">
+            <summary>
+            根据业务号和参考号来查询业务数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GetQueryString(System.String)">
+            <summary>
+            将A/B/C分割，拼接SQL
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SaveCustomColumnInfo">
+            <summary>
+            保存用户自定义列的信息
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnColumnWidthChanged(System.Object,DevExpress.XtraGrid.Views.Base.ColumnEventArgs)">
+            <summary>
+            行宽度改变时设置行显示信息改变标识
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnColumnPositionChanged(System.Object,System.EventArgs)">
+            <summary>
+            行位置改变时设置行显示信息改变标识
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.RemoveEventHandler">
+            <summary>
+            移除列表列显示事件处理
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddEventHandler">
+            <summary>
+            添加列表列显示事件处理
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GenerateGridColumns">
+            <summary>
+            生成GridControl列
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.columnInfos">
+            <summary>
+            根据XML配置和用户自定义列信息 构造列表
+            </summary>
+            <param name="columnInfos"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.IsBusinessPartDisposed">
+            <summary>
+            检测当前面板是否已被释放
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.businessQueryCriteria">
+            <summary>
+            业务实体类
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnMessageSent(System.Object,ICP.Framework.CommonLibrary.Common.CommonEventArgs{ICP.Operation.Common.ServiceInterface.MessageSentParameter})">
+             <summary>
+            邮件中心回调实现事件
+             </summary>
+             <param name="sender"></param>
+             <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnBusinessOperationCompleted(System.Object,ICP.Framework.CommonLibrary.Common.CommonEventArgs{ICP.Operation.Common.ServiceInterface.BusinessOperationParameter})">
+            <summary>
+            回调刷新业务面板数据
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.CallbackRefresh(ICP.Framework.CommonLibrary.Common.OperationType,System.Guid,System.Object)">
+            <summary>
+            回调刷新列表和TAB页的方法
+            </summary>
+            <param name="operationType">业务类型</param>
+            <param name="operationId">业务ID</param>
+            <param name="e">对象</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.RefreshData(System.Object,System.String)">
+            <summary>
+            回调时刷新数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.IsStringColumn(ICP.Operation.Common.ServiceInterface.BusinessColumnInfo)">
+            <summary>
+            判断列对应的Field是否为字符串类型
+            </summary>
+            <param name="columnInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddSortColumnInfos(System.String)">
+            <summary>
+            按照条件降序排序（默认订单号）
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddSortColumnInfosGroup(System.String)">
+            <summary>
+            按照条件分组排序
+            </summary>
+            <param name="group">分组条件</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.InnerCreateColumn(ICP.Operation.Common.ServiceInterface.BusinessColumnInfo,ICP.DataCache.ServiceInterface.CustomColumnInfo)">
+            <summary>
+            构造列表
+            </summary>
+            <param name="columnInfo"></param>
+            <param name="columnCustomInfo"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GetCustomColumns">
+            <summary>
+            添加用户用于特殊目的的自定义列,比如排序等
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ResetBinding">
+            <summary>
+            重新绑定数据源
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.CancelEdit">
+            <summary>
+            取消编辑
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AcceptChanges">
+            <summary>
+            接受更改
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ViewListClick(System.Object,System.EventArgs)">
+            <summary>
+            列表点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.CustomDrawColumnHeader(System.Object,DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventArgs)">
+            <summary>
+            自定义列表表头
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.DataSourceChanged(System.Object,System.EventArgs)">
+            <summary>
+            处理数据源变化
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.gridControlList_DragEnter(System.Object,System.Windows.Forms.DragEventArgs)">
+            <summary>
+            设置拖放效果为复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ValidateTargetFieldDropable(System.String)">
+            <summary>
+            验证拖动到的目标列是否可拖入
+            </summary>
+            <param name="fieldName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GetDataRowByRowHandle(System.Int32)">
+            <summary>
+            通过行索引查找数据行
+            </summary>
+            <param name="rowHandle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ValidateDuplicateCopyExists(System.Collections.Generic.List{System.String},System.Data.DataRow)">
+             <summary>
+            一票业务下不允许存在多个重名文档
+             </summary>
+             <param name="temps"></param>
+             <param name="existsCopyName"></param>
+             <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.HandleDragDrop(System.Int32,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            提供给具体业务面板处理拖放操作(处理SONO号)
+            </summary>
+            <param name="rowHandle"></param>
+            <param name="filePaths"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GetDataRowByOperationId(System.Guid)">
+            <summary>
+            通过业务ID查找所属数据行
+            </summary>
+            <param name="operationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AutoFillSONOs(System.Guid,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            自动根据拖拽文件生成SONO
+            规则为:
+            1.如果只有一个附件，则SONO为附件名称
+            2.多于一个附件，则首先取第一个附件的完整名称，再加上其他附件名称的后两位，中间用/分隔
+            </summary>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            监视Windows消息
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetContextMenuItemKeys(System.String)">
+            <summary>
+            设置右键菜单项快捷键
+            </summary>
+            <param name="contextMenuItemID">菜单项ID</param>
+            <returns>HotKey</returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ShowContextMenu(DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo)">
+            <summary>
+            显示鼠标右键菜单
+            </summary>
+            <param name="hi"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetContextMenuState(System.Collections.Generic.List{ICP.FCM.Common.ServiceInterface.MailContactInfo})">
+            <summary>
+            设置联系人的右键菜单显示状态，true允许，false禁止
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Command_Add_Attachment(System.Object,System.EventArgs)">
+            <summary>
+            添加附件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.RemoveSubString(System.String,System.String,System.String)">
+            <summary>
+            从字符串中移除指定的子字符串
+            </summary>
+            <param name="source"></param>
+            <param name="target"></param>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Command_Delete_Attachment(System.Object,System.EventArgs)">
+            <summary>
+            删除附件
+            如果是在服务端已保存的文档，则获取出来的信息为 文件名
+            否则获取出来为 本地文件的绝对路径
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnGeidViewCellValueChanged(System.Object,DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs)">
+            <summary>
+            编辑改变单元格触发
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnGridViewFocusedRowChanged(System.Object,DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs)">
+            <summary>
+            选择行触发
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Save">
+            <summary>
+            保存列表数据更改
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart._row">
+            <summary>
+            操作的当前数据行
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SaveEventSod">
+            <summary>
+            保存事件以后发送邮件
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SaveEventAnrc">
+            <summary>
+            保存ANRC事件并修改当前记录在Trackings表里面的状态
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.GetUpdateFiledNameParameter">
+            <summary>
+            构造修改参数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SaveAttachment">
+            <summary>
+            保存附件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddItemToOperationIdsList(System.Guid)">
+            <summary>
+            记录更改的业务ID
+            </summary>
+            <param name="operationID"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ResetDocumentRecord">
+            <summary>
+            清空集合信息
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetCellValue(System.Guid,System.String,System.Object)">
+            <summary>
+            设置指定单元格的值
+            </summary>
+            <param name="operationId"></param>
+            <param name="fieldName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetFilterRowCellValue(System.String,System.String,System.Object)">
+            <summary>
+            设置过滤结果数据行指定列的值，并将其余行的IsAssociated列的值设为0
+            </summary>
+            <param name="filterExpression"></param>
+            <param name="columnName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.TrapException(System.Exception)">
+            <summary>
+            处理异常捕获
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.InnerQuery(System.String)">
+            <summary>
+            邮件中心-从数据源中执行查找匹配的KeyWord
+            </summary>
+            <param name="queryNo"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AllColumns">
+            <summary>
+            业务面板查找列集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.gridViewList_RowCellClick(System.Object,DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs)">
+            <summary>
+            单元格点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.DeleteEvent(ICP.Operation.Common.ServiceInterface.BusinessState)">
+            <summary>
+            移除事件
+            </summary>
+            <param name="records">实体对象</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.RomoveMemoInfo(System.Collections.Generic.List{System.String})">
+            <summary>
+            移除生成的事件
+            </summary>
+            <param name="eventName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.AddEvent(ICP.Operation.Common.ServiceInterface.BusinessState)">
+            <summary>
+            添加事件
+            </summary>
+            <param name="records">实体对象</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ReturnBusinessState(System.String)">
+            <summary>
+            返回可以修改的事件实体
+            </summary>
+            <param name="caption">事件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ExceptionHandling(ICP.FCM.Common.ServiceInterface.DataObjects.EventObjects,ICP.Operation.Common.ServiceInterface.BusinessState)">
+            <summary>
+            处理当前事件存在，勾选不正确
+            </summary>
+            <param name="eventObjectses"></param>
+            <param name="records"></param>
+            <returns>如果事件存在，勾选不正确，直接勾上状态，不产生事件信息</returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.gridViewList_RowClick(System.Object,DevExpress.XtraGrid.Views.Grid.RowClickEventArgs)">
+            <summary>
+            列表行双击
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.gridViewList_CustomRowCellEdit(System.Object,DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs)">
+            <summary>
+            重绘单元格
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.CheckBoxState">
+            <summary>
+            选择当前的CheckBox为选中状态
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.TaskCenterPositioning(System.String)">
+            <summary>
+            任务中心文本框定位查询
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.EmailAdvanceQuery">
+            <summary>
+            邮件中心高级查询的方法
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OnAdvanceQuery(System.Object,ICP.Framework.CommonLibrary.Common.CommonEventArgs{ICP.Operation.Common.ServiceInterface.QueryInfo})">
+            <summary>
+            高级查找
+            </summary>
+            <param name="sender"></param>
+            <param name="queryInfo"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.EmailSelectCompany">
+            <summary>
+            下拉多选业务所属公司
+            <remarks>加载时默认为所有公司</remarks>
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>        
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.SetBarItemEnable(System.String[],System.Boolean)">
+            <summary>
+            通过包含名称查找工具栏并设置是否可用
+            </summary>
+            <param name="name">包含的名称</param>
+            <param name="enable">是否可用</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ControlButton(System.String,System.String,System.Nullable{System.Boolean})">
+            <summary>
+            控制按钮是否有效
+            </summary>
+            <param name="columns">需要判断的条件</param>
+            <param name="buttonname">按钮的名称</param>
+            <param name="value">是否直接置灰</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.OceanImportButtonisenabled">
+            <summary>
+            针对海进业务的取消按钮的方法
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.LocatePreviousFocusedRow">
+            <summary>
+            数据加载完后，选择行加载Tab信息
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.ButtonDisplayed">
+            <summary>
+            控制按钮是否显示
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.DeleteRow">
+            <summary>
+            移除当前记录
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Operationlog(System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="msg">操作轨迹</param>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.according">
+            <summary>
+            邮件中心按钮是显示还是隐藏
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.EmailButtonDisplayed">
+            <summary>
+            邮件中心按钮显示和隐藏
+            </summary>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.ListBaseBusinessPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.ListBaseBusinessPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.WorkItem">
+            <summary>
+            WorkItem
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.ClientBusinessContactService">
+            <summary>
+            业务联系信息服务客户端
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.BusinessContextMenuItemGeneratorFactory">
+            <summary>
+            业务上下文
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.IsShowAssistantPart">
+            <summary>
+            是否显示参与者面板
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CurrentContextMenuItemTag">
+            <summary>
+            当前点击上下文菜单项所包含的自定义信息
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.BusinessOperationContext">
+            <summary>
+            操作上下文
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.EventObjects">
+            <summary>
+            事件类表操作类
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SearchType">
+            <summary>
+            邮件中心搜索数据的类型，默认是系统自动去搜索
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.IsValid">
+            <summary>
+            当前选择列是否有效
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SONO">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.FocusedDataRow">
+            <summary>
+            选中的数据行
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SelectedDataRows">
+            <summary>
+            勾选的行
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SelectedDataRowCount">
+            <summary>
+            勾选的业务数量
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SelectedUpdateDates">
+            <summary>
+            勾选的业务更新时间
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SelectedOperationTypes">
+            <summary>
+            勾选的业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.SelectedOperationIDs">
+            <summary>
+            勾选的业务号
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.ListAddedDocuments">
+            <summary>
+            新上传的文档实体列表
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.IsShowLoadingForm">
+            <summary>
+            默认是邮件中心加载数据时不显示进度窗体，任务中心则需要显示。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.RowIsTruck">
+            <summary>
+            当前行是否包含IsTruck
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.RowIsCustoms">
+            <summary>
+            当前行是否包含IsCustoms
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CurrentTabItem">
+            <summary>
+            读取当前的Tab页面
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.fcmCommonService">
+            <summary>
+            读取事件列表
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.MessageSentCallbackService">
+            <summary>
+            消息发送成功回调接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.BusinessQueryService">
+            <summary>
+            业务查询接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.ClientFileService">
+            <summary>
+            文档使用的接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CommonOperationService">
+            <summary>
+            公共服务接口
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.MessageBoxService">
+            <summary>
+            消息对话框服务
+            </summary>
+        </member>
+        <member name="E:ICP.Operation.Common.UI.ListBaseBusinessPart.FocusedRowChangedHandler">
+            <summary>
+            列表当前选择行改变事件
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CurrentRowHandle">
+            <summary>
+            当前选中的列表数据行索引
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CurrentRow">
+            <summary>
+            列表当前数据行
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.CurrentDataSource">
+            <summary>
+            列表当前绑定的数据源
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.DocumentNotifyClientService">
+            <summary>
+            文档通知对象
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.RowFont">
+            <summary>
+            列表行字体
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.barManager">
+            <summary>
+            BarManager 控件
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.ListBaseBusinessPart.BusinessType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.MessageSentCallbackService">
+            <summary>
+            消息发送成功后回调处理实现类
+            </summary>
+        </member>
+        <member name="E:ICP.Operation.Common.UI.MessageSentCallbackService.MessageSent">
+            <summary>
+            消息发送成功后,引发此事件
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="T:ICP.Operation.Common.UI.TabBaseBusinessPart">
+            <summary>
+            带子Tab面板的业务面板控件
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.SetFocusedRowHandle(System.Int32)">
+            <summary>
+            设置列表获得焦点的行
+            </summary>
+            <param name="rowHandle"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.Save">
+            <summary>
+            保存列表数据更改
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.InitTabControl(System.String)">
+            <summary>
+            构造Tab选项卡
+            </summary>
+            <param name="code">当前的节点code</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.SelectedPageChanged(System.Object,DevExpress.XtraTab.TabPageChangedEventArgs)">
+            <summary>
+            选项卡发生改变时触发 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.Databind(ICP.Operation.Common.ServiceInterface.TabItemConfigInfo)">
+            <summary>
+            控件数据绑定的方法
+            </summary>
+            <param name="tab">对象集合</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.BindData(System.Object)">
+            <summary>
+            数据绑定以后更新TAB页
+            </summary>
+            <param name="parameter"></param>
+        </member>
+        <member name="F:ICP.Operation.Common.UI.TabBaseBusinessPart.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:ICP.Operation.Common.UI.TabBaseBusinessPart.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.TabItems">
+            <summary>
+            Tab选项卡集合信息
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.BusinessOperationContext">
+            <summary>
+            操作上下文
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.CurrentDataSource">
+            <summary>
+            获取当前绑定列表的数据源
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.IsShowLoadingForm">
+            <summary>
+            加载数据时是否显示进度动画
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.SONO">
+            <summary>
+            订舱号
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.EventObjects">
+            <summary>
+            事件列表操作类
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.AdvanceQueryString">
+            <summary>
+            高级查询面板传递过来的高级查询条件字符串
+            </summary>
+        </member>
+        <member name="P:ICP.Operation.Common.UI.TabBaseBusinessPart.RowFont">
+            <summary>
+            列表行字体
+            </summary>
+        </member>
+    </members>
+</doc>

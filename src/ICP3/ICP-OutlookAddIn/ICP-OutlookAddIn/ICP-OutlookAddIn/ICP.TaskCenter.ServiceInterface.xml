@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ICP.TaskCenter.ServiceInterface</name>
+    </assembly>
+    <members>
+        <member name="T:ICP.TaskCenter.ServiceInterface.NodeInfo">
+            <summary>
+            视图节点类
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.NodeInfo.#ctor">
+             <summary>
+             构造函数
+            <remarks>HasChildren，HasFetchChildrenData设置默认值为false </remarks>
+             </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.Id">
+            <summary>
+            View ID
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.ParentId">
+            <summary>
+            父节点Id
+            <remarks>为null时代表为顶级节点</remarks>
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.ViewCode">
+            <summary>
+            视图模板代码
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.Caption">
+            <summary>
+            节点显示文本
+            <remarks>根据当前语言获取</remarks>
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.HasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.HasFetchChildrenData">
+            <summary>
+            是否已获取子节点
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.SearchCode">
+            <summary>
+            用于查询Code
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.UserID">
+            <summary>
+             节点的拥有者ID
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.AdvanceQueryString">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.Hierarchy">
+            <summary>
+            层级数
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.SqlId">
+            <summary>
+            数据库的ID
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.TooltiopCn">
+            <summary>
+            树节点的中文备注
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.TooltiopEn">
+            <summary>
+            树节点的英文备注
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.NodeInfo.OperationType">
+            <summary>
+            节点业务类型
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.ServiceInterface.IOperationViewService">
+            <summary>
+            操作视图服务类
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.IOperationViewService.GetOperationViewList(System.Nullable{System.Guid})">
+            <summary>
+            获取用户操作视图列表
+            </summary>
+            <param name="parentId">父节点Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.IOperationViewService.GetUserWorkSpaceList(System.Nullable{System.Guid})">
+            <summary>
+            获取用户视图空间列表
+            </summary>
+            <param name="parentId">父节点Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.IOperationViewService.GetWorkSpaceOperationViewList(System.Nullable{System.Guid},System.Nullable{System.Guid},System.Guid)">
+            <summary>
+            获取视图空间中的操作视图列表
+            </summary>
+            <param name="parentId">父节点Id</param>
+            <param name="workSpaceId">视图ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.IOperationViewService.GetSubordinateUserList">
+            <summary>
+             获得用户下属的列表
+            </summary>
+            <param name="parentId">上级UserId</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.IOperationViewService.GetUserRootOperationViewList">
+            <summary>
+            获取当前登录用户的顶级操作视图节点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam">
+            <summary>
+            修改业务所需要传递的对象类
+            创建人：joe
+            创建时间：2013-05-24
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.AddData(System.String,System.Object)">
+            <summary>
+            添加数据
+            </summary>
+            <param name="fieldName">列名称</param>
+            <param name="val">值</param>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.IDList">
+            <summary>
+            业务ID列表
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.OperationType">
+            <summary>
+            业务类型
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.SoNoList">
+            <summary>
+            订舱号列表
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.ContainerDescList">
+            <summary>
+            箱描述
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.CarrierList">
+            <summary>
+            船东
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.UpdateBuisinessParam.RemarkList">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.ServiceInterface.Common.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.ServiceInterface.Common.NodeType.General">
+            <summary>
+            一般性节点
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.ServiceInterface.Common.NodeType.CodeLeaf">
+            <summary>
+             视图操作节点
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.ServiceInterface.Common.NodeType.OperateType">
+            <summary>
+            视图操作类型节点
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.ServiceInterface.Common.NodeType.ParentStaff">
+            <summary>
+            人员父节点
+            </summary>
+        </member>
+        <member name="F:ICP.TaskCenter.ServiceInterface.Common.NodeType.Staff">
+            <summary>
+            人员节点
+            </summary>
+        </member>
+        <member name="T:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo">
+            <summary>
+            操作管理视图基础节点信息
+            </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.#ctor">
+             <summary>
+             构造函数
+            <remarks>HasChildren，HasFetchChildrenData设置默认值为false </remarks>
+             </summary>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.Equals(System.Object)">
+            <summary>
+            重载Equals方法
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.op_Equality(ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo,ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo)">
+            <summary>
+            重载==操作符
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.op_Inequality(ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo,ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo)">
+            <summary>
+            重载!=操作符
+            </summary>
+            <param name="a"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.GetChildNodes">
+            <summary>
+            得到子节点信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.GetChildNodes(ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo,System.Int32)">
+            <summary>
+            获取几层的孩子节点结合
+            </summary>
+            <param name="depth">节点层数(默认为1)</param>
+            <returns></returns>
+        </member>
+        <member name="M:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.AddChildNodes">
+            <summary>
+            添加子节点集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.Id">
+            <summary>
+            Id
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.ParentId">
+            <summary>
+            父节点Id
+            <remarks>为null时代表为顶级节点</remarks>
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.ViewCode">
+            <summary>
+            视图模板代码
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.Caption">
+            <summary>
+            节点显示文本
+            <remarks>根据当前语言获取</remarks>
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.HasChildren">
+            <summary>
+            是否有子节点
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.HasFetchChildrenData">
+            <summary>
+            是否已获取子节点
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.NodeType">
+            <summary>
+            节点类型
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.ParentNode">
+            <summary>
+            父节点
+            </summary>
+        </member>
+        <member name="P:ICP.TaskCenter.ServiceInterface.Common.BaseNodeInfo.ChildNodes">
+            <summary>
+            子节点集合
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" StartReportEvent="_StartReport" ReportInfo.Created="05/10/2012 10:07:48" ReportInfo.Modified="09/20/2019 14:06:31" ReportInfo.CreatorVersion="2013.2.5.0">
+  <ScriptText>using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {
+
+    private void _StartReport(object sender, EventArgs e)
+    {
+      bool hideSubReport=true;
+      DataSourceBase dt=(Report.GetDataSource(&quot;BillListReportData&quot;) as DataSourceBase);
+      if(dt!=null)
+      {
+        dt.Init();
+        int rowCount=dt.RowCount;
+        hideSubReport=rowCount&gt;6;
+      }
+
+      HideSubReport(hideSubReport);
+      ShowAttachmentsLink(hideSubReport);
+      ShowAttachmentsPage(hideSubReport);
+    }
+    private void HideSubReport(bool hide)
+    {
+      Subreport1.Visible=Subreport2.Visible=!hide;
+    }
+    private void ShowAttachmentsLink(bool hide)
+    {
+      txtAttachments1.Visible=txtAttachments2.Visible=hide;
+    }
+    private void ShowAttachmentsPage(bool hide)
+    {
+      Page4.Visible=hide;
+    }
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <BusinessObjectDataSource Name="BaseReportData" ReferenceName="BaseReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="CheckDate" DataType="System.String"/>
+      <Column Name="Amount" DataType="System.String"/>
+      <Column Name="Total" DataType="System.String"/>
+      <Column Name="CustomerName" DataType="System.String"/>
+      <Column Name="CustomerEAddress" DataType="System.String"/>
+      <Column Name="Remark" DataType="System.String"/>
+      <Column Name="CheckNO" DataType="System.String"/>
+    </BusinessObjectDataSource>
+    <BusinessObjectDataSource Name="BillListReportData" ReferenceName="BillListReportData" DataType="System.Int32" Enabled="true">
+      <Column Name="RefNo" DataType="System.String"/>
+      <Column Name="BillNo" DataType="System.String"/>
+      <Column Name="BLNo" DataType="System.String"/>
+      <Column Name="WriteOffAmount" DataType="System.String"/>
+    </BusinessObjectDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="215.9" PaperHeight="279.4" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="PageHeader1" Width="740.5" Height="922.32">
+      <TextObject Name="Text7" Left="9.45" Top="572.67" Width="718.2" Height="99.6" Text="[BaseReportData.Remark]" AutoWidth="true"/>
+      <SubreportObject Name="Subreport1" Left="5.29" Top="784.35" Width="718.2" Height="37.8" ReportPage="Page2" PrintOnParent="true"/>
+      <TextObject Name="Text1" Left="425.25" Top="425.25" Width="114.9" Height="33.45" Text="[BaseReportData.CheckDate]"/>
+      <TextObject Name="Text2" Left="633.15" Top="425.25" Width="114.9" Height="24" Text="[BaseReportData.Amount]"/>
+      <TextObject Name="Text3" Left="28.35" Top="453.6" Width="699.3" Height="24" Text="[BaseReportData.Total]"/>
+      <TextObject Name="Text4" Left="28.35" Top="500.85" Width="481.95" Height="28.35" Text="[BaseReportData.CustomerName]"/>
+      <TextObject Name="Text5" Left="28.35" Top="529.2" Width="699.3" Height="41.58" Text="[BaseReportData.CustomerEAddress]"/>
+      <TextObject Name="Text8" Left="9.45" Top="708.75" Width="56.7" Height="24" Text="PAY TO" Font="宋体, 9pt, style=Bold"/>
+      <TextObject Name="Text9" Left="66.15" Top="706.86" Width="321.3" Height="42.9" Text="[BaseReportData.CustomerName]"/>
+      <TextObject Name="Text10" Left="387.45" Top="708.75" Width="86.55" Height="24" Text="Issue Date" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Left="472.5" Top="708.75" Width="96" Height="24" Text="[BaseReportData.CheckDate]"/>
+      <TextObject Name="Text12" Left="567" Top="708.75" Width="66.15" Height="24" Text="Amount:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="642.6" Top="708.75" Width="94.5" Height="24" Text="[BaseReportData.Amount]"/>
+      <TextObject Name="Text14" Left="5.47" Top="756" Width="132.3" Height="24" Text="Invoice NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text15" Left="137.77" Top="756" Width="75.9" Height="24" Text="GL NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text16" Left="430.72" Top="756" Width="180.8" Height="23.81" Text="BL NO/Decription" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text17" Left="610.27" Top="756" Width="113.1" Height="24" Text="Amount" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text23" Left="10.2" Top="56.7" Width="66.15" Height="24" Text="PAY TO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text24" Left="75.6" Top="54.81" Width="320.55" Height="42.9" Text="[BaseReportData.CustomerName]"/>
+      <TextObject Name="Text25" Left="397.65" Top="56.7" Width="86.55" Height="24" Text="Issue Date:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text26" Left="481.95" Top="56.7" Width="96" Height="24" Text="[BaseReportData.CheckDate]"/>
+      <TextObject Name="Text27" Left="577.2" Top="56.7" Width="66.15" Height="24" Text="Amount:" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text28" Left="661.5" Top="56.7" Width="103.95" Height="24" Text="[BaseReportData.Amount]"/>
+      <TextObject Name="Text29" Left="9.45" Top="103.95" Width="122.85" Height="24" Text="Invoice NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text30" Left="141.75" Top="103.95" Width="75.9" Height="24" Text="GL NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text31" Left="217.35" Top="103.95" Width="217.6" Height="23.81" Text="ReferenceNo/GL Description" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text32" Left="614.25" Top="103.95" Width="113.1" Height="24" Text="Amount" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text18" Left="642.6" Top="56.7" Width="18.9" Height="24" Text="$"/>
+      <TextObject Name="Text33" Left="434.7" Top="103.95" Width="180.8" Height="24" Text="BL NO/Decription" Font="宋体, 10pt, style=Bold"/>
+      <SubreportObject Name="Subreport2" Left="9.45" Top="128.52" Width="718.2" Height="18.9" ReportPage="Page3" PrintOnParent="true"/>
+      <TextObject Name="Text34" Left="623.7" Top="425.25" Width="18.9" Height="24" Text="$"/>
+      <TextObject Name="Text35" Left="633.15" Top="708.75" Width="18.9" Height="24" Text="$"/>
+      <TextObject Name="Text6" Left="213.37" Top="756" Width="217.6" Height="24" Text="ReferenceNo/GL Description" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="txtAttachments1" Left="252.12" Top="226.8" Width="236.25" Height="18.9" Border.Lines="All" Cursor="Hand" Hyperlink.Kind="PageNumber" Hyperlink.Value="2" Text="See Attachments" HorzAlign="Center" Font="宋体, 10pt, style=Underline" TextFill.Color="Blue"/>
+      <TextObject Name="txtAttachments2" Left="255.15" Top="841.05" Width="236.25" Height="18.9" Border.Lines="All" Cursor="Hand" Hyperlink.Kind="PageNumber" Hyperlink.Value="2" Text="See Attachments" HorzAlign="Center" Font="宋体, 10pt, style=Underline" TextFill.Color="Blue"/>
+      <TextObject Name="Text51" Left="500.85" Width="132.3" Height="18.9" Text="[BaseReportData.CheckNO]"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page2" PaperWidth="215.9" PaperHeight="279.4" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data1" Width="740.5" Height="24" DataSource="BillListReportData">
+      <TextObject Name="Text22" Width="132.3" Height="24" Text="[BillListReportData.BillNo]" AutoWidth="true"/>
+      <TextObject Name="Text19" Left="207.9" Width="217.73" Height="24" Text="[BillListReportData.RefNo]" AutoWidth="true"/>
+      <TextObject Name="Text20" Left="425.25" Width="180.68" Height="24" Text="[BillListReportData.BLNo]" AutoWidth="true"/>
+      <TextObject Name="Text21" Left="623.7" Width="103.57" Height="24" Text="[BillListReportData.WriteOffAmount]" AutoWidth="true" HorzAlign="Justify"/>
+      <TextObject Name="Text36" Left="132.3" Width="75.98" Height="23.81"/>
+      <TextObject Name="Text39" Left="614.25" Width="13.23" Height="23.81" Text="$" HorzAlign="Right"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page3" PaperWidth="215.9" PaperHeight="279.4" FirstPageSource="15" OtherPagesSource="15">
+    <DataBand Name="Data2" Top="20" Width="740.5" Height="24" DataSource="BillListReportData">
+      <TextObject Name="Text22" Width="132.3" Height="24" Text="[BillListReportData.BillNo]" AutoWidth="true"/>
+      <TextObject Name="Text19" Left="207.9" Width="217.73" Height="24" Text="[BillListReportData.RefNo]" AutoWidth="true"/>
+      <TextObject Name="Text20" Left="425.63" Width="180.68" Height="24" Text="[BillListReportData.BLNo]" AutoWidth="true"/>
+      <TextObject Name="Text21" Left="623.7" Width="103.57" Height="24" Text="[BillListReportData.WriteOffAmount]" AutoWidth="true" HorzAlign="Justify"/>
+      <TextObject Name="Text37" Left="132.3" Width="75.98" Height="23.81"/>
+      <TextObject Name="Text38" Left="614.25" Width="13.23" Height="23.81" Text="$" HorzAlign="Right"/>
+    </DataBand>
+  </ReportPage>
+  <ReportPage Name="Page4" PaperWidth="215.9" PaperHeight="279.4" FirstPageSource="15" OtherPagesSource="15">
+    <PageHeaderBand Name="PageHeader2" Width="740.5" Height="28.35" Fill.Color="WhiteSmoke">
+      <TextObject Name="Text46" Left="9.45" Width="132.3" Height="24" Text="Invoice NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text47" Left="132.3" Width="75.9" Height="24" Text="GL NO" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text48" Left="425.25" Width="180.8" Height="23.81" Text="BL NO/Decription" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text49" Left="207.9" Width="217.6" Height="24" Text="ReferenceNo/GL Description" Font="宋体, 10pt, style=Bold"/>
+      <TextObject Name="Text50" Left="614.25" Width="113.1" Height="24" Text="Amount" Font="宋体, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data3" Top="32.35" Width="740.5" Height="28.35" CanGrow="true" CanShrink="true" DataSource="BillListReportData">
+      <TextObject Name="Text40" Left="9.45" Width="132.3" Height="24" Text="[BillListReportData.BillNo]" AutoWidth="true"/>
+      <TextObject Name="Text41" Left="207.9" Width="217.73" Height="24" Text="[BillListReportData.RefNo]" AutoWidth="true"/>
+      <TextObject Name="Text42" Left="425.25" Width="180.68" Height="24" Text="[BillListReportData.BLNo]" AutoWidth="true"/>
+      <TextObject Name="Text43" Left="623.7" Width="103.57" Height="24" Text="[BillListReportData.WriteOffAmount]" AutoWidth="true" HorzAlign="Justify"/>
+      <TextObject Name="Text44" Left="132.3" Width="75.98" Height="23.81"/>
+      <TextObject Name="Text45" Left="614.25" Width="13.23" Height="23.81" Text="$" HorzAlign="Right"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="64.7" Width="740.5" Height="18.9"/>
+  </ReportPage>
+</Report>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="GB2312"?>
+<configuration>
+  <DocumentTypeConfig>
+    <DocumentType ID="15" Caption="BKG" Ctip="BKG - 客户订舱单" Etip="BKG - Customer Booking" OperationType="OceanExport" />
+    <DocumentType ID="1" Caption="OSO" Ctip="OSO - 原始的SO副本" Etip="OSO - Original SO Copy" OperationType="OceanExport"/>
+    <DocumentType ID="14" Caption="ASO" Ctip="ASO - 调整的SO副本" Etip="ASO - Adjusted SO Copy" OperationType="OceanExport"/>
+    <DocumentType ID="2" Caption="TRK" Ctip="TRK - 装柜信息" Etip="TRK - Truck Loading Info" OperationType="OceanExport"/>
+    <DocumentType ID="3" Caption="CF" Ctip="CF - 报关单副本" Etip="CF - Customs Declaration Copy" OperationType="OceanExport"/>
+    <DocumentType ID="4" Caption="SI" Ctip="SI - 补料信息" Etip="SI - SI Staff" OperationType="OceanExport"/>
+    <DocumentType ID="8" Caption="SID" Ctip="SID - 客户确认补料" Etip="SID - Customer Confirmed SI" OperationType="OceanExport"/>
+    <DocumentType ID="9" Caption="ISF" Ctip="ISF - 进口安全申报" Etip="ISF - Importer Security Filing" OperationType="OceanExport"/>
+    <DocumentType ID="27" Caption="AMS" Ctip="AMS - 美国舱单系统" Etip="AMS - America Manifest System" OperationType="OceanExport"/>
+    <DocumentType ID="6" Caption="MBL" Ctip="MBL - MBL副本" Etip="MBL - Master BL Copy" OperationType="Unknown"/>
+    <DocumentType ID="7" Caption="HBL" Ctip="HBL - HBL副本" Etip="HBL - House BL Copy" OperationType="Unknown"/>
+    <DocumentType ID="29" Caption="SIMBL" Ctip="SIMBL - MBL副本" Etip="SIMBL - MBL Copy" OperationType="Unknown"/>
+    <DocumentType ID="30" Caption="SIHBL" Ctip="SIHBL - HBL副本" Etip="SIHBL - HBL Copy" OperationType="Unknown"/>
+    <DocumentType ID="5" Caption="ARR" Ctip="ARR -客户账单要求" Etip="ARR -Accounts Receivable Requirement" OperationType="Unknown"/>
+    <DocumentType ID="11" Caption="AR" Ctip="AR - 应收账单" Etip="AR - Accounts Receivable" OperationType="Unknown"/>
+    <DocumentType ID="12" Caption="AP" Ctip="AP - 应付账单" Etip="AP - Accounts Payable" OperationType="Unknown"/>
+    <DocumentType ID="13" Caption="DC" Ctip="DC - 代理账单" Etip="DC - Debit Credit" OperationType="Unknown"/>
+    <DocumentType ID="28" Caption="AN" Ctip="AN - 到港通知书(To Customer)" Etip="AN - Arrival Notice(To Customer)" OperationType="OceanImport"/>
+    <DocumentType ID="31" Caption="AN_C" Ctip="AN_C - 到港通知书(From Carrier)" Etip="AN_C - Arrival Notice(From Carrier)" OperationType="OceanImport"/>
+
+    <!-- ID为Guid，为了使xml形成一个树状结构-->
+    <DocumentType ID="D7709A4B-E475-4552-9F6C-C41E0AF71BC0" cCaption="客户其它单证" eCaption="Other Customer Docs" OperationType="Unknown">
+      <DocumentType ID="16" Caption="LGTLX" Ctip="LGTLX - 电放保函" Etip="LGTLX - Letter of Telex Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="17" Caption="LGPKG" Ctip="LGPKG - 包装固定保函" Etip="LGPKG - Letter of Package Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="18" Caption="LGDC" Ctip="LGDC - 非危险品保函" Etip="LGDC - Letter of Non Dangerous Cargo Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="19" Caption="LGPBL" Ctip="LGPBL - 压单保函" Etip="LGPBL - Letter of Pledge BL Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="20" Caption="LGABL" Ctip="LGABL - 改单保函" Etip="LGABL - Letter of Alter BL Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="21" Caption="LGMBL" Ctip="LGMBL - 并单保函" Etip="LGMBL - Letter of Merge BL Guarantee" OperationType="Unknown"/>
+    </DocumentType>
+
+    <DocumentType ID="052AEB9F-DD29-4771-BE05-9E7E56C7A25C" cCaption="我方其它单证" eCaption="Other CityOcean Docs" OperationType="Unknown">
+      <DocumentType ID="22" Caption="LGPKG1" Ctip="LGPKG1 - 包装固定保函(CO)" Etip="LGPKG1 - (CO)Letter of Package Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="23" Caption="LGDC1" Ctip="LGDC1 - 非危险品保函(CO)" Etip="LGDC1 - (CO)Letter of Non Dangerous Cargo Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="24" Caption="LGABL1" Ctip="LGABL1 - 改单保函(CO)" Etip="LGABL1 - (CO)Letter of Alter BL Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="25" Caption="LGMBL1" Ctip="LGMBL1 - 并单保函(CO)" Etip="LGMBL1 - (CO)Letter of Merge BL Guarantee" OperationType="Unknown"/>
+      <DocumentType ID="26" Caption="LGTLX1" Ctip="LGTLX1 - 电放保函(CO)" Etip="LGTLX1 - (CO)Letter of Telex Guarantee" OperationType="Unknown"/>
+    </DocumentType>
+
+    <DocumentType ID="10" Caption="Other" Ctip="其它" Etip="Other" OperationType="Unknown"/>
+
+  </DocumentTypeConfig>
+  <SelectionTypeConfig>
+    <SelectionType ID="1" Caption="Upload SI Stuff"  Ctip="上传SI补料" Etip="Upload SI Stuff" OperationType="Unknown" Tag="SI" />
+    <SelectionType ID="2" Caption="Upload SO Copy"  Ctip="上传SO附件" Etip="Upload SO Copy" OperationType="Unknown" Tag="SO" />
+    <SelectionType ID="4" Caption="Upload MBL Copy"  Ctip="上传MBL附件" Etip="Upload MBL Copy" OperationType="Unknown" Tag="MBL" />
+    <SelectionType ID="5" Caption="Upload A/P Copy"  Ctip="上传A/P附件" Etip="Upload A/P Copy" OperationType="Unknown" Tag="AP" />
+    <SelectionType ID="3" Caption="Upload A/N Copy"  Ctip="上传A/N附件" Etip="Upload A/N Copy" OperationType="Unknown" Tag="AN" />
+    <SelectionType ID="0" Caption="Specify Type:"  Ctip="指定类型" Etip="Specify Type" OperationType="Unknown"         Tag="Normal" />
+  </SelectionTypeConfig>
+</configuration>
