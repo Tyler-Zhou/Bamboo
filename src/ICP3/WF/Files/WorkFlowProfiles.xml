@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkFlowProfilesList" description="-">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="WorkFlowConfigsID" type="Guid" description="">
+        <validation type="required" errmsg="" />
+      </field>
+      <field name="CName" type="string" description="中文名称">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="中文名称" />
+      </field>
+      <field name="EName" type="string" description="英文名称">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="英文名称" />
+      </field>
+      <field name="WorkFlowData" type="XmlDocument" description="流程定义数据">
+        <validation type="required" errmsg="流程定义数据" />
+      </field>
+      <field name="RuleData" type="XmlDocument" description="规则数据">
+        <validation type="required" errmsg="规则数据" />
+      </field>
+      <field name="Version" type="string" description="版本">
+        <validation type="stringlength" length="10" />
+        <validation type="required" errmsg="版本" />
+      </field>
+      <field name="CreateBy" type="Guid" description="建立人">
+        <validation type="required" errmsg="建立人" />
+      </field>
+      <field name="CreateDate" type="DateTime" description="建立时间">
+        <validation type="required" errmsg="建立时间" />
+      </field>
+      <field name="UpdateBy" type="Guid?" description="更新人" />
+      <field name="UpdateDate" type="DateTime?" description="更新时间" />
+    </class>
+    <class name="WorkFlowProfilesInfo" baseclass="WorkFlowProfilesList" description="-" />
+  </classes>
+</root>

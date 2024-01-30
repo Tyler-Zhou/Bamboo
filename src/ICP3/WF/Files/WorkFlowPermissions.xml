@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkFlowPermissionsList" description="流程访问权限信息-">
+      <field name="ID" type="Guid" description="唯一键">
+        <validation type="required" errmsg="唯一键" />
+      </field>
+      <field name="WorkFlowConfigID" type="Guid" description="流程配置ID">
+        <validation type="required" errmsg="流程配置ID" />
+      </field>
+      <field name="OrganizationID" type="Guid?" description="组织架构ID" />
+      <field name="UseObjectID" type="Guid?" description="使用对象ID（对应岗位或用户）" />
+      <field name="UserObjectType" type="byte?" description="使用对象类型（1:岗位,2:用户）" />
+      <field name="CreateBy" type="Guid" description="建立人">
+        <validation type="required" errmsg="建立人" />
+      </field>
+      <field name="CreateDate" type="DateTime" description="建立时间">
+        <validation type="required" errmsg="建立时间" />
+      </field>
+      <field name="UpdateBy" type="Guid?" description="更新人" />
+      <field name="UpdateDate" type="DateTime?" description="更新时间" />
+    </class>
+    <class name="WorkFlowPermissionsInfo" baseclass="WorkFlowPermissionsList" description="流程访问权限信息-" />
+  </classes>
+</root>

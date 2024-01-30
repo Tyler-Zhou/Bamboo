@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkItemParticipantsList" description="-">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="WorkItemID" type="Guid" description="工作任务ID">
+        <validation type="required" errmsg="工作任务ID" />
+      </field>
+      <field name="ParticipantID" type="Guid" description="参与者ID">
+        <validation type="required" errmsg="参与者ID" />
+      </field>
+      <field name="IsExecutor" type="bool" description="是否执行者">
+        <validation type="required" errmsg="是否执行者" />
+      </field>
+    </class>
+    <class name="WorkItemParticipantsInfo" baseclass="WorkItemParticipantsList" description="-" />
+  </classes>
+</root>

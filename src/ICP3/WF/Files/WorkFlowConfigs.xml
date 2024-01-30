@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkFlowConfigsList" description="流程配置器列表">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="CDescription" type="string" description="中文描述">
+        <validation type="stringlength" length="500" />
+        <validation type="required" errmsg="中文描述" />
+      </field>
+      <field name="EDescription" type="string" description="英文描述">
+        <validation type="stringlength" length="500" />
+        <validation type="required" errmsg="英文描述" />
+      </field>
+      <field name="CPrintTitle" type="string" description="中文打印标题">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="中文打印标题" />
+      </field>
+      <field name="EPrintTitle" type="string" description="英文打印标题">
+        <validation type="stringlength" length="200" />
+        <validation type="required" errmsg="英文打印标题" />
+      </field>
+      <field name="IsOA" type="bool" description="是否办公流程">
+        <validation type="required" errmsg="是否办公流程" />
+      </field>
+      <field name="Days" type="byte" description="有效天数">
+        <validation type="required" errmsg="有效天数" />
+      </field>
+      <field name="KeyWord" type="string" description="关键代码">
+        <validation type="stringlength" length="50" />
+        <validation type="required" errmsg="关键代码" />
+      </field>
+      <field name="CreateBy" type="Guid" description="建立人">
+        <validation type="required" errmsg="建立人" />
+      </field>
+      <field name="CreateDate" type="DateTime" description="建立时间">
+        <validation type="required" errmsg="建立时间" />
+      </field>
+      <field name="UpdateBy" type="Guid?" description="更新人" />
+      <field name="UpdateDate" type="DateTime?" description="更新时间" />
+    </class>
+    <class name="WorkFlowConfigsInfo" baseclass="WorkFlowConfigsList" description="流程配置器详细信息" />
+  </classes>
+</root>

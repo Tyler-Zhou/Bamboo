@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root namespace="ICP.WF.ServiceInterface">
+  <classes>
+    <class name="WorkItemsList" description="-">
+      <field name="ID" type="Guid" description="主键ID">
+        <validation type="required" errmsg="主键ID" />
+      </field>
+      <field name="WorkInfoID" type="Guid" description="流程ID">
+        <validation type="required" errmsg="流程ID" />
+      </field>
+      <field name="CName" type="string" description="中文名称">
+        <validation type="stringlength" length="100" />
+        <validation type="required" errmsg="中文名称" />
+      </field>
+      <field name="EName" type="string" description="英文名称">
+        <validation type="stringlength" length="100" />
+        <validation type="required" errmsg="英文名称" />
+      </field>
+      <field name="ExecutorID" type="Guid?" description="执行者ID" />
+      <field name="StartDate" type="DateTime" description="开始时间">
+        <validation type="required" errmsg="开始时间" />
+      </field>
+      <field name="FinishDate" type="DateTime?" description="完成时间" />
+      <field name="State" type="byte" description="状态( Waiting=1, Processing=2,Finished,=3)">
+        <validation type="required" errmsg="状态( Waiting=1, Processing=2,Finished,=3)" />
+      </field>
+      <field name="FormProfileID" type="Guid" description="表单定义ID">
+        <validation type="required" errmsg="表单定义ID" />
+      </field>
+      <field name="DataContent" type="XmlDocument?" description="表单内容" />
+      <field name="IsMain" type="bool" description="是否主表单">
+        <validation type="required" errmsg="是否主表单" />
+      </field>
+      <field name="AssigneeID" type="Guid?" description="指派人ID" />
+    </class>
+    <class name="WorkItemsInfo" baseclass="WorkItemsList" description="-" />
+  </classes>
+</root>

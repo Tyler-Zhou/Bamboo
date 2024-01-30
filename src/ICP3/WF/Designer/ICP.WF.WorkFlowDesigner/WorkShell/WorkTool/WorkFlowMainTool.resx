@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="bar2.Text" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <metadata name="barFormDesignToolBarManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="barNew.Caption" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="toolTipTitleItem1.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="barOpen.Caption" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="barOpenLocal.Caption" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="barOpenServer.Caption" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="toolTipTitleItem2.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="barSaves.Caption" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="barSaveLocal.Caption" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="barSaveServer.Caption" xml:space="preserve">
+    <value>Server</value>
+  </data>
+  <data name="barSaveAs.Caption" xml:space="preserve">
+    <value>Save As ..</value>
+  </data>
+  <data name="toolTipTitleItem3.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="barPrints.Caption" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="barPrint.Caption" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="barPrintPreview.Caption" xml:space="preserve">
+    <value>Print Preview</value>
+  </data>
+  <data name="barPrintSet.Caption" xml:space="preserve">
+    <value>PrintSet</value>
+  </data>
+  <data name="toolTipTitleItem4.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="barCopy.Caption" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="toolTipTitleItem5.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="barCut.Caption" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="toolTipTitleItem6.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="barPaste.Caption" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="toolTipTitleItem7.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="barDelete.Caption" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="toolTipTitleItem8.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="barZoomIn.Caption" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="toolTipTitleItem9.Text" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="barZoomOut.Caption" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="toolTipTitleItem10.Text" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="barCancelZaom.Caption" xml:space="preserve">
+    <value>Cancel Zoom</value>
+  </data>
+  <data name="toolTipTitleItem11.Text" xml:space="preserve">
+    <value>Cancel Zoom</value>
+  </data>
+  <data name="barCombBox.Caption" xml:space="preserve">
+    <value>ComBox</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v10.1" name="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral" />
+  <data name="CmbZoomLevel.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v10.1">
+    <value>Combo</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="barCombBox.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="barExpand.Caption" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="toolTipTitleItem12.Text" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="barCollapse.Caption" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="toolTipTitleItem13.Text" xml:space="preserve">
+    <value>Collapse</value>
+  </data>
+  <data name="barClose.Caption" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="toolTipTitleItem14.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="bar3.Text" xml:space="preserve">
+    <value>Main menu</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="barDockControlTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="barDockControlTop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="barDockControlTop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1174, 26</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Name" xml:space="preserve">
+    <value>barDockControlTop</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="barDockControlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 27</value>
+  </data>
+  <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1174, 0</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Name" xml:space="preserve">
+    <value>barDockControlBottom</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="barDockControlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="barDockControlLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 26</value>
+  </data>
+  <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
+    <value>barDockControlLeft</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="barDockControlRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="barDockControlRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1174, 26</value>
+  </data>
+  <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
+    <value>barDockControlRight</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>89</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 14</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1174, 27</value>
+  </data>
+  <data name="&gt;&gt;bar2.Name" xml:space="preserve">
+    <value>bar2</value>
+  </data>
+  <data name="&gt;&gt;bar2.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Bar, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barFormDesignToolBarManager.Name" xml:space="preserve">
+    <value>barFormDesignToolBarManager</value>
+  </data>
+  <data name="&gt;&gt;barFormDesignToolBarManager.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarManager, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;bar3.Name" xml:space="preserve">
+    <value>bar3</value>
+  </data>
+  <data name="&gt;&gt;bar3.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Bar, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barNew.Name" xml:space="preserve">
+    <value>barNew</value>
+  </data>
+  <data name="&gt;&gt;barNew.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barOpen.Name" xml:space="preserve">
+    <value>barOpen</value>
+  </data>
+  <data name="&gt;&gt;barOpen.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barOpenLocal.Name" xml:space="preserve">
+    <value>barOpenLocal</value>
+  </data>
+  <data name="&gt;&gt;barOpenLocal.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barOpenServer.Name" xml:space="preserve">
+    <value>barOpenServer</value>
+  </data>
+  <data name="&gt;&gt;barOpenServer.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barSaves.Name" xml:space="preserve">
+    <value>barSaves</value>
+  </data>
+  <data name="&gt;&gt;barSaves.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barSaveLocal.Name" xml:space="preserve">
+    <value>barSaveLocal</value>
+  </data>
+  <data name="&gt;&gt;barSaveLocal.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barSaveServer.Name" xml:space="preserve">
+    <value>barSaveServer</value>
+  </data>
+  <data name="&gt;&gt;barSaveServer.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barSaveAs.Name" xml:space="preserve">
+    <value>barSaveAs</value>
+  </data>
+  <data name="&gt;&gt;barSaveAs.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barPrints.Name" xml:space="preserve">
+    <value>barPrints</value>
+  </data>
+  <data name="&gt;&gt;barPrints.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarSubItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barPrint.Name" xml:space="preserve">
+    <value>barPrint</value>
+  </data>
+  <data name="&gt;&gt;barPrint.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barPrintPreview.Name" xml:space="preserve">
+    <value>barPrintPreview</value>
+  </data>
+  <data name="&gt;&gt;barPrintPreview.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barPrintSet.Name" xml:space="preserve">
+    <value>barPrintSet</value>
+  </data>
+  <data name="&gt;&gt;barPrintSet.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barCopy.Name" xml:space="preserve">
+    <value>barCopy</value>
+  </data>
+  <data name="&gt;&gt;barCopy.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barCut.Name" xml:space="preserve">
+    <value>barCut</value>
+  </data>
+  <data name="&gt;&gt;barCut.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barPaste.Name" xml:space="preserve">
+    <value>barPaste</value>
+  </data>
+  <data name="&gt;&gt;barPaste.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDelete.Name" xml:space="preserve">
+    <value>barDelete</value>
+  </data>
+  <data name="&gt;&gt;barDelete.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barZoomIn.Name" xml:space="preserve">
+    <value>barZoomIn</value>
+  </data>
+  <data name="&gt;&gt;barZoomIn.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barZoomOut.Name" xml:space="preserve">
+    <value>barZoomOut</value>
+  </data>
+  <data name="&gt;&gt;barZoomOut.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barCancelZaom.Name" xml:space="preserve">
+    <value>barCancelZaom</value>
+  </data>
+  <data name="&gt;&gt;barCancelZaom.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barCombBox.Name" xml:space="preserve">
+    <value>barCombBox</value>
+  </data>
+  <data name="&gt;&gt;barCombBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;CmbZoomLevel.Name" xml:space="preserve">
+    <value>CmbZoomLevel</value>
+  </data>
+  <data name="&gt;&gt;CmbZoomLevel.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemComboBox, DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barExpand.Name" xml:space="preserve">
+    <value>barExpand</value>
+  </data>
+  <data name="&gt;&gt;barExpand.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barCollapse.Name" xml:space="preserve">
+    <value>barCollapse</value>
+  </data>
+  <data name="&gt;&gt;barCollapse.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barDeploy.Name" xml:space="preserve">
+    <value>barDeploy</value>
+  </data>
+  <data name="&gt;&gt;barDeploy.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barClose.Name" xml:space="preserve">
+    <value>barClose</value>
+  </data>
+  <data name="&gt;&gt;barClose.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;barLinkContainerItem3.Name" xml:space="preserve">
+    <value>barLinkContainerItem3</value>
+  </data>
+  <data name="&gt;&gt;barLinkContainerItem3.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarLinkContainerItem, DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>WorkFlowMainTool</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>ICP.Framework.ClientComponents.UIFramework.BaseToolBar, ICP.Framework.ClientComponents, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="barLinkContainerItem3.Caption" xml:space="preserve">
+    <value>barLinkContainerItem3</value>
+  </data>
+  <data name="barDeploy.Caption" xml:space="preserve">
+    <value>Deploy</value>
+  </data>
+  <data name="toolTipTitleItem15.Text" xml:space="preserve">
+    <value>Deploy</value>
+  </data>
+</root>
