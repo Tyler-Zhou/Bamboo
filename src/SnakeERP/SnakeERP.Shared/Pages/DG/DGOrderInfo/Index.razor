@@ -1,0 +1,154 @@
+﻿@page "/DG/DGOrderInfo"
+@using SnakeERP.ViewModel.DG.DGOrderInfoVMs;
+@inherits BasePage
+@attribute [ActionDescription("发货单管理", "SnakeERP.Controllers,DGOrderInfo")]
+
+<WTSearchPanel OnSearch="@DoSearch">
+    <ValidateForm Model="@SearchModel">
+        <Row ItemsPerRow="ItemsPerRow.Three" RowType="RowType.Inline">
+
+            <BootstrapInput @bind-Value="@SearchModel.Name"  />
+            <WTDateRange @bind-Value="@SearchModel.ShipDateTime"  />
+            <BootstrapInput @bind-Value="@SearchModel.DeliveryMan"  />
+            <BootstrapInput @bind-Value="@SearchModel.LicensePlate"  />
+        </Row>
+    </ValidateForm>
+</WTSearchPanel>
+
+
+
+<Table @ref="dataTable" TItem="DGOrderInfo_View" OnQueryAsync="OnSearch" IsPagination="true" IsStriped="true" IsBordered="true" ShowRefresh="false"
+       ShowToolbar="true" IsMultipleSelect="true" ShowExtendButtons="true" ShowDefaultButtons="false" ShowExtendEditButton="false" ShowExtendDeleteButton="false" style="margin-top:10px;">
+    <TableColumns>
+
+        <TableColumn @bind-Field="@context.Name"  />
+        <TableColumn @bind-Field="@context.ShipDateTime" FormatString="yyyy-MM-dd HH: mm: ss" />
+        <TableColumn @bind-Field="@context.DeliveryCompany"  />
+        <TableColumn @bind-Field="@context.DeliveryCompanyPhone"  />
+        <TableColumn @bind-Field="@context.DeliveryMan"  />
+        <TableColumn @bind-Field="@context.LicensePlate"  />
+    </TableColumns>
+    <TableToolbarTemplate>
+        @if (IsAccessable("/api/DGOrderInfo/Add"))
+        {
+            <TableToolbarButton TItem="DGOrderInfo_View" Color="Color.Primary" Icon="fa fa-fw fa-plus" Text="@WtmBlazor.Localizer["Sys.Create"]" OnClickCallback="OnCreateClick" />
+        }
+        @if (IsAccessable("/api/DGOrderInfo/BatchDelete"))
+        {
+            <TableToolbarPopconfirmButton TItem="DGOrderInfo_View" Color="Color.Primary"
+                                          Icon="fa fa-fw fa-trash" Text="@WtmBlazor.Localizer["Sys.BatchDelete"]"
+                                          OnConfirm="@OnBatchDeleteClick" Content="@WtmBlazor.Localizer["Sys.BatchDeleteConfirm"]" CloseButtonText="@WtmBlazor.Localizer["Sys.Close"]"
+                                          ConfirmButtonText="@WtmBlazor.Localizer["Sys.BatchDelete"]" ConfirmButtonColor="Color.Danger" />
+        }
+        
+        @if (IsAccessable("/api/DGOrderInfo/Import"))
+        {
+            <TableToolbarButton TItem="DGOrderInfo_View" Color="Color.Primary" Icon="fa fa-fw fa-upload" Text="@WtmBlazor.Localizer["Sys.Import"]" OnClickCallback="@OnImportClick" />
+        }
+        @if (IsAccessable("/api/DGOrderInfo/ExportExcel"))
+        {
+            <TableToolbarButton TItem="DGOrderInfo_View" Color="Color.Primary" Icon="fa fa-fw fa-download" Text="@WtmBlazor.Localizer["Sys.Export"]" OnClickCallback="@OnExportClick" IsAsync="true" />
+        }
+    </TableToolbarTemplate>
+    <RowButtonTemplate>
+        <div style="padding-right:10px;">
+            @if (IsAccessable("/api/DGOrderInfo/Edit"))
+            {
+                <TableCellButton Size="Size.ExtraSmall" Color="Color.Success" Icon="fa fa-edit" Text="@WtmBlazor.Localizer["Sys.Edit"]" OnClick="() => OnEditClick(context)" />
+            }
+            @if (IsAccessable("/api/DGOrderInfo/{id}"))
+            {
+                <TableCellButton Size="Size.ExtraSmall" Color="Color.Info" Icon="fa fa-info" Text="@WtmBlazor.Localizer["Sys.Details"]" OnClick="()=>OnDetailsClick(context)" />
+            }
+            @if (IsAccessable("/api/DGOrderInfo/BatchDelete"))
+            {
+                <PopConfirmButton Icon="fa fa-trash" Text="@WtmBlazor.Localizer["Sys.Delete"]" OnConfirm="() => OnDeleteClick(context)" Color="Color.Danger" Size="Size.ExtraSmall"
+                                  Content="@WtmBlazor.Localizer["Sys.DeleteConfirm"]" CloseButtonText="@WtmBlazor.Localizer["Sys.Close"]" ConfirmButtonText="@WtmBlazor.Localizer["Sys.Delete"]" ConfirmButtonColor="Color.Danger" />
+            }
+        </div>
+    </RowButtonTemplate>
+</Table>
+
+@code{
+
+    private DGOrderInfoSearcher SearchModel = new DGOrderInfoSearcher();
+    private Table<DGOrderInfo_View> dataTable;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task<QueryData<DGOrderInfo_View>> OnSearch(QueryPageOptions opts)
+    {
+        return await StartSearch<DGOrderInfo_View>("/api/DGOrderInfo/Search", SearchModel, opts);
+    }
+
+    private void DoSearch()
+    {
+        dataTable.QueryAsync();
+    }
+
+    private async Task OnCreateClick(IEnumerable<DGOrderInfo_View> items)
+    {
+        if (await OpenDialog<Create>(WtmBlazor.Localizer["Sys.Create"]) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+    private async Task OnEditClick(DGOrderInfo_View item)
+    {
+        if (await OpenDialog<Edit>(WtmBlazor.Localizer["Sys.Edit"], x => x.id == item.ID.ToString()) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+    private async Task OnDetailsClick(DGOrderInfo_View item)
+    {
+        await OpenDialog<Details>(WtmBlazor.Localizer["Sys.Details"], x => x.id == item.ID.ToString());
+    }
+
+    private async Task OnBatchDeleteClick()
+    {
+        if (dataTable.SelectedRows?.Any() == true)
+        {
+            await PostsData(dataTable.SelectedRows.Select(x => x.ID).ToList(), $"/api/DGOrderInfo/batchdelete", (s) => WtmBlazor.Localizer["Sys.BatchDeleteSuccess", s]);
+            await dataTable.QueryAsync();
+        }
+        else
+        {
+            await WtmBlazor.Toast.Information(WtmBlazor.Localizer["Sys.Info"], WtmBlazor.Localizer["Sys.SelectOneRowMin"]);
+        }
+    }
+
+    private async Task OnDeleteClick(DGOrderInfo_View item)
+    {
+        await PostsData(new List<string> { item.ID.ToString() }, $"/api/DGOrderInfo/batchdelete", (s) => "Sys.OprationSuccess");
+        await dataTable.QueryAsync();
+    }
+
+
+    private async Task OnExportClick(IEnumerable<DGOrderInfo_View> items)
+    {
+        if (dataTable.SelectedRows?.Any() == true)
+        {
+            await Download("/api/DGOrderInfo/ExportExcelByIds", dataTable.SelectedRows.Select(x => x.ID.ToString()).ToList());
+        }
+        else
+        {
+            await Download("/api/DGOrderInfo/ExportExcel", SearchModel);
+        }
+    }
+    private async Task OnImportClick(IEnumerable<DGOrderInfo_View> items)
+    {
+        if (await OpenDialog<Import>(WtmBlazor.Localizer["Sys.Import"]) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+}

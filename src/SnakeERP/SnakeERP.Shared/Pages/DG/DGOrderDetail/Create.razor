@@ -1,0 +1,56 @@
+﻿@page "/DG/DGOrderDetail/Create"
+@using SnakeERP.ViewModel.DG.DGOrderDetailVMs;
+@inherits BasePage
+
+<ValidateForm @ref="vform" Model="@Model" OnValidSubmit="@Submit">
+    <Row ItemsPerRow="ItemsPerRow.Two" RowType="RowType.Normal">
+
+            <Select @bind-Value="@Model.Entity.OrderInfoID" Items="@AllDGOrderInfos" PlaceHolder="@WtmBlazor.Localizer["Sys.PleaseSelect"]"/>
+            <BootstrapInput @bind-Value="@Model.Entity.DeliveryMan"  />
+            <BootstrapInput @bind-Value="@Model.Entity.DeliveryPhone"  />
+            <BootstrapInput @bind-Value="@Model.Entity.DeliveryAddress"  />
+            <BootstrapInput @bind-Value="@Model.Entity.ReceivingMan"  />
+            <BootstrapInput @bind-Value="@Model.Entity.ReceivingPhone"  />
+            <BootstrapInput @bind-Value="@Model.Entity.ReceivingAddress"  />
+            <BootstrapInput @bind-Value="@Model.Entity.OrderNO"  />
+            <BootstrapInputNumber @bind-Value="@Model.Entity.DoorQuantity"  />
+            <BootstrapInputNumber @bind-Value="@Model.Entity.SleeveQuantity"  />
+            <BootstrapInputNumber @bind-Value="@Model.Entity.LinesQuantity"  />
+            <BootstrapInputNumber @bind-Value="@Model.Entity.OtherQuantity"  />
+            <BootstrapInput @bind-Value="@Model.Entity.Remark"  />
+            <Select @bind-Value="@Model.Entity.DeliveryStatus"  PlaceHolder="@WtmBlazor.Localizer["Sys.PleaseSelect"]"/>
+    </Row>
+    <div class="modal-footer table-modal-footer">
+        <Button Color="Color.Secondary" Icon="fa fa-close" Text="@WtmBlazor.Localizer["Sys.Close"]" OnClick="OnClose" />
+        <Button Color="Color.Primary" ButtonType="ButtonType.Submit" Icon="fa fa-save" Text="@WtmBlazor.Localizer["Sys.Create"]" IsAsync="true" />
+    </div>
+</ValidateForm>
+
+@code {
+
+    private DGOrderDetailVM Model = new DGOrderDetailVM();
+    private ValidateForm vform { get; set; }
+
+    private List<SelectedItem> AllDGOrderInfos = new List<SelectedItem>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        AllDGOrderInfos = await WtmBlazor.Api.CallItemsApi("/api/DGOrderDetail/GetDGOrderInfos", placeholder: WtmBlazor.Localizer["Sys.PleaseSelect"]);
+
+        await base.OnInitializedAsync();
+    }
+
+
+    private async Task Submit(EditContext context)
+    {
+        await PostsForm(vform, "/api/DGOrderDetail/add", (s) => "Sys.OprationSuccess");
+    }
+
+    public void OnClose()
+    {
+        CloseDialog();
+    }
+
+}

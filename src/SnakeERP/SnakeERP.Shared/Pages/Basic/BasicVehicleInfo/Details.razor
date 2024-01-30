@@ -1,0 +1,47 @@
+﻿@page "/Basic/BasicVehicleInfo/Details/{id}"
+@using SnakeERP.ViewModel.Basic.BasicVehicleInfoVMs;
+@inherits BasePage
+
+<ValidateForm @ref="vform" Model="@Model" >
+    <Row ItemsPerRow="ItemsPerRow.Two" RowType="RowType.Normal">
+
+            <Display @bind-Value="@Model.Entity.Number"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.VehicleTypeID" Lookup="@AllBasicVehicleTypes"  ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.VehicleBrandID" Lookup="@AllBasicVehicleBrands"  ShowLabel="true"/>
+            <Switch @bind-Value="@Model.Entity.NewEnergy"  IsDisabled="true" ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.Status"   ShowLabel="true"/>
+    </Row>
+    <div class="modal-footer table-modal-footer">
+        <Button Color="Color.Primary" Icon="fa fa-save" Text="@WtmBlazor.Localizer["Sys.Close"]" OnClick="OnClose" />
+    </div>
+</ValidateForm>
+
+@code {
+
+    private BasicVehicleInfoVM Model = null;
+    private ValidateForm vform { get; set; }
+    [Parameter]
+    public string id { get; set; }
+
+    private List<SelectedItem> AllBasicVehicleTypes = new List<SelectedItem>();
+
+    private List<SelectedItem> AllBasicVehicleBrands = new List<SelectedItem>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        AllBasicVehicleTypes = await WtmBlazor.Api.CallItemsApi("/api/BasicVehicleInfo/GetBasicVehicleTypes", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllBasicVehicleBrands = await WtmBlazor.Api.CallItemsApi("/api/BasicVehicleInfo/GetBasicVehicleBrands", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        var rv = await WtmBlazor.Api.CallAPI<BasicVehicleInfoVM>($"/api/BasicVehicleInfo/{id}");
+        Model = rv.Data;
+    }
+
+    public void OnClose()
+    {
+        CloseDialog();
+    }
+
+}

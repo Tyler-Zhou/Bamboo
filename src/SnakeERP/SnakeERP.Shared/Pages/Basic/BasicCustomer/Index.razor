@@ -1,0 +1,180 @@
+﻿@page "/Basic/BasicCustomer"
+@using SnakeERP.ViewModel.Basic.BasicCustomerVMs;
+@inherits BasePage
+@attribute [ActionDescription("客户管理", "SnakeERP.Controllers,BasicCustomer")]
+
+<WTSearchPanel OnSearch="@DoSearch">
+    <ValidateForm Model="@SearchModel">
+        <Row ItemsPerRow="ItemsPerRow.Three" RowType="RowType.Inline">
+
+            <BootstrapInput @bind-Value="@SearchModel.Code"  />
+            <BootstrapInput @bind-Value="@SearchModel.Name"  />
+            <Select @bind-Value="@SearchModel.ProvinceID" Items="@AllBasicProvinces" PlaceHolder="@WtmBlazor.Localizer["Sys.All"]"/>
+            <Select @bind-Value="@SearchModel.CityID" Items="@AllBasicCitys" PlaceHolder="@WtmBlazor.Localizer["Sys.All"]"/>
+            <Select @bind-Value="@SearchModel.CountyID" Items="@AllBasicCountys" PlaceHolder="@WtmBlazor.Localizer["Sys.All"]"/>
+            <BootstrapInput @bind-Value="@SearchModel.CellPhone"  />
+            <BootstrapInput @bind-Value="@SearchModel.HomePhone"  />
+            <Select @bind-Value="@SearchModel.SalesID" Items="@AllFrameworkUsers" PlaceHolder="@WtmBlazor.Localizer["Sys.All"]"/>
+            <BootstrapInput @bind-Value="@SearchModel.Address"  />
+            <BootstrapInput @bind-Value="@SearchModel.Region"  />
+        </Row>
+    </ValidateForm>
+</WTSearchPanel>
+
+
+
+<Table @ref="dataTable" TItem="BasicCustomer_View" OnQueryAsync="OnSearch" IsPagination="true" IsStriped="true" IsBordered="true" ShowRefresh="false"
+       ShowToolbar="true" IsMultipleSelect="true" ShowExtendButtons="true" ShowDefaultButtons="false" ShowExtendEditButton="false" ShowExtendDeleteButton="false" style="margin-top:10px;">
+    <TableColumns>
+
+        <TableColumn @bind-Field="@context.Code"  />
+        <TableColumn @bind-Field="@context.Name"  />
+        <TableColumn @bind-Field="@context.Name_view"  />
+        <TableColumn @bind-Field="@context.Name_view2"  />
+        <TableColumn @bind-Field="@context.Name_view3"  />
+        <TableColumn @bind-Field="@context.CellPhone"  />
+        <TableColumn @bind-Field="@context.HomePhone"  />
+        <TableColumn @bind-Field="@context.Name_view4"  />
+        <TableColumn @bind-Field="@context.Address"  />
+        <TableColumn @bind-Field="@context.Region"  />
+    </TableColumns>
+    <TableToolbarTemplate>
+        @if (IsAccessable("/api/BasicCustomer/Add"))
+        {
+            <TableToolbarButton TItem="BasicCustomer_View" Color="Color.Primary" Icon="fa fa-fw fa-plus" Text="@WtmBlazor.Localizer["Sys.Create"]" OnClickCallback="OnCreateClick" />
+        }
+        @if (IsAccessable("/api/BasicCustomer/BatchDelete"))
+        {
+            <TableToolbarPopconfirmButton TItem="BasicCustomer_View" Color="Color.Primary"
+                                          Icon="fa fa-fw fa-trash" Text="@WtmBlazor.Localizer["Sys.BatchDelete"]"
+                                          OnConfirm="@OnBatchDeleteClick" Content="@WtmBlazor.Localizer["Sys.BatchDeleteConfirm"]" CloseButtonText="@WtmBlazor.Localizer["Sys.Close"]"
+                                          ConfirmButtonText="@WtmBlazor.Localizer["Sys.BatchDelete"]" ConfirmButtonColor="Color.Danger" />
+        }
+        
+        @if (IsAccessable("/api/BasicCustomer/Import"))
+        {
+            <TableToolbarButton TItem="BasicCustomer_View" Color="Color.Primary" Icon="fa fa-fw fa-upload" Text="@WtmBlazor.Localizer["Sys.Import"]" OnClickCallback="@OnImportClick" />
+        }
+        @if (IsAccessable("/api/BasicCustomer/ExportExcel"))
+        {
+            <TableToolbarButton TItem="BasicCustomer_View" Color="Color.Primary" Icon="fa fa-fw fa-download" Text="@WtmBlazor.Localizer["Sys.Export"]" OnClickCallback="@OnExportClick" IsAsync="true" />
+        }
+    </TableToolbarTemplate>
+    <RowButtonTemplate>
+        <div style="padding-right:10px;">
+            @if (IsAccessable("/api/BasicCustomer/Edit"))
+            {
+                <TableCellButton Size="Size.ExtraSmall" Color="Color.Success" Icon="fa fa-edit" Text="@WtmBlazor.Localizer["Sys.Edit"]" OnClick="() => OnEditClick(context)" />
+            }
+            @if (IsAccessable("/api/BasicCustomer/{id}"))
+            {
+                <TableCellButton Size="Size.ExtraSmall" Color="Color.Info" Icon="fa fa-info" Text="@WtmBlazor.Localizer["Sys.Details"]" OnClick="()=>OnDetailsClick(context)" />
+            }
+            @if (IsAccessable("/api/BasicCustomer/BatchDelete"))
+            {
+                <PopConfirmButton Icon="fa fa-trash" Text="@WtmBlazor.Localizer["Sys.Delete"]" OnConfirm="() => OnDeleteClick(context)" Color="Color.Danger" Size="Size.ExtraSmall"
+                                  Content="@WtmBlazor.Localizer["Sys.DeleteConfirm"]" CloseButtonText="@WtmBlazor.Localizer["Sys.Close"]" ConfirmButtonText="@WtmBlazor.Localizer["Sys.Delete"]" ConfirmButtonColor="Color.Danger" />
+            }
+        </div>
+    </RowButtonTemplate>
+</Table>
+
+@code{
+
+    private BasicCustomerSearcher SearchModel = new BasicCustomerSearcher();
+    private Table<BasicCustomer_View> dataTable;
+
+    private List<SelectedItem> AllBasicProvinces = new List<SelectedItem>();
+
+    private List<SelectedItem> AllBasicCitys = new List<SelectedItem>();
+
+    private List<SelectedItem> AllBasicCountys = new List<SelectedItem>();
+
+    private List<SelectedItem> AllFrameworkUsers = new List<SelectedItem>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        AllBasicProvinces = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicProvinces", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllBasicCitys = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicCitys", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllBasicCountys = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicCountys", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllFrameworkUsers = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetFrameworkUsers", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task<QueryData<BasicCustomer_View>> OnSearch(QueryPageOptions opts)
+    {
+        return await StartSearch<BasicCustomer_View>("/api/BasicCustomer/Search", SearchModel, opts);
+    }
+
+    private void DoSearch()
+    {
+        dataTable.QueryAsync();
+    }
+
+    private async Task OnCreateClick(IEnumerable<BasicCustomer_View> items)
+    {
+        if (await OpenDialog<Create>(WtmBlazor.Localizer["Sys.Create"]) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+    private async Task OnEditClick(BasicCustomer_View item)
+    {
+        if (await OpenDialog<Edit>(WtmBlazor.Localizer["Sys.Edit"], x => x.id == item.ID.ToString()) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+    private async Task OnDetailsClick(BasicCustomer_View item)
+    {
+        await OpenDialog<Details>(WtmBlazor.Localizer["Sys.Details"], x => x.id == item.ID.ToString());
+    }
+
+    private async Task OnBatchDeleteClick()
+    {
+        if (dataTable.SelectedRows?.Any() == true)
+        {
+            await PostsData(dataTable.SelectedRows.Select(x => x.ID).ToList(), $"/api/BasicCustomer/batchdelete", (s) => WtmBlazor.Localizer["Sys.BatchDeleteSuccess", s]);
+            await dataTable.QueryAsync();
+        }
+        else
+        {
+            await WtmBlazor.Toast.Information(WtmBlazor.Localizer["Sys.Info"], WtmBlazor.Localizer["Sys.SelectOneRowMin"]);
+        }
+    }
+
+    private async Task OnDeleteClick(BasicCustomer_View item)
+    {
+        await PostsData(new List<string> { item.ID.ToString() }, $"/api/BasicCustomer/batchdelete", (s) => "Sys.OprationSuccess");
+        await dataTable.QueryAsync();
+    }
+
+
+    private async Task OnExportClick(IEnumerable<BasicCustomer_View> items)
+    {
+        if (dataTable.SelectedRows?.Any() == true)
+        {
+            await Download("/api/BasicCustomer/ExportExcelByIds", dataTable.SelectedRows.Select(x => x.ID.ToString()).ToList());
+        }
+        else
+        {
+            await Download("/api/BasicCustomer/ExportExcel", SearchModel);
+        }
+    }
+    private async Task OnImportClick(IEnumerable<BasicCustomer_View> items)
+    {
+        if (await OpenDialog<Import>(WtmBlazor.Localizer["Sys.Import"]) == DialogResult.Yes)
+        {
+            await dataTable.QueryAsync();
+        }
+    }
+
+}

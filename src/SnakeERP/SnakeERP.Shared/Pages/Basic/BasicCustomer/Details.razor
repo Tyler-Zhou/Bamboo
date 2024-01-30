@@ -1,0 +1,60 @@
+﻿@page "/Basic/BasicCustomer/Details/{id}"
+@using SnakeERP.ViewModel.Basic.BasicCustomerVMs;
+@inherits BasePage
+
+<ValidateForm @ref="vform" Model="@Model" >
+    <Row ItemsPerRow="ItemsPerRow.Two" RowType="RowType.Normal">
+
+            <Display @bind-Value="@Model.Entity.Code"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.Name"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.ProvinceID" Lookup="@AllBasicProvinces"  ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.CityID" Lookup="@AllBasicCitys"  ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.CountyID" Lookup="@AllBasicCountys"  ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.CellPhone"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.HomePhone"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.SalesID" Lookup="@AllFrameworkUsers"  ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.Address"   ShowLabel="true"/>
+            <Display @bind-Value="@Model.Entity.Region"   ShowLabel="true"/>
+    </Row>
+    <div class="modal-footer table-modal-footer">
+        <Button Color="Color.Primary" Icon="fa fa-save" Text="@WtmBlazor.Localizer["Sys.Close"]" OnClick="OnClose" />
+    </div>
+</ValidateForm>
+
+@code {
+
+    private BasicCustomerVM Model = null;
+    private ValidateForm vform { get; set; }
+    [Parameter]
+    public string id { get; set; }
+
+    private List<SelectedItem> AllBasicProvinces = new List<SelectedItem>();
+
+    private List<SelectedItem> AllBasicCitys = new List<SelectedItem>();
+
+    private List<SelectedItem> AllBasicCountys = new List<SelectedItem>();
+
+    private List<SelectedItem> AllFrameworkUsers = new List<SelectedItem>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        AllBasicProvinces = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicProvinces", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllBasicCitys = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicCitys", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllBasicCountys = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetBasicCountys", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        AllFrameworkUsers = await WtmBlazor.Api.CallItemsApi("/api/BasicCustomer/GetFrameworkUsers", placeholder: WtmBlazor.Localizer["Sys.All"]);
+
+        var rv = await WtmBlazor.Api.CallAPI<BasicCustomerVM>($"/api/BasicCustomer/{id}");
+        Model = rv.Data;
+    }
+
+    public void OnClose()
+    {
+        CloseDialog();
+    }
+
+}

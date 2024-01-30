@@ -1,0 +1,35 @@
+﻿@page "/Basic/BasicVehicleType/Details/{id}"
+@using SnakeERP.ViewModel.Basic.BasicVehicleTypeVMs;
+@inherits BasePage
+
+<ValidateForm @ref="vform" Model="@Model" >
+    <Row ItemsPerRow="ItemsPerRow.Two" RowType="RowType.Normal">
+
+            <Display @bind-Value="@Model.Entity.Name"   ShowLabel="true"/>
+    </Row>
+    <div class="modal-footer table-modal-footer">
+        <Button Color="Color.Primary" Icon="fa fa-save" Text="@WtmBlazor.Localizer["Sys.Close"]" OnClick="OnClose" />
+    </div>
+</ValidateForm>
+
+@code {
+
+    private BasicVehicleTypeVM Model = null;
+    private ValidateForm vform { get; set; }
+    [Parameter]
+    public string id { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        var rv = await WtmBlazor.Api.CallAPI<BasicVehicleTypeVM>($"/api/BasicVehicleType/{id}");
+        Model = rv.Data;
+    }
+
+    public void OnClose()
+    {
+        CloseDialog();
+    }
+
+}
